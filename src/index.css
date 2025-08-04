@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Maineniq Design System - Professional HVAC & Smart Property Solutions
+Green, black, and white palette with modern typography
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 8%;
 
+    /* Brand Colors - Green palette for HVAC/maintenance theme */
+    --primary: 142 55% 35%;         /* Professional green */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 60% 45%;    /* Lighter green for accents */
+
+    /* Secondary Colors */
+    --secondary: 0 0% 95%;          /* Light gray */
+    --secondary-foreground: 0 0% 15%;
+
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 8%;
 
+    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Muted/Subtle Colors */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors */
+    --accent: 142 45% 92%;          /* Very light green for backgrounds */
+    --accent-foreground: 142 55% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Status Colors */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Borders & Inputs */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 142 55% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Custom Design Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(142 55% 35%), hsl(142 60% 45%));
+    --service-accent: 142 45% 15%;  /* Dark green for service highlights */
+    --success: 142 55% 35%;         /* Success states */
+    --whatsapp: 142 70% 40%;        /* WhatsApp green */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(142 55% 35% / 0.15);
+    --shadow-card: 0 4px 12px -2px hsl(0 0% 0% / 0.05);
+
+    /* Typography Scale */
+    --font-heading: 'Poppins', system-ui, sans-serif;
+    --font-body: 'Poppins', system-ui, sans-serif;
 
     --radius: 0.5rem;
 
