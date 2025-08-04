@@ -62,7 +62,7 @@ const Admin = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple authentication check (in real app, this would be server-side)
-    if (loginData.username === "admin" && loginData.password === "maineniq2024") {
+    if (loginData.username === "admin" && loginData.password === "mainteniq2025") {
       setIsAuthenticated(true);
       toast({
         title: "Login Successful",
@@ -136,7 +136,7 @@ const Admin = () => {
               <Lock className="w-8 h-8 text-primary-foreground" />
             </div>
             <CardTitle className="text-2xl">Admin Login</CardTitle>
-            <p className="text-muted-foreground">Access the Maineniq admin panel</p>
+            <p className="text-muted-foreground">Access the Mainteniq admin panel</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -168,7 +168,7 @@ const Admin = () => {
             <div className="mt-4 p-3 bg-muted rounded-lg text-sm text-muted-foreground">
               <p><strong>Demo Credentials:</strong></p>
               <p>Username: admin</p>
-              <p>Password: maineniq2024</p>
+              <p>Password: mainteniq2025</p>
             </div>
           </CardContent>
         </Card>

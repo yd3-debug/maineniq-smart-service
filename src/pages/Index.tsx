@@ -72,7 +72,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary-glow text-lg px-8">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now: (555) 123-4567
+                Call Now: +44 (0) 189 55 28 226
               </Button>
               <Link to="/services">
                 <Button variant="outline" size="lg" className="text-lg px-8 border-background text-background hover:bg-background hover:text-foreground">
@@ -117,7 +117,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-heading text-4xl font-bold mb-6">Why Choose Maineniq?</h2>
+              <h2 className="font-heading text-4xl font-bold mb-6">Why Choose Mainteniq?</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We combine traditional HVAC expertise with modern smart property solutions, 
                 delivering comprehensive maintenance services that prioritize your comfort and efficiency.

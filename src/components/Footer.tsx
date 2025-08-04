@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <Wrench className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-heading font-bold text-xl">Maineniq</span>
+              <span className="font-heading font-bold text-xl">Mainteniq</span>
             </div>
             <p className="text-sm text-gray-300">
               Professional HVAC and smart property solutions. Modern maintenance 
@@ -50,11 +50,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">(555) 123-4567</span>
+                <span className="text-sm text-gray-300">+44 (0) 189 55 28 226</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">info@maineniq.com</span>
+                <span className="text-sm text-gray-300">info@mainteniq.co.uk</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-primary" />
@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-300">
-            © 2024 Maineniq. All rights reserved. Professional HVAC & Smart Property Solutions.
+            © 2025 Mainteniq. All rights reserved. Professional HVAC & Smart Property Solutions.
           </p>
         </div>
       </div>

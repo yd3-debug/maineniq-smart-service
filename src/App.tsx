@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import CookieBanner from "./components/CookieBanner";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CaseStudies";
@@ -24,6 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
     </main>
     <Footer />
     <WhatsAppFloat />
+    <CookieBanner />
   </div>
 );
 

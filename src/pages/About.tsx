@@ -78,7 +78,7 @@ const About = () => {
       <section className="py-20 bg-hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-heading text-5xl font-bold mb-6">
-            About Maineniq
+            About Mainteniq
           </h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90">
             A modern maintenance company specializing in HVAC systems and smart property solutions. 
@@ -110,7 +110,7 @@ const About = () => {
               <h2 className="font-heading text-4xl font-bold mb-6">Our Story</h2>
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  Founded in 2009, Maineniq began with a simple mission: to provide reliable, 
+                  Founded in 2009, Mainteniq began with a simple mission: to provide reliable, 
                   professional HVAC services that prioritize customer comfort and satisfaction.
                 </p>
                 <p>
@@ -247,7 +247,7 @@ const About = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-4xl font-bold mb-6">
-            Experience the Maineniq Difference
+            Experience the Mainteniq Difference
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join thousands of satisfied customers who trust us for their HVAC needs. 

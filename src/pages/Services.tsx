@@ -188,7 +188,7 @@ const Services = () => {
                 <Clock className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="font-bold text-3xl mb-2">24/7</h3>
                 <p className="text-xl opacity-90">Emergency Service</p>
-                <p className="text-4xl font-bold mt-4">(555) 123-4567</p>
+                <p className="text-4xl font-bold mt-4">+44 (0) 189 55 28 226</p>
               </div>
             </div>
           </div>

@@ -30,7 +30,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <Wrench className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-foreground">Maineniq</span>
+            <span className="text-foreground">Mainteniq</span>
           </Link>
 
           {/* Desktop Navigation */}

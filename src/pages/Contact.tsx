@@ -53,16 +53,16 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      primary: "(555) 123-4567",
+      primary: "+44 (0) 189 55 28 226",
       secondary: "24/7 Emergency Line",
-      action: "tel:+15551234567"
+      action: "tel:+441895528226"
     },
     {
       icon: Mail,
       title: "Email Us",
-      primary: "info@maineniq.com",
+      primary: "info@mainteniq.co.uk",
       secondary: "Response within 2 hours",
-      action: "mailto:info@maineniq.com"
+      action: "mailto:info@mainteniq.co.uk"
     },
     {
       icon: MapPin,
@@ -166,7 +166,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="(555) 123-4567"
+                        placeholder="+44 (0) 189 55 28 226"
                       />
                     </div>
                     <div>
@@ -234,7 +234,7 @@ const Contact = () => {
               {/* Why Choose Us */}
               <Card className="shadow-card">
                 <CardHeader>
-                  <CardTitle>Why Choose Maineniq?</CardTitle>
+                  <CardTitle>Why Choose Mainteniq?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -269,7 +269,7 @@ const Contact = () => {
                   <Phone className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-bold text-xl mb-2">Emergency Service</h3>
                   <p className="mb-4 opacity-90">HVAC emergency? Call now!</p>
-                  <p className="text-2xl font-bold">(555) 123-4567</p>
+                  <p className="text-2xl font-bold">+44 (0) 189 55 28 226</p>
                 </CardContent>
               </Card>
             </div>
@@ -289,7 +289,7 @@ const Contact = () => {
           <div className="bg-muted h-96 rounded-lg flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold text-xl mb-2">Maineniq Office</h3>
+              <h3 className="font-semibold text-xl mb-2">Mainteniq Office</h3>
               <p className="text-muted-foreground">123 Main Street, City, ST 12345</p>
               <Button className="mt-4 bg-primary hover:bg-primary-glow">
                 Get Directions
