@@ -22,7 +22,8 @@ import {
   Clock,
   TrendingDown,
   AlertTriangle,
-  Wrench
+  Wrench,
+  Activity
 } from "lucide-react";
 import { 
   BarChart, 
@@ -407,21 +408,25 @@ const WhyProfessionalHVAC = () => {
             ))}
           </div>
 
-          {/* Multi-Colored Performance Charts */}
+          {/* Separated Performance Charts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Monthly Savings with Multiple Metrics */}
+            {/* Energy Savings Chart */}
             <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-slate-800">
                   <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
                     <DollarSign className="w-5 h-5 text-white" />
                   </div>
-                  Monthly Savings & Performance
+                  Monthly Energy Savings
                 </CardTitle>
-                <p className="text-slate-600">Track multiple benefits throughout the year</p>
+                <p className="text-slate-600">Track your energy consumption improvements</p>
               </CardHeader>
               <CardContent>
-                <ChartContainer config={chartConfig} className="h-72">
+                <div className="mb-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <div className="text-2xl font-bold text-emerald-700">1,420 kWh</div>
+                  <div className="text-sm text-emerald-600">Average Monthly Savings</div>
+                </div>
+                <ChartContainer config={chartConfig} className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -432,34 +437,88 @@ const WhyProfessionalHVAC = () => {
                         tick={{ fill: '#64748b', fontSize: 12 }}
                       />
                       <YAxis 
+                        domain={[800, 1800]}
                         axisLine={false}
                         tickLine={false}
                         tick={{ fill: '#64748b', fontSize: 12 }}
+                        label={{ value: 'kWh Saved', angle: -90, position: 'insideLeft' }}
                       />
-                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <ChartTooltip 
+                        content={<ChartTooltipContent />}
+                        formatter={(value, name) => [`${value} kWh`, 'Energy Saved']}
+                      />
                       <Line
                         type="monotone"
                         dataKey="energySaved"
                         stroke="hsl(142 55% 35%)"
-                        strokeWidth={3}
+                        strokeWidth={4}
                         name="Energy Saved (kWh)"
-                        dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 4 }}
+                        dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 5 }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </ChartContainer>
+              </CardContent>
+            </Card>
+
+            {/* Performance Scores Chart */}
+            <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-3 text-slate-800">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <Activity className="w-5 h-5 text-white" />
+                  </div>
+                  Comfort & Air Quality Scores
+                </CardTitle>
+                <p className="text-slate-600">Performance ratings out of 100</p>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
+                    <div className="text-xl font-bold text-orange-700">94/100</div>
+                    <div className="text-sm text-orange-600">Avg. Comfort</div>
+                  </div>
+                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                    <div className="text-xl font-bold text-purple-700">92/100</div>
+                    <div className="text-sm text-purple-600">Avg. Air Quality</div>
+                  </div>
+                </div>
+                <ChartContainer config={chartConfig} className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis 
+                        dataKey="month" 
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: '#64748b', fontSize: 12 }}
+                      />
+                      <YAxis 
+                        domain={[80, 100]}
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: '#64748b', fontSize: 12 }}
+                        label={{ value: 'Score (out of 100)', angle: -90, position: 'insideLeft' }}
+                      />
+                      <ChartTooltip 
+                        content={<ChartTooltipContent />}
+                        formatter={(value, name) => [`${value}/100`, name]}
                       />
                       <Line
                         type="monotone"
                         dataKey="comfortScore"
                         stroke="hsl(24 100% 50%)"
-                        strokeWidth={3}
+                        strokeWidth={4}
                         name="Comfort Score"
-                        dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 4 }}
+                        dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 5 }}
                       />
                       <Line
                         type="monotone"
                         dataKey="airQuality"
                         stroke="hsl(270 60% 50%)"
-                        strokeWidth={3}
+                        strokeWidth={4}
                         name="Air Quality Score"
-                        dot={{ fill: "hsl(270 60% 50%)", strokeWidth: 2, r: 4 }}
+                        dot={{ fill: "hsl(270 60% 50%)", strokeWidth: 2, r: 5 }}
                       />
                     </LineChart>
                   </ResponsiveContainer>
