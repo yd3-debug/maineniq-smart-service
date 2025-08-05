@@ -24,6 +24,7 @@ import teamWorking from "@/assets/team-working.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import energyEfficiency from "@/assets/energy-efficiency.jpg";
+import beforeAfter from "@/assets/before-after.jpg";
 
 const Services = () => {
   const services = [
@@ -32,7 +33,7 @@ const Services = () => {
       title: "MVHR",
       subtitle: "Mechanical Ventilation with Heat Recovery",
       description: "Energy-efficient ventilation systems that recover heat while providing fresh air circulation throughout your property.",
-      image: modernHvacSystem,
+      image: energyEfficiency,
       features: [
         "Heat recovery efficiency up to 95%",
         "Continuous fresh air supply",
@@ -88,7 +89,7 @@ const Services = () => {
       title: "HIU",
       subtitle: "Heat Interface Units",
       description: "Compact heat interface units for district heating systems, providing efficient hot water and heating for apartments and buildings.",
-      image: energyEfficiency,
+      image: modernHvacSystem,
       features: [
         "Instantaneous hot water",
         "Compact space-saving design",
@@ -102,7 +103,7 @@ const Services = () => {
       title: "Smart Home",
       subtitle: "Home Automation Integration",
       description: "Complete smart home solutions integrating HVAC controls with modern automation systems for ultimate comfort and efficiency.",
-      image: modernEquipment,
+      image: heroHvac,
       features: [
         "Smart thermostat installation",
         "Mobile app control",
@@ -144,7 +145,7 @@ const Services = () => {
       title: "End of Tenancy Cleaning",
       subtitle: "Professional Deep Cleaning",
       description: "Comprehensive end of tenancy cleaning services ensuring properties meet the highest standards for deposit return and new occupancy.",
-      image: satisfiedCustomer,
+      image: beforeAfter,
       features: [
         "Deep cleaning all areas",
         "Professional equipment and products",
@@ -161,7 +162,7 @@ const Services = () => {
       <section className="relative py-24 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroHvac})` }}
+          style={{ backgroundImage: `url(${satisfiedCustomer})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
