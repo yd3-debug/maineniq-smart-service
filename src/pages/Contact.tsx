@@ -10,8 +10,18 @@ import {
   Users,
   Zap,
   CheckCircle,
-  PhoneCall
+  PhoneCall,
+  MapPin,
+  ThumbsUp
 } from "lucide-react";
+
+// Import professional images
+import heroImage from "@/assets/team-working.jpg";
+import customerConsultation from "@/assets/customer-consultation.jpg";
+import professionalTeam from "@/assets/team-collaboration.jpg";
+import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
+import modernEquipment from "@/assets/modern-equipment.jpg";
+import hvacProfessional from "@/assets/hvac-professional.jpg";
 
 const Contact = () => {
   const handleWhatsAppClick = (isEmergency = false) => {
@@ -65,150 +75,306 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary via-primary-glow to-accent text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="font-heading text-6xl font-bold mb-6 animate-fade-in">
-            Get in Touch
-          </h1>
-          <p className="text-2xl max-w-3xl mx-auto mb-8 opacity-95">
-            Ready for expert HVAC solutions? Contact us now for immediate assistance 
-            and discover why thousands trust Mainteniq with their comfort.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              onClick={() => handleWhatsAppClick()}
-              className="bg-whatsapp hover:bg-whatsapp/90 text-white px-8 py-4 text-lg font-semibold shadow-elegant"
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Chat on WhatsApp
-            </Button>
-            <Button 
-              onClick={() => handleWhatsAppClick(true)}
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Emergency Call
-            </Button>
+      {/* Hero Section with Image */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div className="text-white space-y-8">
+              <h1 className="font-heading text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
+                Expert HVAC Solutions
+                <span className="block text-accent"> Just a Call Away</span>
+              </h1>
+              <p className="text-xl lg:text-2xl opacity-95 leading-relaxed">
+                Ready for professional HVAC services? Contact us now for immediate assistance 
+                and discover why thousands trust Mainteniq with their comfort.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={() => handleWhatsAppClick()}
+                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-8 py-4 text-lg font-semibold shadow-elegant hover-scale"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Chat on WhatsApp
+                </Button>
+                <Button 
+                  onClick={() => handleWhatsAppClick(true)}
+                  variant="outline" 
+                  className="border-white/40 bg-white/10 text-white hover:bg-white/20 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Emergency Call
+                </Button>
+              </div>
+            </div>
+
+            {/* Right side - Quick contact card */}
+            <div className="lg:flex lg:justify-end">
+              <Card className="bg-white/95 backdrop-blur-sm shadow-elegant max-w-md">
+                <CardContent className="p-8">
+                  <h3 className="font-bold text-2xl text-center mb-6">Get Instant Help</h3>
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-2">Mobile WhatsApp</p>
+                      <p className="text-2xl font-bold text-primary">+44 783 456 2366</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-2">Landline</p>
+                      <p className="text-2xl font-bold text-primary">020 7946 0958</p>
+                    </div>
+                    <Button 
+                      onClick={() => handleWhatsAppClick()}
+                      className="w-full bg-whatsapp hover:bg-whatsapp/90 text-white py-3"
+                    >
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Start WhatsApp Chat
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Methods */}
+      {/* Professional Consultation Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-4">Contact Mainteniq</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get instant support through WhatsApp or call us directly for immediate assistance
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-20">
-            {/* Mobile Number */}
-            <Card 
-              className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50"
-              onClick={() => handleWhatsAppClick()}
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-whatsapp rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-bold text-2xl mb-2">Mobile WhatsApp</h3>
-                <p className="text-3xl font-bold text-primary mb-2">+44 783 456 2366</p>
-                <p className="text-muted-foreground mb-4">Instant messaging & calls</p>
-                <Button className="bg-whatsapp hover:bg-whatsapp/90 text-white">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat Now
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-6">
+              <h2 className="font-heading text-4xl font-bold">
+                Professional HVAC Consultation
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Get expert advice from our certified HVAC professionals. Whether you need a quick consultation 
+                or emergency support, we're here to help with personalized solutions for your comfort needs.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Card 
+                  className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50 hover-scale"
+                  onClick={() => handleWhatsAppClick()}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <MessageCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">WhatsApp</h3>
+                    <p className="text-lg font-semibold text-primary mb-1">+44 783 456 2366</p>
+                    <p className="text-sm text-muted-foreground">Instant chat & calls</p>
+                  </CardContent>
+                </Card>
 
-            {/* Landline Number */}
-            <Card 
-              className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50"
-              onClick={() => handleWhatsAppClick()}
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <PhoneCall className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-bold text-2xl mb-2">Landline</h3>
-                <p className="text-3xl font-bold text-primary mb-2">020 7946 0958</p>
-                <p className="text-muted-foreground mb-4">Office hours support</p>
-                <Button className="bg-primary hover:bg-primary-glow">
-                  <PhoneCall className="w-4 h-4 mr-2" />
-                  Call Now
-                </Button>
-              </CardContent>
-            </Card>
+                <Card 
+                  className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50 hover-scale"
+                  onClick={() => handleWhatsAppClick()}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      <PhoneCall className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">Landline</h3>
+                    <p className="text-lg font-semibold text-primary mb-1">020 7946 0958</p>
+                    <p className="text-sm text-muted-foreground">Office support</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img 
+                src={customerConsultation} 
+                alt="Professional HVAC consultation"
+                className="rounded-lg shadow-elegant w-full h-auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
+            </div>
           </div>
 
-          {/* Why Choose Us Section */}
+          {/* Why Choose Us Section with Images */}
           <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-4xl font-bold mb-4">Why Choose Mainteniq?</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Discover what makes us the #1 choice for HVAC services in the UK
+            <div className="text-center mb-16">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Mainteniq?</h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Discover what makes us the #1 choice for HVAC services in the UK. 
+                Our commitment to excellence and customer satisfaction sets us apart.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {whyChooseUs.map((feature, index) => (
-                <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                      <feature.icon className="w-6 h-6 text-primary group-hover:text-white" />
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            {/* Features with alternating layout */}
+            <div className="space-y-20">
+              {/* First row - Image left, content right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="relative">
+                  <img 
+                    src={professionalTeam} 
+                    alt="Professional HVAC team"
+                    className="rounded-lg shadow-elegant w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg"></div>
+                </div>
+                <div className="space-y-8">
+                  <h3 className="font-heading text-3xl font-bold">Expert Team & Quality Service</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {whyChooseUs.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <feature.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
+                          <p className="text-muted-foreground text-sm">{feature.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Second row - Content left, image right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8 lg:order-1">
+                  <h3 className="font-heading text-3xl font-bold">Advanced Equipment & Fast Response</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {whyChooseUs.slice(4, 6).map((feature, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <feature.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
+                          <p className="text-muted-foreground text-sm">{feature.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Customer testimonial */}
+                  <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-4 mb-4">
+                        <img 
+                          src={satisfiedCustomer} 
+                          alt="Satisfied customer"
+                          className="w-12 h-12 rounded-full object-cover"
+                        />
+                        <div>
+                          <div className="flex items-center space-x-1 mb-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
+                            ))}
+                          </div>
+                          <p className="font-semibold">Sarah Johnson</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground italic">
+                        "Exceptional service! The team was professional, quick, and solved our heating issue in no time. 
+                        Highly recommend Mainteniq for anyone needing HVAC services."
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="relative lg:order-2">
+                  <img 
+                    src={modernEquipment} 
+                    alt="Modern HVAC equipment"
+                    className="rounded-lg shadow-elegant w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tl from-accent/10 to-transparent rounded-lg"></div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Business Hours & Emergency Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Business Hours */}
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2 text-2xl">
-                  <Clock className="w-6 h-6" />
+          {/* Business Hours & Emergency Section with Enhanced Design */}
+          <div className="space-y-12">
+            {/* Emergency Section - Featured prominently */}
+            <div className="relative">
+              <div 
+                className="bg-cover bg-center rounded-2xl overflow-hidden"
+                style={{ backgroundImage: `url(${hvacProfessional})` }}
+              >
+                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-12 lg:p-16">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-white">
+                    <div className="space-y-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <h3 className="font-bold text-3xl">24/7 Emergency Service</h3>
+                      </div>
+                      <p className="text-xl opacity-95 leading-relaxed">
+                        HVAC emergency? Don't suffer in discomfort! Our emergency response team 
+                        is available 24/7 to get your system back up and running quickly.
+                      </p>
+                      <div className="flex items-center space-x-2 text-accent">
+                        <CheckCircle className="w-5 h-5" />
+                        <span className="font-semibold">Average response time: Under 2 hours</span>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center lg:text-right space-y-6">
+                      <div className="space-y-2">
+                        <p className="text-sm opacity-75">Emergency Hotline</p>
+                        <p className="text-4xl font-bold text-accent">+44 783 456 2366</p>
+                      </div>
+                      <Button 
+                        onClick={() => handleWhatsAppClick(true)}
+                        className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-elegant hover-scale"
+                      >
+                        <MessageCircle className="w-5 h-5 mr-2" />
+                        Emergency WhatsApp
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Business Hours Card */}
+            <Card className="shadow-elegant border-primary/20">
+              <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5">
+                <CardTitle className="flex items-center space-x-3 text-3xl">
+                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-white" />
+                  </div>
                   <span>Business Hours</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {businessHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center py-3 border-b border-border last:border-0">
+                    <div key={index} className="flex justify-between items-center p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
                       <span className="font-semibold text-lg">{schedule.day}</span>
-                      <span className="text-muted-foreground text-lg">{schedule.hours}</span>
+                      <span className="text-muted-foreground text-lg font-medium">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Emergency Contact */}
-            <Card className="bg-gradient-to-br from-primary to-primary-glow text-white shadow-elegant">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="font-bold text-2xl mb-3">24/7 Emergency Service</h3>
-                <p className="mb-6 opacity-90 text-lg">HVAC emergency? We're here to help!</p>
-                <div className="space-y-4">
-                  <p className="text-3xl font-bold mb-4">+44 783 456 2366</p>
-                  <Button 
-                    onClick={() => handleWhatsAppClick(true)}
-                    className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3"
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Emergency WhatsApp
-                  </Button>
+                
+                <div className="mt-8 p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <MessageCircle className="w-6 h-6 text-whatsapp" />
+                      <div>
+                        <p className="font-semibold text-lg">Need help outside business hours?</p>
+                        <p className="text-muted-foreground">WhatsApp us anytime for quick responses</p>
+                      </div>
+                    </div>
+                    <Button 
+                      onClick={() => handleWhatsAppClick()}
+                      className="bg-whatsapp hover:bg-whatsapp/90 text-white"
+                    >
+                      Chat Now
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
