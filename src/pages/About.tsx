@@ -18,13 +18,14 @@ import {
 import { Link } from "react-router-dom";
 
 // Import professional work images
-import hvacInstallation from "@/assets/hvac-installation.jpg";
-import modernEquipment from "@/assets/modern-equipment.jpg";
-import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
-import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
+import electricalInstallation from "@/assets/electrical-installation.jpg";
+import renovationComparison from "@/assets/renovation-comparison.jpg";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
+import customerConsultation from "@/assets/customer-consultation.jpg";
 import beforeAfter from "@/assets/before-after.jpg";
-import teamWorking from "@/assets/team-working.jpg";
+import energyEfficiency from "@/assets/energy-efficiency.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
+import modernEquipment from "@/assets/modern-equipment.jpg";
 
 const About = () => {
   const stats = [
@@ -85,7 +86,7 @@ const About = () => {
       icon: Home,
       title: "Consultation",
       description: "In-home assessment and professional recommendations",
-      image: hvacInstallation
+      image: customerConsultation
     },
     {
       icon: Settings,
@@ -97,13 +98,13 @@ const About = () => {
       icon: Wrench,
       title: "Maintenance",
       description: "Ongoing service and support for optimal performance",
-      image: hvacMaintenance
+      image: renovationComparison
     },
     {
       icon: Star,
       title: "Satisfaction",
       description: "Guaranteed results and happy customers",
-      image: satisfiedCustomer
+      image: energyEfficiency
     }
   ];
 
@@ -188,7 +189,7 @@ const About = () => {
             </div>
             <div className="relative">
               <img 
-                src={teamWorking} 
+                src={teamCollaboration} 
                 alt="Professional HVAC team working together"
                 className="rounded-lg shadow-elegant w-full object-cover h-96"
               />

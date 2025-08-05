@@ -19,8 +19,8 @@ import {
   AlertTriangle
 } from "lucide-react";
 import heroImage from "@/assets/hero-hvac.jpg";
-import hvacProfessional from "@/assets/hvac-professional.jpg";
-import energyEfficiency from "@/assets/energy-efficiency.jpg";
+import systemInspection from "@/assets/system-inspection.jpg";
+import energyTech from "@/assets/energy-tech.jpg";
 
 const Index = () => {
   const services = [
