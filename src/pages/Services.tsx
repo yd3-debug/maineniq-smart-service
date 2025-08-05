@@ -25,7 +25,7 @@ import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import handymanMaintenance from "@/assets/handyman-maintenance.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
-import beforeAfter from "@/assets/before-after.jpg";
+import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 
 const Services = () => {
   const services = [
@@ -146,7 +146,7 @@ const Services = () => {
       title: "End of Tenancy Cleaning",
       subtitle: "Professional Deep Cleaning",
       description: "Comprehensive end of tenancy cleaning services ensuring properties meet the highest standards for deposit return and new occupancy.",
-      image: beforeAfter,
+      image: endOfTenancyCleaning,
       features: [
         "Deep cleaning all areas",
         "Professional equipment and products",
