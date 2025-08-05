@@ -24,7 +24,6 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-sm text-gray-300 hover:text-primary transition-colors">Home</Link></li>
               <li><Link to="/services" className="text-sm text-gray-300 hover:text-primary transition-colors">Services</Link></li>
               <li><Link to="/case-studies" className="text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
               <li><Link to="/about" className="text-sm text-gray-300 hover:text-primary transition-colors">About Us</Link></li>
@@ -44,34 +43,39 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Legal & Policies */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact Info</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">+44 (0) 189 55 28 226</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">info@mainteniq.co.uk</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">123 Main St, City, ST 12345</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm text-gray-300">24/7 Emergency Service</span>
-              </div>
-            </div>
+            <h3 className="font-semibold text-lg">Legal & Policies</h3>
+            <ul className="space-y-2">
+              <li><Link to="/privacy-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/refund-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Refund Policy</Link></li>
+              <li><Link to="/gdpr-compliance" className="text-sm text-gray-300 hover:text-primary transition-colors">GDPR Compliance</Link></li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-300">
-            © 2025 Mainteniq. All rights reserved. Professional HVAC & Smart Property Solutions.
-          </p>
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-sm text-gray-300">
+              © 2025 Mainteniq. All rights reserved. Professional HVAC & Smart Property Solutions.
+            </p>
+            <div className="flex items-center space-x-6 text-sm text-gray-300">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <span>+44 (0) 189 55 28 226</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 text-primary" />
+                <span>info@mainteniq.co.uk</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>24/7 Emergency Service</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -45,30 +45,26 @@ const About = () => {
     }
   ];
 
-  const teamMembers = [
+  const serviceStandards = [
     {
-      name: "Michael Johnson",
-      role: "Founder & Lead Technician",
-      experience: "15+ years",
-      certifications: "NATE Certified, EPA Licensed"
+      icon: Clock,
+      title: "Response Time Guarantee",
+      description: "Emergency calls answered within 30 minutes, service within 4 hours"
     },
     {
-      name: "Sarah Davis",
-      role: "Operations Manager",
-      experience: "12+ years",
-      certifications: "Business Management, Customer Relations"
+      icon: Shield,
+      title: "Quality Assurance",
+      description: "Multi-point inspection on every job with 100% satisfaction guarantee"
     },
     {
-      name: "David Wilson",
-      role: "Senior HVAC Technician",
-      experience: "10+ years",
-      certifications: "HVAC Excellence Certified"
+      icon: Award,
+      title: "Professional Standards",
+      description: "All technicians certified, background checked, and continuously trained"
     },
     {
-      name: "Lisa Chen",
-      role: "Smart Systems Specialist",
-      experience: "8+ years",
-      certifications: "IoT Integration, Smart Home Tech"
+      icon: Star,
+      title: "Customer Service Excellence",
+      description: "4.9/5 customer rating with dedicated support team available 24/7"
     }
   ];
 
@@ -78,11 +74,12 @@ const About = () => {
       <section className="py-20 bg-hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-heading text-5xl font-bold mb-6">
-            About Mainteniq
+            Your Trusted HVAC Partner Since 2009
           </h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90">
-            A modern maintenance company specializing in HVAC systems and smart property solutions. 
-            We combine traditional expertise with innovative technology to deliver exceptional comfort and efficiency.
+            Established with a foundation of excellence, we've built our reputation on reliability, 
+            professional standards, and unmatched customer service. Licensed, insured, and committed 
+            to your complete satisfaction.
           </p>
         </div>
       </section>
@@ -102,32 +99,33 @@ const About = () => {
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Foundation Section */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-heading text-4xl font-bold mb-6">Our Story</h2>
+              <h2 className="font-heading text-4xl font-bold mb-6">Built on Strong Foundations</h2>
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  Founded in 2009, Mainteniq began with a simple mission: to provide reliable, 
-                  professional HVAC services that prioritize customer comfort and satisfaction.
+                  Since 2009, we've established ourselves as the region's most trusted HVAC service provider. 
+                  Our foundation is built on professional excellence, regulatory compliance, and an 
+                  unwavering commitment to customer satisfaction.
                 </p>
                 <p>
-                  Over the years, we've evolved from a traditional HVAC company into a 
-                  modern maintenance solutions provider, embracing smart technology and 
-                  energy-efficient practices.
+                  We maintain all required licenses and certifications, carry comprehensive insurance, 
+                  and adhere to the highest industry standards. Our technicians undergo rigorous 
+                  background checks and continuous professional development.
                 </p>
                 <p>
-                  Today, we're proud to serve over 1,000 satisfied customers across the region, 
-                  combining time-tested expertise with cutting-edge innovation to deliver 
-                  optimal comfort and efficiency.
+                  With over 2,500 successful projects and a 4.9-star customer rating, we've proven 
+                  our reliability time and again. When you choose Mainteniq, you're choosing a 
+                  partner you can trust completely.
                 </p>
               </div>
               <div className="mt-8">
                 <Link to="/contact">
                   <Button className="bg-primary hover:bg-primary-glow">
-                    Get to Know Us Better
+                    Experience Our Service
                   </Button>
                 </Link>
               </div>
@@ -187,26 +185,24 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-accent">
+      {/* Service Excellence Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-6">Meet Our Team</h2>
+            <h2 className="font-heading text-4xl font-bold mb-6">Service Excellence Standards</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Experienced professionals dedicated to delivering exceptional HVAC solutions.
+              Our commitment to exceptional customer service is backed by measurable standards and guarantees.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center group hover:shadow-card transition-shadow">
+            {serviceStandards.map((standard, index) => (
+              <Card key={index} className="text-center group hover:shadow-elegant transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-10 h-10 text-primary-foreground" />
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+                    <standard.icon className="w-8 h-8 text-accent-foreground group-hover:text-primary-foreground" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-muted-foreground mb-2">{member.experience}</p>
-                  <p className="text-xs text-muted-foreground">{member.certifications}</p>
+                  <h3 className="font-semibold text-lg mb-3">{standard.title}</h3>
+                  <p className="text-muted-foreground">{standard.description}</p>
                 </CardContent>
               </Card>
             ))}
