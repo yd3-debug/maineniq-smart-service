@@ -22,7 +22,7 @@ import hiuInstallation from "@/assets/hiu-installation.jpg";
 import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import hvacInstallation from "@/assets/hvac-installation.jpg";
 import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
-import handymanMaintenance from "@/assets/handyman-maintenance.jpg";
+import handymanRepair from "@/assets/handyman-repair.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
@@ -132,7 +132,7 @@ const Services = () => {
       title: "Handyman",
       subtitle: "General Property Maintenance",
       description: "Professional handyman services for property maintenance, repairs, and improvements to keep your home or business in perfect condition.",
-      image: handymanMaintenance,
+      image: handymanRepair,
       features: [
         "General repairs and maintenance",
         "Property improvements",
