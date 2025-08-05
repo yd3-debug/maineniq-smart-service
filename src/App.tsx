@@ -18,7 +18,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
-import RefundPolicy from "./pages/RefundPolicy";
+
 import GDPRCompliance from "./pages/GDPRCompliance";
 
 const queryClient = new QueryClient();
@@ -51,7 +51,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
           <Route path="/terms-of-service" element={<Layout><TermsOfService /></Layout>} />
           <Route path="/cookie-policy" element={<Layout><CookiePolicy /></Layout>} />
-          <Route path="/refund-policy" element={<Layout><RefundPolicy /></Layout>} />
+          
           <Route path="/gdpr-compliance" element={<Layout><GDPRCompliance /></Layout>} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

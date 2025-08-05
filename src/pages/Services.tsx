@@ -117,7 +117,7 @@ const Services = () => {
       title: "Plumber & Electrician",
       subtitle: "Essential Building Services",
       description: "Comprehensive plumbing and electrical services to support your HVAC installations and general property maintenance needs.",
-      image: teamWorking,
+      image: hvacProfessional,
       features: [
         "Plumbing installation and repairs",
         "Electrical work and wiring",
@@ -131,7 +131,7 @@ const Services = () => {
       title: "Handyman",
       subtitle: "General Property Maintenance",
       description: "Professional handyman services for property maintenance, repairs, and improvements to keep your home or business in perfect condition.",
-      image: hvacMaintenance,
+      image: teamWorking,
       features: [
         "General repairs and maintenance",
         "Property improvements",
