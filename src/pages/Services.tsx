@@ -15,15 +15,16 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import teamWorking from "@/assets/team-working.jpg";
-import modernEquipment from "@/assets/modern-equipment.jpg";
-import modernHvacSystem from "@/assets/modern-hvac-system.jpg";
+import mvhrInstallation from "@/assets/mvhr-installation.jpg";
+import fcuInstallation from "@/assets/fcu-installation.jpg";
+import bmsControlRoom from "@/assets/bms-control-room.jpg";
+import hiuInstallation from "@/assets/hiu-installation.jpg";
+import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import hvacInstallation from "@/assets/hvac-installation.jpg";
-import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
-import heroHvac from "@/assets/hero-hvac.jpg";
+import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
+import handymanMaintenance from "@/assets/handyman-maintenance.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
-import energyEfficiency from "@/assets/energy-efficiency.jpg";
 import beforeAfter from "@/assets/before-after.jpg";
 
 const Services = () => {
@@ -33,7 +34,7 @@ const Services = () => {
       title: "MVHR",
       subtitle: "Mechanical Ventilation with Heat Recovery",
       description: "Energy-efficient ventilation systems that recover heat while providing fresh air circulation throughout your property.",
-      image: energyEfficiency,
+      image: mvhrInstallation,
       features: [
         "Heat recovery efficiency up to 95%",
         "Continuous fresh air supply",
@@ -61,7 +62,7 @@ const Services = () => {
       title: "FCU",
       subtitle: "Fan Coil Units",
       description: "Professional installation and maintenance of fan coil units for efficient heating and cooling in commercial and residential spaces.",
-      image: modernEquipment,
+      image: fcuInstallation,
       features: [
         "Precise temperature control",
         "Quiet operation",
@@ -75,7 +76,7 @@ const Services = () => {
       title: "BMS",
       subtitle: "Building Management Systems",
       description: "Advanced building automation systems for optimal control of HVAC, lighting, and energy management in commercial properties.",
-      image: hvacProfessional,
+      image: bmsControlRoom,
       features: [
         "Centralized system control",
         "Energy monitoring and optimization",
@@ -89,7 +90,7 @@ const Services = () => {
       title: "HIU",
       subtitle: "Heat Interface Units",
       description: "Compact heat interface units for district heating systems, providing efficient hot water and heating for apartments and buildings.",
-      image: modernHvacSystem,
+      image: hiuInstallation,
       features: [
         "Instantaneous hot water",
         "Compact space-saving design",
@@ -103,7 +104,7 @@ const Services = () => {
       title: "Smart Home",
       subtitle: "Home Automation Integration",
       description: "Complete smart home solutions integrating HVAC controls with modern automation systems for ultimate comfort and efficiency.",
-      image: heroHvac,
+      image: smartHomeAutomation,
       features: [
         "Smart thermostat installation",
         "Mobile app control",
@@ -117,7 +118,7 @@ const Services = () => {
       title: "Plumber & Electrician",
       subtitle: "Essential Building Services",
       description: "Comprehensive plumbing and electrical services to support your HVAC installations and general property maintenance needs.",
-      image: hvacProfessional,
+      image: plumberElectricianWork,
       features: [
         "Plumbing installation and repairs",
         "Electrical work and wiring",
@@ -131,7 +132,7 @@ const Services = () => {
       title: "Handyman",
       subtitle: "General Property Maintenance",
       description: "Professional handyman services for property maintenance, repairs, and improvements to keep your home or business in perfect condition.",
-      image: teamWorking,
+      image: handymanMaintenance,
       features: [
         "General repairs and maintenance",
         "Property improvements",
