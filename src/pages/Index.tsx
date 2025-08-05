@@ -69,26 +69,116 @@ const Index = () => {
         </div>
         
         <div className="relative container mx-auto px-4 text-background">
-          <div className="max-w-2xl">
-            <h1 className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Professional HVAC & Smart Property Solutions
-            </h1>
-            <p className="text-xl mb-8 text-gray-200">
-              Modern maintenance company specializing in efficient HVAC systems 
-              and smart property solutions. Your comfort is our commitment.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary-glow text-lg px-8">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: +44 (0) 189 55 28 226
-              </Button>
-              <Link to="/services">
-                <Button variant="outline" size="lg" className="text-lg px-8 border-background text-background hover:bg-background hover:text-foreground">
-                  View Services
-                  <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="max-w-4xl animate-fade-in">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3 text-background/80 font-medium">
+                <span className="w-8 h-[2px] bg-primary"></span>
+                <span>TRUSTED SINCE 2003 • LICENSED & INSURED</span>
+              </div>
+              
+              <h1 className="font-heading text-5xl lg:text-7xl font-bold leading-tight">
+                Professional HVAC & Smart Property Solutions
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-background/90 leading-relaxed max-w-3xl">
+                Transform your property with cutting-edge HVAC systems and smart home technology. 
+                Expert installation, maintenance, and consultation services backed by 20+ years of experience.
+              </p>
+              
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap items-center gap-6 py-4">
+                <div className="flex items-center space-x-2 text-background/80">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm font-medium">500+ Projects Completed</span>
+                </div>
+                <div className="flex items-center space-x-2 text-background/80">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm font-medium">24/7 Emergency Service</span>
+                </div>
+                <div className="flex items-center space-x-2 text-background/80">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-sm font-medium">99% Customer Satisfaction</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-glow text-lg px-8 py-4 shadow-glow hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now: +44 (0) 189 55 28 226
                 </Button>
-              </Link>
+                <Link to="/services">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-background text-background hover:bg-background hover:text-foreground shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                    View Services
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+              
+              {/* Floating Stats Card */}
+              <div className="mt-8 inline-block bg-background/10 backdrop-blur-sm rounded-xl p-6 border border-background/20">
+                <div className="flex items-center space-x-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-background">20+</div>
+                    <div className="text-sm text-background/80">Years Experience</div>
+                  </div>
+                  <div className="w-px h-12 bg-background/20"></div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-background">99%</div>
+                    <div className="text-sm text-background/80">Customer Satisfaction</div>
+                  </div>
+                  <div className="w-px h-12 bg-background/20"></div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-background">50%</div>
+                    <div className="text-sm text-background/80">Energy Savings</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Preview Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-accent/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Professional HVAC?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience the transformative benefits of professional installation and maintenance
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                <span className="text-3xl font-bold text-primary-foreground">30%</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Energy Savings</h3>
+              <p className="text-muted-foreground">Reduce energy costs with efficient systems</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                <span className="text-3xl font-bold text-primary-foreground">15+</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Years Longer Life</h3>
+              <p className="text-muted-foreground">Professional systems last significantly longer</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                <span className="text-3xl font-bold text-primary-foreground">50%</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Fewer Repairs</h3>
+              <p className="text-muted-foreground">Quality installation reduces maintenance needs</p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Link to="/why-professional-hvac">
+              <Button size="lg" className="bg-primary hover:bg-primary-glow text-lg px-8 py-4 shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                Learn More About Professional HVAC
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -97,22 +187,27 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-4">Our Core Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive HVAC solutions designed to keep your property comfortable, 
-              efficient, and smart.
+            <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
+              <span className="w-8 h-[2px] bg-primary"></span>
+              <span>OUR PROFESSIONAL SERVICES</span>
+              <span className="w-8 h-[2px] bg-primary"></span>
+            </div>
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Complete HVAC Solutions</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From installation to maintenance, we provide comprehensive HVAC and smart property solutions 
+              that deliver exceptional comfort and efficiency.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                    <service.icon className="w-6 h-6 text-accent-foreground group-hover:text-primary-foreground" />
+              <Card key={index} className="group hover:shadow-elegant transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-card to-accent/5 border-0">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                    <service.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <h3 className="font-semibold text-xl mb-4">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -303,27 +398,76 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6">
-            Ready to Experience Professional HVAC Excellence?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Get a free professional assessment and discover how much you could save 
-            with a modern HVAC upgrade from Mainteniq.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button variant="secondary" size="lg" className="text-lg px-8">
-                Get Free Assessment
-              </Button>
-            </Link>
-            <Link to="/why-professional-hvac">
-              <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Learn More Benefits
-              </Button>
-            </Link>
+      {/* Trust & Certifications Section */}
+      <section className="py-16 bg-gradient-to-br from-muted/30 to-accent/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-foreground mb-8">Trusted by Industry Leaders</h3>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <div className="px-6 py-4 bg-card rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                <span className="font-semibold text-primary">Licensed & Insured</span>
+              </div>
+              <div className="px-6 py-4 bg-card rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                <span className="font-semibold text-primary">NATE Certified</span>
+              </div>
+              <div className="px-6 py-4 bg-card rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                <span className="font-semibold text-primary">BBB A+ Rating</span>
+              </div>
+              <div className="px-6 py-4 bg-card rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 hover:scale-105">
+                <span className="font-semibold text-primary">20+ Years Experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-primary via-primary-glow to-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="w-full h-full bg-repeat" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-heading text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              Ready to Transform Your Property?
+            </h2>
+            <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+              Get a free professional consultation and discover how our cutting-edge HVAC solutions 
+              can improve your comfort while saving you money.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+              <Link to="/contact">
+                <Button variant="secondary" size="lg" className="text-lg px-10 py-4 bg-card text-primary hover:bg-card/90 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+                  Schedule Free Consultation
+                  <Phone className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                  Explore All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="flex flex-wrap justify-center items-center gap-8 text-primary-foreground/80 text-sm">
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full"></div>
+                Free Estimates & Consultations
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full"></div>
+                24/7 Emergency Service Available
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary-foreground rounded-full"></div>
+                100% Satisfaction Guaranteed
+              </span>
+            </div>
           </div>
         </div>
       </section>
