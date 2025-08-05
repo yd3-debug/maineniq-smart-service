@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { 
   Award, 
   Users, 
@@ -10,9 +11,20 @@ import {
   Wrench,
   Heart,
   Target,
-  Zap
+  Zap,
+  Settings,
+  Home
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Import professional work images
+import hvacInstallation from "@/assets/hvac-installation.jpg";
+import modernEquipment from "@/assets/modern-equipment.jpg";
+import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
+import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
+import beforeAfter from "@/assets/before-after.jpg";
+import teamWorking from "@/assets/team-working.jpg";
+import heroHvac from "@/assets/hero-hvac.jpg";
 
 const About = () => {
   const stats = [
@@ -68,19 +80,63 @@ const About = () => {
     }
   ];
 
+  const processSteps = [
+    {
+      icon: Home,
+      title: "Consultation",
+      description: "In-home assessment and professional recommendations",
+      image: hvacInstallation
+    },
+    {
+      icon: Settings,
+      title: "Installation",
+      description: "Expert installation with modern equipment and techniques",
+      image: modernEquipment
+    },
+    {
+      icon: Wrench,
+      title: "Maintenance",
+      description: "Ongoing service and support for optimal performance",
+      image: hvacMaintenance
+    },
+    {
+      icon: Star,
+      title: "Satisfaction",
+      description: "Guaranteed results and happy customers",
+      image: satisfiedCustomer
+    }
+  ];
+
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-hero-gradient text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-heading text-5xl font-bold mb-6">
+      {/* Hero Section with Background Image */}
+      <section 
+        className="relative py-32 bg-cover bg-center text-white"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroHvac})`
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="font-heading text-6xl font-bold mb-6 animate-fade-in">
             Your Trusted HVAC Partner Since 2009
           </h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90">
+          <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
             Established with a foundation of excellence, we've built our reputation on reliability, 
             professional standards, and unmatched customer service. Licensed, insured, and committed 
             to your complete satisfaction.
           </p>
+          <div className="flex justify-center gap-4">
+            <Link to="/contact">
+              <Button size="lg" className="bg-primary hover:bg-primary-glow text-white">
+                Get Free Estimate
+              </Button>
+            </Link>
+            <Link to="/services">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                View Services
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -99,7 +155,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Foundation Section */}
+      {/* Foundation Section with Visual */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -130,30 +186,101 @@ const About = () => {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <Card className="p-6">
+            <div className="relative">
+              <img 
+                src={teamWorking} 
+                alt="Professional HVAC team working together"
+                className="rounded-lg shadow-elegant w-full object-cover h-96"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <Card className="p-6 hover:shadow-card transition-shadow">
                   <Clock className="w-8 h-8 text-primary mb-3" />
                   <h3 className="font-semibold mb-2">24/7 Service</h3>
                   <p className="text-sm text-muted-foreground">Always available when you need us</p>
                 </Card>
-                <Card className="p-6">
+                <Card className="p-6 hover:shadow-card transition-shadow">
                   <Shield className="w-8 h-8 text-primary mb-3" />
                   <h3 className="font-semibold mb-2">Licensed & Insured</h3>
                   <p className="text-sm text-muted-foreground">Fully certified professionals</p>
                 </Card>
               </div>
-              <div className="space-y-4 pt-8">
-                <Card className="p-6">
-                  <Award className="w-8 h-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2">Quality Guarantee</h3>
-                  <p className="text-sm text-muted-foreground">100% satisfaction promise</p>
-                </Card>
-                <Card className="p-6">
-                  <Zap className="w-8 h-8 text-primary mb-3" />
-                  <h3 className="font-semibold mb-2">Energy Efficient</h3>
-                  <p className="text-sm text-muted-foreground">Green solutions focused</p>
-                </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-bold mb-6">Our Professional Process</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From consultation to completion, see how we deliver exceptional HVAC solutions.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="group">
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img 
+                    src={step.image} 
+                    alt={step.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <step.icon className="w-12 h-12 text-white" />
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg mb-3 text-center">{step.title}</h3>
+                <p className="text-muted-foreground text-center">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before/After Gallery Section */}
+      <section className="py-20 bg-accent">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-bold mb-6">See the Difference</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Real results from our professional HVAC installations and upgrades.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src={beforeAfter} 
+                alt="Before and after HVAC installation comparison"
+                className="rounded-lg shadow-elegant w-full"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="font-heading text-3xl font-bold">Professional Transformations</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold mb-2">Energy Efficiency Improvements</h4>
+                    <p className="text-muted-foreground">Up to 40% reduction in energy costs with modern systems</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold mb-2">Enhanced Comfort</h4>
+                    <p className="text-muted-foreground">Consistent temperature control throughout your space</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold mb-2">Improved Air Quality</h4>
+                    <p className="text-muted-foreground">Advanced filtration for healthier indoor environments</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -210,8 +337,49 @@ const About = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
+      {/* Equipment Showcase Section */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-bold mb-6">Modern Equipment & Technology</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              We use only the latest, most efficient HVAC systems and technology.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src={modernEquipment} 
+                alt="Modern HVAC equipment showcase"
+                className="rounded-lg shadow-elegant w-full"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="font-heading text-3xl font-bold">Cutting-Edge Solutions</h3>
+              <p className="text-lg text-muted-foreground">
+                Our commitment to excellence extends to the equipment we install. We partner with 
+                industry-leading manufacturers to provide you with the most reliable, efficient, 
+                and innovative HVAC solutions available.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="p-4 text-center">
+                  <Star className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h4 className="font-semibold">Premium Brands</h4>
+                  <p className="text-sm text-muted-foreground">Top manufacturers only</p>
+                </Card>
+                <Card className="p-4 text-center">
+                  <Zap className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <h4 className="font-semibold">Energy Efficient</h4>
+                  <p className="text-sm text-muted-foreground">Reduce utility costs</p>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-bold mb-6">Certifications & Credentials</h2>
@@ -228,8 +396,8 @@ const About = () => {
               "BBB Accredited",
               "Fully Insured"
             ].map((cert, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+              <div key={index} className="text-center group">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary-glow transition-colors">
                   <CheckCircle className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <p className="font-medium text-sm">{cert}</p>
