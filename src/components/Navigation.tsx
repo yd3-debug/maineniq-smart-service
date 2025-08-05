@@ -8,7 +8,6 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Why Professional HVAC", href: "/why-professional-hvac" },
     { name: "Case Studies", href: "/case-studies" },
@@ -49,7 +48,7 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" className="bg-primary hover:bg-primary-glow">
+            <Button size="sm" variant="accent">
               Get Quote
             </Button>
           </div>
@@ -85,7 +84,7 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button size="sm" className="bg-primary hover:bg-primary-glow w-fit">
+              <Button size="sm" variant="accent" className="w-fit">
                 Get Quote
               </Button>
             </div>

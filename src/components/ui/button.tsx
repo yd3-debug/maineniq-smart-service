@@ -9,17 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
+        default: "bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md hover:shadow-lg",
+          "bg-destructive text-white hover:bg-destructive/90 shadow-md hover:shadow-lg",
         outline:
-          "border border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground shadow-sm hover:shadow-md",
+          "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white shadow-sm hover:shadow-md",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md",
+          "bg-secondary text-white hover:bg-secondary/80 shadow-sm hover:shadow-md",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 shadow-elegant hover:shadow-glow transform hover:scale-[1.02]",
-        hero: "bg-primary/10 backdrop-blur-sm text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+        premium: "bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70 shadow-elegant hover:shadow-glow transform hover:scale-[1.02]",
+        hero: "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white hover:text-primary shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+        professional: "bg-professional text-white hover:bg-professional/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
+        accent: "bg-accent-orange text-white hover:bg-accent-orange/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
       },
       size: {
         default: "h-10 px-4 py-2",

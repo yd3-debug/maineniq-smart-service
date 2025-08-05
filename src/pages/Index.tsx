@@ -58,78 +58,85 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Professional HVAC Service" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40"></div>
-        </div>
-        
-        <div className="relative container mx-auto px-4 text-background">
-          <div className="max-w-4xl animate-fade-in">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3 text-background/80 font-medium">
-                <span className="w-8 h-[2px] bg-primary"></span>
-                <span>TRUSTED SINCE 2003 • LICENSED & INSURED</span>
-              </div>
-              
-              <h1 className="font-heading text-5xl lg:text-7xl font-bold leading-tight">
-                Professional HVAC & Smart Property Solutions
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-background/90 leading-relaxed max-w-3xl">
-                Transform your property with cutting-edge HVAC systems and smart home technology. 
-                Expert installation, maintenance, and consultation services backed by 20+ years of experience.
-              </p>
-              
+      <section className="relative py-32 bg-professional-gradient text-white overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(34, 40, 49, 0.8), rgba(57, 62, 70, 0.6)), url(${heroImage})`,
+          }}
+        />
+        <div className="relative container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 py-4">
-                <div className="flex items-center space-x-2 text-background/80">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm font-medium">500+ Projects Completed</span>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                  <Shield className="w-4 h-4 text-accent-blue" />
+                  <span>Licensed & Insured</span>
                 </div>
-                <div className="flex items-center space-x-2 text-background/80">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm font-medium">24/7 Emergency Service</span>
+                <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                  <Award className="w-4 h-4 text-accent-orange" />
+                  <span>20+ Years Experience</span>
                 </div>
-                <div className="flex items-center space-x-2 text-background/80">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm font-medium">99% Customer Satisfaction</span>
+                <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span>24/7 Emergency Service</span>
                 </div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="bg-primary hover:bg-primary-glow text-lg px-8 py-4 shadow-glow hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+
+              <div>
+                <h1 className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  Professional HVAC Solutions for{" "}
+                  <span className="text-accent-orange">Ultimate Comfort</span>
+                </h1>
+                <p className="text-xl mb-8 opacity-90 leading-relaxed">
+                  Expert installation, maintenance, and smart home integration. 
+                  Transform your property with energy-efficient HVAC systems designed for optimal comfort and savings.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" variant="accent" className="text-lg px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
-                  Call Now: +44 (0) 189 55 28 226
+                  Call Now: +44 783 456 2366
                 </Button>
                 <Link to="/services">
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-background text-background hover:bg-background hover:text-foreground shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300">
+                  <Button size="lg" variant="hero" className="text-lg px-8 py-4">
                     View Services
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
               </div>
-              
-              {/* Floating Stats Card */}
-              <div className="mt-8 inline-block bg-background/10 backdrop-blur-sm rounded-xl p-6 border border-background/20">
-                <div className="flex items-center space-x-8">
+
+              {/* Floating Stats */}
+              <div className="grid grid-cols-3 gap-6 mt-12">
+                <div className="text-center bg-accent-blue/20 backdrop-blur-sm rounded-lg p-4 border border-accent-blue/30">
+                  <div className="text-3xl font-bold text-accent-blue">500+</div>
+                  <div className="text-sm opacity-80">Happy Customers</div>
+                </div>
+                <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-lg p-4 border border-accent-orange/30">
+                  <div className="text-3xl font-bold text-accent-orange">30%</div>
+                  <div className="text-sm opacity-80">Energy Savings</div>
+                </div>
+                <div className="text-center bg-primary/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30">
+                  <div className="text-3xl font-bold text-primary">24/7</div>
+                  <div className="text-sm opacity-80">Support</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden lg:block">
+              <div className="relative">
+                <img 
+                  src={heroImage} 
+                  alt="Professional HVAC installation" 
+                  className="rounded-lg shadow-2xl"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-primary to-accent-blue text-white rounded-lg p-6 shadow-elegant">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-background">20+</div>
-                    <div className="text-sm text-background/80">Years Experience</div>
-                  </div>
-                  <div className="w-px h-12 bg-background/20"></div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-background">99%</div>
-                    <div className="text-sm text-background/80">Customer Satisfaction</div>
-                  </div>
-                  <div className="w-px h-12 bg-background/20"></div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-background">50%</div>
-                    <div className="text-sm text-background/80">Energy Savings</div>
+                    <Thermometer className="w-8 h-8 mx-auto mb-2" />
+                    <div className="font-bold text-lg">Perfect Climate</div>
+                    <div className="text-sm opacity-90">Year Round</div>
                   </div>
                 </div>
               </div>

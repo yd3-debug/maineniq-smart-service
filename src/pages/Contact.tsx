@@ -53,9 +53,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      primary: "+44 (0) 189 55 28 226",
+      primary: "+44 783 456 2366",
       secondary: "24/7 Emergency Line",
-      action: "tel:+441895528226"
+      action: "tel:+447834562366"
     },
     {
       icon: Mail,
@@ -74,9 +74,9 @@ const Contact = () => {
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      primary: "Chat with us",
+      primary: "+44 783 456 2366",
       secondary: "Instant messaging",
-      action: "#"
+      action: "https://wa.me/447834562366"
     }
   ];
 
@@ -166,7 +166,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+44 (0) 189 55 28 226"
+                        placeholder="+44 783 456 2366"
                       />
                     </div>
                     <div>
@@ -269,7 +269,7 @@ const Contact = () => {
                   <Phone className="w-8 h-8 mx-auto mb-3" />
                   <h3 className="font-bold text-xl mb-2">Emergency Service</h3>
                   <p className="mb-4 opacity-90">HVAC emergency? Call now!</p>
-                  <p className="text-2xl font-bold">+44 (0) 189 55 28 226</p>
+                  <p className="text-2xl font-bold">+44 783 456 2366</p>
                 </CardContent>
               </Card>
             </div>

@@ -17,6 +17,14 @@ All colors MUST be HSL.
     --primary: 142 55% 35%;         /* Professional green */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 142 60% 45%;    /* Lighter green for accents */
+    
+    /* Professional Color Palette */
+    --professional: 220 15% 25%;    /* Professional charcoal */
+    --professional-foreground: 0 0% 100%;
+    --accent-blue: 213 94% 68%;     /* Trust blue */
+    --accent-blue-foreground: 0 0% 100%;
+    --accent-orange: 24 100% 50%;   /* CTA orange */
+    --accent-orange-foreground: 0 0% 100%;
 
     /* Secondary Colors */
     --secondary: 0 0% 95%;          /* Light gray */
@@ -52,6 +60,11 @@ All colors MUST be HSL.
     --service-accent: 142 45% 15%;  /* Dark green for service highlights */
     --success: 142 55% 35%;         /* Success states */
     --whatsapp: 142 70% 40%;        /* WhatsApp green */
+    
+    /* Enhanced Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--professional)), hsl(var(--accent-blue)));
+    --gradient-professional: linear-gradient(135deg, hsl(var(--professional)), hsl(var(--accent-blue)));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--accent-orange)), hsl(var(--primary)));
 
     /* Professional Design Tokens */
     --shadow-elegant: 0 10px 30px -10px hsl(142 55% 35% / 0.3);
