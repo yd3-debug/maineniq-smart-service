@@ -20,7 +20,9 @@ import {
   Target,
   Users,
   Clock,
-  TrendingDown
+  TrendingDown,
+  AlertTriangle,
+  Wrench
 } from "lucide-react";
 import { 
   BarChart, 
@@ -42,105 +44,171 @@ import modernSystem from "@/assets/modern-hvac-system.jpg";
 import energyEfficiency from "@/assets/energy-efficiency.jpg";
 
 const WhyProfessionalHVAC = () => {
-  // Chart configuration for consistent theming
+  // Multi-colored chart configuration for professional presentation
   const chartConfig = {
+    // Problems (Red tones)
     oldSystem: {
       label: "Current System",
-      color: "hsl(var(--chart-1))",
+      color: "hsl(0 85% 60%)", // Red for problems
     },
+    wastage: {
+      label: "Energy Waste",
+      color: "hsl(0 70% 55%)", // Red for waste
+    },
+    // Solutions (Green/Blue tones)
     newSystem: {
       label: "Professional HVAC", 
-      color: "hsl(var(--chart-2))",
+      color: "hsl(142 55% 35%)", // Primary green for solutions
     },
-    energy: {
-      label: "Energy Usage",
-      color: "hsl(var(--chart-3))",
+    savings: {
+      label: "Savings",
+      color: "hsl(142 60% 45%)", // Lighter green for savings
     },
-    cost: {
-      label: "Annual Cost",
-      color: "hsl(var(--chart-4))",
+    // Efficiency (Blue tones)
+    efficiency: {
+      label: "Energy Efficiency",
+      color: "hsl(213 94% 68%)", // Blue for efficiency
+    },
+    comfort: {
+      label: "Comfort Level",
+      color: "hsl(24 100% 50%)", // Orange for comfort
+    },
+    // Air Quality (Purple tones)
+    airQuality: {
+      label: "Air Quality",
+      color: "hsl(270 60% 50%)", // Purple for air quality
+    },
+    health: {
+      label: "Health Benefits",
+      color: "hsl(280 50% 60%)", // Light purple for health
     },
   };
 
-  // Data for energy consumption comparison chart
+  // Multi-dimensional data for comprehensive analysis
   const energyComparisonData = [
-    { system: 'Current System', energy: 2400, cost: 320, fill: "hsl(var(--chart-1))" },
-    { system: 'Professional HVAC', energy: 1200, cost: 160, fill: "hsl(var(--chart-2))" }
+    { 
+      system: 'Current System', 
+      energy: 2400, 
+      cost: 3200, 
+      maintenance: 850,
+      comfort: 60,
+      fill: "hsl(0 85% 60%)" 
+    },
+    { 
+      system: 'Professional HVAC', 
+      energy: 1200, 
+      cost: 1600, 
+      maintenance: 250,
+      comfort: 95,
+      fill: "hsl(142 55% 35%)" 
+    }
   ];
 
-  // Data for monthly savings over time
-  const savingsOverTimeData = [
-    { month: 'Jan', oldSystem: 280, newSystem: 140, savings: 140 },
-    { month: 'Feb', oldSystem: 320, newSystem: 160, savings: 160 },
-    { month: 'Mar', oldSystem: 260, newSystem: 130, savings: 130 },
-    { month: 'Apr', oldSystem: 200, newSystem: 100, savings: 100 },
-    { month: 'May', oldSystem: 180, newSystem: 90, savings: 90 },
-    { month: 'Jun', oldSystem: 350, newSystem: 175, savings: 175 },
-    { month: 'Jul', oldSystem: 420, newSystem: 210, savings: 210 },
-    { month: 'Aug', oldSystem: 400, newSystem: 200, savings: 200 },
-    { month: 'Sep', oldSystem: 300, newSystem: 150, savings: 150 },
-    { month: 'Oct', oldSystem: 220, newSystem: 110, savings: 110 },
-    { month: 'Nov', oldSystem: 260, newSystem: 130, savings: 130 },
-    { month: 'Dec', oldSystem: 300, newSystem: 150, savings: 150 }
+  // Comprehensive monthly performance data
+  const monthlyPerformanceData = [
+    { month: 'Jan', oldCost: 280, newCost: 140, energySaved: 1200, comfortScore: 85, airQuality: 90 },
+    { month: 'Feb', oldCost: 320, newCost: 160, energySaved: 1300, comfortScore: 88, airQuality: 92 },
+    { month: 'Mar', oldCost: 260, newCost: 130, energySaved: 1100, comfortScore: 90, airQuality: 89 },
+    { month: 'Apr', oldCost: 200, newCost: 100, energySaved: 900, comfortScore: 92, airQuality: 94 },
+    { month: 'May', oldCost: 180, newCost: 90, energySaved: 800, comfortScore: 95, airQuality: 96 },
+    { month: 'Jun', oldCost: 350, newCost: 175, energySaved: 1500, comfortScore: 93, airQuality: 91 },
+    { month: 'Jul', oldCost: 420, newCost: 210, energySaved: 1800, comfortScore: 91, airQuality: 88 },
+    { month: 'Aug', oldCost: 400, newCost: 200, energySaved: 1700, comfortScore: 89, airQuality: 90 },
+    { month: 'Sep', oldCost: 300, newCost: 150, energySaved: 1300, comfortScore: 94, airQuality: 93 },
+    { month: 'Oct', oldCost: 220, newCost: 110, energySaved: 1000, comfortScore: 96, airQuality: 95 },
+    { month: 'Nov', oldCost: 260, newCost: 130, energySaved: 1100, comfortScore: 92, airQuality: 92 },
+    { month: 'Dec', oldCost: 300, newCost: 150, energySaved: 1200, comfortScore: 87, airQuality: 89 }
   ];
 
-  // Data for efficiency breakdown
-  const efficiencyData = [
-    { name: 'Energy Saved', value: 40, fill: "hsl(var(--chart-2))" },
-    { name: 'Energy Used', value: 60, fill: "hsl(var(--chart-1))" }
+  // Multi-faceted benefit breakdown data
+  const benefitBreakdownData = [
+    { name: 'Energy Savings', value: 40, fill: "hsl(142 55% 35%)", impact: "£800+ saved annually" },
+    { name: 'Comfort Improvement', value: 35, fill: "hsl(24 100% 50%)", impact: "95% comfort score" },
+    { name: 'Air Quality Enhancement', value: 25, fill: "hsl(270 60% 50%)", impact: "99.97% filtration" }
+  ];
+
+  // Service plan comparison data
+  const servicePlansData = [
+    { plan: 'No Service', reliability: 40, cost: 3200, breakdowns: 6, lifespan: 8 },
+    { plan: 'Basic Service', reliability: 70, cost: 2400, breakdowns: 3, lifespan: 12 },
+    { plan: 'Professional Annual Service', reliability: 95, cost: 1600, breakdowns: 0.5, lifespan: 18 }
+  ];
+
+  // ROI calculation data
+  const roiCalculationData = [
+    { category: 'Energy Bills', oldSystem: 3200, newSystem: 1600, savings: 1600 },
+    { category: 'Maintenance', oldSystem: 850, newSystem: 250, savings: 600 },
+    { category: 'Repairs', oldSystem: 1200, newSystem: 150, savings: 1050 },
+    { category: 'Total Annual', oldSystem: 5250, newSystem: 2000, savings: 3250 }
   ];
 
   const keyStats = [
     {
       icon: DollarSign,
-      value: "£800+",
-      label: "Average Annual Savings",
-      gradient: "from-emerald-500 to-green-600"
+      value: "£3,250",
+      label: "Total Annual Savings",
+      gradient: "from-emerald-500 to-green-600",
+      description: "Energy + maintenance + repair savings"
     },
     {
       icon: Zap,
-      value: "40%",
+      value: "50%",
       label: "Energy Reduction",
-      gradient: "from-blue-500 to-cyan-600"
+      gradient: "from-blue-500 to-cyan-600",
+      description: "Compared to outdated systems"
     },
     {
       icon: Shield,
       value: "99.97%",
       label: "Air Filtration",
-      gradient: "from-purple-500 to-indigo-600"
+      gradient: "from-purple-500 to-indigo-600",
+      description: "Hospital-grade air quality"
     },
     {
       icon: Home,
-      value: "20%",
-      label: "Property Value Increase",
-      gradient: "from-orange-500 to-amber-600"
+      value: "25%",
+      label: "Property Value Boost",
+      gradient: "from-orange-500 to-amber-600",
+      description: "Verified by property assessments"
     }
   ];
 
-  const currentChallenges = [
+  const costOfWaitingData = [
     {
-      icon: TrendingDown,
-      title: "Energy Inefficiency",
-      impact: "£1,200+ wasted annually",
-      description: "Outdated systems consume 40-60% more energy than necessary",
-      metric: "60%",
-      metricLabel: "Energy Waste"
+      icon: DollarSign,
+      title: "Financial Drain",
+      impact: "£3,250+ wasted annually",
+      description: "Every year you delay costs you thousands in unnecessary expenses",
+      metric: "£270",
+      metricLabel: "Monthly Waste",
+      urgency: "high"
     },
     {
       icon: Thermometer,
-      title: "Comfort Issues",
-      impact: "±5°C temperature variations",
-      description: "Inconsistent heating and cooling across different zones",
-      metric: "±5°C",
-      metricLabel: "Temperature Variation"
+      title: "Comfort Deterioration",
+      impact: "±7°C temperature swings",
+      description: "Inconsistent climate creates discomfort and reduces productivity",
+      metric: "±7°C",
+      metricLabel: "Temperature Variation",
+      urgency: "medium"
     },
     {
-      icon: Clock,
-      title: "Maintenance Burden",
-      impact: "£300+ per breakdown",
-      description: "Aging systems require 3x more frequent repairs",
-      metric: "3x",
-      metricLabel: "More Breakdowns"
+      icon: AlertTriangle,
+      title: "Health & Safety Risks",
+      impact: "Poor air quality exposure",
+      description: "Outdated filtration allows pollutants, allergens, and contaminants",
+      metric: "70%",
+      metricLabel: "Reduced Air Quality",
+      urgency: "high"
+    },
+    {
+      icon: TrendingDown,
+      title: "Property Value Decline",
+      impact: "£10,000+ value reduction",
+      description: "Outdated HVAC systems significantly impact property marketability",
+      metric: "-15%",
+      metricLabel: "Market Value Impact",
+      urgency: "high"
     }
   ];
 
@@ -165,11 +233,11 @@ const WhyProfessionalHVAC = () => {
             </div>
             
             <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-blue-100 to-emerald-200 bg-clip-text text-transparent">
-              Save £800+ Annually with Smart HVAC
+              Why Professional HVAC is Essential for Your Property
             </h1>
             <p className="text-xl mb-10 text-slate-200 max-w-3xl leading-relaxed">
-              Transform your property with intelligent HVAC technology that delivers measurable results: 
-              40% energy reduction, pristine air quality, and increased property value.
+              Discover how professional HVAC systems deliver £3,250+ annual savings, superior comfort, 
+              and protect your investment. Don't let outdated systems cost you thousands.
             </p>
             
             {/* Key Stats Cards */}
@@ -202,49 +270,53 @@ const WhyProfessionalHVAC = () => {
         </div>
       </section>
 
-      {/* Current State Analysis */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* The Cost of Waiting Section */}
+      <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-slate-600/10 text-slate-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <BarChart3 className="w-4 h-4" />
-              Current State Analysis
+            <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <AlertTriangle className="w-4 h-4" />
+              The Cost of Waiting
             </div>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-slate-800">
-              Is Your HVAC System Holding You Back?
+              What Happens If You Don't Act Now?
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Most properties are unknowingly wasting thousands annually. Here's what outdated systems are really costing you:
+              Every month you delay upgrading costs you hundreds. Here's the real impact of outdated HVAC systems:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {currentChallenges.map((challenge, index) => (
-              <Card key={index} className="border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                    <challenge.icon className="w-8 h-8 text-slate-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {costOfWaitingData.map((item, index) => (
+              <Card key={index} className={`border-2 hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm ${
+                item.urgency === 'high' ? 'border-red-200 hover:border-red-300' : 'border-orange-200 hover:border-orange-300'
+              }`}>
+                <CardContent className="p-6 text-center">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto ${
+                    item.urgency === 'high' ? 'bg-gradient-to-br from-red-100 to-red-200' : 'bg-gradient-to-br from-orange-100 to-orange-200'
+                  }`}>
+                    <item.icon className={`w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
                   </div>
-                  <h3 className="font-bold text-xl mb-3 text-slate-800">{challenge.title}</h3>
-                  <div className="text-3xl font-bold text-slate-700 mb-2">{challenge.metric}</div>
-                  <div className="text-sm font-medium text-slate-500 mb-4">{challenge.metricLabel}</div>
-                  <div className="text-lg font-semibold text-slate-600 mb-3">{challenge.impact}</div>
-                  <p className="text-slate-500 text-sm leading-relaxed">{challenge.description}</p>
+                  <h3 className="font-bold text-lg mb-2 text-slate-800">{item.title}</h3>
+                  <div className={`text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>{item.metric}</div>
+                  <div className="text-xs font-medium text-slate-500 mb-3">{item.metricLabel}</div>
+                  <div className="text-sm font-semibold text-slate-700 mb-2">{item.impact}</div>
+                  <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Energy Consumption Comparison Chart */}
-          <Card className="border-slate-200 shadow-xl bg-white/90 backdrop-blur-sm">
+          {/* Multi-Dimensional Comparison Chart */}
+          <Card className="border-red-200 shadow-xl bg-white/95 backdrop-blur-sm">
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-3 text-slate-800">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
                   <BarChart3 className="w-5 h-5 text-white" />
                 </div>
-                Annual Energy Consumption Analysis
+                Current vs Professional HVAC: Complete Comparison
               </CardTitle>
-              <p className="text-slate-600">Compare the efficiency gap between current and professional systems</p>
+              <p className="text-slate-600">See the dramatic differences across all key metrics</p>
             </CardHeader>
             <CardContent>
               <ChartContainer
@@ -267,35 +339,55 @@ const WhyProfessionalHVAC = () => {
                     />
                     <ChartTooltip 
                       content={<ChartTooltipContent />}
-                      cursor={{ fill: 'rgba(59, 130, 246, 0.1)' }}
+                      cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
                     />
                     <Bar 
-                      dataKey="energy" 
-                      name="Energy Usage (kWh)"
+                      dataKey="cost" 
+                      name="Annual Cost (£)"
                       radius={[4, 4, 0, 0]}
-                      fill="var(--color-energy)"
                     />
                   </BarChart>
                 </ResponsiveContainer>
               </ChartContainer>
+              
+              {/* Quick Stats Below Chart */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-200">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-red-600">2x</div>
+                  <div className="text-sm text-slate-600">Higher Energy Cost</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-red-600">3.4x</div>
+                  <div className="text-sm text-slate-600">More Maintenance</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-red-600">40%</div>
+                  <div className="text-sm text-slate-600">Less Comfort</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-green-600">£3,250</div>
+                  <div className="text-sm text-slate-600">Annual Savings</div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* Smart HVAC Solution */}
+      {/* Professional HVAC Benefits */}
       <section className="py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <Zap className="w-4 h-4" />
-              Smart Technology Solution
+              <CheckCircle className="w-4 h-4" />
+              Professional HVAC Benefits
             </div>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-700 via-blue-700 to-cyan-700 bg-clip-text text-transparent">
-              Professional HVAC: Measurable Results
+              Transform Your Property with Smart HVAC
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Advanced systems that deliver proven performance, significant savings, and enhanced comfort through intelligent technology.
+              Experience the difference professional HVAC makes: dramatic savings, superior comfort, 
+              and peace of mind through intelligent technology and expert installation.
             </p>
           </div>
 
@@ -303,39 +395,35 @@ const WhyProfessionalHVAC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {keyStats.map((stat, index) => (
               <Card key={index} className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 hover:shadow-2xl transition-all duration-500 group">
-                <CardContent className="p-8 text-center">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <stat.icon className="w-full h-full text-white" />
-                  </div>
-                  <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">{stat.value}</div>
-                  <p className="text-slate-600 font-medium">{stat.label}</p>
-                </CardContent>
+                 <CardContent className="p-8 text-center">
+                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                     <stat.icon className="w-full h-full text-white" />
+                   </div>
+                   <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">{stat.value}</div>
+                   <p className="text-slate-600 font-medium mb-2">{stat.label}</p>
+                   <p className="text-slate-500 text-sm">{stat.description}</p>
+                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Performance Charts */}
+          {/* Multi-Colored Performance Charts */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <Card className="border-white/50 bg-white/80 backdrop-blur-sm shadow-xl">
+            {/* Monthly Savings with Multiple Metrics */}
+            <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-slate-800">
                   <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-white" />
+                    <DollarSign className="w-5 h-5 text-white" />
                   </div>
-                  Monthly Savings Analysis
+                  Monthly Savings & Performance
                 </CardTitle>
-                <p className="text-slate-600">Track your energy cost reduction throughout the year</p>
+                <p className="text-slate-600">Track multiple benefits throughout the year</p>
               </CardHeader>
               <CardContent>
                 <ChartContainer config={chartConfig} className="h-72">
                   <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={savingsOverTimeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                      <defs>
-                        <linearGradient id="savingsGradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="hsl(var(--chart-2))" stopOpacity={0.3}/>
-                          <stop offset="95%" stopColor="hsl(var(--chart-2))" stopOpacity={0.1}/>
-                        </linearGradient>
-                      </defs>
+                    <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                       <XAxis 
                         dataKey="month" 
@@ -349,69 +437,179 @@ const WhyProfessionalHVAC = () => {
                         tick={{ fill: '#64748b', fontSize: 12 }}
                       />
                       <ChartTooltip content={<ChartTooltipContent />} />
-                      <Area
+                      <Line
                         type="monotone"
-                        dataKey="savings"
-                        stroke="hsl(var(--chart-2))"
+                        dataKey="energySaved"
+                        stroke="hsl(142 55% 35%)"
                         strokeWidth={3}
-                        fill="url(#savingsGradient)"
-                        name="Monthly Savings (£)"
+                        name="Energy Saved (kWh)"
+                        dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 4 }}
                       />
-                    </AreaChart>
+                      <Line
+                        type="monotone"
+                        dataKey="comfortScore"
+                        stroke="hsl(24 100% 50%)"
+                        strokeWidth={3}
+                        name="Comfort Score"
+                        dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 4 }}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="airQuality"
+                        stroke="hsl(270 60% 50%)"
+                        strokeWidth={3}
+                        name="Air Quality Score"
+                        dot={{ fill: "hsl(270 60% 50%)", strokeWidth: 2, r: 4 }}
+                      />
+                    </LineChart>
                   </ResponsiveContainer>
                 </ChartContainer>
               </CardContent>
             </Card>
 
-            <Card className="border-white/50 bg-white/80 backdrop-blur-sm shadow-xl">
+            {/* Multi-Benefit Breakdown Chart */}
+            <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-slate-800">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
                     <Target className="w-5 h-5 text-white" />
                   </div>
-                  Energy Efficiency Distribution
+                  Professional HVAC Benefits
                 </CardTitle>
-                <p className="text-slate-600">See how much energy you save with professional systems</p>
+                <p className="text-slate-600">Multi-dimensional improvements you'll experience</p>
               </CardHeader>
               <CardContent>
                 <ChartContainer config={chartConfig} className="h-72">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie
-                        data={efficiencyData}
+                        data={benefitBreakdownData}
                         cx="50%"
                         cy="50%"
-                        innerRadius={70}
-                        outerRadius={110}
-                        paddingAngle={6}
+                        innerRadius={60}
+                        outerRadius={100}
+                        paddingAngle={8}
                         dataKey="value"
-                        strokeWidth={2}
+                        strokeWidth={3}
                         stroke="#ffffff"
                       >
-                        {efficiencyData.map((entry, index) => (
+                        {benefitBreakdownData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.fill} />
                         ))}
                       </Pie>
                       <ChartTooltip 
                         content={<ChartTooltipContent />}
-                        formatter={(value) => [`${value}%`, 'Efficiency']}
+                        formatter={(value, name, props) => [
+                          `${value}% improvement`,
+                          props.payload.impact
+                        ]}
                       />
                     </PieChart>
                   </ResponsiveContainer>
                 </ChartContainer>
-                <div className="flex justify-center mt-6 space-x-8">
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
-                    <span className="text-sm font-medium text-slate-600">Energy Saved (40%)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-slate-400 rounded-full mr-3"></div>
-                    <span className="text-sm font-medium text-slate-600">Energy Used (60%)</span>
-                  </div>
+                <div className="grid grid-cols-1 gap-3 mt-6">
+                  {benefitBreakdownData.map((item, index) => (
+                    <div key={index} className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className="w-4 h-4 rounded-full mr-3" style={{ backgroundColor: item.fill }}></div>
+                        <span className="text-sm font-medium text-slate-700">{item.name}</span>
+                      </div>
+                      <span className="text-sm text-slate-500">{item.impact}</span>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
           </div>
+
+          {/* Service & Maintenance Section */}
+          <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50 to-green-50 shadow-xl mb-12">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-3 text-slate-800 text-2xl">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                  <Wrench className="w-6 h-6 text-white" />
+                </div>
+                Annual Service & Maintenance Plans
+              </CardTitle>
+              <p className="text-slate-600 text-lg">Protect your investment with professional maintenance that extends system life and ensures peak performance</p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {servicePlansData.map((plan, index) => (
+                  <Card key={index} className={`p-6 ${index === 2 ? 'border-emerald-300 bg-white shadow-lg' : 'bg-white/70'}`}>
+                    <div className="text-center">
+                      <h4 className="font-bold text-lg mb-4">{plan.plan}</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <div className="text-2xl font-bold text-emerald-600">{plan.reliability}%</div>
+                          <div className="text-sm text-slate-600">Reliability</div>
+                        </div>
+                        <div>
+                          <div className="text-xl font-bold text-slate-700">£{plan.cost}</div>
+                          <div className="text-sm text-slate-600">Annual Cost</div>
+                        </div>
+                        <div>
+                          <div className="text-lg font-bold text-orange-600">{plan.breakdowns}</div>
+                          <div className="text-sm text-slate-600">Avg. Breakdowns/Year</div>
+                        </div>
+                        <div>
+                          <div className="text-lg font-bold text-blue-600">{plan.lifespan} years</div>
+                          <div className="text-sm text-slate-600">System Lifespan</div>
+                        </div>
+                      </div>
+                      {index === 2 && (
+                        <div className="mt-4 text-sm font-medium text-emerald-600 bg-emerald-100 py-2 px-3 rounded-full">
+                          Recommended Plan
+                        </div>
+                      )}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="bg-white/80 rounded-xl p-6 border border-emerald-200">
+                <h5 className="font-bold text-lg mb-4 text-slate-800">Our Annual Service Includes:</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Comprehensive system inspection</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Filter replacement & cleaning</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Efficiency optimization</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Safety checks & testing</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Priority emergency service</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Performance monitoring</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Extended warranty coverage</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <span className="text-slate-700">Energy efficiency reports</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Performance Indicators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
