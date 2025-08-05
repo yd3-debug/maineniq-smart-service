@@ -17,122 +17,122 @@ const CaseStudies = () => {
   const portfolioProjects = [
     {
       id: 1,
-      title: "Luxury Residential Project LRP-001",
-      projectType: "High-End Residential",
+      title: "Luxury Flat Refurbishment LFR-001",
+      projectType: "Full Flat Renovation",
       location: "Mayfair District",
       completedDate: "Q1 2024",
-      projectValue: "£75K+",
+      projectValue: "£45K+",
       confidential: true,
-      tags: ["MVHR Systems", "Underfloor Heating", "Smart Controls"],
-      description: "Collaboration with award-winning interior design firm for premium residential development",
-      technicalScope: "Complete HVAC design and installation for luxury penthouse with bespoke climate zones",
+      tags: ["Full Refurbishment", "Luxury Finishes", "Designer Bathrooms"],
+      description: "Complete transformation in collaboration with award-winning interior design firm",
+      technicalScope: "Full flat renovation including kitchen, bathrooms, flooring, lighting, and custom joinery",
       achievements: [
-        "Whisper-quiet operation meeting strict acoustic requirements",
-        "Energy efficiency exceeding Building Regulations by 40%",
-        "Seamless integration with high-end interior finishes",
-        "Certified Passivhaus standard compliance"
+        "Property value increased by 35%",
+        "High-end finishes throughout",
+        "Client satisfaction: 5-star rating",
+        "Completed ahead of schedule"
       ],
-      image: "/src/assets/hiu-residential.jpg",
+      image: "/src/assets/before-after.jpg",
       height: "h-80"
     },
     {
       id: 2,
-      title: "Commercial Headquarters CHQ-003",
-      projectType: "Corporate Office",
+      title: "Executive Bathroom Suite EBS-003",
+      projectType: "Luxury Bathroom",
       location: "Canary Wharf",
       completedDate: "Q4 2023",
-      projectValue: "£120K+",
+      projectValue: "£25K+",
       confidential: true,
-      tags: ["BMS Integration", "Energy Recovery", "Zone Control"],
-      description: "Partnership with leading architectural practice for Grade A office building",
-      technicalScope: "Advanced HVAC systems with intelligent building management integration",
+      tags: ["Bathroom Design", "Premium Fittings", "Wet Room"],
+      description: "Bespoke bathroom design for high-end residential tower",
+      technicalScope: "Complete bathroom renovation with underfloor heating, luxury fixtures, and custom vanity",
       achievements: [
-        "BREEAM Excellent rating achieved",
-        "30% energy reduction vs. baseline design",
-        "Flexible zoning for agile working environments",
-        "Integration with smart building technologies"
+        "Marble and porcelain tile work",
+        "Rainfall shower and freestanding bath",
+        "Heated towel rails and mirrors",
+        "Smart lighting and ventilation"
       ],
-      image: "/src/assets/bms-control-room.jpg",
+      image: "/src/assets/renovation-comparison.jpg",
       height: "h-96"
     },
     {
       id: 3,
-      title: "Boutique Hotel Project BHP-002",
-      projectType: "Hospitality",
-      location: "Central London",
+      title: "Period Property Restoration PPR-002",
+      projectType: "Heritage Renovation",
+      location: "Bloomsbury",
       completedDate: "Q2 2024",
-      projectValue: "£95K+",
+      projectValue: "£55K+",
       confidential: true,
-      tags: ["Guest Comfort", "Noise Control", "Efficiency"],
-      description: "Exclusive collaboration with renowned hospitality design specialists",
-      technicalScope: "Silent HVAC solutions with individual room climate control systems",
+      tags: ["Period Features", "Conservation", "Original Details"],
+      description: "Sensitive restoration preserving character while adding modern amenities",
+      technicalScope: "Period property renovation maintaining original features with contemporary upgrades",
       achievements: [
-        "Ultra-quiet operation (<35dB) in guest rooms",
-        "Individual temperature control in 45 rooms",
-        "Rapid response climate adjustment",
-        "Enhanced guest satisfaction scores"
+        "Original Victorian features restored",
+        "Modern kitchen seamlessly integrated",
+        "Energy efficiency improvements",
+        "Planning approval for listed building"
       ],
-      image: "/src/assets/commercial-hvac.jpg",
+      image: "/src/assets/handyman-maintenance.jpg",
       height: "h-72"
     },
     {
       id: 4,
-      title: "Listed Building Restoration LBR-001",
-      projectType: "Heritage Conservation",
-      location: "Bloomsbury",
+      title: "End-of-Tenancy Transformation EOT-005",
+      projectType: "Property Makeover",
+      location: "Kensington",
       completedDate: "Q3 2023",
-      projectValue: "£65K+",
+      projectValue: "£15K+",
       confidential: true,
-      tags: ["Conservation", "Minimal Impact", "Listed Building"],
-      description: "Sensitive installation in Grade II listed building with conservation architects",
-      technicalScope: "Discrete HVAC installation preserving historical architectural features",
+      tags: ["Deep Cleaning", "Repairs", "Quick Turnaround"],
+      description: "Complete property refresh for luxury rental market preparation",
+      technicalScope: "Professional cleaning, repairs, painting, and minor upgrades for rental readiness",
       achievements: [
-        "Planning permission approval achieved",
-        "Zero impact on historical features",
-        "Modern comfort in period setting",
-        "Conservation officer full approval"
+        "7-day turnaround completion",
+        "Professional cleaning standards",
+        "All maintenance issues resolved",
+        "Rental value increased by 20%"
       ],
-      image: "/src/assets/modern-hvac-system.jpg",
+      image: "/src/assets/end-of-tenancy-cleaning.jpg",
       height: "h-88"
     },
     {
       id: 5,
-      title: "Luxury Apartment Development LAD-004",
-      projectType: "Residential Development",
-      location: "Kensington",
+      title: "Designer Kitchen Upgrade DKU-001",
+      projectType: "Kitchen Renovation",
+      location: "Chelsea",
       completedDate: "Q1 2024",
-      projectValue: "£200K+",
+      projectValue: "£35K+",
       confidential: true,
-      tags: ["Multi-Unit", "Premium Finishes", "Smart Systems"],
-      description: "Comprehensive HVAC design for exclusive residential development",
-      technicalScope: "Building-wide climate solutions with individual apartment control systems",
+      tags: ["Kitchen Design", "Premium Appliances", "Custom Cabinetry"],
+      description: "Bespoke kitchen design for luxury apartment development",
+      technicalScope: "Complete kitchen transformation with custom units, stone worktops, and integrated appliances",
       achievements: [
-        "12 luxury apartments fully equipped",
-        "Centralised plant with individual metering",
-        "Smart home integration capability",
-        "10-year comprehensive warranty"
+        "Handleless German cabinetry",
+        "Quartz waterfall island",
+        "Premium integrated appliances",
+        "Under-cabinet LED lighting system"
       ],
-      image: "/src/assets/energy-tech.jpg",
+      image: "/src/assets/professional-cleaning.jpg",
       height: "h-64"
     },
     {
       id: 6,
-      title: "Creative Studio Complex CSC-001",
-      projectType: "Commercial Creative",
-      location: "Shoreditch",
+      title: "Handyman Services Package HSP-012",
+      projectType: "Maintenance & Repairs",
+      location: "Central London",
       completedDate: "Q4 2023",
-      projectValue: "£85K+",
+      projectValue: "£8K+",
       confidential: true,
-      tags: ["Creative Spaces", "Flexible Zoning", "Air Quality"],
-      description: "Innovative HVAC solutions for modern creative workspace design",
-      technicalScope: "Adaptive climate control for versatile studio and office environments",
+      tags: ["Handyman Services", "Electrical", "Plumbing"],
+      description: "Comprehensive maintenance package for high-end residential property",
+      technicalScope: "Electrical repairs, plumbing updates, carpentry work, and general maintenance",
       achievements: [
-        "Enhanced air quality for creative work",
-        "Flexible zoning for different activities",
-        "Integrated with architectural lighting",
-        "Minimal visual impact on industrial aesthetic"
+        "24-hour emergency response",
+        "All electrical work certified",
+        "Plumbing efficiency improved",
+        "Regular maintenance schedule established"
       ],
-      image: "/src/assets/team-working.jpg",
+      image: "/src/assets/handyman-repair.jpg",
       height: "h-76"
     }
   ];
@@ -140,14 +140,16 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-hero-gradient text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560618124-8c6d6c4c70c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-heading text-5xl font-bold mb-6">
-            Professional Portfolio
+            Interior Design Portfolio
           </h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
-            Showcasing our expertise in high-end HVAC installations for luxury developments, 
-            prestigious buildings, and exclusive partnerships with leading interior designers and architects.
+            Showcasing our expertise in luxury refurbishments, bathroom renovations, full flat transformations, 
+            and professional services for high-end residential properties across London.
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm opacity-80">
             <div className="flex items-center space-x-2">
@@ -172,8 +174,8 @@ const CaseStudies = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div className="flex flex-col items-center space-y-2">
               <Building2 className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">25+ Premium Projects</h3>
-              <p className="text-sm text-muted-foreground">High-end installations</p>
+              <h3 className="font-semibold">50+ Refurbishment Projects</h3>
+              <p className="text-sm text-muted-foreground">Luxury transformations</p>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Lock className="w-8 h-8 text-primary" />
@@ -183,12 +185,12 @@ const CaseStudies = () => {
             <div className="flex flex-col items-center space-y-2">
               <Users className="w-8 h-8 text-primary" />
               <h3 className="font-semibold">Design Partnerships</h3>
-              <p className="text-sm text-muted-foreground">Architects & Designers</p>
+              <p className="text-sm text-muted-foreground">Interior Designers & Developers</p>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <Award className="w-8 h-8 text-primary" />
               <h3 className="font-semibold">Premium Standards</h3>
-              <p className="text-sm text-muted-foreground">Luxury specifications</p>
+              <p className="text-sm text-muted-foreground">Luxury finishes</p>
             </div>
           </div>
         </div>
@@ -198,10 +200,10 @@ const CaseStudies = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl font-bold mb-4">Exclusive Project Portfolio</h2>
+            <h2 className="font-heading text-4xl font-bold mb-4">Exclusive Refurbishment Portfolio</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Confidential projects showcasing our expertise in luxury HVAC installations 
-              for high-end residential, commercial, and heritage properties.
+              Confidential projects showcasing our expertise in luxury interior design, 
+              bathroom renovations, full flat refurbishments, and premium property services.
             </p>
           </div>
           
@@ -288,11 +290,11 @@ const CaseStudies = () => {
             <Card className="max-w-2xl mx-auto bg-accent/30 border-primary/20">
               <CardContent className="p-8">
                 <blockquote className="text-lg italic mb-4">
-                  "Their attention to detail and understanding of our design requirements was exceptional. 
-                  The HVAC integration was seamless and invisible, exactly what our luxury project demanded."
+                  "The transformation was beyond our expectations. Their craftsmanship and attention to detail 
+                  brought our vision to life perfectly. The bathroom renovation is absolutely stunning."
                 </blockquote>
                 <footer className="text-sm text-muted-foreground">
-                  — Leading Interior Design Firm, Mayfair Project
+                  — Leading Interior Design Firm, Chelsea Project
                 </footer>
               </CardContent>
             </Card>
@@ -305,11 +307,11 @@ const CaseStudies = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-heading text-4xl font-bold mb-6">
-              Partner with HVAC Specialists
+              Partner with Interior Design Specialists
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              We collaborate exclusively with interior designers, architects, and luxury developers 
-              to deliver seamless HVAC solutions that complement exceptional design.
+              We collaborate exclusively with interior designers, architects, and property developers 
+              to deliver exceptional refurbishment services that exceed luxury standards.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
