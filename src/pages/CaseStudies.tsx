@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,101 +5,137 @@ import {
   Calendar,
   MapPin,
   TrendingUp,
-  Star,
-  ArrowRight
+  Shield,
+  ArrowRight,
+  Building2,
+  Users,
+  Award,
+  Lock
 } from "lucide-react";
 
 const CaseStudies = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", "Residential", "Commercial", "Emergency", "Smart Solutions"];
-
-  const caseStudies = [
+  const portfolioProjects = [
     {
       id: 1,
-      title: "Downtown Office Building HVAC Upgrade",
-      category: "Commercial",
-      location: "Downtown District",
-      date: "March 2024",
-      duration: "2 weeks",
-      savings: "35% energy reduction",
-      rating: 5,
-      tags: ["Energy Efficiency", "Commercial", "Upgrade"],
-      challenge: "Outdated HVAC system causing high energy costs and inconsistent temperatures",
-      solution: "Complete system replacement with smart controls and zoned climate management",
-      results: [
-        "35% reduction in energy consumption",
-        "Improved temperature consistency across all floors",
-        "Enhanced air quality with advanced filtration",
-        "ROI achieved within 18 months"
+      title: "Luxury Residential Project LRP-001",
+      projectType: "High-End Residential",
+      location: "Mayfair District",
+      completedDate: "Q1 2024",
+      projectValue: "£75K+",
+      confidential: true,
+      tags: ["MVHR Systems", "Underfloor Heating", "Smart Controls"],
+      description: "Collaboration with award-winning interior design firm for premium residential development",
+      technicalScope: "Complete HVAC design and installation for luxury penthouse with bespoke climate zones",
+      achievements: [
+        "Whisper-quiet operation meeting strict acoustic requirements",
+        "Energy efficiency exceeding Building Regulations by 40%",
+        "Seamless integration with high-end interior finishes",
+        "Certified Passivhaus standard compliance"
       ],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
+      image: "/src/assets/hiu-residential.jpg",
+      height: "h-80"
     },
     {
       id: 2,
-      title: "Smart Home Climate Automation",
-      category: "Smart Solutions",
-      location: "Suburban Residence",
-      date: "February 2024",
-      duration: "3 days",
-      savings: "28% energy reduction",
-      rating: 5,
-      tags: ["Smart Home", "Automation", "Residential"],
-      challenge: "Homeowner wanted intelligent climate control with energy optimization",
-      solution: "Installation of smart thermostats, zoned HVAC, and automated scheduling",
-      results: [
-        "28% reduction in heating/cooling costs",
-        "Remote control and monitoring capabilities",
-        "Automated energy-saving schedules",
-        "Enhanced comfort with room-by-room control"
+      title: "Commercial Headquarters CHQ-003",
+      projectType: "Corporate Office",
+      location: "Canary Wharf",
+      completedDate: "Q4 2023",
+      projectValue: "£120K+",
+      confidential: true,
+      tags: ["BMS Integration", "Energy Recovery", "Zone Control"],
+      description: "Partnership with leading architectural practice for Grade A office building",
+      technicalScope: "Advanced HVAC systems with intelligent building management integration",
+      achievements: [
+        "BREEAM Excellent rating achieved",
+        "30% energy reduction vs. baseline design",
+        "Flexible zoning for agile working environments",
+        "Integration with smart building technologies"
       ],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop"
+      image: "/src/assets/bms-control-room.jpg",
+      height: "h-96"
     },
     {
       id: 3,
-      title: "Emergency Restaurant HVAC Repair",
-      category: "Emergency",
-      location: "Restaurant District",
-      date: "January 2024",
-      duration: "Same day",
-      savings: "Prevented $10K loss",
-      rating: 5,
-      tags: ["Emergency", "Commercial", "Restaurant"],
-      challenge: "Complete HVAC failure during peak business hours in winter",
-      solution: "Emergency diagnostic, temporary heating, and expedited system repair",
-      results: [
-        "System restored within 4 hours",
-        "Prevented business closure and revenue loss",
-        "Implemented preventive maintenance plan",
-        "Enhanced system reliability"
+      title: "Boutique Hotel Project BHP-002",
+      projectType: "Hospitality",
+      location: "Central London",
+      completedDate: "Q2 2024",
+      projectValue: "£95K+",
+      confidential: true,
+      tags: ["Guest Comfort", "Noise Control", "Efficiency"],
+      description: "Exclusive collaboration with renowned hospitality design specialists",
+      technicalScope: "Silent HVAC solutions with individual room climate control systems",
+      achievements: [
+        "Ultra-quiet operation (<35dB) in guest rooms",
+        "Individual temperature control in 45 rooms",
+        "Rapid response climate adjustment",
+        "Enhanced guest satisfaction scores"
       ],
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop"
+      image: "/src/assets/commercial-hvac.jpg",
+      height: "h-72"
     },
     {
       id: 4,
-      title: "Luxury Home Complete HVAC Installation",
-      category: "Residential",
-      location: "Upscale Neighborhood",
-      date: "December 2023",
-      duration: "1 week",
-      savings: "40% energy reduction",
-      rating: 5,
-      tags: ["New Installation", "Luxury", "Residential"],
-      challenge: "New construction requiring high-efficiency HVAC for large luxury home",
-      solution: "Design and installation of zoned high-efficiency system with smart controls",
-      results: [
-        "40% more efficient than standard systems",
-        "Perfect climate control in all zones",
-        "Whisper-quiet operation",
+      title: "Listed Building Restoration LBR-001",
+      projectType: "Heritage Conservation",
+      location: "Bloomsbury",
+      completedDate: "Q3 2023",
+      projectValue: "£65K+",
+      confidential: true,
+      tags: ["Conservation", "Minimal Impact", "Listed Building"],
+      description: "Sensitive installation in Grade II listed building with conservation architects",
+      technicalScope: "Discrete HVAC installation preserving historical architectural features",
+      achievements: [
+        "Planning permission approval achieved",
+        "Zero impact on historical features",
+        "Modern comfort in period setting",
+        "Conservation officer full approval"
+      ],
+      image: "/src/assets/modern-hvac-system.jpg",
+      height: "h-88"
+    },
+    {
+      id: 5,
+      title: "Luxury Apartment Development LAD-004",
+      projectType: "Residential Development",
+      location: "Kensington",
+      completedDate: "Q1 2024",
+      projectValue: "£200K+",
+      confidential: true,
+      tags: ["Multi-Unit", "Premium Finishes", "Smart Systems"],
+      description: "Comprehensive HVAC design for exclusive residential development",
+      technicalScope: "Building-wide climate solutions with individual apartment control systems",
+      achievements: [
+        "12 luxury apartments fully equipped",
+        "Centralised plant with individual metering",
+        "Smart home integration capability",
         "10-year comprehensive warranty"
       ],
-      image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&h=400&fit=crop"
+      image: "/src/assets/energy-tech.jpg",
+      height: "h-64"
+    },
+    {
+      id: 6,
+      title: "Creative Studio Complex CSC-001",
+      projectType: "Commercial Creative",
+      location: "Shoreditch",
+      completedDate: "Q4 2023",
+      projectValue: "£85K+",
+      confidential: true,
+      tags: ["Creative Spaces", "Flexible Zoning", "Air Quality"],
+      description: "Innovative HVAC solutions for modern creative workspace design",
+      technicalScope: "Adaptive climate control for versatile studio and office environments",
+      achievements: [
+        "Enhanced air quality for creative work",
+        "Flexible zoning for different activities",
+        "Integrated with architectural lighting",
+        "Minimal visual impact on industrial aesthetic"
+      ],
+      image: "/src/assets/team-working.jpg",
+      height: "h-76"
     }
   ];
-
-  const filteredStudies = selectedCategory === "All" 
-    ? caseStudies 
-    : caseStudies.filter(study => study.category === selectedCategory);
 
   return (
     <div className="min-h-screen pt-16">
@@ -108,97 +143,136 @@ const CaseStudies = () => {
       <section className="py-20 bg-hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-heading text-5xl font-bold mb-6">
-            Case Studies
+            Professional Portfolio
           </h1>
-          <p className="text-xl max-w-2xl mx-auto opacity-90">
-            Real results from real projects. See how we've helped our clients 
-            achieve optimal comfort and efficiency.
+          <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
+            Showcasing our expertise in high-end HVAC installations for luxury developments, 
+            prestigious buildings, and exclusive partnerships with leading interior designers and architects.
           </p>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="py-8 bg-background border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className={selectedCategory === category ? "bg-primary hover:bg-primary-glow" : ""}
-              >
-                {category}
-              </Button>
-            ))}
+          <div className="flex items-center justify-center space-x-8 text-sm opacity-80">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-5 h-5" />
+              <span>Confidential Projects</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Award className="w-5 h-5" />
+              <span>Premium Standards</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Users className="w-5 h-5" />
+              <span>Design Partnerships</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* Professional Credentials Section */}
+      <section className="py-12 bg-accent/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center space-y-2">
+              <Building2 className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">25+ Premium Projects</h3>
+              <p className="text-sm text-muted-foreground">High-end installations</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2">
+              <Lock className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Confidential Portfolio</h3>
+              <p className="text-sm text-muted-foreground">Discretion guaranteed</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2">
+              <Users className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Design Partnerships</h3>
+              <p className="text-sm text-muted-foreground">Architects & Designers</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2">
+              <Award className="w-8 h-8 text-primary" />
+              <h3 className="font-semibold">Premium Standards</h3>
+              <p className="text-sm text-muted-foreground">Luxury specifications</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Gallery */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredStudies.map((study) => (
-              <Card key={study.id} className="group hover:shadow-elegant transition-all duration-300">
-                <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl font-bold mb-4">Exclusive Project Portfolio</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Confidential projects showcasing our expertise in luxury HVAC installations 
+              for high-end residential, commercial, and heritage properties.
+            </p>
+          </div>
+          
+          {/* Masonry-style Grid */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {portfolioProjects.map((project) => (
+              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-300 overflow-hidden`}>
+                <div className="relative h-48 bg-muted overflow-hidden">
                   <img 
-                    src={study.image} 
-                    alt={study.title}
+                    src={project.image} 
+                    alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-black/70 text-white border-0">
+                      <Lock className="w-3 h-3 mr-1" />
+                      Confidential
+                    </Badge>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <Badge className="bg-primary text-primary-foreground">
+                      {project.projectValue}
+                    </Badge>
+                  </div>
                 </div>
-                <CardHeader>
+                
+                <CardHeader className="pb-3">
                   <div className="flex items-start justify-between mb-2">
-                    <div className="flex flex-wrap gap-2">
-                      {study.tags.map((tag, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
+                    <div className="flex flex-wrap gap-1">
+                      {project.tags.slice(0, 2).map((tag, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex items-center space-x-1">
-                      {[...Array(study.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                      ))}
-                    </div>
                   </div>
-                  <CardTitle className="text-xl mb-2">{study.title}</CardTitle>
-                  <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
+                  <CardTitle className="text-lg mb-2 leading-tight">{project.title}</CardTitle>
+                  <div className="space-y-1 text-sm text-muted-foreground">
+                    <div className="flex items-center space-x-2">
+                      <Building2 className="w-4 h-4" />
+                      <span>{project.projectType}</span>
+                    </div>
                     <div className="flex items-center space-x-2">
                       <MapPin className="w-4 h-4" />
-                      <span>{study.location}</span>
+                      <span>{project.location}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Calendar className="w-4 h-4" />
-                      <span>{study.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <TrendingUp className="w-4 h-4" />
-                      <span>{study.savings}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <span className="font-medium">Duration: {study.duration}</span>
+                      <span>Completed {project.completedDate}</span>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
+                
+                <CardContent className="pt-0">
+                  <div className="space-y-3">
+                    <p className="text-sm text-muted-foreground italic">
+                      {project.description}
+                    </p>
+                    
                     <div>
-                      <h4 className="font-semibold mb-2">Challenge</h4>
-                      <p className="text-sm text-muted-foreground">{study.challenge}</p>
+                      <h4 className="font-semibold mb-1 text-sm">Technical Scope</h4>
+                      <p className="text-xs text-muted-foreground">{project.technicalScope}</p>
                     </div>
+                    
                     <div>
-                      <h4 className="font-semibold mb-2">Solution</h4>
-                      <p className="text-sm text-muted-foreground">{study.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Results</h4>
+                      <h4 className="font-semibold mb-2 text-sm">Key Achievements</h4>
                       <ul className="space-y-1">
-                        {study.results.map((result, index) => (
-                          <li key={index} className="text-sm text-muted-foreground flex items-start space-x-2">
-                            <span className="text-primary">•</span>
-                            <span>{result}</span>
+                        {project.achievements.slice(0, 3).map((achievement, index) => (
+                          <li key={index} className="text-xs text-muted-foreground flex items-start space-x-2">
+                            <span className="text-primary text-xs">•</span>
+                            <span>{achievement}</span>
                           </li>
                         ))}
                       </ul>
@@ -208,23 +282,70 @@ const CaseStudies = () => {
               </Card>
             ))}
           </div>
+          
+          {/* Testimonial Section */}
+          <div className="mt-16 text-center">
+            <Card className="max-w-2xl mx-auto bg-accent/30 border-primary/20">
+              <CardContent className="p-8">
+                <blockquote className="text-lg italic mb-4">
+                  "Their attention to detail and understanding of our design requirements was exceptional. 
+                  The HVAC integration was seamless and invisible, exactly what our luxury project demanded."
+                </blockquote>
+                <footer className="text-sm text-muted-foreground">
+                  — Leading Interior Design Firm, Mayfair Project
+                </footer>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-accent">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6">
-            Ready to Start Your Success Story?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join our satisfied clients who have achieved optimal comfort and efficiency. 
-            Let's discuss your HVAC needs.
-          </p>
-          <Button size="lg" className="bg-primary hover:bg-primary-glow">
-            Start Your Project
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+      {/* Design Partnership CTA */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-heading text-4xl font-bold mb-6">
+              Partner with HVAC Specialists
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              We collaborate exclusively with interior designers, architects, and luxury developers 
+              to deliver seamless HVAC solutions that complement exceptional design.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold">Discretion Guaranteed</h3>
+                <p className="text-sm text-muted-foreground">Confidential project handling</p>
+              </div>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold">Design Collaboration</h3>
+                <p className="text-sm text-muted-foreground">Seamless integration support</p>
+              </div>
+              <div className="flex flex-col items-center space-y-2">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold">Premium Standards</h3>
+                <p className="text-sm text-muted-foreground">Luxury project expertise</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-primary hover:bg-primary-glow">
+                Partner with Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button size="lg" variant="outline">
+                Request Portfolio Access
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
