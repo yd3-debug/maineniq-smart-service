@@ -9,6 +9,7 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 import CookieBanner from "./components/CookieBanner";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import WhyProfessionalHVAC from "./pages/WhyProfessionalHVAC";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -38,6 +39,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout><Index /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/why-professional-hvac" element={<Layout><WhyProfessionalHVAC /></Layout>} />
           <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />

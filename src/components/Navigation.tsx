@@ -10,6 +10,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Why Professional HVAC", href: "/why-professional-hvac" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
