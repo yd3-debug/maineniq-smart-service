@@ -1,6 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
 import { 
   Calendar,
   MapPin,
@@ -10,10 +13,87 @@ import {
   Building2,
   Users,
   Award,
-  Lock
+  Lock,
+  Eye,
+  Star,
+  Quote,
+  CheckCircle,
+  FileText,
+  Clock,
+  Filter,
+  MessageSquare
 } from "lucide-react";
+import embassyGardensHero from "@/assets/embassy-gardens-hero.jpg";
 
 const CaseStudies = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const projectFilters = ["All", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
+
+  const workProcess = [
+    {
+      step: 1,
+      title: "Initial Consultation",
+      description: "Meeting with design team to understand project vision and requirements",
+      duration: "1-2 days"
+    },
+    {
+      step: 2,
+      title: "Technical Assessment",
+      description: "Detailed property survey and technical feasibility analysis",
+      duration: "3-5 days"
+    },
+    {
+      step: 3,
+      title: "Detailed Proposal",
+      description: "Comprehensive project plan with timelines and specifications",
+      duration: "5-7 days"
+    },
+    {
+      step: 4,
+      title: "Project Execution",
+      description: "Professional implementation with daily progress updates",
+      duration: "2-8 weeks"
+    },
+    {
+      step: 5,
+      title: "Quality Assurance",
+      description: "Final inspection and handover with guarantees",
+      duration: "1-2 days"
+    }
+  ];
+
+  const testimonials = [
+    {
+      text: "Exceptional craftsmanship and attention to detail. The team transformed our client's vision into reality perfectly.",
+      author: "Sarah Mitchell",
+      company: "Mitchell & Associates Interior Design",
+      project: "Mayfair Luxury Apartment",
+      rating: 5
+    },
+    {
+      text: "Professional, reliable, and discreet. Their understanding of high-end residential work is unmatched.",
+      author: "James Richardson",
+      company: "Richardson Architecture",
+      project: "Chelsea Townhouse",
+      rating: 5
+    },
+    {
+      text: "The quality of workmanship exceeded our expectations. Every detail was executed to perfection.",
+      author: "Emma Clarke",
+      company: "Clarke Design Studio",
+      project: "Kensington Penthouse",
+      rating: 5
+    }
+  ];
+
+  const companyStats = [
+    { label: "Projects Completed", value: "150+", icon: Building2 },
+    { label: "Design Partners", value: "25+", icon: Users },
+    { label: "Client Satisfaction", value: "98%", icon: Star },
+    { label: "Years Experience", value: "12+", icon: Award }
+  ];
   const portfolioProjects = [
     {
       id: 1,
@@ -141,16 +221,27 @@ const CaseStudies = () => {
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560618124-8c6d6c4c70c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${embassyGardensHero})` }}
+        ></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-heading text-5xl font-bold mb-6">
-            Interior Design Portfolio
+            Premium Refurbishment Portfolio
           </h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
-            Showcasing our expertise in luxury refurbishments, bathroom renovations, full flat transformations, 
-            and professional services for high-end residential properties across London.
+            Exclusive collaboration with interior designers and architects on luxury developments like Embassy Gardens. 
+            Delivering exceptional craftsmanship for high-end residential properties across London's prestigious districts.
           </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            {companyStats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
+                <div className="text-sm opacity-80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
           <div className="flex items-center justify-center space-x-8 text-sm opacity-80">
             <div className="flex items-center space-x-2">
               <Shield className="w-5 h-5" />
@@ -201,15 +292,33 @@ const CaseStudies = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading text-4xl font-bold mb-4">Exclusive Refurbishment Portfolio</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Confidential projects showcasing our expertise in luxury interior design, 
               bathroom renovations, full flat refurbishments, and premium property services.
             </p>
+            
+            {/* Project Filters */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {projectFilters.map((filter) => (
+                <Button
+                  key={filter}
+                  variant={selectedFilter === filter ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedFilter(filter)}
+                  className="mb-2"
+                >
+                  <Filter className="w-4 h-4 mr-2" />
+                  {filter}
+                </Button>
+              ))}
+            </div>
           </div>
           
-          {/* Masonry-style Grid */}
+          {/* Enhanced Project Grid with Modal Details */}
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {portfolioProjects.map((project) => (
+            {portfolioProjects
+              .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
+              .map((project) => (
               <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-300 overflow-hidden`}>
                 <div className="relative h-48 bg-muted overflow-hidden">
                   <img 
@@ -227,6 +336,91 @@ const CaseStudies = () => {
                     <Badge className="bg-primary text-primary-foreground">
                       {project.projectValue}
                     </Badge>
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="secondary" size="sm">
+                          <Eye className="w-4 h-4 mr-2" />
+                          View Details
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-xl mb-4">{project.title}</DialogTitle>
+                        </DialogHeader>
+                        <Tabs defaultValue="overview" className="w-full">
+                          <TabsList className="grid w-full grid-cols-3">
+                            <TabsTrigger value="overview">Overview</TabsTrigger>
+                            <TabsTrigger value="details">Project Details</TabsTrigger>
+                            <TabsTrigger value="results">Results</TabsTrigger>
+                          </TabsList>
+                          <TabsContent value="overview" className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              <div>
+                                <img 
+                                  src={project.image} 
+                                  alt={project.title}
+                                  className="w-full h-64 object-cover rounded-lg"
+                                />
+                              </div>
+                              <div className="space-y-4">
+                                <div>
+                                  <h4 className="font-semibold mb-2">Project Information</h4>
+                                  <div className="space-y-2 text-sm">
+                                    <div className="flex items-center space-x-2">
+                                      <Building2 className="w-4 h-4 text-primary" />
+                                      <span>{project.projectType}</span>
+                                    </div>
+                                    <div className="flex items-center space-x-2">
+                                      <MapPin className="w-4 h-4 text-primary" />
+                                      <span>{project.location}</span>
+                                    </div>
+                                    <div className="flex items-center space-x-2">
+                                      <Calendar className="w-4 h-4 text-primary" />
+                                      <span>Completed {project.completedDate}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div>
+                                  <h4 className="font-semibold mb-2">Project Tags</h4>
+                                  <div className="flex flex-wrap gap-2">
+                                    {project.tags.map((tag, index) => (
+                                      <Badge key={index} variant="outline">
+                                        {tag}
+                                      </Badge>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </TabsContent>
+                          <TabsContent value="details" className="space-y-4">
+                            <div>
+                              <h4 className="font-semibold mb-2">Project Description</h4>
+                              <p className="text-muted-foreground mb-4">{project.description}</p>
+                            </div>
+                            <div>
+                              <h4 className="font-semibold mb-2">Technical Scope</h4>
+                              <p className="text-muted-foreground">{project.technicalScope}</p>
+                            </div>
+                          </TabsContent>
+                          <TabsContent value="results" className="space-y-4">
+                            <div>
+                              <h4 className="font-semibold mb-4">Key Achievements</h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {project.achievements.map((achievement, index) => (
+                                  <div key={index} className="flex items-start space-x-3 p-3 bg-accent/30 rounded-lg">
+                                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                                    <span className="text-sm">{achievement}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </TabsContent>
+                        </Tabs>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
                 
@@ -263,21 +457,11 @@ const CaseStudies = () => {
                       {project.description}
                     </p>
                     
-                    <div>
-                      <h4 className="font-semibold mb-1 text-sm">Technical Scope</h4>
-                      <p className="text-xs text-muted-foreground">{project.technicalScope}</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-2 text-sm">Key Achievements</h4>
-                      <ul className="space-y-1">
-                        {project.achievements.slice(0, 3).map((achievement, index) => (
-                          <li key={index} className="text-xs text-muted-foreground flex items-start space-x-2">
-                            <span className="text-primary text-xs">•</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="outline" className="flex-1">
+                        <MessageSquare className="w-4 h-4 mr-2" />
+                        Request Quote
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -285,19 +469,66 @@ const CaseStudies = () => {
             ))}
           </div>
           
-          {/* Testimonial Section */}
-          <div className="mt-16 text-center">
-            <Card className="max-w-2xl mx-auto bg-accent/30 border-primary/20">
-              <CardContent className="p-8">
-                <blockquote className="text-lg italic mb-4">
-                  "The transformation was beyond our expectations. Their craftsmanship and attention to detail 
-                  brought our vision to life perfectly. The bathroom renovation is absolutely stunning."
-                </blockquote>
-                <footer className="text-sm text-muted-foreground">
-                  — Leading Interior Design Firm, Chelsea Project
-                </footer>
-              </CardContent>
-            </Card>
+          {/* Enhanced Testimonials Section */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-center mb-8">What Our Design Partners Say</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-accent/30 border-primary/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <blockquote className="text-sm italic mb-4">
+                      <Quote className="w-4 h-4 text-primary mb-2" />
+                      "{testimonial.text}"
+                    </blockquote>
+                    <footer className="text-xs text-muted-foreground">
+                      <div className="font-semibold">{testimonial.author}</div>
+                      <div>{testimonial.company}</div>
+                      <div className="text-primary">{testimonial.project}</div>
+                    </footer>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Process Section */}
+      <section className="py-20 bg-accent/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl font-bold mb-4">Our Collaboration Process</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A seamless approach to working with interior designers and architects from concept to completion.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+              {workProcess.map((step, index) => (
+                <div key={step.step} className="text-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                      {step.step}
+                    </div>
+                    {index < workProcess.length - 1 && (
+                      <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-primary/30 -z-10"></div>
+                    )}
+                  </div>
+                  <h3 className="font-semibold mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">{step.description}</p>
+                  <div className="flex items-center justify-center text-xs text-primary">
+                    <Clock className="w-3 h-3 mr-1" />
+                    {step.duration}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
