@@ -112,7 +112,7 @@ const CaseStudies = () => {
         "Client satisfaction: 5-star rating",
         "Completed ahead of schedule"
       ],
-      image: "/src/assets/before-after.jpg",
+      image: "/src/assets/renovation-comparison.jpg",
       height: "h-80"
     },
     {
