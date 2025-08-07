@@ -23,7 +23,7 @@ import {
   Filter,
   MessageSquare
 } from "lucide-react";
-import heroImage from "@/assets/smart-home-setup.jpg";
+import heroImage from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
@@ -269,7 +269,7 @@ import TrustStrip from "@/components/TrustStrip";
   }, []);
 
   return (
-    <main className="min-h-screen pt-0">
+    <main className="min-h-screen pt-16">
       {/* Hero Section - Elegant & Flowing */}
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
           {/* Background Image as <img> for better focal control */}
@@ -277,7 +277,7 @@ import TrustStrip from "@/components/TrustStrip";
             <source srcSet={heroImage} />
             <img
               src={heroImage}
-              alt="Premium refurbishment case studies hero image"
+              alt="Luxury flat refurbishment projects and premium residential developments"
               className="absolute inset-0 w-full h-full object-cover md:object-[50%_30%] lg:object-[50%_25%]"
               loading="eager"
               decoding="async"
