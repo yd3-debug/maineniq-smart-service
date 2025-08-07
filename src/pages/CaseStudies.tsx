@@ -283,7 +283,7 @@ import TrustStrip from "@/components/TrustStrip";
               decoding="async"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
           
           {/* Content - Refined & Elegant */}
           <div className="container mx-auto px-6 text-center relative z-10">
@@ -295,7 +295,7 @@ import TrustStrip from "@/components/TrustStrip";
                     Case Studies Portfolio
                   </span>
                 </h1>
-                <div className="w-24 h-0.5 bg-gradient-to-r from-luxury-gold to-primary mx-auto mb-8"></div>
+                <div className="w-24 h-0.5 bg-primary mx-auto mb-8"></div>
               </div>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 mb-16 leading-relaxed font-light">
                 Exclusive collaboration with interior designers and architects on luxury developments. 
@@ -340,14 +340,14 @@ import TrustStrip from "@/components/TrustStrip";
       <TrustStrip />
 
       {/* Portfolio Filter - Elegant */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-light mb-4">
               Project
               <span className="font-bold text-primary"> Portfolio</span>
             </h2>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-luxury-gold mx-auto mb-6"></div>
+            <div className="w-16 h-0.5 bg-primary mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground mb-12 font-light max-w-xl mx-auto leading-relaxed">
               Select projects showcasing our premium refurbishment capabilities
             </p>
@@ -615,7 +615,7 @@ import TrustStrip from "@/components/TrustStrip";
       </section>
 
       {/* Design Partnership CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5">
+      <section className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-heading text-4xl font-bold mb-6">
