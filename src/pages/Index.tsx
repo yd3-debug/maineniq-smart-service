@@ -22,6 +22,7 @@ import heroImage from "@/assets/hero-hvac.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
+import { CONTACT } from "@/config/contact";
 
 const Index = () => {
   const services = [
@@ -92,10 +93,12 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" variant="accent" className="text-lg px-8 py-4">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: +44 783 456 2366
-              </Button>
+<Button asChild size="lg" variant="accent" className="text-lg px-8 py-4">
+  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
+    <Phone className="w-5 h-5 mr-2" />
+    Call Now
+  </a>
+</Button>
               <Link to="/services">
                 <Button size="lg" variant="hero" className="text-lg px-8 py-4">
                   View Services
@@ -341,10 +344,12 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent" className="text-lg px-8 py-4">
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now: +44 783 456 2366
-            </Button>
+<Button asChild size="lg" variant="accent" className="text-lg px-8 py-4">
+  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
+    <Phone className="w-5 h-5 mr-2" />
+    Call Now
+  </a>
+</Button>
             <Link to="/contact">
               <Button size="lg" variant="hero" className="text-lg px-8 py-4">
                 Get Free Quote

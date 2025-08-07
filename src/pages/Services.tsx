@@ -26,6 +26,7 @@ import handymanRepair from "@/assets/handyman-repair.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
+import { CONTACT } from "@/config/contact";
 
 const Services = () => {
   const services = [
@@ -297,10 +298,12 @@ const Services = () => {
                 Get Professional Quote
               </Button>
             </Link>
-            <Button variant="hero" size="lg" className="text-lg px-8">
-              <Phone className="w-5 h-5 mr-2" />
-              Call: +44 783 456 2366
-            </Button>
+<Button asChild variant="hero" size="lg" className="text-lg px-8">
+  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
+    <Phone className="w-5 h-5 mr-2" />
+    Call Now
+  </a>
+</Button>
           </div>
         </div>
       </section>

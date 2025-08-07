@@ -46,6 +46,7 @@ import {
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import modernSystem from "@/assets/modern-hvac-system.jpg";
 import energyEfficiency from "@/assets/energy-efficiency.jpg";
+import { CONTACT } from "@/config/contact";
 
 const WhyProfessionalHVAC = () => {
   // Multi-colored chart configuration for professional presentation
@@ -1017,19 +1018,19 @@ const WhyProfessionalHVAC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button variant="secondary" size="lg" className="text-lg px-8 bg-background text-foreground hover:bg-background/90">
-                Get Free Assessment & Savings Report
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <a href="tel:+441895528226" className="inline-flex">
-              <Button variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Call +44 (0) 189 55 28 226
-              </Button>
-            </a>
-          </div>
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Link to="/contact">
+    <Button variant="secondary" size="lg" className="text-lg px-8 bg-background text-foreground hover:bg-background/90">
+      Get Free Assessment & Savings Report
+      <ArrowRight className="w-5 h-5 ml-2" />
+    </Button>
+  </Link>
+  <Button asChild variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+    <a href={`tel:${CONTACT.phones.landlineTel}`} aria-label={`Call Now at ${CONTACT.phones.landline}`}>
+      Call Now
+    </a>
+  </Button>
+</div>
 
           <p className="text-sm mt-4 opacity-75">
             Most assessments completed within 24 hours • No pressure, just honest advice
