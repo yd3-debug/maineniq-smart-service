@@ -242,23 +242,23 @@ const WhyProfessionalHVAC = () => {
               Trusted by 500+ Property Owners
             </div>
             
-            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white">
+            <h1 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-white">
               Why Professional HVAC is Essential for Your Property
             </h1>
-            <p className="text-sm sm:text-base md:text-xl mb-6 sm:mb-8 md:mb-10 text-slate-200 max-w-3xl leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-lg mb-4 sm:mb-6 md:mb-8 text-slate-200 max-w-3xl leading-relaxed">
               Discover how professional HVAC systems deliver £3,250+ annual savings, superior comfort, 
               and protect your investment. Don't let outdated systems cost you thousands.
             </p>
             
             {/* Key Stats Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8">
               {keyStats.map((stat, index) => (
                 <AnimatedStatCard key={index} delay={index * 100}>
-                  <div className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:animate-pulse-glow">
-                    <div className={`w-8 h-8 sm:w-10 h-10 md:w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-1.5 sm:p-2 mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 sm:p-3 md:p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:animate-pulse-glow">
+                    <div className={`w-6 h-6 sm:w-8 h-8 md:w-10 h-10 rounded-lg bg-gradient-to-r ${stat.gradient} p-1 sm:p-1.5 mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300`}>
                       <stat.icon className="w-full h-full text-white" />
                     </div>
-                    <div className="font-bold text-lg sm:text-xl md:text-3xl mb-1 text-white">
+                    <div className="font-bold text-sm sm:text-lg md:text-2xl mb-1 text-white">
                       <AnimatedCounter 
                         value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
                         prefix={stat.value.includes('£') ? '£' : ''}
@@ -266,7 +266,7 @@ const WhyProfessionalHVAC = () => {
                         delay={index * 200}
                       />
                     </div>
-                    <div className="text-xs sm:text-sm text-slate-300 font-medium">{stat.label}</div>
+                    <div className="text-xs sm:text-xs md:text-sm text-slate-300 font-medium">{stat.label}</div>
                   </div>
                 </AnimatedStatCard>
               ))}
@@ -305,20 +305,20 @@ const WhyProfessionalHVAC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
             {costOfWaitingData.map((item, index) => (
               <AnimatedStatCard key={index} delay={index * 150} className={`border-2 hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm ${
                 item.urgency === 'high' ? 'border-red-200 hover:border-red-300' : 'border-orange-200 hover:border-orange-300'
               }`}>
                 <Card className="border-0 shadow-none bg-transparent">
-                  <CardContent className="p-3 sm:p-4 md:p-6 text-center">
-                    <div className={`w-10 h-10 sm:w-12 h-12 md:w-14 h-14 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 mx-auto ${
+                  <CardContent className="p-3 sm:p-4 text-center">
+                    <div className={`w-8 h-8 sm:w-10 h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto ${
                       item.urgency === 'high' ? 'bg-gradient-to-br from-red-100 to-red-200' : 'bg-gradient-to-br from-orange-100 to-orange-200'
                     }`}>
-                      <item.icon className={`w-5 h-5 sm:w-6 h-6 md:w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
+                      <item.icon className={`w-4 h-4 sm:w-5 h-5 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
                     </div>
-                    <h3 className="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2 text-slate-800">{item.title}</h3>
-                    <div className={`text-lg sm:text-xl md:text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>
+                    <h3 className="font-bold text-xs sm:text-sm mb-1 text-slate-800">{item.title}</h3>
+                    <div className={`text-sm sm:text-lg font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>
                       <AnimatedCounter 
                         value={parseFloat(item.metric.replace(/[£%±°C-]/g, '')) || 0}
                         prefix={item.metric.includes('£') ? '£' : item.metric.includes('±') ? '±' : item.metric.includes('-') ? '-' : ''}
@@ -326,9 +326,9 @@ const WhyProfessionalHVAC = () => {
                         delay={index * 200 + 500}
                       />
                     </div>
-                    <div className="text-xs font-medium text-slate-500 mb-2 sm:mb-3">{item.metricLabel}</div>
-                    <div className="text-xs sm:text-sm font-semibold text-slate-700 mb-1 sm:mb-2">{item.impact}</div>
-                    <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
+                    <div className="text-xs font-medium text-slate-500 mb-1 sm:mb-2">{item.metricLabel}</div>
+                    <div className="text-xs font-semibold text-slate-700 mb-1">{item.impact}</div>
+                    <p className="text-slate-500 text-xs leading-relaxed hidden sm:block">{item.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedStatCard>
@@ -351,7 +351,7 @@ const WhyProfessionalHVAC = () => {
                 <div ref={comparisonRef as React.RefObject<HTMLDivElement>}>
                   <ChartContainer
                     config={chartConfig}
-                    className="h-48 sm:h-64 md:h-80"
+                    className="h-32 sm:h-48 md:h-64"
                   >
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -387,7 +387,7 @@ const WhyProfessionalHVAC = () => {
                 </div>
               
                {/* Enhanced Visual Metrics */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-200">
                 <ComparisonBar
                   label="Higher Energy Cost"
                   value="£3,200"
@@ -430,30 +430,30 @@ const WhyProfessionalHVAC = () => {
       {/* Professional HVAC Benefits */}
       <section className="py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <CheckCircle className="w-4 h-4" />
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+              <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4" />
               Professional HVAC Benefits
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-primary">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-3 sm:mb-6 text-primary">
               Transform Your Property with Smart HVAC
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Experience the difference professional HVAC makes: dramatic savings, superior comfort, 
               and peace of mind through intelligent technology and expert installation.
             </p>
           </div>
 
           {/* Benefits Dashboard */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
             {keyStats.map((stat, index) => (
               <AnimatedStatCard key={index} delay={index * 120} className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 hover:shadow-2xl transition-all duration-500 group">
                 <Card className="border-0 shadow-none bg-transparent">
-                  <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg animate-pulse-glow`}>
+                  <CardContent className="p-3 sm:p-4 md:p-6 text-center">
+                    <div className={`w-8 h-8 sm:w-12 h-12 md:w-14 h-14 rounded-lg sm:rounded-xl bg-gradient-to-r ${stat.gradient} p-1.5 sm:p-2 md:p-3 mb-2 sm:mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg animate-pulse-glow`}>
                       <stat.icon className="w-full h-full text-white" />
                     </div>
-                    <div className="text-4xl font-bold mb-2 text-foreground">
+                    <div className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-foreground">
                       <AnimatedCounter 
                         value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
                         prefix={stat.value.includes('£') ? '£' : ''}
@@ -461,8 +461,8 @@ const WhyProfessionalHVAC = () => {
                         delay={index * 200 + 300}
                       />
                     </div>
-                    <p className="text-slate-600 font-medium mb-2">{stat.label}</p>
-                    <p className="text-slate-500 text-sm">{stat.description}</p>
+                    <p className="text-slate-600 font-medium mb-1 sm:mb-2 text-xs sm:text-sm">{stat.label}</p>
+                    <p className="text-slate-500 text-xs hidden sm:block">{stat.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedStatCard>
@@ -470,27 +470,27 @@ const WhyProfessionalHVAC = () => {
           </div>
 
           {/* Separated Performance Charts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {/* Energy Savings Chart */}
             <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-slate-800">
-                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                    <DollarSign className="w-5 h-5 text-white" />
+              <CardHeader className="pb-3 sm:pb-4">
+                <CardTitle className="flex items-center gap-2 sm:gap-3 text-slate-800 text-sm sm:text-base">
+                  <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                    <DollarSign className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                   </div>
                   Monthly Energy Savings
                 </CardTitle>
-                <p className="text-slate-600">Track your energy consumption improvements</p>
+                <p className="text-slate-600 text-xs sm:text-sm">Track your energy consumption improvements</p>
               </CardHeader>
               <CardContent>
-                <div className="mb-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
-                  <div className="text-2xl font-bold text-emerald-700">
+                <div className="mb-3 sm:mb-4 p-2 sm:p-3 md:p-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-700">
                     <AnimatedCounter value={1420} suffix=" kWh" delay={200} duration={1400} />
                   </div>
-                  <div className="text-sm text-emerald-600">Average Monthly Savings</div>
+                  <div className="text-xs sm:text-sm text-emerald-600">Average Monthly Savings</div>
                 </div>
                 <div ref={energyRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-64">
+                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -532,32 +532,32 @@ const WhyProfessionalHVAC = () => {
 
             {/* Performance Scores Chart */}
             <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-slate-800">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <Activity className="w-5 h-5 text-white" />
+              <CardHeader className="pb-3 sm:pb-4">
+                <CardTitle className="flex items-center gap-2 sm:gap-3 text-slate-800 text-sm sm:text-base">
+                  <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <Activity className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                   </div>
                   Comfort & Air Quality Scores
                 </CardTitle>
-                <p className="text-slate-600">Performance ratings out of 100</p>
+                <p className="text-slate-600 text-xs sm:text-sm">Performance ratings out of 100</p>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
-                    <div className="text-xl font-bold text-orange-700">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4">
+                  <div className="p-2 sm:p-3 bg-orange-50 rounded-lg border border-orange-200">
+                    <div className="text-sm sm:text-lg md:text-xl font-bold text-orange-700">
                       <AnimatedCounter value={94} suffix="/100" delay={150} duration={1200} />
                     </div>
-                    <div className="text-sm text-orange-600">Avg. Comfort</div>
+                    <div className="text-xs sm:text-sm text-orange-600">Avg. Comfort</div>
                   </div>
-                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="text-xl font-bold text-purple-700">
+                  <div className="p-2 sm:p-3 bg-purple-50 rounded-lg border border-purple-200">
+                    <div className="text-sm sm:text-lg md:text-xl font-bold text-purple-700">
                       <AnimatedCounter value={92} suffix="/100" delay={250} duration={1200} />
                     </div>
-                    <div className="text-sm text-purple-600">Avg. Air Quality</div>
+                    <div className="text-xs sm:text-sm text-purple-600">Avg. Air Quality</div>
                   </div>
                 </div>
                 <div ref={scoresRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-64">
+                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -611,18 +611,18 @@ const WhyProfessionalHVAC = () => {
 
             {/* Multi-Benefit Breakdown Chart */}
             <Card className="border-white/50 bg-white/90 backdrop-blur-sm shadow-xl">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-slate-800">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                    <Target className="w-5 h-5 text-white" />
+              <CardHeader className="pb-3 sm:pb-4">
+                <CardTitle className="flex items-center gap-2 sm:gap-3 text-slate-800 text-sm sm:text-base">
+                  <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                    <Target className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                   </div>
                   Professional HVAC Benefits
                 </CardTitle>
-                <p className="text-slate-600">Multi-dimensional improvements you'll experience</p>
+                <p className="text-slate-600 text-xs sm:text-sm">Multi-dimensional improvements you'll experience</p>
               </CardHeader>
               <CardContent>
                 <div ref={benefitsRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-72">
+                  <ChartContainer config={chartConfig} className="h-48 sm:h-56 md:h-72">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
@@ -671,42 +671,42 @@ const WhyProfessionalHVAC = () => {
           </div>
 
           {/* Service & Maintenance Section */}
-          <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50 to-green-50 shadow-xl mb-12">
-            <CardHeader className="pb-6">
-              <CardTitle className="flex items-center gap-3 text-slate-800 text-2xl">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                  <Wrench className="w-6 h-6 text-white" />
+          <Card className="border-emerald-200 bg-gradient-to-br from-emerald-50 to-green-50 shadow-xl mb-8 sm:mb-12">
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="flex items-center gap-2 sm:gap-3 text-slate-800 text-lg sm:text-xl md:text-2xl">
+                <div className="w-8 h-8 sm:w-10 h-10 md:w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                  <Wrench className="w-4 h-4 sm:w-5 h-5 md:w-6 h-6 text-white" />
                 </div>
                 Annual Service & Maintenance Plans
               </CardTitle>
-              <p className="text-slate-600 text-lg">Protect your investment with professional maintenance that extends system life and ensures peak performance</p>
+              <p className="text-slate-600 text-sm sm:text-base md:text-lg">Protect your investment with professional maintenance that extends system life and ensures peak performance</p>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {servicePlansData.map((plan, index) => (
-                  <Card key={index} className={`p-6 ${index === 2 ? 'border-emerald-300 bg-white shadow-lg' : 'bg-white/70'}`}>
+                  <Card key={index} className={`p-3 sm:p-4 md:p-6 ${index === 2 ? 'border-emerald-300 bg-white shadow-lg' : 'bg-white/70'}`}>
                     <div className="text-center">
-                      <h4 className="font-bold text-lg mb-4">{plan.plan}</h4>
-                      <div className="space-y-3">
+                      <h4 className="font-bold text-sm sm:text-base md:text-lg mb-2 sm:mb-4">{plan.plan}</h4>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
                         <div>
-                          <div className="text-2xl font-bold text-emerald-600">{plan.reliability}%</div>
-                          <div className="text-sm text-slate-600">Reliability</div>
+                          <div className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-600">{plan.reliability}%</div>
+                          <div className="text-xs sm:text-sm text-slate-600">Reliability</div>
                         </div>
                         <div>
-                          <div className="text-xl font-bold text-slate-700">£{plan.cost}</div>
-                          <div className="text-sm text-slate-600">Annual Cost</div>
+                          <div className="text-lg sm:text-xl font-bold text-slate-700">£{plan.cost}</div>
+                          <div className="text-xs sm:text-sm text-slate-600">Annual Cost</div>
                         </div>
                         <div>
                           <div className="text-lg font-bold text-orange-600">{plan.breakdowns}</div>
-                          <div className="text-sm text-slate-600">Avg. Breakdowns/Year</div>
+                          <div className="text-xs sm:text-sm text-slate-600">Avg. Breakdowns/Year</div>
                         </div>
                         <div>
                           <div className="text-lg font-bold text-blue-600">{plan.lifespan} years</div>
-                          <div className="text-sm text-slate-600">System Lifespan</div>
+                          <div className="text-xs sm:text-sm text-slate-600">System Lifespan</div>
                         </div>
                       </div>
                       {index === 2 && (
-                        <div className="mt-4 text-sm font-medium text-emerald-600 bg-emerald-100 py-2 px-3 rounded-full">
+                        <div className="mt-2 sm:mt-4 text-xs sm:text-sm font-medium text-emerald-600 bg-emerald-100 py-1 sm:py-2 px-2 sm:px-3 rounded-full">
                           Recommended Plan
                         </div>
                       )}
@@ -760,52 +760,52 @@ const WhyProfessionalHVAC = () => {
           </Card>
 
           {/* Performance Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             <Card className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-white" />
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                      <Zap className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                     </div>
-                    <h3 className="font-bold text-slate-800">Energy Efficiency</h3>
+                    <h3 className="font-bold text-slate-800 text-sm sm:text-base">Energy Efficiency</h3>
                   </div>
-                  <span className="text-3xl font-bold text-sage-elegant">95%</span>
+                  <span className="text-lg sm:text-2xl md:text-3xl font-bold text-sage-elegant">95%</span>
                 </div>
-                <Progress value={95} className="mb-3 h-2" />
-                <p className="text-sm text-slate-600 leading-relaxed">Professional HVAC systems achieve 95% efficiency compared to 60% for outdated systems</p>
+                <Progress value={95} className="mb-2 sm:mb-3 h-1.5 sm:h-2" />
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">Professional HVAC systems achieve 95% efficiency compared to 60% for outdated systems</p>
               </CardContent>
             </Card>
 
             <Card className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                      <Shield className="w-5 h-5 text-white" />
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                      <Shield className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                     </div>
-                    <h3 className="font-bold text-slate-800">Air Quality</h3>
+                    <h3 className="font-bold text-slate-800 text-sm sm:text-base">Air Quality</h3>
                   </div>
-                  <span className="text-3xl font-bold text-accent-blue">99.97%</span>
+                  <span className="text-lg sm:text-2xl md:text-3xl font-bold text-accent-blue">99.97%</span>
                 </div>
-                <Progress value={99.97} className="mb-3 h-2" />
-                <p className="text-sm text-slate-600 leading-relaxed">Advanced HEPA filtration removes 99.97% of airborne particles, allergens, and pollutants</p>
+                <Progress value={99.97} className="mb-2 sm:mb-3 h-1.5 sm:h-2" />
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">Advanced HEPA filtration removes 99.97% of airborne particles, allergens, and pollutants</p>
               </CardContent>
             </Card>
 
-            <Card className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                      <Award className="w-5 h-5 text-white" />
+            <Card className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 shadow-lg sm:col-span-2 md:col-span-1">
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-6 h-6 sm:w-8 h-8 md:w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                      <Award className="w-3 h-3 sm:w-4 h-4 md:w-5 h-5 text-white" />
                     </div>
-                    <h3 className="font-bold text-slate-800">System Reliability</h3>
+                    <h3 className="font-bold text-slate-800 text-sm sm:text-base">System Reliability</h3>
                   </div>
-                  <span className="text-3xl font-bold text-primary">99.5%</span>
+                  <span className="text-lg sm:text-2xl md:text-3xl font-bold text-primary">99.5%</span>
                 </div>
-                <Progress value={99.5} className="mb-3 h-2" />
-                <p className="text-sm text-slate-600 leading-relaxed">Professional systems maintain 99.5% uptime with intelligent predictive maintenance</p>
+                <Progress value={99.5} className="mb-2 sm:mb-3 h-1.5 sm:h-2" />
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">Professional systems maintain 99.5% uptime with intelligent predictive maintenance</p>
               </CardContent>
             </Card>
           </div>
@@ -813,20 +813,20 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* ROI Calculator Section */}
-      <section className="py-20 bg-accent">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-accent">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-3 sm:mb-4">
               Calculate Your Potential Savings
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               See exactly how much you could save with a professional HVAC upgrade
             </p>
           </div>
 
           <Card className="max-w-4xl mx-auto border-primary/20 shadow-elegant">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <CardContent className="p-3 sm:p-4 md:p-6 lg:p-8">
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8">
                 {/* Current Situation */}
                 <div>
                   <h3 className="font-heading text-2xl font-bold mb-6 text-destructive">
@@ -898,16 +898,16 @@ const WhyProfessionalHVAC = () => {
       {/* Why Choose Mainteniq */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-3 sm:mb-4">
               Why 500+ Property Owners Trust Mainteniq
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               We deliver measurable results with professional expertise and cutting-edge technology
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             <div>
               <img 
                 src={modernSystem} 
@@ -992,12 +992,12 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground">
+        <div className="container mx-auto px-3 sm:px-4 text-center">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
             Start Saving £800+ Annually Today
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto opacity-90">
             Join 500+ satisfied customers who've transformed their properties with professional HVAC. 
             Get your free assessment and detailed savings report.
           </p>
