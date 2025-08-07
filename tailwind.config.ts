@@ -41,14 +41,20 @@ export default {
 				'energy-gold': {
 					DEFAULT: 'hsl(var(--energy-gold))',
 				},
-				'trust-blue': {
-					DEFAULT: 'hsl(var(--trust-blue))',
-					foreground: 'hsl(var(--trust-blue-foreground))',
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
+					'trust-blue': {
+						DEFAULT: 'hsl(var(--trust-blue))',
+						foreground: 'hsl(var(--trust-blue-foreground))',
+					},
+					'luxury-gold': {
+						DEFAULT: 'hsl(var(--luxury-gold))',
+					},
+				professional: {
+						DEFAULT: 'hsl(var(--professional))',
+					},
+					secondary: {
+						DEFAULT: 'hsl(var(--secondary))',
+						foreground: 'hsl(var(--secondary-foreground))'
+					},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'

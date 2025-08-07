@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import embassyGardensHero from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import TrustStrip from "@/components/TrustStrip";
 
   const CaseStudies = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
@@ -246,6 +248,26 @@ import { AnimatedCounter } from "@/components/AnimatedChart";
     }
   ];
 
+  useEffect(() => {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: portfolioProjects.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: window.location.origin + "/case-studies#" + p.id,
+        name: p.title,
+      })),
+    };
+    const existing = document.getElementById("case-studies-jsonld");
+    if (existing) existing.remove();
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "case-studies-jsonld";
+    script.text = JSON.stringify(data);
+    document.head.appendChild(script);
+  }, []);
+
   return (
     <main className="min-h-screen pt-16">
       {/* Hero Section - Elegant & Flowing */}
@@ -327,24 +349,26 @@ import { AnimatedCounter } from "@/components/AnimatedChart";
             <p className="text-lg text-muted-foreground mb-12 font-light max-w-xl mx-auto leading-relaxed">
               Select projects showcasing our premium refurbishment capabilities
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {projectFilters.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setSelectedFilter(filter)}
-                  className={`px-8 py-3 rounded-full transition-all duration-300 font-light ${
-                    selectedFilter === filter
-                      ? "bg-gradient-to-r from-primary to-luxury-gold text-white shadow-glow"
-                      : "bg-white/80 text-muted-foreground border border-white/50 hover:bg-white hover:border-primary/30 hover:text-primary"
-                  }`}
-                  aria-label={`${filter} projects: ${countFor(filter)} items`}
-                >
-                  <span>{filter}</span>
-                  <span className="ml-2 inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-xs px-2 py-0.5">
-                    {countFor(filter)}
-                  </span>
-                </button>
-              ))}
+            <div className="sticky top-16 z-30 bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur rounded-full py-3 max-w-5xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-3 px-3">
+                {projectFilters.map((filter) => (
+                  <button
+                    key={filter}
+                    onClick={() => setSelectedFilter(filter)}
+                    className={`px-8 py-2.5 rounded-full transition-all duration-300 font-light ${
+                      selectedFilter === filter
+                        ? "bg-gradient-to-r from-primary to-luxury-gold text-white shadow-glow"
+                        : "bg-white/80 text-muted-foreground border border-white/50 hover:bg-white hover:border-primary/30 hover:text-primary"
+                    }`}
+                    aria-label={`${filter} projects: ${countFor(filter)} items`}
+                  >
+                    <span>{filter}</span>
+                    <span className="ml-2 inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-xs px-2 py-0.5">
+                      {countFor(filter)}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -356,19 +380,21 @@ import { AnimatedCounter } from "@/components/AnimatedChart";
             </p>
            
             {/* Enhanced Project Grid with Modal Details */}
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioProjects
               .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
               .map((project) => (
-              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2 animate-fade-in`}>
-                <div className="relative h-48 bg-muted overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
+              <Card id={`p-${project.id}`} key={project.id} className={`group hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2 animate-fade-in`}>
+                <div className="relative">
+                  <AspectRatio ratio={3/2}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </AspectRatio>
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-black/70 text-white border-0">
                       <Lock className="w-3 h-3 mr-1" />
@@ -393,82 +419,84 @@ import { AnimatedCounter } from "@/components/AnimatedChart";
                           View Details
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-                        <DialogHeader>
-                          <DialogTitle className="text-xl mb-4">{project.title}</DialogTitle>
-                        </DialogHeader>
-                        <Tabs defaultValue="overview" className="w-full">
-                          <TabsList className="grid w-full grid-cols-3">
-                            <TabsTrigger value="overview">Overview</TabsTrigger>
-                            <TabsTrigger value="details">Project Details</TabsTrigger>
-                            <TabsTrigger value="results">Results</TabsTrigger>
-                          </TabsList>
-                          <TabsContent value="overview" className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                              <div>
-                                <img 
-                                  src={project.image} 
-                                  alt={project.title}
-                                  className="w-full h-64 object-cover rounded-lg"
-                                  loading="lazy"
-                                  decoding="async"
-                                />
-                              </div>
-                              <div className="space-y-4">
-                                <div>
-                                  <h4 className="font-semibold mb-2">Project Information</h4>
-                                  <div className="space-y-2 text-sm">
-                                    <div className="flex items-center space-x-2">
-                                      <Building2 className="w-4 h-4 text-primary" />
-                                      <span>{project.projectType}</span>
+                      <DialogContent className="w-[95vw] max-w-[1200px] h-[90vh] overflow-hidden p-0">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+                          <div className="relative bg-muted">
+                            <img 
+                              src={project.image} 
+                              alt={project.title}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          <div className="h-full overflow-y-auto p-6">
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl mb-4">{project.title}</DialogTitle>
+                            </DialogHeader>
+                            <Tabs defaultValue="overview" className="w-full">
+                              <TabsList className="grid w-full grid-cols-3">
+                                <TabsTrigger value="overview">Overview</TabsTrigger>
+                                <TabsTrigger value="details">Project Details</TabsTrigger>
+                                <TabsTrigger value="results">Results</TabsTrigger>
+                              </TabsList>
+                              <TabsContent value="overview" className="space-y-4">
+                                <div className="space-y-4">
+                                  <div>
+                                    <h4 className="font-semibold mb-2">Project Information</h4>
+                                    <div className="space-y-2 text-sm">
+                                      <div className="flex items-center space-x-2">
+                                        <Building2 className="w-4 h-4 text-primary" />
+                                        <span>{project.projectType}</span>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <MapPin className="w-4 h-4 text-primary" />
+                                        <span>{project.location}</span>
+                                      </div>
+                                      <div className="flex items-center space-x-2">
+                                        <Calendar className="w-4 h-4 text-primary" />
+                                        <span>Completed {project.completedDate}</span>
+                                      </div>
                                     </div>
-                                    <div className="flex items-center space-x-2">
-                                      <MapPin className="w-4 h-4 text-primary" />
-                                      <span>{project.location}</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                      <Calendar className="w-4 h-4 text-primary" />
-                                      <span>Completed {project.completedDate}</span>
+                                  </div>
+                                  <div>
+                                    <h4 className="font-semibold mb-2">Project Tags</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {project.tags.map((tag, index) => (
+                                        <Badge key={index} variant="outline">
+                                          {tag}
+                                        </Badge>
+                                      ))}
                                     </div>
                                   </div>
                                 </div>
+                              </TabsContent>
+                              <TabsContent value="details" className="space-y-4">
                                 <div>
-                                  <h4 className="font-semibold mb-2">Project Tags</h4>
-                                  <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag, index) => (
-                                      <Badge key={index} variant="outline">
-                                        {tag}
-                                      </Badge>
+                                  <h4 className="font-semibold mb-2">Project Description</h4>
+                                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                                </div>
+                                <div>
+                                  <h4 className="font-semibold mb-2">Technical Scope</h4>
+                                  <p className="text-muted-foreground">{project.technicalScope}</p>
+                                </div>
+                              </TabsContent>
+                              <TabsContent value="results" className="space-y-4">
+                                <div>
+                                  <h4 className="font-semibold mb-4">Key Achievements</h4>
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {project.achievements.map((achievement, index) => (
+                                      <div key={index} className="flex items-start space-x-3 p-3 bg-accent/30 rounded-lg">
+                                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                                        <span className="text-sm">{achievement}</span>
+                                      </div>
                                     ))}
                                   </div>
                                 </div>
-                              </div>
-                            </div>
-                          </TabsContent>
-                          <TabsContent value="details" className="space-y-4">
-                            <div>
-                              <h4 className="font-semibold mb-2">Project Description</h4>
-                              <p className="text-muted-foreground mb-4">{project.description}</p>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold mb-2">Technical Scope</h4>
-                              <p className="text-muted-foreground">{project.technicalScope}</p>
-                            </div>
-                          </TabsContent>
-                          <TabsContent value="results" className="space-y-4">
-                            <div>
-                              <h4 className="font-semibold mb-4">Key Achievements</h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {project.achievements.map((achievement, index) => (
-                                  <div key={index} className="flex items-start space-x-3 p-3 bg-accent/30 rounded-lg">
-                                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                    <span className="text-sm">{achievement}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </TabsContent>
-                        </Tabs>
+                              </TabsContent>
+                            </Tabs>
+                          </div>
+                        </div>
                       </DialogContent>
                     </Dialog>
                   </div>
