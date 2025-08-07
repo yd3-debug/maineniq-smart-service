@@ -272,16 +272,18 @@ const WhyProfessionalHVAC = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link to="/contact">
-                <Button size="sm" className="bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
-                  Get Free Assessment
-                  <ArrowRight className="w-4 h-4 sm:w-5 h-5 ml-2" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl">
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-sm sm:text-base font-medium px-6 sm:px-8 py-4 sm:py-4 min-h-[44px] shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
+                  <span className="sm:hidden">Get Free Assessment</span>
+                  <span className="hidden sm:inline">Get Free Assessment & Savings Report</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 h-5 ml-2 flex-shrink-0" />
                 </Button>
               </Link>
-              <Link to="/services">
-                <Button variant="outline" size="sm" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 border-white/30 text-white hover:bg-white/10 backdrop-blur-md transition-all duration-300">
-                  View Our Services
+              <Link to="/services" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm sm:text-base font-medium px-6 sm:px-8 py-4 sm:py-4 min-h-[44px] border-white/30 text-white hover:bg-white/10 backdrop-blur-md transition-all duration-300">
+                  <span className="sm:hidden">Our Services</span>
+                  <span className="hidden sm:inline">View Our Services</span>
                 </Button>
               </Link>
             </div>
