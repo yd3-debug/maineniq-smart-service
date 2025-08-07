@@ -162,4 +162,18 @@ body.mobile-menu-open main {
   transition: filter 0.3s ease-out;
   transform: translateZ(0); /* Force GPU acceleration */
 }
+
+/* Ensure navigation stays crystal clear and creates proper stacking context */
+nav {
+  filter: none !important;
+  isolation: isolate;
+  will-change: filter;
+  position: relative;
+  z-index: 60;
+}
+
+/* Ensure all navigation children are unblurred */
+nav * {
+  filter: none !important;
+}
 }
