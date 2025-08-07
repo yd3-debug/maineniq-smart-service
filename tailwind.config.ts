@@ -34,26 +34,6 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))',
 					glow: 'hsl(var(--primary-glow))',
 				},
-				professional: {
-					DEFAULT: 'hsl(var(--professional))',
-					foreground: 'hsl(var(--professional-foreground))',
-				},
-				'navy-deep': {
-					DEFAULT: 'hsl(var(--navy-deep))',
-					foreground: 'hsl(var(--navy-deep-foreground))',
-				},
-				'luxury-gold': {
-					DEFAULT: 'hsl(var(--luxury-gold))',
-					foreground: 'hsl(var(--luxury-gold-foreground))',
-				},
-				'sage-elegant': {
-					DEFAULT: 'hsl(var(--sage-elegant))',
-					foreground: 'hsl(var(--sage-elegant-foreground))',
-				},
-				'accent-blue': {
-					DEFAULT: 'hsl(var(--accent-blue))',
-					foreground: 'hsl(var(--accent-blue-foreground))',
-				},
 				'accent-orange': {
 					DEFAULT: 'hsl(var(--accent-orange))',
 					foreground: 'hsl(var(--accent-orange-foreground))',
@@ -81,9 +61,6 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				service: {
-					accent: 'hsl(var(--service-accent))',
 				},
 				success: 'hsl(var(--success))',
 				whatsapp: 'hsl(var(--whatsapp))',

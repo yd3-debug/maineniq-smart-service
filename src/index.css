@@ -13,17 +13,13 @@ All colors MUST be HSL.
     --background: 0 0% 100%;
     --foreground: 0 0% 8%;
 
-    /* Brand Colors - Sophisticated Charcoal & Gold */
-    --primary: 220 25% 25%;         /* Sophisticated charcoal */
+    /* Primary Brand Colors - Sophisticated Charcoal */
+    --primary: 220 25% 25%;         /* Main brand charcoal */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 220 20% 35%;    /* Lighter charcoal for accents */
-    
-    /* Professional Color Palette */
-    --professional: 220 15% 25%;    /* Professional charcoal */
-    --professional-foreground: 0 0% 100%;
-    --accent-blue: 213 94% 68%;     /* Trust blue */
-    --accent-blue-foreground: 0 0% 100%;
-    --accent-orange: 24 100% 50%;   /* CTA orange */
+
+    /* Professional Accent - Gold for CTAs */
+    --accent-orange: 24 100% 50%;   /* Professional gold accent */
     --accent-orange-foreground: 0 0% 100%;
 
     /* Secondary Colors */
@@ -49,39 +45,23 @@ All colors MUST be HSL.
     /* Status Colors */
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
+    --success: 142 70% 40%;         /* Success green */
+    --whatsapp: 142 70% 40%;        /* WhatsApp green */
 
     /* Borders & Inputs */
     --border: 0 0% 88%;
     --input: 0 0% 88%;
     --ring: 220 25% 25%;
 
-    /* Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 25% 25%), hsl(38 100% 70%));
-    --service-accent: 220 25% 15%;  /* Dark charcoal for service highlights */
-    --success: 220 25% 25%;         /* Success states */
-    --whatsapp: 142 70% 40%;        /* WhatsApp green */
-    
-    /* Enhanced Professional Colors */
-    --luxury-gold: 38 100% 85%;        /* Elegant gold accent */
-    --luxury-gold-foreground: 38 100% 20%;
-    --navy-deep: 220 35% 15%;          /* Deep navy for elegance */
-    --navy-deep-foreground: 0 0% 100%;
-    --sage-elegant: 150 25% 60%;       /* Elegant sage green */
-    --sage-elegant-foreground: 150 25% 15%;
-    
-    /* Enhanced Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-deep)), hsl(var(--primary)));
-    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-gold)), hsl(var(--sage-elegant)));
-    --gradient-professional: linear-gradient(135deg, hsl(var(--professional)), hsl(var(--accent-blue)));
-    --gradient-cta: linear-gradient(135deg, hsl(var(--accent-orange)), hsl(var(--primary)));
+    /* Simplified Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / 0.95), hsl(0 0% 8% / 0.90));
+    --gradient-professional: linear-gradient(135deg, hsl(220 25% 25%), hsl(24 100% 50%));
+    --gradient-cta: linear-gradient(135deg, hsl(24 100% 50%), hsl(220 25% 25%));
 
     /* Professional Design Tokens */
     --shadow-elegant: 0 10px 30px -10px hsl(220 25% 25% / 0.3);
     --shadow-card: 0 4px 25px -5px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 40px hsl(38 100% 70% / 0.3);
-    --gradient-primary: linear-gradient(135deg, hsl(220 25% 25%), hsl(38 100% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / .95), hsl(0 0% 8% / 0.90));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 96%));
+    --shadow-glow: 0 0 40px hsl(24 100% 50% / 0.3);
 
     /* Typography Scale */
     --font-heading: 'Poppins', system-ui, sans-serif;
@@ -138,10 +118,10 @@ All colors MUST be HSL.
     /* Dark Mode Professional Tokens */
     --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
     --shadow-card: 0 4px 25px -5px hsl(0 0% 0% / 0.3);
-    --shadow-glow: 0 0 40px hsl(38 100% 70% / 0.3);
-    --gradient-primary: linear-gradient(135deg, hsl(220 25% 25%), hsl(38 100% 70%));
+    --shadow-glow: 0 0 40px hsl(24 100% 50% / 0.3);
     --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / 0.95), hsl(222.2 84% 4.9% / 0.95));
-    --gradient-card: linear-gradient(135deg, hsl(222.2 84% 4.9%), hsl(217.2 32.6% 17.5%));
+    --gradient-professional: linear-gradient(135deg, hsl(220 25% 25%), hsl(24 100% 50%));
+    --gradient-cta: linear-gradient(135deg, hsl(24 100% 50%), hsl(220 25% 25%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
