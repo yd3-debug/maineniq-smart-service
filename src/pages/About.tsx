@@ -461,31 +461,50 @@ const About = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
+      {/* Insurance & Protection Section */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-6">Certifications & Credentials</h2>
+            <h2 className="font-heading text-4xl font-bold mb-6">Licensed & Insured Protection</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our team maintains the highest industry certifications and standards.
+              Comprehensive insurance coverage and licensing for your complete peace of mind.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              "NATE Certified",
-              "EPA Licensed",
-              "HVAC Excellence",
-              "Energy Star Partner",
-              "BBB Accredited",
-              "Fully Insured"
-            ].map((cert, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary-glow transition-colors">
-                  <CheckCircle className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <p className="font-medium text-sm">{cert}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-primary-foreground" />
               </div>
-            ))}
+              <h3 className="font-semibold text-lg mb-3">General Liability</h3>
+              <p className="text-muted-foreground">Comprehensive coverage protecting your property during all work</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Workers' Compensation</h3>
+              <p className="text-muted-foreground">Full coverage for all technicians working on your premises</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Professional Indemnity</h3>
+              <p className="text-muted-foreground">Protection against professional service liability</p>
+            </Card>
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-semibold text-lg mb-3">Public Liability</h3>
+              <p className="text-muted-foreground">Coverage for any public interaction during service calls</p>
+            </Card>
+          </div>
+          <div className="mt-12 text-center">
+            <Card className="inline-block p-6 bg-primary text-primary-foreground">
+              <h3 className="font-bold text-xl mb-2">Fully Licensed HVAC Professionals</h3>
+              <p className="opacity-90">All work guaranteed and protected • Comprehensive coverage for your peace of mind</p>
+            </Card>
           </div>
         </div>
       </section>
