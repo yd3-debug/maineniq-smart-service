@@ -3,23 +3,26 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import { LoadingPage } from "@/components/LoadingSpinner";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import CookieBanner from "./components/CookieBanner";
-import Index from "./pages/Index";
-import Services from "./pages/Services";
-import WhyProfessionalHVAC from "./pages/WhyProfessionalHVAC";
-import CaseStudies from "./pages/CaseStudies";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Admin from "./pages/Admin";
-import NotFound from "./pages/NotFound";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import CookiePolicy from "./pages/CookiePolicy";
 
-import GDPRCompliance from "./pages/GDPRCompliance";
+// Lazy load components for better performance
+const Index = lazy(() => import("./pages/Index"));
+const Services = lazy(() => import("./pages/Services"));
+const WhyProfessionalHVAC = lazy(() => import("./pages/WhyProfessionalHVAC"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Admin = lazy(() => import("./pages/Admin"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
+const GDPRCompliance = lazy(() => import("./pages/GDPRCompliance"));
 
 const queryClient = new QueryClient();
 
@@ -42,20 +45,88 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout><Index /></Layout>} />
-          <Route path="/services" element={<Layout><Services /></Layout>} />
-          <Route path="/why-professional-hvac" element={<Layout><WhyProfessionalHVAC /></Layout>} />
-          <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
-          <Route path="/about" element={<Layout><About /></Layout>} />
-          <Route path="/contact" element={<Layout><Contact /></Layout>} />
-          <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
-          <Route path="/terms-of-service" element={<Layout><TermsOfService /></Layout>} />
-          <Route path="/cookie-policy" element={<Layout><CookiePolicy /></Layout>} />
-          
-          <Route path="/gdpr-compliance" element={<Layout><GDPRCompliance /></Layout>} />
-          <Route path="/admin" element={<Admin />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<Layout><NotFound /></Layout>} />
+          <Route path="/" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Index />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/services" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Services />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/why-professional-hvac" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <WhyProfessionalHVAC />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/case-studies" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <CaseStudies />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/about" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <About />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/contact" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Contact />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/privacy-policy" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <PrivacyPolicy />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/terms-of-service" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <TermsOfService />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/cookie-policy" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <CookiePolicy />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/gdpr-compliance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <GDPRCompliance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/admin" element={
+            <Suspense fallback={<LoadingPage />}>
+              <Admin />
+            </Suspense>
+          } />
+          <Route path="*" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <NotFound />
+              </Suspense>
+            </Layout>
+          } />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
