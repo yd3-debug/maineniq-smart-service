@@ -8,6 +8,10 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Routes that have light backgrounds and need dark header styling
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies'];
+  const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -33,7 +37,7 @@ const Navigation = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
+      isScrolled || hasLightBackground
         ? "bg-background/95 backdrop-blur-sm border-b border-border" 
         : "bg-transparent border-b border-transparent"
     }`}>
@@ -56,10 +60,10 @@ const Navigation = () => {
                 to={item.href}
                 className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
                   isActive(item.href)
-                    ? isScrolled 
+                    ? (isScrolled || hasLightBackground)
                       ? "text-primary bg-primary/10" 
                       : "text-primary bg-white/20"
-                    : isScrolled
+                    : (isScrolled || hasLightBackground)
                       ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
@@ -67,8 +71,8 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" variant={isScrolled ? "accent" : "outline"} 
-                    className={!isScrolled ? "text-white border-white/30 hover:bg-white/10" : ""}>
+            <Button size="sm" variant={(isScrolled || hasLightBackground) ? "accent" : "outline"} 
+                    className={(!isScrolled && !hasLightBackground) ? "text-white border-white/30 hover:bg-white/10" : ""}>
               Get Quote
             </Button>
           </div>
@@ -80,7 +84,7 @@ const Navigation = () => {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              className={!isScrolled ? "text-white hover:bg-white/10" : ""}
+              className={(!isScrolled && !hasLightBackground) ? "text-white hover:bg-white/10" : ""}
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
