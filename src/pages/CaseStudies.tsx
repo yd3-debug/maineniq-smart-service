@@ -226,8 +226,8 @@ const CaseStudies = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{ backgroundImage: `url(${embassyGardensHero})` }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/90 via-navy-deep/75 to-primary/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/95 via-primary/90 to-black/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
         
         {/* Content - Refined & Elegant */}
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -246,32 +246,27 @@ const CaseStudies = () => {
               Delivering exceptional craftsmanship for London's most prestigious residential properties.
             </p>
             
-            {/* Elegant Statistics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-              {companyStats.map((stat, index) => (
+            {/* Elegant Statistics - Simplified to 3 key metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+              {companyStats.slice(0, 3).map((stat, index) => (
                 <div key={index} className="group text-center">
-                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 hover:border-luxury-gold/30 transition-all duration-500 hover:scale-105">
-                    <stat.icon className="w-10 h-10 text-luxury-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-3xl font-light text-white mb-2">{stat.value}</div>
-                    <div className="text-xs text-white/70 font-medium uppercase tracking-wider">{stat.label}</div>
+                  <div className="bg-white/8 backdrop-blur-md rounded-3xl p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
+                    <stat.icon className="w-12 h-12 text-luxury-gold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">{stat.value}</div>
+                    <div className="text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
                   </div>
                 </div>
               ))}
             </div>
             
-            {/* Refined Professional Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
-                <Shield className="w-4 h-4 text-luxury-gold" />
-                <span className="text-white/90 font-light text-sm">Confidential Projects</span>
-              </div>
-              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
-                <Award className="w-4 h-4 text-luxury-gold" />
-                <span className="text-white/90 font-light text-sm">Premium Standards</span>
-              </div>
-              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
-                <Users className="w-4 h-4 text-luxury-gold" />
-                <span className="text-white/90 font-light text-sm">Design Partnerships</span>
+            {/* Refined Professional Badge - Single, elegant */}
+            <div className="flex justify-center">
+              <div className="flex items-center space-x-4 bg-white/8 backdrop-blur-sm px-8 py-4 rounded-full border border-white/15">
+                <Shield className="w-5 h-5 text-luxury-gold" />
+                <span className="text-white font-light">Confidential Portfolio</span>
+                <div className="w-1 h-1 bg-white/50 rounded-full"></div>
+                <Award className="w-5 h-5 text-luxury-gold" />
+                <span className="text-white font-light">Premium Standards</span>
               </div>
             </div>
           </div>
