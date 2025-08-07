@@ -143,7 +143,7 @@ const Navigation = () => {
         {/* Mobile Navigation with Backdrop */}
         {/* Backdrop overlay with blur effect */}
         <div 
-          className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden z-40 ${
+          className={`fixed inset-0 bg-black/70 backdrop-blur-lg transition-all duration-300 md:hidden z-40 ${
             isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
           onClick={() => setIsOpen(false)}
@@ -151,7 +151,7 @@ const Navigation = () => {
         
         {/* Mobile menu panel */}
         <div 
-          className={`fixed top-20 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-2xl transition-all duration-300 ease-out md:hidden z-50 ${
+          className={`fixed top-20 left-0 right-0 bg-background border-b border-border shadow-2xl transition-all duration-300 ease-out md:hidden z-50 ${
             isOpen 
               ? 'translate-y-0 opacity-100 visible' 
               : '-translate-y-full opacity-0 invisible'
