@@ -26,11 +26,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-heading font-bold text-xl">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Wrench className="w-5 h-5 text-sage-elegant" />
-            </div>
-            <span className="text-foreground">Mainteniq</span>
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/LOGO PETRU .png" 
+              alt="Mainteniq Logo" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
