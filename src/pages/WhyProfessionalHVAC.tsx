@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
 import { Link } from "react-router-dom";
 import { 
   TrendingUp, 
@@ -244,13 +245,22 @@ const WhyProfessionalHVAC = () => {
             {/* Key Stats Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
               {keyStats.map((stat, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-2 mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    <stat.icon className="w-full h-full text-white" />
+                <AnimatedStatCard key={index} delay={index * 100}>
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:animate-pulse-glow">
+                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-2 mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      <stat.icon className="w-full h-full text-white" />
+                    </div>
+                    <div className="font-bold text-3xl mb-1 text-white">
+                      <AnimatedCounter 
+                        value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
+                        prefix={stat.value.includes('£') ? '£' : ''}
+                        suffix={stat.value.includes('%') ? '%' : stat.value.includes(',') ? '+' : ''}
+                        delay={index * 200}
+                      />
+                    </div>
+                    <div className="text-sm text-slate-300 font-medium">{stat.label}</div>
                   </div>
-                  <div className="font-bold text-3xl mb-1 text-white">{stat.value}</div>
-                  <div className="text-sm text-slate-300 font-medium">{stat.label}</div>
-                </div>
+                </AnimatedStatCard>
               ))}
             </div>
 
@@ -289,69 +299,80 @@ const WhyProfessionalHVAC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {costOfWaitingData.map((item, index) => (
-              <Card key={index} className={`border-2 hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm ${
+              <AnimatedStatCard key={index} delay={index * 150} className={`border-2 hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm ${
                 item.urgency === 'high' ? 'border-red-200 hover:border-red-300' : 'border-orange-200 hover:border-orange-300'
               }`}>
-                <CardContent className="p-6 text-center">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto ${
-                    item.urgency === 'high' ? 'bg-gradient-to-br from-red-100 to-red-200' : 'bg-gradient-to-br from-orange-100 to-orange-200'
-                  }`}>
-                    <item.icon className={`w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 text-slate-800">{item.title}</h3>
-                  <div className={`text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>{item.metric}</div>
-                  <div className="text-xs font-medium text-slate-500 mb-3">{item.metricLabel}</div>
-                  <div className="text-sm font-semibold text-slate-700 mb-2">{item.impact}</div>
-                  <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
+                <Card className="border-0 shadow-none bg-transparent">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto ${
+                      item.urgency === 'high' ? 'bg-gradient-to-br from-red-100 to-red-200' : 'bg-gradient-to-br from-orange-100 to-orange-200'
+                    }`}>
+                      <item.icon className={`w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2 text-slate-800">{item.title}</h3>
+                    <div className={`text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>
+                      <AnimatedCounter 
+                        value={parseFloat(item.metric.replace(/[£%±°C-]/g, '')) || 0}
+                        prefix={item.metric.includes('£') ? '£' : item.metric.includes('±') ? '±' : item.metric.includes('-') ? '-' : ''}
+                        suffix={item.metric.includes('%') ? '%' : item.metric.includes('°C') ? '°C' : ''}
+                        delay={index * 200 + 500}
+                      />
+                    </div>
+                    <div className="text-xs font-medium text-slate-500 mb-3">{item.metricLabel}</div>
+                    <div className="text-sm font-semibold text-slate-700 mb-2">{item.impact}</div>
+                    <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
             ))}
           </div>
 
           {/* Multi-Dimensional Comparison Chart */}
-          <Card className="border-red-200 shadow-xl bg-white/95 backdrop-blur-sm">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-3 text-slate-800">
-                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-white" />
-                </div>
-                Current vs Professional HVAC: Complete Comparison
-              </CardTitle>
-              <p className="text-slate-600">See the dramatic differences across all key metrics</p>
-            </CardHeader>
-            <CardContent>
-              <ChartContainer
-                config={chartConfig}
-                className="h-80"
-              >
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                    <XAxis 
-                      dataKey="system" 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fill: '#64748b', fontSize: 12 }}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fill: '#64748b', fontSize: 12 }}
-                    />
-                    <ChartTooltip 
-                      content={<ChartTooltipContent />}
-                      cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
-                    />
-                    <Bar 
-                      dataKey="cost" 
-                      name="Annual Cost (£)"
-                      radius={[4, 4, 0, 0]}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
-              </ChartContainer>
+          <AnimatedChart delay={800}>
+            <Card className="border-red-200 shadow-xl bg-white/95 backdrop-blur-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-3 text-slate-800">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                    <BarChart3 className="w-5 h-5 text-white" />
+                  </div>
+                  Current vs Professional HVAC: Complete Comparison
+                </CardTitle>
+                <p className="text-slate-600">See the dramatic differences across all key metrics</p>
+              </CardHeader>
+              <CardContent>
+                <ChartContainer
+                  config={chartConfig}
+                  className="h-80"
+                >
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis 
+                        dataKey="system" 
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: '#64748b', fontSize: 12 }}
+                      />
+                      <YAxis 
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: '#64748b', fontSize: 12 }}
+                      />
+                      <ChartTooltip 
+                        content={<ChartTooltipContent />}
+                        cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
+                      />
+                      <Bar 
+                        dataKey="cost" 
+                        name="Annual Cost (£)"
+                        radius={[4, 4, 0, 0]}
+                        className="animate-chart-bar-grow"
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                 </ChartContainer>
               
-              {/* Quick Stats Below Chart */}
+                {/* Quick Stats Below Chart */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-200">
                 <div className="text-center">
                   <div className="text-lg font-bold text-red-600">2x</div>
@@ -370,8 +391,9 @@ const WhyProfessionalHVAC = () => {
                   <div className="text-sm text-slate-600">Annual Savings</div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </AnimatedChart>
         </div>
       </section>
 
@@ -395,16 +417,25 @@ const WhyProfessionalHVAC = () => {
           {/* Benefits Dashboard */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {keyStats.map((stat, index) => (
-              <Card key={index} className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 hover:shadow-2xl transition-all duration-500 group">
-                 <CardContent className="p-8 text-center">
-                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                     <stat.icon className="w-full h-full text-white" />
-                   </div>
-                   <div className="text-4xl font-bold mb-2 text-foreground">{stat.value}</div>
-                   <p className="text-slate-600 font-medium mb-2">{stat.label}</p>
-                   <p className="text-slate-500 text-sm">{stat.description}</p>
-                 </CardContent>
-              </Card>
+              <AnimatedStatCard key={index} delay={index * 120} className="border-white/50 bg-white/70 backdrop-blur-sm hover:bg-white/90 hover:shadow-2xl transition-all duration-500 group">
+                <Card className="border-0 shadow-none bg-transparent">
+                  <CardContent className="p-8 text-center">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg animate-pulse-glow`}>
+                      <stat.icon className="w-full h-full text-white" />
+                    </div>
+                    <div className="text-4xl font-bold mb-2 text-foreground">
+                      <AnimatedCounter 
+                        value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
+                        prefix={stat.value.includes('£') ? '£' : ''}
+                        suffix={stat.value.includes('%') ? '%' : stat.value.includes(',') ? '+' : ''}
+                        delay={index * 200 + 300}
+                      />
+                    </div>
+                    <p className="text-slate-600 font-medium mb-2">{stat.label}</p>
+                    <p className="text-slate-500 text-sm">{stat.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
             ))}
           </div>
 
