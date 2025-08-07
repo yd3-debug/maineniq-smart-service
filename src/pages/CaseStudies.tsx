@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { 
   Calendar,
   MapPin,
@@ -26,13 +26,41 @@ import {
 import embassyGardensHero from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 
-const CaseStudies = () => {
-  const [selectedFilter, setSelectedFilter] = useState("All");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const CaseStudies = () => {
+    const [selectedFilter, setSelectedFilter] = useState("All");
+    const [selectedProject, setSelectedProject] = useState(null);
 
-  const projectFilters = ["All", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
+    // SEO: title, meta description, canonical
+    useEffect(() => {
+      document.title = "Case Studies: Premium Refurbishment | Mainteniq";
+      const description =
+        "Explore premium refurbishment case studies in London. Confidential portfolio for designers and architects.";
+      const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (metaDesc) {
+        metaDesc.setAttribute("content", description);
+      } else {
+        const m = document.createElement("meta");
+        m.name = "description";
+        m.content = description;
+        document.head.appendChild(m);
+      }
+      let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = "canonical";
+        document.head.appendChild(link);
+      }
+      link.href = window.location.origin + "/case-studies";
+    }, []);
 
-  const workProcess = [
+    const projectFilters = ["All", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
+
+    const countFor = (filter: string) =>
+      filter === "All"
+        ? portfolioProjects.length
+        : portfolioProjects.filter((p) => p.projectType.includes(filter)).length;
+
+    const workProcess = [
     {
       step: 1,
       title: "Initial Consultation",
@@ -219,67 +247,73 @@ const CaseStudies = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <main className="min-h-screen pt-16">
       {/* Hero Section - Elegant & Flowing */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Sophisticated Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-          style={{ backgroundImage: `url(${embassyGardensHero})` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-professional/95 via-primary/90 to-black/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-        
-        {/* Content - Refined & Elegant */}
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="mb-8">
-              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white tracking-tight leading-none">
-                Premium
-                <span className="block font-bold text-luxury-gold">
-                  Refurbishment Portfolio
-                </span>
-              </h1>
-              <div className="w-24 h-0.5 bg-gradient-to-r from-luxury-gold to-primary mx-auto mb-8"></div>
-            </div>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 mb-16 leading-relaxed font-light">
-              Exclusive collaboration with interior designers and architects on luxury developments. 
-              Delivering exceptional craftsmanship for London's most prestigious residential properties.
-            </p>
-            
-            {/* Elegant Statistics - Simplified to 3 key metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
-              {companyStats.slice(0, 3).map((stat, index) => (
-                <div key={index} className="group text-center">
-                  <div className="bg-white/8 backdrop-blur-md rounded-3xl p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
-                    <stat.icon className="w-12 h-12 text-luxury-gold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">
-                      <AnimatedCounter 
-                        value={parseFloat(stat.value.replace(/[+%]/g, ''))}
-                        suffix={stat.value.includes('%') ? '%' : stat.value.includes('+') ? '+' : ''}
-                        duration={1200}
-                        delay={index * 120}
-                      />
+        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+          {/* Background Image as <img> for better focal control */}
+          <picture>
+            <source srcSet={embassyGardensHero} />
+            <img
+              src={embassyGardensHero}
+              alt="Premium refurbishment case studies hero image"
+              className="absolute inset-0 w-full h-full object-cover md:object-[50%_30%] lg:object-[50%_25%]"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-br from-professional/80 via-primary/75 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          
+          {/* Content - Refined & Elegant */}
+          <div className="container mx-auto px-6 text-center relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="mb-8">
+                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white tracking-tight leading-none">
+                  Premium Refurbishment
+                  <span className="block font-bold text-luxury-gold">
+                    Case Studies Portfolio
+                  </span>
+                </h1>
+                <div className="w-24 h-0.5 bg-gradient-to-r from-luxury-gold to-primary mx-auto mb-8"></div>
+              </div>
+              <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 mb-16 leading-relaxed font-light">
+                Exclusive collaboration with interior designers and architects on luxury developments. 
+                Delivering exceptional craftsmanship for London's most prestigious residential properties.
+              </p>
+              
+              {/* Elegant Statistics - Simplified to 3 key metrics */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+                {companyStats.slice(0, 3).map((stat, index) => (
+                  <div key={index} className="group text-center">
+                    <div className="bg-white/8 backdrop-blur-md rounded-3xl p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
+                      <stat.icon className="w-12 h-12 text-luxury-gold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">
+                        <AnimatedCounter 
+                          value={parseFloat(stat.value.replace(/[+%]/g, ''))}
+                          suffix={stat.value.includes('%') ? '%' : stat.value.includes('+') ? '+' : ''}
+                          duration={1200}
+                          delay={index * 120}
+                        />
+                      </div>
+                      <div className="text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
                     </div>
-                    <div className="text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
                   </div>
+                ))}
+              </div>
+              
+              {/* Refined Professional Badge - Single, elegant */}
+              <div className="flex justify-center">
+                <div className="flex items-center space-x-4 bg-white/8 backdrop-blur-sm px-8 py-4 rounded-full border border-white/15">
+                  <Shield className="w-5 h-5 text-luxury-gold" />
+                  <span className="text-white font-light">Confidential Portfolio</span>
+                  <div className="w-1 h-1 bg-white/50 rounded-full"></div>
+                  <Award className="w-5 h-5 text-luxury-gold" />
+                  <span className="text-white font-light">Premium Standards</span>
                 </div>
-              ))}
-            </div>
-            
-            {/* Refined Professional Badge - Single, elegant */}
-            <div className="flex justify-center">
-              <div className="flex items-center space-x-4 bg-white/8 backdrop-blur-sm px-8 py-4 rounded-full border border-white/15">
-                <Shield className="w-5 h-5 text-luxury-gold" />
-                <span className="text-white font-light">Confidential Portfolio</span>
-                <div className="w-1 h-1 bg-white/50 rounded-full"></div>
-                <Award className="w-5 h-5 text-luxury-gold" />
-                <span className="text-white font-light">Premium Standards</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Portfolio Filter - Elegant */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
@@ -303,8 +337,12 @@ const CaseStudies = () => {
                       ? "bg-gradient-to-r from-primary to-luxury-gold text-white shadow-glow"
                       : "bg-white/80 text-muted-foreground border border-white/50 hover:bg-white hover:border-primary/30 hover:text-primary"
                   }`}
+                  aria-label={`${filter} projects: ${countFor(filter)} items`}
                 >
-                  {filter}
+                  <span>{filter}</span>
+                  <span className="ml-2 inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-xs px-2 py-0.5">
+                    {countFor(filter)}
+                  </span>
                 </button>
               ))}
             </div>
@@ -322,12 +360,14 @@ const CaseStudies = () => {
             {portfolioProjects
               .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
               .map((project) => (
-              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2`}>
+              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2 animate-fade-in`}>
                 <div className="relative h-48 bg-muted overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-black/70 text-white border-0">
@@ -370,6 +410,8 @@ const CaseStudies = () => {
                                   src={project.image} 
                                   alt={project.title}
                                   className="w-full h-64 object-cover rounded-lg"
+                                  loading="lazy"
+                                  decoding="async"
                                 />
                               </div>
                               <div className="space-y-4">
@@ -590,7 +632,7 @@ const CaseStudies = () => {
           </div>
         </div>
       </section>
-    </div>
+      </main>
   );
 };
 
