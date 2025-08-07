@@ -67,44 +67,60 @@ export const AnimatedCounter = ({
   suffix = "", 
   prefix = "", 
   className = "",
-  delay = 0 
+  delay = 0,
+  precision = 0,
+  duration = 2000,
 }: {
   value: number;
   suffix?: string;
   prefix?: string;
   className?: string;
   delay?: number;
+  precision?: number;
+  duration?: number;
 }) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.5 });
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState<number>(0);
 
   useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        const duration = 2000;
-        const startTime = Date.now();
-        
-        const animate = () => {
-          const elapsed = Date.now() - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          // Easing function
-          const easeOut = 1 - Math.pow(1 - progress, 3);
-          const currentValue = Math.floor(value * easeOut);
-          
-          setDisplayValue(currentValue);
-          
-          if (progress < 1) {
-            requestAnimationFrame(animate);
-          }
-        };
-        
-        animate();
-      }, delay);
-      
-      return () => clearTimeout(timer);
+    if (!isVisible) return;
+
+    const reducedMotion = typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const start = 0;
+    const end = value;
+    let rafId: number | null = null;
+
+    if (reducedMotion) {
+      setDisplayValue(end);
+      return;
     }
-  }, [isVisible, value, delay]);
+
+    const timer = setTimeout(() => {
+      const startTime = Date.now();
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = start + (end - start) * easeOut;
+        const rounded = parseFloat(current.toFixed(precision));
+        setDisplayValue(rounded);
+        if (progress < 1) {
+          rafId = requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [isVisible, value, delay, duration, precision]);
 
   return (
     <span ref={ref as React.RefObject<HTMLSpanElement>} className={`${className}`}>

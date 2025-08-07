@@ -16,6 +16,7 @@ import {
   Home
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedCounter } from "@/components/AnimatedChart";
 
 // Import professional work images
 import electricalInstallation from "@/assets/electrical-installation.jpg";
@@ -145,7 +146,15 @@ const About = () => {
             {stats.map((stat, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-card transition-shadow">
                 <stat.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold text-3xl mb-2">{stat.value}</h3>
+                <h3 className="font-bold text-3xl mb-2">
+                  <AnimatedCounter 
+                    value={parseFloat(stat.value.replace(/[,+★]/g, ''))} 
+                    suffix={stat.value.includes('★') ? '★' : stat.value.includes('+') ? '+' : ''}
+                    precision={stat.value.includes('★') ? 1 : 0}
+                    duration={1400}
+                    delay={index * 120}
+                  />
+                </h3>
                 <p className="text-muted-foreground">{stat.label}</p>
               </Card>
             ))}

@@ -21,6 +21,7 @@ import {
 import heroImage from "@/assets/hero-hvac.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
+import { AnimatedCounter } from "@/components/AnimatedChart";
 
 const Index = () => {
   const services = [
@@ -106,19 +107,27 @@ const Index = () => {
             {/* HVAC Impact Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-lg p-4 border border-energy-gold/30">
-                <div className="text-2xl font-bold text-energy-gold">£3,250</div>
+                <div className="text-2xl font-bold text-energy-gold">
+                  <AnimatedCounter value={3250} prefix="£" delay={0} duration={1400} />
+                </div>
                 <div className="text-sm opacity-80">Annual Savings</div>
               </div>
               <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-lg p-4 border border-trust-blue/30">
-                <div className="text-2xl font-bold text-trust-blue">50%</div>
+                <div className="text-2xl font-bold text-trust-blue">
+                  <AnimatedCounter value={50} suffix="%" delay={100} duration={1400} />
+                </div>
                 <div className="text-sm opacity-80">Energy Reduction</div>
               </div>
               <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-lg p-4 border border-accent-orange/30">
-                <div className="text-2xl font-bold text-accent-orange">25%</div>
+                <div className="text-2xl font-bold text-accent-orange">
+                  <AnimatedCounter value={25} suffix="%" delay={200} duration={1400} />
+                </div>
                 <div className="text-sm opacity-80">Property Value+</div>
               </div>
               <div className="text-center bg-primary/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30">
-                <div className="text-2xl font-bold text-energy-gold">99.97%</div>
+                <div className="text-2xl font-bold text-energy-gold">
+                  <AnimatedCounter value={99.97} precision={2} suffix="%" delay={300} duration={1400} />
+                </div>
                 <div className="text-sm opacity-80">Air Filtration</div>
               </div>
             </div>
@@ -183,7 +192,9 @@ const Index = () => {
                 </div>
                 <h4 className="font-bold text-lg mb-2">Financial Protection</h4>
                 <p className="text-muted-foreground text-sm mb-3">Save £3,250+ annually on energy, maintenance, and repairs</p>
-                <div className="text-2xl font-bold text-success">£270/mo</div>
+                <div className="text-2xl font-bold text-success">
+                  <AnimatedCounter value={270} prefix="£" suffix="/mo" delay={0} duration={1400} />
+                </div>
                 <div className="text-xs text-muted-foreground">Average Monthly Savings</div>
               </CardContent>
             </Card>
@@ -195,7 +206,9 @@ const Index = () => {
                 </div>
                 <h4 className="font-bold text-lg mb-2">Ultimate Comfort</h4>
                 <p className="text-muted-foreground text-sm mb-3">Consistent temperature control year-round</p>
-                <div className="text-2xl font-bold text-trust-blue">±1°C</div>
+                <div className="text-2xl font-bold text-trust-blue">
+                  <AnimatedCounter value={1} prefix="±" suffix="°C" delay={100} duration={1400} />
+                </div>
                 <div className="text-xs text-muted-foreground">Temperature Precision</div>
               </CardContent>
             </Card>
@@ -207,7 +220,9 @@ const Index = () => {
                 </div>
                 <h4 className="font-bold text-lg mb-2">Health & Wellness</h4>
                 <p className="text-muted-foreground text-sm mb-3">Hospital-grade air filtration removes allergens</p>
-                <div className="text-2xl font-bold text-success">99.97%</div>
+                <div className="text-2xl font-bold text-success">
+                  <AnimatedCounter value={99.97} precision={2} suffix="%" delay={200} duration={1400} />
+                </div>
                 <div className="text-xs text-muted-foreground">Filtration Efficiency</div>
               </CardContent>
             </Card>
@@ -219,7 +234,9 @@ const Index = () => {
                 </div>
                 <h4 className="font-bold text-lg mb-2">Property Value</h4>
                 <p className="text-muted-foreground text-sm mb-3">Professional HVAC increases marketability</p>
-                <div className="text-2xl font-bold text-accent-orange">+25%</div>
+                <div className="text-2xl font-bold text-accent-orange">
+                  <AnimatedCounter value={25} prefix="+" suffix="%" delay={300} duration={1400} />
+                </div>
                 <div className="text-xs text-muted-foreground">Value Increase</div>
               </CardContent>
             </Card>

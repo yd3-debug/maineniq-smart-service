@@ -24,6 +24,7 @@ import {
   MessageSquare
 } from "lucide-react";
 import embassyGardensHero from "@/assets/embassy-gardens-hero.jpg";
+import { AnimatedCounter } from "@/components/AnimatedChart";
 
 const CaseStudies = () => {
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -252,7 +253,14 @@ const CaseStudies = () => {
                 <div key={index} className="group text-center">
                   <div className="bg-white/8 backdrop-blur-md rounded-3xl p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
                     <stat.icon className="w-12 h-12 text-luxury-gold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">{stat.value}</div>
+                    <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">
+                      <AnimatedCounter 
+                        value={parseFloat(stat.value.replace(/[+%]/g, ''))}
+                        suffix={stat.value.includes('%') ? '%' : stat.value.includes('+') ? '+' : ''}
+                        duration={1200}
+                        delay={index * 120}
+                      />
+                    </div>
                     <div className="text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
                   </div>
                 </div>
@@ -329,7 +337,12 @@ const CaseStudies = () => {
                   </div>
                   <div className="absolute bottom-4 left-4">
                     <Badge className="bg-primary text-primary-foreground">
-                      {project.projectValue}
+                      <AnimatedCounter 
+                        value={parseFloat(project.projectValue.replace(/[£K+]/g, ''))}
+                        prefix="£"
+                        suffix="K+"
+                        duration={1200}
+                      />
                     </Badge>
                   </div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">

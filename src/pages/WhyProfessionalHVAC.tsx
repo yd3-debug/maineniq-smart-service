@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
 import { ProgressMetric, ComparisonBar } from "@/components/ProgressMetric";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import { 
   TrendingUp, 
@@ -215,6 +216,11 @@ const WhyProfessionalHVAC = () => {
     }
   ];
 
+  const { ref: comparisonRef, isVisible: isComparisonVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: energyRef, isVisible: isEnergyVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: scoresRef, isVisible: isScoresVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
+  const { ref: benefitsRef, isVisible: isBenefitsVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Key Stats */}
@@ -341,37 +347,43 @@ const WhyProfessionalHVAC = () => {
                 <p className="text-slate-600">See the dramatic differences across all key metrics</p>
               </CardHeader>
               <CardContent>
-                <ChartContainer
-                  config={chartConfig}
-                  className="h-80"
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis 
-                        dataKey="system" 
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                      />
-                      <YAxis 
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                      />
-                      <ChartTooltip 
-                        content={<ChartTooltipContent />}
-                        cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
-                      />
-                      <Bar 
-                        dataKey="cost" 
-                        name="Annual Cost (£)"
-                        radius={[4, 4, 0, 0]}
-                        className="animate-chart-bar-grow"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                 </ChartContainer>
+                <div ref={comparisonRef as React.RefObject<HTMLDivElement>}>
+                  <ChartContainer
+                    config={chartConfig}
+                    className="h-80"
+                  >
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                        <XAxis 
+                          dataKey="system" 
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                        />
+                        <YAxis 
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                        />
+                        <ChartTooltip 
+                          content={<ChartTooltipContent />}
+                          cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
+                        />
+                        <Bar 
+                          dataKey="cost" 
+                          name="Annual Cost (£)"
+                          radius={[4, 4, 0, 0]}
+                          className="animate-chart-bar-grow"
+                          isAnimationActive={isComparisonVisible}
+                          animationBegin={120}
+                          animationDuration={1000}
+                          animationEasing="ease-out"
+                        />
+                      </BarChart>
+                    </ResponsiveContainer>
+                   </ChartContainer>
+                </div>
               
                {/* Enhanced Visual Metrics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-200">
@@ -471,41 +483,49 @@ const WhyProfessionalHVAC = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
-                  <div className="text-2xl font-bold text-emerald-700">1,420 kWh</div>
+                  <div className="text-2xl font-bold text-emerald-700">
+                    <AnimatedCounter value={1420} suffix=" kWh" delay={200} duration={1400} />
+                  </div>
                   <div className="text-sm text-emerald-600">Average Monthly Savings</div>
                 </div>
-                <ChartContainer config={chartConfig} className="h-64">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis 
-                        dataKey="month" 
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                      />
-                      <YAxis 
-                        domain={[800, 1800]}
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                        label={{ value: 'kWh Saved', angle: -90, position: 'insideLeft' }}
-                      />
-                      <ChartTooltip 
-                        content={<ChartTooltipContent />}
-                        formatter={(value, name) => [`${value} kWh`, 'Energy Saved']}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="energySaved"
-                        stroke="hsl(142 55% 35%)"
-                        strokeWidth={4}
-                        name="Energy Saved (kWh)"
-                        dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 5 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+                <div ref={energyRef as React.RefObject<HTMLDivElement>}>
+                  <ChartContainer config={chartConfig} className="h-64">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                        <XAxis 
+                          dataKey="month" 
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                        />
+                        <YAxis 
+                          domain={[800, 1800]}
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                          label={{ value: 'kWh Saved', angle: -90, position: 'insideLeft' }}
+                        />
+                        <ChartTooltip 
+                          content={<ChartTooltipContent />}
+                          formatter={(value, name) => [`${value} kWh`, 'Energy Saved']}
+                        />
+                        <Line
+                          type="monotone"
+                          dataKey="energySaved"
+                          stroke="hsl(142 55% 35%)"
+                          strokeWidth={4}
+                          name="Energy Saved (kWh)"
+                          dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 5 }}
+                          isAnimationActive={isEnergyVisible}
+                          animationBegin={120}
+                          animationDuration={1000}
+                          animationEasing="ease-out"
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
+                </div>
               </CardContent>
             </Card>
 
@@ -523,54 +543,68 @@ const WhyProfessionalHVAC = () => {
               <CardContent>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
-                    <div className="text-xl font-bold text-orange-700">94/100</div>
+                    <div className="text-xl font-bold text-orange-700">
+                      <AnimatedCounter value={94} suffix="/100" delay={150} duration={1200} />
+                    </div>
                     <div className="text-sm text-orange-600">Avg. Comfort</div>
                   </div>
                   <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="text-xl font-bold text-purple-700">92/100</div>
+                    <div className="text-xl font-bold text-purple-700">
+                      <AnimatedCounter value={92} suffix="/100" delay={250} duration={1200} />
+                    </div>
                     <div className="text-sm text-purple-600">Avg. Air Quality</div>
                   </div>
                 </div>
-                <ChartContainer config={chartConfig} className="h-64">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis 
-                        dataKey="month" 
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                      />
-                      <YAxis 
-                        domain={[80, 100]}
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 12 }}
-                        label={{ value: 'Score (out of 100)', angle: -90, position: 'insideLeft' }}
-                      />
-                      <ChartTooltip 
-                        content={<ChartTooltipContent />}
-                        formatter={(value, name) => [`${value}/100`, name]}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="comfortScore"
-                        stroke="hsl(24 100% 50%)"
-                        strokeWidth={4}
-                        name="Comfort Score"
-                        dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 5 }}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="airQuality"
-                        stroke="hsl(270 60% 50%)"
-                        strokeWidth={4}
-                        name="Air Quality Score"
-                        dot={{ fill: "hsl(270 60% 50%)", strokeWidth: 2, r: 5 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+                <div ref={scoresRef}>
+                  <ChartContainer config={chartConfig} className="h-64">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                        <XAxis 
+                          dataKey="month" 
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                        />
+                        <YAxis 
+                          domain={[80, 100]}
+                          axisLine={false}
+                          tickLine={false}
+                          tick={{ fill: '#64748b', fontSize: 12 }}
+                          label={{ value: 'Score (out of 100)', angle: -90, position: 'insideLeft' }}
+                        />
+                        <ChartTooltip 
+                          content={<ChartTooltipContent />}
+                          formatter={(value, name) => [`${value}/100`, name]}
+                        />
+                        <Line
+                          type="monotone"
+                          dataKey="comfortScore"
+                          stroke="hsl(24 100% 50%)"
+                          strokeWidth={4}
+                          name="Comfort Score"
+                          dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 5 }}
+                          isAnimationActive={isScoresVisible}
+                          animationBegin={120}
+                          animationDuration={1000}
+                          animationEasing="ease-out"
+                        />
+                        <Line
+                          type="monotone"
+                          dataKey="airQuality"
+                          stroke="hsl(270 60% 50%)"
+                          strokeWidth={4}
+                          name="Air Quality Score"
+                          dot={{ fill: "hsl(270 60% 50%)", strokeWidth: 2, r: 5 }}
+                          isAnimationActive={isScoresVisible}
+                          animationBegin={180}
+                          animationDuration={1000}
+                          animationEasing="ease-out"
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
+                </div>
               </CardContent>
             </Card>
 
@@ -586,34 +620,40 @@ const WhyProfessionalHVAC = () => {
                 <p className="text-slate-600">Multi-dimensional improvements you'll experience</p>
               </CardHeader>
               <CardContent>
-                <ChartContainer config={chartConfig} className="h-72">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={benefitBreakdownData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={100}
-                        paddingAngle={8}
-                        dataKey="value"
-                        strokeWidth={3}
-                        stroke="#ffffff"
-                      >
-                        {benefitBreakdownData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.fill} />
-                        ))}
-                      </Pie>
-                      <ChartTooltip 
-                        content={<ChartTooltipContent />}
-                        formatter={(value, name, props) => [
-                          `${value}% improvement`,
-                          props.payload.impact
-                        ]}
-                      />
-                    </PieChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+                <div ref={benefitsRef}>
+                  <ChartContainer config={chartConfig} className="h-72">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={benefitBreakdownData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={100}
+                          paddingAngle={8}
+                          dataKey="value"
+                          strokeWidth={3}
+                          stroke="#ffffff"
+                          isAnimationActive={isBenefitsVisible}
+                          animationBegin={120}
+                          animationDuration={1000}
+                          animationEasing="ease-out"
+                        >
+                          {benefitBreakdownData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                          ))}
+                        </Pie>
+                        <ChartTooltip 
+                          content={<ChartTooltipContent />}
+                          formatter={(value, name, props) => [
+                            `${value}% improvement`,
+                            props.payload.impact
+                          ]}
+                        />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
+                </div>
                 <div className="grid grid-cols-1 gap-3 mt-6">
                   {benefitBreakdownData.map((item, index) => (
                     <div key={index} className="flex items-center justify-between">
