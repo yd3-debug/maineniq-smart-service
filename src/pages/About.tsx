@@ -19,11 +19,8 @@ import { Link } from "react-router-dom";
 
 // Import professional work images
 import electricalInstallation from "@/assets/electrical-installation.jpg";
-import renovationComparison from "@/assets/renovation-comparison.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import customerConsultation from "@/assets/customer-consultation.jpg";
-
-import energyEfficiency from "@/assets/energy-efficiency.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
 
@@ -92,19 +89,19 @@ const About = () => {
       icon: Settings,
       title: "Installation",
       description: "Expert installation with modern equipment and techniques",
-      image: modernEquipment
+      image: electricalInstallation
     },
     {
       icon: Wrench,
       title: "Maintenance",
       description: "Ongoing service and support for optimal performance",
-      image: renovationComparison
+      image: modernEquipment
     },
     {
       icon: Star,
       title: "Satisfaction",
       description: "Guaranteed results and happy customers",
-      image: energyEfficiency
+      image: teamCollaboration
     }
   ];
 
