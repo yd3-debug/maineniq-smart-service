@@ -274,14 +274,13 @@ const WhyProfessionalHVAC = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-6 sm:px-0 overflow-hidden">
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-xs sm:text-sm md:text-base font-medium px-2 sm:px-6 md:px-8 py-3 md:py-4 min-h-[44px] md:min-h-[56px] shadow-xl hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden whitespace-normal text-center leading-tight">
-                  <span className="sm:hidden">Assessment</span>
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-xs sm:text-sm md:text-base font-medium px-3 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 min-h-[40px] sm:min-h-[44px] md:min-h-[56px] shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
+                  <span className="sm:hidden">Quote</span>
                   <span className="hidden sm:inline md:hidden">Free Assessment</span>
-                  <span className="hidden md:inline flex flex-col items-center">
-                    <span>Get Free Assessment &</span>
-                    <span>Savings Report</span>
+                  <span className="hidden md:inline text-center">
+                    Get Free Assessment &<br />Savings Report
                   </span>
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1 sm:ml-2 flex-shrink-0 self-center" />
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1 sm:ml-2 flex-shrink-0" />
                 </Button>
               </Link>
               <Link to="/services" className="w-full sm:w-auto">
