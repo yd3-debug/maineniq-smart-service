@@ -36,6 +36,35 @@ const Navigation = () => {
     return false;
   };
 
+  // Close menu when clicking outside or on escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (isOpen && !target.closest('nav')) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('click', handleClickOutside);
+      // Prevent body scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled || hasLightBackground
@@ -82,49 +111,97 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button with enhanced animation */}
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              className={(!isScrolled && !hasLightBackground) ? "text-white hover:bg-white/10" : ""}
+              className={`transition-all duration-300 ${
+                (!isScrolled && !hasLightBackground) ? "text-white hover:bg-white/10" : ""
+              } ${isOpen ? 'rotate-180' : 'rotate-0'}`}
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              <div className="relative">
+                <Menu 
+                  size={20} 
+                  className={`transition-all duration-300 ${
+                    isOpen ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
+                  }`} 
+                />
+                <X 
+                  size={20} 
+                  className={`absolute inset-0 transition-all duration-300 ${
+                    isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                  }`} 
+                />
+              </div>
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+        {/* Mobile Navigation with Backdrop */}
+        {/* Backdrop overlay with blur effect */}
+        <div 
+          className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden z-40 ${
+            isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+        
+        {/* Mobile menu panel */}
+        <div 
+          className={`fixed top-20 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-2xl transition-all duration-300 ease-out md:hidden z-50 ${
+            isOpen 
+              ? 'translate-y-0 opacity-100 visible' 
+              : '-translate-y-full opacity-0 invisible'
+          }`}
+        >
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col space-y-6">
+              {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`font-medium transition-colors duration-200 ${
+                  className={`font-medium text-lg transition-all duration-300 transform hover:translate-x-2 ${
                     isActive(item.href)
-                      ? "text-primary"
+                      ? "text-primary font-semibold"
                       : "text-muted-foreground hover:text-primary"
+                  } ${
+                    isOpen ? 'animate-slide-in-right' : ''
                   }`}
+                  style={{ 
+                    animationDelay: isOpen ? `${index * 50}ms` : '0ms',
+                    animationFillMode: 'both'
+                  }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button 
-                size="sm" 
-                variant="accent" 
-                className="w-fit"
-                onClick={() => handleQuoteRequest()}
+              <div className={`pt-4 border-t border-border/30 ${
+                isOpen ? 'animate-fade-in' : ''
+              }`}
+                style={{ 
+                  animationDelay: isOpen ? `${navItems.length * 50 + 100}ms` : '0ms',
+                  animationFillMode: 'both'
+                }}
               >
-                Get Quote
-              </Button>
+                <Button 
+                  size="sm" 
+                  variant="accent" 
+                  className="w-full text-lg py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  onClick={() => {
+                    handleQuoteRequest();
+                    setIsOpen(false);
+                  }}
+                >
+                  Get Quote
+                </Button>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

@@ -162,6 +162,16 @@ export default {
 						transformOrigin: 'bottom'
 					}
 				},
+				'slide-in-right': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
 				'pulse-glow': {
 					'0%, 100%': {
 						boxShadow: '0 0 5px hsla(var(--primary), 0.3)'
@@ -176,6 +186,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-up': 'slide-up 0.5s ease-out',
+				'slide-in-right': 'slide-in-right 0.4s ease-out',
 				'scale-in': 'scale-in 0.4s ease-out',
 				'chart-bar-grow': 'chart-bar-grow 0.8s ease-out',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
