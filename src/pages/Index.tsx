@@ -58,14 +58,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-professional-gradient text-white overflow-hidden">
+      <section className="relative -mt-20 pt-32 pb-32 bg-professional-gradient text-white overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `linear-gradient(rgba(34, 40, 49, 0.8), rgba(57, 62, 70, 0.6)), url(${heroImage})`,
           }}
         />
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto px-4 pt-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center gap-4 text-sm mb-8">
