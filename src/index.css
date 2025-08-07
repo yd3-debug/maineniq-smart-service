@@ -151,7 +151,21 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+body {
+  @apply bg-background text-foreground;
+  transition: filter 0.3s ease-out;
+}
+
+/* Mobile menu blur effect for page content */
+body.mobile-menu-open > #root > * {
+  filter: blur(8px);
+  transition: filter 0.3s ease-out;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Ensure navigation stays unblurred */
+body.mobile-menu-open > #root > nav,
+body.mobile-menu-open nav {
+  filter: none !important;
+}
 }
