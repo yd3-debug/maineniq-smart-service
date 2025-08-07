@@ -70,7 +70,7 @@ const Index = () => {
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center gap-4 text-sm mb-8">
               <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                <Shield className="w-4 h-4 text-accent-blue" />
+                <Shield className="w-4 h-4 text-trust-blue" />
                 <span>Licensed & Insured</span>
               </div>
               <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
@@ -105,20 +105,20 @@ const Index = () => {
 
             {/* HVAC Impact Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30">
-                <div className="text-2xl font-bold text-luxury-gold">£3,250</div>
+              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-lg p-4 border border-energy-gold/30">
+                <div className="text-2xl font-bold text-energy-gold">£3,250</div>
                 <div className="text-sm opacity-80">Annual Savings</div>
               </div>
-              <div className="text-center bg-accent-blue/20 backdrop-blur-sm rounded-lg p-4 border border-accent-blue/30">
-                <div className="text-2xl font-bold text-accent-blue">50%</div>
+              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-lg p-4 border border-trust-blue/30">
+                <div className="text-2xl font-bold text-trust-blue">50%</div>
                 <div className="text-sm opacity-80">Energy Reduction</div>
               </div>
               <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-lg p-4 border border-accent-orange/30">
                 <div className="text-2xl font-bold text-accent-orange">25%</div>
                 <div className="text-sm opacity-80">Property Value+</div>
               </div>
-              <div className="text-center bg-professional/20 backdrop-blur-sm rounded-lg p-4 border border-professional/30">
-                <div className="text-2xl font-bold text-luxury-gold">99.97%</div>
+              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30">
+                <div className="text-2xl font-bold text-energy-gold">99.97%</div>
                 <div className="text-sm opacity-80">Air Filtration</div>
               </div>
             </div>
@@ -178,43 +178,43 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <Card className="border-primary/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-luxury-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-energy-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <DollarSign className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Financial Protection</h4>
                 <p className="text-muted-foreground text-sm mb-3">Save £3,250+ annually on energy, maintenance, and repairs</p>
-                <div className="text-2xl font-bold text-luxury-gold">£270/mo</div>
+                <div className="text-2xl font-bold text-energy-gold">£270/mo</div>
                 <div className="text-xs text-muted-foreground">Average Monthly Savings</div>
               </CardContent>
             </Card>
             
-            <Card className="border-accent-blue/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-trust-blue/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-accent-blue to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-trust-blue to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Thermometer className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Ultimate Comfort</h4>
                 <p className="text-muted-foreground text-sm mb-3">Consistent temperature control year-round</p>
-                <div className="text-2xl font-bold text-accent-blue">±1°C</div>
+                <div className="text-2xl font-bold text-trust-blue">±1°C</div>
                 <div className="text-xs text-muted-foreground">Temperature Precision</div>
               </CardContent>
             </Card>
 
-            <Card className="border-professional/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-primary/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-professional to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Heart className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Health & Wellness</h4>
                 <p className="text-muted-foreground text-sm mb-3">Hospital-grade air filtration removes allergens</p>
-                <div className="text-2xl font-bold text-professional">99.97%</div>
+                <div className="text-2xl font-bold text-primary">99.97%</div>
                 <div className="text-xs text-muted-foreground">Filtration Efficiency</div>
               </CardContent>
             </Card>
 
             <Card className="border-accent-orange/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-luxury-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-energy-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Property Value</h4>
@@ -235,7 +235,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/why-professional-hvac">
-                <Button className="bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white px-8 py-3">
+                <Button className="bg-gradient-to-r from-primary to-energy-gold hover:from-primary/90 hover:to-energy-gold/90 text-white px-8 py-3">
                   Calculate Your Savings
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

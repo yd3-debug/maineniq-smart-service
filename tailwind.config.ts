@@ -38,6 +38,13 @@ export default {
 					DEFAULT: 'hsl(var(--accent-orange))',
 					foreground: 'hsl(var(--accent-orange-foreground))',
 				},
+				'energy-gold': {
+					DEFAULT: 'hsl(var(--energy-gold))',
+				},
+				'trust-blue': {
+					DEFAULT: 'hsl(var(--trust-blue))',
+					foreground: 'hsl(var(--trust-blue-foreground))',
+				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
@@ -79,6 +86,8 @@ export default {
 				'hero-gradient': 'var(--gradient-hero)',
 				'professional-gradient': 'var(--gradient-professional)',
 				'cta-gradient': 'var(--gradient-cta)',
+				'trust-gradient': 'var(--gradient-trust)',
+				'energy-gradient': 'var(--gradient-energy)',
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',

@@ -18,9 +18,14 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     --primary-glow: 220 20% 35%;    /* Lighter charcoal for accents */
 
-    /* Professional Accent - Gold for CTAs */
+    /* Professional Gold - Main CTA Color */
     --accent-orange: 24 100% 50%;   /* Professional gold accent */
     --accent-orange-foreground: 0 0% 100%;
+    --energy-gold: 32 95% 55%;      /* Warmer gold for energy stats */
+
+    /* Trust Blue - For reliability indicators */
+    --trust-blue: 217 91% 60%;      /* Professional blue for trust */
+    --trust-blue-foreground: 0 0% 100%;
 
     /* Secondary Colors */
     --secondary: 0 0% 95%;          /* Light gray */
@@ -53,10 +58,12 @@ All colors MUST be HSL.
     --input: 0 0% 88%;
     --ring: 220 25% 25%;
 
-    /* Simplified Professional Gradients */
+    /* Enhanced Professional Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / 0.95), hsl(0 0% 8% / 0.90));
     --gradient-professional: linear-gradient(135deg, hsl(220 25% 25%), hsl(24 100% 50%));
     --gradient-cta: linear-gradient(135deg, hsl(24 100% 50%), hsl(220 25% 25%));
+    --gradient-trust: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 25% 25%));
+    --gradient-energy: linear-gradient(135deg, hsl(32 95% 55%), hsl(24 100% 50%));
 
     /* Professional Design Tokens */
     --shadow-elegant: 0 10px 30px -10px hsl(220 25% 25% / 0.3);
@@ -122,6 +129,8 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(220 25% 25% / 0.95), hsl(222.2 84% 4.9% / 0.95));
     --gradient-professional: linear-gradient(135deg, hsl(220 25% 25%), hsl(24 100% 50%));
     --gradient-cta: linear-gradient(135deg, hsl(24 100% 50%), hsl(220 25% 25%));
+    --gradient-trust: linear-gradient(135deg, hsl(217 91% 60%), hsl(220 25% 25%));
+    --gradient-energy: linear-gradient(135deg, hsl(32 95% 55%), hsl(24 100% 50%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
