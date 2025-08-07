@@ -176,21 +176,21 @@ const Index = () => {
 
           {/* HVAC Benefits Overview */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <Card className="border-primary/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-success/25 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-energy-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-success to-success rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 ring-1 ring-success/20 hover:animate-pulse-glow">
                   <DollarSign className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Financial Protection</h4>
                 <p className="text-muted-foreground text-sm mb-3">Save £3,250+ annually on energy, maintenance, and repairs</p>
-                <div className="text-2xl font-bold text-energy-gold">£270/mo</div>
+                <div className="text-2xl font-bold text-success">£270/mo</div>
                 <div className="text-xs text-muted-foreground">Average Monthly Savings</div>
               </CardContent>
             </Card>
             
-            <Card className="border-trust-blue/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-trust-blue/25 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-trust-blue to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-trust-blue to-primary rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 ring-1 ring-trust-blue/20 hover:animate-pulse-glow">
                   <Thermometer className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Ultimate Comfort</h4>
@@ -200,21 +200,21 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-primary/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-success/25 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-success to-success rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 ring-1 ring-success/20 hover:animate-pulse-glow">
                   <Heart className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Health & Wellness</h4>
                 <p className="text-muted-foreground text-sm mb-3">Hospital-grade air filtration removes allergens</p>
-                <div className="text-2xl font-bold text-primary">99.97%</div>
+                <div className="text-2xl font-bold text-success">99.97%</div>
                 <div className="text-xs text-muted-foreground">Filtration Efficiency</div>
               </CardContent>
             </Card>
 
-            <Card className="border-accent-orange/20 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+            <Card className="border-accent-orange/25 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
               <CardContent className="p-6 text-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-energy-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-energy-gold rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 ring-1 ring-accent-orange/20 hover:animate-pulse-glow">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Property Value</h4>
