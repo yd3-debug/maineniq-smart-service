@@ -349,41 +349,51 @@ const WhyProfessionalHVAC = () => {
               </CardHeader>
               <CardContent>
                 <div ref={comparisonRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer
-                    config={chartConfig}
-                    className="h-32 sm:h-48 md:h-64"
-                  >
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                        <XAxis 
-                          dataKey="system" 
-                          axisLine={false}
-                          tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
-                        />
-                        <YAxis 
-                          axisLine={false}
-                          tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
-                        />
-                        <ChartTooltip 
-                          content={<ChartTooltipContent />}
-                          cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
-                        />
-                        <Bar 
-                          dataKey="cost" 
-                          name="Annual Cost (£)"
-                          radius={[4, 4, 0, 0]}
-                          className="animate-chart-bar-grow"
-                          isAnimationActive={isComparisonVisible}
-                          animationBegin={120}
-                          animationDuration={1000}
-                          animationEasing="ease-out"
-                        />
-                      </BarChart>
-                    </ResponsiveContainer>
-                   </ChartContainer>
+                  <div className="overflow-hidden rounded-lg">
+                    <ChartContainer
+                      config={chartConfig}
+                      className="h-32 sm:h-48 md:h-64 w-full"
+                    >
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart 
+                          data={energyComparisonData} 
+                          margin={{ 
+                            top: 10, 
+                            right: 10, 
+                            left: 10, 
+                            bottom: 5 
+                          }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                          <XAxis 
+                            dataKey="system" 
+                            axisLine={false}
+                            tickLine={false}
+                            tick={{ fill: '#64748b', fontSize: 10 }}
+                          />
+                          <YAxis 
+                            axisLine={false}
+                            tickLine={false}
+                            tick={{ fill: '#64748b', fontSize: 10 }}
+                          />
+                          <ChartTooltip 
+                            content={<ChartTooltipContent />}
+                            cursor={{ fill: 'rgba(239, 68, 68, 0.1)' }}
+                          />
+                          <Bar 
+                            dataKey="cost" 
+                            name="Annual Cost (£)"
+                            radius={[4, 4, 0, 0]}
+                            className="animate-chart-bar-grow"
+                            isAnimationActive={isComparisonVisible}
+                            animationBegin={120}
+                            animationDuration={1000}
+                            animationEasing="ease-out"
+                          />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </ChartContainer>
+                  </div>
                 </div>
               
                {/* Enhanced Visual Metrics */}
@@ -489,23 +499,31 @@ const WhyProfessionalHVAC = () => {
                   </div>
                   <div className="text-xs sm:text-sm text-emerald-600">Average Monthly Savings</div>
                 </div>
-                <div ref={energyRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64">
+                <div ref={energyRef as React.RefObject<HTMLDivElement>} className="overflow-hidden rounded-lg">
+                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64 w-full">
                     <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                      <LineChart 
+                        data={monthlyPerformanceData} 
+                        margin={{ 
+                          top: 10, 
+                          right: 5, 
+                          left: 5, 
+                          bottom: 5 
+                        }}
+                      >
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                         <XAxis 
                           dataKey="month" 
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
+                          tick={{ fill: '#64748b', fontSize: 10 }}
                         />
                         <YAxis 
                           domain={[800, 1800]}
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
-                          label={{ value: 'kWh Saved', angle: -90, position: 'insideLeft' }}
+                          tick={{ fill: '#64748b', fontSize: 10 }}
+                          width={40}
                         />
                         <ChartTooltip 
                           content={<ChartTooltipContent />}
@@ -515,9 +533,9 @@ const WhyProfessionalHVAC = () => {
                           type="monotone"
                           dataKey="energySaved"
                           stroke="hsl(142 55% 35%)"
-                          strokeWidth={4}
+                          strokeWidth={3}
                           name="Energy Saved (kWh)"
-                          dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 5 }}
+                          dot={{ fill: "hsl(142 55% 35%)", strokeWidth: 2, r: 4 }}
                           isAnimationActive={isEnergyVisible}
                           animationBegin={120}
                           animationDuration={1000}
@@ -556,23 +574,31 @@ const WhyProfessionalHVAC = () => {
                     <div className="text-xs sm:text-sm text-purple-600">Avg. Air Quality</div>
                   </div>
                 </div>
-                <div ref={scoresRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64">
+                <div ref={scoresRef as React.RefObject<HTMLDivElement>} className="overflow-hidden rounded-lg">
+                  <ChartContainer config={chartConfig} className="h-40 sm:h-48 md:h-64 w-full">
                     <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                      <LineChart 
+                        data={monthlyPerformanceData} 
+                        margin={{ 
+                          top: 10, 
+                          right: 5, 
+                          left: 5, 
+                          bottom: 5 
+                        }}
+                      >
                         <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                         <XAxis 
                           dataKey="month" 
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
+                          tick={{ fill: '#64748b', fontSize: 10 }}
                         />
                         <YAxis 
                           domain={[80, 100]}
                           axisLine={false}
                           tickLine={false}
-                          tick={{ fill: '#64748b', fontSize: 12 }}
-                          label={{ value: 'Score (out of 100)', angle: -90, position: 'insideLeft' }}
+                          tick={{ fill: '#64748b', fontSize: 10 }}
+                          width={40}
                         />
                         <ChartTooltip 
                           content={<ChartTooltipContent />}
@@ -582,9 +608,9 @@ const WhyProfessionalHVAC = () => {
                           type="monotone"
                           dataKey="comfortScore"
                           stroke="hsl(24 100% 50%)"
-                          strokeWidth={4}
+                          strokeWidth={3}
                           name="Comfort Score"
-                          dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 5 }}
+                          dot={{ fill: "hsl(24 100% 50%)", strokeWidth: 2, r: 4 }}
                           isAnimationActive={isScoresVisible}
                           animationBegin={120}
                           animationDuration={1000}
@@ -621,19 +647,19 @@ const WhyProfessionalHVAC = () => {
                 <p className="text-slate-600 text-xs sm:text-sm">Multi-dimensional improvements you'll experience</p>
               </CardHeader>
               <CardContent>
-                <div ref={benefitsRef as React.RefObject<HTMLDivElement>}>
-                  <ChartContainer config={chartConfig} className="h-48 sm:h-56 md:h-72">
+                <div ref={benefitsRef as React.RefObject<HTMLDivElement>} className="overflow-hidden rounded-lg px-2 sm:px-4">
+                  <ChartContainer config={chartConfig} className="h-48 sm:h-56 md:h-72 w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
                           data={benefitBreakdownData}
                           cx="50%"
                           cy="50%"
-                          innerRadius={60}
-                          outerRadius={100}
-                          paddingAngle={8}
+                          innerRadius={40}
+                          outerRadius={80}
+                          paddingAngle={4}
                           dataKey="value"
-                          strokeWidth={3}
+                          strokeWidth={2}
                           stroke="#ffffff"
                           isAnimationActive={isBenefitsVisible}
                           animationBegin={120}
