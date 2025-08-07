@@ -219,118 +219,107 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background text-foreground relative overflow-hidden">
-        {/* Background Image with Enhanced Overlay */}
+      {/* Hero Section - Elegant & Flowing */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Sophisticated Overlay */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{ backgroundImage: `url(${embassyGardensHero})` }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/90 via-navy-deep/75 to-primary/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
-        {/* Content */}
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-heading text-6xl md:text-7xl font-bold mb-8 text-white drop-shadow-lg">
-              Premium Refurbishment Portfolio
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 mb-12 leading-relaxed drop-shadow-md">
-              Exclusive collaboration with interior designers and architects on luxury developments like Embassy Gardens. 
-              Delivering exceptional craftsmanship for high-end residential properties across London's prestigious districts.
+        {/* Content - Refined & Elegant */}
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-8">
+              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white tracking-tight leading-none">
+                Premium
+                <span className="block font-bold bg-gradient-to-r from-luxury-gold to-white bg-clip-text text-transparent">
+                  Refurbishment Portfolio
+                </span>
+              </h1>
+              <div className="w-24 h-0.5 bg-gradient-to-r from-luxury-gold to-primary mx-auto mb-8"></div>
+            </div>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 mb-16 leading-relaxed font-light">
+              Exclusive collaboration with interior designers and architects on luxury developments. 
+              Delivering exceptional craftsmanship for London's most prestigious residential properties.
             </p>
             
-            {/* Enhanced Statistics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            {/* Elegant Statistics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
               {companyStats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                  <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <div className="text-4xl font-bold text-white mb-2 drop-shadow-md">{stat.value}</div>
-                  <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+                <div key={index} className="group text-center">
+                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 hover:border-luxury-gold/30 transition-all duration-500 hover:scale-105">
+                    <stat.icon className="w-10 h-10 text-luxury-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="text-3xl font-light text-white mb-2">{stat.value}</div>
+                    <div className="text-xs text-white/70 font-medium uppercase tracking-wider">{stat.label}</div>
+                  </div>
                 </div>
               ))}
             </div>
             
-            {/* Professional Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                <Shield className="w-5 h-5 text-primary" />
-                <span className="text-white font-medium">Confidential Projects</span>
+            {/* Refined Professional Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
+                <Shield className="w-4 h-4 text-luxury-gold" />
+                <span className="text-white/90 font-light text-sm">Confidential Projects</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                <Award className="w-5 h-5 text-primary" />
-                <span className="text-white font-medium">Premium Standards</span>
+              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
+                <Award className="w-4 h-4 text-luxury-gold" />
+                <span className="text-white/90 font-light text-sm">Premium Standards</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                <Users className="w-5 h-5 text-primary" />
-                <span className="text-white font-medium">Design Partnerships</span>
+              <div className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10 hover:border-luxury-gold/30 transition-all duration-300">
+                <Users className="w-4 h-4 text-luxury-gold" />
+                <span className="text-white/90 font-light text-sm">Design Partnerships</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Professional Credentials Section */}
-      <section className="py-12 bg-accent/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div className="flex flex-col items-center space-y-2">
-              <Building2 className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">50+ Refurbishment Projects</h3>
-              <p className="text-sm text-muted-foreground">Luxury transformations</p>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <Lock className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Confidential Portfolio</h3>
-              <p className="text-sm text-muted-foreground">Discretion guaranteed</p>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <Users className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Design Partnerships</h3>
-              <p className="text-sm text-muted-foreground">Interior Designers & Developers</p>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <Award className="w-8 h-8 text-primary" />
-              <h3 className="font-semibold">Premium Standards</h3>
-              <p className="text-sm text-muted-foreground">Luxury finishes</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Gallery */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl font-bold mb-4">Exclusive Refurbishment Portfolio</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Confidential projects showcasing our expertise in luxury interior design, 
-              bathroom renovations, full flat refurbishments, and premium property services.
+      {/* Portfolio Filter - Elegant */}
+      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-light mb-4">
+              Project
+              <span className="font-bold text-primary"> Portfolio</span>
+            </h2>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-luxury-gold mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground mb-12 font-light max-w-xl mx-auto leading-relaxed">
+              Select projects showcasing our premium refurbishment capabilities
             </p>
-            
-            {/* Project Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <div className="flex flex-wrap justify-center gap-3">
               {projectFilters.map((filter) => (
-                <Button
+                <button
                   key={filter}
-                  variant={selectedFilter === filter ? "default" : "outline"}
-                  size="sm"
                   onClick={() => setSelectedFilter(filter)}
-                  className="mb-2"
+                  className={`px-8 py-3 rounded-full transition-all duration-300 font-light ${
+                    selectedFilter === filter
+                      ? "bg-gradient-to-r from-primary to-luxury-gold text-white shadow-glow"
+                      : "bg-white/80 text-muted-foreground border border-white/50 hover:bg-white hover:border-primary/30 hover:text-primary"
+                  }`}
                 >
-                  <Filter className="w-4 h-4 mr-2" />
                   {filter}
-                </Button>
+                </button>
               ))}
             </div>
           </div>
-          
-          {/* Enhanced Project Grid with Modal Details */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+
+          {/* Portfolio Gallery - Refined */}
+          <div className="max-w-7xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 text-center font-light leading-relaxed">
+              Confidential projects showcasing our expertise in luxury interior design, 
+              bathroom renovations, full flat refurbishments, and premium property services.
+            </p>
+           
+            {/* Enhanced Project Grid with Modal Details */}
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
             {portfolioProjects
               .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
               .map((project) => (
-              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-300 overflow-hidden`}>
+              <Card key={project.id} className={`group break-inside-avoid ${project.height} hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2`}>
                 <div className="relative h-48 bg-muted overflow-hidden">
                   <img 
                     src={project.image} 
@@ -480,33 +469,34 @@ const CaseStudies = () => {
             ))}
           </div>
           
-          {/* Enhanced Testimonials Section */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-center mb-8">What Our Design Partners Say</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-accent/30 border-primary/20">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <blockquote className="text-sm italic mb-4">
-                      <Quote className="w-4 h-4 text-primary mb-2" />
-                      "{testimonial.text}"
-                    </blockquote>
-                    <footer className="text-xs text-muted-foreground">
-                      <div className="font-semibold">{testimonial.author}</div>
-                      <div>{testimonial.company}</div>
-                      <div className="text-primary">{testimonial.project}</div>
-                    </footer>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
+           {/* Enhanced Testimonials Section */}
+           <div className="mt-16">
+             <h3 className="text-2xl font-bold text-center mb-8">What Our Design Partners Say</h3>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               {testimonials.map((testimonial, index) => (
+                 <Card key={index} className="bg-accent/30 border-primary/20">
+                   <CardContent className="p-6">
+                     <div className="flex items-center mb-4">
+                       {[...Array(testimonial.rating)].map((_, i) => (
+                         <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                       ))}
+                     </div>
+                     <blockquote className="text-sm italic mb-4">
+                       <Quote className="w-4 h-4 text-primary mb-2" />
+                       "{testimonial.text}"
+                     </blockquote>
+                     <footer className="text-xs text-muted-foreground">
+                       <div className="font-semibold">{testimonial.author}</div>
+                       <div>{testimonial.company}</div>
+                       <div className="text-primary">{testimonial.project}</div>
+                     </footer>
+                   </CardContent>
+                 </Card>
+               ))}
+             </div>
+           </div>
+           </div>
+         </div>
       </section>
 
       {/* Work Process Section */}

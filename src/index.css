@@ -61,8 +61,17 @@ All colors MUST be HSL.
     --success: 142 55% 35%;         /* Success states */
     --whatsapp: 142 70% 40%;        /* WhatsApp green */
     
+    /* Enhanced Professional Colors */
+    --luxury-gold: 38 100% 85%;        /* Elegant gold accent */
+    --luxury-gold-foreground: 38 100% 20%;
+    --navy-deep: 220 35% 15%;          /* Deep navy for elegance */
+    --navy-deep-foreground: 0 0% 100%;
+    --sage-elegant: 150 25% 60%;       /* Elegant sage green */
+    --sage-elegant-foreground: 150 25% 15%;
+    
     /* Enhanced Professional Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--professional)), hsl(var(--accent-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-deep)), hsl(var(--primary)));
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-gold)), hsl(var(--sage-elegant)));
     --gradient-professional: linear-gradient(135deg, hsl(var(--professional)), hsl(var(--accent-blue)));
     --gradient-cta: linear-gradient(135deg, hsl(var(--accent-orange)), hsl(var(--primary)));
 

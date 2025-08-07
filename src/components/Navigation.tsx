@@ -39,10 +39,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`font-medium transition-colors duration-200 ${
+                className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
                   isActive(item.href)
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 {item.name}
