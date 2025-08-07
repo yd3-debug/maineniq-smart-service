@@ -555,7 +555,7 @@ const WhyProfessionalHVAC = () => {
                     <div className="text-sm text-purple-600">Avg. Air Quality</div>
                   </div>
                 </div>
-                <div ref={scoresRef}>
+                <div ref={scoresRef as React.RefObject<HTMLDivElement>}>
                   <ChartContainer config={chartConfig} className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={monthlyPerformanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -620,7 +620,7 @@ const WhyProfessionalHVAC = () => {
                 <p className="text-slate-600">Multi-dimensional improvements you'll experience</p>
               </CardHeader>
               <CardContent>
-                <div ref={benefitsRef}>
+                <div ref={benefitsRef as React.RefObject<HTMLDivElement>}>
                   <ChartContainer config={chartConfig} className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
