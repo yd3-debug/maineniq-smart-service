@@ -57,10 +57,10 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-300 text-center md:text-left">
               © 2025 Mainteniq. All rights reserved. Professional HVAC & Smart Property Solutions.
             </p>
-            <div className="flex items-center space-x-6 text-sm text-gray-300">
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
                 <span>+44 (0) 189 55 28 226</span>
@@ -69,7 +69,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-primary" />
                 <span>info@mainteniq.co.uk</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="hidden sm:flex items-center space-x-2">
                 <Clock className="w-4 h-4 text-primary" />
                 <span>24/7 Emergency Service</span>
               </div>
