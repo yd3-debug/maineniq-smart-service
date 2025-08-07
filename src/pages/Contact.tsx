@@ -87,30 +87,30 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}
-            <div className="text-white space-y-8">
-              <h1 className="font-heading text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
+            <div className="text-white space-y-4 sm:space-y-6 md:space-y-8">
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
                 Expert HVAC Solutions
                 <span className="block text-accent"> Just a Call Away</span>
               </h1>
-              <p className="text-xl lg:text-2xl opacity-95 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl lg:text-2xl opacity-95 leading-relaxed">
                 Ready for professional HVAC services? Contact us now for immediate assistance 
                 and discover why thousands trust Mainteniq with their comfort.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
                   onClick={() => handleWhatsAppClick()}
-                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-8 py-4 text-lg font-semibold shadow-elegant hover-scale"
+                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-elegant hover-scale"
                 >
-                  <MessageCircle className="w-5 h-5 mr-2" />
+                  <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Chat on WhatsApp
                 </Button>
                 <Button 
                   onClick={() => handleWhatsAppClick(true)}
                   variant="outline" 
-                  className="border-white/40 bg-white/10 text-white hover:bg-white/20 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+                  className="border-white/40 bg-white/10 text-white hover:bg-white/20 px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold backdrop-blur-sm"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Emergency Call
                 </Button>
               </div>

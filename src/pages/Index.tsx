@@ -82,56 +82,56 @@ const Index = () => {
             </div>
 
             <div>
-              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 Save £3,250+ Annually with Professional{" "}
                 <span className="text-accent-orange">HVAC Systems</span>
               </h1>
-              <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-xl mb-4 sm:mb-6 md:mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto">
                 Transform your property with intelligent HVAC technology. Experience 50% energy reduction, 
                 superior comfort, and increased property value through professional installation and maintenance.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
-<Button asChild size="sm" variant="accent" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 md:h-12">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center mb-6 sm:mb-8 md:mb-12">
+<Button asChild size="sm" variant="accent" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 h-10 sm:h-11 md:h-12">
   <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
-    <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
+    <Phone className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 mr-1 sm:mr-2" />
     Call Now
   </a>
 </Button>
               <Link to="/services">
-                <Button size="sm" variant="hero" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 md:h-12">
+                <Button size="sm" variant="hero" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 h-10 sm:h-11 md:h-12">
                   View Services
-                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
+                  <ArrowRight className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 ml-1 sm:ml-2" />
                 </Button>
               </Link>
             </div>
 
             {/* HVAC Impact Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
-              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-energy-gold/30">
-                <div className="text-lg md:text-2xl font-bold text-energy-gold">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
+              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-energy-gold/30">
+                <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
                   <AnimatedCounter value={3250} prefix="£" delay={0} duration={1400} />
                 </div>
-                <div className="text-xs md:text-sm opacity-80">Annual Savings</div>
+                <div className="text-xs opacity-80">Annual Savings</div>
               </div>
-              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-trust-blue/30">
-                <div className="text-lg md:text-2xl font-bold text-trust-blue">
+              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-trust-blue/30">
+                <div className="text-base sm:text-lg md:text-2xl font-bold text-trust-blue">
                   <AnimatedCounter value={50} suffix="%" delay={100} duration={1400} />
                 </div>
-                <div className="text-xs md:text-sm opacity-80">Energy Reduction</div>
+                <div className="text-xs opacity-80">Energy Reduction</div>
               </div>
-              <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-accent-orange/30">
-                <div className="text-lg md:text-2xl font-bold text-accent-orange">
+              <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-accent-orange/30">
+                <div className="text-base sm:text-lg md:text-2xl font-bold text-accent-orange">
                   <AnimatedCounter value={25} suffix="%" delay={200} duration={1400} />
                 </div>
-                <div className="text-xs md:text-sm opacity-80">Property Value+</div>
+                <div className="text-xs opacity-80">Property Value+</div>
               </div>
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-primary/30">
-                <div className="text-lg md:text-2xl font-bold text-energy-gold">
+              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-primary/30">
+                <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
                   <AnimatedCounter value={99.97} precision={2} suffix="%" delay={300} duration={1400} />
                 </div>
-                <div className="text-xs md:text-sm opacity-80">Air Filtration</div>
+                <div className="text-xs opacity-80">Air Filtration</div>
               </div>
             </div>
           </div>

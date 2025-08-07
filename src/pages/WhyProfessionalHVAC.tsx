@@ -242,23 +242,23 @@ const WhyProfessionalHVAC = () => {
               Trusted by 500+ Property Owners
             </div>
             
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white">
               Why Professional HVAC is Essential for Your Property
             </h1>
-            <p className="text-xl mb-10 text-slate-200 max-w-3xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-xl mb-6 sm:mb-8 md:mb-10 text-slate-200 max-w-3xl leading-relaxed">
               Discover how professional HVAC systems deliver £3,250+ annual savings, superior comfort, 
               and protect your investment. Don't let outdated systems cost you thousands.
             </p>
             
             {/* Key Stats Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-10">
               {keyStats.map((stat, index) => (
                 <AnimatedStatCard key={index} delay={index * 100}>
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:animate-pulse-glow">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-2 mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group hover:animate-pulse-glow">
+                    <div className={`w-8 h-8 sm:w-10 h-10 md:w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-1.5 sm:p-2 mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300`}>
                       <stat.icon className="w-full h-full text-white" />
                     </div>
-                    <div className="font-bold text-3xl mb-1 text-white">
+                    <div className="font-bold text-lg sm:text-xl md:text-3xl mb-1 text-white">
                       <AnimatedCounter 
                         value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
                         prefix={stat.value.includes('£') ? '£' : ''}
@@ -266,21 +266,21 @@ const WhyProfessionalHVAC = () => {
                         delay={index * 200}
                       />
                     </div>
-                    <div className="text-sm text-slate-300 font-medium">{stat.label}</div>
+                    <div className="text-xs sm:text-sm text-slate-300 font-medium">{stat.label}</div>
                   </div>
                 </AnimatedStatCard>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
+                <Button size="sm" className="bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
                   Get Free Assessment
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 backdrop-blur-md transition-all duration-300">
+                <Button variant="outline" size="sm" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 border-white/30 text-white hover:bg-white/10 backdrop-blur-md transition-all duration-300">
                   View Our Services
                 </Button>
               </Link>
@@ -290,35 +290,35 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* The Cost of Waiting Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <AlertTriangle className="w-4 h-4" />
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+              <AlertTriangle className="w-3 sm:w-4 h-3 sm:h-4" />
               The Cost of Waiting
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-slate-800">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-slate-800">
               What Happens If You Don't Act Now?
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Every month you delay upgrading costs you hundreds. Here's the real impact of outdated HVAC systems:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
             {costOfWaitingData.map((item, index) => (
               <AnimatedStatCard key={index} delay={index * 150} className={`border-2 hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm ${
                 item.urgency === 'high' ? 'border-red-200 hover:border-red-300' : 'border-orange-200 hover:border-orange-300'
               }`}>
                 <Card className="border-0 shadow-none bg-transparent">
-                  <CardContent className="p-6 text-center">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto ${
+                  <CardContent className="p-3 sm:p-4 md:p-6 text-center">
+                    <div className={`w-10 h-10 sm:w-12 h-12 md:w-14 h-14 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 mx-auto ${
                       item.urgency === 'high' ? 'bg-gradient-to-br from-red-100 to-red-200' : 'bg-gradient-to-br from-orange-100 to-orange-200'
                     }`}>
-                      <item.icon className={`w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
+                      <item.icon className={`w-5 h-5 sm:w-6 h-6 md:w-7 h-7 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`} />
                     </div>
-                    <h3 className="font-bold text-lg mb-2 text-slate-800">{item.title}</h3>
-                    <div className={`text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>
+                    <h3 className="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2 text-slate-800">{item.title}</h3>
+                    <div className={`text-lg sm:text-xl md:text-2xl font-bold mb-1 ${item.urgency === 'high' ? 'text-red-600' : 'text-orange-600'}`}>
                       <AnimatedCounter 
                         value={parseFloat(item.metric.replace(/[£%±°C-]/g, '')) || 0}
                         prefix={item.metric.includes('£') ? '£' : item.metric.includes('±') ? '±' : item.metric.includes('-') ? '-' : ''}
@@ -326,8 +326,8 @@ const WhyProfessionalHVAC = () => {
                         delay={index * 200 + 500}
                       />
                     </div>
-                    <div className="text-xs font-medium text-slate-500 mb-3">{item.metricLabel}</div>
-                    <div className="text-sm font-semibold text-slate-700 mb-2">{item.impact}</div>
+                    <div className="text-xs font-medium text-slate-500 mb-2 sm:mb-3">{item.metricLabel}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-700 mb-1 sm:mb-2">{item.impact}</div>
                     <p className="text-slate-500 text-xs leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
@@ -338,20 +338,20 @@ const WhyProfessionalHVAC = () => {
           {/* Multi-Dimensional Comparison Chart */}
           <AnimatedChart delay={800}>
             <Card className="border-red-200 shadow-xl bg-white/95 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-slate-800">
-                  <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                    <BarChart3 className="w-5 h-5 text-white" />
+              <CardHeader className="pb-3 sm:pb-4">
+                <CardTitle className="flex items-center gap-2 sm:gap-3 text-slate-800 text-sm sm:text-base md:text-lg">
+                  <div className="w-8 h-8 sm:w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+                    <BarChart3 className="w-4 h-4 sm:w-5 h-5 text-white" />
                   </div>
                   Current vs Professional HVAC: Complete Comparison
                 </CardTitle>
-                <p className="text-slate-600">See the dramatic differences across all key metrics</p>
+                <p className="text-slate-600 text-xs sm:text-sm">See the dramatic differences across all key metrics</p>
               </CardHeader>
               <CardContent>
                 <div ref={comparisonRef as React.RefObject<HTMLDivElement>}>
                   <ChartContainer
                     config={chartConfig}
-                    className="h-80"
+                    className="h-48 sm:h-64 md:h-80"
                   >
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={energyComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>

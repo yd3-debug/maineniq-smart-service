@@ -115,23 +115,23 @@ const About = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroHvac})`
         }}
       >
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="font-heading text-6xl font-bold mb-6 animate-fade-in">
+        <div className="container mx-auto px-3 sm:px-4 text-center relative z-10">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">
             Your Trusted HVAC Partner Since 2009
           </h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
+          <p className="text-sm sm:text-base md:text-xl max-w-3xl mx-auto opacity-90 mb-6 sm:mb-8">
             Established with a foundation of excellence, we've built our reputation on reliability, 
             professional standards, and unmatched customer service. Licensed, insured, and committed 
             to your complete satisfaction.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link to="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary-glow text-white">
+              <Button size="sm" className="bg-primary hover:bg-primary-glow text-white px-4 sm:px-6 py-3">
                 Get Free Estimate
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-primary px-4 sm:px-6 py-3">
                 View Services
               </Button>
             </Link>
