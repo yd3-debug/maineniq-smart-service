@@ -28,7 +28,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-heading font-bold text-xl">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Wrench className="w-5 h-5 text-primary-foreground" />
+              <Wrench className="w-5 h-5 text-sage-elegant" />
             </div>
             <span className="text-foreground">Mainteniq</span>
           </Link>

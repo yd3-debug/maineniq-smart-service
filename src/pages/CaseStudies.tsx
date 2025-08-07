@@ -235,7 +235,7 @@ const CaseStudies = () => {
             <div className="mb-8">
               <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white tracking-tight leading-none">
                 Premium
-                <span className="block font-bold bg-gradient-to-r from-luxury-gold to-white bg-clip-text text-transparent">
+                <span className="block font-bold text-luxury-gold">
                   Refurbishment Portfolio
                 </span>
               </h1>

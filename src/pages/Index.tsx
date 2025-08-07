@@ -166,7 +166,7 @@ const Index = () => {
               <Leaf className="w-4 h-4" />
               Why HVAC Matters
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-professional bg-clip-text text-transparent">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-primary">
               HVAC Systems: Essential for Modern Properties
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">

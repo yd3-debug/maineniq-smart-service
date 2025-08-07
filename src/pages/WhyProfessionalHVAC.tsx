@@ -233,7 +233,7 @@ const WhyProfessionalHVAC = () => {
               Trusted by 500+ Property Owners
             </div>
             
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-luxury-gold/80 to-white bg-clip-text text-transparent">
+            <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
               Why Professional HVAC is Essential for Your Property
             </h1>
             <p className="text-xl mb-10 text-slate-200 max-w-3xl leading-relaxed">
@@ -248,7 +248,7 @@ const WhyProfessionalHVAC = () => {
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stat.gradient} p-2 mb-3 group-hover:scale-110 transition-transform duration-300`}>
                     <stat.icon className="w-full h-full text-white" />
                   </div>
-                  <div className="font-bold text-3xl mb-1 bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">{stat.value}</div>
+                  <div className="font-bold text-3xl mb-1 text-white">{stat.value}</div>
                   <div className="text-sm text-slate-300 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -383,7 +383,7 @@ const WhyProfessionalHVAC = () => {
               <CheckCircle className="w-4 h-4" />
               Professional HVAC Benefits
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-700 via-blue-700 to-cyan-700 bg-clip-text text-transparent">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-primary">
               Transform Your Property with Smart HVAC
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -400,7 +400,7 @@ const WhyProfessionalHVAC = () => {
                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.gradient} p-3 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                      <stat.icon className="w-full h-full text-white" />
                    </div>
-                   <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">{stat.value}</div>
+                   <div className="text-4xl font-bold mb-2 text-foreground">{stat.value}</div>
                    <p className="text-slate-600 font-medium mb-2">{stat.label}</p>
                    <p className="text-slate-500 text-sm">{stat.description}</p>
                  </CardContent>
@@ -681,7 +681,7 @@ const WhyProfessionalHVAC = () => {
                     </div>
                     <h3 className="font-bold text-slate-800">Energy Efficiency</h3>
                   </div>
-                  <span className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent">95%</span>
+                  <span className="text-3xl font-bold text-sage-elegant">95%</span>
                 </div>
                 <Progress value={95} className="mb-3 h-2" />
                 <p className="text-sm text-slate-600 leading-relaxed">Professional HVAC systems achieve 95% efficiency compared to 60% for outdated systems</p>
@@ -697,7 +697,7 @@ const WhyProfessionalHVAC = () => {
                     </div>
                     <h3 className="font-bold text-slate-800">Air Quality</h3>
                   </div>
-                  <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-700 bg-clip-text text-transparent">99.97%</span>
+                  <span className="text-3xl font-bold text-accent-blue">99.97%</span>
                 </div>
                 <Progress value={99.97} className="mb-3 h-2" />
                 <p className="text-sm text-slate-600 leading-relaxed">Advanced HEPA filtration removes 99.97% of airborne particles, allergens, and pollutants</p>
@@ -713,7 +713,7 @@ const WhyProfessionalHVAC = () => {
                     </div>
                     <h3 className="font-bold text-slate-800">System Reliability</h3>
                   </div>
-                  <span className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-700 bg-clip-text text-transparent">99.5%</span>
+                  <span className="text-3xl font-bold text-primary">99.5%</span>
                 </div>
                 <Progress value={99.5} className="mb-3 h-2" />
                 <p className="text-sm text-slate-600 leading-relaxed">Professional systems maintain 99.5% uptime with intelligent predictive maintenance</p>
