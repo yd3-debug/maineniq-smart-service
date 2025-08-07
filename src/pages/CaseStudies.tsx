@@ -220,40 +220,51 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="py-24 bg-gradient-to-br from-background via-muted/20 to-background text-foreground relative overflow-hidden">
+        {/* Background Image with Enhanced Overlay */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${embassyGardensHero})` }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+        
+        {/* Content */}
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="font-heading text-5xl font-bold mb-6">
-            Premium Refurbishment Portfolio
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-90 mb-8">
-            Exclusive collaboration with interior designers and architects on luxury developments like Embassy Gardens. 
-            Delivering exceptional craftsmanship for high-end residential properties across London's prestigious districts.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-            {companyStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-sm opacity-80">{stat.label}</div>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="font-heading text-6xl md:text-7xl font-bold mb-8 text-white drop-shadow-lg">
+              Premium Refurbishment Portfolio
+            </h1>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90 mb-12 leading-relaxed drop-shadow-md">
+              Exclusive collaboration with interior designers and architects on luxury developments like Embassy Gardens. 
+              Delivering exceptional craftsmanship for high-end residential properties across London's prestigious districts.
+            </p>
+            
+            {/* Enhanced Statistics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+              {companyStats.map((stat, index) => (
+                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <div className="text-4xl font-bold text-white mb-2 drop-shadow-md">{stat.value}</div>
+                  <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Professional Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                <Shield className="w-5 h-5 text-primary" />
+                <span className="text-white font-medium">Confidential Projects</span>
               </div>
-            ))}
-          </div>
-          <div className="flex items-center justify-center space-x-8 text-sm opacity-80">
-            <div className="flex items-center space-x-2">
-              <Shield className="w-5 h-5" />
-              <span>Confidential Projects</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Award className="w-5 h-5" />
-              <span>Premium Standards</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5" />
-              <span>Design Partnerships</span>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                <Award className="w-5 h-5 text-primary" />
+                <span className="text-white font-medium">Premium Standards</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                <Users className="w-5 h-5 text-primary" />
+                <span className="text-white font-medium">Design Partnerships</span>
+              </div>
             </div>
           </div>
         </div>
