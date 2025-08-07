@@ -226,8 +226,8 @@ const CaseStudies = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{ backgroundImage: `url(${embassyGardensHero})` }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/95 via-primary/90 to-black/85"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-professional/95 via-primary/90 to-black/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
         
         {/* Content - Refined & Elegant */}
         <div className="container mx-auto px-6 text-center relative z-10">

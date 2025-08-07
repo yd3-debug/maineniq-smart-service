@@ -38,6 +38,18 @@ export default {
 					DEFAULT: 'hsl(var(--professional))',
 					foreground: 'hsl(var(--professional-foreground))',
 				},
+				'navy-deep': {
+					DEFAULT: 'hsl(var(--navy-deep))',
+					foreground: 'hsl(var(--navy-deep-foreground))',
+				},
+				'luxury-gold': {
+					DEFAULT: 'hsl(var(--luxury-gold))',
+					foreground: 'hsl(var(--luxury-gold-foreground))',
+				},
+				'sage-elegant': {
+					DEFAULT: 'hsl(var(--sage-elegant))',
+					foreground: 'hsl(var(--sage-elegant-foreground))',
+				},
 				'accent-blue': {
 					DEFAULT: 'hsl(var(--accent-blue))',
 					foreground: 'hsl(var(--accent-blue-foreground))',

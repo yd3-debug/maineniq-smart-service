@@ -228,12 +228,12 @@ const WhyProfessionalHVAC = () => {
         
         <div className="relative container mx-auto px-4 text-white">
           <div className="max-w-5xl">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-emerald-500/30">
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-luxury-gold px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-luxury-gold/30">
               <Star className="w-4 h-4" />
               Trusted by 500+ Property Owners
             </div>
             
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-blue-100 to-emerald-200 bg-clip-text text-transparent">
+            <h1 className="font-heading text-5xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-luxury-gold/80 to-white bg-clip-text text-transparent">
               Why Professional HVAC is Essential for Your Property
             </h1>
             <p className="text-xl mb-10 text-slate-200 max-w-3xl leading-relaxed">
@@ -256,7 +256,7 @@ const WhyProfessionalHVAC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-luxury-gold hover:from-professional hover:to-primary text-white text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
                   Get Free Assessment
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
