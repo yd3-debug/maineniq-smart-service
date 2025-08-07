@@ -269,22 +269,21 @@ import TrustStrip from "@/components/TrustStrip";
   }, []);
 
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen pt-0">
       {/* Hero Section - Elegant & Flowing */}
-        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Background Image as <img> for better focal control */}
           <picture>
             <source srcSet={heroImage} />
             <img
               src={heroImage}
               alt="Luxury flat refurbishment projects and premium residential developments"
-              className="absolute inset-0 w-full h-full object-cover md:object-[50%_30%] lg:object-[50%_25%]"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
               decoding="async"
             />
           </picture>
-          <div className="absolute inset-0 bg-gradient-to-br from-professional/80 via-primary/75 to-black/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80"></div>
           
           {/* Content - Refined & Elegant */}
           <div className="container mx-auto px-6 text-center relative z-10">
@@ -337,6 +336,9 @@ import TrustStrip from "@/components/TrustStrip";
           </div>
         </section>
 
+      {/* Trust Strip */}
+      <TrustStrip />
+
       {/* Portfolio Filter - Elegant */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6">
@@ -355,10 +357,10 @@ import TrustStrip from "@/components/TrustStrip";
                   <button
                     key={filter}
                     onClick={() => setSelectedFilter(filter)}
-                    className={`px-8 py-2.5 rounded-full transition-all duration-300 font-light ${
+                    className={`px-8 py-2.5 rounded-full transition-all duration-300 font-medium ${
                       selectedFilter === filter
-                        ? "bg-gradient-to-r from-primary to-luxury-gold text-white shadow-glow"
-                        : "bg-white/80 text-muted-foreground border border-white/50 hover:bg-white hover:border-primary/30 hover:text-primary"
+                        ? "bg-primary text-white shadow-md border border-primary"
+                        : "bg-white text-foreground border border-border hover:bg-secondary hover:border-primary/40 hover:text-primary"
                     }`}
                     aria-label={`${filter} projects: ${countFor(filter)} items`}
                   >
