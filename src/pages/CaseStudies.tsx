@@ -23,7 +23,7 @@ import {
   Filter,
   MessageSquare
 } from "lucide-react";
-import embassyGardensHero from "@/assets/embassy-gardens-hero.jpg";
+import heroImage from "@/assets/smart-home-setup.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
@@ -269,14 +269,14 @@ import TrustStrip from "@/components/TrustStrip";
   }, []);
 
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen pt-0">
       {/* Hero Section - Elegant & Flowing */}
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
           {/* Background Image as <img> for better focal control */}
           <picture>
-            <source srcSet={embassyGardensHero} />
+            <source srcSet={heroImage} />
             <img
-              src={embassyGardensHero}
+              src={heroImage}
               alt="Premium refurbishment case studies hero image"
               className="absolute inset-0 w-full h-full object-cover md:object-[50%_30%] lg:object-[50%_25%]"
               loading="eager"
@@ -414,7 +414,7 @@ import TrustStrip from "@/components/TrustStrip";
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="secondary" size="sm">
+                        <Button variant="premium" size="sm" className="rounded-full">
                           <Eye className="w-4 h-4 mr-2" />
                           View Details
                         </Button>
@@ -536,7 +536,7 @@ import TrustStrip from "@/components/TrustStrip";
                     </p>
                     
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline" className="flex-1">
+                      <Button size="sm" variant="premium" className="flex-1 rounded-full">
                         <MessageSquare className="w-4 h-4 mr-2" />
                         Request Quote
                       </Button>
@@ -556,7 +556,7 @@ import TrustStrip from "@/components/TrustStrip";
                    <CardContent className="p-6">
                      <div className="flex items-center mb-4">
                        {[...Array(testimonial.rating)].map((_, i) => (
-                         <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                         <Star key={i} className="w-4 h-4 fill-energy-gold text-energy-gold" />
                        ))}
                      </div>
                      <blockquote className="text-sm italic mb-4">
