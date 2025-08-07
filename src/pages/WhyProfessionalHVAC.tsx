@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
+import { ProgressMetric, ComparisonBar } from "@/components/ProgressMetric";
 import { Link } from "react-router-dom";
 import { 
   TrendingUp, 
@@ -372,24 +373,40 @@ const WhyProfessionalHVAC = () => {
                   </ResponsiveContainer>
                  </ChartContainer>
               
-                {/* Quick Stats Below Chart */}
+               {/* Enhanced Visual Metrics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-200">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-red-600">2x</div>
-                  <div className="text-sm text-slate-600">Higher Energy Cost</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-red-600">3.4x</div>
-                  <div className="text-sm text-slate-600">More Maintenance</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-red-600">40%</div>
-                  <div className="text-sm text-slate-600">Less Comfort</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-green-600">£3,250</div>
-                  <div className="text-sm text-slate-600">Annual Savings</div>
-                </div>
+                <ComparisonBar
+                  label="Higher Energy Cost"
+                  value="£3,200"
+                  multiplier="2x"
+                  variant="danger"
+                  percentage={100}
+                  delay={1000}
+                />
+                <ComparisonBar
+                  label="More Maintenance"
+                  value="£850"
+                  multiplier="3.4x"
+                  variant="danger"
+                  percentage={85}
+                  delay={1100}
+                />
+                <ComparisonBar
+                  label="Less Comfort"
+                  value="60% Score"
+                  multiplier="40%"
+                  variant="danger"
+                  percentage={60}
+                  delay={1200}
+                />
+                <ComparisonBar
+                  label="Potential Savings"
+                  value="£3,250"
+                  multiplier="50%"
+                  variant="success"
+                  percentage={90}
+                  delay={1300}
+                />
               </div>
               </CardContent>
             </Card>
