@@ -161,17 +161,17 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${satisfiedCustomer})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
             Professional HVAC & Building Services
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 leading-relaxed">
+          <p className="text-base md:text-xl lg:text-2xl max-w-3xl mx-auto opacity-90 leading-relaxed">
             Complete range of heating, ventilation, air conditioning, and building services. 
             From MVHR systems to smart home integration, we deliver excellence in every project.
           </p>
@@ -179,47 +179,47 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-4">Our Expert Services</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-3 md:mb-4">Our Expert Services</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               From advanced MVHR and BMS systems to comprehensive building services, 
               we provide professional solutions tailored to your specific requirements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {services.map((service, index) => (
               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-36 md:h-48 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <service.icon className="w-8 h-8 mb-2" />
+                  <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white">
+                    <service.icon className="w-6 md:w-8 h-6 md:h-8 mb-1 md:mb-2" />
                   </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
-                  <p className="text-sm font-medium text-primary">{service.subtitle}</p>
-                  <p className="text-muted-foreground">{service.description}</p>
+                <CardHeader className="p-4 md:p-6">
+                  <CardTitle className="text-lg md:text-xl font-bold">{service.title}</CardTitle>
+                  <p className="text-xs md:text-sm font-medium text-primary">{service.subtitle}</p>
+                  <p className="text-sm md:text-base text-muted-foreground">{service.description}</p>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 mb-6">
+                <CardContent className="p-4 md:p-6 pt-0">
+                  <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="w-3 md:w-4 h-3 md:h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-xs md:text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full bg-primary hover:bg-primary-glow">
+                  <Button size="sm" className="w-full bg-primary hover:bg-primary-glow md:h-10">
                     Request Quote
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-3 md:w-4 h-3 md:h-4 ml-2" />
                   </Button>
                 </CardContent>
               </Card>

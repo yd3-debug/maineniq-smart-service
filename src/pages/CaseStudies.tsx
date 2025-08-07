@@ -286,29 +286,29 @@ import TrustStrip from "@/components/TrustStrip";
           <div className="absolute inset-0 bg-black/50"></div>
           
           {/* Content - Refined & Elegant */}
-          <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
             <div className="max-w-5xl mx-auto">
-              <div className="mb-8">
-                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white tracking-tight leading-none">
+              <div className="mb-6 md:mb-8">
+                <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-light mb-4 md:mb-6 text-white tracking-tight leading-none">
                   Premium Refurbishment
                   <span className="block font-bold text-luxury-gold">
                     Case Studies Portfolio
                   </span>
                 </h1>
-                <div className="w-24 h-0.5 bg-primary mx-auto mb-8"></div>
+                <div className="w-16 md:w-24 h-0.5 bg-primary mx-auto mb-6 md:mb-8"></div>
               </div>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 mb-16 leading-relaxed font-light">
+              <p className="text-base md:text-lg lg:text-xl max-w-2xl mx-auto text-white/90 mb-10 md:mb-16 leading-relaxed font-light">
                 Exclusive collaboration with interior designers and architects on luxury developments. 
                 Delivering exceptional craftsmanship for London's most prestigious residential properties.
               </p>
               
               {/* Elegant Statistics - Simplified to 3 key metrics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-16 max-w-4xl mx-auto">
                 {companyStats.slice(0, 3).map((stat, index) => (
                   <div key={index} className="group text-center">
-                    <div className="bg-white/8 backdrop-blur-md rounded-3xl p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
-                      <stat.icon className="w-12 h-12 text-luxury-gold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                      <div className="text-4xl font-light text-white mb-3 drop-shadow-sm">
+                    <div className="bg-white/8 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 md:p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
+                      <stat.icon className="w-8 md:w-12 h-8 md:h-12 text-luxury-gold mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="text-2xl md:text-4xl font-light text-white mb-2 md:mb-3 drop-shadow-sm">
                         <AnimatedCounter 
                           value={parseFloat(stat.value.replace(/[+%]/g, ''))}
                           suffix={stat.value.includes('%') ? '%' : stat.value.includes('+') ? '+' : ''}
@@ -316,7 +316,7 @@ import TrustStrip from "@/components/TrustStrip";
                           delay={index * 120}
                         />
                       </div>
-                      <div className="text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
+                      <div className="text-xs md:text-sm text-white/80 font-light tracking-wide">{stat.label}</div>
                     </div>
                   </div>
                 ))}
@@ -324,12 +324,12 @@ import TrustStrip from "@/components/TrustStrip";
               
               {/* Refined Professional Badge - Single, elegant */}
               <div className="flex justify-center">
-                <div className="flex items-center space-x-4 bg-white/8 backdrop-blur-sm px-8 py-4 rounded-full border border-white/15">
-                  <Shield className="w-5 h-5 text-luxury-gold" />
-                  <span className="text-white font-light">Confidential Portfolio</span>
+                <div className="flex items-center space-x-2 md:space-x-4 bg-white/8 backdrop-blur-sm px-4 md:px-8 py-2 md:py-4 rounded-full border border-white/15">
+                  <Shield className="w-4 md:w-5 h-4 md:h-5 text-luxury-gold" />
+                  <span className="text-white font-light text-sm md:text-base">Confidential Portfolio</span>
                   <div className="w-1 h-1 bg-white/50 rounded-full"></div>
-                  <Award className="w-5 h-5 text-luxury-gold" />
-                  <span className="text-white font-light">Premium Standards</span>
+                  <Award className="w-4 md:w-5 h-4 md:h-5 text-luxury-gold" />
+                  <span className="text-white font-light text-sm md:text-base">Premium Standards</span>
                 </div>
               </div>
             </div>
@@ -340,24 +340,24 @@ import TrustStrip from "@/components/TrustStrip";
       <TrustStrip />
 
       {/* Portfolio Filter - Elegant */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-light mb-4">
+      <section className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-heading text-2xl md:text-4xl font-light mb-3 md:mb-4">
               Project
               <span className="font-bold text-primary"> Portfolio</span>
             </h2>
-            <div className="w-16 h-0.5 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground mb-12 font-light max-w-xl mx-auto leading-relaxed">
+            <div className="w-12 md:w-16 h-0.5 bg-primary mx-auto mb-4 md:mb-6"></div>
+            <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-12 font-light max-w-xl mx-auto leading-relaxed">
               Select projects showcasing our premium refurbishment capabilities
             </p>
-            <div className="sticky top-16 z-30 bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur rounded-full py-3 max-w-5xl mx-auto">
-              <div className="flex flex-wrap justify-center gap-3 px-3">
+            <div className="sticky top-16 z-30 bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur rounded-full py-2 md:py-3 max-w-5xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-3 px-2 md:px-3">
                 {projectFilters.map((filter) => (
                   <button
                     key={filter}
                     onClick={() => setSelectedFilter(filter)}
-                    className={`px-8 py-2.5 rounded-full transition-all duration-300 font-medium ${
+                    className={`px-4 md:px-8 py-1.5 md:py-2.5 rounded-full transition-all duration-300 font-medium text-sm md:text-base ${
                       selectedFilter === filter
                         ? "bg-primary text-white shadow-md border border-primary"
                         : "bg-white text-foreground border border-border hover:bg-secondary hover:border-primary/40 hover:text-primary"
@@ -365,7 +365,7 @@ import TrustStrip from "@/components/TrustStrip";
                     aria-label={`${filter} projects: ${countFor(filter)} items`}
                   >
                     <span>{filter}</span>
-                    <span className="ml-2 inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-xs px-2 py-0.5">
+                    <span className="ml-1 md:ml-2 inline-flex items-center justify-center rounded-full bg-primary/10 text-primary text-xs px-1.5 md:px-2 py-0.5">
                       {countFor(filter)}
                     </span>
                   </button>
@@ -382,7 +382,7 @@ import TrustStrip from "@/components/TrustStrip";
             </p>
            
             {/* Enhanced Project Grid with Modal Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {portfolioProjects
               .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
               .map((project) => (
@@ -580,29 +580,29 @@ import TrustStrip from "@/components/TrustStrip";
       </section>
 
       {/* Work Process Section */}
-      <section className="py-20 bg-accent/10">
+      <section className="py-12 md:py-20 bg-accent/10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-4xl font-bold mb-4">Our Collaboration Process</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-3 md:mb-4">Our Collaboration Process</h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               A seamless approach to working with interior designers and architects from concept to completion.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">
               {workProcess.map((step, index) => (
                 <div key={step.step} className="text-center">
                   <div className="relative">
-                    <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                    <div className="w-12 md:w-16 h-12 md:h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4">
                       {step.step}
                     </div>
                     {index < workProcess.length - 1 && (
                       <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-primary/30 -z-10"></div>
                     )}
                   </div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{step.description}</p>
+                  <h3 className="font-semibold mb-2 text-sm md:text-base">{step.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-2">{step.description}</p>
                   <div className="flex items-center justify-center text-xs text-primary">
                     <Clock className="w-3 h-3 mr-1" />
                     {step.duration}
@@ -615,47 +615,47 @@ import TrustStrip from "@/components/TrustStrip";
       </section>
 
       {/* Design Partnership CTA */}
-      <section className="py-20 bg-secondary/10">
+      <section className="py-12 md:py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-4xl font-bold mb-6">
+            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-4 md:mb-6">
               Partner with Interior Design Specialists
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8">
               We collaborate exclusively with interior designers, architects, and property developers 
               to deliver exceptional refurbishment services that exceed luxury standards.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-10">
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary" />
+                <div className="w-10 md:w-12 h-10 md:h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Shield className="w-5 md:w-6 h-5 md:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold">Discretion Guaranteed</h3>
-                <p className="text-sm text-muted-foreground">Confidential project handling</p>
+                <h3 className="font-semibold text-sm md:text-base">Discretion Guaranteed</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">Confidential project handling</p>
               </div>
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
+                <div className="w-10 md:w-12 h-10 md:h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Users className="w-5 md:w-6 h-5 md:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold">Design Collaboration</h3>
-                <p className="text-sm text-muted-foreground">Seamless integration support</p>
+                <h3 className="font-semibold text-sm md:text-base">Design Collaboration</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">Seamless integration support</p>
               </div>
               <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Award className="w-6 h-6 text-primary" />
+                <div className="w-10 md:w-12 h-10 md:h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Award className="w-5 md:w-6 h-5 md:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold">Premium Standards</h3>
-                <p className="text-sm text-muted-foreground">Luxury project expertise</p>
+                <h3 className="font-semibold text-sm md:text-base">Premium Standards</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">Luxury project expertise</p>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary-glow">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <Button size="sm" className="bg-primary hover:bg-primary-glow md:h-12">
                 Partner with Us
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="sm" variant="outline" className="md:h-12">
                 Request Portfolio Access
               </Button>
             </div>

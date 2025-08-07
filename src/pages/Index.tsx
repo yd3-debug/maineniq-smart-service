@@ -60,78 +60,78 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative -mt-20 pt-32 pb-32 bg-professional-gradient text-white overflow-hidden">
+      <section className="relative -mt-20 pt-24 md:pt-32 pb-20 md:pb-32 bg-professional-gradient text-white overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `linear-gradient(rgba(34, 40, 49, 0.8), rgba(57, 62, 70, 0.6)), url(${heroImage})`,
           }}
         />
-        <div className="relative container mx-auto px-4 pt-20">
+        <div className="relative container mx-auto px-4 pt-12 md:pt-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm mb-8">
-              <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                <Shield className="w-4 h-4 text-trust-blue" />
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm mb-6 md:mb-8">
+              <div className="flex items-center space-x-1 md:space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-white/20">
+                <Shield className="w-3 md:w-4 h-3 md:h-4 text-trust-blue" />
                 <span>Licensed & Insured</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                <Award className="w-4 h-4 text-accent-orange" />
+              <div className="flex items-center space-x-1 md:space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-white/20">
+                <Award className="w-3 md:w-4 h-3 md:h-4 text-accent-orange" />
                 <span>20+ Years Experience</span>
               </div>
             </div>
 
             <div>
-              <h1 className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                 Save £3,250+ Annually with Professional{" "}
                 <span className="text-accent-orange">HVAC Systems</span>
               </h1>
-              <p className="text-xl mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto">
                 Transform your property with intelligent HVAC technology. Experience 50% energy reduction, 
                 superior comfort, and increased property value through professional installation and maintenance.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-<Button asChild size="lg" variant="accent" className="text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
+<Button asChild size="sm" variant="accent" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 md:h-12">
   <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
-    <Phone className="w-5 h-5 mr-2" />
+    <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
     Call Now
   </a>
 </Button>
               <Link to="/services">
-                <Button size="lg" variant="hero" className="text-lg px-8 py-4">
+                <Button size="sm" variant="hero" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 md:h-12">
                   View Services
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
                 </Button>
               </Link>
             </div>
 
             {/* HVAC Impact Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-lg p-4 border border-energy-gold/30">
-                <div className="text-2xl font-bold text-energy-gold">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
+              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-energy-gold/30">
+                <div className="text-lg md:text-2xl font-bold text-energy-gold">
                   <AnimatedCounter value={3250} prefix="£" delay={0} duration={1400} />
                 </div>
-                <div className="text-sm opacity-80">Annual Savings</div>
+                <div className="text-xs md:text-sm opacity-80">Annual Savings</div>
               </div>
-              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-lg p-4 border border-trust-blue/30">
-                <div className="text-2xl font-bold text-trust-blue">
+              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-trust-blue/30">
+                <div className="text-lg md:text-2xl font-bold text-trust-blue">
                   <AnimatedCounter value={50} suffix="%" delay={100} duration={1400} />
                 </div>
-                <div className="text-sm opacity-80">Energy Reduction</div>
+                <div className="text-xs md:text-sm opacity-80">Energy Reduction</div>
               </div>
-              <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-lg p-4 border border-accent-orange/30">
-                <div className="text-2xl font-bold text-accent-orange">
+              <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-accent-orange/30">
+                <div className="text-lg md:text-2xl font-bold text-accent-orange">
                   <AnimatedCounter value={25} suffix="%" delay={200} duration={1400} />
                 </div>
-                <div className="text-sm opacity-80">Property Value+</div>
+                <div className="text-xs md:text-sm opacity-80">Property Value+</div>
               </div>
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30">
-                <div className="text-2xl font-bold text-energy-gold">
+              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-3 md:p-4 border border-primary/30">
+                <div className="text-lg md:text-2xl font-bold text-energy-gold">
                   <AnimatedCounter value={99.97} precision={2} suffix="%" delay={300} duration={1400} />
                 </div>
-                <div className="text-sm opacity-80">Air Filtration</div>
+                <div className="text-xs md:text-sm opacity-80">Air Filtration</div>
               </div>
             </div>
           </div>
@@ -139,30 +139,30 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
               <span className="w-8 h-[2px] bg-primary"></span>
               <span>OUR SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Complete HVAC Solutions</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Complete HVAC Solutions</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               From installation to maintenance, we provide comprehensive HVAC solutions 
               that deliver exceptional comfort and efficiency.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {services.map((service, index) => (
               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-card border">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-all duration-300">
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
+                <CardContent className="p-4 md:p-8 text-center">
+                  <div className="w-12 md:w-16 h-12 md:h-16 bg-gradient-to-br from-primary to-primary-glow rounded-lg md:rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:shadow-glow transition-all duration-300">
+                    <service.icon className="w-6 md:w-8 h-6 md:h-8 text-primary-foreground" />
                   </div>
-                  <h3 className="font-semibold text-xl mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h3 className="font-semibold text-lg md:text-xl mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
