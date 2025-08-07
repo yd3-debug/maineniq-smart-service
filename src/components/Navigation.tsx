@@ -66,7 +66,7 @@ const Navigation = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+    <nav className={`sticky top-0 z-60 transition-all duration-300 ${
       isScrolled || hasLightBackground
         ? "bg-background/95 backdrop-blur-sm border-b border-border" 
         : "bg-transparent border-b border-transparent"
@@ -143,7 +143,7 @@ const Navigation = () => {
         {/* Mobile Navigation with Backdrop */}
         {/* Backdrop overlay with blur effect */}
         <div 
-          className={`fixed inset-0 bg-black/70 backdrop-blur-lg transition-all duration-300 md:hidden z-40 ${
+          className={`fixed top-20 left-0 right-0 bottom-0 bg-black/80 backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 md:hidden z-40 ${
             isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
           onClick={() => setIsOpen(false)}
