@@ -22,7 +22,7 @@ import electricalInstallation from "@/assets/electrical-installation.jpg";
 import renovationComparison from "@/assets/renovation-comparison.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import customerConsultation from "@/assets/customer-consultation.jpg";
-import beforeAfter from "@/assets/before-after.jpg";
+
 import energyEfficiency from "@/assets/energy-efficiency.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
@@ -241,46 +241,131 @@ const About = () => {
         </div>
       </section>
 
-      {/* Before/After Gallery Section */}
+      {/* Results & Impact Section */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold mb-6">See the Difference</h2>
+            <h2 className="font-heading text-4xl font-bold mb-6">Proven Results & Customer Impact</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real results from our professional HVAC installations and upgrades.
+              Real outcomes from our professional HVAC installations and maintenance services.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          
+          {/* Results Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <Card className="text-center p-8 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-3xl mb-2 text-primary">40%</h3>
+              <h4 className="font-semibold mb-2">Energy Savings</h4>
+              <p className="text-muted-foreground">Average reduction in energy costs with our modern HVAC systems</p>
+            </Card>
+            <Card className="text-center p-8 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-3xl mb-2 text-primary">4.9★</h3>
+              <h4 className="font-semibold mb-2">Customer Rating</h4>
+              <p className="text-muted-foreground">Consistently high satisfaction across all our services</p>
+            </Card>
+            <Card className="text-center p-8 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-3xl mb-2 text-primary">99%</h3>
+              <h4 className="font-semibold mb-2">First-Time Fix</h4>
+              <p className="text-muted-foreground">Problems resolved on the first visit by our expert technicians</p>
+            </Card>
+          </div>
+
+          {/* Professional Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative group overflow-hidden rounded-lg">
               <img 
-                src={beforeAfter} 
-                alt="Before and after HVAC installation comparison"
-                className="rounded-lg shadow-elegant w-full"
+                src={electricalInstallation} 
+                alt="Professional electrical and HVAC installation"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="font-semibold mb-1">Professional Installation</h4>
+                <p className="text-sm">Expert electrical and HVAC work</p>
+              </div>
             </div>
-            <div className="space-y-6">
-              <h3 className="font-heading text-3xl font-bold">Professional Transformations</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Energy Efficiency Improvements</h4>
-                    <p className="text-muted-foreground">Up to 40% reduction in energy costs with modern systems</p>
-                  </div>
+            <div className="relative group overflow-hidden rounded-lg">
+              <img 
+                src={modernEquipment} 
+                alt="Modern HVAC equipment and technology"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="font-semibold mb-1">Latest Technology</h4>
+                <p className="text-sm">Cutting-edge HVAC systems</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-lg">
+              <img 
+                src={teamCollaboration} 
+                alt="Professional team collaboration"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h4 className="font-semibold mb-1">Expert Team</h4>
+                <p className="text-sm">Collaborative professional service</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits List */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="font-heading text-2xl font-bold mb-6">Customer Benefits</h3>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Enhanced Comfort</h4>
+                  <p className="text-muted-foreground">Consistent temperature control throughout your space</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Enhanced Comfort</h4>
-                    <p className="text-muted-foreground">Consistent temperature control throughout your space</p>
-                  </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Improved Air Quality</h4>
+                  <p className="text-muted-foreground">Advanced filtration for healthier indoor environments</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Improved Air Quality</h4>
-                    <p className="text-muted-foreground">Advanced filtration for healthier indoor environments</p>
-                  </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Reduced Maintenance</h4>
+                  <p className="text-muted-foreground">Modern systems require less frequent repairs</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="font-heading text-2xl font-bold mb-6">System Improvements</h3>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Energy Efficiency</h4>
+                  <p className="text-muted-foreground">Significant reduction in utility costs</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Smart Controls</h4>
+                  <p className="text-muted-foreground">Advanced automation and remote monitoring</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold mb-2">Extended Lifespan</h4>
+                  <p className="text-muted-foreground">Premium equipment lasts longer with proper installation</p>
                 </div>
               </div>
             </div>
