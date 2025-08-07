@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Wrench } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Services", href: "/services" },
@@ -22,15 +32,19 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-background/95 backdrop-blur-sm border-b border-border" 
+        : "bg-transparent border-b border-transparent"
+    }`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/LOGOPETRU2 .png" 
               alt="Mainteniq Logo" 
-              className="h-10 w-auto"
+              className="h-16 w-auto transition-all duration-300"
             />
           </Link>
 
@@ -42,14 +56,19 @@ const Navigation = () => {
                 to={item.href}
                 className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
                   isActive(item.href)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? isScrolled 
+                      ? "text-primary bg-primary/10" 
+                      : "text-primary bg-white/20"
+                    : isScrolled
+                      ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" variant="accent">
+            <Button size="sm" variant={isScrolled ? "accent" : "outline"} 
+                    className={!isScrolled ? "text-white border-white/30 hover:bg-white/10" : ""}>
               Get Quote
             </Button>
           </div>
@@ -61,6 +80,7 @@ const Navigation = () => {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              className={!isScrolled ? "text-white hover:bg-white/10" : ""}
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
@@ -69,7 +89,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
