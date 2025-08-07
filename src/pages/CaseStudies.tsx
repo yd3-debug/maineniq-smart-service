@@ -416,7 +416,7 @@ import TrustStrip from "@/components/TrustStrip";
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="premium" size="sm" className="rounded-full">
+                        <Button variant="outline" size="sm" className="rounded-full border-white text-white hover:bg-white hover:text-primary">
                           <Eye className="w-4 h-4 mr-2" />
                           View Details
                         </Button>
@@ -538,7 +538,7 @@ import TrustStrip from "@/components/TrustStrip";
                     </p>
                     
                     <div className="flex gap-2">
-                      <Button size="sm" variant="premium" className="flex-1 rounded-full">
+                      <Button size="sm" variant="default" className="flex-1 rounded-full">
                         <MessageSquare className="w-4 h-4 mr-2" />
                         Request Quote
                       </Button>
