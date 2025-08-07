@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Wrench } from "lucide-react";
+import { handleQuoteRequest } from "@/utils/quote";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,8 +72,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button size="sm" variant={(isScrolled || hasLightBackground) ? "accent" : "outline"} 
-                    className={(!isScrolled && !hasLightBackground) ? "text-white border-white/30 hover:bg-white/10" : ""}>
+            <Button 
+              size="sm" 
+              variant={(isScrolled || hasLightBackground) ? "accent" : "outline"} 
+              className={(!isScrolled && !hasLightBackground) ? "text-white border-white/30 hover:bg-white/10" : ""}
+              onClick={() => handleQuoteRequest()}
+            >
               Get Quote
             </Button>
           </div>
@@ -109,7 +114,12 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button size="sm" variant="accent" className="w-fit">
+              <Button 
+                size="sm" 
+                variant="accent" 
+                className="w-fit"
+                onClick={() => handleQuoteRequest()}
+              >
                 Get Quote
               </Button>
             </div>

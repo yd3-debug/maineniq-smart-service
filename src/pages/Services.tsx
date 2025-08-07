@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { handleQuoteRequest } from "@/utils/quote";
 import { 
   Wind, 
   Thermometer, 
@@ -217,7 +218,11 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <Button size="sm" className="w-full bg-primary hover:bg-primary-glow md:h-10">
+                  <Button 
+                    size="sm" 
+                    className="w-full bg-primary hover:bg-primary-glow md:h-10"
+                    onClick={() => handleQuoteRequest(service.title)}
+                  >
                     Request Quote
                     <ArrowRight className="w-3 md:w-4 h-3 md:h-4 ml-2" />
                   </Button>

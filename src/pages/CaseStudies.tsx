@@ -27,6 +27,7 @@ import heroImage from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
+import { handleQuoteRequest } from "@/utils/quote";
 
   const CaseStudies = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
@@ -538,7 +539,12 @@ import TrustStrip from "@/components/TrustStrip";
                     </p>
                     
                     <div className="flex gap-2">
-                      <Button size="sm" variant="default" className="flex-1 rounded-full">
+                      <Button 
+                        size="sm" 
+                        variant="default" 
+                        className="flex-1 rounded-full"
+                        onClick={() => handleQuoteRequest(undefined, project.projectType)}
+                      >
                         <MessageSquare className="w-4 h-4 mr-2" />
                         Request Quote
                       </Button>
