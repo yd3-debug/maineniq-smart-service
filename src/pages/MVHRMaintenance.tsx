@@ -26,9 +26,7 @@ import {
 } from "lucide-react";
 
 import heroImage from "@/assets/mvhr-installation.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
-import maintenanceImage from "@/assets/hvac-maintenance.jpg";
-import professionalImage from "@/assets/hvac-professional.jpg";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 const MVHRMaintenance = () => {
   const keyBenefits = [
@@ -195,62 +193,18 @@ const MVHRMaintenance = () => {
                   <p className="text-lg text-muted-foreground">See the dramatic difference maintenance makes to your air quality and energy bills</p>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Dirty Filter Side */}
-                  <div className="bg-destructive/5 rounded-lg p-6 border-2 border-destructive/20">
-                    <div className="text-center mb-6">
-                      <div className="w-full h-40 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg mb-4 flex items-center justify-center">
-                        <div className="text-white font-bold">DIRTY FILTER</div>
-                      </div>
-                      <h4 className="text-xl font-bold text-destructive mb-2">After 6 Months Without Maintenance</h4>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Airflow Efficiency:</span>
-                        <span className="font-bold text-destructive">{filterComparison.dirty.airflow}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Particle Contamination:</span>
-                        <span className="font-bold text-destructive">{filterComparison.dirty.particles}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Heat Recovery:</span>
-                        <span className="font-bold text-destructive">{filterComparison.dirty.energy}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Air Quality:</span>
-                        <span className="font-bold text-destructive">{filterComparison.dirty.health}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Clean Filter Side */}
-                  <div className="bg-success/5 rounded-lg p-6 border-2 border-success/20">
-                    <div className="text-center mb-6">
-                      <div className="w-full h-40 bg-gradient-to-br from-green-100 to-green-200 rounded-lg mb-4 flex items-center justify-center">
-                        <div className="text-success font-bold">CLEAN FILTER</div>
-                      </div>
-                      <h4 className="text-xl font-bold text-success mb-2">With Regular Professional Maintenance</h4>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Airflow Efficiency:</span>
-                        <span className="font-bold text-success">{filterComparison.clean.airflow}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Particle Filtration:</span>
-                        <span className="font-bold text-success">{filterComparison.clean.particles}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Heat Recovery:</span>
-                        <span className="font-bold text-success">{filterComparison.clean.energy}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Air Quality:</span>
-                        <span className="font-bold text-success">{filterComparison.clean.health}</span>
-                      </div>
-                    </div>
-                  </div>
+                <div className="space-y-6">
+                  <BeforeAfterSlider
+                    beforeSrc="/mvhr-filter-dirty.png"
+                    afterSrc="/mvhr-filter-clean.png"
+                    beforeAlt="Dirty MVHR filter clogged with dust reducing airflow and efficiency"
+                    afterAlt="Clean MVHR filter with clear pleats ensuring optimal airflow and air quality"
+                    beforeLabel="Dirty filter"
+                    afterLabel="Clean filter"
+                  />
+                  <p className="text-sm text-muted-foreground text-center">
+                    Real MVHR filters: dirty vs clean. Slide to compare and tap to zoom.
+                  </p>
                 </div>
               </CardContent>
             </Card>
