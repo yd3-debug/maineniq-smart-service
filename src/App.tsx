@@ -15,6 +15,10 @@ const Index = lazy(() => import("./pages/Index"));
 const Services = lazy(() => import("./pages/Services"));
 const WhyProfessionalHVAC = lazy(() => import("./pages/WhyProfessionalHVAC"));
 const HVACMaintenance = lazy(() => import("./pages/HVACMaintenance"));
+const FCUMaintenance = lazy(() => import("./pages/FCUMaintenance"));
+const HIUMaintenance = lazy(() => import("./pages/HIUMaintenance"));
+const CIUMaintenance = lazy(() => import("./pages/CIUMaintenance"));
+const MVHRMaintenance = lazy(() => import("./pages/MVHRMaintenance"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -71,6 +75,34 @@ const App = () => (
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <HVACMaintenance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/fcu-maintenance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <FCUMaintenance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/hiu-maintenance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <HIUMaintenance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/ciu-maintenance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <CIUMaintenance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/mvhr-maintenance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <MVHRMaintenance />
               </Suspense>
             </Layout>
           } />
