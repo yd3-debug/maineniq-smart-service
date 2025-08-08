@@ -195,8 +195,8 @@ const MVHRMaintenance = () => {
                 
                 <div className="space-y-6">
                   <BeforeAfterSlider
-                    beforeSrc="/mvhr-filter-dirty.png"
-                    afterSrc="/mvhr-filter-clean.png"
+                    beforeSrc="/MVPR0dirty.webp"
+                    afterSrc="/MVHRclean.webp"
                     beforeAlt="Dirty MVHR filter clogged with dust reducing airflow and efficiency"
                     afterAlt="Clean MVHR filter with clear pleats ensuring optimal airflow and air quality"
                     beforeLabel="Dirty filter"
