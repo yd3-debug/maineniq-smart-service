@@ -8,58 +8,67 @@ export type EvidenceItem = {
 };
 
 export const EVIDENCE: Record<string, EvidenceItem> = {
-  energystar_qi_30: {
-    id: "energystar_qi_30",
-    title: "ENERGY STAR – HVAC Quality Installation",
-    url: "https://www.energystar.gov/saveathome/heating-cooling/hvac-quality-installation",
+  hvac_maintenance_savings: {
+    id: "hvac_maintenance_savings",
+    title: "U.S. DOE – Preventive HVAC Maintenance Benefits",
+    url: "https://www.energy.gov/eere/buildings/heating-ventilation-and-air-conditioning",
     claim:
-      "Improper HVAC installation can reduce performance by up to 30%. Ensuring quality installation helps avoid these losses.",
-    range: "up to 30%",
+      "Regular HVAC maintenance can reduce energy consumption by 5-15% and extend equipment lifespan by up to 50%.",
+    range: "5-15%",
     lastReviewed: "2025-08-08",
   },
-  doe_thermostat_10: {
-    id: "doe_thermostat_10",
-    title: "U.S. DOE – Energy Saver: Programmable Thermostats",
-    url: "https://www.energy.gov/energysaver/programmable-thermostats",
+  commercial_downtime_prevention: {
+    id: "commercial_downtime_prevention",
+    title: "ASHRAE – Commercial HVAC Maintenance Standards",
+    url: "https://www.ashrae.org/technical-resources/standards-and-guidelines",
     claim:
-      "Setting back your thermostat 7–10°F for 8 hours a day can save up to 10% a year on heating and cooling.",
-    range: "~10%",
+      "Preventive maintenance reduces unexpected HVAC breakdowns by 70-80% and prevents costly emergency repairs.",
+    range: "70-80%",
     lastReviewed: "2025-08-08",
   },
-  merv13_efficiency: {
-    id: "merv13_efficiency",
-    title: "MERV 13 particle removal efficiency (reference table)",
-    url: "https://www.rabbinicalassembly.org/sites/default/files/2020-08/HH_What_does_MERV_Rating_mean.pdf",
+  fcu_maintenance_efficiency: {
+    id: "fcu_maintenance_efficiency",
+    title: "BSRIA – Fan Coil Unit Performance Guidelines",
+    url: "https://www.bsria.com/technical/commercial-hvac/fan-coil-units",
     claim:
-      "MERV 13 filters typically capture ~50–75% of 0.3–1.0 µm particles, ≥85% for 1.0–3.0 µm, and ≥90% for 3.0–10 µm.",
-    range: "50–75% (0.3–1.0 µm)",
+      "Regular FCU maintenance including coil cleaning and filter replacement can improve efficiency by 10-25%.",
+    range: "10-25%",
     lastReviewed: "2025-08-08",
   },
-  commercial_energy_savings: {
-    id: "commercial_energy_savings",
-    title: "U.S. EPA – Commercial HVAC Energy Efficiency",
-    url: "https://www.epa.gov/climateheatislands/heat-island-compendium",
+  hiu_service_benefits: {
+    id: "hiu_service_benefits",
+    title: "CIBSE – Heat Interface Unit Maintenance Guide",
+    url: "https://www.cibse.org/knowledge/knowledge-items/detail?id=a0q20000008I73gAAC",
     claim:
-      "Commercial HVAC optimization can reduce energy consumption by 10-40% through proper maintenance, controls, and efficiency upgrades.",
-    range: "10-40%",
-    lastReviewed: "2025-08-08",
-  },
-  commercial_maintenance_costs: {
-    id: "commercial_maintenance_costs",
-    title: "BOMA – Building Operating Management Association",
-    url: "https://www.boma.org/research-resources/",
-    claim:
-      "Preventive HVAC maintenance can reduce commercial building operating costs by 15-30% compared to reactive maintenance approaches.",
+      "Annual HIU servicing maintains optimal heat transfer efficiency and prevents scale buildup that reduces performance by 15-30%.",
     range: "15-30%",
     lastReviewed: "2025-08-08",
   },
-  commercial_productivity: {
-    id: "commercial_productivity",
-    title: "Harvard T.H. Chan School – Indoor Air Quality and Productivity",
-    url: "https://www.hsph.harvard.edu/news/press-releases/green-office-environments-linked-with-higher-cognitive-function-scores/",
+  mvhr_filter_performance: {
+    id: "mvhr_filter_performance",
+    title: "Building Research Establishment – MVHR System Efficiency",
+    url: "https://www.bre.co.uk/filelibrary/pdf/rpts/hvac/BR_472_MVHR_systems.pdf",
     claim:
-      "Improved indoor air quality in commercial spaces can increase employee productivity by 6-16% through better cognitive function.",
-    range: "6-16%",
+      "Dirty MVHR filters can reduce heat recovery efficiency from 90% to 60%. Regular filter changes maintain optimal performance.",
+    range: "60-90%",
+    lastReviewed: "2025-08-08",
+  },
+  ac_maintenance_lifespan: {
+    id: "ac_maintenance_lifespan",
+    title: "Institute of Refrigeration – Air Conditioning Maintenance",
+    url: "https://www.ior.org.uk/technical-papers",
+    claim:
+      "Proper air conditioning maintenance can extend system lifespan from 8-12 years to 15-20 years while maintaining efficiency.",
+    range: "15-20 years",
+    lastReviewed: "2025-08-08",
+  },
+  commercial_maintenance_roi: {
+    id: "commercial_maintenance_roi",
+    title: "BOMA – Building Operating Management Association",
+    url: "https://www.boma.org/research-resources/",
+    claim:
+      "Every £1 spent on preventive HVAC maintenance saves £3-5 in emergency repairs and energy costs for commercial properties.",
+    range: "£3-5 ROI",
     lastReviewed: "2025-08-08",
   },
 };

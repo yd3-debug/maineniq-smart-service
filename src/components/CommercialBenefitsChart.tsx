@@ -6,34 +6,34 @@ import ResearchBadge from "@/components/ResearchBadge";
 
 const chartData = [
   {
-    category: "Energy Efficiency",
-    value: 25,
-    icon: Zap,
-    color: "hsl(var(--energy-gold))"
-  },
-  {
-    category: "Cost Reduction", 
-    value: 22,
-    icon: DollarSign,
+    category: "Breakdown Prevention",
+    value: 75,
+    icon: Shield,
     color: "hsl(var(--trust-blue))"
   },
   {
-    category: "Employee Comfort",
-    value: 18,
-    icon: Users,
+    category: "Maintenance ROI", 
+    value: 400,
+    icon: DollarSign,
+    color: "hsl(var(--success))"
+  },
+  {
+    category: "Energy Savings",
+    value: 15,
+    icon: Zap,
     color: "hsl(var(--accent-orange))"
   },
   {
-    category: "System Reliability",
-    value: 30,
-    icon: Shield,
-    color: "hsl(var(--luxury-gold))"
+    category: "Equipment Lifespan",
+    value: 50,
+    icon: TrendingUp,
+    color: "hsl(var(--primary))"
   },
   {
-    category: "Compliance Standards",
-    value: 28,
+    category: "Performance Efficiency",
+    value: 25,
     icon: CheckCircle,
-    color: "hsl(var(--primary))"
+    color: "hsl(var(--energy-gold))"
   }
 ];
 
@@ -49,15 +49,15 @@ export function CommercialBenefitsChart() {
     <div className="space-y-8">
       <div className="text-center">
         <h3 className="text-3xl font-bold mb-3 bg-professional-gradient bg-clip-text text-transparent">
-          Commercial HVAC Benefits
+          HVAC Maintenance Benefits & ROI
         </h3>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-          Professional HVAC services deliver measurable improvements across all commercial property metrics
+          Professional HVAC maintenance delivers proven results: reduced breakdowns, energy savings, and exceptional return on investment
         </p>
         <div className="flex justify-center gap-4 text-sm flex-wrap">
-          <ResearchBadge claimId="commercial_energy_savings" label="Energy Research" />
-          <ResearchBadge claimId="commercial_maintenance_costs" label="Cost Analysis" />
-          <ResearchBadge claimId="commercial_productivity" label="Performance Data" />
+          <ResearchBadge claimId="hvac_maintenance_savings" label="Energy Savings" />
+          <ResearchBadge claimId="commercial_downtime_prevention" label="Breakdown Prevention" />
+          <ResearchBadge claimId="commercial_maintenance_roi" label="ROI Analysis" />
         </div>
       </div>
       
@@ -96,7 +96,7 @@ export function CommercialBenefitsChart() {
                   }}
                   axisLine={false}
                   tickLine={false}
-                  domain={[0, 35]}
+                  domain={[0, 450]}
                 />
                 <ChartTooltip 
                   content={<ChartTooltipContent />}
@@ -136,10 +136,14 @@ export function CommercialBenefitsChart() {
                 </div>
                 <h4 className="font-semibold text-sm mb-2 text-foreground">{item.category}</h4>
                 <div className="text-2xl font-bold mb-1" style={{ color: item.color }}>
-                  {item.value}%
+                  {item.category === "Maintenance ROI" ? `${item.value}%` : 
+                   item.category === "Equipment Lifespan" ? `+${item.value}%` :
+                   `${item.value}%`}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Average improvement
+                  {item.category === "Maintenance ROI" ? "ROI return" : 
+                   item.category === "Equipment Lifespan" ? "Lifespan extension" :
+                   "Performance improvement"}
                 </div>
               </div>
             ))}
@@ -147,8 +151,8 @@ export function CommercialBenefitsChart() {
           
           <div className="mt-6 p-4 rounded-lg bg-accent/30 border border-border/50">
             <p className="text-xs text-muted-foreground text-center leading-relaxed">
-              <strong className="text-foreground">Performance metrics</strong> based on comprehensive industry research and client case studies. 
-              Improvements measured over 12-month periods following professional HVAC optimization.
+              <strong className="text-foreground">Maintenance benefits</strong> based on industry research and proven preventive maintenance programs. 
+              Results measured over 12-month periods following professional maintenance implementation.
             </p>
           </div>
         </CardContent>

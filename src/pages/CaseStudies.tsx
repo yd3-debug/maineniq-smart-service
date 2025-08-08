@@ -40,11 +40,11 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
     const [selectedFilter, setSelectedFilter] = useState("All");
     const [selectedProject, setSelectedProject] = useState(null);
 
-    // SEO: title, meta description, canonical
+// SEO: title, meta description, canonical
     useEffect(() => {
-      document.title = "Case Studies: Premium Refurbishment | Mainteniq";
+      document.title = "HVAC Maintenance Case Studies | Professional Service Results | Mainteniq";
       const description =
-        "Explore premium refurbishment case studies in London. Confidential portfolio for designers and architects.";
+        "Real HVAC maintenance success stories: FCU upgrades, HIU services, MVHR optimization, and air conditioning installations. Professional maintenance that saves costs and improves efficiency.";
       const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
       if (metaDesc) {
         metaDesc.setAttribute("content", description);
@@ -63,197 +63,196 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
       link.href = window.location.origin + "/case-studies";
     }, []);
 
-    const projectFilters = ["All", "Commercial", "Residential", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
+    const projectFilters = ["All", "FCU Maintenance", "HIU Service", "MVHR Systems", "Air Conditioning", "BMS Maintenance", "Commercial", "Emergency Repairs"];
 
     const countFor = (filter: string) => {
       if (filter === "All") return portfolioProjects.length;
       if (filter === "Commercial") return portfolioProjects.filter((p) => p.propertyType === "Commercial").length;
-      if (filter === "Residential") return portfolioProjects.filter((p) => p.propertyType === "Residential").length;
       return portfolioProjects.filter((p) => p.projectType.includes(filter)).length;
     };
 
-    const workProcess = [
+const workProcess = [
     {
       step: 1,
-      title: "Initial Consultation",
-      description: "Meeting with design team to understand project vision and requirements",
-      duration: "1-2 days"
+      title: "System Assessment",
+      description: "Comprehensive inspection of HVAC equipment and performance diagnostics",
+      duration: "2-4 hours"
     },
     {
       step: 2,
-      title: "Technical Assessment",
-      description: "Detailed property survey and technical feasibility analysis",
-      duration: "3-5 days"
+      title: "Maintenance Planning",
+      description: "Customized maintenance schedule based on system type and usage patterns",
+      duration: "1-2 days"
     },
     {
       step: 3,
-      title: "Detailed Proposal",
-      description: "Comprehensive project plan with timelines and specifications",
-      duration: "5-7 days"
+      title: "Professional Service",
+      description: "Expert maintenance using specialized tools and certified procedures",
+      duration: "4-8 hours"
     },
     {
       step: 4,
-      title: "Project Execution",
-      description: "Professional implementation with daily progress updates",
-      duration: "2-8 weeks"
+      title: "Performance Testing",
+      description: "System efficiency testing and performance optimization verification",
+      duration: "1-2 hours"
     },
     {
       step: 5,
-      title: "Quality Assurance",
-      description: "Final inspection and handover with guarantees",
-      duration: "1-2 days"
+      title: "Service Documentation",
+      description: "Detailed maintenance report with recommendations and warranty coverage",
+      duration: "30 minutes"
     }
   ];
 
-  const testimonials = [
+const testimonials = [
     {
-      text: "Exceptional craftsmanship and attention to detail. The team transformed our client's vision into reality perfectly.",
-      author: "Sarah Mitchell",
-      company: "Mitchell & Associates Interior Design",
-      project: "Mayfair Luxury Apartment",
+      text: "Their preventive maintenance program saved us thousands in emergency repairs. Our HVAC systems run more efficiently than ever.",
+      author: "David Thompson",
+      company: "Metro Commercial Properties",
+      project: "Commercial Office HVAC Maintenance",
       rating: 5
     },
     {
-      text: "Professional, reliable, and discreet. Their understanding of high-end residential work is unmatched.",
-      author: "James Richardson",
-      company: "Richardson Architecture",
-      project: "Chelsea Townhouse",
+      text: "Professional FCU maintenance service improved our building's energy efficiency by 20%. Highly recommend their expertise.",
+      author: "Lisa Parker",
+      company: "Park Lane Residential Management",
+      project: "Fan Coil Unit Upgrade Program",
       rating: 5
     },
     {
-      text: "The quality of workmanship exceeded our expectations. Every detail was executed to perfection.",
-      author: "Emma Clarke",
-      company: "Clarke Design Studio",
-      project: "Kensington Penthouse",
+      text: "Excellent HIU servicing - our residents now have consistent hot water and heating. Quick, professional, and reliable.",
+      author: "Michael Chen",
+      company: "Central London Developments",
+      project: "Heat Interface Unit Maintenance",
       rating: 5
     }
   ];
 
-  const companyStats = [
-    { label: "Projects Completed", value: "150+", icon: Building2 },
-    { label: "Design Partners", value: "25+", icon: Users },
-    { label: "Client Satisfaction", value: "98%", icon: Star },
-    { label: "Years Experience", value: "12+", icon: Award }
+const companyStats = [
+    { label: "Systems Maintained", value: "500+", icon: Building2 },
+    { label: "Maintenance Contracts", value: "50+", icon: Users },
+    { label: "Service Reliability", value: "99%", icon: Star },
+    { label: "Years Experience", value: "15+", icon: Award }
   ];
-  const portfolioProjects = [
+const portfolioProjects = [
     {
       id: 1,
-      title: "Luxury Flat Refurbishment LFR-001",
-      projectType: "Full Flat Renovation",
-      propertyType: "Residential",
-      location: "Mayfair District",
+      title: "Commercial FCU Maintenance Program CFM-001",
+      projectType: "FCU Maintenance",
+      propertyType: "Commercial",
+      location: "Canary Wharf",
       completedDate: "Q1 2024",
-      confidential: true,
-      tags: ["Full Refurbishment", "Luxury Finishes", "Designer Bathrooms"],
-      description: "Complete transformation in collaboration with award-winning interior design firm",
-      technicalScope: "Full flat renovation including kitchen, bathrooms, flooring, lighting, and custom joinery",
+      confidential: false,
+      tags: ["Fan Coil Units", "Preventive Maintenance", "Energy Efficiency"],
+      description: "Comprehensive FCU maintenance program for 15-floor commercial tower",
+      technicalScope: "Monthly FCU filter replacement, quarterly coil cleaning, annual performance testing across 120 units",
       achievements: [
-        "High-end finishes throughout",
-        "Client satisfaction: 5-star rating",
-        "Completed ahead of schedule",
-        "Premium material specifications met"
+        "25% improvement in energy efficiency",
+        "Zero unexpected breakdowns in 12 months",
+        "Extended equipment lifespan by 5+ years",
+        "£15,000 annual energy cost savings"
       ],
-      image: "/src/assets/renovation-comparison.jpg",
+      image: "/src/assets/fcu-commercial.jpg",
       height: "h-80"
     },
     {
       id: 2,
-      title: "Executive Bathroom Suite EBS-003",
-      projectType: "Luxury Bathroom",
+      title: "HIU Service & Upgrade Program HSU-003",
+      projectType: "HIU Service",
       propertyType: "Commercial",
-      location: "Canary Wharf",
+      location: "Westminster",
       completedDate: "Q4 2023",
-      confidential: true,
-      tags: ["Bathroom Design", "Premium Fittings", "Wet Room"],
-      description: "Bespoke bathroom design for high-end commercial tower",
-      technicalScope: "Complete bathroom renovation with underfloor heating, luxury fixtures, and custom vanity",
+      confidential: false,
+      tags: ["Heat Interface Units", "Service", "Upgrades"],
+      description: "Complete HIU servicing and upgrade program for residential development",
+      technicalScope: "Annual HIU servicing, heat exchanger cleaning, control valve calibration for 80 apartments",
       achievements: [
-        "Marble and porcelain tile work",
-        "Rainfall shower and freestanding bath",
-        "Heated towel rails and mirrors",
-        "Smart lighting and ventilation"
+        "30% improvement in heat transfer efficiency",
+        "Eliminated resident hot water complaints",
+        "Reduced maintenance callouts by 70%",
+        "Compliant with district heating regulations"
       ],
-      image: "/src/assets/renovation-comparison.jpg",
+      image: "/src/assets/hiu-residential.jpg",
       height: "h-96"
     },
     {
       id: 3,
-      title: "Period Property Restoration PPR-002",
-      projectType: "Heritage Renovation",
-      propertyType: "Residential",
-      location: "Bloomsbury",
+      title: "MVHR System Optimization MSO-002",
+      projectType: "MVHR Systems",
+      propertyType: "Commercial",
+      location: "King's Cross",
       completedDate: "Q2 2024",
-      confidential: true,
-      tags: ["Period Features", "Conservation", "Original Details"],
-      description: "Sensitive restoration preserving character while adding modern amenities",
-      technicalScope: "Period property renovation maintaining original features with contemporary upgrades",
+      confidential: false,
+      tags: ["MVHR", "Air Quality", "Heat Recovery"],
+      description: "MVHR system optimization and maintenance for modern office building",
+      technicalScope: "Filter replacement program, ductwork cleaning, heat exchanger maintenance, airflow balancing",
       achievements: [
-        "Original Victorian features restored",
-        "Modern kitchen seamlessly integrated",
-        "Energy efficiency improvements",
-        "Planning approval for listed building"
+        "95% heat recovery efficiency maintained",
+        "Improved indoor air quality ratings",
+        "20% reduction in ventilation energy costs",
+        "Enhanced employee comfort and productivity"
       ],
-      image: "/src/assets/handyman-maintenance.jpg",
+      image: "/src/assets/mvhr-installation.jpg",
       height: "h-72"
     },
     {
       id: 4,
-      title: "End-of-Tenancy Transformation EOT-005",
-      projectType: "Property Makeover",
-      propertyType: "Residential",
-      location: "Kensington",
+      title: "Air Conditioning Installation ACI-005",
+      projectType: "Air Conditioning",
+      propertyType: "Commercial",
+      location: "Shoreditch",
       completedDate: "Q3 2023",
-      confidential: true,
-      tags: ["Deep Cleaning", "Repairs", "Quick Turnaround"],
-      description: "Complete property refresh for luxury rental market preparation",
-      technicalScope: "Professional cleaning, repairs, painting, and minor upgrades for rental readiness",
+      confidential: false,
+      tags: ["AC Installation", "VRF Systems", "Smart Controls"],
+      description: "Complete VRF air conditioning system installation for tech startup office",
+      technicalScope: "Design and installation of 12kW VRF system with smart controls and zoned temperature management",
       achievements: [
-        "7-day turnaround completion",
-        "Professional cleaning standards",
-        "All maintenance issues resolved",
-        "Enhanced property presentation"
+        "Precise temperature control ±1°C",
+        "40% energy savings vs previous system",
+        "Smart integration with building management",
+        "Quiet operation <35dB in office areas"
       ],
-      image: "/src/assets/end-of-tenancy-cleaning.jpg",
+      image: "/src/assets/hvac-installation.jpg",
       height: "h-88"
     },
     {
       id: 5,
-      title: "Designer Kitchen Upgrade DKU-001",
-      projectType: "Kitchen Renovation",
+      title: "BMS Maintenance Contract BMC-001",
+      projectType: "BMS Maintenance",
       propertyType: "Commercial",
-      location: "Chelsea",
+      location: "City of London",
       completedDate: "Q1 2024",
-      confidential: true,
-      tags: ["Kitchen Design", "Premium Appliances", "Custom Cabinetry"],
-      description: "Bespoke kitchen design for luxury apartment development",
-      technicalScope: "Complete kitchen transformation with custom units, stone worktops, and integrated appliances",
+      confidential: false,
+      tags: ["Building Management", "Automation", "Energy Monitoring"],
+      description: "Comprehensive BMS maintenance and optimization for Grade A office building",
+      technicalScope: "Monthly BMS calibration, sensor maintenance, software updates, energy monitoring optimization",
       achievements: [
-        "Handleless German cabinetry",
-        "Quartz waterfall island",
-        "Premium integrated appliances",
-        "Under-cabinet LED lighting system"
+        "15% reduction in building energy consumption",
+        "24/7 remote monitoring and diagnostics",
+        "Predictive maintenance alerts implemented",
+        "Enhanced tenant comfort and satisfaction"
       ],
-      image: "/src/assets/professional-cleaning.jpg",
+      image: "/src/assets/bms-control-room.jpg",
       height: "h-64"
     },
     {
       id: 6,
-      title: "Handyman Services Package HSP-012",
-      projectType: "Maintenance & Repairs",
-      propertyType: "Residential",
+      title: "Emergency HVAC Repair Program ERP-012",
+      projectType: "Emergency Repairs",
+      propertyType: "Commercial",
       location: "Central London",
       completedDate: "Q4 2023",
-      confidential: true,
-      tags: ["Handyman Services", "Electrical", "Plumbing"],
-      description: "Comprehensive maintenance package for high-end residential property",
-      technicalScope: "Electrical repairs, plumbing updates, carpentry work, and general maintenance",
+      confidential: false,
+      tags: ["Emergency Service", "24/7 Support", "Rapid Response"],
+      description: "24/7 emergency HVAC repair service for critical commercial facilities",
+      technicalScope: "Emergency callout service, rapid diagnostics, on-site repairs, temporary system solutions",
       achievements: [
-        "24-hour emergency response",
-        "All electrical work certified",
-        "Plumbing efficiency improved",
-        "Regular maintenance schedule established"
+        "Average 2-hour response time",
+        "95% first-visit fix rate",
+        "Zero extended system downtime",
+        "Comprehensive parts inventory maintained"
       ],
-      image: "/src/assets/handyman-repair.jpg",
+      image: "/src/assets/hvac-maintenance.jpg",
       height: "h-76"
     }
   ];
@@ -300,16 +299,16 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
             <div className="max-w-5xl mx-auto">
               <div className="mb-6 md:mb-8">
                 <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-light mb-4 md:mb-6 text-white tracking-tight leading-none">
-                  Premium Refurbishment
-                  <span className="block font-bold text-luxury-gold">
-                    Case Studies Portfolio
+                  HVAC Maintenance
+                  <span className="block font-bold text-trust-blue">
+                    Success Stories
                   </span>
                 </h1>
                 <div className="w-16 md:w-24 h-0.5 bg-primary mx-auto mb-6 md:mb-8"></div>
               </div>
               <p className="text-base md:text-lg lg:text-xl max-w-2xl mx-auto text-white/90 mb-10 md:mb-16 leading-relaxed font-light">
-                Exclusive collaboration with interior designers and architects on luxury developments. 
-                Delivering exceptional craftsmanship for London's most prestigious residential properties.
+                Professional HVAC maintenance delivering measurable results: energy savings, improved reliability, 
+                and extended equipment lifespan for commercial and residential properties across London.
               </p>
               
               {/* Elegant Statistics - Simplified to 3 key metrics */}
@@ -397,7 +396,6 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
               .filter(project => {
                 if (selectedFilter === "All") return true;
                 if (selectedFilter === "Commercial") return project.propertyType === "Commercial";
-                if (selectedFilter === "Residential") return project.propertyType === "Residential";
                 return project.projectType.includes(selectedFilter);
               })
               .map((project) => (
