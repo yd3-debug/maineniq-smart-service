@@ -127,9 +127,9 @@ const WhyProfessionalHVAC = () => {
 
   // Multi-faceted benefit breakdown data
   const benefitBreakdownData = [
-    { name: 'Energy Savings', value: 40, fill: "hsl(142 55% 35%)", impact: "£800+ saved annually" },
-    { name: 'Comfort Improvement', value: 35, fill: "hsl(24 100% 50%)", impact: "95% comfort score" },
-    { name: 'Air Quality Enhancement', value: 25, fill: "hsl(270 60% 50%)", impact: "99.97% filtration" }
+    { name: 'Energy Savings', value: 30, fill: "hsl(142 55% 35%)", impact: "Up to 30% from quality installation" },
+    { name: 'Comfort Improvement', value: 35, fill: "hsl(24 100% 50%)", impact: "Improved temperature stability" },
+    { name: 'Air Quality Enhancement', value: 25, fill: "hsl(270 60% 50%)", impact: "MERV 13 captures up to 75% of fine particles" }
   ];
 
   // Service plan comparison data
@@ -149,32 +149,32 @@ const WhyProfessionalHVAC = () => {
 
   const keyStats = [
     {
-      icon: DollarSign,
-      value: "£3,250",
-      label: "Total Annual Savings",
-      gradient: "from-emerald-500 to-green-600",
-      description: "Energy + maintenance + repair savings"
+      icon: Zap,
+      value: "30",
+      label: "Efficiency Gain (Up to)",
+      gradient: "from-blue-500 to-cyan-600",
+      description: "With ENERGY STAR quality installation"
     },
     {
-      icon: Zap,
-      value: "50%",
-      label: "Energy Reduction",
-      gradient: "from-blue-500 to-cyan-600",
-      description: "Compared to outdated systems"
+      icon: Thermometer,
+      value: "10",
+      label: "Thermostat Savings (Up to)",
+      gradient: "from-emerald-500 to-green-600",
+      description: "Typical with smart setbacks"
     },
     {
       icon: Shield,
-      value: "99.97%",
-      label: "Air Filtration",
+      value: "75",
+      label: "Fine Particle Capture (Up to)",
       gradient: "from-purple-500 to-indigo-600",
-      description: "Hospital-grade air quality"
+      description: "MERV 13 filtration (0.3–1.0 µm)"
     },
     {
       icon: Home,
-      value: "25%",
-      label: "Property Value Boost",
+      value: "0",
+      label: "Property Marketability",
       gradient: "from-orange-500 to-amber-600",
-      description: "Verified by property assessments"
+      description: "Varies by market (no generic % claimed)"
     }
   ];
 
@@ -239,16 +239,18 @@ const WhyProfessionalHVAC = () => {
           <div className="max-w-5xl">
             <div className="inline-flex items-center gap-2 bg-primary/20 text-luxury-gold px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-luxury-gold/30">
               <Star className="w-4 h-4" />
-              Trusted by 500+ Property Owners
+              Research-backed estimates
             </div>
             
             <h1 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-white">
               Why Professional HVAC is Essential for Your Property
             </h1>
-            <p className="text-xs sm:text-sm md:text-lg mb-4 sm:mb-6 md:mb-8 text-slate-200 max-w-3xl leading-relaxed">
-              Discover how professional HVAC systems deliver £3,250+ annual savings, superior comfort, 
-              and protect your investment. Don't let outdated systems cost you thousands.
-            </p>
+              <p className="text-xs sm:text-sm md:text-lg mb-3 sm:mb-6 md:mb-8 text-slate-200 max-w-3xl leading-relaxed">
+                Research-backed efficiency gains: up to 30% from quality installation and ~10% via smart thermostat control.
+              </p>
+              <div className="flex items-center gap-2 mb-4">
+                <Link to="#"><span className="sr-only">sources</span></Link>
+              </div>
             
             {/* Key Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8">
@@ -260,9 +262,9 @@ const WhyProfessionalHVAC = () => {
                     </div>
                     <div className="font-bold text-sm sm:text-lg md:text-2xl mb-1 text-white">
                       <AnimatedCounter 
-                        value={parseFloat(stat.value.replace(/[£%,]/g, ''))} 
-                        prefix={stat.value.includes('£') ? '£' : ''}
-                        suffix={stat.value.includes('%') ? '%' : stat.value.includes(',') ? '+' : ''}
+                        value={parseFloat(stat.value.replace(/[^0-9.]/g, ''))}
+                        prefix={stat.label.includes("Up to") ? "Up to " : stat.value.includes("£") ? "£" : ''}
+                        suffix={stat.label.includes("Capture") || stat.label.includes("Savings") || stat.label.includes("Efficiency") ? "%" : ''}
                         delay={index * 200}
                       />
                     </div>
@@ -296,6 +298,7 @@ const WhyProfessionalHVAC = () => {
       {/* The Cost of Waiting Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
         <div className="container mx-auto px-3 sm:px-4">
+          <p className="text-[11px] sm:text-xs text-slate-500 mb-2">Note: Figures shown are illustrative to explain concepts. Actual savings and impacts vary by building and usage.</p>
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
               <AlertTriangle className="w-3 sm:w-4 h-3 sm:h-4" />

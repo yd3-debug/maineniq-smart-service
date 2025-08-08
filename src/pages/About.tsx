@@ -262,9 +262,9 @@ const About = () => {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
               </div>
-              <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">40%</h3>
-              <h4 className="font-semibold mb-2 text-sm sm:text-base">Energy Savings</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Average reduction in energy costs with our modern HVAC systems</p>
+              <h3 className="font-bold text-2xl sm:text-3xl mb-1.5 text-primary">Up to 30%</h3>
+              <h4 className="font-semibold mb-2 text-sm sm:text-base flex items-center justify-center gap-2">Energy Savings <span className="hidden sm:inline"><span className="sr-only">source:</span></span><span><a href="#" aria-hidden className="hidden"></a></span></h4>
+              <div className="flex items-center justify-center"><span className="sr-only">Source:</span></div>
             </Card>
             <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">

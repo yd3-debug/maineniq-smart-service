@@ -22,6 +22,7 @@ import heroImage from "@/assets/hero-hvac.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
+import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
 
 const Index = () => {
@@ -83,13 +84,16 @@ const Index = () => {
 
             <div>
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Save £3,250+ Annually with Professional{" "}
-                <span className="text-accent-orange">HVAC Systems</span>
+                Save up to 10–30% on HVAC energy costs
+                <span className="text-accent-orange"> with Professional Systems</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-xl mb-4 sm:mb-6 md:mb-8 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Transform your property with intelligent HVAC technology. Experience 50% energy reduction, 
-                superior comfort, and increased property value through professional installation and maintenance.
+              <p className="text-sm sm:text-base md:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
+                Transform your property with intelligent HVAC technology. Quality installation can prevent up to 30% performance loss, and smart controls typically save around 10%.
               </p>
+              <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-2">
+                <ResearchBadge claimId="energystar_qi_30" />
+                <ResearchBadge claimId="doe_thermostat_10" />
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center mb-6 sm:mb-8 md:mb-12">
@@ -111,29 +115,39 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-energy-gold/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={3250} prefix="£" delay={0} duration={1400} />
+                  <AnimatedCounter value={10} prefix="Up to " suffix="%" delay={0} duration={1400} />
                 </div>
-                <div className="text-xs opacity-80">Annual Savings</div>
+                <div className="text-xs opacity-80 flex items-center justify-center gap-1">
+                  <span>Thermostat Savings</span>
+                  <ResearchBadge claimId="doe_thermostat_10" />
+                </div>
               </div>
               <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-trust-blue/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-trust-blue">
-                  <AnimatedCounter value={50} suffix="%" delay={100} duration={1400} />
+                  <AnimatedCounter value={30} prefix="Up to " suffix="%" delay={100} duration={1400} />
                 </div>
-                <div className="text-xs opacity-80">Energy Reduction</div>
+                <div className="text-xs opacity-80 flex items-center justify-center gap-1">
+                  <span>Efficiency Gain (Quality Install)</span>
+                  <ResearchBadge claimId="energystar_qi_30" />
+                </div>
               </div>
               <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-accent-orange/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-accent-orange">
-                  <AnimatedCounter value={25} suffix="%" delay={200} duration={1400} />
+                  —
                 </div>
-                <div className="text-xs opacity-80">Property Value+</div>
+                <div className="text-xs opacity-80">Property Marketability (varies)</div>
               </div>
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-primary/30">
+              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:pb-5 md:p-4 border border-primary/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={99.97} precision={2} suffix="%" delay={300} duration={1400} />
+                  <AnimatedCounter value={75} prefix="Up to " suffix="%" delay={300} duration={1400} />
                 </div>
-                <div className="text-xs opacity-80">Air Filtration</div>
+                <div className="text-xs opacity-80 flex items-center justify-center gap-1">
+                  <span>Fine Particle Capture (MERV 13)</span>
+                  <ResearchBadge claimId="merv13_efficiency" />
+                </div>
               </div>
             </div>
+            <p className="mt-2 text-[10px] sm:text-xs opacity-75">Estimates based on cited sources; actual savings vary by property and usage.</p>
           </div>
         </div>
       </section>
@@ -194,11 +208,11 @@ const Index = () => {
                   <DollarSign className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Financial Protection</h4>
-                <p className="text-muted-foreground text-sm mb-3">Save £3,250+ annually on energy, maintenance, and repairs</p>
+                <p className="text-muted-foreground text-sm mb-3">Reduce HVAC energy and repair costs</p>
                 <div className="text-2xl font-bold text-success">
-                  <AnimatedCounter value={270} prefix="£" suffix="/mo" delay={0} duration={1400} />
+                  <AnimatedCounter value={10} prefix="Up to " suffix="%" delay={0} duration={1400} />
                 </div>
-                <div className="text-xs text-muted-foreground">Average Monthly Savings</div>
+                <div className="text-xs text-muted-foreground">Thermostat Savings</div>
               </CardContent>
             </Card>
             
@@ -224,9 +238,9 @@ const Index = () => {
                 <h4 className="font-bold text-lg mb-2">Health & Wellness</h4>
                 <p className="text-muted-foreground text-sm mb-3">Hospital-grade air filtration removes allergens</p>
                 <div className="text-2xl font-bold text-success">
-                  <AnimatedCounter value={99.97} precision={2} suffix="%" delay={200} duration={1400} />
+                  <AnimatedCounter value={75} prefix="Up to " suffix="%" delay={200} duration={1400} />
                 </div>
-                <div className="text-xs text-muted-foreground">Filtration Efficiency</div>
+                <div className="text-xs text-muted-foreground">Fine Particle Capture (MERV 13)</div>
               </CardContent>
             </Card>
 
@@ -238,20 +252,20 @@ const Index = () => {
                 <h4 className="font-bold text-lg mb-2">Property Value</h4>
                 <p className="text-muted-foreground text-sm mb-3">Professional HVAC increases marketability</p>
                 <div className="text-2xl font-bold text-accent-orange">
-                  <AnimatedCounter value={25} prefix="+" suffix="%" delay={300} duration={1400} />
+                  —
                 </div>
-                <div className="text-xs text-muted-foreground">Value Increase</div>
+                <div className="text-xs text-muted-foreground">Property Marketability (varies)</div>
               </CardContent>
             </Card>
           </div>
 
           {/* Call to Action for HVAC Page */}
           <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/20">
-            <h3 className="font-heading text-2xl font-bold mb-4">
+            <h3 className="font-heading text-2xl font-bold mb-2">
               Ready to Transform Your Property?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Discover exactly how much you could save and the complete benefits of professional HVAC systems.
+            <p className="text-muted-foreground mb-3 max-w-2xl mx-auto">
+              Discover how much you could save. Estimates are based on reputable sources and vary by property.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/why-professional-hvac">
