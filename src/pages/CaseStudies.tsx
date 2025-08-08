@@ -21,13 +21,20 @@ import {
   FileText,
   Clock,
   Filter,
-  MessageSquare
+  MessageSquare,
+  Home,
+  Factory,
+  BarChart3,
+  Zap,
+  DollarSign,
+  BrainCircuit
 } from "lucide-react";
 import heroImage from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
 import { handleQuoteRequest } from "@/utils/quote";
+import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
 
   const CaseStudies = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
@@ -56,12 +63,14 @@ import { handleQuoteRequest } from "@/utils/quote";
       link.href = window.location.origin + "/case-studies";
     }, []);
 
-    const projectFilters = ["All", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
+    const projectFilters = ["All", "Commercial", "Residential", "Full Renovation", "Bathroom", "Kitchen", "Heritage", "Maintenance"];
 
-    const countFor = (filter: string) =>
-      filter === "All"
-        ? portfolioProjects.length
-        : portfolioProjects.filter((p) => p.projectType.includes(filter)).length;
+    const countFor = (filter: string) => {
+      if (filter === "All") return portfolioProjects.length;
+      if (filter === "Commercial") return portfolioProjects.filter((p) => p.propertyType === "Commercial").length;
+      if (filter === "Residential") return portfolioProjects.filter((p) => p.propertyType === "Residential").length;
+      return portfolioProjects.filter((p) => p.projectType.includes(filter)).length;
+    };
 
     const workProcess = [
     {
@@ -131,18 +140,18 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 1,
       title: "Luxury Flat Refurbishment LFR-001",
       projectType: "Full Flat Renovation",
+      propertyType: "Residential",
       location: "Mayfair District",
       completedDate: "Q1 2024",
-      projectValue: "£45K+",
       confidential: true,
       tags: ["Full Refurbishment", "Luxury Finishes", "Designer Bathrooms"],
       description: "Complete transformation in collaboration with award-winning interior design firm",
       technicalScope: "Full flat renovation including kitchen, bathrooms, flooring, lighting, and custom joinery",
       achievements: [
-        "Property value increased by 35%",
         "High-end finishes throughout",
         "Client satisfaction: 5-star rating",
-        "Completed ahead of schedule"
+        "Completed ahead of schedule",
+        "Premium material specifications met"
       ],
       image: "/src/assets/renovation-comparison.jpg",
       height: "h-80"
@@ -151,12 +160,12 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 2,
       title: "Executive Bathroom Suite EBS-003",
       projectType: "Luxury Bathroom",
+      propertyType: "Commercial",
       location: "Canary Wharf",
       completedDate: "Q4 2023",
-      projectValue: "£25K+",
       confidential: true,
       tags: ["Bathroom Design", "Premium Fittings", "Wet Room"],
-      description: "Bespoke bathroom design for high-end residential tower",
+      description: "Bespoke bathroom design for high-end commercial tower",
       technicalScope: "Complete bathroom renovation with underfloor heating, luxury fixtures, and custom vanity",
       achievements: [
         "Marble and porcelain tile work",
@@ -171,9 +180,9 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 3,
       title: "Period Property Restoration PPR-002",
       projectType: "Heritage Renovation",
+      propertyType: "Residential",
       location: "Bloomsbury",
       completedDate: "Q2 2024",
-      projectValue: "£55K+",
       confidential: true,
       tags: ["Period Features", "Conservation", "Original Details"],
       description: "Sensitive restoration preserving character while adding modern amenities",
@@ -191,9 +200,9 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 4,
       title: "End-of-Tenancy Transformation EOT-005",
       projectType: "Property Makeover",
+      propertyType: "Residential",
       location: "Kensington",
       completedDate: "Q3 2023",
-      projectValue: "£15K+",
       confidential: true,
       tags: ["Deep Cleaning", "Repairs", "Quick Turnaround"],
       description: "Complete property refresh for luxury rental market preparation",
@@ -202,7 +211,7 @@ import { handleQuoteRequest } from "@/utils/quote";
         "7-day turnaround completion",
         "Professional cleaning standards",
         "All maintenance issues resolved",
-        "Rental value increased by 20%"
+        "Enhanced property presentation"
       ],
       image: "/src/assets/end-of-tenancy-cleaning.jpg",
       height: "h-88"
@@ -211,9 +220,9 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 5,
       title: "Designer Kitchen Upgrade DKU-001",
       projectType: "Kitchen Renovation",
+      propertyType: "Commercial",
       location: "Chelsea",
       completedDate: "Q1 2024",
-      projectValue: "£35K+",
       confidential: true,
       tags: ["Kitchen Design", "Premium Appliances", "Custom Cabinetry"],
       description: "Bespoke kitchen design for luxury apartment development",
@@ -231,9 +240,9 @@ import { handleQuoteRequest } from "@/utils/quote";
       id: 6,
       title: "Handyman Services Package HSP-012",
       projectType: "Maintenance & Repairs",
+      propertyType: "Residential",
       location: "Central London",
       completedDate: "Q4 2023",
-      projectValue: "£8K+",
       confidential: true,
       tags: ["Handyman Services", "Electrical", "Plumbing"],
       description: "Comprehensive maintenance package for high-end residential property",
@@ -385,7 +394,12 @@ import { handleQuoteRequest } from "@/utils/quote";
             {/* Enhanced Project Grid with Modal Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {portfolioProjects
-              .filter(project => selectedFilter === "All" || project.projectType.includes(selectedFilter))
+              .filter(project => {
+                if (selectedFilter === "All") return true;
+                if (selectedFilter === "Commercial") return project.propertyType === "Commercial";
+                if (selectedFilter === "Residential") return project.propertyType === "Residential";
+                return project.projectType.includes(selectedFilter);
+              })
               .map((project) => (
               <Card id={`p-${project.id}`} key={project.id} className={`group hover:shadow-elegant transition-all duration-500 overflow-hidden rounded-2xl border-white/50 bg-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-2 animate-fade-in`}>
                 <div className="relative">
@@ -405,13 +419,13 @@ import { handleQuoteRequest } from "@/utils/quote";
                     </Badge>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <Badge className="bg-primary text-primary-foreground">
-                      <AnimatedCounter 
-                        value={parseFloat(project.projectValue.replace(/[£K+]/g, ''))}
-                        prefix="£"
-                        suffix="K+"
-                        duration={1200}
-                      />
+                    <Badge className={`${project.propertyType === 'Commercial' ? 'bg-primary' : 'bg-secondary'} text-white`}>
+                      {project.propertyType === 'Commercial' ? (
+                        <Factory className="w-3 h-3 mr-1" />
+                      ) : (
+                        <Home className="w-3 h-3 mr-1" />
+                      )}
+                      {project.propertyType}
                     </Badge>
                   </div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -447,20 +461,24 @@ import { handleQuoteRequest } from "@/utils/quote";
                                 <div className="space-y-4">
                                   <div>
                                     <h4 className="font-semibold mb-2">Project Information</h4>
-                                    <div className="space-y-2 text-sm">
-                                      <div className="flex items-center space-x-2">
-                                        <Building2 className="w-4 h-4 text-primary" />
-                                        <span>{project.projectType}</span>
-                                      </div>
-                                      <div className="flex items-center space-x-2">
-                                        <MapPin className="w-4 h-4 text-primary" />
-                                        <span>{project.location}</span>
-                                      </div>
-                                      <div className="flex items-center space-x-2">
-                                        <Calendar className="w-4 h-4 text-primary" />
-                                        <span>Completed {project.completedDate}</span>
-                                      </div>
-                                    </div>
+                                   <div className="space-y-2 text-sm">
+                                       <div className="flex items-center space-x-2">
+                                         {project.propertyType === 'Commercial' ? (
+                                           <Factory className="w-4 h-4 text-primary" />
+                                         ) : (
+                                           <Home className="w-4 h-4 text-primary" />
+                                         )}
+                                         <span>{project.propertyType} - {project.projectType}</span>
+                                       </div>
+                                       <div className="flex items-center space-x-2">
+                                         <MapPin className="w-4 h-4 text-primary" />
+                                         <span>{project.location}</span>
+                                       </div>
+                                       <div className="flex items-center space-x-2">
+                                         <Calendar className="w-4 h-4 text-primary" />
+                                         <span>Completed {project.completedDate}</span>
+                                       </div>
+                                     </div>
                                   </div>
                                   <div>
                                     <h4 className="font-semibold mb-2">Project Tags</h4>
@@ -518,8 +536,12 @@ import { handleQuoteRequest } from "@/utils/quote";
                   <CardTitle className="text-lg mb-2 leading-tight">{project.title}</CardTitle>
                   <div className="space-y-1 text-sm text-muted-foreground">
                     <div className="flex items-center space-x-2">
-                      <Building2 className="w-4 h-4" />
-                      <span>{project.projectType}</span>
+                      {project.propertyType === 'Commercial' ? (
+                        <Factory className="w-4 h-4" />
+                      ) : (
+                        <Home className="w-4 h-4" />
+                      )}
+                      <span>{project.propertyType} - {project.projectType}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <MapPin className="w-4 h-4" />
@@ -538,21 +560,15 @@ import { handleQuoteRequest } from "@/utils/quote";
                       {project.description}
                     </p>
                     
-                    <div className="flex gap-2">
-                      <Button 
-                        size="sm" 
-                        variant="default" 
-                        className="flex-1 rounded-full"
-                        onClick={() => handleQuoteRequest(undefined, project.projectType)}
-                      >
-                        <MessageSquare className="w-4 h-4 mr-2" />
-                        Request Quote
-                      </Button>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Commercial Benefits Chart */}
+          <div className="mt-16">
+            <CommercialBenefitsChart />
           </div>
           
            {/* Enhanced Testimonials Section */}
@@ -656,13 +672,10 @@ import { handleQuoteRequest } from "@/utils/quote";
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <div className="flex justify-center">
               <Button size="sm" className="bg-primary hover:bg-primary-glow md:h-12">
                 Partner with Us
                 <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
-              </Button>
-              <Button size="sm" variant="outline" className="md:h-12">
-                Request Portfolio Access
               </Button>
             </div>
           </div>
