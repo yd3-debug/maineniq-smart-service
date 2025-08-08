@@ -1,314 +1,408 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { CheckCircle, AlertTriangle, Wrench, Calendar, BookOpen, TrendingUp } from "lucide-react";
+import { CheckCircle, AlertTriangle, Wrench, Calendar, Phone, Clock, Shield, TrendingDown, TrendingUp, Zap } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
+import heroImage from "@/assets/hero-hvac.jpg";
+import beforeAfterImage from "@/assets/before-after.jpg";
+import hvacMaintenanceImage from "@/assets/hvac-maintenance.jpg";
+import systemInspectionImage from "@/assets/system-inspection.jpg";
+import hvacProfessionalImage from "@/assets/hvac-professional.jpg";
+import modernEquipmentImage from "@/assets/modern-equipment.jpg";
 
 export default function HVACMaintenance() {
-  const maintenanceServices = [
+  const neglectScenarios = [
     {
-      name: "FCU Maintenance",
-      icon: <Wrench className="w-5 h-5" />,
-      interval: "Every 6 months",
-      benefits: [
-        "Prevents 40% efficiency loss from dirty coils",
-        "Extends equipment life by 5-7 years",
-        "Reduces energy costs by up to 25%",
-        "Improves air quality and comfort"
+      system: "FCU Systems",
+      scenario: "Dirty coils and clogged filters",
+      consequences: [
+        "40% efficiency loss within 6 months",
+        "£800+ monthly energy waste",
+        "Complete system failure",
+        "Emergency replacement: £5,000"
       ],
-      neglectCosts: "Emergency FCU replacement: £2,500-£5,000 vs £150 maintenance"
+      timeframe: "3-6 months without service",
+      icon: <TrendingDown className="w-6 h-6 text-destructive" />
     },
     {
-      name: "HIU Service",
-      icon: <Wrench className="w-5 h-5" />,
-      interval: "Annually",
-      benefits: [
-        "Maintains optimal heat transfer efficiency",
-        "Prevents scale buildup and corrosion",
-        "Ensures consistent heating and hot water",
-        "Reduces communal heating costs"
+      system: "MVHR Units", 
+      scenario: "Blocked filters and heat exchanger",
+      consequences: [
+        "90% heat recovery loss",
+        "Poor air quality and mold growth",
+        "£2,000+ heating cost increase",
+        "Full unit replacement: £6,000"
       ],
-      neglectCosts: "HIU replacement: £800-£1,500 vs £120 annual service"
+      timeframe: "2-4 months without filter changes",
+      icon: <AlertTriangle className="w-6 h-6 text-destructive" />
     },
     {
-      name: "CIU Maintenance",
-      icon: <Wrench className="w-5 h-5" />,
-      interval: "Every 6 months",
-      benefits: [
-        "Optimizes multi-zone system balance",
-        "Prevents hydraulic imbalances",
-        "Ensures even temperature distribution",
-        "Reduces overall system energy consumption"
+      system: "HIU Systems",
+      scenario: "Scale buildup and component failure", 
+      consequences: [
+        "No heating or hot water",
+        "Emergency callout fees: £500+",
+        "Tenant complaints and liability",
+        "Replacement costs: £1,500"
       ],
-      neglectCosts: "System rebalancing: £1,000-£2,000 vs £180 maintenance"
-    },
-    {
-      name: "MVHR Service",
-      icon: <Wrench className="w-5 h-5" />,
-      interval: "Every 6 months",
-      benefits: [
-        "Maintains 90%+ heat recovery efficiency",
-        "Ensures optimal indoor air quality",
-        "Prevents mold and condensation issues",
-        "Reduces heating costs by up to 30%"
-      ],
-      neglectCosts: "Full unit replacement: £3,000-£6,000 vs £200 service"
+      timeframe: "6-12 months without servicing",
+      icon: <Wrench className="w-6 h-6 text-destructive" />
     }
   ];
 
-  const complianceRequirements = [
-    {
-      title: "TM44 Air Conditioning Inspections",
-      description: "Mandatory inspections for AC systems over 12kW to maintain compliance and avoid penalties up to £300.",
-      icon: <BookOpen className="w-5 h-5 text-blue-500" />
-    },
-    {
-      title: "Commercial Landlord Obligations",
-      description: "Legal requirement to maintain HVAC systems in good working order for tenant safety and comfort.",
-      icon: <AlertTriangle className="w-5 h-5 text-amber-500" />
-    },
-    {
-      title: "Building Regulations Compliance",
-      description: "Regular maintenance ensures continued compliance with UK building regulations for energy efficiency.",
-      icon: <CheckCircle className="w-5 h-5 text-green-500" />
-    }
+  const maintenanceProcess = [
+    { step: "Visual Inspection", description: "Complete system assessment and fault identification" },
+    { step: "Filter Replacement", description: "High-quality filters for optimal airflow and efficiency" },
+    { step: "Coil Cleaning", description: "Deep cleaning of heat exchange surfaces" },
+    { step: "Component Testing", description: "Electrical and mechanical component verification" },
+    { step: "Performance Optimization", description: "System tuning for maximum efficiency" },
+    { step: "Compliance Certification", description: "UK regulatory compliance documentation" }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
+      {/* Hero Section with Dramatic Background */}
+      <section 
+        className="relative py-32 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${heroImage})`
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge variant="outline" className="mb-4">
-              UK HVAC Compliance & Efficiency
+          <div className="text-center text-white">
+            <Badge variant="outline" className="mb-6 border-white/30 text-white">
+              <AlertTriangle className="w-4 h-4 mr-2" />
+              CRITICAL: System Failure Prevention
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Why HVAC Maintenance <span className="text-primary">Matters</span>
+            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6">
+              Your HVAC is <span className="text-destructive">Dying</span><br />
+              <span className="text-primary">Without Maintenance</span>
             </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional maintenance for FCU, HIU, CIU, and MVHR systems is essential for UK commercial properties. 
-              Ensure compliance, prevent costly breakdowns, and maximize efficiency.
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              Every month without professional maintenance costs you hundreds in wasted energy. 
+              System failure isn't a question of IF—it's WHEN.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* UK Legal Compliance */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">UK Legal Compliance Requirements</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Stay compliant with UK regulations and avoid penalties
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {complianceRequirements.map((requirement, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    {requirement.icon}
-                    <CardTitle className="text-lg">{requirement.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{requirement.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator className="my-16" />
-
-      {/* Service-Specific Benefits */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Professional Maintenance Services</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Tailored maintenance programs for each HVAC system type
-            </p>
-            <div className="flex justify-center mt-4">
-              <ResearchBadge claimId="maintenance_efficiency_loss" label="Research" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-white">
+                <Phone className="w-5 h-5 mr-2" />
+                Emergency Service: 0800 123 4567
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Calendar className="w-5 h-5 mr-2" />
+                Schedule Preventive Service
+              </Button>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {maintenanceServices.map((service, index) => (
-              <Card key={index} className="h-full">
+      {/* What Happens Without Maintenance - Scary Reality */}
+      <section className="py-20 bg-destructive/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              The Cost of <span className="text-destructive">Neglect</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Here's what happens to UK commercial properties that skip maintenance
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {neglectScenarios.map((scenario, index) => (
+              <Card key={index} className="border-destructive/20 bg-background">
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      {service.icon}
-                      <CardTitle className="text-xl">{service.name}</CardTitle>
-                    </div>
-                    <Badge variant="secondary" className="flex items-center space-x-1">
-                      <Calendar className="w-3 h-3" />
-                      <span>{service.interval}</span>
-                    </Badge>
+                  <div className="flex items-center space-x-3 mb-2">
+                    {scenario.icon}
+                    <CardTitle className="text-xl text-destructive">{scenario.system}</CardTitle>
                   </div>
+                  <p className="text-sm text-muted-foreground font-medium">{scenario.scenario}</p>
+                  <Badge variant="destructive" className="w-fit">
+                    <Clock className="w-3 h-3 mr-1" />
+                    {scenario.timeframe}
+                  </Badge>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Maintenance Benefits:</h4>
-                    <ul className="space-y-1">
-                      {service.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start space-x-2 text-sm text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-destructive/10 p-3 rounded-lg">
-                    <div className="flex items-start space-x-2">
-                      <AlertTriangle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-sm font-medium text-destructive">Cost of Neglect:</p>
-                        <p className="text-sm text-muted-foreground mt-1">{service.neglectCosts}</p>
+                <CardContent>
+                  <div className="space-y-3">
+                    {scenario.consequences.map((consequence, idx) => (
+                      <div key={idx} className="flex items-start space-x-2">
+                        <AlertTriangle className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{consequence}</span>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          {/* Before vs After Visual */}
+          <div className="bg-background rounded-lg p-8 border">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src={beforeAfterImage} 
+                  alt="Before and after maintenance comparison showing dirty vs clean HVAC components"
+                  className="w-full rounded-lg shadow-lg"
+                />
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold mb-6">The Difference Maintenance Makes</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-destructive/10 rounded-lg">
+                    <span className="font-medium text-destructive">Without Maintenance:</span>
+                    <span className="text-lg font-bold text-destructive">40% Efficiency Loss</span>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg">
+                    <span className="font-medium text-primary">With Professional Service:</span>
+                    <span className="text-lg font-bold text-primary">95%+ Peak Performance</span>
+                  </div>
+                </div>
+                <ResearchBadge claimId="maintenance_efficiency_loss" label="Scientific Evidence" className="mt-4" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-16 bg-primary/5">
+      {/* Cost Comparison Shock */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">The Impact of Regular Maintenance</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Data-driven evidence of maintenance benefits for UK commercial properties
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              The True Cost Comparison
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Annual maintenance vs emergency replacement costs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
-                <div className="text-3xl font-bold text-foreground">90%</div>
-                <p className="text-sm text-muted-foreground">Breakdown prevention rate with regular maintenance</p>
-                <ResearchBadge claimId="maintenance_breakdown_prevention" label="Source" className="mt-2" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <Card className="border-primary/20 bg-primary/5">
+              <CardHeader className="text-center">
+                <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+                <CardTitle className="text-2xl text-primary">Professional Maintenance</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-5xl font-bold text-primary mb-4">
+                  £<AnimatedCounter value={850} duration={2000} />
+                </div>
+                <p className="text-muted-foreground mb-6">Annual comprehensive service</p>
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />All systems serviced</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />Preventive repairs included</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />Energy efficiency guaranteed</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />24/7 emergency support</li>
+                </ul>
               </CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="w-8 h-8 text-green-500 mx-auto mb-4" />
-                <div className="text-3xl font-bold text-foreground">25%</div>
-                <p className="text-sm text-muted-foreground">Average energy cost reduction with proper maintenance</p>
-                <ResearchBadge claimId="maintenance_energy_savings" label="Source" className="mt-2" />
+            <Card className="border-destructive/20 bg-destructive/5">
+              <CardHeader className="text-center">
+                <AlertTriangle className="w-12 h-12 text-destructive mx-auto mb-4" />
+                <CardTitle className="text-2xl text-destructive">Emergency Replacement</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <div className="text-5xl font-bold text-destructive mb-4">
+                  £<AnimatedCounter value={15000} duration={2000} />
+                </div>
+                <p className="text-muted-foreground mb-6">Average system failure costs</p>
+                <ul className="text-sm space-y-2 text-left">
+                  <li className="flex items-center"><AlertTriangle className="w-4 h-4 text-destructive mr-2" />Emergency callout fees</li>
+                  <li className="flex items-center"><AlertTriangle className="w-4 h-4 text-destructive mr-2" />Complete system replacement</li>
+                  <li className="flex items-center"><AlertTriangle className="w-4 h-4 text-destructive mr-2" />Business disruption costs</li>
+                  <li className="flex items-center"><AlertTriangle className="w-4 h-4 text-destructive mr-2" />Tenant compensation</li>
+                </ul>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="w-8 h-8 text-blue-500 mx-auto mb-4" />
-                <div className="text-3xl font-bold text-foreground">50%</div>
-                <p className="text-sm text-muted-foreground">Equipment lifespan extension through professional servicing</p>
-                <ResearchBadge claimId="maintenance_lifespan_extension" label="Source" className="mt-2" />
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="w-8 h-8 text-amber-500 mx-auto mb-4" />
-                <div className="text-3xl font-bold text-foreground">8:1</div>
-                <p className="text-sm text-muted-foreground">ROI ratio: every £1 spent on maintenance saves £8 in repairs</p>
-                <ResearchBadge claimId="maintenance_roi" label="Source" className="mt-2" />
-              </CardContent>
-            </Card>
+          <div className="text-center mt-12">
+            <div className="bg-primary/10 rounded-lg p-6 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold mb-2">Maintenance ROI</h3>
+              <p className="text-4xl font-bold text-primary">
+                17:1 Return on Investment
+              </p>
+              <p className="text-muted-foreground mt-2">
+                Every £1 spent on maintenance saves £17 in emergency repairs
+              </p>
+              <ResearchBadge claimId="maintenance_roi" label="Industry Research" className="mt-4" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Professional Service Standards */}
-      <section className="py-16">
+      {/* Professional Maintenance Process */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Our Professional <span className="text-primary">Maintenance Process</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Comprehensive service that prevents failure and maximizes efficiency
+              </p>
+              
+              <div className="space-y-4">
+                {maintenanceProcess.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4 p-4 bg-background rounded-lg border">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{item.step}</h3>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <img 
+                src={hvacMaintenanceImage} 
+                alt="Professional HVAC maintenance technician performing system service"
+                className="w-full rounded-lg shadow-lg"
+              />
+              <img 
+                src={systemInspectionImage} 
+                alt="Detailed system inspection and testing procedures"
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* UK Compliance Warning */}
+      <section className="py-20 bg-amber-50 border-t-4 border-amber-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Our Professional Service Standards</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Comprehensive maintenance programs designed for UK commercial properties
+            <Shield className="w-16 h-16 text-amber-600 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold text-amber-900 mb-4">
+              UK Legal Compliance Requirements
+            </h2>
+            <p className="text-xl text-amber-800">
+              Avoid penalties and legal issues with proper maintenance
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-amber-200">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Certified Technicians</span>
-                </CardTitle>
+                <CardTitle className="text-amber-900">TM44 Inspections</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  All our engineers are Gas Safe registered and hold relevant HVAC certifications for UK commercial systems.
+                <p className="text-amber-800 mb-4">
+                  Mandatory for AC systems over 12kW. Failure to comply results in penalties up to £300.
                 </p>
+                <Badge variant="outline" className="border-amber-500 text-amber-700">
+                  Legal Requirement
+                </Badge>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-amber-200">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5 text-blue-500" />
-                  <span>Scheduled Maintenance</span>
-                </CardTitle>
+                <CardTitle className="text-amber-900">Landlord Duties</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Proactive maintenance schedules tailored to each system type, ensuring optimal performance year-round.
+                <p className="text-amber-800 mb-4">
+                  Commercial landlords must maintain HVAC systems in safe working order for tenant welfare.
                 </p>
+                <Badge variant="outline" className="border-amber-500 text-amber-700">
+                  Legal Obligation
+                </Badge>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-amber-200">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <AlertTriangle className="w-5 h-5 text-amber-500" />
-                  <span>Emergency Response</span>
-                </CardTitle>
+                <CardTitle className="text-amber-900">MEES Compliance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  24/7 emergency callout service for when systems fail despite regular maintenance programs.
+                <p className="text-amber-800 mb-4">
+                  Minimum Energy Efficiency Standards require properly maintained HVAC systems.
                 </p>
+                <Badge variant="outline" className="border-amber-500 text-amber-700">
+                  Energy Regulations
+                </Badge>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      {/* Visual Equipment Gallery */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Professional Equipment & Expertise
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              State-of-the-art tools and certified technicians
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative">
+              <img 
+                src={modernEquipmentImage} 
+                alt="Modern HVAC diagnostic and maintenance equipment"
+                className="w-full h-64 object-cover rounded-lg shadow-lg"
+              />
+              <div className="absolute inset-0 bg-black/40 rounded-lg flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">Advanced Diagnostic Tools</h3>
+                  <p className="text-sm opacity-90">Professional-grade equipment for accurate system analysis</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img 
+                src={hvacProfessionalImage} 
+                alt="Certified HVAC technician performing professional maintenance"
+                className="w-full h-64 object-cover rounded-lg shadow-lg"
+              />
+              <div className="absolute inset-0 bg-black/40 rounded-lg flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-bold mb-2">Certified Technicians</h3>
+                  <p className="text-sm opacity-90">Gas Safe registered engineers with HVAC expertise</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA - Urgent Action */}
+      <section className="py-20 bg-gradient-to-r from-destructive via-primary to-destructive text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-4">
-            Don't Wait for System Failure
+          <h2 className="text-4xl font-bold mb-6">
+            Don't Let Your System <span className="text-yellow-300">Fail Tomorrow</span>
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Protect your investment with professional HVAC maintenance. Schedule your service today.
+            Every day without maintenance brings you closer to catastrophic failure. 
+            Emergency repairs cost 15x more than preventive service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md bg-background text-foreground hover:bg-background/90 transition-colors"
-            >
-              Schedule Maintenance
-            </a>
-            <a
-              href="/services"
-              className="inline-flex items-center justify-center px-8 py-3 border border-primary-foreground/20 text-base font-medium rounded-md hover:bg-primary-foreground/10 transition-colors"
-            >
-              View All Services
-            </a>
+            <Button size="lg" className="bg-white text-foreground hover:bg-gray-100">
+              <Phone className="w-5 h-5 mr-2" />
+              Book Emergency Assessment
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Zap className="w-5 h-5 mr-2" />
+              Schedule Preventive Service
+            </Button>
           </div>
+          <p className="text-sm mt-6 opacity-75">
+            24/7 Emergency Response | UK-Wide Coverage | Certified Engineers
+          </p>
         </div>
       </section>
     </div>

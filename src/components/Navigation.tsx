@@ -128,7 +128,7 @@ const Navigation = () => {
                   
                   {/* Dropdown Menu */}
                   {openSubmenu === item.name && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg z-50">
+                    <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg z-50">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
