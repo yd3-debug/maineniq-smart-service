@@ -28,24 +28,24 @@ import { CONTACT } from "@/config/contact";
 const Index = () => {
   const services = [
     {
-      icon: Thermometer,
-      title: "HVAC Installation",
-      description: "Professional installation of heating, ventilation, and air conditioning systems for optimal comfort."
+      icon: Wrench,
+      title: "FCU Maintenance & Upgrade",
+      description: "Expert maintenance and upgrades for Fan Coil Units to ensure optimal efficiency and performance."
     },
     {
-      icon: Wrench,
-      title: "System Maintenance",
-      description: "Regular maintenance services to keep your HVAC systems running efficiently year-round."
+      icon: Thermometer,
+      title: "HIU Service & Repair",
+      description: "Comprehensive Heat Interface Unit servicing, repairs, and upgrades for district heating systems."
     },
     {
       icon: Shield,
-      title: "Emergency Repairs",
-      description: "24/7 emergency repair services to get your systems back online quickly and safely."
+      title: "CIU & MVHR Maintenance",
+      description: "Professional maintenance for Central Interface Units and Mechanical Ventilation with Heat Recovery systems."
     },
     {
-      icon: Clock,
-      title: "Smart Solutions",
-      description: "Modern smart thermostats and automation systems for enhanced energy efficiency."
+      icon: Zap,
+      title: "Air Conditioning Installation",
+      description: "Professional installation of air conditioning systems for optimal comfort and efficiency."
     }
   ];
 
@@ -84,15 +84,15 @@ const Index = () => {
 
             <div>
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Save up to 10–30% on HVAC energy costs
-                <span className="text-accent-orange"> with Professional Systems</span>
+                Save 10–25% on energy costs
+                <span className="text-accent-orange"> with Professional HVAC Maintenance</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Transform your property with intelligent HVAC technology. Quality installation can prevent up to 30% performance loss, and smart controls typically save around 10%.
+                Maximize your HVAC efficiency with expert maintenance. Prevent up to 80% of breakdowns and extend equipment lifespan by 50% with regular professional servicing.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-2">
-                <ResearchBadge claimId="energystar_qi_30" />
-                <ResearchBadge claimId="doe_thermostat_10" />
+                <ResearchBadge claimId="hvac_maintenance_savings" />
+                <ResearchBadge claimId="commercial_downtime_prevention" />
               </div>
             </div>
 
@@ -115,35 +115,38 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-energy-gold/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={10} prefix="Up to " suffix="%" delay={0} duration={1400} />
+                  <AnimatedCounter value={15} prefix="Up to " suffix="%" delay={0} duration={1400} />
                 </div>
                 <div className="text-xs opacity-80 flex items-center justify-center gap-1">
-                  <span>Thermostat Savings</span>
-                  <ResearchBadge claimId="doe_thermostat_10" />
+                  <span>Energy Savings (Maintenance)</span>
+                  <ResearchBadge claimId="hvac_maintenance_savings" />
                 </div>
               </div>
               <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-trust-blue/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-trust-blue">
-                  <AnimatedCounter value={30} prefix="Up to " suffix="%" delay={100} duration={1400} />
+                  <AnimatedCounter value={80} prefix="Up to " suffix="%" delay={100} duration={1400} />
                 </div>
                 <div className="text-xs opacity-80 flex items-center justify-center gap-1">
-                  <span>Efficiency Gain (Quality Install)</span>
-                  <ResearchBadge claimId="energystar_qi_30" />
+                  <span>Breakdown Prevention</span>
+                  <ResearchBadge claimId="commercial_downtime_prevention" />
                 </div>
               </div>
               <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-accent-orange/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-accent-orange">
-                  —
+                  <AnimatedCounter value={25} prefix="Up to " suffix="%" delay={200} duration={1400} />
                 </div>
-                <div className="text-xs opacity-80">Property Marketability (varies)</div>
+                <div className="text-xs opacity-80 flex items-center justify-center gap-1">
+                  <span>FCU Efficiency Improvement</span>
+                  <ResearchBadge claimId="fcu_maintenance_efficiency" />
+                </div>
               </div>
               <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:pb-5 md:p-4 border border-primary/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={75} prefix="Up to " suffix="%" delay={300} duration={1400} />
+                  <AnimatedCounter value={50} prefix="Up to " suffix="%" delay={300} duration={1400} />
                 </div>
                 <div className="text-xs opacity-80 flex items-center justify-center gap-1">
-                  <span>Fine Particle Capture (MERV 13)</span>
-                  <ResearchBadge claimId="merv13_efficiency" />
+                  <span>Equipment Lifespan Extension</span>
+                  <ResearchBadge claimId="hvac_maintenance_savings" />
                 </div>
               </div>
             </div>
@@ -161,10 +164,10 @@ const Index = () => {
               <span>OUR SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Complete HVAC Solutions</h2>
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Professional HVAC Maintenance Services</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              From installation to maintenance, we provide comprehensive HVAC solutions 
-              that deliver exceptional comfort and efficiency.
+              Expert maintenance and servicing for FCU, HIU, CIU, and MVHR systems. 
+              Plus professional air conditioning installations.
             </p>
           </div>
 

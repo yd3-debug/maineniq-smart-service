@@ -17,6 +17,15 @@ export const EVIDENCE: Record<string, EvidenceItem> = {
     range: "5-15%",
     lastReviewed: "2025-08-08",
   },
+  ciu_maintenance_benefits: {
+    id: "ciu_maintenance_benefits",
+    title: "CIBSE – Central Interface Unit Maintenance Standards",
+    url: "https://www.cibse.org/knowledge/knowledge-items/detail?id=a0q20000008I74AAAS",
+    claim:
+      "Regular CIU maintenance prevents hydraulic imbalance and maintains optimal heat distribution efficiency across multi-zone systems.",
+    range: "10-20%",
+    lastReviewed: "2025-08-08",
+  },
   commercial_downtime_prevention: {
     id: "commercial_downtime_prevention",
     title: "ASHRAE – Commercial HVAC Maintenance Standards",
