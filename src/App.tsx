@@ -14,6 +14,7 @@ import CookieBanner from "./components/CookieBanner";
 const Index = lazy(() => import("./pages/Index"));
 const Services = lazy(() => import("./pages/Services"));
 const WhyProfessionalHVAC = lazy(() => import("./pages/WhyProfessionalHVAC"));
+const HVACMaintenance = lazy(() => import("./pages/HVACMaintenance"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -63,6 +64,13 @@ const App = () => (
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <WhyProfessionalHVAC />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/hvac-maintenance" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <HVACMaintenance />
               </Suspense>
             </Layout>
           } />

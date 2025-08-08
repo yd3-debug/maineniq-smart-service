@@ -10,7 +10,7 @@ const Navigation = () => {
   const location = useLocation();
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Services", href: "/services" },
+    { name: "Why Maintenance Matters", href: "/hvac-maintenance" },
     { name: "Why Professional HVAC", href: "/why-professional-hvac" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
