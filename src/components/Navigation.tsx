@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Wrench } from "lucide-react";
+import { Menu, X, Wrench, ChevronDown } from "lucide-react";
 import { handleQuoteRequest } from "@/utils/quote";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -24,7 +25,17 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Services", href: "/services" },
-    { name: "Why Maintenance Matters", href: "/hvac-maintenance" },
+    { 
+      name: "Maintenance", 
+      href: "/hvac-maintenance",
+      submenu: [
+        { name: "Why Maintenance Matters", href: "/hvac-maintenance" },
+        { name: "FCU Maintenance", href: "/fcu-maintenance" },
+        { name: "HIU Service & Repair", href: "/hiu-maintenance" },
+        { name: "CIU Maintenance", href: "/ciu-maintenance" },
+        { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
+      ]
+    },
     { name: "Why Professional HVAC", href: "/why-professional-hvac" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
@@ -35,6 +46,10 @@ const Navigation = () => {
     if (href === "/" && location.pathname === "/") return true;
     if (href !== "/" && location.pathname.startsWith(href)) return true;
     return false;
+  };
+
+  const isSubmenuActive = (submenu: any[]) => {
+    return submenu.some(item => isActive(item.href));
   };
 
   // Close menu when clicking outside or on escape
@@ -89,21 +104,62 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
-                  isActive(item.href)
-                    ? (isScrolled || hasLightBackground)
-                      ? "text-primary bg-primary/10" 
-                      : "text-primary bg-white/20"
-                    : (isScrolled || hasLightBackground)
-                      ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {item.name}
-              </Link>
+              item.submenu ? (
+                <div 
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setOpenSubmenu(item.name)}
+                  onMouseLeave={() => setOpenSubmenu(null)}
+                >
+                  <button
+                    className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg flex items-center gap-1 ${
+                      isSubmenuActive(item.submenu)
+                        ? (isScrolled || hasLightBackground)
+                          ? "text-primary bg-primary/10" 
+                          : "text-primary bg-white/20"
+                        : (isScrolled || hasLightBackground)
+                          ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                          : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  {openSubmenu === item.name && (
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg z-50">
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className={`block px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-border/30 last:border-b-0 first:rounded-t-lg last:rounded-b-lg ${
+                            isActive(subItem.href) ? "text-primary font-medium bg-primary/10" : "text-muted-foreground hover:text-primary"
+                          }`}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
+                    isActive(item.href)
+                      ? (isScrolled || hasLightBackground)
+                        ? "text-primary bg-primary/10" 
+                        : "text-primary bg-white/20"
+                      : (isScrolled || hasLightBackground)
+                        ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             <Button 
               size="sm" 
@@ -164,24 +220,66 @@ const Navigation = () => {
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col space-y-6">
               {navItems.map((item, index) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium text-lg transition-all duration-300 transform hover:translate-x-2 ${
-                    isActive(item.href)
-                      ? "text-primary font-semibold"
-                      : "text-muted-foreground hover:text-primary"
-                  } ${
-                    isOpen ? 'animate-slide-in-right' : ''
-                  }`}
-                  style={{ 
-                    animationDelay: isOpen ? `${index * 50}ms` : '0ms',
-                    animationFillMode: 'both'
-                  }}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.submenu ? (
+                  <div key={item.name}>
+                    <div 
+                      className={`font-medium text-lg transition-all duration-300 transform hover:translate-x-2 cursor-pointer ${
+                        isSubmenuActive(item.submenu)
+                          ? "text-primary font-semibold"
+                          : "text-muted-foreground hover:text-primary"
+                      } ${
+                        isOpen ? 'animate-slide-in-right' : ''
+                      }`}
+                      style={{ 
+                        animationDelay: isOpen ? `${index * 50}ms` : '0ms',
+                        animationFillMode: 'both'
+                      }}
+                      onClick={() => setOpenSubmenu(openSubmenu === item.name ? null : item.name)}
+                    >
+                      <div className="flex items-center gap-2">
+                        {item.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${openSubmenu === item.name ? 'rotate-180' : ''}`} />
+                      </div>
+                    </div>
+                    {openSubmenu === item.name && (
+                      <div className="ml-4 mt-2 space-y-2">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.href}
+                            className={`block text-sm transition-all duration-300 transform hover:translate-x-2 ${
+                              isActive(subItem.href)
+                                ? "text-primary font-medium"
+                                : "text-muted-foreground hover:text-primary"
+                            }`}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`font-medium text-lg transition-all duration-300 transform hover:translate-x-2 ${
+                      isActive(item.href)
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground hover:text-primary"
+                    } ${
+                      isOpen ? 'animate-slide-in-right' : ''
+                    }`}
+                    style={{ 
+                      animationDelay: isOpen ? `${index * 50}ms` : '0ms',
+                      animationFillMode: 'both'
+                    }}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className={`pt-4 border-t border-border/30 ${
                 isOpen ? 'animate-fade-in' : ''
