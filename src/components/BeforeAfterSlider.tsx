@@ -83,7 +83,8 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             src={afterSrc}
             alt={afterAlt}
             loading="lazy"
-            className="block w-full h-auto select-none pointer-events-none"
+            className="absolute top-0 left-0 w-full h-auto select-none pointer-events-none"
+            style={{ width: `${containerRef.current?.offsetWidth || 100}px` }}
           />
         </div>
 
