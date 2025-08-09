@@ -7,7 +7,10 @@ import ResearchBadge from "@/components/ResearchBadge";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3 } from "lucide-react";
+import FullBleedHero from "@/components/FullBleedHero";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import bmsControlRoom from "@/assets/bms-control-room.jpg";
+import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Users2, Wrench } from "lucide-react";
 
 const PAGE_TITLE = "Why Work With Us | HVAC & MVHR Maintenance Partner";
 const PAGE_DESCRIPTION =
@@ -54,31 +57,104 @@ export default function WhyWorkWithUs() {
 
   return (
     <main>
-      <header className="bg-muted/20 border-b border-border">
-        <div className="container mx-auto px-4 py-12 sm:py-16">
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            The maintenance partner behind your installations
-          </h1>
-          <p className="text-muted-foreground max-w-3xl text-base sm:text-lg">
-            We take ongoing HVAC, MVHR and fan coil maintenance off your plate—reducing downtime, protecting SLAs and
-            safeguarding your reputation across residential and commercial portfolios.
-          </p>
-
-          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-foreground/80" aria-label="Key value points">
-            <li className="flex items-center gap-2">
-              <CalendarCheck className="w-4 h-4 text-primary" /> Fast response SLAs
-            </li>
-            <li className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-primary" /> Specialist engineers
-            </li>
-            <li className="flex items-center gap-2">
-              <ClipboardList className="w-4 h-4 text-primary" /> Compliance-ready documentation
-            </li>
-          </ul>
-        </div>
-      </header>
+      <FullBleedHero
+        id="hero-why-work-with-us"
+        title="The maintenance partner behind your installations"
+        subtitle="We protect your SLAs, reputation and client relationships with rapid response, expert engineers and compliant documentation across your portfolio."
+        image={bmsControlRoom}
+        alt="BMS control room illustrating professional HVAC and MVHR maintenance operations"
+        primaryLabel="Contact our team"
+        primaryHref="/contact"
+        secondaryLabel={`Call ${CONTACT.phones.landline}`}
+        secondaryHref={`tel:${CONTACT.phones.landlineTel}`}
+        imageFit="cover"
+      >
+        <ul className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-foreground/90" aria-label="Key value points">
+          <li className="flex items-center gap-2">
+            <CalendarCheck className="w-4 h-4 text-primary" /> Fast response SLAs
+          </li>
+          <li className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-primary" /> Specialist engineers
+          </li>
+          <li className="flex items-center gap-2">
+            <ClipboardList className="w-4 h-4 text-primary" /> Compliance-ready documentation
+          </li>
+        </ul>
+      </FullBleedHero>
 
       <TrustStrip />
+
+      <section id="who-we-work-with" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="who-we-work-with-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto text-center mb-6 sm:mb-8">
+            <h2 id="who-we-work-with-title" className="font-heading text-2xl sm:text-3xl font-semibold">Who we work with</h2>
+            <p className="text-muted-foreground">We partner with organisations who value reliable outcomes, clear SLAs and audit-ready documentation.</p>
+          </header>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="hover-scale hover:shadow-card transition-all">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Wrench className="w-5 h-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold">Installation companies</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Frictionless handover to maintenance, single point of ownership and brand-safe client care.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="hover-scale hover:shadow-card transition-all">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Building2 className="w-5 h-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold">Property & block managers</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Planned maintenance, minimal tenant disruption and compliant records after every visit.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="hover-scale hover:shadow-card transition-all">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Users2 className="w-5 h-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold">Facilities & FM providers</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Portfolio scheduling, clear SLAs, fast call-outs and proactive communication.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" className="py-10 sm:py-14 bg-muted/10 animate-fade-in" aria-labelledby="results-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto text-center mb-6 sm:mb-8">
+            <h2 id="results-title" className="font-heading text-2xl sm:text-3xl font-semibold">Proven results you can show clients</h2>
+            <p className="text-muted-foreground">Tangible improvements from routine care—better efficiency, cleaner air, fewer call-outs.</p>
+          </header>
+          <div className="max-w-4xl mx-auto">
+            <BeforeAfterSlider
+              beforeSrc="/mvhr-filter-dirty.png"
+              afterSrc="/mvhr-filter-clean.png"
+              beforeAlt="Dirty MVHR filter before maintenance"
+              afterAlt="Clean MVHR filter after maintenance"
+              beforeLabel="Before"
+              afterLabel="After"
+              ratio={16/9}
+              fit="cover"
+              className="shadow"
+            />
+            <div className="mt-4 flex items-start justify-between gap-3">
+              <p className="text-sm text-muted-foreground">
+                Regular filter changes restore MVHR efficiency and air quality, preventing energy waste and odour complaints.
+              </p>
+              <ResearchBadge claimId="mvhr_filter_performance" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="what-you-get" aria-labelledby="what-you-get-title" className="py-10 sm:py-14 bg-background animate-fade-in">
         <div className="container mx-auto px-4">
@@ -215,6 +291,21 @@ export default function WhyWorkWithUs() {
 
       <WhoWeServe />
       <SystemsWeMaintain />
+
+      <section id="compliance" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="compliance-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mb-6 sm:mb-8">
+            <h2 id="compliance-title" className="font-heading text-2xl sm:text-3xl font-semibold">Compliance & credentials</h2>
+            <p className="text-muted-foreground">We align with industry standards and provide audit-ready documentation.</p>
+          </header>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><ClipboardList className="w-4 h-4 text-primary mt-0.5" /> SFG20/CIBSE-aligned PPM and tasking</li>
+            <li className="flex items-start gap-2"><ShieldCheck className="w-4 h-4 text-primary mt-0.5" /> RAMS, certificates and visit reports after every job</li>
+            <li className="flex items-start gap-2"><Wrench className="w-4 h-4 text-primary mt-0.5" /> Gas Safe/NICEIC where applicable and fully insured operations</li>
+            <li className="flex items-start gap-2"><Building2 className="w-4 h-4 text-primary mt-0.5" /> Risk-managed work across occupied residential and commercial sites</li>
+          </ul>
+        </div>
+      </section>
 
       <section aria-labelledby="cta" className="py-8 sm:py-12 bg-background animate-fade-in">
         <div className="container mx-auto px-4">
