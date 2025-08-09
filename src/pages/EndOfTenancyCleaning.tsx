@@ -4,7 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
-import { CheckCircle, Phone, Shield, Sparkles, AlertTriangle } from "lucide-react";
+import { CheckCircle, Phone, Shield, Sparkles, AlertTriangle, Clock } from "lucide-react";
 
 const EndOfTenancyCleaning: React.FC = () => {
   useEffect(() => {
@@ -52,6 +52,7 @@ const EndOfTenancyCleaning: React.FC = () => {
         </div>
       </header>
 
+      <main className="container mx-auto px-4 py-12 space-y-12">
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {["Kitchens & bathrooms deep clean","Carpets, ovens, windows","Inventory-ready reports"].map((item) => (
             <div key={item} className="rounded-lg border bg-background p-5 flex items-start gap-3">
