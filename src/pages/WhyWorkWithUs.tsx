@@ -108,7 +108,7 @@ export default function WhyWorkWithUs() {
       {/* What Makes Us Different */}
       <section id="what-makes-us-different" className="py-16 bg-muted/30" aria-labelledby="different-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-12 text-center">
+          <header className="max-w-3xl mx-auto mb-12 text-center">
             <h2 id="different-title" className="font-heading text-3xl font-bold mb-4">
               What Makes Us Different
             </h2>
