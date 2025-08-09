@@ -32,7 +32,7 @@ import { CONTACT } from "@/config/contact";
 import { AlertTriangle, Clock, TrendingUp } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { AnimatedCounter } from "@/components/AnimatedChart";
-import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 const Services = () => {
 const services = [
     {
@@ -200,39 +200,47 @@ const services = [
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <img 
-          src={hvacMaintenance} 
-          alt="Professional HVAC maintenance services"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-            Don't Wait for System Failure
-          </h1>
-          <p className="text-base md:text-xl lg:text-2xl max-w-3xl mx-auto opacity-90 leading-relaxed mb-8">
-            Professional maintenance prevents costly breakdowns, saves energy, and extends equipment life. 
-            Emergency repairs cost 5x more than regular servicing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call emergency ${CONTACT.phones.emergency}`}>
-                <AlertTriangle className="w-5 h-5 mr-2" />
-                Emergency Service Available
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3">
-              <Link to="/contact" aria-label="Schedule Maintenance">
-                Schedule Maintenance
-              </Link>
-            </Button>
-          </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <Link to="/mvhr-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">MVHR Maintenance</Link>
-            <Link to="/fcu-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">FCU Maintenance</Link>
-            <Link to="/hiu-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">HIU Service</Link>
-            <Link to="/hvac-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">HVAC Maintenance</Link>
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+                Don't Wait for System Failure
+              </h1>
+              <p className="text-base md:text-xl lg:text-2xl max-w-3xl opacity-90 leading-relaxed mb-8">
+                Professional maintenance prevents costly breakdowns, saves energy, and extends equipment life.
+                Emergency repairs cost 5x more than regular servicing.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
+                  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call emergency ${CONTACT.phones.emergency}`}>
+                    <AlertTriangle className="w-5 h-5 mr-2" />
+                    Emergency Service Available
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 px-8 py-3">
+                  <Link to="/contact" aria-label="Schedule Maintenance">
+                    Schedule Maintenance
+                  </Link>
+                </Button>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <Link to="/mvhr-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">MVHR Maintenance</Link>
+                <Link to="/fcu-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">FCU Maintenance</Link>
+                <Link to="/hiu-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">HIU Service</Link>
+                <Link to="/hvac-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">HVAC Maintenance</Link>
+              </div>
+            </div>
+            <div>
+              <AspectRatio ratio={16/10}>
+                <img
+                  src={hvacMaintenance}
+                  alt="Professional HVAC maintenance services"
+                  loading="eager"
+                  className="w-full h-full object-contain rounded-xl shadow-elegant bg-muted"
+                />
+              </AspectRatio>
+            </div>
           </div>
         </div>
       </section>
@@ -314,13 +322,90 @@ const services = [
         </div>
       </section>
 
-      {/* Proof in Numbers */}
+      {/* Results You Can Expect (no graphs) */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-center">
-            Proof in Numbers
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-10 text-center">
+            Results You Can Expect
           </h2>
-          <CommercialBenefitsChart />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="text-4xl font-extrabold text-primary mb-2">70–80%</div>
+                <div className="text-sm text-muted-foreground">Fewer Breakdowns</div>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="text-4xl font-extrabold text-success mb-2">+10–30%</div>
+                <div className="text-sm text-muted-foreground">Efficiency Gain</div>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="text-4xl font-extrabold text-accent-orange mb-2">-15–20%</div>
+                <div className="text-sm text-muted-foreground">Energy Use</div>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <div className="text-4xl font-extrabold text-trust-blue mb-2">3–5x</div>
+                <div className="text-sm text-muted-foreground">Return on Maintenance</div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Gain vs Risk */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">What You Gain</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Stable, predictable performance year-round</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Lower energy bills and longer equipment life</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Fewer disruptions, happier occupants</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Documentation for compliance and warranty</span></div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">What You Risk Without It</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Unexpected breakdowns in peak seasons</span></div>
+                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Higher energy costs and premature replacements</span></div>
+                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Poor air quality and comfort complaints</span></div>
+                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Emergency callouts at 3–5x normal rates</span></div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* How It Works */}
+          <div className="bg-background border rounded-2xl p-6 md:p-8">
+            <h3 className="font-heading text-2xl font-bold mb-6 text-center">How Our Service Works</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center p-4 rounded-lg border bg-muted/30">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">1</div>
+                <div className="font-semibold mb-1">Inspect & Diagnose</div>
+                <div className="text-sm text-muted-foreground">We assess condition, risks, and opportunities to save.</div>
+              </div>
+              <div className="text-center p-4 rounded-lg border bg-muted/30">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">2</div>
+                <div className="font-semibold mb-1">Service & Optimise</div>
+                <div className="text-sm text-muted-foreground">We clean, calibrate, replace filters, and fix issues.</div>
+              </div>
+              <div className="text-center p-4 rounded-lg border bg-muted/30">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">3</div>
+                <div className="font-semibold mb-1">Report & Plan</div>
+                <div className="text-sm text-muted-foreground">You receive a report with recommendations and next steps.</div>
+              </div>
+            </div>
+            <div className="mt-6 text-center text-sm text-muted-foreground">
+              Certified technicians • Same-day availability • Work guaranteed
+            </div>
+          </div>
         </div>
       </section>
 
