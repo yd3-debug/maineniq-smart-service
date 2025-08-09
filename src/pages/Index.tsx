@@ -160,12 +160,6 @@ const Index = () => {
                 <div className="text-xs opacity-80">Equipment Lifespan Extension</div>
               </div>
             </div>
-<div className="mt-3 text-[10px] sm:text-xs opacity-80 flex items-center justify-center gap-2 flex-wrap">
-  <span className="opacity-80">Sources:</span>
-  <ResearchBadge claimId="hvac_maintenance_savings" label="DOE" className="opacity-90" />
-  <ResearchBadge claimId="commercial_downtime_prevention" label="ASHRAE" className="opacity-90" />
-  <ResearchBadge claimId="fcu_maintenance_efficiency" label="BSRIA" className="opacity-90" />
-</div>
 <p className="mt-1 text-[10px] sm:text-xs opacity-70">Estimates based on cited sources; actual savings vary by property and usage.</p>
           </div>
         </div>
@@ -401,11 +395,11 @@ const Index = () => {
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-bold text-lg mb-2">Property Value</h4>
-                <p className="text-muted-foreground text-sm mb-3">Professional HVAC increases marketability</p>
+                <p className="text-muted-foreground text-sm mb-3">Protect market value</p>
                 <div className="text-2xl font-bold text-accent-orange">
-                  —
+                  <AnimatedCounter value={15} prefix="Avoid up to " suffix="% loss" delay={0} duration={1200} />
                 </div>
-                <div className="text-xs text-muted-foreground">Property Marketability (varies)</div>
+                <div className="text-xs text-muted-foreground">Property Value Impact</div>
               </CardContent>
             </Card>
           </div>
