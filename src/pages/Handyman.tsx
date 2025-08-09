@@ -62,6 +62,24 @@ const Handyman: React.FC = () => {
           ))}
         </section>
 
+        <section className="rounded-xl border bg-primary/5 p-6">
+          <h2 className="font-heading text-2xl font-bold mb-4 text-primary">Problems we prevent</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Small faults becoming big repairs</div>
+              <p className="text-muted-foreground">Preventive fixes avoid costly damage and downtime.</p>
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Safety risks at home</div>
+              <p className="text-muted-foreground">Loose fixtures, trip hazards, and leaks resolved fast.</p>
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Tenant dissatisfaction</div>
+              <p className="text-muted-foreground">Quick, tidy work that keeps occupants happy.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-muted/40 border rounded-xl p-6">
           <h2 className="font-heading text-2xl font-bold mb-4">How it works</h2>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">

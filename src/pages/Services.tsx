@@ -30,7 +30,7 @@ import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
 import { CONTACT } from "@/config/contact";
 import { AlertTriangle, Clock, TrendingUp } from "lucide-react";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
@@ -430,18 +430,29 @@ const services = [
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
-            <div className="relative">
-              <BeforeAfterSlider
-                beforeSrc="/mvhr-filter-dirty.png"
-                afterSrc="/mvhr-filter-clean.png"
-                beforeAlt="MVHR filter after 6 months without maintenance (dirty)"
-                afterAlt="MVHR filter after professional service (clean)"
-                beforeLabel="Neglected 6 months"
-                afterLabel="After service"
-                ratio={4/3}
-                fit="contain"
-                className="rounded-lg shadow-elegant"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <AspectRatio ratio={4/3}>
+                  <img
+                    src="/mvhr-filter-dirty.png"
+                    alt="MVHR filter after 6 months without maintenance (dirty)"
+                    loading="lazy"
+                    className="w-full h-full object-contain rounded-lg bg-muted"
+                  />
+                </AspectRatio>
+                <div className="mt-2 text-center text-sm text-muted-foreground">Before: Neglected 6 months</div>
+              </div>
+              <div>
+                <AspectRatio ratio={4/3}>
+                  <img
+                    src="/mvhr-filter-clean.png"
+                    alt="MVHR filter after professional service (clean)"
+                    loading="lazy"
+                    className="w-full h-full object-contain rounded-lg bg-muted"
+                  />
+                </AspectRatio>
+                <div className="mt-2 text-center text-sm text-muted-foreground">After: Professional service</div>
+              </div>
             </div>
             
             <div className="space-y-6">

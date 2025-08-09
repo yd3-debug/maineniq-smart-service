@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 import heroImage from "@/assets/mvhr-installation.jpg";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const MVHRMaintenance = () => {
   const keyBenefits = [
@@ -193,19 +193,33 @@ const MVHRMaintenance = () => {
                   <p className="text-lg text-muted-foreground">See the dramatic difference maintenance makes to your air quality and energy bills</p>
                 </div>
                 
-                <div className="space-y-6">
-                  <BeforeAfterSlider
-                    beforeSrc="/MVPR0dirty.webp"
-                    afterSrc="/MVHRclean.webp"
-                    beforeAlt="Dirty MVHR filter clogged with dust reducing airflow and efficiency"
-                    afterAlt="Clean MVHR filter with clear pleats ensuring optimal airflow and air quality"
-                    beforeLabel="Dirty filter"
-                    afterLabel="Clean filter"
-                  />
-                  <p className="text-sm text-muted-foreground text-center">
-                    Real MVHR filters: dirty vs clean. Slide to compare and tap to zoom.
-                  </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <AspectRatio ratio={16/10}>
+                      <img
+                        src="/MVPR0dirty.webp"
+                        alt="Dirty MVHR filter clogged with dust reducing airflow and efficiency"
+                        loading="lazy"
+                        className="w-full h-full object-contain rounded-lg bg-muted"
+                      />
+                    </AspectRatio>
+                    <div className="mt-2 text-center text-sm text-muted-foreground">Before: Dirty filter</div>
+                  </div>
+                  <div>
+                    <AspectRatio ratio={16/10}>
+                      <img
+                        src="/MVHRclean.webp"
+                        alt="Clean MVHR filter with clear pleats ensuring optimal airflow and air quality"
+                        loading="lazy"
+                        className="w-full h-full object-contain rounded-lg bg-muted"
+                      />
+                    </AspectRatio>
+                    <div className="mt-2 text-center text-sm text-muted-foreground">After: Clean filter</div>
+                  </div>
                 </div>
+                <p className="text-sm text-muted-foreground text-center">
+                  Real MVHR filters: dirty vs clean.
+                </p>
               </CardContent>
             </Card>
           </AnimatedChart>

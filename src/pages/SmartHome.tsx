@@ -62,6 +62,24 @@ const SmartHome: React.FC = () => {
           ))}
         </section>
 
+        <section className="rounded-xl border bg-primary/5 p-6">
+          <h2 className="font-heading text-2xl font-bold mb-4 text-primary">Problems we prevent</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Heating left on</div>
+              <p className="text-muted-foreground">Automations turn off devices and save energy when you’re away.</p>
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Security blind spots</div>
+              <p className="text-muted-foreground">Cameras and sensors integrated into one reliable system.</p>
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-white p-4">
+              <div className="font-medium mb-1">Too many apps</div>
+              <p className="text-muted-foreground">One app and voice control for everything important.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-muted/40 border rounded-xl p-6">
           <h2 className="font-heading text-2xl font-bold mb-4">How it works</h2>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">
