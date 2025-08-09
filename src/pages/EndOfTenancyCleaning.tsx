@@ -3,11 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import FullBleedHero from "@/components/FullBleedHero";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import { CleaningTrustMetrics } from "@/components/CleaningTrustMetrics";
-import { DepositCalculator } from "@/components/DepositCalculator";
-import { UrgencyTimer } from "@/components/UrgencyTimer";
-import { AnimatedChecklist } from "@/components/AnimatedChecklist";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
@@ -82,7 +77,7 @@ const EndOfTenancyCleaning: React.FC = () => {
               
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
                 Professional end-of-tenancy cleaning that meets strict inventory standards. 
-                <span className="text-foreground font-medium"> 98.7% deposit return success rate.</span>
+                Thorough, reliable, and deposit-safe cleaning you can trust.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -124,96 +119,152 @@ const EndOfTenancyCleaning: React.FC = () => {
         </section>
 
         <main className="container mx-auto px-4 py-12 space-y-16">
-          {/* Trust Metrics */}
-          <section>
-            <CleaningTrustMetrics />
-          </section>
-
-          {/* Urgency Timer */}
-          <section>
-            <UrgencyTimer />
-          </section>
-
-          {/* Cost of Getting It Wrong */}
-          <section className="bg-gradient-to-r from-destructive/5 to-orange-500/5 rounded-2xl p-8">
-            <div className="text-center mb-8">
-              <AlertTriangle className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">The Real Cost of DIY Cleaning</h2>
+          {/* What We Clean */}
+          <section className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4">What We Clean</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Don't risk your deposit with inadequate cleaning. Here's what tenants typically lose:
+                Every detail covered to meet strict inventory standards
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { amount: "£300-800", issue: "Kitchen deep clean failures", detail: "Grease, limescale, and appliance interiors missed" },
-                { amount: "£200-500", issue: "Bathroom standard issues", detail: "Mold, limescale, and sanitization not up to inventory" },
-                { amount: "£150-400", issue: "General cleaning oversights", detail: "Skirting boards, switches, and detailed areas missed" }
-              ].map((item, index) => (
-                <Card key={index} className="border-orange-200 bg-background">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-orange-600 mb-2">{item.amount}</div>
-                    <div className="font-medium mb-2">{item.issue}</div>
-                    <div className="text-sm text-muted-foreground">{item.detail}</div>
+                {
+                  title: "Kitchen",
+                  icon: Sparkles,
+                  items: ["Oven interior & exterior", "Hob & extractor fan", "Cupboards inside & out", "Appliance surfaces", "Sink & taps", "Tiles & splashbacks"]
+                },
+                {
+                  title: "Bathroom",
+                  icon: Shield,
+                  items: ["Toilet inside & out", "Shower & bath deep clean", "Tiles & grout", "Mirror & fixtures", "Floor sanitization", "Ventilation areas"]
+                },
+                {
+                  title: "Living Areas",
+                  icon: CheckCircle,
+                  items: ["Carpet deep vacuum", "Skirting boards", "Light switches & sockets", "Window sills", "Radiators", "All surfaces wiped"]
+                },
+                {
+                  title: "Throughout",
+                  icon: Star,
+                  items: ["All doors & frames", "Handles & fixtures", "Cobweb removal", "Floor mopping", "Final inspection", "Inventory compliance"]
+                }
+              ].map((area, index) => (
+                <Card key={index} className="h-full">
+                  <CardHeader className="text-center">
+                    <area.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+                    <CardTitle className="text-lg">{area.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {area.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               ))}
             </div>
+          </section>
+
+          {/* Our Process */}
+          <section className="bg-gradient-to-br from-background to-muted/30 rounded-2xl p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Our Professional Process</h2>
+              <p className="text-lg text-muted-foreground">
+                Systematic approach ensuring inventory-ready results
+              </p>
+            </div>
             
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-background rounded-full px-6 py-3 border">
-                <TrendingUp className="w-5 h-5 text-success" />
-                <span className="font-medium">Our professional service from £140 - saving you hundreds</span>
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  step: "1",
+                  title: "Initial Assessment",
+                  desc: "Thorough property walkthrough and cleaning plan creation"
+                },
+                {
+                  step: "2", 
+                  title: "Deep Cleaning",
+                  desc: "Room-by-room systematic cleaning with professional equipment"
+                },
+                {
+                  step: "3",
+                  title: "Quality Check",
+                  desc: "Detailed inspection against inventory standards"
+                },
+                {
+                  step: "4",
+                  title: "Final Sign-off",
+                  desc: "Property ready for handover with guarantee certificate"
+                }
+              ].map((process, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                    {process.step}
+                  </div>
+                  <h3 className="font-medium mb-2">{process.title}</h3>
+                  <p className="text-sm text-muted-foreground">{process.desc}</p>
+                </div>
+              ))}
             </div>
           </section>
 
-          {/* Interactive Before/After Showcase */}
+          {/* Why Choose Us */}
           <section className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">See The Transformation</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Professional cleaning that exceeds inventory standards and guarantees deposit return
+              <h2 className="text-3xl font-bold mb-4">Why Choose Our Service</h2>
+              <p className="text-lg text-muted-foreground">
+                Professional expertise that protects your deposit
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8">
-              <BeforeAfterSlider
-                beforeSrc="/FCUdirty.png"
-                afterSrc="/FCUclean.png"
-                beforeAlt="Kitchen before professional end of tenancy cleaning"
-                afterAlt="Kitchen after professional deep cleaning - inventory ready"
-                beforeLabel="Move-in condition"
-                afterLabel="Inventory ready"
-                className="w-full"
-              />
-              
-              <BeforeAfterSlider
-                beforeSrc="/MVPR0dirty.webp"
-                afterSrc="/MVHRclean.webp"
-                beforeAlt="Bathroom before professional cleaning"
-                afterAlt="Bathroom after deep cleaning and sanitization"
-                beforeLabel="Needs attention"
-                afterLabel="Deposit-safe clean"
-                className="w-full"
-              />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Award,
+                  title: "Professional Equipment",
+                  desc: "Industrial-grade cleaning equipment and eco-friendly products for superior results"
+                },
+                {
+                  icon: Users,
+                  title: "Experienced Team",
+                  desc: "Trained professionals who understand inventory requirements and landlord expectations"
+                },
+                {
+                  icon: Shield,
+                  title: "Inventory Standards",
+                  desc: "Cleaning to exact inventory specifications ensuring deposit protection"
+                },
+                {
+                  icon: Clock,
+                  title: "Flexible Scheduling",
+                  desc: "Same-day availability and emergency slots to meet your move-out deadline"
+                },
+                {
+                  icon: FileCheck,
+                  title: "Quality Guarantee",
+                  desc: "Free return visit if anything doesn't meet required standards"
+                },
+                {
+                  icon: Zap,
+                  title: "Peace of Mind",
+                  desc: "Fully insured service with comprehensive liability coverage"
+                }
+              ].map((benefit, index) => (
+                <Card key={index} className="h-full">
+                  <CardContent className="p-6 text-center">
+                    <benefit.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+                    <h3 className="font-medium mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </section>
-
-          {/* Deposit Calculator */}
-          <section className="bg-gradient-to-br from-primary/5 to-accent-orange/5 rounded-2xl p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Calculate Your Potential Savings</h2>
-              <p className="text-lg text-muted-foreground">
-                See how much our professional cleaning could save on your deposit
-              </p>
-            </div>
-            <DepositCalculator />
-          </section>
-
-          {/* Animated Cleaning Process */}
-          <section className="rounded-2xl border p-8 bg-gradient-to-br from-background to-muted/30">
-            <AnimatedChecklist />
           </section>
 
           {/* Enhanced Service Add-ons */}
@@ -226,27 +277,26 @@ const EndOfTenancyCleaning: React.FC = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { service: "Carpet Steam Clean", price: "£60", icon: Sparkles, popular: true },
-                { service: "Oven Deep Clean", price: "£40", icon: Zap, popular: true },
-                { service: "Upholstery Clean", price: "£80", icon: Shield, popular: false },
-                { service: "Window Cleaning", price: "£30", icon: Star, popular: false }
-              ].map((addon, index) => (
-                <Card key={index} className={`${addon.popular ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
-                  <CardContent className="p-6 text-center">
-                    {addon.popular && (
-                      <Badge className="mb-3" variant="secondary">Popular</Badge>
-                    )}
-                    <addon.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <h3 className="font-medium mb-2">{addon.service}</h3>
-                    <div className="text-2xl font-bold text-primary mb-3">{addon.price}</div>
-                    <Button size="sm" variant="outline" className="w-full">
-                      Add to Quote
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+               {[
+                 { service: "Carpet Steam Clean", icon: Sparkles, popular: true },
+                 { service: "Oven Deep Clean", icon: Zap, popular: true },
+                 { service: "Upholstery Clean", icon: Shield, popular: false },
+                 { service: "Window Cleaning", icon: Star, popular: false }
+               ].map((addon, index) => (
+                 <Card key={index} className={`${addon.popular ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
+                   <CardContent className="p-6 text-center">
+                     {addon.popular && (
+                       <Badge className="mb-3" variant="secondary">Popular</Badge>
+                     )}
+                     <addon.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                     <h3 className="font-medium mb-2">{addon.service}</h3>
+                     <Button size="sm" variant="outline" className="w-full">
+                       Add to Quote
+                     </Button>
+                   </CardContent>
+                 </Card>
+               ))}
+             </div>
           </section>
 
           {/* Enhanced Pricing */}
@@ -263,24 +313,18 @@ const EndOfTenancyCleaning: React.FC = () => {
                 {
                   name: "Studio/1 Bed", 
                   price: "From £140", 
-                  originalPrice: "£200",
-                  savings: "Save £60",
                   points: ["Kitchen + bathroom deep clean","All rooms thoroughly cleaned","Inventory-ready guarantee","48h re-clean promise"],
                   popular: false
                 },
                 {
                   name: "2-3 Bed", 
                   price: "From £180", 
-                  originalPrice: "£280",
-                  savings: "Save £100",
                   points: ["Oven exterior & interior","Windows interior cleaning","Professional equipment","Priority same-day slots"],
                   popular: true
                 },
                 {
                   name: "4+ Bed", 
                   price: "From £240", 
-                  originalPrice: "£380",
-                  savings: "Save £140",
                   points: ["Full deep clean service","Team of 2-3 professionals","Carpet spot treatment","Move-out coordination"],
                   popular: false
                 }
@@ -293,15 +337,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                   )}
                   <CardHeader className="text-center">
                     <CardTitle className="text-xl">{plan.name}</CardTitle>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                        <span className="text-lg text-muted-foreground line-through">{plan.originalPrice}</span>
-                      </div>
-                      <Badge variant="secondary" className="text-success">
-                        {plan.savings}
-                      </Badge>
-                    </div>
+                    <div className="text-3xl font-bold text-primary">{plan.price}</div>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <ul className="space-y-2">
@@ -337,7 +373,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 {
                   icon: Shield,
                   title: "Deposit Protection",
-                  desc: "98.7% success rate returning full deposits",
+                  desc: "Professional standards that protect your deposit",
                   color: "text-success"
                 },
                 {
@@ -349,7 +385,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 {
                   icon: CheckCircle,
                   title: "Fully Insured",
-                  desc: "£2M public liability and contents cover",
+                  desc: "Comprehensive public liability and contents cover",
                   color: "text-accent-orange"
                 },
                 {
