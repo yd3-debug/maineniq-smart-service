@@ -28,6 +28,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
 const GDPRCompliance = lazy(() => import("./pages/GDPRCompliance"));
+const RenovationComposer = lazy(() => import("./pages/RenovationComposer"));
 
 const queryClient = new QueryClient();
 
@@ -159,6 +160,13 @@ const App = () => (
             <Suspense fallback={<LoadingPage />}>
               <Admin />
             </Suspense>
+          } />
+          <Route path="/admin/renovation-composer" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <RenovationComposer />
+              </Suspense>
+            </Layout>
           } />
           <Route path="*" element={
             <Layout>
