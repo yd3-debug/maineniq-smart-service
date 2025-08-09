@@ -291,88 +291,63 @@ const services = [
       <TrustStrip />
 
 
-      {/* Results You Can Expect (no graphs) */}
+      {/* Fast, clear assurances and scheduling */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-10 text-center">
-            Results You Can Expect
+            Fast, professional help — clear, upfront, and reliable
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-4xl font-extrabold text-primary mb-2">70–80%</div>
-                <div className="text-sm text-muted-foreground">Fewer Breakdowns</div>
+          {/* Key assurance + promises */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <Card className="lg:col-span-1">
+              <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center">
+                <div className="text-4xl font-extrabold text-primary mb-2">90%</div>
+                <div className="text-sm font-medium">Same‑day attendance</div>
+                <div className="text-xs text-muted-foreground mt-1">for weekday requests made before 12pm*</div>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-4xl font-extrabold text-success mb-2">+10–30%</div>
-                <div className="text-sm text-muted-foreground">Efficiency Gain</div>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-4xl font-extrabold text-accent-orange mb-2">-15–20%</div>
-                <div className="text-sm text-muted-foreground">Energy Use</div>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-4xl font-extrabold text-trust-blue mb-2">3–5x</div>
-                <div className="text-sm text-muted-foreground">Return on Maintenance</div>
+
+            <Card className="lg:col-span-2">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">Our Promises</CardTitle>
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Upfront pricing before we start</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Certified, vetted engineers</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Respectful, tidy work on site</span></div>
+                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Photo report and clear next steps</span></div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Gain vs Risk */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What You Gain</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Stable, predictable performance year-round</span></div>
-                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Lower energy bills and longer equipment life</span></div>
-                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Fewer disruptions, happier occupants</span></div>
-                <div className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-success mt-0.5" /><span>Documentation for compliance and warranty</span></div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What You Risk Without It</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm">
-                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Unexpected breakdowns in peak seasons</span></div>
-                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Higher energy costs and premature replacements</span></div>
-                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Poor air quality and comfort complaints</span></div>
-                <div className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" /><span>Emergency callouts at 3–5x normal rates</span></div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* How It Works */}
+          {/* How scheduling works */}
           <div className="bg-background border rounded-2xl p-6 md:p-8">
-            <h3 className="font-heading text-2xl font-bold mb-6 text-center">How Our Service Works</h3>
+            <h3 className="font-heading text-2xl font-bold mb-6 text-center">How scheduling works</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-4 rounded-lg border bg-muted/30">
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">1</div>
-                <div className="font-semibold mb-1">Inspect & Diagnose</div>
-                <div className="text-sm text-muted-foreground">We assess condition, risks, and opportunities to save.</div>
+              <div className="p-4 rounded-lg border bg-muted/30">
+                <div className="font-semibold mb-1">1) Tell us what you need</div>
+                <div className="text-sm text-muted-foreground">Call or send a form with a brief description and photos if possible.</div>
               </div>
-              <div className="text-center p-4 rounded-lg border bg-muted/30">
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">2</div>
-                <div className="font-semibold mb-1">Service & Optimise</div>
-                <div className="text-sm text-muted-foreground">We clean, calibrate, replace filters, and fix issues.</div>
+              <div className="p-4 rounded-lg border bg-muted/30">
+                <div className="font-semibold mb-1">2) Get a time window</div>
+                <div className="text-sm text-muted-foreground">We confirm availability, share pricing, and book a fixed slot.</div>
               </div>
-              <div className="text-center p-4 rounded-lg border bg-muted/30">
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-3">3</div>
-                <div className="font-semibold mb-1">Report & Plan</div>
-                <div className="text-sm text-muted-foreground">You receive a report with recommendations and next steps.</div>
+              <div className="p-4 rounded-lg border bg-muted/30">
+                <div className="font-semibold mb-1">3) Engineer attends</div>
+                <div className="text-sm text-muted-foreground">We fix or stabilise the issue, and send a photo report the same day.</div>
               </div>
             </div>
-            <div className="mt-6 text-center text-sm text-muted-foreground">
-              Certified technicians • Same-day availability • Work guaranteed
+            <div className="mt-6 text-center text-xs text-muted-foreground">
+              *Same‑day attendance achieved in ~90% of eligible requests; depends on location, time, and job scope.
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <Button asChild>
+                <Link to="/contact">Request service</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href={`tel:${CONTACT.phones.emergencyTel}`}>Call {CONTACT.phones.emergency}</a>
+              </Button>
             </div>
           </div>
         </div>
