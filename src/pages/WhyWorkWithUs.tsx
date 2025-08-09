@@ -3,24 +3,16 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/config/contact";
 import TrustStrip from "@/components/TrustStrip";
-import ResearchBadge from "@/components/ResearchBadge";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FullBleedHero from "@/components/FullBleedHero";
-import { ProgressMetric } from "@/components/ProgressMetric";
-import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import { ROICalculator } from "@/components/ROICalculator";
-import { UrgencyBanner } from "@/components/UrgencyBanner";
-import { TrustMetrics } from "@/components/TrustMetrics";
-import { TestimonialCards } from "@/components/TestimonialCards";
-import teamWorking from "@/assets/team-working.jpg";
-import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Wrench, AlertTriangle, TrendingUp, Zap, Clock, Target } from "lucide-react";
+import hvacProfessional from "@/assets/hvac-professional.jpg";
+import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Wrench, Clock, Target, Users, Award, Zap, CheckCircle2, Phone, MessageSquare, FileText } from "lucide-react";
 
-const PAGE_TITLE = "Why Work With Us | The Insurance Policy Your Business Can't Afford to Skip";
+const PAGE_TITLE = "Why Choose Us | Professional HVAC Maintenance That Actually Works";
 const PAGE_DESCRIPTION =
-  "Don't let system failures destroy your reputation. Our proactive maintenance prevents 90% of breakdowns, saves £8 per £1 spent, and protects your bottom line. Get bulletproof reliability.";
+  "Partner with HVAC specialists who prevent breakdowns before they happen. Proven maintenance programs that reduce costs, eliminate emergencies, and protect your business reputation.";
 
 export default function WhyWorkWithUs() {
   useEffect(() => {
@@ -65,149 +57,170 @@ export default function WhyWorkWithUs() {
     <main>
       <FullBleedHero
         id="hero-why-work-with-us"
-        title="The Insurance Policy Your Business Can't Afford to Skip"
-        subtitle="Stop gambling with system failures. Our proactive maintenance prevents 90% of breakdowns, eliminates emergency callouts, and turns your HVAC systems into a competitive advantage—not a liability."
-        image={teamWorking}
-        alt="Professional team maintaining commercial HVAC systems"
-        primaryLabel="Get Your ROI Calculation"
+        title="Why Choose Professional HVAC Maintenance?"
+        subtitle="Partner with specialists who understand what's at stake. We prevent problems before they become emergencies, protect your reputation, and turn your building systems into a competitive advantage."
+        image={hvacProfessional}
+        alt="Professional HVAC engineers maintaining commercial systems"
+        primaryLabel="Discuss Your Requirements"
         primaryHref="/contact"
-        secondaryLabel="Book Free Survey"
+        secondaryLabel="Call Now"
         secondaryHref={`tel:${CONTACT.phones.landlineTel}`}
         imageFit="cover"
-      >
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-success/10 backdrop-blur-sm rounded-lg p-3 border border-success/20">
-            <div className="flex items-center gap-2 text-success font-semibold text-sm">
-              <TrendingUp className="w-4 h-4" />
-              £8 saved per £1 spent
-            </div>
-          </div>
-          <div className="bg-trust-blue/10 backdrop-blur-sm rounded-lg p-3 border border-trust-blue/20">
-            <div className="flex items-center gap-2 text-trust-blue font-semibold text-sm">
-              <ShieldCheck className="w-4 h-4" />
-              99.2% system uptime
-            </div>
-          </div>
-          <div className="bg-accent-orange/10 backdrop-blur-sm rounded-lg p-3 border border-accent-orange/20">
-            <div className="flex items-center gap-2 text-accent-orange font-semibold text-sm">
-              <Clock className="w-4 h-4" />
-              4-hour response SLA
-            </div>
-          </div>
-        </div>
-      </FullBleedHero>
+      />
 
       <TrustStrip />
-      
-      <section className="py-8 bg-background">
-        <div className="container mx-auto px-4">
-          <UrgencyBanner />
-        </div>
-      </section>
 
-      <section id="roi-calculator" className="py-12 bg-muted/30" aria-labelledby="roi-title">
+      {/* Our Track Record - Simple Metrics */}
+      <section className="py-12 bg-background" aria-labelledby="track-record-title">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 id="roi-title" className="font-heading text-3xl font-bold mb-4">
-                Stop Paying the Hidden Costs of Poor Maintenance
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Every day you delay professional maintenance, your systems degrade. Energy bills climb. 
-                Emergency risks compound. Client satisfaction drops. Calculate what reactive maintenance is really costing you.
-              </p>
-              <TrustMetrics />
-            </div>
-            <ROICalculator />
-          </div>
-        </div>
-      </section>
-
-      <section id="hidden-costs" className="py-12 bg-background" aria-labelledby="hidden-costs-title">
-        <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-8">
-            <h2 id="hidden-costs-title" className="font-heading text-3xl font-bold mb-4">
-              The Hidden Costs Destroying Your Profit Margins
+          <header className="max-w-3xl mb-8 text-center">
+            <h2 id="track-record-title" className="font-heading text-3xl font-bold mb-4">
+              Our Track Record
             </h2>
             <p className="text-muted-foreground">
-              Without proper maintenance, your systems are silently bleeding money. Here's what most property managers don't realize they're losing.
+              Numbers that matter to property managers and facility teams.
             </p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <ProgressMetric
-              icon={AlertTriangle}
-              value={40}
-              label="Efficiency Loss"
-              description="Systems lose 40% efficiency over 8 years without maintenance"
-              percentage={40}
-              variant="danger"
-              delay={0}
-            />
-            <ProgressMetric
-              icon={Zap}
-              value={90}
-              label="Preventable Failures"
-              description="90% of system breakdowns could have been prevented"
-              percentage={90}
-              variant="warning"
-              delay={200}
-            />
-            <ProgressMetric
-              icon={TrendingUp}
-              value={800}
-              label="ROI Percentage"
-              description="Our clients see 800% ROI on maintenance investment"
-              percentage={100}
-              variant="success"
-              delay={400}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <BeforeAfterSlider
-              beforeSrc="/MVHRclean.webp"
-              afterSrc="/MVPR0dirty.webp"
-              beforeAlt="Clean, efficient MVHR system"
-              afterAlt="Dirty, inefficient MVHR system"
-              beforeLabel="With Our Maintenance"
-              afterLabel="Without Professional Care"
-              className="rounded-lg"
-            />
-            <div className="space-y-4">
-              <h3 className="font-heading text-xl font-semibold">What Poor Maintenance Actually Costs:</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-destructive rounded-full mt-2"></div>
-                  <span><strong>Energy waste:</strong> 15-40% higher bills due to inefficient operation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-destructive rounded-full mt-2"></div>
-                  <span><strong>Emergency callouts:</strong> £500-2000 per incident, often out of hours</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-destructive rounded-full mt-2"></div>
-                  <span><strong>Tenant complaints:</strong> Comfort issues, noise, poor air quality</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-destructive rounded-full mt-2"></div>
-                  <span><strong>Shortened lifespan:</strong> Replace systems 3-5 years earlier</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-destructive rounded-full mt-2"></div>
-                  <span><strong>Reputation damage:</strong> Poor reviews, harder lettings, lower values</span>
-                </li>
-              </ul>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Properties Maintained</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-success mb-2">99.2%</div>
+              <div className="text-sm text-muted-foreground">System Uptime</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-trust-blue mb-2">4hrs</div>
+              <div className="text-sm text-muted-foreground">Response SLA</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-accent-orange mb-2">8:1</div>
+              <div className="text-sm text-muted-foreground">ROI Ratio</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services-we-deliver" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="services-we-deliver-title">
+      {/* What Makes Us Different */}
+      <section id="what-makes-us-different" className="py-16 bg-muted/30" aria-labelledby="different-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-6 sm:mb-8">
-            <h2 id="services-we-deliver-title" className="font-heading text-2xl sm:text-3xl font-semibold">Services we deliver</h2>
-            <p className="text-muted-foreground">End-to-end maintenance and support across HVAC, controls and building services.</p>
+          <header className="max-w-3xl mb-12 text-center">
+            <h2 id="different-title" className="font-heading text-3xl font-bold mb-4">
+              What Makes Us Different
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              While others react to problems, we prevent them. Here's how we keep your systems running and your reputation intact.
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <ShieldCheck className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Specialist Expertise</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We focus exclusively on HVAC, MVHR, and building services. Our engineers know these systems inside-out, not just general maintenance.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-trust-blue">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-trust-blue/10 rounded-lg">
+                    <Clock className="w-6 h-6 text-trust-blue" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Proactive Response</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  24/7 monitoring and guaranteed 4-hour response times. We catch issues before they become emergencies that disrupt your operations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-success">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-success/10 rounded-lg">
+                    <FileText className="w-6 h-6 text-success" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Transparent Reporting</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Clear, jargon-free reports after every visit. You know exactly what was done, what was found, and what needs attention next.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-accent-orange">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-accent-orange/10 rounded-lg">
+                    <Target className="w-6 h-6 text-accent-orange" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Proven Process</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  SFG20/CIBSE-aligned maintenance programs that actually prevent failures. No guesswork, just proven industry standards.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-energy-gold">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-energy-gold/10 rounded-lg">
+                    <Award className="w-6 h-6 text-energy-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Quality Assurance</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  First-time-fix philosophy with fully trained, insured engineers. We arrive with the right parts and expertise every time.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Partnership Approach</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We integrate with your existing operations, not disrupt them. Clear communication, agreed SLAs, and accountable service.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Integration */}
+      <section id="our-services" className="py-12 bg-background" aria-labelledby="services-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mb-8">
+            <h2 id="services-title" className="font-heading text-2xl sm:text-3xl font-semibold">Complete Building Services Coverage</h2>
+            <p className="text-muted-foreground">From HVAC systems to smart home automation, we maintain everything that keeps your properties running smoothly.</p>
           </header>
           <div className="flex flex-wrap gap-2">
             {[
@@ -223,7 +236,7 @@ export default function WhyWorkWithUs() {
               { label: "Renovation & Finishes", to: "/renovation-composer" },
               { label: "All Services", to: "/services" },
             ].map((s) => (
-              <Button key={s.to} variant="secondary" size="sm" asChild className="hover-scale">
+              <Button key={s.to} variant="outline" size="sm" asChild className="hover-scale">
                 <Link to={s.to} aria-label={`Learn more about ${s.label}`}>{s.label}</Link>
               </Button>
             ))}
@@ -233,128 +246,55 @@ export default function WhyWorkWithUs() {
 
       <WhoWeServe />
 
-      <section id="competitive-edge" aria-labelledby="competitive-edge-title" className="py-12 bg-muted/10">
+      {/* Case Study Snippets */}
+      <section id="proof-points" className="py-16 bg-muted/20" aria-labelledby="proof-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-8">
-            <h2 id="competitive-edge-title" className="font-heading text-3xl font-bold mb-4">
-              Your Competitive Edge: While Others React, You Prevent
+          <header className="max-w-3xl mb-12 text-center">
+            <h2 id="proof-title" className="font-heading text-3xl font-bold mb-4">
+              Real Results for Real Clients
             </h2>
-            <p className="text-muted-foreground mb-6">
-              Stop being the property manager who apologizes for system failures. Become the one who never has them. 
-              Here's how we transform your maintenance from a cost center into a profit driver.
+            <p className="text-muted-foreground">
+              See how our maintenance programs deliver measurable benefits to property managers and facility teams.
             </p>
-            <ResearchBadge claimId="hvac_maintenance_savings" label="Proven ROI" />
           </header>
           
-          <CommercialBenefitsChart />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
-            <Card className="group hover:shadow-elegant transition-all hover-scale bg-gradient-to-br from-success/5 to-success/10 border-success/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
               <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-success/10 rounded-lg">
-                    <Target className="w-5 h-5 text-success" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-success">Predictable Budgets, Zero Surprises</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Fixed monthly costs with no emergency callout fees. Plan your budgets with confidence—we handle the rest.
-                    </p>
-                  </div>
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-success">£47,000</div>
+                  <div className="text-sm text-muted-foreground">Annual Energy Savings</div>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Residential Development, London:</strong> Our preventative maintenance program improved HVAC efficiency by 32%, saving £47,000 annually in energy costs across 180 units.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-elegant transition-all hover-scale bg-gradient-to-br from-trust-blue/5 to-trust-blue/10 border-trust-blue/20">
+            <Card>
               <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-trust-blue/10 rounded-lg">
-                    <ShieldCheck className="w-5 h-5 text-trust-blue" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-trust-blue">Sleep Easy Guarantee</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      24/7 monitoring, proactive alerts, and guaranteed 4-hour response. Your systems are our responsibility.
-                    </p>
-                  </div>
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-trust-blue">Zero</div>
+                  <div className="text-sm text-muted-foreground">Emergency Callouts</div>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Commercial Office, Birmingham:</strong> 18 months with zero HVAC emergencies after implementing our proactive maintenance schedule. Previous year had 12 costly callouts.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-elegant transition-all hover-scale bg-gradient-to-br from-accent-orange/5 to-energy-gold/10 border-accent-orange/20">
+            <Card>
               <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-accent-orange/10 rounded-lg">
-                    <TrendingUp className="w-5 h-5 text-accent-orange" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-accent-orange">Profit Protection System</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Turn maintenance into a revenue stream. Happy tenants stay longer, pay more, and refer others.
-                    </p>
-                  </div>
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-accent-orange">40%</div>
+                  <div className="text-sm text-muted-foreground">Longer Asset Life</div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-elegant transition-all hover-scale">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <CalendarCheck className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">Maintenance That Actually Maintains</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      SFG20/CIBSE-aligned PPM that finds problems before they find you. Systems last 40% longer with our care.
-                    </p>
-                    <ResearchBadge claimId="hvac_maintenance_savings" className="mt-3" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-elegant transition-all hover-scale">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">First-Time-Fix Philosophy</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Our engineers arrive with the right parts, tools, and expertise. No return visits, no excuses.
-                    </p>
-                    <ResearchBadge claimId="commercial_downtime_prevention" className="mt-3" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-elegant transition-all hover-scale">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <BarChart3 className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">Data-Driven Decision Making</h3>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Real performance metrics, not generic reports. Know exactly what your money is buying.
-                    </p>
-                  </div>
-                </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Student Accommodation, Manchester:</strong> Our maintenance program extended system lifespan from 12 to 17 years, delaying £280,000 in replacement costs.
+                </p>
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      <section id="social-proof" className="py-12 bg-background" aria-labelledby="social-proof-title">
-        <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-8 text-center">
-            <h2 id="social-proof-title" className="font-heading text-3xl font-bold mb-4">
-              Join the Property Managers Who Sleep Easy
-            </h2>
-            <p className="text-muted-foreground">
-              Don't take our word for it. Here's what happens when property managers choose prevention over panic.
-            </p>
-          </header>
-          <TestimonialCards />
         </div>
       </section>
 
@@ -407,51 +347,50 @@ export default function WhyWorkWithUs() {
         </div>
       </section>
 
-      <section aria-labelledby="final-cta" className="py-16 bg-professional-gradient text-white">
+      <section aria-labelledby="final-cta" className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 id="final-cta" className="font-heading text-3xl sm:text-4xl font-bold mb-4">
-              Stop Gambling with System Failures
+              Ready to Partner with HVAC Specialists?
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Every day you delay professional maintenance is another day your competitors gain an edge. 
-              Don't wait for the emergency that destroys your reputation.
+              Join property managers who've eliminated emergency callouts and turned their building systems into competitive advantages.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="text-2xl font-bold">FREE</div>
-                <div className="text-sm">Site Survey & ROI Report</div>
+                <div className="text-sm">Consultation & Site Survey</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="text-2xl font-bold">24/7</div>
-                <div className="text-sm">Emergency Support Included</div>
+                <div className="text-sm">Emergency Support</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-2xl font-bold">£0</div>
-                <div className="text-sm">Setup or Callout Fees</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-2xl font-bold">No</div>
+                <div className="text-sm">Setup or Hidden Costs</div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-accent-orange hover:bg-accent-orange/90 text-white font-semibold text-lg px-8 py-4">
-                  Get Your FREE ROI Analysis
+                <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-4">
+                  Discuss Your Requirements
                 </Button>
               </Link>
               <a
                 href={`tel:${CONTACT.phones.landlineTel}`}
-                aria-label="Call our emergency helpline"
+                aria-label="Call us to discuss your maintenance needs"
                 className="w-full sm:w-auto"
               >
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary font-semibold text-lg px-8 py-4">
-                  Call Emergency Helpline
+                  Call Now
                 </Button>
               </a>
             </div>
             
             <p className="text-sm text-white/70 mt-6">
-              Join 500+ property managers who've eliminated emergency callouts. No contracts, no risk—just results.
+              Trusted by 500+ properties across the UK. Professional, reliable, accountable.
             </p>
           </div>
         </div>
