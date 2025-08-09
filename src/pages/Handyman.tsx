@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
@@ -45,6 +46,7 @@ const Handyman: React.FC = () => {
             <div key={item} className="rounded-lg border bg-background p-5 flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
               <span>{item}</span>
+            </div>
           ))}
         </section>
 
