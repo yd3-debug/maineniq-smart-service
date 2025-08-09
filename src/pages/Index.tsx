@@ -443,7 +443,7 @@ const Index = () => {
               <div className="space-y-4 mb-8">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <CheckCircle className="w-5 h-5 text-success" />
                     <span className="font-medium">{feature}</span>
                   </div>
                 ))}

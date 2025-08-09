@@ -506,7 +506,7 @@ const portfolioProjects = [
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {project.achievements.map((achievement, index) => (
                                       <div key={index} className="flex items-start space-x-3 p-3 bg-accent/30 rounded-lg">
-                                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                                        <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                                         <span className="text-sm">{achievement}</span>
                                       </div>
                                     ))}

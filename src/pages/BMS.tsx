@@ -47,7 +47,7 @@ const BMS: React.FC = () => {
             "Remote access with alerts and reports",
           ].map((item) => (
             <div key={item} className="rounded-lg border bg-background p-5 flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-success mt-0.5" />
               <span>{item}</span>
             </div>
           ))}
@@ -90,7 +90,7 @@ const BMS: React.FC = () => {
               <Link to="/contact">Discuss your BMS</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-4 h-4 mr-2"/>Call {CONTACT.phones.emergency}</a>
+              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}><Phone className="w-4 h-4 mr-2"/>Call now</a>
             </Button>
           </div>
         </section>

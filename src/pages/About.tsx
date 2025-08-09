@@ -329,21 +329,21 @@ const About = () => {
             <div className="space-y-3 sm:space-y-4">
               <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Customer Benefits</h3>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Enhanced Comfort</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Consistent temperature control throughout your space</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Improved Air Quality</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Advanced filtration for healthier indoor environments</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Reduced Maintenance</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Modern systems require less frequent repairs</p>
@@ -353,21 +353,21 @@ const About = () => {
             <div className="space-y-3 sm:space-y-4">
               <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4 sm:mb-6">System Improvements</h3>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Energy Efficiency</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Significant reduction in utility costs</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Smart Controls</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Advanced automation and remote monitoring</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Extended Lifespan</h4>
                   <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Premium equipment lasts longer with proper installation</p>

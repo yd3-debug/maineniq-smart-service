@@ -292,7 +292,7 @@ const services = [
 
 
       {/* Fast, clear assurances and scheduling */}
-      <section className="relative py-16 bg-gradient-to-b from-accent to-background">
+      <section className="relative py-16 bg-accent">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-10 text-center">
             Fast help. Clear prices. Trusted engineers.
@@ -300,7 +300,7 @@ const services = [
 
           {/* Key assurance + promises */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <Card className="lg:col-span-1 overflow-hidden border-0 shadow-glow bg-gradient-to-br from-success to-trust-blue text-primary-foreground">
+            <Card className="lg:col-span-1 overflow-hidden border-0 shadow-glow bg-success text-primary-foreground">
               <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center">
                 <div className="text-5xl font-extrabold tracking-tight">90%</div>
                 <div className="text-sm font-medium mt-1">Same‑day attendance</div>
@@ -308,7 +308,7 @@ const services = [
               </CardContent>
             </Card>
 
-            <Card className="lg:col-span-2 overflow-hidden border-0 shadow-card bg-trust-gradient text-primary-foreground">
+            <Card className="lg:col-span-2 overflow-hidden border-0 shadow-card bg-trust-blue text-primary-foreground">
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg">Our Promises</CardTitle>
               </CardHeader>
@@ -351,10 +351,10 @@ const services = [
               *Same‑day attendance achieved in ~90% of eligible weekday requests before 12pm; depends on location and job scope.
             </div>
             <div className="mt-6 flex items-center justify-center gap-3">
-              <Button variant="accent" asChild>
+              <Button asChild className="bg-success text-primary-foreground hover:bg-success/90">
                 <Link to="/contact">Request service</Link>
               </Button>
-              <Button variant="trust" asChild>
+              <Button asChild className="bg-trust-blue text-primary-foreground hover:bg-trust-blue/90">
                 <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}>Call now</a>
               </Button>
             </div>
@@ -428,7 +428,7 @@ const services = [
                    <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                      {service.features.map((feature, featureIndex) => (
                        <div key={featureIndex} className="flex items-start space-x-2">
-                         <CheckCircle className="w-3 md:w-4 h-3 md:h-4 text-primary mt-0.5 flex-shrink-0" />
+                         <CheckCircle className="w-3 md:w-4 h-3 md:h-4 text-success mt-0.5 flex-shrink-0" />
                          <span className="text-xs md:text-sm">{feature}</span>
                        </div>
                      ))}
@@ -570,23 +570,23 @@ const services = [
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Fully certified and insured technicians</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Quality guarantee on all work</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Transparent pricing with no hidden costs</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Emergency call-out services available</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Latest technology and equipment</span>
                 </div>
               </div>

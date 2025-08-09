@@ -182,7 +182,7 @@ export default function HVACMaintenance() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <Card className="border-primary/20 bg-primary/5">
               <CardHeader className="text-center">
-                <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+                <CheckCircle className="w-12 h-12 text-success mx-auto mb-4" />
                 <CardTitle className="text-2xl text-primary">Professional Maintenance</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
@@ -191,10 +191,10 @@ export default function HVACMaintenance() {
                 </div>
                 <p className="text-muted-foreground mb-6">Annual comprehensive service</p>
                 <ul className="text-sm space-y-2 text-left">
-                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />All systems serviced</li>
-                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />Preventive repairs included</li>
-                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />Energy efficiency guaranteed</li>
-                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-primary mr-2" />24/7 emergency support</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-success mr-2" />All systems serviced</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-success mr-2" />Preventive repairs included</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-success mr-2" />Energy efficiency guaranteed</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 text-success mr-2" />24/7 emergency support</li>
                 </ul>
               </CardContent>
             </Card>
