@@ -12,9 +12,9 @@ import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChar
 
 // Cache refresh comment
 
-const PAGE_TITLE = "Why Choose Us | Professional HVAC Maintenance That Actually Works";
+const PAGE_TITLE = "Why Choose Us | Elite Maintenance Specialists That Actually Work";
 const PAGE_DESCRIPTION =
-  "Partner with HVAC specialists who prevent breakdowns before they happen. Proven maintenance programs that reduce costs, eliminate emergencies, and protect your business reputation.";
+  "Partner with elite maintenance specialists who prevent breakdowns before they happen. Advanced building services maintenance programs that reduce costs, eliminate emergencies, and protect your business reputation.";
 
 export default function WhyWorkWithUs() {
   useEffect(() => {
@@ -59,10 +59,10 @@ export default function WhyWorkWithUs() {
     <main>
       <FullBleedHero
         id="hero-why-work-with-us"
-        title="Why Choose Professional HVAC Maintenance?"
-        subtitle="Partner with specialists who understand what's at stake. We prevent problems before they become emergencies, protect your reputation, and turn your building systems into a competitive advantage."
+        title="Why Choose Elite Maintenance Specialists?"
+        subtitle="Partner with advanced building services specialists who understand what's at stake. We prevent problems before they become emergencies, protect your reputation, and turn your building systems into a competitive advantage."
         image={hvacProfessional}
-        alt="Professional HVAC engineers maintaining commercial systems"
+        alt="Elite maintenance specialists maintaining commercial building systems"
         primaryLabel="Discuss Your Requirements"
         primaryHref="/contact"
         secondaryLabel="Call Now"
@@ -129,7 +129,7 @@ export default function WhyWorkWithUs() {
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  We focus exclusively on HVAC, MVHR, and building services. Our engineers know these systems inside-out, not just general maintenance.
+                  We specialize in advanced building systems maintenance across HVAC, MVHR, and mechanical services. Our engineers know these systems inside-out, not just general maintenance.
                 </p>
               </CardContent>
             </Card>
@@ -222,7 +222,7 @@ export default function WhyWorkWithUs() {
         <div className="container mx-auto px-4">
           <header className="max-w-3xl mx-auto mb-8 text-center">
             <h2 id="services-title" className="font-heading text-2xl sm:text-3xl font-semibold">Complete Building Services Coverage</h2>
-            <p className="text-muted-foreground">From HVAC systems to smart home automation, we maintain everything that keeps your properties running smoothly.</p>
+            <p className="text-muted-foreground">From mechanical systems to smart building automation, we maintain everything that keeps your properties running smoothly.</p>
           </header>
           <div className="flex flex-wrap gap-2">
             {[
@@ -268,7 +268,7 @@ export default function WhyWorkWithUs() {
                   <div className="text-sm text-muted-foreground">Annual Energy Savings</div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Residential Development, London:</strong> Our preventative maintenance program improved HVAC efficiency by 32%, saving £47,000 annually in energy costs across 180 units.
+                  <strong>Residential Development, London:</strong> Our preventative maintenance program improved building system efficiency by 32%, saving £47,000 annually in energy costs across 180 units.
                 </p>
               </CardContent>
             </Card>
@@ -280,7 +280,7 @@ export default function WhyWorkWithUs() {
                   <div className="text-sm text-muted-foreground">Emergency Callouts</div>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Commercial Office, Birmingham:</strong> 18 months with zero HVAC emergencies after implementing our proactive maintenance schedule. Previous year had 12 costly callouts.
+                  <strong>Commercial Office, Birmingham:</strong> 18 months with zero system emergencies after implementing our proactive maintenance schedule. Previous year had 12 costly callouts.
                 </p>
               </CardContent>
             </Card>
@@ -353,7 +353,7 @@ export default function WhyWorkWithUs() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 id="final-cta" className="font-heading text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Partner with HVAC Specialists?
+              Ready to Partner with Elite Maintenance Specialists?
             </h2>
             <p className="text-xl mb-8 text-white/90">
               Join property managers who've eliminated emergency callouts and turned their building systems into competitive advantages.
