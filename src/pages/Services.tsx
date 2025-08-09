@@ -27,11 +27,12 @@ import handymanRepair from "@/assets/handyman-repair.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
-import beforeAfter from "@/assets/before-after.jpg";
 import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
 import { CONTACT } from "@/config/contact";
 import { AlertTriangle, Clock, TrendingUp } from "lucide-react";
-
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { AnimatedCounter } from "@/components/AnimatedChart";
+import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
 const Services = () => {
 const services = [
     {
@@ -162,6 +163,40 @@ const services = [
     }
   ];
 
+  // Quick helpers for deep pages and metrics
+  const getServicePath = (title: string) => {
+    if (title.includes("MVHR")) return "/mvhr-maintenance";
+    if (title.includes("FCU")) return "/fcu-maintenance";
+    if (title.includes("HIU")) return "/hiu-maintenance";
+    if (title.includes("HVAC")) return "/hvac-maintenance";
+    return "/contact";
+  };
+
+  type Metric = { label: string; value: number; suffix?: string; prefix?: string };
+  const getMetrics = (title: string): Metric[] => {
+    if (title.includes("MVHR")) return [
+      { label: "Efficiency gain", value: 20, suffix: "%" },
+      { label: "Heat recovery", value: 85, suffix: "%+" },
+      { label: "Avoided cost", value: 3500, prefix: "£" },
+    ];
+    if (title.includes("FCU")) return [
+      { label: "Efficiency gain", value: 25, suffix: "%" },
+      { label: "Energy saved", value: 15, prefix: "-", suffix: "%" },
+      { label: "Avoided emergency", value: 850, prefix: "£" },
+    ];
+    if (title.includes("HIU")) return [
+      { label: "Efficiency gain", value: 30, suffix: "%" },
+      { label: "Energy saved", value: 20, prefix: "-", suffix: "%" },
+      { label: "Avoided emergency", value: 2200, prefix: "£" },
+    ];
+    if (title.includes("HVAC")) return [
+      { label: "Breakdowns reduced", value: 80, prefix: "-", suffix: "%" },
+      { label: "Lifespan increase", value: 50, prefix: "+", suffix: "%" },
+      { label: "ROI", value: 5, suffix: "x" },
+    ];
+    return [];
+  };
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -181,13 +216,23 @@ const services = [
             Emergency repairs cost 5x more than regular servicing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
-              <AlertTriangle className="w-5 h-5 mr-2" />
-              Emergency Service Available
+            <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
+              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call emergency ${CONTACT.phones.emergency}`}>
+                <AlertTriangle className="w-5 h-5 mr-2" />
+                Emergency Service Available
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3">
-              Schedule Maintenance
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3">
+              <Link to="/contact" aria-label="Schedule Maintenance">
+                Schedule Maintenance
+              </Link>
             </Button>
+          </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <Link to="/mvhr-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">MVHR Maintenance</Link>
+            <Link to="/fcu-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">FCU Maintenance</Link>
+            <Link to="/hiu-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">HIU Service</Link>
+            <Link to="/hvac-maintenance" className="px-3 py-1.5 rounded-full border border-white/40 text-white/90 hover:bg-white/10 text-sm">HVAC Maintenance</Link>
           </div>
         </div>
       </section>
@@ -269,6 +314,16 @@ const services = [
         </div>
       </section>
 
+      {/* Proof in Numbers */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-center">
+            Proof in Numbers
+          </h2>
+          <CommercialBenefitsChart />
+        </div>
+      </section>
+
       {/* Before/After Filter Comparison */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -284,14 +339,15 @@ const services = [
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
             <div className="relative">
-              <img 
-                src={beforeAfter} 
-                alt="Before and after MVHR filter comparison showing dirty vs clean filters"
-                className="w-full rounded-lg shadow-elegant"
+              <BeforeAfterSlider
+                beforeSrc="/mvhr-filter-dirty.png"
+                afterSrc="/mvhr-filter-clean.png"
+                beforeAlt="MVHR filter after 6 months without maintenance (dirty)"
+                afterAlt="MVHR filter after professional service (clean)"
+                beforeLabel="Neglected 6 months"
+                afterLabel="After service"
+                className="rounded-lg shadow-elegant"
               />
-              <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                6 MONTHS WITHOUT MAINTENANCE
-              </div>
             </div>
             
             <div className="space-y-6">
@@ -355,9 +411,11 @@ const services = [
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90">
-              <Phone className="w-5 h-5 mr-2" />
-              Schedule Filter Replacement Today
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90">
+              <Link to="/contact" aria-label="Schedule filter replacement">
+                <Phone className="w-5 h-5 mr-2" />
+                Schedule Filter Replacement Today
+              </Link>
             </Button>
           </div>
         </div>
@@ -394,6 +452,25 @@ const services = [
                   <p className="text-sm md:text-base text-muted-foreground">{service.description}</p>
                 </CardHeader>
                  <CardContent className="p-4 md:p-6 pt-0">
+                   {/* Key benefits at a glance */}
+                   {(() => {
+                     const metrics = getMetrics(service.title);
+                     return metrics.length ? (
+                       <div className="mb-4">
+                         <h4 className="font-bold text-sm mb-2">Key benefits at a glance</h4>
+                         <div className="grid grid-cols-3 gap-2">
+                           {metrics.map((m, i) => (
+                             <div key={i} className="rounded-lg border p-2 text-center bg-accent/20">
+                               <div className="text-base md:text-lg font-bold text-foreground">
+                                 <AnimatedCounter value={m.value} prefix={m.prefix ?? ""} suffix={m.suffix ?? ""} />
+                               </div>
+                               <div className="text-[10px] md:text-xs text-muted-foreground">{m.label}</div>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+                     ) : null;
+                   })()}
                    {/* Problems Prevented Section */}
                    <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
                      <h4 className="font-bold text-red-900 text-sm mb-2 flex items-center">
@@ -449,6 +526,14 @@ const services = [
                    </div>
                    
                    <div className="flex flex-col gap-2">
+                     <Button 
+                       asChild
+                       size="sm" 
+                       variant="outline"
+                       className="w-full border-primary text-primary hover:bg-primary/5 md:h-10"
+                     >
+                       <Link to={getServicePath(service.title)}>Learn more</Link>
+                     </Button>
                      <Button 
                        size="sm" 
                        className="w-full bg-red-600 hover:bg-red-700 text-white md:h-10"
@@ -546,13 +631,17 @@ const services = [
               save energy costs, and prevent expensive emergency repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white px-8 py-3">
-                Schedule Maintenance
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Button asChild className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white px-8 py-3">
+                <Link to="/contact">
+                  Schedule Maintenance
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
-              <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 px-8 py-3">
-                Emergency Service Available
-                <Phone className="w-5 h-5 ml-2" />
+              <Button asChild variant="outline" className="border-primary/30 text-primary hover:bg-primary/5 px-8 py-3">
+                <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call emergency ${CONTACT.phones.emergency}`}>
+                  Emergency Service Available
+                  <Phone className="w-5 h-5 ml-2" />
+                </a>
               </Button>
             </div>
           </div>
