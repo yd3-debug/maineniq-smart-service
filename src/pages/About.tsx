@@ -26,12 +26,15 @@ import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
 import TrustStrip from "@/components/TrustStrip";
 import WhyWorkWithUs from "@/components/sections/WhyWorkWithUs";
+import WhoWeServe from "@/components/sections/WhoWeServe";
+import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
+import OurStoryTimeline from "@/components/sections/OurStoryTimeline";
 
 const About = () => {
   const stats = [
     { icon: Users, label: "Happy Customers", value: "1,000+" },
-    { icon: Award, label: "Years Experience", value: "15+" },
-    { icon: Wrench, label: "Projects Completed", value: "2,500+" },
+    { icon: Award, label: "Years in Maintenance", value: "15+" },
+    { icon: Wrench, label: "Assets Maintained", value: "2,500+" },
     { icon: Star, label: "Customer Rating", value: "4.9★" }
   ];
 
@@ -84,26 +87,26 @@ const About = () => {
   const processSteps = [
     {
       icon: Home,
-      title: "Consultation",
-      description: "In-home assessment and professional recommendations",
+      title: "Site Assessment",
+      description: "Asset survey and condition review to prioritise maintenance needs",
       image: customerConsultation
     },
     {
       icon: Settings,
-      title: "Installation",
-      description: "Expert installation with modern equipment and techniques",
+      title: "Planned Maintenance",
+      description: "PPM schedule aligned to manufacturer guidance and building usage",
       image: electricalInstallation
     },
     {
       icon: Wrench,
-      title: "Maintenance",
-      description: "Ongoing service and support for optimal performance",
+      title: "Rapid Response",
+      description: "24/7 call‑outs with first‑time fix approach for breakdowns",
       image: modernEquipment
     },
     {
       icon: Star,
-      title: "Satisfaction",
-      description: "Guaranteed results and happy customers",
+      title: "Reporting & Review",
+      description: "Clear digital reports, recommendations and ongoing optimisation",
       image: teamCollaboration
     }
   ];
@@ -119,16 +122,16 @@ const About = () => {
       >
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 animate-fade-in leading-tight">
-            Your Trusted HVAC Partner Since 2009
+            Maintenance‑First HVAC Partner Since 2009
           </h1>
           <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto opacity-90 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-            Established with a foundation of excellence, we've built our reputation on reliability, 
-            professional standards, and unmatched customer service.
+            We specialise in service and maintenance for HVAC, MVHR, fan coil units and building systems—
+            keeping residential, commercial and multi‑unit properties running efficiently long‑term.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto">
             <Link to="/contact" className="w-full sm:w-auto">
               <Button size="sm" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2.5">
-                Get Free Estimate
+                Request Maintenance
               </Button>
             </Link>
             <Link to="/services" className="w-full sm:w-auto">
@@ -222,14 +225,17 @@ const About = () => {
       </section>
 
       <WhyWorkWithUs />
+      <WhoWeServe />
+      <SystemsWeMaintain />
+      <OurStoryTimeline />
 
       {/* Our Process Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Our Professional Process</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">How a Maintenance Partnership Works</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              From consultation to completion, see how we deliver exceptional HVAC solutions.
+              From initial assessment to ongoing care and transparent reporting, here’s how we keep your systems performing.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -260,9 +266,9 @@ const About = () => {
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Proven Results & Customer Impact</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Maintenance Results & Impact</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real outcomes from our professional HVAC installations and maintenance services.
+              Real outcomes from proactive maintenance across residential, commercial and multi‑unit buildings.
             </p>
           </div>
           
@@ -442,9 +448,9 @@ const About = () => {
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Modern Equipment & Technology</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Maintenance Technology & Reporting</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              We use only the latest, most efficient HVAC systems and technology.
+              Modern diagnostics, digital service reports and asset tracking to keep everything compliant and efficient.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
@@ -456,22 +462,21 @@ const About = () => {
               />
             </div>
             <div className="space-y-4 sm:space-y-6">
-              <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Cutting-Edge Solutions</h3>
+              <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Insightful, Transparent Maintenance</h3>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
-                Our commitment to excellence extends to the equipment we install. We partner with 
-                industry-leading manufacturers to provide you with the most reliable, efficient, 
-                and innovative HVAC solutions available.
+                Our maintenance programs leverage smart tools, detailed service logs and condition reports—
+                so you always know asset status, risks and next actions.
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <Card className="p-3 sm:p-4 text-center">
                   <Star className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-                  <h4 className="font-semibold text-sm sm:text-base">Premium Brands</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Top manufacturers only</p>
+                  <h4 className="font-semibold text-sm sm:text-base">Digital Reports</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Photographic evidence, checklists and recommendations</p>
                 </Card>
                 <Card className="p-3 sm:p-4 text-center">
                   <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-                  <h4 className="font-semibold text-sm sm:text-base">Energy Efficient</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Reduce utility costs</p>
+                  <h4 className="font-semibold text-sm sm:text-base">Remote Monitoring</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Smart alerts and insights where supported</p>
                 </Card>
               </div>
             </div>
@@ -483,7 +488,7 @@ const About = () => {
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-accent">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Licensed & Insured Protection</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Accreditations & Insurance</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive insurance coverage and licensing for your complete peace of mind.
             </p>
