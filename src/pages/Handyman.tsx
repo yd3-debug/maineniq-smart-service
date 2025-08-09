@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import handymanRepair from "@/assets/handyman-repair.jpg";
+import FullBleedHero from "@/components/FullBleedHero";
+import HandymanImage from "@/assets/handyman-repair.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
 import { CheckCircle, Phone } from "lucide-react";
@@ -28,29 +28,16 @@ const Handyman: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <header className="py-12 md:py-16 bg-muted/30 border-b">
-        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">Handyman</h1>
-            <p className="text-muted-foreground text-lg mb-6">
-              General maintenance and repairs for homes and businesses. Done right, on time.
-            </p>
-            <div className="flex gap-3">
-              <Button asChild>
-                <Link to="/contact">Get a Quote</Link>
-              </Button>
-              <Button asChild variant="outline">
-                <a href={`tel:${CONTACT.phones.emergencyTel}`}>Call us</a>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <AspectRatio ratio={16/10}>
-              <img src={handymanRepair} alt="Handyman performing maintenance and repairs" loading="lazy" className="w-full h-full object-contain rounded-xl bg-background" />
-            </AspectRatio>
-          </div>
-        </div>
-      </header>
+      <FullBleedHero
+        title="Handyman"
+        subtitle="General maintenance and repairs for homes and businesses. Done right, on time."
+        image={HandymanImage}
+        alt="Handyman performing maintenance and repairs"
+        primaryLabel="Get a Quote"
+        primaryHref="/contact"
+        secondaryLabel="Call us"
+        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+      />
 
       <main className="container mx-auto px-4 py-12 space-y-12">
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -58,7 +45,6 @@ const Handyman: React.FC = () => {
             <div key={item} className="rounded-lg border bg-background p-5 flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
               <span>{item}</span>
-            </div>
           ))}
         </section>
 

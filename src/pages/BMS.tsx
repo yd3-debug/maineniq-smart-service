@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import FullBleedHero from "@/components/FullBleedHero";
 import bmsControlRoom from "@/assets/bms-control-room.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
@@ -28,29 +28,16 @@ const BMS: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <header className="py-12 md:py-16 bg-muted/30 border-b">
-        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">BMS — Building Management Systems</h1>
-            <p className="text-muted-foreground text-lg mb-6">
-              Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building.
-            </p>
-            <div className="flex gap-3">
-              <Button asChild>
-                <Link to="/contact">Get a BMS Quote</Link>
-              </Button>
-              <Button asChild variant="outline">
-                <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call ${CONTACT.phones.emergency}`}>Call us</a>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <AspectRatio ratio={16/10}>
-              <img src={bmsControlRoom} alt="BMS control room with dashboards for building automation" loading="lazy" className="w-full h-full object-contain rounded-xl bg-background" />
-            </AspectRatio>
-          </div>
-        </div>
-      </header>
+      <FullBleedHero
+        title="BMS — Building Management Systems"
+        subtitle="Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building."
+        image={bmsControlRoom}
+        alt="BMS control room with dashboards for building automation"
+        primaryLabel="Get a BMS Quote"
+        primaryHref="/contact"
+        secondaryLabel="Call us"
+        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+      />
 
       <main className="container mx-auto px-4 py-12 space-y-12">
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">

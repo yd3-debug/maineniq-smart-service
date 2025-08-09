@@ -32,7 +32,7 @@ import { CONTACT } from "@/config/contact";
 import { AlertTriangle } from "lucide-react";
 
 import { AnimatedCounter } from "@/components/AnimatedChart";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import FullBleedHero from "@/components/FullBleedHero";
 import TrustStrip from "@/components/TrustStrip";
 import { useEffect } from "react";
 import teamWorking from "@/assets/team-working.jpg";
@@ -276,43 +276,18 @@ const services = [
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-                Property Services & Maintenance
-              </h1>
-              <p className="text-base md:text-xl lg:text-2xl max-w-3xl opacity-90 leading-relaxed mb-8">
-                One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="px-8 py-3">
-                  <Link to="/contact" aria-label="Contact Mainteniq">Contact us</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 px-8 py-3">
-                  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call ${CONTACT.phones.emergency}`}>
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call {CONTACT.phones.emergency}
-                  </a>
-                </Button>
-                <a href="#services" className="sm:ml-2 self-start underline-offset-4 hover:underline text-muted-foreground text-sm md:text-base">See services</a>
-              </div>
-            </div>
-            <div>
-              <AspectRatio ratio={16/10}>
-                <img
-                  src={teamWorking}
-                  alt="Maintenance and property services team working together"
-                  loading="eager"
-                  className="w-full h-full object-contain rounded-xl shadow-elegant bg-background"
-                />
-              </AspectRatio>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FullBleedHero
+        title="Property Services & Maintenance"
+        subtitle="One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning."
+        image={teamWorking}
+        alt="Maintenance and property services team working together"
+        primaryLabel="Contact us"
+        primaryHref="/contact"
+        secondaryLabel={`Call ${CONTACT.phones.emergency}`}
+        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+      >
+        <a href="#services" className="underline-offset-4 hover:underline text-muted-foreground text-sm md:text-base">See services</a>
+      </FullBleedHero>
       <TrustStrip />
 
 

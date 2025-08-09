@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import FullBleedHero from "@/components/FullBleedHero";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
@@ -28,29 +29,16 @@ const EndOfTenancyCleaning: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <header className="py-12 md:py-16 bg-muted/30 border-b">
-        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">End of Tenancy Cleaning</h1>
-            <p className="text-muted-foreground text-lg mb-6">
-              Deep, detailed cleaning that meets inventory and deposit return standards. Fast turnarounds available.
-            </p>
-            <div className="flex gap-3">
-              <Button asChild>
-                <Link to="/contact">Get a Cleaning Quote</Link>
-              </Button>
-              <Button asChild variant="outline">
-                <a href={`tel:${CONTACT.phones.emergencyTel}`}>Call us</a>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <AspectRatio ratio={16/10}>
-              <img src={endOfTenancyCleaning} alt="End of tenancy deep cleaning of a modern flat" loading="lazy" className="w-full h-full object-contain rounded-xl bg-background" />
-            </AspectRatio>
-          </div>
-        </div>
-      </header>
+      <FullBleedHero
+        title="End of Tenancy Cleaning"
+        subtitle="Deep, detailed cleaning that meets inventory and deposit return standards. Fast turnarounds available."
+        image={endOfTenancyCleaning}
+        alt="End of tenancy deep cleaning of a modern flat"
+        primaryLabel="Get a Cleaning Quote"
+        primaryHref="/contact"
+        secondaryLabel="Call us"
+        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+      />
 
       <main className="container mx-auto px-4 py-12 space-y-12">
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
