@@ -75,7 +75,7 @@ export default function WhyWorkWithUs() {
       {/* Our Track Record - Simple Metrics */}
       <section className="py-12 bg-background" aria-labelledby="track-record-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-8 text-center">
+          <header className="max-w-3xl mx-auto mb-8 text-center">
             <h2 id="track-record-title" className="font-heading text-3xl font-bold mb-4">
               Our Track Record
             </h2>
@@ -220,7 +220,7 @@ export default function WhyWorkWithUs() {
       {/* Services Integration */}
       <section id="our-services" className="py-12 bg-background" aria-labelledby="services-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-8">
+          <header className="max-w-3xl mx-auto mb-8 text-center">
             <h2 id="services-title" className="font-heading text-2xl sm:text-3xl font-semibold">Complete Building Services Coverage</h2>
             <p className="text-muted-foreground">From HVAC systems to smart home automation, we maintain everything that keeps your properties running smoothly.</p>
           </header>
@@ -302,7 +302,7 @@ export default function WhyWorkWithUs() {
 
       <section id="how-we-work" aria-labelledby="how-we-work-title" className="py-10 sm:py-14 bg-muted/10 animate-fade-in">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-6 sm:mb-8">
+          <header className="max-w-3xl mx-auto mb-6 sm:mb-8 text-center">
             <h2 id="how-we-work-title" className="font-heading text-2xl sm:text-3xl font-semibold">
               How we work
             </h2>
@@ -336,7 +336,7 @@ export default function WhyWorkWithUs() {
 
       <section id="compliance" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="compliance-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mb-6 sm:mb-8">
+          <header className="max-w-3xl mx-auto mb-6 sm:mb-8 text-center">
             <h2 id="compliance-title" className="font-heading text-2xl sm:text-3xl font-semibold">Compliance & credentials</h2>
             <p className="text-muted-foreground">We align with industry standards and provide audit-ready documentation.</p>
           </header>
