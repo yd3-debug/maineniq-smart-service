@@ -27,7 +27,7 @@ const PlumberElectrician: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="Plumber & Electrician"
         subtitle="From leaks and rewires to boiler installs—reliable, compliant work by certified trades."

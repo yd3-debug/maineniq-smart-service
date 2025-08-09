@@ -39,9 +39,9 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
         loading="eager"
         className={`absolute inset-0 -z-10 w-full h-full object-${imageFit}`}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/90 via-background/50 to-background/10" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
 
-      <div className="container mx-auto px-4 flex items-end min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] py-16 md:py-24">
+      <div className="container mx-auto px-4 flex items-end min-h-[70vh] md:min-h-[75vh] lg:min-h-[85vh] py-16 md:py-24">
         <div className="max-w-3xl">
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold mb-4">
             {title}

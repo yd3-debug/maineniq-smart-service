@@ -28,7 +28,7 @@ const Handyman: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="Handyman"
         subtitle="General maintenance and repairs for homes and businesses. Done right, on time."

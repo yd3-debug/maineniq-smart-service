@@ -27,7 +27,7 @@ const SmartHome: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="Smart Home Automation"
         subtitle="Seamlessly control heating, cooling, lighting and security from your phone or voice. Comfort meets efficiency."

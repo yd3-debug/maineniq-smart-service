@@ -27,7 +27,7 @@ const BMS: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="BMS — Building Management Systems"
         subtitle="Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building."

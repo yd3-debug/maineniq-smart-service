@@ -28,7 +28,7 @@ const EndOfTenancyCleaning: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="End of Tenancy Cleaning"
         subtitle="Deep, detailed cleaning that meets inventory and deposit return standards. Fast turnarounds available."

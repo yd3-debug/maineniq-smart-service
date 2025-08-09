@@ -275,7 +275,7 @@ const services = [
   }, []);
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <FullBleedHero
         title="Property Services & Maintenance"
         subtitle="One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning."
