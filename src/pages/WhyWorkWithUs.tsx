@@ -8,9 +8,8 @@ import WhoWeServe from "@/components/sections/WhoWeServe";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FullBleedHero from "@/components/FullBleedHero";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import bmsControlRoom from "@/assets/bms-control-room.jpg";
-import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Users2, Wrench } from "lucide-react";
+import commercialHVAC from "@/assets/commercial-hvac.jpg";
+import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Wrench } from "lucide-react";
 
 const PAGE_TITLE = "Why Work With Us | HVAC & MVHR Maintenance Partner";
 const PAGE_DESCRIPTION =
@@ -61,11 +60,11 @@ export default function WhyWorkWithUs() {
         id="hero-why-work-with-us"
         title="The maintenance partner behind your installations"
         subtitle="We protect your SLAs, reputation and client relationships with rapid response, expert engineers and compliant documentation across your portfolio."
-        image={bmsControlRoom}
-        alt="BMS control room illustrating professional HVAC and MVHR maintenance operations"
+        image={commercialHVAC}
+        alt="Commercial HVAC equipment maintained by certified engineers"
         primaryLabel="Contact our team"
         primaryHref="/contact"
-        secondaryLabel={`Call ${CONTACT.phones.landline}`}
+        secondaryLabel="Call us"
         secondaryHref={`tel:${CONTACT.phones.landlineTel}`}
         imageFit="cover"
       >
@@ -84,77 +83,36 @@ export default function WhyWorkWithUs() {
 
       <TrustStrip />
 
-      <section id="who-we-work-with" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="who-we-work-with-title">
+      <section id="services-we-deliver" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="services-we-deliver-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto text-center mb-6 sm:mb-8">
-            <h2 id="who-we-work-with-title" className="font-heading text-2xl sm:text-3xl font-semibold">Who we work with</h2>
-            <p className="text-muted-foreground">We partner with organisations who value reliable outcomes, clear SLAs and audit-ready documentation.</p>
+          <header className="max-w-3xl mb-6 sm:mb-8">
+            <h2 id="services-we-deliver-title" className="font-heading text-2xl sm:text-3xl font-semibold">Services we deliver</h2>
+            <p className="text-muted-foreground">End-to-end maintenance and support across HVAC, controls and building services.</p>
           </header>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="hover-scale hover:shadow-card transition-all">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Wrench className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">Installation companies</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Frictionless handover to maintenance, single point of ownership and brand-safe client care.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="hover-scale hover:shadow-card transition-all">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Building2 className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">Property & block managers</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Planned maintenance, minimal tenant disruption and compliant records after every visit.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="hover-scale hover:shadow-card transition-all">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <Users2 className="w-5 h-5 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold">Facilities & FM providers</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Portfolio scheduling, clear SLAs, fast call-outs and proactive communication.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: "HVAC Maintenance", to: "/hvac-maintenance" },
+              { label: "MVHR Maintenance", to: "/mvhr-maintenance" },
+              { label: "FCU Maintenance", to: "/fcu-maintenance" },
+              { label: "HIU Maintenance", to: "/hiu-maintenance" },
+              { label: "BMS & Controls", to: "/bms" },
+              { label: "Plumbing & Electrical", to: "/plumber-electrician" },
+              { label: "Handyman & Repairs", to: "/handyman" },
+              { label: "End of Tenancy Cleaning", to: "/end-of-tenancy-cleaning" },
+              { label: "Smart Home & Automation", to: "/smart-home" },
+              { label: "Renovation & Finishes", to: "/renovation-composer" },
+              { label: "All Services", to: "/services" },
+            ].map((s) => (
+              <Button key={s.to} variant="secondary" size="sm" asChild className="hover-scale">
+                <Link to={s.to} aria-label={`Learn more about ${s.label}`}>{s.label}</Link>
+              </Button>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="results" className="py-10 sm:py-14 bg-muted/10 animate-fade-in" aria-labelledby="results-title">
-        <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto text-center mb-6 sm:mb-8">
-            <h2 id="results-title" className="font-heading text-2xl sm:text-3xl font-semibold">Proven results you can show clients</h2>
-            <p className="text-muted-foreground">Tangible improvements from routine care—better efficiency, cleaner air, fewer call-outs.</p>
-          </header>
-          <div className="max-w-4xl mx-auto">
-            <BeforeAfterSlider
-              beforeSrc="/mvhr-filter-dirty.png"
-              afterSrc="/mvhr-filter-clean.png"
-              beforeAlt="Dirty MVHR filter before maintenance"
-              afterAlt="Clean MVHR filter after maintenance"
-              beforeLabel="Before"
-              afterLabel="After"
-              ratio={16/9}
-              fit="cover"
-              className="shadow"
-            />
-            <div className="mt-4 flex items-start justify-between gap-3">
-              <p className="text-sm text-muted-foreground">
-                Regular filter changes restore MVHR efficiency and air quality, preventing energy waste and odour complaints.
-              </p>
-              <ResearchBadge claimId="mvhr_filter_performance" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoWeServe />
+
 
       <section id="what-you-get" aria-labelledby="what-you-get-title" className="py-10 sm:py-14 bg-background animate-fade-in">
         <div className="container mx-auto px-4">
@@ -289,7 +247,6 @@ export default function WhyWorkWithUs() {
         </div>
       </section>
 
-      <WhoWeServe />
       <SystemsWeMaintain />
 
       <section id="compliance" className="py-10 sm:py-14 bg-background animate-fade-in" aria-labelledby="compliance-title">
@@ -326,7 +283,7 @@ export default function WhyWorkWithUs() {
               </Link>
               <a
                 href={`tel:${CONTACT.phones.landlineTel}`}
-                aria-label={`Call now on ${CONTACT.phones.landline}`}
+                aria-label="Call our team"
                 className="w-full sm:w-auto"
               >
                 <Button variant="secondary" className="w-full sm:w-auto">
