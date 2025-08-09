@@ -283,7 +283,7 @@ const services = [
         alt="Maintenance and property services team working together"
         primaryLabel="Contact us"
         primaryHref="/contact"
-        secondaryLabel={`Call ${CONTACT.phones.emergency}`}
+        secondaryLabel="Call now"
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       >
         <a href="#services" className="underline-offset-4 hover:underline text-muted-foreground text-sm md:text-base">See services</a>
@@ -292,23 +292,23 @@ const services = [
 
 
       {/* Fast, clear assurances and scheduling */}
-      <section className="py-16 bg-muted/30">
+      <section className="relative py-16 bg-gradient-to-b from-accent to-background">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-10 text-center">
-            Fast, professional help — clear, upfront, and reliable
+            Fast help. Clear prices. Trusted engineers.
           </h2>
 
           {/* Key assurance + promises */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <Card className="lg:col-span-1">
+            <Card className="lg:col-span-1 overflow-hidden border-0 shadow-glow bg-gradient-to-br from-success to-trust-blue text-primary-foreground">
               <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center">
-                <div className="text-4xl font-extrabold text-primary mb-2">90%</div>
-                <div className="text-sm font-medium">Same‑day attendance</div>
-                <div className="text-xs text-muted-foreground mt-1">for weekday requests made before 12pm*</div>
+                <div className="text-5xl font-extrabold tracking-tight">90%</div>
+                <div className="text-sm font-medium mt-1">Same‑day attendance</div>
+                <div className="text-xs opacity-80 mt-1">Weekdays before 12pm*</div>
               </CardContent>
             </Card>
 
-            <Card className="lg:col-span-2">
+            <Card className="lg:col-span-2 overflow-hidden border-0 shadow-card bg-trust-gradient text-primary-foreground">
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg">Our Promises</CardTitle>
               </CardHeader>
@@ -322,31 +322,40 @@ const services = [
           </div>
 
           {/* How scheduling works */}
-          <div className="bg-background border rounded-2xl p-6 md:p-8">
+          <div className="bg-background/70 backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-card">
             <h3 className="font-heading text-2xl font-bold mb-6 text-center">How scheduling works</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-4 rounded-lg border bg-muted/30">
-                <div className="font-semibold mb-1">1) Tell us what you need</div>
-                <div className="text-sm text-muted-foreground">Call or send a form with a brief description and photos if possible.</div>
-              </div>
-              <div className="p-4 rounded-lg border bg-muted/30">
-                <div className="font-semibold mb-1">2) Get a time window</div>
-                <div className="text-sm text-muted-foreground">We confirm availability, share pricing, and book a fixed slot.</div>
-              </div>
-              <div className="p-4 rounded-lg border bg-muted/30">
-                <div className="font-semibold mb-1">3) Engineer attends</div>
-                <div className="text-sm text-muted-foreground">We fix or stabilise the issue, and send a photo report the same day.</div>
-              </div>
-            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <li className="flex items-start gap-3">
+                <div className="h-8 w-8 rounded-full bg-trust-blue text-primary-foreground flex items-center justify-center font-semibold">1</div>
+                <div>
+                  <div className="font-semibold">Tell us what you need</div>
+                  <div className="text-sm text-muted-foreground">Send a quick form or call with photos.</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="h-8 w-8 rounded-full bg-trust-blue text-primary-foreground flex items-center justify-center font-semibold">2</div>
+                <div>
+                  <div className="font-semibold">Get a time window</div>
+                  <div className="text-sm text-muted-foreground">We confirm availability and pricing.</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="h-8 w-8 rounded-full bg-trust-blue text-primary-foreground flex items-center justify-center font-semibold">3</div>
+                <div>
+                  <div className="font-semibold">Engineer attends</div>
+                  <div className="text-sm text-muted-foreground">Fix or stabilise, with a same‑day photo report.</div>
+                </div>
+              </li>
+            </ul>
             <div className="mt-6 text-center text-xs text-muted-foreground">
-              *Same‑day attendance achieved in ~90% of eligible requests; depends on location, time, and job scope.
+              *Same‑day attendance achieved in ~90% of eligible weekday requests before 12pm; depends on location and job scope.
             </div>
             <div className="mt-6 flex items-center justify-center gap-3">
-              <Button asChild>
+              <Button variant="accent" asChild>
                 <Link to="/contact">Request service</Link>
               </Button>
-              <Button variant="outline" asChild>
-                <a href={`tel:${CONTACT.phones.emergencyTel}`}>Call {CONTACT.phones.emergency}</a>
+              <Button variant="trust" asChild>
+                <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}>Call now</a>
               </Button>
             </div>
           </div>
