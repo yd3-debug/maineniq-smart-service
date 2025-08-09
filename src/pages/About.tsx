@@ -28,7 +28,7 @@ import TrustStrip from "@/components/TrustStrip";
 import WhyWorkWithUs from "@/components/sections/WhyWorkWithUs";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
-import OurStoryTimeline from "@/components/sections/OurStoryTimeline";
+
 
 const About = () => {
   const stats = [
@@ -227,7 +227,7 @@ const About = () => {
       <WhyWorkWithUs />
       <WhoWeServe />
       <SystemsWeMaintain />
-      <OurStoryTimeline />
+      
 
       {/* Our Process Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
