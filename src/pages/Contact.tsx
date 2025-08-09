@@ -74,7 +74,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section with Image */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div 
