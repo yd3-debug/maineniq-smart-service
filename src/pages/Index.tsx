@@ -27,7 +27,7 @@ import handymanImage from "@/assets/handyman-maintenance.jpg";
 import endOfTenancyImage from "@/assets/end-of-tenancy-cleaning.jpg";
 import smartHomeImage from "@/assets/smart-home-automation.jpg";
 import renovationImage from "@/assets/renovation-comparison.jpg";
-import cleaningImage from "@/assets/professional-cleaning.jpg";
+import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
@@ -35,7 +35,7 @@ import { CONTACT } from "@/config/contact";
 const Index = () => {
   useEffect(() => {
     document.title = "Property Maintenance: HVAC, Plumbing, Electrical";
-    const desc = "Expert maintenance for HVAC, plumbing, electrical, handyman, cleaning, smart home and renovation. Prevent breakdowns and cut costs.";
+    const desc = "Expert maintenance for HVAC, plumbing, electrical, handyman, BMS, smart home and renovation. Prevent breakdowns and cut costs.";
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!meta) {
       meta = document.createElement('meta');
@@ -223,7 +223,7 @@ const Index = () => {
             </div>
             <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">More Services We Offer</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Plumbing, electrical, handyman, end of tenancy cleaning, smart home and renovation support.
+              Plumbing, electrical, handyman, BMS, smart home and renovation support.
             </p>
           </div>
 
@@ -323,20 +323,20 @@ const Index = () => {
               </Card>
             </Link>
 
-            {/* Cleaning (general) */}
+            {/* BMS (Building Management Systems) */}
             <Link to="/services">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
-                    src={cleaningImage}
-                    alt="Professional cleaning services"
+                    src={bmsControlPanel}
+                    alt="Building Management System (BMS) control panel"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-semibold text-lg">Cleaning Services</h3>
-                    <p className="text-sm text-muted-foreground">Regular, deep and specialist cleans</p>
+                    <h3 className="font-semibold text-lg">BMS (Building Management Systems)</h3>
+                    <p className="text-sm text-muted-foreground">Monitoring, integration and controls</p>
                   </div>
                 </CardContent>
               </Card>
@@ -514,7 +514,7 @@ const Index = () => {
             Ready to protect your property?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Get professional maintenance for HVAC, plumbing, electrical, cleaning and more — comfort, efficiency and peace of mind.
+            Get professional maintenance for HVAC, plumbing, electrical, BMS and more — comfort, efficiency and peace of mind.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
