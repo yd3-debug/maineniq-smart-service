@@ -24,6 +24,7 @@ import teamCollaboration from "@/assets/team-collaboration.jpg";
 import customerConsultation from "@/assets/customer-consultation.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
+import TrustStrip from "@/components/TrustStrip";
 
 const About = () => {
   const stats = [
@@ -107,7 +108,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section with Background Image */}
       <section 
         className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-cover bg-center text-white"
@@ -125,18 +126,20 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto">
             <Link to="/contact" className="w-full sm:w-auto">
-              <Button size="sm" className="w-full sm:w-auto bg-primary hover:bg-primary-glow text-white px-4 sm:px-6 py-2.5">
+              <Button size="sm" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2.5">
                 Get Free Estimate
               </Button>
             </Link>
             <Link to="/services" className="w-full sm:w-auto">
-              <Button variant="outline" size="sm" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary px-4 sm:px-6 py-2.5">
+              <Button size="sm" className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 sm:px-6 py-2.5">
                 View Services
               </Button>
             </Link>
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       {/* Stats Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
@@ -167,26 +170,27 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
             <div>
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Built on Strong Foundations</h2>
-              <div className="space-y-3 sm:space-y-4 md:space-y-6 text-sm sm:text-base md:text-lg text-muted-foreground">
-                <p>
-                  Since 2009, we've established ourselves as the region's most trusted HVAC service provider. 
-                  Our foundation is built on professional excellence, regulatory compliance, and an 
-                  unwavering commitment to customer satisfaction.
-                </p>
-                <p>
-                  We maintain all required licenses and certifications, carry comprehensive insurance, 
-                  and adhere to the highest industry standards. Our technicians undergo rigorous 
-                  background checks and continuous professional development.
-                </p>
-                <p>
-                  With over 2,500 successful projects and a 4.9-star customer rating, we've proven 
-                  our reliability time and again. When you choose Mainteniq, you're choosing a 
-                  partner you can trust completely.
-                </p>
+              <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
+                  <p className="text-muted-foreground">Trusted HVAC provider since 2009 with proven results.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
+                  <p className="text-muted-foreground">Fully licensed, insured, and compliant with industry standards.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
+                  <p className="text-muted-foreground">Certified technicians with background checks and ongoing training.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
+                  <p className="text-muted-foreground">2,500+ projects delivered and a 4.9★ customer rating.</p>
+                </div>
               </div>
               <div className="mt-6 sm:mt-8">
                 <Link to="/contact">
-                  <Button className="bg-primary hover:bg-primary-glow w-full sm:w-auto">
+                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto">
                     Experience Our Service
                   </Button>
                 </Link>
@@ -229,6 +233,9 @@ const About = () => {
             {processSteps.map((step, index) => (
               <div key={index} className="group">
                 <div className="relative overflow-hidden rounded-lg mb-4 sm:mb-6">
+                  <span className="absolute top-2 left-2 z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-background/90 text-foreground text-xs sm:text-sm font-semibold shadow">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <img 
                     src={step.image} 
                     alt={step.title}
