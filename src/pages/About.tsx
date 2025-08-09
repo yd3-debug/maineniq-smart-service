@@ -25,6 +25,7 @@ import customerConsultation from "@/assets/customer-consultation.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
 import TrustStrip from "@/components/TrustStrip";
+import WhyWorkWithUs from "@/components/sections/WhyWorkWithUs";
 
 const About = () => {
   const stats = [
@@ -111,7 +112,7 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section with Background Image */}
       <section 
-        className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-cover bg-center text-white"
+        className="relative -mt-2 md:-mt-4 py-10 sm:py-14 md:py-24 lg:py-32 bg-cover bg-center text-white"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroHvac})`
         }}
@@ -219,6 +220,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <WhyWorkWithUs />
 
       {/* Our Process Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
