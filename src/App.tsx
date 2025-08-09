@@ -29,7 +29,11 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
 const GDPRCompliance = lazy(() => import("./pages/GDPRCompliance"));
 const RenovationComposer = lazy(() => import("./pages/RenovationComposer"));
-
+const BMS = lazy(() => import("./pages/BMS"));
+const SmartHome = lazy(() => import("./pages/SmartHome"));
+const PlumberElectrician = lazy(() => import("./pages/PlumberElectrician"));
+const Handyman = lazy(() => import("./pages/Handyman"));
+const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
@@ -113,6 +117,41 @@ const App = () => (
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <MVHRMaintenance />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/bms" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <BMS />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/smart-home" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <SmartHome />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/plumber-electrician" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <PlumberElectrician />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/handyman" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Handyman />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/end-of-tenancy-cleaning" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <EndOfTenancyCleaning />
               </Suspense>
             </Layout>
           } />

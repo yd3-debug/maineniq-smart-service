@@ -33,6 +33,7 @@ import { AlertTriangle, Clock, TrendingUp } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import TrustStrip from "@/components/TrustStrip";
 const Services = () => {
 const services = [
     {
@@ -169,6 +170,11 @@ const services = [
     if (title.includes("FCU")) return "/fcu-maintenance";
     if (title.includes("HIU")) return "/hiu-maintenance";
     if (title.includes("HVAC")) return "/hvac-maintenance";
+    if (title.includes("BMS")) return "/bms";
+    if (title.includes("Smart Home")) return "/smart-home";
+    if (title.includes("Plumber") || title.includes("Electrician")) return "/plumber-electrician";
+    if (title.includes("Handyman")) return "/handyman";
+    if (title.includes("End of Tenancy")) return "/end-of-tenancy-cleaning";
     return "/contact";
   };
 
@@ -244,6 +250,7 @@ const services = [
           </div>
         </div>
       </section>
+      <TrustStrip />
 
       {/* What Happens Without Maintenance */}
       <section className="py-16 bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-red-500">
@@ -431,6 +438,8 @@ const services = [
                 afterAlt="MVHR filter after professional service (clean)"
                 beforeLabel="Neglected 6 months"
                 afterLabel="After service"
+                ratio={4/3}
+                fit="contain"
                 className="rounded-lg shadow-elegant"
               />
             </div>

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ interface BeforeAfterSliderProps {
   beforeLabel?: string;
   afterLabel?: string;
   ratio?: number;
+  fit?: "contain" | "cover";
   className?: string;
 }
 
@@ -23,12 +24,16 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
   beforeLabel = "Before",
   afterLabel = "After",
   ratio = 16 / 10,
+  fit = "contain",
   className,
 }) => {
   const [percent, setPercent] = useState(50);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<"before" | "after">("after");
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const objectClass = useMemo(() => (fit === "cover" ? "object-cover" : "object-contain"), [fit]);
 
   const onPointerMove = useCallback((clientX: number) => {
     const el = containerRef.current;
@@ -42,6 +47,29 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     if (e.key === "ArrowLeft") setPercent((p) => clamp(p - 5));
     if (e.key === "ArrowRight") setPercent((p) => clamp(p + 5));
   }, []);
+
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const handleMouseMove = (e: MouseEvent) => onPointerMove(e.clientX);
+    const handleMouseUp = () => setIsDragging(false);
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches && e.touches[0]) onPointerMove(e.touches[0].clientX);
+    };
+    const handleTouchEnd = () => setIsDragging(false);
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true } as AddEventListenerOptions);
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchmove", handleTouchMove as any);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [isDragging, onPointerMove]);
 
   const dividerStyle = useMemo(() => ({ left: `${percent}%` }), [percent]);
   const afterStyle = useMemo(() => ({ width: `${percent}%` }), [percent]);
@@ -61,19 +89,27 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           aria-label="Before and after image comparison"
           tabIndex={0}
           onKeyDown={onKeyDown}
-          onMouseDown={(e) => onPointerMove(e.clientX)}
-          onMouseMove={(e) => {
-            if (e.buttons === 1) onPointerMove(e.clientX);
+          onMouseDown={(e) => {
+            setIsDragging(true);
+            onPointerMove(e.clientX);
           }}
-          onTouchStart={(e) => onPointerMove(e.touches[0].clientX)}
-          onTouchMove={(e) => onPointerMove(e.touches[0].clientX)}
+          onMouseMove={(e) => {
+            if (isDragging) onPointerMove(e.clientX);
+          }}
+          onTouchStart={(e) => {
+            setIsDragging(true);
+            onPointerMove(e.touches[0].clientX);
+          }}
+          onTouchMove={(e) => {
+            if (isDragging) onPointerMove(e.touches[0].clientX);
+          }}
         >
           {/* Before image (base layer) */}
           <img
             src={beforeSrc}
             alt={beforeAlt}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+            className={`absolute inset-0 w-full h-full ${objectClass} select-none pointer-events-none`}
           />
 
           {/* After image (revealed layer) */}
@@ -86,7 +122,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               src={afterSrc}
               alt={afterAlt}
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+              className={`absolute inset-0 w-full h-full ${objectClass} select-none pointer-events-none`}
             />
           </div>
 
@@ -113,7 +149,11 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               type="button"
               className="-translate-x-1/2 ml-[-1px] rounded-full border bg-background/90 text-foreground shadow hover-scale focus:outline-none focus:ring-2 focus:ring-primary w-8 h-8 flex items-center justify-center"
               aria-label="Drag to reveal before or after"
-              onMouseDown={(e) => e.preventDefault()}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                setIsDragging(true);
+              }}
+              onTouchStart={() => setIsDragging(true)}
               onClick={() => setPercent((p) => (p < 50 ? 75 : 25))}
             >
               <span className="block w-3 h-3 rounded-full bg-primary" />
