@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -21,11 +22,36 @@ import {
 import heroImage from "@/assets/hero-hvac.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
+import plumbingImage from "@/assets/plumber-electrician-work.jpg";
+import handymanImage from "@/assets/handyman-maintenance.jpg";
+import endOfTenancyImage from "@/assets/end-of-tenancy-cleaning.jpg";
+import smartHomeImage from "@/assets/smart-home-automation.jpg";
+import renovationImage from "@/assets/renovation-comparison.jpg";
+import cleaningImage from "@/assets/professional-cleaning.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Property Maintenance: HVAC, Plumbing, Electrical";
+    const desc = "Expert maintenance for HVAC, plumbing, electrical, handyman, cleaning, smart home and renovation. Prevent breakdowns and cut costs.";
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content = desc;
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = window.location.origin + '/';
+  }, []);
   const services = [
     {
       icon: Wrench,
@@ -84,11 +110,11 @@ const Index = () => {
 
             <div>
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Save 10–25% on energy costs
-                <span className="text-accent-orange"> with Professional HVAC Maintenance</span>
+                Prevent breakdowns, cut costs, and protect your property
+                <span className="text-accent-orange"> with expert maintenance</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Maximize your HVAC efficiency with expert maintenance. Prevent up to 80% of breakdowns and extend equipment lifespan by 50% with regular professional servicing.
+                Planned maintenance across HVAC, plumbing, electrical, and more keeps everything running safely and efficiently.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-2">
                 <ResearchBadge claimId="hvac_maintenance_savings" />
@@ -161,13 +187,12 @@ const Index = () => {
           <div className="text-center mb-8 md:mb-16">
             <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
               <span className="w-8 h-[2px] bg-primary"></span>
-              <span>OUR SERVICES</span>
+              <span>MAINTENANCE SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Professional HVAC Maintenance Services</h2>
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Our Core Maintenance Services</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Expert maintenance and servicing for FCU, HIU, CIU, and MVHR systems. 
-              Plus professional air conditioning installations.
+              Specialist HVAC maintenance (FCU, HIU, CIU, MVHR) and AC installation to optimise performance and reliability.
             </p>
           </div>
 
@@ -187,19 +212,152 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why HVAC Matters Section */}
+      {/* Other Services Section */}
+      <section className="py-12 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
+              <span className="w-8 h-[2px] bg-primary"></span>
+              <span>OTHER SERVICES</span>
+              <span className="w-8 h-[2px] bg-primary"></span>
+            </div>
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">More Services We Offer</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Plumbing, electrical, handyman, end of tenancy cleaning, smart home and renovation support.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {/* Plumbing & Electrical */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={plumbingImage}
+                    alt="Plumbing and electrical maintenance services"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">Plumbing & Electrical</h3>
+                    <p className="text-sm text-muted-foreground">Repairs, safety checks and upgrades</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Handyman */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={handymanImage}
+                    alt="Handyman maintenance and repairs"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">Handyman</h3>
+                    <p className="text-sm text-muted-foreground">General repairs and property care</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* End of Tenancy Cleaning */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={endOfTenancyImage}
+                    alt="End of tenancy cleaning experts"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">End of Tenancy Cleaning</h3>
+                    <p className="text-sm text-muted-foreground">Deep cleans for check-out success</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Smart Home */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={smartHomeImage}
+                    alt="Smart home automation services"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">Smart Home</h3>
+                    <p className="text-sm text-muted-foreground">Automation, control and security</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Renovation */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={renovationImage}
+                    alt="Renovation and refurbishment services"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">Renovation</h3>
+                    <p className="text-sm text-muted-foreground">Refurbishment and fit-outs</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Cleaning (general) */}
+            <Link to="/services">
+              <Card className="group overflow-hidden">
+                <CardContent className="p-0 relative">
+                  <img
+                    src={cleaningImage}
+                    alt="Professional cleaning services"
+                    loading="lazy"
+                    className="w-full h-48 md:h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/0 opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-semibold text-lg">Cleaning Services</h3>
+                    <p className="text-sm text-muted-foreground">Regular, deep and specialist cleans</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Maintenance Matters Section */}
       <section className="py-20 bg-gradient-to-br from-muted to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Leaf className="w-4 h-4" />
-              Why HVAC Matters
+              Why Maintenance Matters
             </div>
             <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-primary">
-              HVAC Systems: Essential for Modern Properties
+              Maintenance: Essential for Modern Properties
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Professional HVAC isn't just comfort—it's protection for your health, finances, and property value.
+              Professional maintenance protects your health, your finances and your property's long-term value.
             </p>
           </div>
 
@@ -353,11 +511,10 @@ const Index = () => {
       <section className="py-20 bg-professional-gradient text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Transform Your Property?
+            Ready to protect your property?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Get professional HVAC installation and maintenance that delivers 
-            exceptional comfort, efficiency, and peace of mind.
+            Get professional maintenance for HVAC, plumbing, electrical, cleaning and more — comfort, efficiency and peace of mind.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

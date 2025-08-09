@@ -30,13 +30,13 @@ const Navigation = () => {
       href: "/hvac-maintenance",
       submenu: [
         { name: "Why Maintenance Matters", href: "/hvac-maintenance" },
+        { name: "Why Professional HVAC", href: "/why-professional-hvac" },
         { name: "FCU Maintenance", href: "/fcu-maintenance" },
         { name: "HIU Service & Repair", href: "/hiu-maintenance" },
         { name: "CIU Maintenance", href: "/ciu-maintenance" },
         { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
       ]
     },
-    { name: "Why Professional HVAC", href: "/why-professional-hvac" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
