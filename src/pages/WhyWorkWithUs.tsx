@@ -10,6 +10,8 @@ import FullBleedHero from "@/components/FullBleedHero";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import { ShieldCheck, ClipboardList, LifeBuoy, CalendarCheck, Building2, BarChart3, Wrench, Clock, Target, Users, Award, Zap, CheckCircle2, Phone, MessageSquare, FileText } from "lucide-react";
 
+// Cache refresh comment
+
 const PAGE_TITLE = "Why Choose Us | Professional HVAC Maintenance That Actually Works";
 const PAGE_DESCRIPTION =
   "Partner with HVAC specialists who prevent breakdowns before they happen. Proven maintenance programs that reduce costs, eliminate emergencies, and protect your business reputation.";
