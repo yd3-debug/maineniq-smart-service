@@ -24,16 +24,18 @@ import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import hvacInstallation from "@/assets/hvac-installation.jpg";
 import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import handymanRepair from "@/assets/handyman-repair.jpg";
-import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
+
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
-import hvacMaintenance from "@/assets/hvac-maintenance.jpg";
+
 import { CONTACT } from "@/config/contact";
-import { AlertTriangle, Clock, TrendingUp } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import TrustStrip from "@/components/TrustStrip";
+import { useEffect } from "react";
+import teamWorking from "@/assets/team-working.jpg";
 const Services = () => {
 const services = [
     {
@@ -203,6 +205,75 @@ const services = [
     return [];
   };
 
+  // Service-specific problems we prevent
+  const getProblems = (title: string): string[] => {
+    if (title.includes("MVHR")) return [
+      "Filter clogging causing 60% airflow loss",
+      "Mould growth and poor air quality",
+      "Motor failure from overwork (£1,500+ repair)",
+    ];
+    if (title.includes("FCU")) return [
+      "Coil freezing and water damage",
+      "Fan motor burnout (£400+ per unit)",
+      "40% efficiency loss from dirty coils",
+    ];
+    if (title.includes("HIU")) return [
+      "Heat exchanger scaling and blockage",
+      "Complete heating/hot water failure",
+      "Emergency replacement (£2,200+)",
+    ];
+    if (title.includes("HVAC")) return [
+      "Breakdowns during peak seasons",
+      "25% increase in energy costs",
+      "Premature equipment replacement",
+    ];
+    if (title.includes("BMS")) return [
+      "Energy drift from poor schedules",
+      "Comfort complaints from miscalibrated sensors",
+      "Missed faults without alerts and reports",
+    ];
+    if (title.includes("Smart Home")) return [
+      "Heating/lighting left on when away",
+      "Security blind spots",
+      "Too many disjointed apps and controls",
+    ];
+    if (title.includes("Plumber") || title.includes("Electrician")) return [
+      "Water damage from leaks",
+      "Electrical safety hazards",
+      "Non-compliance and missing certificates",
+    ];
+    if (title.includes("Handyman")) return [
+      "Small issues becoming big repairs",
+      "Safety risks from DIY fixes",
+      "Poor finishes causing tenant complaints",
+    ];
+    if (title.includes("End of Tenancy")) return [
+      "Deposit deductions after checkout",
+      "Lingering odours and stains",
+      "Re-clean delays slowing new move-ins",
+    ];
+    return [];
+  };
+
+  useEffect(() => {
+    document.title = "Property Services & Maintenance | Mainteniq";
+    const desc = "All-in-one property services: MVHR, HIU, FCU, BMS, smart home, plumbing, electrics, handyman, end-of-tenancy cleaning.";
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", desc);
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", window.location.href);
+  }, []);
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -211,39 +282,31 @@ const services = [
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-                Don't Wait for System Failure
+                Property Services & Maintenance
               </h1>
               <p className="text-base md:text-xl lg:text-2xl max-w-3xl opacity-90 leading-relaxed mb-8">
-                Professional maintenance prevents costly breakdowns, saves energy, and extends equipment life.
-                Emergency repairs cost 5x more than regular servicing.
+                One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
-                  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call emergency ${CONTACT.phones.emergency}`}>
-                    <AlertTriangle className="w-5 h-5 mr-2" />
-                    Emergency Service Available
-                  </a>
+                <Button asChild size="lg" className="px-8 py-3">
+                  <Link to="/contact" aria-label="Contact Mainteniq">Contact us</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 px-8 py-3">
-                  <Link to="/contact" aria-label="Schedule Maintenance">
-                    Schedule Maintenance
-                  </Link>
+                  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call ${CONTACT.phones.emergency}`}>
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call {CONTACT.phones.emergency}
+                  </a>
                 </Button>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Link to="/mvhr-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">MVHR Maintenance</Link>
-                <Link to="/fcu-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">FCU Maintenance</Link>
-                <Link to="/hiu-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">HIU Service</Link>
-                <Link to="/hvac-maintenance" className="px-3 py-1.5 rounded-full border border-border text-foreground/80 hover:bg-muted text-sm">HVAC Maintenance</Link>
+                <a href="#services" className="sm:ml-2 self-start underline-offset-4 hover:underline text-muted-foreground text-sm md:text-base">See services</a>
               </div>
             </div>
             <div>
               <AspectRatio ratio={16/10}>
                 <img
-                  src={hvacMaintenance}
-                  alt="Professional HVAC maintenance services"
+                  src={teamWorking}
+                  alt="Maintenance and property services team working together"
                   loading="eager"
-                  className="w-full h-full object-contain rounded-xl shadow-elegant bg-muted"
+                  className="w-full h-full object-contain rounded-xl shadow-elegant bg-background"
                 />
               </AspectRatio>
             </div>
@@ -252,82 +315,6 @@ const services = [
       </section>
       <TrustStrip />
 
-      {/* What Happens Without Maintenance */}
-      <section className="py-16 bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-red-500">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
-            </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-red-900 mb-4">
-              The Cost of Neglecting Maintenance
-            </h2>
-            <p className="text-lg text-red-700 max-w-3xl mx-auto">
-              Without regular maintenance, systems fail catastrophically, energy costs spiral, and emergency repairs become inevitable.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card className="border-red-200 bg-white hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <AlertTriangle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle className="text-xl text-red-900">MVHR System Failure</CardTitle>
-                <div className="text-3xl font-bold text-red-600">£3,500</div>
-                <p className="text-sm text-red-700 font-medium">Average replacement cost</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-red-800 text-center">
-                  Clogged filters cause system overwork, motor failure, and complete replacement within 3-5 years instead of 15-20 years.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-200 bg-white hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <AlertTriangle className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle className="text-xl text-orange-900">FCU Emergency Repair</CardTitle>
-                <div className="text-3xl font-bold text-orange-600">£850</div>
-                <p className="text-sm text-orange-700 font-medium">Per unit emergency callout</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-orange-800 text-center">
-                  Dirty coils freeze, motors burn out, and water damage occurs. Emergency weekend callouts cost 3x normal rates.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-red-200 bg-white hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center">
-                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <AlertTriangle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle className="text-xl text-red-900">HIU Complete Failure</CardTitle>
-                <div className="text-3xl font-bold text-red-600">£2,200</div>
-                <p className="text-sm text-red-700 font-medium">Emergency replacement</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-red-800 text-center">
-                  Scale buildup blocks heat exchangers, residents lose heating/hot water, and emergency replacement becomes necessary.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="bg-red-100 border border-red-300 rounded-lg p-6 text-center">
-            <div className="flex items-center justify-center mb-4">
-              <Clock className="w-6 h-6 text-red-600 mr-2" />
-              <span className="font-bold text-red-900">Reality Check:</span>
-            </div>
-            <p className="text-red-800 text-lg font-medium">
-              Systems that receive no maintenance fail 70% faster and cost 5x more to repair when they break down.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Results You Can Expect (no graphs) */}
       <section className="py-16 bg-muted/30">
@@ -416,124 +403,14 @@ const services = [
         </div>
       </section>
 
-      {/* Before/After Filter Comparison */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              The Shocking Reality: Dirty vs Clean Filters
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              This is what happens to your MVHR filters without regular maintenance. 
-              Dirty filters don't just reduce efficiency—they destroy your indoor air quality.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <AspectRatio ratio={4/3}>
-                  <img
-                    src="/mvhr-filter-dirty.png"
-                    alt="MVHR filter after 6 months without maintenance (dirty)"
-                    loading="lazy"
-                    className="w-full h-full object-contain rounded-lg bg-muted"
-                  />
-                </AspectRatio>
-                <div className="mt-2 text-center text-sm text-muted-foreground">Before: Neglected 6 months</div>
-              </div>
-              <div>
-                <AspectRatio ratio={4/3}>
-                  <img
-                    src="/mvhr-filter-clean.png"
-                    alt="MVHR filter after professional service (clean)"
-                    loading="lazy"
-                    className="w-full h-full object-contain rounded-lg bg-muted"
-                  />
-                </AspectRatio>
-                <div className="mt-2 text-center text-sm text-muted-foreground">After: Professional service</div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                <h3 className="font-bold text-xl text-red-900 mb-4">Dirty Filter Consequences:</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center text-red-800">
-                    <TrendingUp className="w-5 h-5 mr-3 text-red-600" />
-                    <span>Airflow reduced by 40-60%</span>
-                  </div>
-                  <div className="flex items-center text-red-800">
-                    <TrendingUp className="w-5 h-5 mr-3 text-red-600" />
-                    <span>Heat recovery drops to 30% efficiency</span>
-                  </div>
-                  <div className="flex items-center text-red-800">
-                    <TrendingUp className="w-5 h-5 mr-3 text-red-600" />
-                    <span>Energy costs increase by 40%</span>
-                  </div>
-                  <div className="flex items-center text-red-800">
-                    <TrendingUp className="w-5 h-5 mr-3 text-red-600" />
-                    <span>Mold, bacteria, and allergens multiply</span>
-                  </div>
-                  <div className="flex items-center text-red-800">
-                    <TrendingUp className="w-5 h-5 mr-3 text-red-600" />
-                    <span>Motor works 3x harder, leading to failure</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <h3 className="font-bold text-xl text-green-900 mb-4">Clean Filter Benefits:</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-3 text-green-600" />
-                    <span>Maximum airflow and efficiency</span>
-                  </div>
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-3 text-green-600" />
-                    <span>85%+ heat recovery maintained</span>
-                  </div>
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-3 text-green-600" />
-                    <span>Optimal energy efficiency</span>
-                  </div>
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-3 text-green-600" />
-                    <span>Clean, healthy indoor air</span>
-                  </div>
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-3 text-green-600" />
-                    <span>Equipment lasts 15-20 years</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-primary text-primary-foreground rounded-lg p-6 text-center">
-                <p className="font-bold text-lg mb-2">Regular filter changes cost £30-50</p>
-                <p className="text-sm opacity-90">Emergency system replacement costs £3,500+</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90">
-              <Link to="/contact" aria-label="Schedule filter replacement">
-                <Phone className="w-5 h-5 mr-2" />
-                Schedule Filter Replacement Today
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Services Grid */}
-      <section className="py-12 md:py-20 bg-background">
+      <section id="services" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-3 md:mb-4">Comprehensive HVAC Maintenance</h2>
+            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-3 md:mb-4">Explore Our Services</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional maintenance services for all HVAC equipment types. Preventive care that reduces energy costs, 
-              prevents expensive breakdowns, and ensures optimal system performance year-round.
+              One team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning—delivered to a professional standard.
             </p>
           </div>
 
@@ -577,47 +454,15 @@ const services = [
                      ) : null;
                    })()}
                    {/* Problems Prevented Section */}
-                   <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
-                     <h4 className="font-bold text-red-900 text-sm mb-2 flex items-center">
-                       <AlertTriangle className="w-4 h-4 mr-2" />
+                   <div className="bg-accent/20 border border-accent-orange/40 rounded-lg p-3 mb-4">
+                     <h4 className="font-bold text-accent-orange text-sm mb-2 flex items-center">
+                       <AlertTriangle className="w-4 h-4 mr-2 text-accent-orange" />
                        Problems We Prevent:
                      </h4>
-                     <div className="text-xs text-red-800 space-y-1">
-                       {service.title.includes("MVHR") && (
-                         <>
-                           <div>• Filter clogging causing 60% airflow loss</div>
-                           <div>• Motor failure from overwork (£1,500+ repair)</div>
-                           <div>• Mold growth and poor air quality</div>
-                         </>
-                       )}
-                       {service.title.includes("FCU") && (
-                         <>
-                           <div>• Coil freezing and water damage</div>
-                           <div>• Fan motor burnout (£400+ per unit)</div>
-                           <div>• 40% efficiency loss from dirty coils</div>
-                         </>
-                       )}
-                       {service.title.includes("HIU") && (
-                         <>
-                           <div>• Heat exchanger scaling and blockage</div>
-                           <div>• Complete heating/hot water failure</div>
-                           <div>• Emergency replacement (£2,200+)</div>
-                         </>
-                       )}
-                       {service.title.includes("HVAC") && (
-                         <>
-                           <div>• System breakdowns during peak seasons</div>
-                           <div>• 25% increase in energy costs</div>
-                           <div>• Premature equipment replacement</div>
-                         </>
-                       )}
-                       {!service.title.includes("MVHR") && !service.title.includes("FCU") && !service.title.includes("HIU") && !service.title.includes("HVAC") && (
-                         <>
-                           <div>• Unexpected failures and breakdowns</div>
-                           <div>• Higher emergency repair costs</div>
-                           <div>• Reduced equipment lifespan</div>
-                         </>
-                       )}
+                     <div className="text-xs text-foreground space-y-1">
+                       {getProblems(service.title).map((p, i) => (
+                         <div key={i}>• {p}</div>
+                       ))}
                      </div>
                    </div>
 
@@ -669,11 +514,10 @@ const services = [
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-primary">
-              Why Regular HVAC Maintenance Is Critical
+              Why Proactive Maintenance Matters
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
-              Professional maintenance isn't optional—it's essential for protecting your investment, 
-              ensuring reliability, and maximizing system performance.
+              Proactive care protects assets, ensures comfort and reliability, and keeps energy spend under control—across ventilation, heating, controls and more.
             </p>
           </div>
 
