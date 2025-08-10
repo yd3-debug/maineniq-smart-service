@@ -11,7 +11,7 @@ const Navigation = () => {
   const location = useLocation();
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/why-work-with-us', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/why-work-with-us', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -34,10 +34,10 @@ const Navigation = () => {
         { name: "FCU Maintenance", href: "/fcu-maintenance" },
         { name: "HIU & CIU Service & Repair", href: "/hiu-maintenance" },
         { name: "CIU Maintenance", href: "/ciu-maintenance" },
-        { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
+        { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
+        { name: "Renovation & Refurbishment", href: "/renovation-composer" }
       ]
     },
-    { name: "Renovation & Refurbishment", href: "/renovation-composer" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Why Work With Us", href: "/why-work-with-us" },
     { name: "About Us", href: "/about" },

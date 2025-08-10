@@ -217,6 +217,13 @@ const App = () => (
               <Admin />
             </Suspense>
           } />
+          <Route path="/renovation-composer" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <RenovationComposer />
+              </Suspense>
+            </Layout>
+          } />
           <Route path="/admin/renovation-composer" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>

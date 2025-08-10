@@ -24,7 +24,7 @@ import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import hvacInstallation from "@/assets/hvac-installation.jpg";
 import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import handymanRepair from "@/assets/handyman-repair.jpg";
-
+import renovationComparison from "@/assets/renovation-comparison.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 
@@ -151,6 +151,20 @@ const services = [
       ]
     },
     {
+      icon: Home,
+      title: "Renovation & Refurbishment",
+      subtitle: "Property Transformation Services",
+      description: "Complete renovation and refurbishment services transforming properties to modern standards with professional project management and quality finishes.",
+      image: renovationComparison,
+      features: [
+        "Kitchen and bathroom renovations",
+        "Full property refurbishment",
+        "Project management and coordination",
+        "Quality materials and finishes",
+        "Before/after visualization tools"
+      ]
+    },
+    {
       icon: Sparkles,
       title: "End of Tenancy Cleaning",
       subtitle: "Professional Deep Cleaning",
@@ -176,6 +190,7 @@ const services = [
     if (title.includes("Smart Home")) return "/smart-home";
     if (title.includes("Plumber") || title.includes("Electrician")) return "/plumber-electrician";
     if (title.includes("Handyman")) return "/handyman";
+    if (title.includes("Renovation") || title.includes("Refurbishment")) return "/renovation-composer";
     if (title.includes("End of Tenancy")) return "/end-of-tenancy-cleaning";
     return "/contact";
   };
@@ -201,6 +216,11 @@ const services = [
       { label: "Breakdowns reduced", value: 80, prefix: "-", suffix: "%" },
       { label: "Lifespan increase", value: 50, prefix: "+", suffix: "%" },
       { label: "ROI", value: 5, suffix: "x" },
+    ];
+    if (title.includes("Renovation") || title.includes("Refurbishment")) return [
+      { label: "Property value increase", value: 15, prefix: "+", suffix: "%" },
+      { label: "Project completion", value: 95, suffix: "%" },
+      { label: "Customer satisfaction", value: 98, suffix: "%" },
     ];
     return [];
   };
@@ -246,6 +266,11 @@ const services = [
       "Small issues becoming big repairs",
       "Safety risks from DIY fixes",
       "Poor finishes causing tenant complaints",
+    ];
+    if (title.includes("Renovation") || title.includes("Refurbishment")) return [
+      "Poor planning leading to cost overruns",
+      "Substandard finishes affecting property value",
+      "Project delays and coordination issues",
     ];
     if (title.includes("End of Tenancy")) return [
       "Deposit deductions after checkout",
