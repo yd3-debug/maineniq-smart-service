@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/config/contact";
 
@@ -16,7 +16,7 @@ const WhatsAppFloat = () => {
       className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-whatsapp hover:bg-whatsapp/90 shadow-elegant z-40 flex items-center justify-center p-0"
       aria-label={`Contact us on WhatsApp at ${CONTACT.phones.emergency}`}
     >
-      <MessageCircle className="w-6 h-6 text-white" />
+      <FaWhatsapp className="w-6 h-6 text-white" />
     </Button>
   );
 };

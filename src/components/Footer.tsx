@@ -35,11 +35,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Services</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-gray-300">HVAC Installation</li>
-              <li className="text-sm text-gray-300">System Maintenance</li>
-              <li className="text-sm text-gray-300">Emergency Repairs</li>
-              <li className="text-sm text-gray-300">Smart Thermostats</li>
-              <li className="text-sm text-gray-300">Energy Audits</li>
+              <li><Link to="/mvhr-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">MVHR System Maintenance</Link></li>
+              <li><Link to="/hiu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">HIU Maintenance & Repair</Link></li>
+              <li><Link to="/fcu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">FCU Unit Maintenance</Link></li>
+              <li><Link to="/bms" className="text-sm text-gray-300 hover:text-primary transition-colors">BMS & Smart Systems</Link></li>
+              <li><Link to="/end-of-tenancy-cleaning" className="text-sm text-gray-300 hover:text-primary transition-colors">End of Tenancy Cleaning</Link></li>
             </ul>
           </div>
 

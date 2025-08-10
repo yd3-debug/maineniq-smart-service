@@ -641,7 +641,7 @@ const services = [
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button variant="secondary" size="lg" className="text-lg px-8">
+              <Button variant="hero" size="lg" className="text-lg px-8">
                 Get Professional Quote
               </Button>
             </Link>
