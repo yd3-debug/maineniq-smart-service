@@ -27,8 +27,46 @@ import {
 
 import heroImage from "@/assets/mvhr-installation.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useEffect } from "react";
 
 const MVHRMaintenance = () => {
+  useEffect(() => {
+    document.title = "MVHR Maintenance | Mechanical Ventilation Heat Recovery Service";
+    const description = "Professional MVHR maintenance services. Filter replacement, heat exchanger cleaning, ductwork inspection. Improve air quality & energy efficiency. Free quote.";
+
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+
+    // Add Open Graph tags
+    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.content = "MVHR Maintenance | Mechanical Ventilation Heat Recovery Service";
+
+    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.content = description;
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = `${window.location.origin}/mvhr-maintenance`;
+  }, []);
   const keyBenefits = [
     {
       icon: Volume2,
@@ -116,7 +154,7 @@ const MVHRMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-success/5">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -131,13 +169,13 @@ const MVHRMaintenance = () => {
               MVHR Maintenance & Air Quality Specialists
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
               MVHR Filter Maintenance: 
               <span className="text-white"> Clean Filters = </span>
               Healthy Living
             </h1>
             
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Your MVHR filters are the frontline defense against pollutants, allergens, and contaminated air. 
               See the shocking difference between dirty and clean filters - and why regular maintenance is critical for your health and energy bills.
             </p>

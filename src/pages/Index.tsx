@@ -87,7 +87,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative -mt-20 pt-24 md:pt-32 pb-20 md:pb-32 bg-professional-gradient text-white overflow-hidden">
+      <section className="relative -mt-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-32 bg-professional-gradient text-white overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -109,11 +109,11 @@ const Index = () => {
             </div>
 
             <div>
-              <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
                 Prevent breakdowns, cut costs, and protect your property
                 <span className="text-accent-orange"> with expert maintenance</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
                 Planned maintenance across HVAC, plumbing, electrical, and more keeps everything running safely and efficiently.
               </p>
             </div>
@@ -166,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-20 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
             <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
@@ -174,8 +174,8 @@ const Index = () => {
               <span>MAINTENANCE SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Our Core Maintenance Services</h2>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">Our Core Maintenance Services</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Specialist HVAC maintenance (FCU, HIU, CIU, MVHR) and AC installation to optimise performance and reliability.
             </p>
           </div>
@@ -197,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* Other Services Section */}
-      <section className="py-12 md:py-20 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
             <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
@@ -205,8 +205,8 @@ const Index = () => {
               <span>OTHER SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">More Services We Offer</h2>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">More Services We Offer</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Plumbing, electrical, handyman, BMS, smart home and renovation support.
             </p>
           </div>
@@ -330,17 +330,17 @@ const Index = () => {
       </section>
 
       {/* Why Maintenance Matters Section */}
-      <section className="py-20 bg-gradient-to-br from-muted to-background">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-muted to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Leaf className="w-4 h-4" />
               Why Maintenance Matters
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6 text-primary">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-primary">
               Maintenance: Essential for Modern Properties
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Professional maintenance protects your health, your finances and your property's long-term value.
             </p>
           </div>

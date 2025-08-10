@@ -256,8 +256,9 @@ const services = [
   };
 
   useEffect(() => {
-    document.title = "Property Services & Maintenance | Mainteniq";
-    const desc = "All-in-one property services: MVHR, HIU, FCU, BMS, smart home, plumbing, electrics, handyman, end-of-tenancy cleaning.";
+    document.title = "Property Services & Maintenance | Expert HVAC, Plumbing, Electrical";
+    const desc = "Professional HVAC, FCU, HIU, MVHR, CIU maintenance, BMS, smart home, plumbing, electrical, handyman & end-of-tenancy cleaning services.";
+    
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -265,6 +266,24 @@ const services = [
       document.head.appendChild(meta);
     }
     meta.setAttribute("content", desc);
+
+    // Add Open Graph tags
+    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.content = "Property Services & Maintenance | Expert HVAC, Plumbing, Electrical";
+
+    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.content = desc;
+
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
@@ -291,10 +310,10 @@ const services = [
       <TrustStrip />
 
 
-      {/* Fast, clear assurances and scheduling */}
-      <section className="relative py-16 bg-accent">
+       {/* Fast, clear assurances and scheduling */}
+      <section className="relative py-8 sm:py-12 md:py-16 bg-accent">
         <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-10 text-center">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8 sm:mb-10 text-center">
             Fast help. Clear prices. Trusted engineers.
           </h2>
 
@@ -364,11 +383,11 @@ const services = [
 
 
       {/* Services Grid */}
-      <section id="services" className="py-12 md:py-20 bg-background">
+      <section id="services" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-heading text-2xl md:text-4xl font-bold mb-3 md:mb-4">Explore Our Services</h2>
-            <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Explore Our Services</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               One team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning—delivered to a professional standard.
             </p>
           </div>

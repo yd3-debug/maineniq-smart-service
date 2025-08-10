@@ -38,8 +38,8 @@ const About = () => {
   ];
 
   useEffect(() => {
-    document.title = "About Mainteniq | HVAC Maintenance Experts";
-    const description = "Learn about Mainteniq's HVAC maintenance partnerships for residential and commercial buildings. Reliable service, transparent reporting, accredited team.";
+    document.title = "About Maineniq | Expert HVAC & Property Maintenance Team";
+    const description = "Learn about Maineniq's professional HVAC, FCU, HIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
 
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!meta) {
@@ -48,6 +48,23 @@ const About = () => {
       document.head.appendChild(meta);
     }
     meta.content = description;
+
+    // Add Open Graph tags
+    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.content = "About Maineniq | Expert HVAC & Property Maintenance Team";
+
+    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.content = description;
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
@@ -112,7 +129,7 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section with Background Image */}
       <section 
-        className="relative -mt-2 md:-mt-4 py-10 sm:py-14 md:py-24 lg:py-32 bg-cover bg-center text-white"
+        className="relative -mt-2 md:-mt-4 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-cover bg-center text-white"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroHvac})`
         }}

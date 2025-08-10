@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle, AlertTriangle, Wrench, Calendar, Phone, Clock, Shield, TrendingDown, TrendingUp, Zap } from "lucide-react";
+import { useEffect } from "react";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
 import heroImage from "@/assets/hero-hvac.jpg";
@@ -13,6 +14,43 @@ import hvacProfessionalImage from "@/assets/hvac-professional.jpg";
 import modernEquipmentImage from "@/assets/modern-equipment.jpg";
 
 export default function HVACMaintenance() {
+  useEffect(() => {
+    document.title = "HVAC Maintenance | Professional Heating, Ventilation & AC Service";
+    const description = "Expert HVAC maintenance preventing breakdowns, improving efficiency, and extending equipment life. Emergency service available 24/7. Call for FREE quote.";
+
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+
+    // Add Open Graph tags
+    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.content = "HVAC Maintenance | Professional Heating, Ventilation & AC Service";
+
+    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.content = description;
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = `${window.location.origin}/hvac-maintenance`;
+  }, []);
   const neglectScenarios = [
     {
       system: "FCU Systems",
@@ -65,7 +103,7 @@ export default function HVACMaintenance() {
     <div className="min-h-screen bg-background">
       {/* Hero Section with Dramatic Background */}
       <section 
-        className="relative py-32 bg-cover bg-center bg-no-repeat"
+        className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${heroImage})`
         }}
@@ -76,11 +114,11 @@ export default function HVACMaintenance() {
               <AlertTriangle className="w-4 h-4 mr-2" />
               CRITICAL: System Failure Prevention
             </Badge>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6">
               Your HVAC is <span className="text-destructive">Dying</span><br />
               <span className="text-primary">Without Maintenance</span>
             </h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+            <p className="text-base sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Every month without professional maintenance costs you hundreds in wasted energy. 
               System failure isn't a question of IF—it's WHEN.
             </p>
