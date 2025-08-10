@@ -1,36 +1,36 @@
 import { Card, CardContent } from "@/components/ui/card";
-import smartLightingControl from "@/assets/smart-lighting-control.jpg";
-import smartHomeDashboard from "@/assets/smart-home-dashboard.jpg";
-import smartSecuritySystem from "@/assets/smart-security-system.jpg";
-import smartEntertainmentCenter from "@/assets/smart-entertainment-center.jpg";
+import ukSmartLightingInstallation from "@/assets/uk-smart-lighting-installation.jpg";
+import ukSmartMeterMonitoring from "@/assets/uk-smart-meter-monitoring.jpg";
+import ukSecuritySystemInstallation from "@/assets/uk-security-system-installation.jpg";
+import ukEntertainmentCenter from "@/assets/uk-entertainment-center.jpg";
 
 const galleryItems = [
   {
     id: 1,
-    title: "Smart Lighting Control",
-    description: "Automated lighting scenes with color and dimming control",
-    image: smartLightingControl,
+    title: "Professional Smart Lighting Installation",
+    description: "UK-compliant LED downlights with smart switches and dimmer controls",
+    image: ukSmartLightingInstallation,
     category: "Lighting Systems"
   },
   {
     id: 2,
-    title: "Energy Monitoring & Smart Meter",
-    description: "UK SMETS2 smart meter integration with real-time usage insights",
-    image: smartHomeDashboard,
+    title: "UK SMETS2 Smart Meter Integration",
+    description: "Real-time energy monitoring with tariff tracking and usage insights",
+    image: ukSmartMeterMonitoring,
     category: "Energy Monitoring (UK)"
   },
   {
     id: 3,
-    title: "Security & Monitoring",
-    description: "Smart cameras, sensors, and access control systems",
-    image: smartSecuritySystem,
+    title: "Professional Security System Installation",
+    description: "CCTV cameras, smart doorbells, and access control for UK homes",
+    image: ukSecuritySystemInstallation,
     category: "Security Systems"
   },
   {
     id: 4,
-    title: "Entertainment Centers",
-    description: "Integrated audio, video, and streaming control",
-    image: smartEntertainmentCenter,
+    title: "Integrated Entertainment Centers",
+    description: "Professional AV installation with smart home control integration",
+    image: ukEntertainmentCenter,
     category: "Entertainment"
   }
 ];
