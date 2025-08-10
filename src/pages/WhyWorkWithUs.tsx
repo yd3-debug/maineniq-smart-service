@@ -377,8 +377,9 @@ export default function WhyWorkWithUs() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-4">
-                  Discuss Your Requirements
+                <Button size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4">
+                  <span className="block sm:hidden">Get Started</span>
+                  <span className="hidden sm:block">Discuss Your Requirements</span>
                 </Button>
               </Link>
               <a

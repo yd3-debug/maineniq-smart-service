@@ -1053,9 +1053,10 @@ const WhyProfessionalHVAC = () => {
 
 <div className="flex flex-col sm:flex-row gap-4 justify-center">
   <Link to="/contact">
-    <Button variant="secondary" size="lg" className="text-lg px-8 bg-background text-foreground hover:bg-background/90">
-      Get Free Assessment & Savings Report
-      <ArrowRight className="w-5 h-5 ml-2" />
+    <Button variant="secondary" size="lg" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 bg-background text-foreground hover:bg-background/90">
+      <span className="block sm:hidden">Get Free Assessment</span>
+      <span className="hidden sm:block">Get Free Assessment & Savings Report</span>
+      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
     </Button>
   </Link>
   <Button asChild variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
