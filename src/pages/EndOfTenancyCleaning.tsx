@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import FullBleedHero from "@/components/FullBleedHero";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ServicePackageBuilder from "@/components/ServicePackageBuilder";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import professionalCleaning from "@/assets/professional-cleaning.jpg";
 import beforeAfter from "@/assets/before-after.jpg";
@@ -267,37 +268,8 @@ const EndOfTenancyCleaning: React.FC = () => {
             </div>
           </section>
 
-          {/* Enhanced Service Add-ons */}
-          <section className="space-y-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Complete Your Clean</h2>
-              <p className="text-lg text-muted-foreground">
-                Professional add-ons for the perfect finish
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-               {[
-                 { service: "Carpet Steam Clean", icon: Sparkles, popular: true },
-                 { service: "Oven Deep Clean", icon: Zap, popular: true },
-                 { service: "Upholstery Clean", icon: Shield, popular: false },
-                 { service: "Window Cleaning", icon: Star, popular: false }
-               ].map((addon, index) => (
-                 <Card key={index} className={`${addon.popular ? 'ring-2 ring-primary/20 bg-primary/5' : ''}`}>
-                   <CardContent className="p-6 text-center">
-                     {addon.popular && (
-                       <Badge className="mb-3" variant="secondary">Popular</Badge>
-                     )}
-                     <addon.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                     <h3 className="font-medium mb-2">{addon.service}</h3>
-                     <Button size="sm" variant="outline" className="w-full">
-                       Add to Quote
-                     </Button>
-                   </CardContent>
-                 </Card>
-               ))}
-             </div>
-          </section>
+          {/* Interactive Service Package Builder */}
+          <ServicePackageBuilder />
 
           {/* Enhanced Pricing */}
           <section className="space-y-8">
