@@ -117,11 +117,11 @@ const Navigation = () => {
                       isSubmenuActive(item.submenu)
                         ? (isScrolled || hasLightBackground)
                           ? "text-primary bg-primary/10" 
-                          : "text-primary bg-white/20"
+                          : "text-primary bg-white/20 shadow-sm"
                         : (isScrolled || hasLightBackground)
                           ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                          : "text-white/90 hover:text-white hover:bg-white/10"
-                    }`}
+                          : "text-white hover:text-white hover:bg-white/20 drop-shadow-sm"
+                    } ${(!isScrolled && !hasLightBackground) ? 'text-shadow-sm' : ''}`}
                   >
                     {item.name}
                     <ChevronDown className="w-4 h-4" />
@@ -152,11 +152,11 @@ const Navigation = () => {
                     isActive(item.href)
                       ? (isScrolled || hasLightBackground)
                         ? "text-primary bg-primary/10" 
-                        : "text-primary bg-white/20"
+                        : "text-primary bg-white/20 shadow-sm"
                       : (isScrolled || hasLightBackground)
                         ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`}
+                        : "text-white hover:text-white hover:bg-white/20 drop-shadow-sm"
+                  } ${(!isScrolled && !hasLightBackground) ? 'text-shadow-sm' : ''}`}
                 >
                   {item.name}
                 </Link>
@@ -164,8 +164,8 @@ const Navigation = () => {
             ))}
             <Button 
               size="sm" 
-              variant={(isScrolled || hasLightBackground) ? "accent" : "outline"} 
-              className={(!isScrolled && !hasLightBackground) ? "text-white border-white/30 hover:bg-white/10" : ""}
+              variant={(isScrolled || hasLightBackground) ? "accent" : "hero"} 
+              className={(!isScrolled && !hasLightBackground) ? "bg-white/10 text-white border-white/40 hover:bg-white/20 shadow-sm backdrop-blur-sm" : ""}
               onClick={() => handleQuoteRequest()}
             >
               Get Quote
@@ -180,7 +180,7 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
               className={`transition-all duration-300 ${
-                (!isScrolled && !hasLightBackground) ? "text-white hover:bg-white/10" : ""
+                (!isScrolled && !hasLightBackground) ? "text-white hover:bg-white/20 drop-shadow-sm" : ""
               } ${isOpen ? 'rotate-180' : 'rotate-0'}`}
             >
               <div className="relative">
