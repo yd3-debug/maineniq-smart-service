@@ -162,7 +162,7 @@ const MVHRMaintenance = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-success/90 via-success/70 to-transparent" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
               <Leaf className="w-4 h-4 mr-2" />
@@ -193,19 +193,19 @@ const MVHRMaintenance = () => {
       </section>
 
       {/* Key Benefits Section */}
-      <section className="py-16 bg-success/5">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-success/5">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               5 Key Benefits of Professional MVHR Maintenance
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Regular maintenance ensures your MVHR system delivers optimal comfort, air quality, and energy efficiency.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {keyBenefits.map((benefit, index) => (
               <AnimatedStatCard key={index} delay={index * 100} className="h-full">
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300 border-success/20 hover:border-success/40">
@@ -265,19 +265,19 @@ const MVHRMaintenance = () => {
       </section>
 
       {/* What Dirty Filters Actually Do Section */}
-      <section className="py-16 bg-destructive/5">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-destructive/5">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               What Dirty MVHR Filters Actually Do To Your Health & Wallet
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               The hidden costs of neglected filter maintenance go far beyond the price of replacement filters.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {dirtyFilterProblems.map((problem, index) => (
               <AnimatedStatCard key={index} delay={index * 150} className="h-full">
                 <Card className="h-full border-destructive/20 hover:border-destructive/40 transition-colors">
@@ -305,7 +305,7 @@ const MVHRMaintenance = () => {
                   <p className="text-muted-foreground">Annual filter maintenance vs the cost of system damage and health impacts</p>
                 </div>
                 
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-success mb-2">
                       <AnimatedCounter value={80} prefix="£" suffix="/year" />
@@ -332,14 +332,14 @@ const MVHRMaintenance = () => {
       </section>
 
       {/* Filter Maintenance Schedule */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <Calendar className="w-16 h-16 text-success mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Professional MVHR Filter Maintenance Schedule
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Our systematic approach ensures your filters and system components stay clean for optimal air quality and efficiency.
             </p>
           </div>
@@ -440,10 +440,10 @@ const MVHRMaintenance = () => {
       </section>
 
       {/* Cost Comparison */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Regular Maintenance vs System Replacement Costs
             </h2>
             <ResearchBadge claimId="mvhr-maintenance-savings" className="mb-4" />
@@ -494,10 +494,10 @@ const MVHRMaintenance = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               UK Building Regulations & Air Quality Standards
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               MVHR maintenance is essential for meeting UK ventilation standards and indoor air quality requirements.
             </p>
           </div>
@@ -535,10 +535,10 @@ const MVHRMaintenance = () => {
       {/* Call to Action */}
       <section className="py-16 bg-success">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Breathe Easy with Professional MVHR Care
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Our MVHR specialists ensure your system delivers clean, healthy air while maximizing energy recovery and efficiency. 
             Protect your investment and your health with regular professional maintenance.
           </p>

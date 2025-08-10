@@ -60,7 +60,7 @@ const CIUMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -68,20 +68,20 @@ const CIUMaintenance = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
               <Building className="w-4 h-4 mr-2" />
               CIU Control & Maintenance Specialists
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
               CIU Maintenance: 
               <span className="text-accent-blue"> Perfect Zone </span>
               Control Every Time
             </h1>
             
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
               Central Interface Units require precise calibration and regular maintenance to deliver optimal zone control. 
               Don't let control system failures compromise comfort and waste energy across your building.
             </p>
@@ -99,19 +99,19 @@ const CIUMaintenance = () => {
       </section>
 
       {/* What Happens Without Maintenance - Warning Section */}
-      <section className="py-16 bg-destructive/5">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-destructive/5">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               The Cost of CIU Control System Neglect
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               CIU failures create building-wide comfort issues, energy waste, and can shut down entire HVAC zones.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {neglectScenarios.map((scenario, index) => (
               <AnimatedStatCard key={index} delay={index * 200} className="h-full">
                 <Card className="h-full border-destructive/20 hover:border-destructive/40 transition-colors">
@@ -170,18 +170,18 @@ const CIUMaintenance = () => {
       </section>
 
       {/* CIU Maintenance Process */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Our Professional CIU Maintenance Process
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Precision maintenance that ensures perfect zone control, optimal energy efficiency, and seamless system integration.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {maintenanceChecklist.map((item, index) => (
               <AnimatedStatCard key={index} delay={index * 100}>
                 <Card className="h-full hover:shadow-lg transition-all duration-300">
@@ -204,7 +204,7 @@ const CIUMaintenance = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Quarterly Maintenance vs System Replacement Costs
             </h2>
             <ResearchBadge claimId="ciu-maintenance-savings" className="mb-4" />
@@ -255,10 +255,10 @@ const CIUMaintenance = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               UK Energy Efficiency & Compliance
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               CIU maintenance is essential for meeting UK energy efficiency standards and MEES compliance.
             </p>
           </div>
@@ -296,10 +296,10 @@ const CIUMaintenance = () => {
       {/* Call to Action */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Optimize Your Building's Zone Control
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Our CIU specialists deliver precision maintenance that ensures perfect zone control, 
             maximizes energy efficiency, and keeps your building systems running seamlessly.
           </p>

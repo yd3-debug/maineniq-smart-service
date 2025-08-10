@@ -280,7 +280,7 @@ const portfolioProjects = [
   return (
     <main className="min-h-screen pt-0">
       {/* Hero Section - Elegant & Flowing */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
           {/* Background Image as <img> for better focal control */}
           <picture>
             <source srcSet={heroImage} />
@@ -295,10 +295,10 @@ const portfolioProjects = [
           <div className="absolute inset-0 bg-black/50"></div>
           
           {/* Content - Refined & Elegant */}
-          <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="mb-6 md:mb-8">
-                <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-light mb-4 md:mb-6 text-white tracking-tight leading-none">
+                <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4 md:mb-6 text-white tracking-tight leading-none">
                   HVAC Maintenance
                   <span className="block font-bold text-trust-blue">
                     Success Stories
@@ -306,7 +306,7 @@ const portfolioProjects = [
                 </h1>
                 <div className="w-16 md:w-24 h-0.5 bg-primary mx-auto mb-6 md:mb-8"></div>
               </div>
-              <p className="text-base md:text-lg lg:text-xl max-w-2xl mx-auto text-white/90 mb-10 md:mb-16 leading-relaxed font-light">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto text-white/90 mb-10 md:mb-16 leading-relaxed font-light">
                 Professional HVAC maintenance delivering measurable results: energy savings, improved reliability, 
                 and extended equipment lifespan for commercial and residential properties across London.
               </p>
@@ -352,12 +352,12 @@ const portfolioProjects = [
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-heading text-2xl md:text-4xl font-light mb-3 md:mb-4">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-3 md:mb-4">
               Project
               <span className="font-bold text-primary"> Portfolio</span>
             </h2>
             <div className="w-12 md:w-16 h-0.5 bg-primary mx-auto mb-4 md:mb-6"></div>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-12 font-light max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 md:mb-12 font-light max-w-xl mx-auto leading-relaxed">
               Select projects showcasing our premium refurbishment capabilities
             </p>
             <div className="sticky top-16 z-30 bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur rounded-full py-2 md:py-3 max-w-5xl mx-auto">
@@ -391,7 +391,7 @@ const portfolioProjects = [
             </p>
            
             {/* Enhanced Project Grid with Modal Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {portfolioProjects
               .filter(project => {
                 if (selectedFilter === "All") return true;

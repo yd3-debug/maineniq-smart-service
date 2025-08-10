@@ -43,16 +43,16 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
 
-      <div className="container mx-auto px-4 flex items-end min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh] py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4 flex items-end min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] lg:min-h-[75vh] py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="max-w-3xl">
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8">
-              {subtitle}
-            </p>
-          )}
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight">
+              {title}
+            </h1>
+            {subtitle && (
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 leading-relaxed">
+                {subtitle}
+              </p>
+            )}
           <div className="flex flex-col sm:flex-row gap-3">
             {primaryLabel && primaryHref && (
               <Button asChild size="lg" className="px-8 py-3">

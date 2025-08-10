@@ -59,7 +59,7 @@ const FCUMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-blue/5">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -67,20 +67,20 @@ const FCUMaintenance = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
               <Wind className="w-4 h-4 mr-2" />
               FCU Maintenance Specialists
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
               FCU Maintenance: 
               <span className="text-accent-blue"> Prevent Costly </span>
               System Failures
             </h1>
             
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
               Fan Coil Units require regular maintenance to prevent efficiency loss, water damage, and complete system breakdowns. 
               Don't wait for emergency repairs that cost 10x more than preventive maintenance.
             </p>
@@ -98,19 +98,19 @@ const FCUMaintenance = () => {
       </section>
 
       {/* What Happens Without Maintenance - Warning Section */}
-      <section className="py-16 bg-destructive/5">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-destructive/5">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               The Cost of FCU Neglect
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               See exactly what happens when FCU maintenance is ignored - and why prevention costs 90% less than emergency repairs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {neglectScenarios.map((scenario, index) => (
               <AnimatedStatCard key={index} delay={index * 200} className="h-full">
                 <Card className="h-full border-destructive/20 hover:border-destructive/40 transition-colors">
@@ -169,18 +169,18 @@ const FCUMaintenance = () => {
       </section>
 
       {/* FCU Maintenance Process */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Our Professional FCU Maintenance Process
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive maintenance that prevents problems before they start and keeps your FCUs running at peak efficiency.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {maintenanceChecklist.map((item, index) => (
               <AnimatedStatCard key={index} delay={index * 100}>
                 <Card className="h-full hover:shadow-lg transition-all duration-300">
@@ -200,10 +200,10 @@ const FCUMaintenance = () => {
       </section>
 
       {/* Cost Comparison */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Maintenance vs Emergency Repair Costs
             </h2>
             <ResearchBadge claimId="maintenance-cost-savings" className="mb-4" />
@@ -254,10 +254,10 @@ const FCUMaintenance = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               UK Compliance & Legal Requirements
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Stay compliant with UK building regulations and avoid costly penalties with professional FCU maintenance.
             </p>
           </div>
@@ -295,10 +295,10 @@ const FCUMaintenance = () => {
       {/* Call to Action */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Don't Wait for FCU Failure
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Get professional FCU maintenance that prevents problems, saves money, and ensures compliance. 
             Our certified technicians service all FCU types across London and the South East.
           </p>
