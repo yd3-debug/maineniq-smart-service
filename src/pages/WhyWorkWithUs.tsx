@@ -67,6 +67,7 @@ export default function WhyWorkWithUs() {
         primaryHref="/contact"
         secondaryLabel="Call Now"
         secondaryHref={`tel:${CONTACT.phones.landlineTel}`}
+        secondaryClass="text-white border-white/30 hover:bg-white/10"
         imageFit="cover"
       />
 

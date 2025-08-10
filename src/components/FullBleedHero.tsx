@@ -11,6 +11,7 @@ interface FullBleedHeroProps {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  secondaryClass?: string;
   imageFit?: "cover" | "contain";
   id?: string;
   children?: React.ReactNode;
@@ -27,6 +28,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
   primaryHref,
   secondaryLabel,
   secondaryHref,
+  secondaryClass,
   imageFit = "cover",
   id,
   children,
@@ -66,7 +68,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary/5 px-8 py-3"
+                className={secondaryClass || "border-primary text-primary hover:bg-primary/5 px-8 py-3"}
               >
                 {isExternal(secondaryHref) ? (
                   <a href={secondaryHref}>{secondaryLabel}</a>

@@ -92,7 +92,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="text-lg px-8"
+                  className="text-lg px-8 text-white border-white/30 hover:bg-white/10"
                   asChild
                 >
                   <a href={`tel:${CONTACT.phones.emergencyTel}`}>
