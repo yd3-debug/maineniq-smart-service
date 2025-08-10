@@ -22,9 +22,6 @@ import {
 } from "lucide-react";
 
 import heroImage from "@/assets/hiu-residential.jpg";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import hiuBefore from "@/assets/hiu-before.svg";
-import hiuAfter from "@/assets/hiu-after.svg";
 import maintenanceImage from "@/assets/hvac-maintenance.jpg";
 import professionalImage from "@/assets/hvac-professional.jpg";
 
@@ -135,40 +132,47 @@ const HIUMaintenance = () => {
           <AnimatedChart delay={600}>
             <Card className="bg-card/80 backdrop-blur">
               <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <BeforeAfterSlider
-                      beforeSrc={hiuBefore}
-                      afterSrc={hiuAfter}
-                      beforeAlt="HIU before service – limescale buildup and poor flow"
-                      afterAlt="HIU after service – clean heat exchanger and optimal flow"
-                      beforeLabel="Before service"
-                      afterLabel="After service"
-                      className="rounded-lg shadow-lg"
-                      fit="contain"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-6">Before vs After Regular HIU Maintenance</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Hot Water Flow:</strong> Full pressure vs 50% reduced</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Heat Transfer:</strong> 95% efficiency vs 65%</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Energy Bills:</strong> 20% lower energy consumption</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Breakdowns:</strong> 0 vs 2-3 per year</span>
-                      </div>
-                    </div>
-                  </div>
+                <div className="mb-6 text-center">
+                  <h3 className="text-2xl font-bold mb-2">Service outcomes you can expect</h3>
+                  <p className="text-muted-foreground">Typical results after a professional HIU service</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <ProgressMetric
+                    icon={Droplets}
+                    value="100%"
+                    label="Hot water flow restored"
+                    description="Full pressure and stable temperature"
+                    percentage={100}
+                    variant="success"
+                    delay={100}
+                  />
+                  <ProgressMetric
+                    icon={TrendingUp}
+                    value="95%"
+                    label="Heat transfer efficiency"
+                    description="Clean plates and calibrated controls"
+                    percentage={95}
+                    variant="success"
+                    delay={200}
+                  />
+                  <ProgressMetric
+                    icon={Zap}
+                    value="Up to 20%"
+                    label="Energy saved"
+                    description="Lower return temps and reduced cycling"
+                    percentage={20}
+                    variant="success"
+                    delay={300}
+                  />
+                  <ProgressMetric
+                    icon={Shield}
+                    value="2–3/yr"
+                    label="Emergency callouts avoided"
+                    description="Fewer urgent disruptions and costs"
+                    percentage={90}
+                    variant="success"
+                    delay={400}
+                  />
                 </div>
               </CardContent>
             </Card>
