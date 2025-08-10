@@ -67,7 +67,7 @@ const EndOfTenancyCleaning: React.FC = () => {
               <div className="mb-6">
                 <Badge variant="secondary" className="mb-4">
                   <Clock className="w-3 h-3 mr-1" />
-                  48-Hour Emergency Response Available
+                  Emergency Response Available
                 </Badge>
               </div>
               
@@ -97,7 +97,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 >
                   <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                     <Phone className="w-5 h-5 mr-2" />
-                    Emergency Booking
+                    Call Now
                   </a>
                 </Button>
               </div>
@@ -105,7 +105,7 @@ const EndOfTenancyCleaning: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 {[
                   { icon: Shield, text: "Deposit Protection Guarantee", color: "text-success" },
-                  { icon: Clock, text: "Same-Day Availability", color: "text-primary" },
+                  { icon: Clock, text: "Same-Day Available", color: "text-primary" },
                   { icon: Award, text: "Inventory-Ready Standards", color: "text-accent-orange" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-2 bg-background/80 backdrop-blur rounded-lg p-3">
@@ -460,7 +460,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 >
                   <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                     <Phone className="w-5 h-5 mr-2" />
-                    Call {CONTACT.phones.emergency}
+                    Call Now
                   </a>
                 </Button>
               </div>
@@ -468,11 +468,11 @@ const EndOfTenancyCleaning: React.FC = () => {
               <div className="flex items-center justify-center gap-6 text-sm opacity-75">
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
-                  <span>Same-day availability</span>
+                  <span>Same-day available</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Users className="w-4 h-4" />
-                  <span>Trusted by 850+ tenants</span>
+                  <span>Trusted by tenants</span>
                 </div>
               </div>
             </div>
