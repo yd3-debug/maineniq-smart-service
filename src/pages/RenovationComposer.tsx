@@ -12,9 +12,7 @@ import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 
-// Image imports
-import customerConsultation from "@/assets/customer-consultation.jpg";
-import modernEquipment from "@/assets/modern-equipment.jpg";
+// Image imports - using uploaded UK renovation image
 
 const CANVAS_WIDTH = 1600;
 const CANVAS_HEIGHT = 900;
@@ -310,17 +308,24 @@ export default function RenovationComposer() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-lg">
-              <img 
-                src={customerConsultation} 
-                alt="Customer consultation for renovation project planning"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <Badge className="mb-2">Professional Service</Badge>
-                  <h3 className="text-xl font-semibold">Expert Consultation</h3>
-                  <p className="text-sm opacity-90">Detailed planning and professional guidance throughout your renovation journey</p>
+            <div className="bg-card rounded-lg p-8 border-2 border-dashed border-muted-foreground/20">
+              <div className="text-center space-y-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                  <Star className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Professional Results</h3>
+                  <p className="text-muted-foreground mb-4">Every renovation project includes comprehensive planning and quality assurance</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">15-30%</div>
+                    <div className="text-sm text-muted-foreground">Value Increase</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">40%</div>
+                    <div className="text-sm text-muted-foreground">Energy Savings</div>
+                  </div>
                 </div>
               </div>
             </div>
