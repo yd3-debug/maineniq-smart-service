@@ -84,6 +84,7 @@ const EndOfTenancyCleaning: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button 
                   size="lg" 
+                  variant="hero"
                   className="text-lg px-8"
                   onClick={() => handleQuoteRequest("End of Tenancy Cleaning")}
                 >
@@ -93,7 +94,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="text-lg px-8 text-white border-white/30 hover:bg-white/10"
+                  className="text-lg px-8 border-white/30 text-white hover:bg-white/10 hover:text-white"
                   asChild
                 >
                   <a href={`tel:${CONTACT.phones.emergencyTel}`}>

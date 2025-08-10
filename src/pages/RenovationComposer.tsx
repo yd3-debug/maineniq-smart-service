@@ -68,7 +68,7 @@ export default function RenovationComposer() {
         primaryHref="/contact"
         secondaryLabel="View Case Studies"
         secondaryHref="/case-studies"
-        secondaryClass="bg-white/10 text-white border-white/20 hover:bg-white/20"
+        
       />
 
       {/* Trust Metrics */}

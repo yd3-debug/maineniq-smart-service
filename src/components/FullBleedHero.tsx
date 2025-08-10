@@ -55,7 +55,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
             )}
           <div className="flex flex-col sm:flex-row gap-3">
             {primaryLabel && primaryHref && (
-              <Button asChild size="lg" className="px-8 py-3">
+              <Button asChild size="lg" variant="hero" className="px-8 py-3">
                 {isExternal(primaryHref) ? (
                   <a href={primaryHref}>{primaryLabel}</a>
                 ) : (
@@ -68,7 +68,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
                 asChild
                 size="lg"
                 variant="outline"
-                className={secondaryClass || "border-primary text-primary hover:bg-primary/5 px-8 py-3"}
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-3"
               >
                 {isExternal(secondaryHref) ? (
                   <a href={secondaryHref}>{secondaryLabel}</a>
