@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import TrustStrip from "@/components/TrustStrip";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
-import { BeforeAfterComparison } from "@/components/BeforeAfterComparison";
+import { HandymanBeforeAfter } from "@/components/HandymanBeforeAfter";
 import HandymanImage from "@/assets/handyman-repair.jpg";
 import MaintenanceImage from "@/assets/handyman-maintenance.jpg";
 import { Link } from "react-router-dom";
@@ -199,7 +199,7 @@ const Handyman: React.FC = () => {
               The difference between DIY attempts and professional workmanship extends beyond appearance—it's about safety, durability, and compliance.
             </p>
           </div>
-          <BeforeAfterComparison />
+          <HandymanBeforeAfter />
         </section>
 
         {/* Problems We Prevent */}
