@@ -70,27 +70,38 @@ export const AnimatedCounter = ({
   delay = 0,
   precision = 0,
   duration = 2000,
+  staticText = "",
 }: {
-  value: number;
+  value: number | string;
   suffix?: string;
   prefix?: string;
   className?: string;
   delay?: number;
   precision?: number;
   duration?: number;
+  staticText?: string;
 }) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.5 });
   const [displayValue, setDisplayValue] = useState<number>(0);
+  const [showStatic, setShowStatic] = useState<boolean>(false);
 
   useEffect(() => {
     if (!isVisible) return;
+
+    // Handle static text display
+    if (staticText || typeof value === 'string') {
+      const timer = setTimeout(() => {
+        setShowStatic(true);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
 
     const reducedMotion = typeof window !== 'undefined' &&
       typeof window.matchMedia === 'function' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const start = 0;
-    const end = value;
+    const end = typeof value === 'number' ? value : 0;
     let rafId: number | null = null;
 
     if (reducedMotion) {
@@ -120,11 +131,14 @@ export const AnimatedCounter = ({
       clearTimeout(timer);
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [isVisible, value, delay, duration, precision]);
+  }, [isVisible, value, delay, duration, precision, staticText]);
 
   return (
     <span ref={ref as React.RefObject<HTMLSpanElement>} className={`${className}`}>
-      {prefix}{displayValue}{suffix}
+      {staticText || typeof value === 'string' ? 
+        (showStatic ? (staticText || value) : '') : 
+        `${prefix}${displayValue}${suffix}`
+      }
     </span>
   );
 };

@@ -171,10 +171,10 @@ const WhyProfessionalHVAC = () => {
     },
     {
       icon: Home,
-      value: "0",
+      value: "Enhanced",
       label: "Property Marketability",
       gradient: "from-orange-500 to-amber-600",
-      description: "Varies by market (no generic % claimed)"
+      description: "Modern HVAC systems improve property appeal"
     }
   ];
 
@@ -262,10 +262,11 @@ const WhyProfessionalHVAC = () => {
                     </div>
                     <div className="font-bold text-sm sm:text-lg md:text-2xl mb-1 text-white">
                       <AnimatedCounter 
-                        value={parseFloat(stat.value.replace(/[^0-9.]/g, ''))}
+                        value={stat.value === "Enhanced" ? stat.value : parseFloat(stat.value.replace(/[^0-9.]/g, ''))}
                         prefix={stat.label.includes("Up to") ? "Up to " : stat.value.includes("£") ? "£" : ''}
-                        suffix={stat.label.includes("Capture") || stat.label.includes("Savings") || stat.label.includes("Efficiency") ? "%" : ''}
+                        suffix={stat.value === "Enhanced" ? "" : (stat.label.includes("Capture") || stat.label.includes("Savings") || stat.label.includes("Efficiency") ? "%" : '')}
                         delay={index * 200}
+                        staticText={stat.value === "Enhanced" ? "Enhanced" : ""}
                       />
                     </div>
                     <div className="text-xs sm:text-xs md:text-sm text-slate-300 font-medium">{stat.label}</div>
