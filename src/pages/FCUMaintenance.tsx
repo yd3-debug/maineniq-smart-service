@@ -89,7 +89,7 @@ const FCUMaintenance = () => {
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
                 Schedule FCU Service
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button size="lg" variant="hero">
                 Emergency FCU Repair
               </Button>
             </div>
@@ -307,7 +307,7 @@ const FCUMaintenance = () => {
             <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
               Get FCU Maintenance Quote
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+            <Button size="lg" variant="hero">
               Schedule Emergency Repair
             </Button>
           </div>

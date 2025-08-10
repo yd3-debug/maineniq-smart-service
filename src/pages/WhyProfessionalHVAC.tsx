@@ -286,7 +286,7 @@ const WhyProfessionalHVAC = () => {
                 </Button>
               </Link>
               <Link to="/services" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto text-xs sm:text-sm md:text-base font-medium px-2 sm:px-6 md:px-8 py-4 min-h-[44px] border-white/30 text-white hover:bg-white/10 backdrop-blur-md transition-all duration-300 overflow-hidden">
+                <Button variant="hero" size="lg" className="w-full sm:w-auto text-xs sm:text-sm md:text-base font-medium px-2 sm:px-6 md:px-8 py-4 min-h-[44px] transition-all duration-300 overflow-hidden">
                   <span className="sm:hidden">Services</span>
                   <span className="hidden sm:inline">View Our Services</span>
                 </Button>

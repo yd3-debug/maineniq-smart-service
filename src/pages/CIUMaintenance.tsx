@@ -90,7 +90,7 @@ const CIUMaintenance = () => {
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
                 Schedule CIU Service
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button size="lg" variant="hero">
                 Emergency CIU Repair
               </Button>
             </div>
@@ -308,7 +308,7 @@ const CIUMaintenance = () => {
             <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
               Get CIU Maintenance Quote
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+            <Button size="lg" variant="hero">
               Schedule System Audit
             </Button>
           </div>

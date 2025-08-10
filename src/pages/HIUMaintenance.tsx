@@ -97,7 +97,7 @@ const HIUMaintenance = () => {
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
                 Schedule HIU/CIU Service
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button size="lg" variant="hero">
                 Emergency HIU/CIU Repair
               </Button>
             </div>
@@ -327,7 +327,7 @@ const HIUMaintenance = () => {
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
                 Get HIU/CIU Service Quote
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button size="lg" variant="hero">
                 Emergency HIU/CIU Repair
               </Button>
             </div>

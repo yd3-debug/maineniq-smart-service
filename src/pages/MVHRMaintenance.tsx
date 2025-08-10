@@ -184,7 +184,7 @@ const MVHRMaintenance = () => {
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
                 Free Filter Assessment
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button size="lg" variant="hero">
                 Emergency Filter Replacement
               </Button>
             </div>
@@ -547,10 +547,10 @@ const MVHRMaintenance = () => {
             <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
               Get Filter Maintenance Quote
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+            <Button size="lg" variant="hero">
               Free Filter Assessment
             </Button>
-            <Button size="lg" variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
+            <Button size="lg" variant="secondary">
               Filter Subscription Service
             </Button>
           </div>

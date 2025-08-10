@@ -278,7 +278,7 @@ export default function RenovationComposer() {
                   Book Free Consultation
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="w-full border-white/20 text-white hover:bg-white/10">
+              <Button size="lg" variant="secondary" className="w-full">
                 <Mail className="w-5 h-5 mr-2" />
                 Get Renovation Quote
               </Button>

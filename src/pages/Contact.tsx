@@ -107,8 +107,8 @@ const Contact = () => {
                 </Button>
                 <Button 
                   onClick={() => handleWhatsAppClick(true)}
-                  variant="outline" 
-                  className="border-white/40 bg-white/10 text-white hover:bg-white/20 px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold backdrop-blur-sm"
+                  variant="hero" 
+                  className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold"
                 >
                   <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                   Emergency Call
