@@ -76,7 +76,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -84,17 +84,17 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-6 sm:px-8 md:px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}
-            <div className="text-white space-y-4 sm:space-y-6 md:space-y-8">
+            <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-                Expert HVAC Solutions
-                <span className="block text-accent"> Just a Call Away</span>
+                UK's Leading HVAC
+                <span className="block text-accent"> Maintenance Experts</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl opacity-95 leading-relaxed">
-                Ready for professional HVAC services? Contact us now for immediate assistance 
-                and discover why thousands trust Mainteniq with their comfort.
+                Specialists in MVHR, HIU, FCU, CIU & BMS systems. Professional maintenance 
+                and emergency repairs you can trust from certified experts.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -151,11 +151,11 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="space-y-6">
               <h2 className="font-heading text-4xl font-bold">
-                Professional HVAC Consultation
+                Expert HVAC Consultation & Support
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Get expert advice from our certified HVAC professionals. Whether you need a quick consultation 
-                or emergency support, we're here to help with personalized solutions for your comfort needs.
+                Get specialist advice from our certified HVAC maintenance experts. With over 15 years of experience 
+                in MVHR, HIU, FCU, CIU & BMS systems, we provide professional solutions you can rely on.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -202,10 +202,10 @@ const Contact = () => {
           {/* Why Choose Us Section with Images */}
           <div className="mb-20">
             <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Mainteniq?</h2>
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Our Experts?</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Discover what makes us the #1 choice for HVAC services in the UK. 
-                Our commitment to excellence and customer satisfaction sets us apart.
+                Leading HVAC maintenance specialists with proven expertise in complex systems. 
+                Our technical knowledge and commitment to quality make us the trusted choice.
               </p>
             </div>
             
@@ -222,7 +222,7 @@ const Contact = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg"></div>
                 </div>
                 <div className="space-y-8">
-                  <h3 className="font-heading text-3xl font-bold">Expert Team & Quality Service</h3>
+                  <h3 className="font-heading text-3xl font-bold">Certified Experts & Proven Results</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {whyChooseUs.slice(0, 4).map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">

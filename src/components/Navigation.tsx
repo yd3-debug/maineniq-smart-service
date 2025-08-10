@@ -218,8 +218,8 @@ const Navigation = () => {
               : '-translate-y-full opacity-0 invisible'
           }`}
         >
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col space-y-6">
+          <div className="container mx-auto px-6 py-8">
+            <div className="flex flex-col space-y-8">
               {navItems.map((item, index) => (
                 item.submenu ? (
                   <div key={item.name}>
@@ -293,7 +293,7 @@ const Navigation = () => {
                 <Button 
                   size="sm" 
                   variant="accent" 
-                  className="w-full text-lg py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full text-lg py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   onClick={() => {
                     handleQuoteRequest();
                     setIsOpen(false);
