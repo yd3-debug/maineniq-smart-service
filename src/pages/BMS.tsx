@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
+import TrustStrip from "@/components/TrustStrip";
+import { BMSMetrics } from "@/components/BMSMetrics";
+import { BMSBeforeAfter } from "@/components/BMSBeforeAfter";
+import { BMSTechnology } from "@/components/BMSTechnology";
+import { BMSProcess } from "@/components/BMSProcess";
+import { BMSSpecs } from "@/components/BMSSpecs";
 import bmsControlRoom from "@/assets/bms-control-room.jpg";
+import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
-import { CheckCircle, Phone } from "lucide-react";
+import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 
 const BMS: React.FC = () => {
   useEffect(() => {
@@ -28,70 +35,151 @@ const BMS: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <FullBleedHero
-        title="BMS — Building Management Systems"
-        subtitle="Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building."
-        image={bmsControlRoom}
-        alt="BMS control room with dashboards for building automation"
-        primaryLabel="Get a BMS Quote"
-        primaryHref="/contact"
-        secondaryLabel="Call us"
-        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
-      />
+      {/* Enhanced Hero Section */}
+      <div className="relative">
+        <FullBleedHero
+          title="BMS — Building Management Systems"
+          subtitle="Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building."
+          image={bmsControlRoom}
+          alt="BMS control room with dashboards for building automation"
+          primaryLabel="Get a BMS Quote"
+          primaryHref="/contact"
+          secondaryLabel="Call us"
+          secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+        />
+        
+        {/* Floating Metrics Overlay */}
+        <div className="absolute bottom-8 left-0 right-0 z-10">
+          <div className="container mx-auto px-4">
+            <div className="bg-background/95 backdrop-blur border rounded-xl shadow-lg p-6">
+              <BMSMetrics />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <main className="container mx-auto px-4 py-12 space-y-12">
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            "Energy monitoring and optimisation",
-            "Automated scheduling and demand control",
-            "Remote access with alerts and reports",
-          ].map((item) => (
-            <div key={item} className="rounded-lg border bg-background p-5 flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-success mt-0.5" />
-              <span>{item}</span>
-            </div>
-          ))}
-        </section>
+      {/* Trust Strip */}
+      <TrustStrip />
 
-        <section className="rounded-xl border bg-primary/5 p-6">
-          <h2 className="font-heading text-2xl font-bold mb-4 text-primary">Problems we prevent</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            <div className="rounded-lg border border-primary/20 bg-white p-4">
-              <div className="font-medium mb-1">Uncontrolled energy spend</div>
-              <p className="text-muted-foreground">Live monitoring and optimisation reduce wasted consumption.</p>
-            </div>
-            <div className="rounded-lg border border-primary/20 bg-white p-4">
-              <div className="font-medium mb-1">Comfort complaints</div>
-              <p className="text-muted-foreground">Zoning and schedules keep temperatures consistent.</p>
-            </div>
-            <div className="rounded-lg border border-primary/20 bg-white p-4">
-              <div className="font-medium mb-1">Faults missed for weeks</div>
-              <p className="text-muted-foreground">Alerts and reports flag issues before they become failures.</p>
-            </div>
+      <main className="container mx-auto px-4 py-16 space-y-20">
+        {/* Key Benefits */}
+        <section className="text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="font-heading text-3xl font-bold">Complete Building Automation</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Professional BMS implementation delivers comprehensive control and monitoring
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Energy Monitoring & Optimization",
+                description: "Real-time tracking with automated optimization reducing energy costs by up to 25%",
+                icon: "⚡"
+              },
+              {
+                title: "Automated Scheduling & Control",
+                description: "Intelligent demand control and scheduling across all building systems",
+                icon: "🕒"
+              },
+              {
+                title: "Remote Access & Alerts",
+                description: "24/7 monitoring with instant alerts and comprehensive reporting dashboard",
+                icon: "📱"
+              }
+            ].map((item) => (
+              <div key={item.title} className="group">
+                <div className="rounded-xl border bg-card p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section className="bg-muted/40 border rounded-xl p-6">
-          <h2 className="font-heading text-2xl font-bold mb-4">How it works</h2>
-          <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* BMS Technology Suite */}
+        <BMSTechnology />
+
+        {/* Before/After Comparison */}
+        <BMSBeforeAfter />
+
+        {/* Technical Specifications */}
+        <BMSSpecs />
+
+        {/* Professional Process */}
+        <BMSProcess />
+
+        {/* Problems We Prevent */}
+        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-8">
+          <div className="text-center space-y-6 mb-8">
+            <h2 className="font-heading text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Without professional BMS, buildings face significant operational and financial risks
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "Survey & scope: we assess systems, points, and integrations",
-              "Install & integrate: controllers, sensors, and dashboards",
-              "Commission & optimise: alerts, schedules, and reports",
-            ].map((step, i) => (
-              <li key={i} className="rounded-lg border bg-background p-4">
-                <div className="text-sm text-muted-foreground mb-1">Step {i + 1}</div>
-                <div className="font-medium">{step}</div>
-              </li>
+              {
+                title: "Uncontrolled Energy Waste",
+                description: "Live monitoring and AI-driven optimization eliminate up to 30% of energy waste",
+                impact: "£10k+ annual savings"
+              },
+              {
+                title: "Comfort & Productivity Issues", 
+                description: "Precision zoning and scheduling maintain optimal conditions across all spaces",
+                impact: "15% productivity gain"
+              },
+              {
+                title: "Equipment Failures & Downtime",
+                description: "Predictive analytics and instant alerts prevent costly breakdowns",
+                impact: "85% less downtime"
+              }
+            ].map((problem) => (
+              <div key={problem.title} className="bg-background rounded-lg border border-destructive/30 p-6">
+                <h3 className="font-semibold text-lg mb-3 text-destructive">{problem.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{problem.description}</p>
+                <div className="inline-flex items-center gap-2 bg-success/10 text-success text-xs font-medium px-3 py-1 rounded-full">
+                  <CheckCircle className="w-3 h-3" />
+                  {problem.impact}
+                </div>
+              </div>
             ))}
-          </ol>
-          <div className="mt-6 flex gap-3">
-            <Button asChild>
-              <Link to="/contact">Discuss your BMS</Link>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="text-center space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-12">
+          <div className="space-y-4">
+            <h2 className="font-heading text-3xl font-bold">Ready to Automate Your Building?</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+              Join hundreds of property managers who've transformed their buildings with professional BMS implementation. 
+              Get a comprehensive consultation and custom quote today.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="px-8">
+              <Link to="/contact" className="flex items-center gap-2">
+                Get Professional BMS Quote
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </Button>
-            <Button asChild variant="outline">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}><Phone className="w-4 h-4 mr-2"/>Call now</a>
+            <Button asChild variant="outline" size="lg" className="px-8">
+              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}>
+                <Phone className="w-5 h-5 mr-2"/>
+                {CONTACT.phones.emergency}
+              </a>
             </Button>
+          </div>
+          
+          <div className="pt-6 border-t">
+            <p className="text-sm text-muted-foreground">
+              ✓ Free consultation ✓ Custom design ✓ Professional installation ✓ Ongoing support
+            </p>
           </div>
         </section>
       </main>
