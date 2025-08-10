@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
-import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
+import smartHomeSetup from "@/assets/smart-home-setup.jpg";
 import { Link } from "react-router-dom";
-import { CheckCircle, Smartphone, Shield, Zap, Home, Brain, Lightbulb, Cctv, Phone, Music, Lock, Tv } from "lucide-react";
+import { Smartphone, Shield, Zap, Brain, Lightbulb, Phone, Lock, Tv } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -64,11 +64,11 @@ const SmartHome: React.FC = () => {
       title: "Security & Access",
       description: "Smart locks, cameras, sensors, doorbell integration"
     },
-    {
-      icon: Brain,
-      title: "Voice & AI Integration",
-      description: "Voice assistants, AI automation, smart routines"
-    }
+      {
+        icon: Zap,
+        title: "Energy Monitoring & Smart Meters (UK)",
+        description: "SMETS2 integration, real-time usage and tariff insights"
+      }
   ];
 
   return (
@@ -76,15 +76,15 @@ const SmartHome: React.FC = () => {
       <SEOHead
         title="Professional Smart Home Automation Services | Mainteniq"
         description="Expert smart home installation and integration. Control lighting, entertainment, security and appliances from one app. Professional installation with ongoing support."
-        keywords="smart home automation, home integration, smart lighting, home security, voice control, entertainment systems, smart locks, home automation"
+        keywords="smart home automation, home integration, smart lighting, home security, entertainment systems, smart locks, energy monitoring, UK smart meters, SMETS2"
         canonicalUrl="/smart-home"
       />
       
       <FullBleedHero
         title="Smart Home Automation"
-        subtitle="Transform your home with intelligent lighting, entertainment, security and voice control. Professional installation with comprehensive automation."
-        image={smartHomeAutomation}
-        alt="Smart home automation panel controlling HVAC and lighting"
+        subtitle="Transform your home with intelligent lighting, entertainment, security and energy monitoring. Professional installation with comprehensive automation."
+        image={smartHomeSetup}
+        alt="Smart home control panel for lighting, security and entertainment"
         primaryLabel="Request Smart Home Consultation"
         primaryHref="/contact"
         secondaryLabel="Request Callback"
@@ -148,7 +148,7 @@ const SmartHome: React.FC = () => {
                 <h3 className="font-semibold">Convenience & Lifestyle</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Automate daily routines with voice control and smart scenes. 
+                Automate daily routines with schedules and smart scenes. 
                 Save 2-3 hours weekly on routine home management tasks.
               </p>
             </div>

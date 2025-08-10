@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import smartLightingControl from "@/assets/smart-lighting-control.jpg";
-import voiceAssistantControl from "@/assets/voice-assistant-control.jpg";
+import smartHomeDashboard from "@/assets/smart-home-dashboard.jpg";
 import smartSecuritySystem from "@/assets/smart-security-system.jpg";
 import smartEntertainmentCenter from "@/assets/smart-entertainment-center.jpg";
 
@@ -14,10 +14,10 @@ const galleryItems = [
   },
   {
     id: 2,
-    title: "Voice Assistant Integration",
-    description: "Control your entire home with voice commands",
-    image: voiceAssistantControl,
-    category: "Voice Control"
+    title: "Energy Monitoring & Smart Meter",
+    description: "UK SMETS2 smart meter integration with real-time usage insights",
+    image: smartHomeDashboard,
+    category: "Energy Monitoring (UK)"
   },
   {
     id: 3,
