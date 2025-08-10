@@ -15,8 +15,8 @@ import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 
 const BMS: React.FC = () => {
   useEffect(() => {
-    document.title = "BMS (Building Management Systems) | Mainteniq";
-    const desc = "BMS installation and maintenance to optimise building performance, comfort, and energy use.";
+    document.title = "BMS Maintenance & Optimization | Mainteniq";
+    const desc = "Expert BMS maintenance services to optimize your building management system performance, reduce energy costs, and ensure reliable operation.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -36,57 +36,49 @@ const BMS: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section */}
-      <div className="relative">
-        <FullBleedHero
-          title="BMS — Building Management Systems"
-          subtitle="Centralised automation for HVAC, lighting, and energy. Monitor, control, and optimise performance across your building."
-          image={bmsControlRoom}
-          alt="BMS control room with dashboards for building automation"
-          primaryLabel="Get a BMS Quote"
-          primaryHref="/contact"
-          secondaryLabel="Call us"
-          secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
-        />
-        
-        {/* Floating Metrics Overlay */}
-        <div className="absolute bottom-8 left-0 right-0 z-10">
-          <div className="container mx-auto px-4">
-            <div className="bg-background/95 backdrop-blur border rounded-xl shadow-lg p-6">
-              <BMSMetrics />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FullBleedHero
+        title="BMS Maintenance & Optimization"
+        subtitle="Expert servicing and optimization of your existing building management systems. Maximize efficiency, reduce costs, and ensure reliable operation."
+        image={bmsControlRoom}
+        alt="BMS control room with dashboards for building automation"
+        primaryLabel="Get BMS Maintenance Quote"
+        primaryHref="/contact"
+        secondaryLabel="Call us"
+        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
+      />
 
       {/* Trust Strip */}
       <TrustStrip />
 
       <main className="container mx-auto px-4 py-16 space-y-20">
-        {/* Key Benefits */}
+        {/* Performance Results */}
+        <BMSMetrics />
+
+        {/* Key Maintenance Benefits */}
         <section className="text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Complete Building Automation</h2>
+            <h2 className="font-heading text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Professional BMS implementation delivers comprehensive control and monitoring
+              Professional maintenance services that maximize your existing BMS investment
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Energy Monitoring & Optimization",
-                description: "Real-time tracking with automated optimization reducing energy costs by up to 25%",
+                title: "System Health Monitoring",
+                description: "Continuous monitoring and diagnostics to prevent issues before they impact performance",
+                icon: "🔧"
+              },
+              {
+                title: "Performance Optimization",
+                description: "Fine-tuning existing systems for maximum efficiency and reduced energy costs",
                 icon: "⚡"
               },
               {
-                title: "Automated Scheduling & Control",
-                description: "Intelligent demand control and scheduling across all building systems",
-                icon: "🕒"
-              },
-              {
-                title: "Remote Access & Alerts",
-                description: "24/7 monitoring with instant alerts and comprehensive reporting dashboard",
-                icon: "📱"
+                title: "Preventive Maintenance",
+                description: "Scheduled maintenance programs to extend system lifespan and prevent costly failures",
+                icon: "🛡️"
               }
             ].map((item) => (
               <div key={item.title} className="group">
@@ -117,26 +109,26 @@ const BMS: React.FC = () => {
           <div className="text-center space-y-6 mb-8">
             <h2 className="font-heading text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Without professional BMS, buildings face significant operational and financial risks
+              Without proper BMS maintenance, buildings face significant operational and financial risks
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Uncontrolled Energy Waste",
-                description: "Live monitoring and AI-driven optimization eliminate up to 30% of energy waste",
+                title: "System Degradation & Inefficiency",
+                description: "Regular maintenance and optimization prevent gradual performance decline and energy waste",
                 impact: "£10k+ annual savings"
               },
               {
-                title: "Comfort & Productivity Issues", 
-                description: "Precision zoning and scheduling maintain optimal conditions across all spaces",
-                impact: "15% productivity gain"
+                title: "Unexpected System Failures", 
+                description: "Preventive maintenance identifies issues early, avoiding costly emergency repairs",
+                impact: "85% fewer breakdowns"
               },
               {
-                title: "Equipment Failures & Downtime",
-                description: "Predictive analytics and instant alerts prevent costly breakdowns",
-                impact: "85% less downtime"
+                title: "Compliance & Safety Issues",
+                description: "Regular inspections and updates ensure systems meet safety standards and regulations",
+                impact: "100% compliance"
               }
             ].map((problem) => (
               <div key={problem.title} className="bg-background rounded-lg border border-destructive/30 p-6">
@@ -154,17 +146,17 @@ const BMS: React.FC = () => {
         {/* Final CTA Section */}
         <section className="text-center space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-12">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Ready to Automate Your Building?</h2>
+            <h2 className="font-heading text-3xl font-bold">Ready to Optimize Your BMS?</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-              Join hundreds of property managers who've transformed their buildings with professional BMS implementation. 
-              Get a comprehensive consultation and custom quote today.
+              Join hundreds of property managers who've maximized their BMS performance with our expert maintenance services. 
+              Get a comprehensive system assessment and maintenance quote today.
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="px-8">
               <Link to="/contact" className="flex items-center gap-2">
-                Get Professional BMS Quote
+                Get BMS Maintenance Quote
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
@@ -178,7 +170,7 @@ const BMS: React.FC = () => {
           
           <div className="pt-6 border-t">
             <p className="text-sm text-muted-foreground">
-              ✓ Free consultation ✓ Custom design ✓ Professional installation ✓ Ongoing support
+              ✓ Free system assessment ✓ Preventive maintenance ✓ Performance optimization ✓ 24/7 support
             </p>
           </div>
         </section>
