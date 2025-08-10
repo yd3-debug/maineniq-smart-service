@@ -96,7 +96,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/LOGOPETRU2 .png" 
+              src="/LOGOPETRU2.png" 
               alt="Mainteniq Logo" 
               className="h-16 w-auto transition-all duration-300"
             />

@@ -33,7 +33,7 @@ export const LoadingSpinner = ({
         "flex items-center justify-center"
       )}>
         <img 
-          src="/LOGOPETRU2 .png" 
+          src="/LOGOPETRU2.png" 
           alt="Mainteniq Logo" 
           className="w-full h-full object-contain filter drop-shadow-lg"
         />
@@ -85,7 +85,7 @@ export const LoadingButton = ({
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 animate-pulse">
             <img 
-              src="/LOGOPETRU2 .png" 
+              src="/LOGOPETRU2.png" 
               alt="" 
               className="w-full h-full object-contain"
             />

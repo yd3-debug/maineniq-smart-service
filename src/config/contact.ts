@@ -8,7 +8,7 @@ export const CONTACT = {
   email: "info@mainteniq.co.uk",
   whatsapp: {
     number: "447834562366",
-    defaultMessage: "Hi! I'm interested in your HVAC services. Can you help me?",
+    defaultMessage: "Hi! I'm interested in your property maintenance services. Can you help me?",
     emergencyMessage: "EMERGENCY: I need urgent HVAC assistance. Please call me back immediately!",
   },
 };
