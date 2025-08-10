@@ -1,12 +1,22 @@
 import { useScrollAnimation, useCounterAnimation } from "@/hooks/useScrollAnimation";
 import { Shield, Clock, Star, Wrench } from "lucide-react";
+import { useEffect } from "react";
 
 export function TrustMetrics() {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
-  const { count: properties } = useCounterAnimation(isVisible ? 500 : 0, 2000);
-  const { count: uptime } = useCounterAnimation(isVisible ? 99.2 : 0, 2000, 300);
-  const { count: response } = useCounterAnimation(isVisible ? 4 : 0, 1500, 600);
-  const { count: satisfaction } = useCounterAnimation(isVisible ? 4.9 : 0, 2000, 900);
+  const { count: properties, startAnimation: startProperties } = useCounterAnimation(500, 2000);
+  const { count: uptime, startAnimation: startUptime } = useCounterAnimation(99.2, 2000);
+  const { count: response, startAnimation: startResponse } = useCounterAnimation(4, 1500);
+  const { count: satisfaction, startAnimation: startSatisfaction } = useCounterAnimation(4.9, 2000);
+
+  useEffect(() => {
+    if (isVisible) {
+      startProperties();
+      setTimeout(() => startUptime(), 300);
+      setTimeout(() => startResponse(), 600);
+      setTimeout(() => startSatisfaction(), 900);
+    }
+  }, [isVisible, startProperties, startUptime, startResponse, startSatisfaction]);
 
   return (
     <div ref={ref as any} className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">

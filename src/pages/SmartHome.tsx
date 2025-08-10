@@ -8,6 +8,8 @@ import SEOHead from "@/components/SEOHead";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { TrustMetrics } from "@/components/TrustMetrics";
 import ResearchBadge from "@/components/ResearchBadge";
+import { SmartHomeGallery } from "@/components/SmartHomeGallery";
+import { BeforeAfterComparison } from "@/components/BeforeAfterComparison";
 import { handleQuoteRequest } from "@/utils/quote";
 
 const SmartHome: React.FC = () => {
@@ -175,6 +177,10 @@ const SmartHome: React.FC = () => {
           </div>
         </section>
 
+        <SmartHomeGallery />
+        
+        <BeforeAfterComparison />
+        
         <section className="bg-muted/40 border rounded-xl p-8 space-y-8">
           <div className="text-center space-y-4">
             <h2 className="font-heading text-2xl font-bold">Our Professional Installation Process</h2>
