@@ -22,7 +22,9 @@ import {
 } from "lucide-react";
 
 import heroImage from "@/assets/hiu-residential.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import hiuBefore from "@/assets/hiu-before.svg";
+import hiuAfter from "@/assets/hiu-after.svg";
 import maintenanceImage from "@/assets/hvac-maintenance.jpg";
 import professionalImage from "@/assets/hvac-professional.jpg";
 
@@ -135,10 +137,15 @@ const HIUMaintenance = () => {
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <img 
-                      src={beforeAfterImage} 
-                      alt="HIU before and after maintenance comparison"
-                      className="rounded-lg shadow-lg w-full"
+                    <BeforeAfterSlider
+                      beforeSrc={hiuBefore}
+                      afterSrc={hiuAfter}
+                      beforeAlt="HIU before service – limescale buildup and poor flow"
+                      afterAlt="HIU after service – clean heat exchanger and optimal flow"
+                      beforeLabel="Before service"
+                      afterLabel="After service"
+                      className="rounded-lg shadow-lg"
+                      fit="contain"
                     />
                   </div>
                   <div>
