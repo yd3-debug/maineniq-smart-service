@@ -86,7 +86,7 @@ const FCUMaintenance = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
+              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest()}>
                 Schedule FCU Service
               </Button>
               <Button size="lg" variant="hero">
