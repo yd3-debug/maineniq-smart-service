@@ -1,37 +1,37 @@
 import { Card, CardContent } from "@/components/ui/card";
-import modernHvacSystem from "@/assets/modern-hvac-system.jpg";
-import smartHomeSetup from "@/assets/smart-home-setup.jpg";
-import energyTech from "@/assets/energy-tech.jpg";
-import systemInspection from "@/assets/system-inspection.jpg";
+import smartLightingControl from "@/assets/smart-lighting-control.jpg";
+import voiceAssistantControl from "@/assets/voice-assistant-control.jpg";
+import smartSecuritySystem from "@/assets/smart-security-system.jpg";
+import smartEntertainmentCenter from "@/assets/smart-entertainment-center.jpg";
 
 const galleryItems = [
   {
     id: 1,
-    title: "Smart HVAC Integration",
-    description: "Connected climate control with intelligent scheduling",
-    image: modernHvacSystem,
-    category: "Climate Control"
+    title: "Smart Lighting Control",
+    description: "Automated lighting scenes with color and dimming control",
+    image: smartLightingControl,
+    category: "Lighting Systems"
   },
   {
     id: 2,
-    title: "Whole Home Setup",
-    description: "Complete smart home ecosystem with central control",
-    image: smartHomeSetup,
-    category: "Home Automation"
+    title: "Voice Assistant Integration",
+    description: "Control your entire home with voice commands",
+    image: voiceAssistantControl,
+    category: "Voice Control"
   },
   {
     id: 3,
-    title: "Energy Management",
-    description: "Real-time monitoring and optimization systems",
-    image: energyTech,
-    category: "Energy Efficiency"
+    title: "Security & Monitoring",
+    description: "Smart cameras, sensors, and access control systems",
+    image: smartSecuritySystem,
+    category: "Security Systems"
   },
   {
     id: 4,
-    title: "System Integration",
-    description: "Professional installation and testing process",
-    image: systemInspection,
-    category: "Installation"
+    title: "Entertainment Centers",
+    description: "Integrated audio, video, and streaming control",
+    image: smartEntertainmentCenter,
+    category: "Entertainment"
   }
 ];
 

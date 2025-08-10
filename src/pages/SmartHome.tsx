@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
 import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import { Link } from "react-router-dom";
-import { CheckCircle, Smartphone, Shield, Zap, Home, Brain, ThermometerSun, Lightbulb, Cctv, Phone } from "lucide-react";
+import { CheckCircle, Smartphone, Shield, Zap, Home, Brain, Lightbulb, Cctv, Phone, Music, Lock, Tv } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -15,12 +15,12 @@ import { handleQuoteRequest } from "@/utils/quote";
 const SmartHome: React.FC = () => {
   const serviceOutcomes = [
     {
-      icon: Zap,
-      value: 32,
-      label: "Average Energy Savings",
-      description: "Percentage reduction in energy costs",
-      percentage: 85,
-      suffix: "%"
+      icon: Smartphone,
+      value: 45,
+      label: "Connected Devices",
+      description: "Average devices controlled per installation",
+      percentage: 90,
+      suffix: "+"
     },
     {
       icon: Shield,
@@ -31,43 +31,43 @@ const SmartHome: React.FC = () => {
       suffix: "/5"
     },
     {
-      icon: Smartphone,
-      value: 45,
-      label: "Connected Devices",
-      description: "Average devices controlled per installation",
-      percentage: 90,
-      suffix: "+"
+      icon: Brain,
+      value: 87,
+      label: "Convenience Rating",
+      description: "Time saved on daily home management tasks",
+      percentage: 92,
+      suffix: "%"
     },
     {
-      icon: Brain,
-      value: 2,
-      label: "Response Time",
-      description: "Minutes for automated security response",
-      percentage: 95,
-      suffix: " min"
+      icon: Zap,
+      value: 24,
+      label: "Automated Tasks",
+      description: "Daily tasks automated per household",
+      percentage: 88,
+      suffix: "/7"
     }
   ];
 
   const smartHomeTechnologies = [
     {
-      icon: ThermometerSun,
-      title: "Climate Control",
-      description: "Smart thermostats, HVAC integration, zone control"
-    },
-    {
       icon: Lightbulb,
-      title: "Lighting Systems",
+      title: "Smart Lighting & Controls",
       description: "Automated lighting, dimming, color control, scene management"
     },
     {
-      icon: Cctv,
-      title: "Security Integration",
-      description: "Cameras, sensors, access control, monitoring systems"
+      icon: Tv,
+      title: "Entertainment Systems",
+      description: "Smart TVs, audio systems, streaming, multi-room control"
     },
     {
-      icon: Home,
-      title: "Whole Home Control",
-      description: "Central hub, voice control, mobile app, automation rules"
+      icon: Lock,
+      title: "Security & Access",
+      description: "Smart locks, cameras, sensors, doorbell integration"
+    },
+    {
+      icon: Brain,
+      title: "Voice & AI Integration",
+      description: "Voice assistants, AI automation, smart routines"
     }
   ];
 
@@ -75,14 +75,14 @@ const SmartHome: React.FC = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Professional Smart Home Automation Services | Mainteniq"
-        description="Expert smart home installation and integration. Control HVAC, lighting, security and more from one app. Professional installation with ongoing support."
-        keywords="smart home automation, home integration, HVAC control, smart lighting, home security, voice control, smart thermostat installation"
+        description="Expert smart home installation and integration. Control lighting, entertainment, security and appliances from one app. Professional installation with ongoing support."
+        keywords="smart home automation, home integration, smart lighting, home security, voice control, entertainment systems, smart locks, home automation"
         canonicalUrl="/smart-home"
       />
       
       <FullBleedHero
         title="Smart Home Automation"
-        subtitle="Seamlessly control heating, cooling, lighting and security from your phone or voice. Professional installation with comprehensive integration."
+        subtitle="Transform your home with intelligent lighting, entertainment, security and voice control. Professional installation with comprehensive automation."
         image={smartHomeAutomation}
         alt="Smart home automation panel controlling HVAC and lighting"
         primaryLabel="Request Smart Home Consultation"
@@ -144,12 +144,23 @@ const SmartHome: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-lg border border-primary/20 bg-white p-6 space-y-3">
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Energy Efficiency</h3>
+                <Brain className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Convenience & Lifestyle</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Smart thermostats and automated systems reduce energy waste by up to 23%. 
-                Typical savings of £300-800 annually on heating and cooling costs.
+                Automate daily routines with voice control and smart scenes. 
+                Save 2-3 hours weekly on routine home management tasks.
+              </p>
+            </div>
+            
+            <div className="rounded-lg border border-primary/20 bg-white p-6 space-y-3">
+              <div className="flex items-center gap-2">
+                <Tv className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Entertainment Integration</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Seamless control of TVs, speakers, and streaming across all rooms. 
+                Create immersive experiences with synchronized lighting and audio.
               </p>
             </div>
             
@@ -159,19 +170,8 @@ const SmartHome: React.FC = () => {
                 <h3 className="font-semibold">Enhanced Security</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Integrated security systems with smart cameras, sensors, and automated responses. 
+                Smart locks, cameras, and sensors with instant notifications. 
                 Potential insurance savings of 5-20% with approved systems.
-              </p>
-            </div>
-            
-            <div className="rounded-lg border border-primary/20 bg-white p-6 space-y-3">
-              <div className="flex items-center gap-2">
-                <Home className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">Property Value</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Smart home features can increase property value by 3-5%. 
-                Professional installation ensures reliable operation and maximum benefit.
               </p>
             </div>
           </div>
