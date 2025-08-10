@@ -13,8 +13,6 @@ import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 
 // Image imports
-import renovationComparison from "@/assets/renovation-comparison.jpg";
-import beforeAfter from "@/assets/before-after.jpg";
 import customerConsultation from "@/assets/customer-consultation.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
 
@@ -299,8 +297,8 @@ export default function RenovationComposer() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src={beforeAfter} 
-                alt="Before and after renovation transformation showing dramatic improvement"
+                src="/lovable-uploads/0f778791-0f7a-41cd-ad93-b14063c2c183.png" 
+                alt="Genuine UK flat renovation showing dramatic before and after transformation"
                 className="w-full h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
