@@ -59,14 +59,14 @@ const Index = () => {
       description: "Expert maintenance and upgrades for Fan Coil Units to ensure optimal efficiency and performance."
     },
     {
-      icon: Thermometer,
-      title: "HIU Service & Repair",
-      description: "Comprehensive Heat Interface Unit servicing, repairs, and upgrades for district heating systems."
+      icon: Shield,
+      title: "HIU & CIU Service & Repair",
+      description: "Comprehensive Heat Interface Unit and Central Interface Unit servicing, repairs, and upgrades for district heating and zone control systems."
     },
     {
-      icon: Shield,
-      title: "CIU & MVHR Maintenance",
-      description: "Professional maintenance for Central Interface Units and Mechanical Ventilation with Heat Recovery systems."
+      icon: Thermometer,
+      title: "MVHR Maintenance",
+      description: "Professional maintenance for Mechanical Ventilation with Heat Recovery systems for optimal air quality and energy efficiency."
     },
     {
       icon: Zap,
