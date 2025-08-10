@@ -24,40 +24,49 @@ import {
 import heroImage from "@/assets/hiu-residential.jpg";
 import maintenanceImage from "@/assets/hvac-maintenance.jpg";
 import professionalImage from "@/assets/hvac-professional.jpg";
+import SEOHead from "@/components/SEOHead";
 
 const HIUMaintenance = () => {
   const neglectScenarios = [
     {
       stage: "6 Months",
-      issue: "Scale Buildup in Heat Exchanger",
-      consequence: "30% reduction in hot water flow, lukewarm water",
-      cost: "£200-400 in tenant complaints & energy waste"
+      issue: "Strainer clog + scale on plates",
+      consequence: "Reduced hot water flow, actuator hunting",
+      cost: "£200–£400 in complaints and energy waste"
     },
     {
       stage: "12 Months", 
-      issue: "Valve Seizure & Control Failure",
-      consequence: "No heating or hot water, emergency callouts",
-      cost: "£800-1,500 emergency repairs + lost rent"
+      issue: "Differential pressure/mixing valve seizure, control failure",
+      consequence: "No hot water or unstable temperatures",
+      cost: "£800–£1,500 emergency repairs + lost rent"
     },
     {
       stage: "18 Months",
-      issue: "Complete HIU Breakdown",
-      consequence: "Full replacement needed, insurance claims",
-      cost: "£2,500-4,000 replacement + water damage"
+      issue: "Major HIU/CIU breakdown",
+      consequence: "Replacement needed, potential water damage",
+      cost: "£2,500–£4,000 replacement + damage"
     }
   ];
 
   const maintenanceChecklist = [
-    { task: "Heat exchanger descaling", frequency: "Annually", benefit: "Optimal heat transfer & hot water flow" },
-    { task: "Control valve servicing", frequency: "Annually", benefit: "Accurate temperature control" },
+    { task: "Plate heat exchanger descaling", frequency: "Annually", benefit: "Optimal heat transfer & hot water flow" },
+    { task: "Strainer cleaning & dirt separator flush", frequency: "Annually", benefit: "Prevents blockages & low flow" },
+    { task: "Differential pressure/bypass valve test & set", frequency: "Annually", benefit: "Stable control & reduced noise" },
+    { task: "Mixing/blending valve calibration", frequency: "Annually", benefit: "Consistent outlet temperatures" },
+    { task: "Actuator and control verification", frequency: "Annually", benefit: "Reliable zone control" },
     { task: "Pressure relief valve test", frequency: "Annually", benefit: "Safety compliance & protection" },
-    { task: "Pump inspection & lubrication", frequency: "Annually", benefit: "Quiet operation & longevity" },
-    { task: "Temperature sensor calibration", frequency: "Bi-annually", benefit: "Consistent comfort levels" },
-    { task: "Pipework & connections check", frequency: "Annually", benefit: "Leak prevention & efficiency" }
+    { task: "Primary/secondary circuit balancing", frequency: "Annually", benefit: "Efficiency & reduced cycling" },
+    { task: "Temperature sensor calibration", frequency: "Bi-annually", benefit: "Accurate readings & comfort" }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-orange/5">
+      <SEOHead 
+        title="HIU & CIU Maintenance | Maineniq"
+        description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."
+        keywords="HIU maintenance, CIU maintenance, HIU repair, CIU service, district heating interface unit"
+        canonicalUrl={`${window.location.origin}/hiu-maintenance`}
+      />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div 
@@ -71,26 +80,25 @@ const HIUMaintenance = () => {
           <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
               <Home className="w-4 h-4 mr-2" />
-              HIU Service & Repair Specialists
+              HIU & CIU Service & Repair Specialists
             </Badge>
             
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
-              HIU Maintenance: 
+              HIU & CIU Maintenance: 
               <span className="text-white"> Keep Hot Water </span>
               Flowing Reliably
             </h1>
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
-              Heat Interface Units are the heart of your heating and hot water system. Regular servicing prevents scale buildup, 
-              valve failures, and ensures residents always have reliable heating and hot water.
+              Heat Interface Units (HIUs) and Central Interface Units (CIUs) are the heart of your heating and hot water distribution. Regular servicing prevents scale and control issues, improves efficiency, and ensures reliable comfort.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
-                Schedule HIU Service
+                Schedule HIU/CIU Service
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
-                Emergency HIU Repair
+                Emergency HIU/CIU Repair
               </Button>
             </div>
           </div>
@@ -103,10 +111,10 @@ const HIUMaintenance = () => {
           <div className="text-center mb-12">
             <AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              The Hidden Dangers of HIU Neglect
+              The Hidden Dangers of HIU/CIU Neglect
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              HIU failures don't just affect comfort - they can cause water damage, insurance issues, and complete system replacement.
+              Interface unit failures (HIU/CIU) don't just affect comfort — they can cause water damage, insurance issues, and complete system replacement.
             </p>
           </div>
 
@@ -133,8 +141,8 @@ const HIUMaintenance = () => {
             <Card className="bg-card/80 backdrop-blur">
               <CardContent className="p-8">
                 <div className="mb-6 text-center">
-                  <h3 className="text-2xl font-bold mb-2">Service outcomes you can expect</h3>
-                  <p className="text-muted-foreground">Typical results after a professional HIU service</p>
+                  <h3 className="text-2xl font-bold mb-2">Service outcomes you can expect (HIU & CIU)</h3>
+                  <p className="text-muted-foreground">Typical results after a professional HIU/CIU service</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <ProgressMetric
@@ -185,10 +193,10 @@ const HIUMaintenance = () => {
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Our Professional HIU Service Process
+              Our Professional HIU & CIU Service Process
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive annual servicing that prevents scale buildup, ensures safety compliance, and maintains optimal performance.
+              Comprehensive annual servicing for HIU & CIU systems that prevents scale and control issues, ensures safety compliance, and maintains optimal performance.
             </p>
           </div>
 
@@ -226,7 +234,7 @@ const HIUMaintenance = () => {
               <Card className="text-center bg-success/5 border-success/20">
                 <CardContent className="p-8">
                   <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-success mb-2">Annual HIU Service</h3>
+                  <h3 className="text-2xl font-bold text-success mb-2">Annual HIU/CIU Service</h3>
                   <div className="text-4xl font-bold text-success mb-4">
                     <AnimatedCounter value={180} prefix="£" suffix="/year" />
                   </div>
@@ -249,7 +257,7 @@ const HIUMaintenance = () => {
                     <AnimatedCounter value={3500} prefix="£" suffix="/unit" />
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• New HIU unit cost</li>
+                    <li>• New HIU/CIU unit cost</li>
                     <li>• Emergency installation</li>
                     <li>• Potential water damage</li>
                     <li>• Tenant compensation</li>
@@ -270,7 +278,7 @@ const HIUMaintenance = () => {
               UK Safety & Compliance Requirements
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              HIU maintenance is crucial for safety compliance and avoiding legal issues with tenants and insurers.
+              HIU/CIU maintenance is crucial for safety compliance and avoiding legal issues with tenants and insurers.
             </p>
           </div>
 
@@ -281,7 +289,7 @@ const HIUMaintenance = () => {
                   <h3 className="text-xl font-semibold mb-4">Building Safety Act 2022</h3>
                   <p className="text-muted-foreground mb-4">
                     Landlords must ensure all building systems are properly maintained and safe. 
-                    HIU failures can lead to safety violations and significant penalties under the new Act.
+                    HIU/CIU failures can lead to safety violations and significant penalties under the new Act.
                   </p>
                   <ResearchBadge claimId="building-safety-act" />
                 </CardContent>
@@ -293,7 +301,7 @@ const HIUMaintenance = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Fitness for Habitation</h3>
                   <p className="text-muted-foreground mb-4">
-                    Properties must provide adequate heating and hot water. HIU failures can make properties 
+                    Properties must provide adequate heating and hot water. HIU/CIU failures can make properties 
                     legally uninhabitable, leading to rent reductions and compensation claims.
                   </p>
                   <ResearchBadge claimId="fitness-for-habitation" />
@@ -308,21 +316,21 @@ const HIUMaintenance = () => {
       <section className="py-12 sm:py-16 md:py-20 bg-accent-orange">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ensure Reliable Hot Water & Heating
+            Ensure Reliable Hot Water & Heating (HIU/CIU)
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Our certified HIU specialists provide comprehensive annual servicing that prevents failures, 
-            ensures compliance, and keeps your residents happy.
-          </p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Our certified HIU/CIU specialists provide comprehensive annual servicing that prevents failures, 
+              ensures compliance, and keeps your residents happy.
+            </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
-              Get HIU Service Quote
-            </Button>
-            <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
-              Emergency HIU Repair
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
+                Get HIU/CIU Service Quote
+              </Button>
+              <Button size="lg" variant="outline" className="text-white border-white/30 hover:bg-white/10">
+                Emergency HIU/CIU Repair
+              </Button>
+            </div>
         </div>
       </section>
     </div>
