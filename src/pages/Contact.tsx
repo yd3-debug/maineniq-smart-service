@@ -76,7 +76,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-16">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -84,7 +84,7 @@ const Contact = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
         </div>
         
-        <div className="container mx-auto px-6 sm:px-8 md:px-4 relative z-10">
+        <div className="container mx-auto px-6 sm:px-8 md:px-4 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text content */}
             <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
