@@ -583,7 +583,7 @@ const services = [
               save energy costs, and prevent expensive emergency repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white px-8 py-3">
+              <Button asChild variant="premium" className="px-8 py-3">
                 <Link to="/contact">
                   Schedule Maintenance
                   <ArrowRight className="w-5 h-5 ml-2" />

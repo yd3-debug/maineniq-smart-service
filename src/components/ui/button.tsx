@@ -15,11 +15,11 @@ const buttonVariants = cva(
         outline:
           "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white shadow-sm hover:shadow-md",
         secondary:
-          "bg-secondary text-white hover:bg-secondary/80 shadow-sm hover:shadow-md",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm hover:shadow-md",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         premium: "bg-gradient-to-r from-energy-gold to-primary text-white hover:from-energy-gold/90 hover:to-primary/90 shadow-elegant hover:shadow-glow transform hover:scale-[1.02]",
-        hero: "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white hover:text-primary shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+        hero: "bg-white text-primary border border-white/20 hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
         accent: "bg-gradient-to-r from-accent-orange to-energy-gold text-white hover:from-accent-orange/90 hover:to-energy-gold/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
         trust: "bg-gradient-to-r from-trust-blue to-primary text-white hover:from-trust-blue/90 hover:to-primary/90 shadow-md hover:shadow-lg transform hover:scale-[1.02]",
       },

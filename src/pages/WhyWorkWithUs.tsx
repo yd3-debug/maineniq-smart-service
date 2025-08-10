@@ -387,7 +387,7 @@ export default function WhyWorkWithUs() {
                 aria-label="Call us to discuss your maintenance needs"
                 className="w-full sm:w-auto"
               >
-                <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary font-semibold text-lg px-8 py-4">
+                <Button size="lg" variant="hero" className="w-full sm:w-auto font-semibold text-lg px-8 py-4">
                   Call Now
                 </Button>
               </a>

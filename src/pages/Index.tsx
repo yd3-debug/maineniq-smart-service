@@ -414,7 +414,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/why-professional-hvac">
-                <Button className="bg-gradient-to-r from-primary to-energy-gold hover:from-primary/90 hover:to-energy-gold/90 text-white px-8 py-3">
+                <Button variant="premium" className="px-8 py-3">
                   Calculate Your Savings
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

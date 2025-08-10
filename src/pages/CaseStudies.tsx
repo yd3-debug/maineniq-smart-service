@@ -429,7 +429,7 @@ const portfolioProjects = [
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="outline" size="sm" className="rounded-full border-white text-white hover:bg-white hover:text-primary">
+                        <Button variant="hero" size="sm" className="rounded-full">
                           <Eye className="w-4 h-4 mr-2" />
                           View Details
                         </Button>

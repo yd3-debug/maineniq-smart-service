@@ -110,7 +110,7 @@ export default function HVACMaintenance() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
-            <Badge variant="outline" className="mb-6 border-white/30 text-white">
+            <Badge variant="outline" className="mb-6 border-white/30 text-white bg-white/10">
               <AlertTriangle className="w-4 h-4 mr-2" />
               CRITICAL: System Failure Prevention
             </Badge>
@@ -123,7 +123,7 @@ export default function HVACMaintenance() {
               System failure isn't a question of IF—it's WHEN.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-white">
+              <Button size="lg" variant="destructive">
                 <Phone className="w-5 h-5 mr-2" />
                 Emergency Service
               </Button>
@@ -433,7 +433,7 @@ export default function HVACMaintenance() {
               <Phone className="w-5 h-5 mr-2" />
               Book Emergency Assessment
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="hero">
               <Zap className="w-5 h-5 mr-2" />
               Schedule Preventive Service
             </Button>

@@ -33,7 +33,7 @@ export function UrgencyBanner() {
             </div>
           </div>
         </div>
-        <Button className="bg-accent-orange hover:bg-accent-orange/90 text-white whitespace-nowrap">
+        <Button variant="accent" className="whitespace-nowrap">
           Book Survey Now
         </Button>
       </div>
