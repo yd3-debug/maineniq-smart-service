@@ -290,13 +290,13 @@ const EndOfTenancyCleaning: React.FC = () => {
                 },
                 {
                   name: "2-3 Bed", 
-                  price: "From £180", 
+                  price: "From £220", 
                   points: ["Oven exterior & interior","Windows interior cleaning","Professional equipment","Priority same-day slots"],
                   popular: true
                 },
                 {
                   name: "4+ Bed", 
-                  price: "From £240", 
+                  price: "From £290", 
                   points: ["Full deep clean service","Team of 2-3 professionals","Carpet spot treatment","Move-out coordination"],
                   popular: false
                 }
