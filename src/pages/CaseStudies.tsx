@@ -44,7 +44,7 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
     useEffect(() => {
       document.title = "HVAC Maintenance Case Studies | Professional Service Results | Mainteniq";
       const description =
-        "Real HVAC maintenance success stories: FCU upgrades, HIU services, MVHR optimization, and air conditioning installations. Professional maintenance that saves costs and improves efficiency.";
+        "Real HVAC maintenance success stories: FCU upgrades, HIU & CIU services, MVHR optimization, and air conditioning installations. Professional maintenance that saves costs and improves efficiency.";
       const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
       if (metaDesc) {
         metaDesc.setAttribute("content", description);
@@ -63,7 +63,7 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
       link.href = window.location.origin + "/case-studies";
     }, []);
 
-    const projectFilters = ["All", "FCU Maintenance", "HIU Service", "MVHR Systems", "Air Conditioning", "BMS Maintenance", "Commercial", "Emergency Repairs"];
+    const projectFilters = ["All", "FCU Maintenance", "HIU & CIU Service", "MVHR Systems", "Air Conditioning", "BMS Maintenance", "Commercial", "Emergency Repairs"];
 
     const countFor = (filter: string) => {
       if (filter === "All") return portfolioProjects.length;
@@ -120,10 +120,10 @@ const testimonials = [
       rating: 5
     },
     {
-      text: "Excellent HIU servicing - our residents now have consistent hot water and heating. Quick, professional, and reliable.",
+      text: "Excellent HIU & CIU servicing - our residents now have consistent hot water and heating. Quick, professional, and reliable.",
       author: "Michael Chen",
       company: "Central London Developments",
-      project: "Heat Interface Unit Maintenance",
+      project: "HIU & CIU Maintenance",
       rating: 5
     }
   ];
@@ -157,15 +157,15 @@ const portfolioProjects = [
     },
     {
       id: 2,
-      title: "HIU Service & Upgrade Program HSU-003",
-      projectType: "HIU Service",
+      title: "HIU & CIU Service & Upgrade Program HSU-003",
+      projectType: "HIU & CIU Service",
       propertyType: "Commercial",
       location: "Westminster",
       completedDate: "Q4 2023",
       confidential: false,
-      tags: ["Heat Interface Units", "Service", "Upgrades"],
-      description: "Complete HIU servicing and upgrade program for residential development",
-      technicalScope: "Annual HIU servicing, heat exchanger cleaning, control valve calibration for 80 apartments",
+      tags: ["Heat Interface Units", "Central Interface Units", "Service", "Upgrades"],
+      description: "Complete HIU & CIU servicing and upgrade program for residential development",
+      technicalScope: "Annual HIU & CIU servicing, heat exchanger cleaning, control valve calibration for 80 apartments",
       achievements: [
         "30% improvement in heat transfer efficiency",
         "Eliminated resident hot water complaints",

@@ -6,7 +6,7 @@ const SystemsWeMaintain = () => {
     { icon: Wrench, title: "HVAC Plant", description: "Chillers, AHUs, condensers and air handling equipment." },
     { icon: Fan, title: "MVHR", description: "Mechanical ventilation with heat recovery systems." },
     { icon: Gauge, title: "Fan Coil Units", description: "FCU servicing, balancing and filter changes." },
-    { icon: Cog, title: "HIUs", description: "Heat interface units for district heating networks." },
+    { icon: Cog, title: "HIU & CIU", description: "Heat interface units and central interface units for district heating and zone control systems." },
     { icon: CheckCircle, title: "Boilers & Pumps", description: "Efficiency checks and preventative maintenance." },
     { icon: Cpu, title: "BMS & Controls", description: "Controls optimisation and fault diagnostics." },
   ];

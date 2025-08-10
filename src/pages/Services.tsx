@@ -96,9 +96,9 @@ const services = [
     },
     {
       icon: Cpu,
-      title: "HIU Service & Repair",
-      subtitle: "Heat Interface Unit Maintenance",
-      description: "Professional HIU servicing maintaining 15-30% efficiency gains. Annual maintenance prevents scale buildup and ensures optimal performance.",
+      title: "HIU & CIU Service & Repair",
+      subtitle: "Heat Interface Unit & Central Interface Unit Maintenance",
+      description: "Professional HIU and CIU servicing maintaining 15-30% efficiency gains. Annual maintenance prevents scale buildup and ensures optimal performance for both interface units.",
       image: hiuInstallation,
       features: [
         "Annual service and safety checks",
@@ -170,7 +170,7 @@ const services = [
   const getServicePath = (title: string) => {
     if (title.includes("MVHR")) return "/mvhr-maintenance";
     if (title.includes("FCU")) return "/fcu-maintenance";
-    if (title.includes("HIU")) return "/hiu-maintenance";
+    if (title.includes("HIU") || title.includes("CIU")) return "/hiu-maintenance";
     if (title.includes("HVAC")) return "/hvac-maintenance";
     if (title.includes("BMS")) return "/bms";
     if (title.includes("Smart Home")) return "/smart-home";
@@ -192,7 +192,7 @@ const services = [
       { label: "Energy saved", value: 15, prefix: "-", suffix: "%" },
       { label: "Avoided emergency", value: 850, prefix: "£" },
     ];
-    if (title.includes("HIU")) return [
+    if (title.includes("HIU") || title.includes("CIU")) return [
       { label: "Efficiency gain", value: 30, suffix: "%" },
       { label: "Energy saved", value: 20, prefix: "-", suffix: "%" },
       { label: "Avoided emergency", value: 2200, prefix: "£" },
@@ -217,7 +217,7 @@ const services = [
       "Fan motor burnout (£400+ per unit)",
       "40% efficiency loss from dirty coils",
     ];
-    if (title.includes("HIU")) return [
+    if (title.includes("HIU") || title.includes("CIU")) return [
       "Heat exchanger scaling and blockage",
       "Complete heating/hot water failure",
       "Emergency replacement (£2,200+)",

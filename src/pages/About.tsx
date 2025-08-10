@@ -39,7 +39,7 @@ const About = () => {
 
   useEffect(() => {
     document.title = "About Maineniq | Expert HVAC & Property Maintenance Team";
-    const description = "Learn about Maineniq's professional HVAC, FCU, HIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
+    const description = "Learn about Maineniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
 
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!meta) {
@@ -139,7 +139,7 @@ const About = () => {
             Maintenance‑First HVAC Partner Since 2009
           </h1>
           <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto opacity-90 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-            We specialise in service and maintenance for HVAC, MVHR, fan coil units and building systems—
+            We specialise in service and maintenance for HVAC, MVHR, HIU & CIU, fan coil units and building systems—
             keeping residential, commercial and multi‑unit properties running efficiently long‑term.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto">

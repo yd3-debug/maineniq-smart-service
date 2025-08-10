@@ -35,7 +35,7 @@ import { CONTACT } from "@/config/contact";
 const Index = () => {
   useEffect(() => {
     document.title = "Property Maintenance: HVAC, Plumbing, Electrical";
-    const desc = "Expert maintenance for HVAC, plumbing, electrical, handyman, BMS, smart home and renovation. Prevent breakdowns and cut costs.";
+    const desc = "Expert maintenance for HVAC, HIU & CIU, plumbing, electrical, handyman, BMS, smart home and renovation. Prevent breakdowns and cut costs.";
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!meta) {
       meta = document.createElement('meta');
@@ -176,7 +176,7 @@ const Index = () => {
             </div>
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">Our Core Maintenance Services</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Specialist HVAC maintenance (FCU, HIU, CIU, MVHR) and AC installation to optimise performance and reliability.
+              Specialist HVAC maintenance (FCU, HIU & CIU, MVHR) and AC installation to optimise performance and reliability.
             </p>
           </div>
 

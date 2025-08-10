@@ -93,7 +93,7 @@ const Contact = () => {
                 <span className="block text-accent"> Maintenance Experts</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl opacity-95 leading-relaxed">
-                Specialists in MVHR, HIU, FCU, CIU & BMS systems. Professional maintenance 
+                Specialists in MVHR, HIU & CIU, FCU & BMS systems. Professional maintenance 
                 and emergency repairs you can trust from certified experts.
               </p>
               
@@ -155,7 +155,7 @@ const Contact = () => {
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Get specialist advice from our certified HVAC maintenance experts. With over 15 years of experience 
-                in MVHR, HIU, FCU, CIU & BMS systems, we provide professional solutions you can rely on.
+                in MVHR, HIU & CIU, FCU & BMS systems, we provide professional solutions you can rely on.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
