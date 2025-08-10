@@ -208,7 +208,7 @@ export default function RenovationComposer() {
       <FullBleedHero
         title="Transform Your Property with Professional Renovation Services"
         subtitle="From outdated spaces to modern masterpieces - we deliver comprehensive renovation and refurbishment solutions that enhance both value and livability."
-        image="/lovable-uploads/e977d80a-e892-446c-9c0f-a59d82555d50.png"
+        image="/New Flat.jpg"
         alt="Genuine UK property renovation showing dramatic before and after transformation of London flat"
         primaryLabel="Get Free Consultation"
         primaryHref="/contact"
