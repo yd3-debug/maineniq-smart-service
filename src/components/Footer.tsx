@@ -39,6 +39,8 @@ const Footer = () => {
               <li><Link to="/hiu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">HIU Maintenance & Repair</Link></li>
               <li><Link to="/fcu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">FCU Unit Maintenance</Link></li>
               <li><Link to="/bms" className="text-sm text-gray-300 hover:text-primary transition-colors">BMS & Smart Systems</Link></li>
+              <li><Link to="/handyman" className="text-sm text-gray-300 hover:text-primary transition-colors">Handyman Services</Link></li>
+              <li><Link to="/renovation-composer" className="text-sm text-gray-300 hover:text-primary transition-colors">Refurbishment & Renovation</Link></li>
               <li><Link to="/end-of-tenancy-cleaning" className="text-sm text-gray-300 hover:text-primary transition-colors">End of Tenancy Cleaning</Link></li>
             </ul>
           </div>
