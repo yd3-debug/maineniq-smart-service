@@ -212,8 +212,8 @@ export default function RenovationComposer() {
       <FullBleedHero
         title="Transform Your Property with Professional Renovation Services"
         subtitle="From outdated spaces to modern masterpieces - we deliver comprehensive renovation and refurbishment solutions that enhance both value and livability."
-        image={renovationComparison}
-        alt="Professional property renovation and refurbishment services showing before and after transformation"
+        image="/lovable-uploads/0f778791-0f7a-41cd-ad93-b14063c2c183.png"
+        alt="Genuine UK property renovation showing dramatic before and after transformation of London flat"
         primaryLabel="Get Free Consultation"
         primaryHref="/contact"
         secondaryLabel="View Case Studies"
@@ -292,7 +292,7 @@ export default function RenovationComposer() {
               Renovation Transformations
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              See the dramatic transformations we've achieved for our clients across London.
+              Discover how we transform UK properties - from Victorian terraces to modern flats across London and surrounding areas.
             </p>
           </div>
 
@@ -306,8 +306,8 @@ export default function RenovationComposer() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <Badge className="mb-2">Complete Renovation</Badge>
-                  <h3 className="text-xl font-semibold">Modern Family Home</h3>
-                  <p className="text-sm opacity-90">Full property transformation including HVAC, electrical, and interior design</p>
+                  <h3 className="text-xl font-semibold">Victorian Terrace Renovation</h3>
+                  <p className="text-sm opacity-90">Period property modernisation with energy efficiency upgrades and contemporary design</p>
                 </div>
               </div>
             </div>
@@ -336,7 +336,7 @@ export default function RenovationComposer() {
               Renovation Visualization Tool
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Create professional before-and-after comparisons to visualize your renovation potential. Upload your property photos and see the transformation possibilities.
+              Visualise your UK property's renovation potential. Upload photos of your flat, house, or commercial space to create professional before-and-after comparisons for planning permission or client presentations.
             </p>
           </div>
 
