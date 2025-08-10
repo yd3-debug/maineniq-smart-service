@@ -37,6 +37,7 @@ const Navigation = () => {
         { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
       ]
     },
+    { name: "Renovation & Refurbishment", href: "/renovation-composer" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Why Work With Us", href: "/why-work-with-us" },
     { name: "About Us", href: "/about" },
