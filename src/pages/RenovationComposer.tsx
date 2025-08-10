@@ -208,7 +208,7 @@ export default function RenovationComposer() {
       <FullBleedHero
         title="Transform Your Property with Professional Renovation Services"
         subtitle="From outdated spaces to modern masterpieces - we deliver comprehensive renovation and refurbishment solutions that enhance both value and livability."
-        image="/lovable-uploads/0f778791-0f7a-41cd-ad93-b14063c2c183.png"
+        image="/lovable-uploads/e977d80a-e892-446c-9c0f-a59d82555d50.png"
         alt="Genuine UK property renovation showing dramatic before and after transformation of London flat"
         primaryLabel="Get Free Consultation"
         primaryHref="/contact"
@@ -295,7 +295,7 @@ export default function RenovationComposer() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="/lovable-uploads/0f778791-0f7a-41cd-ad93-b14063c2c183.png" 
+                src="/lovable-uploads/e977d80a-e892-446c-9c0f-a59d82555d50.png" 
                 alt="Genuine UK flat renovation showing dramatic before and after transformation"
                 className="w-full h-64 object-cover"
               />
