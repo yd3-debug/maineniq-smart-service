@@ -24,7 +24,7 @@ import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import hvacInstallation from "@/assets/hvac-installation.jpg";
 import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import handymanRepair from "@/assets/handyman-repair.jpg";
-import renovationComparison from "@/assets/renovation-comparison.jpg";
+// Using genuine before/after renovation image
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 
@@ -155,7 +155,7 @@ const services = [
       title: "Renovation & Refurbishment",
       subtitle: "Property Transformation Services",
       description: "Complete renovation and refurbishment services transforming properties to modern standards with professional project management and quality finishes.",
-      image: renovationComparison,
+      image: "/lovable-uploads/0f778791-0f7a-41cd-ad93-b14063c2c183.png",
       features: [
         "Kitchen and bathroom renovations",
         "Full property refurbishment",
