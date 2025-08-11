@@ -165,11 +165,6 @@ const Admin = () => {
                 Login
               </Button>
             </form>
-            <div className="mt-4 p-3 bg-muted rounded-lg text-sm text-muted-foreground">
-              <p><strong>Demo Credentials:</strong></p>
-              <p>Username: admin</p>
-              <p>Password: mainteniq2025</p>
-            </div>
           </CardContent>
         </Card>
       </div>
