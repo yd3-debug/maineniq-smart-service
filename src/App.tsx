@@ -22,7 +22,7 @@ const MVHRMaintenance = lazy(() => import("./pages/MVHRMaintenance"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Admin = lazy(() => import("./pages/Admin"));
+
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
@@ -211,11 +211,6 @@ const App = () => (
                 <GDPRCompliance />
               </Suspense>
             </Layout>
-          } />
-          <Route path="/admin" element={
-            <Suspense fallback={<LoadingPage />}>
-              <Admin />
-            </Suspense>
           } />
           <Route path="/renovation-composer" element={
             <Layout>
