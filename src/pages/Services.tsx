@@ -155,7 +155,7 @@ const services = [
       title: "Renovation & Refurbishment",
       subtitle: "Property Transformation Services",
       description: "Complete renovation and refurbishment services transforming properties to modern standards with professional project management and quality finishes.",
-      image: "/lovable-uploads/e977d80a-e892-446c-9c0f-a59d82555d50.png",
+      image: "/New_Flat.jpg",
       features: [
         "Kitchen and bathroom renovations",
         "Full property refurbishment",
