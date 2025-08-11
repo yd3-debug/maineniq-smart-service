@@ -7,6 +7,8 @@ import FullBleedHero from "@/components/FullBleedHero";
 import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
+import newFlatImage from "@/assets/new-flat.jpg";
+import oldFlatImage from "@/assets/old-flat.jpeg";
 
 const renovationServices = [
   {
@@ -62,7 +64,7 @@ export default function RenovationComposer() {
       <FullBleedHero
         title="Transform Your Property with Professional Renovation Services"
         subtitle="From outdated spaces to modern masterpieces - we deliver comprehensive renovation and refurbishment solutions that enhance both value and livability."
-        image="/new-flat.jpg"
+        image={newFlatImage}
         alt="Genuine UK property renovation showing dramatic before and after transformation of London flat"
         primaryLabel="Get Free Consultation"
         primaryHref="/contact"
@@ -150,7 +152,7 @@ export default function RenovationComposer() {
             {/* Before Image */}
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="/old-flat.jpeg" 
+                src={oldFlatImage} 
                 alt="Before renovation - old flat showing dated interior and fixtures"
                 className="w-full h-64 object-cover"
               />
@@ -166,7 +168,7 @@ export default function RenovationComposer() {
             {/* After Image */}
             <div className="relative overflow-hidden rounded-lg">
               <img 
-                src="/new-flat.jpg" 
+                src={newFlatImage} 
                 alt="After renovation - modern flat with contemporary design and updated fixtures"
                 className="w-full h-64 object-cover"
               />
