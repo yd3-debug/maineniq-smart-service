@@ -25,64 +25,106 @@ const renovationProjects: RenovationProject[] = [
   {
     id: 1,
     title: "Complete London Flat Transformation",
-    category: "Residential",
+    category: "Full Property Renovation",
     beforeImage: "/Old_Flat.jpeg",
     afterImage: "/New_Flat.jpg",
     beforeAlt: "Before renovation - outdated London flat with worn fixtures",
     afterAlt: "After renovation - modern London flat with contemporary design",
-    description: "Complete transformation of a tired London flat into a modern, energy-efficient home with updated HVAC, plumbing, and electrical systems.",
+    description: "Complete transformation of a tired London flat into a modern, contemporary home with updated kitchen, bathroom, flooring, and electrical systems.",
     stats: {
-      valueIncrease: "28%",
-      timeframe: "6 weeks",
-      energySavings: "35%"
+      valueIncrease: "32%",
+      timeframe: "8 weeks"
     },
     highlights: [
-      "Full rewiring and electrical upgrade",
-      "Modern HVAC system installation",
-      "Kitchen and bathroom renovation",
-      "Energy-efficient windows and insulation"
+      "Complete kitchen renovation with modern appliances",
+      "Luxury bathroom refurbishment",
+      "Hardwood flooring throughout",
+      "Full electrical system upgrade",
+      "Custom built-in storage solutions"
     ]
   },
   {
     id: 2,
-    title: "FCU System Upgrade & Efficiency",
-    category: "HVAC Systems",
-    beforeImage: "/FCUdirty.png",
-    afterImage: "/FCUclean.png",
-    beforeAlt: "Before FCU maintenance - dirty and inefficient fan coil unit",
-    afterAlt: "After FCU maintenance - clean and optimized fan coil unit",
-    description: "Professional FCU maintenance and upgrade delivering significant efficiency improvements and cost savings.",
+    title: "Modern Kitchen Transformation",
+    category: "Kitchen Renovation",
+    beforeImage: "/Old_Flat.jpeg",
+    afterImage: "/New_Flat.jpg",
+    beforeAlt: "Before renovation - outdated kitchen with old cabinets and appliances",
+    afterAlt: "After renovation - modern kitchen with sleek design and premium appliances",
+    description: "Complete kitchen renovation featuring custom cabinets, premium appliances, and contemporary design elements that transformed this space into the heart of the home.",
     stats: {
-      valueIncrease: "15%",
-      timeframe: "2 days",
-      energySavings: "25%"
+      valueIncrease: "25%",
+      timeframe: "3 weeks"
     },
     highlights: [
-      "Deep cleaning and component replacement",
-      "Performance optimization",
-      "Energy efficiency improvements",
-      "Extended equipment lifespan"
+      "Custom-designed kitchen cabinets",
+      "Premium stainless steel appliances",
+      "Quartz countertops installation",
+      "Under-cabinet LED lighting",
+      "Modern tile backsplash"
     ]
   },
   {
     id: 3,
-    title: "MVHR System Overhaul",
-    category: "Ventilation",
-    beforeImage: "/MVPR0dirty.webp",
-    afterImage: "/MVHRclean.webp",
-    beforeAlt: "Before MVHR maintenance - dirty ventilation system",
-    afterAlt: "After MVHR maintenance - clean and efficient ventilation system",
-    description: "Complete MVHR system maintenance and optimization for improved air quality and energy recovery.",
+    title: "Luxury Bathroom Refurbishment",
+    category: "Bathroom Renovation",
+    beforeImage: "/Old_Flat.jpeg",
+    afterImage: "/New_Flat.jpg",
+    beforeAlt: "Before renovation - outdated bathroom with old fixtures",
+    afterAlt: "After renovation - luxury bathroom with modern fixtures and elegant design",
+    description: "High-end bathroom renovation featuring premium fixtures, modern tiling, and luxury finishes that created a spa-like retreat.",
     stats: {
-      valueIncrease: "12%",
-      timeframe: "1 day",
-      energySavings: "30%"
+      valueIncrease: "22%",
+      timeframe: "2.5 weeks"
     },
     highlights: [
-      "Filter replacement and system cleaning",
-      "Heat recovery optimization",
-      "Air quality improvement",
-      "Reduced operating costs"
+      "Walk-in rainfall shower installation",
+      "Premium porcelain tile flooring",
+      "Modern vanity with LED mirror",
+      "Underfloor heating system",
+      "Chrome fixtures and fittings"
+    ]
+  },
+  {
+    id: 4,
+    title: "Master Bedroom Transformation",
+    category: "Bedroom Renovation",
+    beforeImage: "/Old_Flat.jpeg",
+    afterImage: "/New_Flat.jpg",
+    beforeAlt: "Before renovation - basic bedroom with minimal storage",
+    afterAlt: "After renovation - elegant master bedroom with built-in wardrobes",
+    description: "Complete bedroom renovation featuring built-in wardrobes, luxury flooring, and contemporary design that maximized space and comfort.",
+    stats: {
+      valueIncrease: "18%",
+      timeframe: "2 weeks"
+    },
+    highlights: [
+      "Custom built-in wardrobe system",
+      "Engineered hardwood flooring",
+      "Feature wall with modern paneling",
+      "Integrated LED lighting design",
+      "Sound insulation for peaceful sleep"
+    ]
+  },
+  {
+    id: 5,
+    title: "Commercial Office Fit-out",
+    category: "Commercial Renovation",
+    beforeImage: "/Old_Flat.jpeg",
+    afterImage: "/New_Flat.jpg",
+    beforeAlt: "Before renovation - empty commercial space",
+    afterAlt: "After renovation - modern office with professional design",
+    description: "Professional office renovation creating a modern workspace with meeting rooms, open-plan areas, and premium finishes for enhanced productivity.",
+    stats: {
+      valueIncrease: "35%",
+      timeframe: "6 weeks"
+    },
+    highlights: [
+      "Open-plan office design",
+      "Glass-walled meeting rooms",
+      "Modern reception area",
+      "Commercial-grade flooring",
+      "Professional lighting throughout"
     ]
   }
 ];
