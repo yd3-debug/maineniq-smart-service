@@ -289,7 +289,7 @@ const Index = () => {
             </Link>
 
             {/* Renovation */}
-            <Link to="/services">
+            <Link to="/renovation-composer">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img

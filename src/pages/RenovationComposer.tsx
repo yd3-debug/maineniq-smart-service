@@ -7,6 +7,7 @@ import FullBleedHero from "@/components/FullBleedHero";
 import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
+import RenovationGallery from "@/components/RenovationGallery";
 
 const renovationServices = [
   {
@@ -135,74 +136,8 @@ export default function RenovationComposer() {
           </div>
         </section>
 
-        {/* Before/After Gallery */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Renovation Transformations
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover how we transform UK properties - from Victorian terraces to modern flats across London and surrounding areas.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Before Image */}
-            <div className="relative overflow-hidden rounded-lg">
-              <img 
-                src="/Old_Flat.jpeg" 
-                alt="Before renovation - old flat showing dated interior and fixtures"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <Badge className="mb-2 bg-red-500">Before</Badge>
-                  <h3 className="text-xl font-semibold">Original Property State</h3>
-                  <p className="text-sm opacity-90">Dated interior with worn fixtures and outdated design elements</p>
-                </div>
-              </div>
-            </div>
-
-            {/* After Image */}
-            <div className="relative overflow-hidden rounded-lg">
-              <img 
-                src="/New_Flat.jpg" 
-                alt="After renovation - modern flat with contemporary design and updated fixtures"
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <Badge className="mb-2 bg-green-500">After</Badge>
-                  <h3 className="text-xl font-semibold">Professional Renovation</h3>
-                  <p className="text-sm opacity-90">Modern transformation with contemporary finishes and improved functionality</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="mt-12 bg-card rounded-lg p-8 border-2">
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                <Star className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Transformation Results</h3>
-                <p className="text-muted-foreground mb-4">This renovation demonstrates the potential of professional property transformation</p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">25%</div>
-                  <div className="text-sm text-muted-foreground">Value Increase</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">100%</div>
-                  <div className="text-sm text-muted-foreground">Style Update</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Renovation Gallery with Interactive Before/After */}
+        <RenovationGallery />
 
 
         {/* Process Section */}
