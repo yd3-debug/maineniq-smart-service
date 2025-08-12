@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Wrench, ChevronDown } from "lucide-react";
-import { handleQuoteRequest } from "@/utils/quote";
+import { Menu, X, Wrench, ChevronDown, Phone } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -165,11 +165,13 @@ const Navigation = () => {
             ))}
             <Button 
               size="sm" 
-              variant={(isScrolled || hasLightBackground) ? "accent" : "hero"} 
-              className={(!isScrolled && !hasLightBackground) ? "bg-white/10 text-white border-white/40 hover:bg-white/20 shadow-sm backdrop-blur-sm" : ""}
-              onClick={() => handleQuoteRequest()}
+              variant={(isScrolled || hasLightBackground) ? "destructive" : "hero"} 
+              className={`${(!isScrolled && !hasLightBackground) ? "bg-red-600/90 text-white border-red-400/40 hover:bg-red-500/90 shadow-sm backdrop-blur-sm animate-pulse-glow" : "animate-pulse-glow"} font-semibold`}
+              onClick={() => window.open(`tel:${CONTACT.phones.emergencyTel}`, "_self")}
+              aria-label="Call for emergency HVAC service"
             >
-              Get Quote
+              <Phone className="w-4 h-4 mr-2" />
+              Emergency Call-Out
             </Button>
           </div>
 
@@ -293,14 +295,16 @@ const Navigation = () => {
               >
                 <Button 
                   size="sm" 
-                  variant="accent" 
-                  className="w-full text-lg py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  variant="destructive" 
+                  className="w-full text-lg py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-pulse-glow font-semibold"
                   onClick={() => {
-                    handleQuoteRequest();
+                    window.open(`tel:${CONTACT.phones.emergencyTel}`, "_self");
                     setIsOpen(false);
                   }}
+                  aria-label="Call for emergency HVAC service"
                 >
-                  Get Quote
+                  <Phone className="w-4 h-4 mr-2" />
+                  Emergency Call-Out
                 </Button>
               </div>
             </div>
