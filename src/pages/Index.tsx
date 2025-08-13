@@ -33,6 +33,7 @@ import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
 
 const Index = () => {
+  console.log('Index.tsx: Index component rendering');
   useEffect(() => {
     document.title = "Property Maintenance: HVAC, Plumbing, Electrical";
     const desc = "Expert maintenance for HVAC, HIU & CIU, plumbing, electrical, handyman, BMS, smart home and renovation. Prevent breakdowns and cut costs.";

@@ -5,10 +5,12 @@ import { Menu, X, Wrench, ChevronDown, Phone } from "lucide-react";
 import { CONTACT } from "@/config/contact";
 
 const Navigation = () => {
+  console.log('Navigation.tsx: Navigation component rendering');
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
+  console.log('Navigation.tsx: Current location:', location.pathname);
 
   // Routes that have light backgrounds and need dark header styling
   const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/why-work-with-us', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance'];
