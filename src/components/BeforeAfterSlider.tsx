@@ -128,13 +128,13 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
           {/* Labels */}
           <div className="pointer-events-none absolute left-3 top-3 z-10">
-            <span className="rounded-md bg-destructive/80 text-destructive-foreground text-xs font-semibold px-2 py-1 shadow">
-              {beforeLabel}
+            <span className="rounded-md bg-success/80 text-success-foreground text-xs font-semibold px-2 py-1 shadow">
+              {afterLabel}
             </span>
           </div>
           <div className="pointer-events-none absolute right-3 top-3 z-10">
-            <span className="rounded-md bg-success/80 text-success-foreground text-xs font-semibold px-2 py-1 shadow">
-              {afterLabel}
+            <span className="rounded-md bg-destructive/80 text-destructive-foreground text-xs font-semibold px-2 py-1 shadow">
+              {beforeLabel}
             </span>
           </div>
 
