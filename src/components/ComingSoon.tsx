@@ -45,17 +45,6 @@ export const ComingSoon = ({
             {subtitle}
           </p>
 
-          {/* Expected Launch Date */}
-          <Card className="max-w-md mx-auto mb-12 bg-white/50 backdrop-blur-sm border-primary/20">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <Calendar className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-muted-foreground">Expected Launch</span>
-              </div>
-              <div className="text-2xl font-bold text-foreground">{expectedDate}</div>
-            </CardContent>
-          </Card>
-
           {/* What's Coming */}
           <div className="max-w-2xl mx-auto mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-foreground">What's Coming</h2>
