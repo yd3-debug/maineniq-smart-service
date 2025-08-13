@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useState } from "react";
+import { ComingSoon } from "@/components/ComingSoon";
 import { 
   Calendar,
   MapPin,
@@ -39,6 +40,26 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
   const CaseStudies = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
     const [selectedProject, setSelectedProject] = useState(null);
+    
+    // Check if in development mode
+    const isDevelopmentMode = new URLSearchParams(window.location.search).get('dev') === 'true' || 
+                             localStorage.getItem('case-studies-dev-mode') === 'true';
+
+    // If not in development mode, show coming soon page
+    if (!isDevelopmentMode) {
+      return <ComingSoon 
+        title="HVAC Case Studies" 
+        subtitle="Comprehensive maintenance success stories showcasing professional results, energy savings, and system optimization across London properties"
+        expectedDate="March 2025"
+        features={[
+          "Detailed HVAC maintenance project breakdowns",
+          "FCU, HIU, CIU, and MVHR service case studies", 
+          "Energy efficiency improvements and cost savings data",
+          "Before and after system performance metrics",
+          "Professional maintenance testimonials and results"
+        ]}
+      />;
+    }
 
 // SEO: title, meta description, canonical
     useEffect(() => {
