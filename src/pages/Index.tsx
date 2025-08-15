@@ -214,7 +214,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {/* Plumbing & Electrical */}
-            <Link to="/services">
+            <Link to="/plumber-electrician">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
@@ -233,7 +233,7 @@ const Index = () => {
             </Link>
 
             {/* Handyman */}
-            <Link to="/services">
+            <Link to="/handyman">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
@@ -252,7 +252,7 @@ const Index = () => {
             </Link>
 
             {/* End of Tenancy Cleaning */}
-            <Link to="/services">
+            <Link to="/end-of-tenancy-cleaning">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
@@ -271,7 +271,7 @@ const Index = () => {
             </Link>
 
             {/* Smart Home */}
-            <Link to="/services">
+            <Link to="/smart-home">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
@@ -309,7 +309,7 @@ const Index = () => {
             </Link>
 
             {/* BMS (Building Management Systems) */}
-            <Link to="/services">
+            <Link to="/bms">
               <Card className="group overflow-hidden">
                 <CardContent className="p-0 relative">
                   <img
