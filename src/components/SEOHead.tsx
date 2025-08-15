@@ -12,7 +12,7 @@ interface SEOHeadProps {
 const SEOHead = ({ 
   title = "Maineniq - Professional HVAC & Smart Property Solutions",
   description = "Expert HVAC maintenance, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning. Prevent breakdowns, cut costs & protect your property.",
-  ogImage = "/og-image-maineniq.png",
+  ogImage = "/LOGOPETRU2.png",
   ogType = "website",
   keywords = "HVAC maintenance, FCU service, HIU repair, MVHR cleaning, CIU maintenance, plumbing, electrical, handyman, smart home, end of tenancy cleaning",
   canonicalUrl
