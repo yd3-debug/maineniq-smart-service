@@ -8,6 +8,8 @@ import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import RenovationGallery from "@/components/RenovationGallery";
+import { handleQuoteRequest } from "@/utils/quote";
+import { CONTACT } from "@/config/contact";
 
 const renovationServices = [
   {
@@ -49,6 +51,18 @@ const renovationBenefits = [
 ];
 
 export default function RenovationComposer() {
+  const handleConsultationRequest = () => {
+    const message = "Hi! I'd like to book a free renovation consultation. Can we discuss my project?";
+    const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleQuoteEmail = () => {
+    const subject = "Renovation Quote Request";
+    const body = "Hi,\n\nI'm interested in getting a quote for a renovation project. Could you please provide me with more details and pricing?\n\nThank you,";
+    const mailtoUrl = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
 
   return (
     <>
@@ -207,13 +221,21 @@ export default function RenovationComposer() {
             </div>
 
             <div className="space-y-4">
-              <Link to="/contact">
-                <Button size="lg" variant="secondary" className="w-full">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Book Free Consultation
-                </Button>
-              </Link>
-              <Button size="lg" variant="secondary" className="w-full">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="w-full"
+                onClick={handleConsultationRequest}
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Book Free Consultation
+              </Button>
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="w-full"
+                onClick={handleQuoteEmail}
+              >
                 <Mail className="w-5 h-5 mr-2" />
                 Get Renovation Quote
               </Button>
