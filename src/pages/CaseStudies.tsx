@@ -48,24 +48,24 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
     // If not in development mode, show coming soon page
     if (!isDevelopmentMode) {
       return <ComingSoon 
-        title="HVAC Case Studies" 
-        subtitle="Comprehensive maintenance success stories showcasing professional results, energy savings, and system optimization across London properties"
+        title="Property Services Case Studies" 
+        subtitle="Comprehensive renovation and property services success stories showcasing professional results, transformations, and value improvements across London properties"
         expectedDate="March 2025"
         features={[
-          "Detailed HVAC maintenance project breakdowns",
-          "FCU, HIU, CIU, and MVHR service case studies", 
-          "Energy efficiency improvements and cost savings data",
-          "Before and after system performance metrics",
-          "Professional maintenance testimonials and results"
+          "Complete renovation project breakdowns with before/after visuals",
+          "HVAC, handyman, smart home, and cleaning service case studies", 
+          "Property value improvements and cost savings data",
+          "Before and after transformation metrics and testimonials",
+          "Professional service results across all property types"
         ]}
       />;
     }
 
 // SEO: title, meta description, canonical
     useEffect(() => {
-      document.title = "HVAC Maintenance Case Studies | Professional Service Results | Mainteniq";
+      document.title = "Property Services Case Studies | Renovation & Maintenance Results | Mainteniq";
       const description =
-        "Real HVAC maintenance success stories: FCU upgrades, HIU & CIU services, MVHR optimization, and air conditioning installations. Professional maintenance that saves costs and improves efficiency.";
+        "Real property transformation success stories: complete renovations, HVAC services, smart home installations, handyman work, and cleaning services. Professional results that add value and improve living.";
       const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
       if (metaDesc) {
         metaDesc.setAttribute("content", description);
@@ -84,7 +84,7 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
       link.href = window.location.origin + "/case-studies";
     }, []);
 
-    const projectFilters = ["All", "FCU Maintenance", "HIU & CIU Service", "MVHR Systems", "Air Conditioning", "BMS Maintenance", "Commercial", "Emergency Repairs"];
+    const projectFilters = ["All", "Full Renovation", "Kitchen & Bathroom", "HVAC Services", "Smart Home", "Handyman", "Cleaning Services", "Commercial Fit-out"];
 
     const countFor = (filter: string) => {
       if (filter === "All") return portfolioProjects.length;
@@ -95,186 +95,206 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
 const workProcess = [
     {
       step: 1,
-      title: "System Assessment",
-      description: "Comprehensive inspection of HVAC equipment and performance diagnostics",
+      title: "Property Assessment",
+      description: "Comprehensive inspection and evaluation of property requirements and potential",
       duration: "2-4 hours"
     },
     {
       step: 2,
-      title: "Maintenance Planning",
-      description: "Customized maintenance schedule based on system type and usage patterns",
-      duration: "1-2 days"
+      title: "Service Planning",
+      description: "Customized project plan based on property type, budget, and timeline requirements",
+      duration: "1-3 days"
     },
     {
       step: 3,
-      title: "Professional Service",
-      description: "Expert maintenance using specialized tools and certified procedures",
-      duration: "4-8 hours"
+      title: "Professional Execution",
+      description: "Expert service delivery using specialized tools, quality materials, and certified procedures",
+      duration: "1 day - 8 weeks"
     },
     {
       step: 4,
-      title: "Performance Testing",
-      description: "System efficiency testing and performance optimization verification",
-      duration: "1-2 hours"
+      title: "Quality Testing",
+      description: "Thorough testing, inspection, and performance verification of completed work",
+      duration: "2-4 hours"
     },
     {
       step: 5,
-      title: "Service Documentation",
-      description: "Detailed maintenance report with recommendations and warranty coverage",
-      duration: "30 minutes"
+      title: "Project Documentation",
+      description: "Detailed completion report with warranties, maintenance guidance, and handover",
+      duration: "1 hour"
     }
   ];
 
 const testimonials = [
     {
-      text: "Their preventive maintenance program saved us thousands in emergency repairs. Our HVAC systems run more efficiently than ever.",
+      text: "Complete apartment renovation exceeded our expectations. The transformation is stunning and has significantly increased the property value.",
+      author: "Sarah Johnson",
+      company: "Prime London Properties",
+      project: "Full Apartment Renovation",
+      rating: 5
+    },
+    {
+      text: "Professional smart home installation made our house truly modern. Everything works seamlessly and the energy savings are remarkable.",
       author: "David Thompson",
-      company: "Metro Commercial Properties",
-      project: "Commercial Office HVAC Maintenance",
+      company: "Metro Residential",
+      project: "Smart Home Automation",
       rating: 5
     },
     {
-      text: "Professional FCU maintenance service improved our building's energy efficiency by 20%. Highly recommend their expertise.",
-      author: "Lisa Parker",
-      company: "Park Lane Residential Management",
-      project: "Fan Coil Unit Upgrade Program",
-      rating: 5
-    },
-    {
-      text: "Excellent HIU & CIU servicing - our residents now have consistent hot water and heating. Quick, professional, and reliable.",
+      text: "Excellent handyman services and HVAC maintenance - everything from minor repairs to major upgrades. Reliable and professional.",
       author: "Michael Chen",
       company: "Central London Developments",
-      project: "HIU & CIU Maintenance",
+      project: "Property Maintenance Program",
       rating: 5
     }
   ];
 
 const companyStats = [
-    { label: "Systems Maintained", value: "500+", icon: Building2 },
-    { label: "Maintenance Contracts", value: "50+", icon: Users },
-    { label: "Service Reliability", value: "99%", icon: Star },
+    { label: "Properties Transformed", value: "300+", icon: Building2 },
+    { label: "Service Categories", value: "8+", icon: Users },
+    { label: "Client Satisfaction", value: "99%", icon: Star },
     { label: "Years Experience", value: "15+", icon: Award }
   ];
 const portfolioProjects = [
     {
       id: 1,
-      title: "Commercial FCU Maintenance Program CFM-001",
-      projectType: "FCU Maintenance",
-      propertyType: "Commercial",
+      title: "Complete Apartment Transformation CAT-001",
+      projectType: "Full Renovation",
+      propertyType: "Residential",
       location: "Canary Wharf",
       completedDate: "Q1 2024",
       confidential: false,
-      tags: ["Fan Coil Units", "Preventive Maintenance", "Energy Efficiency"],
-      description: "Comprehensive FCU maintenance program for 15-floor commercial tower",
-      technicalScope: "Monthly FCU filter replacement, quarterly coil cleaning, annual performance testing across 120 units",
+      tags: ["Complete Renovation", "Modern Design", "Value Enhancement"],
+      description: "Full apartment renovation transforming outdated space into modern luxury home",
+      technicalScope: "Complete interior renovation including kitchen, bathroom, flooring, lighting, and smart home integration",
       achievements: [
-        "25% improvement in energy efficiency",
-        "Zero unexpected breakdowns in 12 months",
-        "Extended equipment lifespan by 5+ years",
-        "£15,000 annual energy cost savings"
+        "45% increase in property value",
+        "Modern open-plan living space created",
+        "Energy-efficient systems installed",
+        "£85,000 added property value"
       ],
-      image: "/src/assets/fcu-commercial.jpg",
+      image: "/src/assets/new-flat.jpg",
       height: "h-80"
     },
     {
       id: 2,
-      title: "HIU & CIU Service & Upgrade Program HSU-003",
-      projectType: "HIU & CIU Service",
-      propertyType: "Commercial",
+      title: "Premium Kitchen & Bathroom Renovation PKB-003",
+      projectType: "Kitchen & Bathroom",
+      propertyType: "Residential", 
       location: "Westminster",
       completedDate: "Q4 2023",
       confidential: false,
-      tags: ["Heat Interface Units", "Central Interface Units", "Service", "Upgrades"],
-      description: "Complete HIU & CIU servicing and upgrade program for residential development",
-      technicalScope: "Annual HIU & CIU servicing, heat exchanger cleaning, control valve calibration for 80 apartments",
+      tags: ["Kitchen Renovation", "Bathroom Renovation", "Premium Finishes", "Modern Design"],
+      description: "Complete kitchen and bathroom renovation with premium fixtures and modern design",
+      technicalScope: "Full kitchen and bathroom renovation including plumbing, electrical, tiling, cabinetry, and appliance installation",
       achievements: [
-        "30% improvement in heat transfer efficiency",
-        "Eliminated resident hot water complaints",
-        "Reduced maintenance callouts by 70%",
-        "Compliant with district heating regulations"
+        "Stunning modern kitchen and bathroom spaces",
+        "Premium materials and finishes throughout",
+        "Improved functionality and storage",
+        "£45,000 added property value"
       ],
-      image: "/src/assets/hiu-residential.jpg",
+      image: "/src/assets/renovation-comparison.jpg",
       height: "h-96"
     },
     {
       id: 3,
-      title: "MVHR System Optimization MSO-002",
-      projectType: "MVHR Systems",
-      propertyType: "Commercial",
+      title: "Smart Home Automation System SAS-002",
+      projectType: "Smart Home",
+      propertyType: "Residential",
       location: "King's Cross",
       completedDate: "Q2 2024",
       confidential: false,
-      tags: ["MVHR", "Air Quality", "Heat Recovery"],
-      description: "MVHR system optimization and maintenance for modern office building",
-      technicalScope: "Filter replacement program, ductwork cleaning, heat exchanger maintenance, airflow balancing",
+      tags: ["Smart Home", "Automation", "Energy Management", "Security"],
+      description: "Complete smart home automation system with lighting, security, and climate control",
+      technicalScope: "Smart lighting installation, automated security system, climate control, entertainment center, and voice assistant integration",
       achievements: [
-        "95% heat recovery efficiency maintained",
-        "Improved indoor air quality ratings",
-        "20% reduction in ventilation energy costs",
-        "Enhanced employee comfort and productivity"
+        "30% reduction in energy consumption",
+        "Seamless home automation experience",
+        "Enhanced security and convenience",
+        "Modern smart home ecosystem"
       ],
-      image: "/src/assets/mvhr-installation.jpg",
+      image: "/src/assets/smart-home-dashboard.jpg",
       height: "h-72"
     },
     {
       id: 4,
-      title: "Air Conditioning Installation ACI-005",
-      projectType: "Air Conditioning",
+      title: "Comprehensive HVAC Service Program CSP-005",
+      projectType: "HVAC Services",
       propertyType: "Commercial",
       location: "Shoreditch",
       completedDate: "Q3 2023",
       confidential: false,
-      tags: ["AC Installation", "VRF Systems", "Smart Controls"],
-      description: "Complete VRF air conditioning system installation for tech startup office",
-      technicalScope: "Design and installation of 12kW VRF system with smart controls and zoned temperature management",
+      tags: ["HVAC Maintenance", "System Optimization", "Energy Efficiency"],
+      description: "Complete HVAC system maintenance and optimization for commercial office building",
+      technicalScope: "FCU maintenance, HIU servicing, MVHR optimization, and BMS calibration across multiple systems",
       achievements: [
-        "Precise temperature control ±1°C",
-        "40% energy savings vs previous system",
-        "Smart integration with building management",
-        "Quiet operation <35dB in office areas"
+        "25% improvement in energy efficiency",
+        "Zero unexpected system failures",
+        "Extended equipment lifespan by 5+ years",
+        "£20,000 annual energy cost savings"
       ],
       image: "/src/assets/hvac-installation.jpg",
       height: "h-88"
     },
     {
       id: 5,
-      title: "BMS Maintenance Contract BMC-001",
-      projectType: "BMS Maintenance",
-      propertyType: "Commercial",
+      title: "Multi-Service Handyman Program MSP-001",
+      projectType: "Handyman",
+      propertyType: "Residential",
       location: "City of London",
       completedDate: "Q1 2024",
       confidential: false,
-      tags: ["Building Management", "Automation", "Energy Monitoring"],
-      description: "Comprehensive BMS maintenance and optimization for Grade A office building",
-      technicalScope: "Monthly BMS calibration, sensor maintenance, software updates, energy monitoring optimization",
+      tags: ["Property Maintenance", "Repairs", "Improvements", "Multi-Trade"],
+      description: "Comprehensive handyman services including electrical, plumbing, and general maintenance work",
+      technicalScope: "Electrical repairs, plumbing fixes, painting, carpentry, fixture installation, and ongoing maintenance",
       achievements: [
-        "15% reduction in building energy consumption",
-        "24/7 remote monitoring and diagnostics",
-        "Predictive maintenance alerts implemented",
-        "Enhanced tenant comfort and satisfaction"
+        "Multiple property issues resolved efficiently",
+        "Same-day service for urgent repairs",
+        "Cost-effective maintenance solutions",
+        "Enhanced property condition and value"
       ],
-      image: "/src/assets/bms-control-room.jpg",
+      image: "/src/assets/handyman-maintenance.jpg",
       height: "h-64"
     },
     {
       id: 6,
-      title: "Emergency HVAC Repair Program ERP-012",
-      projectType: "Emergency Repairs",
+      title: "Commercial Office Fit-out COF-012",
+      projectType: "Commercial Fit-out",
       propertyType: "Commercial",
       location: "Central London",
       completedDate: "Q4 2023",
       confidential: false,
-      tags: ["Emergency Service", "24/7 Support", "Rapid Response"],
-      description: "24/7 emergency HVAC repair service for critical commercial facilities",
-      technicalScope: "Emergency callout service, rapid diagnostics, on-site repairs, temporary system solutions",
+      tags: ["Office Design", "Commercial Renovation", "Modern Workspace"],
+      description: "Complete commercial office fit-out creating modern, efficient workspace",
+      technicalScope: "Space planning, electrical installation, lighting design, flooring, partition walls, and furniture installation",
       achievements: [
-        "Average 2-hour response time",
-        "95% first-visit fix rate",
-        "Zero extended system downtime",
-        "Comprehensive parts inventory maintained"
+        "Modern, collaborative workspace created",
+        "Improved employee productivity environment",
+        "Energy-efficient lighting and systems",
+        "Professional, branded office space"
       ],
-      image: "/src/assets/hvac-maintenance.jpg",
+      image: "/src/assets/team-working.jpg",
       height: "h-76"
+    },
+    {
+      id: 7,
+      title: "End of Tenancy Deep Clean ETC-008",
+      projectType: "Cleaning Services",
+      propertyType: "Residential",
+      location: "Kensington",
+      completedDate: "Q3 2024",
+      confidential: false,
+      tags: ["Deep Cleaning", "End of Tenancy", "Professional Service"],
+      description: "Comprehensive end of tenancy cleaning ensuring deposit return and property presentation",
+      technicalScope: "Deep cleaning of all rooms, kitchen appliances, bathroom sanitization, carpet cleaning, and window washing",
+      achievements: [
+        "100% deposit return achieved",
+        "Property ready for immediate viewing",
+        "Professional cleaning standards met",
+        "Satisfied landlord and tenant"
+      ],
+      image: "/src/assets/end-of-tenancy-cleaning.jpg",
+      height: "h-72"
     }
   ];
 
@@ -320,7 +340,7 @@ const portfolioProjects = [
             <div className="max-w-5xl mx-auto">
               <div className="mb-6 md:mb-8">
                 <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4 md:mb-6 text-white tracking-tight leading-none">
-                  HVAC Maintenance
+                  Property Services
                   <span className="block font-bold text-trust-blue">
                     Success Stories
                   </span>
@@ -328,8 +348,8 @@ const portfolioProjects = [
                 <div className="w-16 md:w-24 h-0.5 bg-primary mx-auto mb-6 md:mb-8"></div>
               </div>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto text-white/90 mb-10 md:mb-16 leading-relaxed font-light">
-                Professional HVAC maintenance delivering measurable results: energy savings, improved reliability, 
-                and extended equipment lifespan for commercial and residential properties across London.
+                Professional property services delivering exceptional results: complete renovations, smart home installations, 
+                HVAC maintenance, and comprehensive property improvements across London.
               </p>
               
               {/* Elegant Statistics - Simplified to 3 key metrics */}
@@ -379,7 +399,7 @@ const portfolioProjects = [
             </h2>
             <div className="w-12 md:w-16 h-0.5 bg-primary mx-auto mb-4 md:mb-6"></div>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-8 md:mb-12 font-light max-w-xl mx-auto leading-relaxed">
-              Select projects showcasing our premium refurbishment capabilities
+              Select projects showcasing our comprehensive property services and transformation capabilities
             </p>
             <div className="sticky top-16 z-30 bg-background/80 supports-[backdrop-filter]:bg-background/60 backdrop-blur rounded-full py-2 md:py-3 max-w-5xl mx-auto">
               <div className="flex flex-wrap justify-center gap-2 md:gap-3 px-2 md:px-3">
