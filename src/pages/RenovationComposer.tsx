@@ -223,7 +223,7 @@ export default function RenovationComposer() {
             <div className="space-y-4">
               <Button 
                 size="lg" 
-                variant="hero" 
+                variant="accent" 
                 className="w-full"
                 onClick={handleConsultationRequest}
               >
@@ -232,7 +232,7 @@ export default function RenovationComposer() {
               </Button>
               <Button 
                 size="lg" 
-                variant="hero" 
+                variant="premium" 
                 className="w-full"
                 onClick={handleQuoteEmail}
               >
