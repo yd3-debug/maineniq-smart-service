@@ -313,7 +313,7 @@ export default function WhyWorkWithUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { step: "01", title: "Onboarding", copy: "Site survey, asset capture and risk assessment. We agree SLAs and communication lines." },
-              { step: "02", title: "Mobilisation", copy: "PPM schedules created, RAMS issued and portal/reporting set up for your team." },
+              { step: "02", title: "Mobilisation", copy: "Work schedules planned, safety assessments completed, and communication protocols established with your team." },
               { step: "03", title: "Planned Maintenance", copy: "Routine visits aligned to manufacturer guidance—find issues early, avoid outages." },
               { step: "04", title: "Reactive & Reporting", copy: "Clear call-out process, root-cause fixes and concise reports after every visit." },
             ].map((s) => (
