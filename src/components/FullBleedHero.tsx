@@ -68,7 +68,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 hover:text-white px-8 py-3"
+                className="border-white bg-white/20 text-white hover:bg-white/30 hover:text-white px-8 py-3"
               >
                 {isExternal(secondaryHref) ? (
                   <a href={secondaryHref}>{secondaryLabel}</a>
