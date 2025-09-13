@@ -7,6 +7,10 @@ interface SEOHeadProps {
   ogType?: 'website' | 'article';
   keywords?: string;
   canonicalUrl?: string;
+  structuredData?: any;
+  breadcrumbData?: any;
+  faqData?: any;
+  serviceData?: any;
 }
 
 const SEOHead = ({ 
@@ -15,7 +19,11 @@ const SEOHead = ({
   ogImage = "/LOGOPETRU2.png",
   ogType = "website",
   keywords = "HVAC maintenance, FCU service, HIU repair, MVHR cleaning, CIU maintenance, plumbing, electrical, handyman, smart home, end of tenancy cleaning",
-  canonicalUrl
+  canonicalUrl,
+  structuredData,
+  breadcrumbData,
+  faqData,
+  serviceData
 }: SEOHeadProps) => {
   
   useEffect(() => {
@@ -88,7 +96,27 @@ const SEOHead = ({
       ogUrl.setAttribute('content', canonicalUrl || window.location.href);
     }
     
-  }, [title, description, ogImage, ogType, keywords, canonicalUrl]);
+    // Add structured data
+    const addStructuredData = (data: any, id: string) => {
+      if (!data) return;
+      
+      let script = document.getElementById(id) as HTMLScriptElement;
+      if (!script) {
+        script = document.createElement('script');
+        script.id = id;
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(data);
+    };
+    
+    // Add various structured data types
+    if (structuredData) addStructuredData(structuredData, 'structured-data-main');
+    if (breadcrumbData) addStructuredData(breadcrumbData, 'structured-data-breadcrumb');
+    if (faqData) addStructuredData(faqData, 'structured-data-faq');
+    if (serviceData) addStructuredData(serviceData, 'structured-data-service');
+    
+  }, [title, description, ogImage, ogType, keywords, canonicalUrl, structuredData, breadcrumbData, faqData, serviceData]);
   
   return null;
 };

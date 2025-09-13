@@ -31,28 +31,35 @@ import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
+import SEOHead from "@/components/SEOHead";
+import { generateOrganizationSchema, generateFAQSchema, generateBreadcrumbSchema, generateWebSiteSchema } from "@/utils/structuredData";
 
 const Index = () => {
   console.log('Index.tsx: Index component rendering');
-  useEffect(() => {
-    document.title = "Property Maintenance: HVAC, Plumbing, Electrical";
-    const desc = "Expert maintenance for HVAC, HIU & CIU, plumbing, electrical, handyman, BMS, smart home and renovation. Prevent breakdowns and cut costs.";
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = "description";
-      document.head.appendChild(meta);
+  
+  const faqData = generateFAQSchema([
+    {
+      question: "What HVAC systems do you maintain?",
+      answer: "We maintain FCU (Fan Coil Units), HIU (Heat Interface Units), MVHR (Mechanical Ventilation Heat Recovery), CIU (Chilled Interface Units), and all types of commercial and residential HVAC systems."
+    },
+    {
+      question: "How often should HVAC systems be serviced?",
+      answer: "We recommend quarterly maintenance for commercial systems and bi-annual servicing for residential systems. However, this depends on usage, environment, and manufacturer recommendations."
+    },
+    {
+      question: "Do you provide emergency call-out services?",
+      answer: "Yes, we offer 24/7 emergency call-out services for critical system failures. Our qualified engineers can respond quickly to minimize downtime and restore comfort."
+    },
+    {
+      question: "What areas do you cover in the UK?",
+      answer: "We provide services across the UK, with particular focus on London and surrounding areas. Contact us to confirm service availability in your location."
     }
-    meta.content = desc;
+  ]);
 
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'canonical';
-      document.head.appendChild(link);
-    }
-    link.href = window.location.origin + '/';
-  }, []);
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" }
+  ]);
+
   const services = [
     {
       icon: Wrench,
@@ -85,8 +92,23 @@ const Index = () => {
     "Quality Workmanship Guarantee"
   ];
 
+  useEffect(() => {
+    console.log('Index.tsx: Setting up SEO');
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead 
+        title="Maineniq - Professional HVAC & Smart Property Solutions"
+        description="Expert HVAC maintenance, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning. Prevent breakdowns, cut costs & protect your property."
+        keywords="HVAC maintenance, FCU service, HIU repair, MVHR cleaning, CIU maintenance, plumbing, electrical, handyman, smart home, end of tenancy cleaning, BMS installation, London property maintenance"
+        canonicalUrl="https://www.mainteniq.co.uk/"
+        structuredData={generateOrganizationSchema()}
+        faqData={faqData}
+        breadcrumbData={breadcrumbData}
+      />
+      
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative -mt-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-32 bg-professional-gradient text-white overflow-hidden">
         <div 
@@ -518,7 +540,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

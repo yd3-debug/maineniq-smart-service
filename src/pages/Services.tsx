@@ -36,7 +36,29 @@ import FullBleedHero from "@/components/FullBleedHero";
 import TrustStrip from "@/components/TrustStrip";
 import { useEffect } from "react";
 import teamWorking from "@/assets/team-working.jpg";
+import SEOHead from "@/components/SEOHead";
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 const Services = () => {
+  const faqData = generateFAQSchema([
+    {
+      question: "What services do you offer for property maintenance?",
+      answer: "We offer comprehensive HVAC maintenance (FCU, HIU, MVHR, CIU), plumbing, electrical, handyman services, BMS installation, smart home automation, and end-of-tenancy cleaning."
+    },
+    {
+      question: "Do you provide emergency repair services?",
+      answer: "Yes, we offer 24/7 emergency call-out services for critical HVAC and building systems failures to minimize downtime and restore comfort quickly."
+    },
+    {
+      question: "What areas in the UK do you serve?",
+      answer: "We provide services across the UK with particular expertise in London and surrounding areas. Contact us to confirm availability in your specific location."
+    }
+  ]);
+
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Services", url: "https://www.mainteniq.co.uk/services" }
+  ]);
+
 const services = [
     {
       icon: Wind,
@@ -319,7 +341,17 @@ const services = [
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead 
+        title="Professional Property Services | HVAC, Plumbing, Electrical & Smart Home"
+        description="Comprehensive property maintenance services: HVAC systems (FCU, HIU, MVHR), plumbing, electrical, handyman, BMS installation, smart home automation & end-of-tenancy cleaning."
+        keywords="property services, HVAC maintenance, FCU service, HIU repair, MVHR installation, plumbing services, electrical work, handyman services, BMS installation, smart home automation, end of tenancy cleaning"
+        canonicalUrl="https://www.mainteniq.co.uk/services"
+        faqData={faqData}
+        breadcrumbData={breadcrumbData}
+      />
+      
+      <div className="min-h-screen">
       <FullBleedHero
         title="Property Services & Maintenance"
         subtitle="One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning."
@@ -680,7 +712,8 @@ const services = [
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
