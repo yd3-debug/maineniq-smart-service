@@ -106,7 +106,7 @@ const MaintenanceContracts = () => {
       <FullBleedHero
         title="Custom Maintenance Contracts for Your Property Portfolio"
         subtitle="Why choose reactive maintenance when you can prevent problems? Our tailored contracts provide 24/7 guaranteed response, preventive maintenance, and all systems coverage under one provider."
-        image="/modern-hvac-system.jpg"
+        image="/BOILER.png"
         alt="Modern building maintenance systems"
         primaryLabel="Schedule Assessment"
         primaryHref="/contact"
