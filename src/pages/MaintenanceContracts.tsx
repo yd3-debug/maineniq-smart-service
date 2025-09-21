@@ -38,6 +38,10 @@ import {
 } from "lucide-react";
 
 const MaintenanceContracts = () => {
+  console.log('MaintenanceContracts: Component loaded');
+  console.log('WhoWeServe:', WhoWeServe);
+  console.log('SystemsWeMaintain:', SystemsWeMaintain);
+  
   useEffect(() => {
     document.title = "Maintenance Contracts | Custom Building Maintenance Solutions | Mainteniq";
     const metaDescription = document.querySelector('meta[name="description"]');
