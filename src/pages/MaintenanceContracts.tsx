@@ -110,11 +110,11 @@ const MaintenanceContracts = () => {
         alt="Modern building maintenance systems"
         primaryLabel="Schedule Assessment"
         primaryHref="/contact"
-        secondaryLabel="Call: 078 3456 2366"
+        secondaryLabel="Call Now"
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       />
 
-      <TrustStrip />
+      
 
       {/* Contract vs Reactive Maintenance */}
       <section className="py-16 bg-muted/30">
@@ -391,7 +391,7 @@ const MaintenanceContracts = () => {
             <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
               <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                 <Phone className="w-4 h-4 mr-2" />
-                Call: 078 3456 2366
+                Call Now
               </a>
             </Button>
           </div>
