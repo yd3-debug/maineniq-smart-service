@@ -133,11 +133,11 @@ const Index = () => {
 
             <div>
               <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Prevent breakdowns, cut costs, and protect your property
-                <span className="text-accent-orange"> with expert maintenance</span>
+                Tailored Maintenance Contracts for Your Property Portfolio
+                <span className="text-accent-orange"> with 24/7 guaranteed response</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Planned maintenance across HVAC, plumbing, electrical, and more keeps everything running safely and efficiently.
+                All systems under one provider • Preventive maintenance that reduces surprise costs • No two buildings are the same - neither are our maintenance contracts.
               </p>
             </div>
 
@@ -148,9 +148,9 @@ const Index = () => {
     Call Now
   </a>
 </Button>
-              <Link to="/services">
+              <Link to="/maintenance-contracts">
                 <Button size="sm" variant="hero" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 h-10 sm:h-11 md:h-12">
-                  View Services
+                  Get Custom Assessment
                   <ArrowRight className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 ml-1 sm:ml-2" />
                 </Button>
               </Link>
