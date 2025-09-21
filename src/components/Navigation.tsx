@@ -42,7 +42,6 @@ const Navigation = () => {
       ]
     },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
