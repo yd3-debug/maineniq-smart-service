@@ -101,9 +101,9 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Maineniq - Professional HVAC & Smart Property Solutions"
-        description="Expert HVAC maintenance, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning. Prevent breakdowns, cut costs & protect your property."
-        keywords="HVAC maintenance, FCU service, HIU repair, MVHR cleaning, CIU maintenance, plumbing, electrical, handyman, smart home, end of tenancy cleaning, BMS installation, London property maintenance"
+        title="🏆 #1 Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Save 30%"
+        description="⭐ 4.9/5 Rating | Premier property services UK ⭐ Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman, end-of-tenancy cleaning. Save 30% energy costs, prevent 80% breakdowns, extend equipment life 10+ years. Gas Safe & NICEIC certified. 24/7 emergency response. Free quotes, transparent pricing, quality guaranteed. Trusted by 1000+ customers across London, Manchester, Birmingham. Transform your property today!"
+        keywords="HVAC maintenance UK, smart home installation, professional property services, emergency plumber electrician London, FCU HIU MVHR maintenance, BMS building management systems, Gas Safe NICEIC certified, preventive maintenance contracts, energy efficient HVAC, 24/7 emergency response, property maintenance specialists, commercial residential services, handyman services UK, end of tenancy cleaning, property renovation refurbishment, certified engineers, transparent pricing, energy savings, breakdown prevention, equipment servicing, building services, facility management, smart building technology, home automation, security systems"
         canonicalUrl="https://www.mainteniq.co.uk/"
         structuredData={generateOrganizationSchema()}
         faqData={faqData}

@@ -14,11 +14,11 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ 
-  title = "Maineniq - #1 Professional HVAC, Smart Home & Property Maintenance Services UK | Emergency 24/7",
-  description = "⭐ 4.9/5 Rating | Expert HVAC maintenance (FCU, HIU, MVHR, CIU), BMS installation, plumbing, electrical, handyman, smart home automation & end-of-tenancy cleaning across UK. Prevent costly breakdowns, reduce energy bills up to 30%, extend equipment life 10+ years. 24/7 emergency response, certified engineers, transparent pricing. Book instant quote!",
+  title = "🏆 #1 Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Save 30%",
+  description = "⭐ 4.9/5 Rating | Premier property services UK ⭐ Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman, end-of-tenancy cleaning. Save 30% energy costs, prevent 80% breakdowns, extend equipment life 10+ years. Gas Safe & NICEIC certified. 24/7 emergency response. Free quotes, transparent pricing, quality guaranteed. Trusted by 1000+ customers across London, Manchester, Birmingham. Transform your property today!",
   ogImage = "/og-image-maineniq.png",
   ogType = "website",
-  keywords = "HVAC maintenance UK, FCU service London, HIU repair Manchester, MVHR cleaning Birmingham, CIU maintenance Leeds, professional plumbing services, certified electrical work, handyman services, BMS building management systems, smart home installation, home automation UK, end of tenancy cleaning, property maintenance, energy efficiency, emergency HVAC repair, commercial HVAC, residential heating, ventilation systems, air conditioning service, heating engineer, certified technicians, preventive maintenance, equipment servicing",
+  keywords = "HVAC maintenance UK, smart home installation, professional property services, emergency plumber electrician London, FCU HIU MVHR maintenance, BMS building management systems, Gas Safe NICEIC certified, preventive maintenance contracts, energy efficient HVAC, 24/7 emergency response, property maintenance specialists, commercial residential services, handyman services UK, end of tenancy cleaning, property renovation refurbishment, certified engineers, transparent pricing, energy savings, breakdown prevention, equipment servicing, building services, facility management, smart building technology, home automation, security systems",
   canonicalUrl,
   structuredData,
   breadcrumbData,
@@ -116,28 +116,48 @@ const SEOHead = ({
     if (faqData) addStructuredData(faqData, 'structured-data-faq');
     if (serviceData) addStructuredData(serviceData, 'structured-data-service');
     
-    // Add AI-specific meta tags for better crawlability
+    // Add AI-specific meta tags for better crawlability and search ranking
     const addAIMetaTags = () => {
       const aiTags = [
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'bingbot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
-        { property: 'og:site_name', content: 'Maineniq - Professional Property Services' },
+        { name: 'slurp', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        { name: 'DuckDuckBot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        { property: 'og:site_name', content: 'Maineniq - UK Premier Property Services' },
         { property: 'og:locale', content: 'en_GB' },
-        { property: 'article:author', content: 'Maineniq Technical Team' },
+        { property: 'article:author', content: 'Maineniq Expert Team' },
+        { property: 'article:publisher', content: 'https://www.mainteniq.co.uk' },
         { name: 'twitter:site', content: '@maineniq' },
         { name: 'twitter:creator', content: '@maineniq' },
         { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'apple-mobile-web-app-title', content: 'Maineniq' },
+        { name: 'application-name', content: 'Maineniq Property Services' },
+        { name: 'msapplication-TileColor', content: '#1e40af' },
+        { name: 'theme-color', content: '#1e40af' },
         { name: 'business:contact_data:locality', content: 'London' },
         { name: 'business:contact_data:region', content: 'England' },
         { name: 'business:contact_data:country_name', content: 'United Kingdom' },
         { name: 'business:contact_data:phone_number', content: '+44 (0) 189 55 28 226' },
         { name: 'business:contact_data:email', content: 'info@mainteniq.co.uk' },
-        { name: 'ai:service_areas', content: 'London, Manchester, Birmingham, Leeds, Liverpool, Bristol, Newcastle, Sheffield, Nottingham, Bradford' },
-        { name: 'ai:primary_services', content: 'HVAC Maintenance, FCU Service, HIU Repair, MVHR Cleaning, BMS Installation, Smart Home, Plumbing, Electrical' },
-        { name: 'ai:emergency_service', content: '24/7 Emergency HVAC Response Available' },
-        { name: 'ai:certifications', content: 'Gas Safe Registered, NICEIC Approved, F-Gas Certified' },
-        { name: 'ai:response_time', content: 'Same day response for emergencies, 24-48h for standard bookings' }
+        { name: 'geo.region', content: 'GB' },
+        { name: 'geo.placename', content: 'United Kingdom' },
+        { name: 'geo.position', content: '51.5074;-0.1278' },
+        { name: 'ICBM', content: '51.5074, -0.1278' },
+        { name: 'ai:service_areas', content: 'London, Manchester, Birmingham, Leeds, Liverpool, Bristol, Newcastle, Sheffield, Nottingham, Bradford, Edinburgh, Glasgow, Cardiff' },
+        { name: 'ai:primary_services', content: 'HVAC Maintenance, FCU Service, HIU Repair, MVHR Cleaning, BMS Installation, Smart Home Automation, Emergency Plumbing, Certified Electrical, Professional Handyman, End-of-Tenancy Cleaning' },
+        { name: 'ai:specializations', content: 'Energy Efficiency, Preventive Maintenance, Smart Building Technology, 24/7 Emergency Response, Gas Safe & NICEIC Certified' },
+        { name: 'ai:emergency_service', content: '24/7 Emergency HVAC, Plumbing & Electrical Response Available Across UK' },
+        { name: 'ai:certifications', content: 'Gas Safe Registered, NICEIC Approved Contractor, F-Gas Certified, City & Guilds Qualified, Fully Insured & Bonded' },
+        { name: 'ai:response_time', content: 'Same day emergency response, 24-48h standard bookings, free quotes within 2 hours' },
+        { name: 'ai:service_guarantee', content: 'Work guaranteed, transparent pricing, no hidden costs, customer satisfaction promise' },
+        { name: 'ai:coverage_area', content: 'UK-wide coverage with local engineers, specializing in London, Manchester, Birmingham metro areas' },
+        { name: 'rating', content: '4.9' },
+        { name: 'price_range', content: '££' },
+        { name: 'availability', content: '24/7' },
+        { name: 'language', content: 'English' },
+        { name: 'audience', content: 'Homeowners, Landlords, Property Managers, Facility Managers, Commercial Property Owners' },
+        { name: 'expertise', content: 'HVAC Systems, Smart Home Technology, Building Management, Emergency Repairs, Preventive Maintenance' }
       ];
       
       aiTags.forEach(tag => {
