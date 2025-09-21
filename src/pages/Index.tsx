@@ -17,8 +17,10 @@ import {
   Leaf,
   DollarSign,
   Zap,
-  AlertTriangle
+  AlertTriangle,
+  X
 } from "lucide-react";
+import { CardHeader, CardTitle } from "@/components/ui/card";
 import heroImage from "@/assets/hero-hvac.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
@@ -347,6 +349,102 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Contracts Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
+              <span className="w-8 h-[2px] bg-primary"></span>
+              <span>WHY CONTRACTS</span>
+              <span className="w-8 h-[2px] bg-primary"></span>
+            </div>
+            <h2 className="font-heading text-3xl font-bold mb-4">
+              Why Choose Maintenance Contracts Over Reactive Repairs?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              Stop paying for breakdowns. Start investing in prevention. Our maintenance contracts save money, reduce stress, and protect your reputation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Card className="border-l-4 border-l-destructive">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-destructive">
+                  <AlertTriangle className="w-5 h-5" />
+                  Reactive Maintenance
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-2">
+                    <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <span>Unexpected breakdown costs (£2,000-£15,000+ per incident)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <span>Tenant complaints and reputation damage</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <span>Emergency call-out charges (£200-£500 premium)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <span>Shortened equipment lifespan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
+                    <span>No cost predictability or budget control</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-success">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-success">
+                  <CheckCircle className="w-5 h-5" />
+                  Maintenance Contracts
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span>Predictable monthly costs (typically 60-80% savings)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span>Proactive issue prevention and early detection</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span>24/7 priority response for contract holders</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span>Extended equipment lifespan (up to 40% longer)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <span>Complete budget control and cost transparency</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link to="/maintenance-contracts">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Get Your Custom Contract Assessment
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
             </Link>
           </div>
         </div>

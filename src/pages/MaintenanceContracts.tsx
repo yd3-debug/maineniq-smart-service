@@ -4,19 +4,37 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import FullBleedHero from "@/components/FullBleedHero";
-import TrustStrip from "@/components/TrustStrip";
+import PropertyAssessmentForm from "@/components/PropertyAssessmentForm";
+import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
+import WhoWeServe from "@/components/sections/WhoWeServe";
 import { CONTACT } from "@/config/contact";
 import { 
+  CheckCircle, 
   Shield, 
   Clock, 
+  DollarSign, 
+  BarChart3, 
+  Building, 
   Users, 
   FileText, 
-  CheckCircle, 
   Phone,
+  Target,
+  Wrench,
+  AlertTriangle,
+  TrendingUp,
+  Award,
+  Zap,
+  MessageSquare,
+  ShieldCheck,
+  LifeBuoy,
+  CalendarCheck,
   Building2,
+  CheckCircle2,
+  ClipboardList,
   Home,
   Factory,
-  HardHat
+  HardHat,
+  Thermometer
 } from "lucide-react";
 
 const MaintenanceContracts = () => {
@@ -114,7 +132,38 @@ const MaintenanceContracts = () => {
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       />
 
-      
+      {/* Our Track Record */}
+      <section className="py-12 bg-background" aria-labelledby="track-record-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto mb-8 text-center">
+            <h2 id="track-record-title" className="font-heading text-3xl font-bold mb-4">
+              Our Track Record
+            </h2>
+            <p className="text-muted-foreground">
+              Numbers that matter to property managers and facility teams.
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Properties Maintained</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-success mb-2">99.2%</div>
+              <div className="text-sm text-muted-foreground">System Uptime</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-trust-blue mb-2">4hrs</div>
+              <div className="text-sm text-muted-foreground">Response SLA</div>
+            </div>
+            <div className="text-center p-6 border border-muted rounded-lg">
+              <div className="text-3xl font-bold text-accent-orange mb-2">8:1</div>
+              <div className="text-sm text-muted-foreground">ROI Ratio</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contract vs Reactive Maintenance */}
       <section className="py-16 bg-muted/30">
@@ -184,8 +233,120 @@ const MaintenanceContracts = () => {
         </div>
       </section>
 
+      {/* What Makes Us Different */}
+      <section id="what-makes-us-different" className="py-16 bg-background" aria-labelledby="different-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto mb-12 text-center">
+            <h2 id="different-title" className="font-heading text-3xl font-bold mb-4">
+              What Makes Us Different
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              While others react to problems, we prevent them. Here's how we keep your systems running and your reputation intact.
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <ShieldCheck className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Specialist Expertise</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We specialize in advanced building systems maintenance across HVAC, MVHR, and mechanical services. Our engineers know these systems inside-out, not just general maintenance.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-trust-blue">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-trust-blue/10 rounded-lg">
+                    <Clock className="w-6 h-6 text-trust-blue" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Proactive Response</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  24/7 monitoring and guaranteed 4-hour response times. We catch issues before they become emergencies that disrupt your operations.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-success">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-success/10 rounded-lg">
+                    <FileText className="w-6 h-6 text-success" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Transparent Reporting</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Clear, jargon-free reports after every visit. You know exactly what was done, what was found, and what needs attention next.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-accent-orange">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-accent-orange/10 rounded-lg">
+                    <Target className="w-6 h-6 text-accent-orange" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Proven Process</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  SFG20/CIBSE-aligned maintenance programs that actually prevent failures. No guesswork, just proven industry standards.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-energy-gold">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-energy-gold/10 rounded-lg">
+                    <Award className="w-6 h-6 text-energy-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Quality Assurance</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  First-time-fix philosophy with fully trained, insured engineers. We arrive with the right parts and expertise every time.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-primary">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Partnership Approach</h3>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  We integrate with your existing operations, not disrupt them. Clear communication, agreed SLAs, and accountable service.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contract Benefits */}
-      <section className="py-16">
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Why Choose Mainteniq Maintenance Contracts?</h2>
@@ -213,7 +374,7 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Stakeholder-Specific Messaging */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Tailored Solutions for Different Property Stakeholders</h2>
@@ -251,7 +412,7 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Assessment Process */}
-      <section className="py-16">
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Custom Assessment Process</h2>
@@ -274,105 +435,200 @@ const MaintenanceContracts = () => {
         </div>
       </section>
 
-      {/* Service Coverage */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Complete System Coverage Under One Contract</h2>
-            <p className="text-lg text-muted-foreground">
-              Why manage multiple contractors when one provider can handle everything?
-            </p>
-          </div>
+      <WhoWeServe />
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-lg">HVAC Systems</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Heating, cooling, ventilation, and air quality systems</p>
+      {/* Case Study Snippets */}
+      <section id="proof-points" className="py-16 bg-muted/20" aria-labelledby="proof-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto mb-12 text-center">
+            <h2 id="proof-title" className="font-heading text-3xl font-bold mb-4">
+              Real Results for Real Clients
+            </h2>
+            <p className="text-muted-foreground">
+              See how our maintenance programs deliver measurable benefits to property managers and facility teams.
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
+              <CardContent className="p-6">
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-success">£47,000</div>
+                  <div className="text-sm text-muted-foreground">Annual Energy Savings</div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Residential Development, London:</strong> Our preventative maintenance program improved building system efficiency by 32%, saving £47,000 annually in energy costs across 180 units.
+                </p>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-lg">Plumbing</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Water systems, drainage, and emergency plumbing repairs</p>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-trust-blue">Zero</div>
+                  <div className="text-sm text-muted-foreground">Emergency Callouts</div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Commercial Office, Birmingham:</strong> 18 months with zero system emergencies after implementing our proactive maintenance schedule. Previous year had 12 costly callouts.
+                </p>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-lg">Electrical</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Power systems, lighting, and electrical safety checks</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-lg">Building Services</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">General maintenance, handyman services, and repairs</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-lg">Smart Systems</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Building management and smart home automation</p>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="text-center mb-4">
+                  <div className="text-2xl font-bold text-accent-orange">40%</div>
+                  <div className="text-sm text-muted-foreground">Longer Asset Life</div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Student Accommodation, Manchester:</strong> Our maintenance program extended system lifespan from 12 to 17 years, delaying £280,000 in replacement costs.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Guarantees and Commitments */}
-      <section className="py-16">
+      {/* How We Work */}
+      <section id="how-we-work" aria-labelledby="how-we-work-title" className="py-10 sm:py-14 bg-background animate-fade-in">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto mb-6 sm:mb-8 text-center">
+            <h2 id="how-we-work-title" className="font-heading text-2xl sm:text-3xl font-semibold">
+              How we work
+            </h2>
+            <p className="text-muted-foreground">A simple, accountable process tuned for busy teams.</p>
+          </header>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { step: "01", title: "Onboarding", copy: "Site survey, asset capture and risk assessment. We agree SLAs and communication lines." },
+              { step: "02", title: "Mobilisation", copy: "Work schedules planned, safety assessments completed, and communication protocols established with your team." },
+              { step: "03", title: "Planned Maintenance", copy: "Routine visits aligned to manufacturer guidance—find issues early, avoid outages." },
+              { step: "04", title: "Reactive & Reporting", copy: "Clear call-out process, root-cause fixes and concise reports after every visit." },
+            ].map((s) => (
+              <Card key={s.step} className="hover:shadow-card transition-all hover-scale">
+                <CardHeader className="flex flex-row items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">
+                    {s.step}
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">{s.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0 text-muted-foreground text-sm">{s.copy}</CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SystemsWeMaintain />
+
+      {/* Compliance & Credentials */}
+      <section id="compliance" className="py-10 sm:py-14 bg-muted/30 animate-fade-in" aria-labelledby="compliance-title">
+        <div className="container mx-auto px-4">
+          <header className="max-w-3xl mx-auto mb-6 sm:mb-8 text-center">
+            <h2 id="compliance-title" className="font-heading text-2xl sm:text-3xl font-semibold">Compliance & credentials</h2>
+            <p className="text-muted-foreground">We align with industry standards and provide audit-ready documentation.</p>
+          </header>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <li className="flex items-start gap-2"><ClipboardList className="w-4 h-4 text-primary mt-0.5" /> SFG20/CIBSE-aligned PPM and tasking</li>
+            <li className="flex items-start gap-2"><ShieldCheck className="w-4 h-4 text-primary mt-0.5" /> RAMS, certificates and visit reports after every job</li>
+            <li className="flex items-start gap-2"><Wrench className="w-4 h-4 text-primary mt-0.5" /> Gas Safe/NICEIC where applicable and fully insured operations</li>
+            <li className="flex items-start gap-2"><Building2 className="w-4 h-4 text-primary mt-0.5" /> Risk-managed work across occupied residential and commercial sites</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Service Coverage */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Complete System Coverage Under One Contract</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              From HVAC to plumbing, electrical to handyman services - we handle everything so you don't have to manage multiple contractors.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <Thermometer className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold mb-2">HVAC Systems</h3>
+                <p className="text-sm text-muted-foreground">Complete heating, ventilation, and air conditioning maintenance</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <Wrench className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold mb-2">Plumbing & Electrical</h3>
+                <p className="text-sm text-muted-foreground">Emergency repairs, safety checks, and routine maintenance</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold mb-2">Building Management</h3>
+                <p className="text-sm text-muted-foreground">BMS systems, controls, and smart building automation</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <HardHat className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold mb-2">General Maintenance</h3>
+                <p className="text-sm text-muted-foreground">Handyman services, cleaning, and property care</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Commitments */}
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Service Commitments</h2>
-            <p className="text-lg text-muted-foreground">
-              When you choose a Mainteniq maintenance contract, you get these guarantees:
+            <p className="text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Response Time Guarantee</h3>
+              <p className="text-muted-foreground">Emergency: 2-4 hours | Urgent: Same day | Routine: Within 48 hours</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ShieldCheck className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
+              <p className="text-muted-foreground">First-time fix commitment with follow-up if needed. All work guaranteed.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileText className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Complete Transparency</h3>
+              <p className="text-muted-foreground">Detailed reports after every visit. Real-time updates via our portal.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Assessment Form Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Get Your Custom Contract Assessment</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Every property is unique. Tell us about yours and we'll create a tailored maintenance contract that fits your exact needs and budget.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="text-center">
-              <CardHeader>
-                <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle>Response Time Guarantee</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Emergency response within agreed timeframes, with priority given to contract customers.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle>Quality Assurance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  All work carried out by qualified engineers with full warranties and insurance coverage.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <FileText className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle>Detailed Reporting</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Regular maintenance reports and recommendations to keep your property in optimal condition.
-                </p>
-              </CardContent>
-            </Card>
+          
+          <div className="max-w-4xl mx-auto">
+            <PropertyAssessmentForm />
           </div>
         </div>
       </section>
@@ -380,20 +636,27 @@ const MaintenanceContracts = () => {
       {/* Final CTA */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Protect Your Property Investment?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Schedule a free property assessment and discover how a custom maintenance contract can save you money and stress.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact">Schedule Free Assessment</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`}>
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </a>
-            </Button>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Ready to Switch from Reactive to Preventive Maintenance?
+            </h2>
+            <p className="text-lg sm:text-xl mb-8 opacity-90">
+              Join hundreds of property owners who've already made the smart choice. Get your custom contract assessment today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  Schedule Assessment
+                </Button>
+              </Link>
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <a href={`tel:${CONTACT.phones.emergencyTel}`}>
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Now
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

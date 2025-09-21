@@ -13,7 +13,7 @@ const Navigation = () => {
   console.log('Navigation.tsx: Current location:', location.pathname);
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/why-work-with-us', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const Navigation = () => {
       ]
     },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "Why Work With Us", href: "/why-work-with-us" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

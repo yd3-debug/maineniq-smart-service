@@ -34,7 +34,7 @@ const SmartHome = lazy(() => import("./pages/SmartHome"));
 const PlumberElectrician = lazy(() => import("./pages/PlumberElectrician"));
 const Handyman = lazy(() => import("./pages/Handyman"));
 const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
-const WhyWorkWithUs = lazy(() => import("./pages/WhyWorkWithUs"));
+
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
 const queryClient = new QueryClient();
 
@@ -170,13 +170,6 @@ const App = () => {
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <About />
-              </Suspense>
-            </Layout>
-          } />
-          <Route path="/why-work-with-us" element={
-            <Layout>
-              <Suspense fallback={<LoadingPage />}>
-                <WhyWorkWithUs />
               </Suspense>
             </Layout>
           } />
