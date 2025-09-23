@@ -705,7 +705,11 @@ const MaintenanceContracts = () => {
         </div>
       </section>
 
-      {/* Property Assessment Form Section */}
+      {/* TEMPORARILY HIDDEN - Property Assessment Form Section 
+          This section is commented out while building the backend functionality.
+          Uncomment when ready to integrate with backend API.
+      */}
+      {/* 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -720,6 +724,7 @@ const MaintenanceContracts = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Final CTA */}
       <section className="py-16 bg-primary text-primary-foreground">
