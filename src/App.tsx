@@ -9,6 +9,8 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import CookieBanner from "./components/CookieBanner";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import CoreWebVitals from "./components/CoreWebVitals";
 
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -40,6 +42,8 @@ const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <div className="min-h-screen flex flex-col font-poppins">
+    <GoogleAnalytics />
+    <CoreWebVitals />
     <Navigation />
     <main className="flex-1">
       {children}

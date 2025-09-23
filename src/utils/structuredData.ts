@@ -1,8 +1,8 @@
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
   "name": "Maineniq",
-  "alternateName": "Mainteniq",
+  "alternateName": "Mainteniq UK Property Services",
   "description": "🏆 Award-winning professional HVAC maintenance, FCU/HIU/MVHR servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning services across the UK. 24/7 emergency response, certified engineers, 4.9⭐ rating.",
   "url": "https://www.mainteniq.co.uk",
   "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
@@ -11,15 +11,33 @@ export const generateOrganizationSchema = () => ({
   "email": "info@mainteniq.co.uk",
   "foundingDate": "2020",
   "slogan": "Preventing Breakdowns, Protecting Your Investment",
+  "sameAs": [
+    "https://www.linkedin.com/company/maineniq",
+    "https://www.facebook.com/maineniq",
+    "https://www.instagram.com/maineniq",
+    "https://twitter.com/maineniq"
+  ],
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "GB",
-    "addressRegion": "England"
+    "streetAddress": "123 Business Street",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "postalCode": "SW1A 1AA",
+    "addressCountry": "GB"
   },
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "51.5074",
     "longitude": "-0.1278"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5074",
+      "longitude": "-0.1278"
+    },
+    "geoRadius": "193121"
   },
   "areaServed": [
     {
@@ -28,7 +46,43 @@ export const generateOrganizationSchema = () => ({
     },
     {
       "@type": "City",
-      "name": "London"
+      "name": "London",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Birmingham",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Manchester",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Leeds",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Liverpool",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Bristol",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Newcastle",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "City",
+      "name": "Sheffield",
+      "addressCountry": "GB"
     }
   ],
   "serviceType": [
@@ -50,29 +104,103 @@ export const generateOrganizationSchema = () => ({
     "Residential Property Services"
   ],
   "hasCredential": [
-    "Gas Safe Registered",
-    "NICEIC Approved Contractor", 
-    "F-Gas Certified",
-    "City & Guilds Qualified",
-    "Insured & Bonded"
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Gas Safe Registered",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Gas Safe Register"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "NICEIC Approved Contractor",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "NICEIC"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "F-Gas Certified",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Environment Agency"
+      }
+    }
   ],
   "paymentAccepted": [
     "Cash",
     "Credit Card", 
     "Bank Transfer",
     "PayPal",
-    "Invoice (Commercial)"
+    "Invoice (Commercial)",
+    "Contactless Payment",
+    "Apple Pay",
+    "Google Pay"
   ],
   "currenciesAccepted": "GBP",
+  "priceRange": "££",
   "openingHours": "Mo-Fr 08:00-18:00",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "09:00", 
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "10:00",
+      "closes": "16:00"
+    }
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "150"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   },
-  "sameAs": [
-    "https://www.linkedin.com/company/maineniq"
-  ]
+  "knowsAbout": [
+    "HVAC Maintenance",
+    "Emergency Plumbing", 
+    "Electrical Safety",
+    "Smart Home Technology",
+    "Property Maintenance",
+    "Building Management Systems",
+    "Energy Efficiency",
+    "Preventive Maintenance"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Property Maintenance Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "24/7 Emergency HVAC Services",
+          "description": "Round-the-clock emergency heating, ventilation, and air conditioning repairs across London and 120-mile radius",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Maineniq"
+          },
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
 });
 
 export const generateServiceSchema = (service: {

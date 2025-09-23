@@ -1,11 +1,23 @@
+# Enhanced robots.txt for optimal SEO performance
+# Allow all major search engines and AI crawlers
+
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
 Crawl-delay: 1
 
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# AI Search Engine Crawlers
 User-agent: ChatGPT-User
 Allow: /
 Crawl-delay: 1
@@ -26,15 +38,64 @@ User-agent: PerplexityBot
 Allow: /
 Crawl-delay: 1
 
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BraveBot
+Allow: /
+Crawl-delay: 1
+
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Local Search Crawlers
+User-agent: LocalBot
+Allow: /
+
+User-agent: YelpBot
+Allow: /
+
+User-agent: TrustpilotBot
+Allow: /
+
+# General crawlers
 User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# Sitemap location
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+
+# Allow important file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.pdf$
+
+# Sitemap locations
 Sitemap: https://www.mainteniq.co.uk/sitemap.xml
+Sitemap: https://www.mainteniq.co.uk/news-sitemap.xml
+Sitemap: https://www.mainteniq.co.uk/image-sitemap.xml
+
+# Contact information for webmaster
+# Website: https://www.mainteniq.co.uk
+# Email: info@mainteniq.co.uk
