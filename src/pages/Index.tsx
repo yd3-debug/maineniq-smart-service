@@ -54,7 +54,7 @@ const Index = () => {
     },
     {
       question: "What areas do you cover in the UK?",
-      answer: "We provide services across the UK, with particular focus on London and surrounding areas. Contact us to confirm service availability in your location."
+      answer: "We serve London and all areas within a 120-mile radius, covering major cities including Birmingham, Oxford, Cambridge, Brighton, Milton Keynes, Reading, and surrounding regions. Same-day emergency response available throughout our service area."
     }
   ]);
 
@@ -130,6 +130,12 @@ const Index = () => {
               <div className="flex items-center space-x-1 md:space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-white/20">
                 <Award className="w-3 md:w-4 h-3 md:h-4 text-accent-orange" />
                 <span>20+ Years Experience</span>
+              </div>
+              <div className="flex items-center space-x-1 md:space-x-2 bg-primary/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-primary/30">
+                <div className="w-3 md:w-4 h-3 md:h-4 rounded-full bg-energy-gold flex items-center justify-center">
+                  <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-background"></div>
+                </div>
+                <span className="font-medium">London & 120-Mile Radius</span>
               </div>
             </div>
 

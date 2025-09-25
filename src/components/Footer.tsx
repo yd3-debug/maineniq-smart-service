@@ -18,6 +18,20 @@ const Footer = () => {
               Professional HVAC and smart property solutions. Modern maintenance 
               company delivering reliable, efficient service for your comfort needs.
             </p>
+            
+            {/* Service Area */}
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
+              <div className="flex items-center space-x-2 mb-2">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="text-sm font-semibold text-gray-200">Service Coverage</span>
+              </div>
+              <p className="text-xs text-gray-300">
+                <strong>London & 120-Mile Radius</strong><br />
+                Birmingham • Oxford • Cambridge<br />
+                Brighton • Reading • Milton Keynes<br />
+                Same-day emergency response
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}
