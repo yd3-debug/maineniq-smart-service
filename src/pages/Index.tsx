@@ -31,7 +31,6 @@ import smartHomeImage from "@/assets/smart-home-automation.jpg";
 import renovationImage from "@/assets/renovation-comparison.jpg";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
-import { QuickValueChecker } from "@/components/QuickValueChecker";
 import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
@@ -245,11 +244,6 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
-            
-            {/* Interactive Value Checker */}
-            <div className="lg:col-span-1">
-              <QuickValueChecker />
-            </div>
           </div>
         </div>
       </section>
