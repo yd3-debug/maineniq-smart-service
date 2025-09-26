@@ -31,6 +31,7 @@ import smartHomeImage from "@/assets/smart-home-automation.jpg";
 import renovationImage from "@/assets/renovation-comparison.jpg";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
+import { QuickValueChecker } from "@/components/QuickValueChecker";
 import ResearchBadge from "@/components/ResearchBadge";
 import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
@@ -141,12 +142,26 @@ const Index = () => {
 
             <div>
               <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Tailored Maintenance Contracts for Your Property Portfolio
-                <span className="text-accent-orange"> with 24/7 guaranteed response</span>
+                UK's FCU, HIU & MVHR Specialists
+                <span className="text-accent-orange"> Save £2,400/Year with Expert Maintenance</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                All systems under one provider • Preventive maintenance that reduces surprise costs • No two buildings are the same - neither are our maintenance contracts.
+                Professional maintenance that prevents breakdowns, cuts energy bills, and ensures clean air. 
+                <span className="text-primary font-semibold">24/7 emergency response across London & 120-mile radius.</span>
               </p>
+              
+              {/* Immediate Trust & Value */}
+              <div className="flex flex-wrap justify-center gap-3 mb-4">
+                <div className="bg-energy-gold/20 border border-energy-gold/30 rounded-lg px-3 py-2">
+                  <div className="text-sm font-semibold text-energy-gold">99.7% Uptime</div>
+                </div>
+                <div className="bg-primary/20 border border-primary/30 rounded-lg px-3 py-2">
+                  <div className="text-sm font-semibold text-primary">2hr Response</div>
+                </div>
+                <div className="bg-accent-orange/20 border border-accent-orange/30 rounded-lg px-3 py-2">
+                  <div className="text-sm font-semibold text-accent-orange">Gas Safe & NICEIC</div>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center mb-6 sm:mb-8 md:mb-12">
@@ -164,34 +179,34 @@ const Index = () => {
               </Link>
             </div>
 
-            {/* HVAC Impact Stats */}
+            {/* Static Impact Stats - No Animation */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-energy-gold/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={15} prefix="Up to " suffix="%" delay={0} duration={1400} />
+                  15%
                 </div>
-                <div className="text-xs opacity-80">Energy Savings (Maintenance)</div>
+                <div className="text-xs opacity-80">Energy Savings</div>
               </div>
               <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-trust-blue/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-trust-blue">
-                  <AnimatedCounter value={80} prefix="Up to " suffix="%" delay={100} duration={1400} />
+                  80%
                 </div>
                 <div className="text-xs opacity-80">Breakdown Prevention</div>
               </div>
               <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-accent-orange/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-accent-orange">
-                  <AnimatedCounter value={25} prefix="Up to " suffix="%" delay={200} duration={1400} />
+                  25%
                 </div>
-                <div className="text-xs opacity-80">FCU Efficiency Improvement</div>
+                <div className="text-xs opacity-80">FCU Efficiency Gain</div>
               </div>
               <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:pb-5 md:p-4 border border-primary/30">
                 <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  <AnimatedCounter value={50} prefix="Up to " suffix="%" delay={300} duration={1400} />
+                  50%
                 </div>
-                <div className="text-xs opacity-80">Equipment Lifespan Extension</div>
+                <div className="text-xs opacity-80">Longer Equipment Life</div>
               </div>
             </div>
-<p className="mt-1 text-[10px] sm:text-xs opacity-70">Estimates based on cited sources; actual savings vary by property and usage.</p>
+<p className="mt-1 text-[10px] sm:text-xs opacity-70">Average results from our maintained FCU, HIU & MVHR systems</p>
           </div>
         </div>
       </section>
@@ -211,7 +226,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {services.map((service, index) => (
               <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:scale-[1.02] bg-card border">
                 <CardContent className="p-4 md:p-8 text-center">
@@ -223,6 +238,11 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+            
+            {/* Interactive Value Checker */}
+            <div className="lg:col-span-1">
+              <QuickValueChecker />
+            </div>
           </div>
         </div>
       </section>
