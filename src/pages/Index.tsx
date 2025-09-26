@@ -145,10 +145,17 @@ const Index = () => {
                 UK's FCU, HIU & MVHR Specialists
                 <span className="text-accent-orange"> Save £2,400/Year with Expert Maintenance</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Professional maintenance that prevents breakdowns, cuts energy bills, and ensures clean air. 
-                <span className="text-white font-semibold">24/7 emergency response across London & 120-mile radius.</span>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 opacity-90 leading-relaxed max-w-3xl mx-auto">
+                Professional maintenance that prevents breakdowns, cuts energy bills, and ensures clean air.
               </p>
+              
+              {/* Emergency Response Highlight */}
+              <div className="bg-accent-orange/20 border border-accent-orange/40 rounded-lg px-4 py-3 mb-4 max-w-2xl mx-auto backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-2 text-white">
+                  <Clock className="w-5 h-5 text-accent-orange" />
+                  <span className="font-semibold">24/7 emergency response across London & 120-mile radius</span>
+                </div>
+              </div>
               
               {/* Immediate Trust & Value */}
               <div className="flex flex-wrap justify-center gap-3 mb-4">
