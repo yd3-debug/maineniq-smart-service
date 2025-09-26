@@ -147,7 +147,7 @@ const Index = () => {
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-6 opacity-90 leading-relaxed max-w-3xl mx-auto">
                 Professional maintenance that prevents breakdowns, cuts energy bills, and ensures clean air. 
-                <span className="text-primary font-semibold">24/7 emergency response across London & 120-mile radius.</span>
+                <span className="text-white font-semibold">24/7 emergency response across London & 120-mile radius.</span>
               </p>
               
               {/* Immediate Trust & Value */}
@@ -156,7 +156,7 @@ const Index = () => {
                   <div className="text-sm font-semibold text-energy-gold">99.7% Uptime</div>
                 </div>
                 <div className="bg-primary/20 border border-primary/30 rounded-lg px-3 py-2">
-                  <div className="text-sm font-semibold text-primary">2hr Response</div>
+                  <div className="text-sm font-semibold text-white">2hr Response</div>
                 </div>
                 <div className="bg-accent-orange/20 border border-accent-orange/30 rounded-lg px-3 py-2">
                   <div className="text-sm font-semibold text-accent-orange">Gas Safe & NICEIC</div>
