@@ -199,8 +199,8 @@ const Index = () => {
                 </div>
                 <div className="text-xs opacity-80">FCU Efficiency Gain</div>
               </div>
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:pb-5 md:p-4 border border-primary/30">
-                <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
+              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-primary/30">
+                <div className="text-base sm:text-lg md:text-2xl font-bold text-primary">
                   50%
                 </div>
                 <div className="text-xs opacity-80">Longer Equipment Life</div>
