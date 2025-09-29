@@ -113,8 +113,8 @@ const Index = () => {
       <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative -mt-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 text-white overflow-hidden">
-        {/* Enhanced Background with stronger gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900" />
+        {/* Enhanced Background with Blue/Purple gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-900 to-purple-900" />
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 blur-sm"
           style={{
@@ -124,11 +124,11 @@ const Index = () => {
         
         <div className="relative container mx-auto px-4 pt-12 md:pt-20">
           <div className="max-w-5xl mx-auto">
-            {/* Professional Container with backdrop blur */}
-            <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+            {/* Professional Container with backdrop blur and purple accent */}
+            <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-purple-500/30 p-6 sm:p-8 md:p-12 shadow-2xl shadow-purple-500/10 text-center">
               <div className="space-y-6">
                 <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                  Expert HVAC Maintenance & Building Services
+                  Expert <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">HVAC Maintenance</span> & Building Services
                 </h1>
                 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 font-medium tracking-wide">
@@ -142,16 +142,16 @@ const Index = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg shadow-xl">
+                <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg shadow-xl shadow-purple-500/30">
                   <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call specialist at ${CONTACT.phones.emergency}`}>
-                    <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
+                    <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2 text-blue-100" />
                     Speak to a Specialist
                   </a>
                 </Button>
                 <Link to="/maintenance-contracts">
-                  <Button size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm">
+                  <Button size="lg" variant="outline" className="border-2 border-purple-400/50 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm">
                     Book Free Site Survey
-                    <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
+                    <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2 text-purple-300" />
                   </Button>
                 </Link>
               </div>
