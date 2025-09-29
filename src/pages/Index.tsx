@@ -21,7 +21,7 @@ import {
   X
 } from "lucide-react";
 import { CardHeader, CardTitle } from "@/components/ui/card";
-import heroImage from "@/assets/hero-hvac.jpg";
+import TrustStrip from "@/components/TrustStrip";
 import systemInspection from "@/assets/system-inspection.jpg";
 import energyTech from "@/assets/energy-tech.jpg";
 import plumbingImage from "@/assets/plumber-electrician-work.jpg";
@@ -112,7 +112,7 @@ const Index = () => {
       
       <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative -mt-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 lg:pb-32 bg-professional-gradient text-white overflow-hidden">
+      <section className="relative -mt-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 bg-professional-gradient text-white overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -120,102 +120,58 @@ const Index = () => {
           }}
         />
         <div className="relative container mx-auto px-4 pt-12 md:pt-20">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm mb-6 md:mb-8">
-              <div className="flex items-center space-x-1 md:space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-white/20">
-                <Shield className="w-3 md:w-4 h-3 md:h-4 text-trust-blue" />
-                <span>Licensed & Insured</span>
-              </div>
-              <div className="flex items-center space-x-1 md:space-x-2 bg-white/15 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-white/20">
-                <Award className="w-3 md:w-4 h-3 md:h-4 text-accent-orange" />
-                <span>20+ Years Experience</span>
-              </div>
-              <div className="flex items-center space-x-1 md:space-x-2 bg-primary/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-1.5 md:py-2 border border-primary/30">
-                <div className="w-3 md:w-4 h-3 md:h-4 rounded-full bg-energy-gold flex items-center justify-center">
-                  <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-background"></div>
-                </div>
-                <span className="font-medium">London & 120-Mile Radius</span>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              UK Specialists in FCU, HIU & MVHR
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl mb-8 opacity-90 leading-relaxed">
+              Expert maintenance that prevents breakdowns, cuts energy bills, and ensures clean air. Save up to £2,400/year.
+            </p>
 
-            <div>
-              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight">
-                UK's FCU, HIU & MVHR Specialists
-                <span className="text-accent-orange"> Save £2,400/Year with Expert Maintenance</span>
-              </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 opacity-90 leading-relaxed max-w-3xl mx-auto">
-                Professional maintenance that prevents breakdowns, cuts energy bills, and ensures clean air.
-              </p>
-              
-              {/* Emergency Response Highlight */}
-              <div className="bg-accent-orange/20 border border-accent-orange/40 rounded-lg px-4 py-3 mb-4 max-w-2xl mx-auto backdrop-blur-sm">
-                <div className="flex items-center justify-center gap-2 text-white">
-                  <Clock className="w-5 h-5 text-accent-orange" />
-                  <span className="font-semibold">24/7 emergency response across London & 120-mile radius</span>
-                </div>
-              </div>
-              
-              {/* Immediate Trust & Value */}
-              <div className="flex flex-wrap justify-center gap-3 mb-4">
-                <div className="bg-energy-gold/20 border border-energy-gold/30 rounded-lg px-3 py-2">
-                  <div className="text-sm font-semibold text-energy-gold">99.7% Uptime</div>
-                </div>
-                <div className="bg-primary/20 border border-primary/30 rounded-lg px-3 py-2">
-                  <div className="text-sm font-semibold text-white">2hr Response</div>
-                </div>
-                <div className="bg-accent-orange/20 border border-accent-orange/30 rounded-lg px-3 py-2">
-                  <div className="text-sm font-semibold text-accent-orange">Gas Safe & NICEIC</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center mb-6 sm:mb-8 md:mb-12">
-<Button asChild size="sm" variant="accent" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 h-10 sm:h-11 md:h-12">
-  <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
-    <Phone className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 mr-1 sm:mr-2" />
-    Call Now
-  </a>
-</Button>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <Button asChild size="lg" variant="accent" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
+                <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
+                  <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
+                  Call Now
+                </a>
+              </Button>
               <Link to="/maintenance-contracts">
-                <Button size="sm" variant="hero" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 h-10 sm:h-11 md:h-12">
+                <Button size="lg" variant="hero" className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
                   Get Custom Assessment
-                  <ArrowRight className="w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 ml-1 sm:ml-2" />
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2" />
                 </Button>
               </Link>
             </div>
-
-            {/* Static Impact Stats - No Animation */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
-              <div className="text-center bg-energy-gold/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-energy-gold/30">
-                <div className="text-base sm:text-lg md:text-2xl font-bold text-energy-gold">
-                  15%
-                </div>
-                <div className="text-xs opacity-80">Energy Savings</div>
-              </div>
-              <div className="text-center bg-trust-blue/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-trust-blue/30">
-                <div className="text-base sm:text-lg md:text-2xl font-bold text-trust-blue">
-                  80%
-                </div>
-                <div className="text-xs opacity-80">Breakdown Prevention</div>
-              </div>
-              <div className="text-center bg-accent-orange/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-accent-orange/30">
-                <div className="text-base sm:text-lg md:text-2xl font-bold text-accent-orange">
-                  25%
-                </div>
-                <div className="text-xs opacity-80">FCU Efficiency Gain</div>
-              </div>
-              <div className="text-center bg-primary/20 backdrop-blur-sm rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 border border-primary/30">
-                <div className="text-base sm:text-lg md:text-2xl font-bold text-primary">
-                  50%
-                </div>
-                <div className="text-xs opacity-80">Longer Equipment Life</div>
-              </div>
-            </div>
-<p className="mt-1 text-[10px] sm:text-xs opacity-70">Average results from our maintained FCU, HIU & MVHR systems</p>
           </div>
         </div>
       </section>
+
+      {/* Key Results Strip */}
+      <section className="bg-secondary/40 border-b border-muted/60 py-6">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
+            <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted">
+              <div className="text-xl md:text-3xl font-bold text-energy-gold">15%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Energy Savings</div>
+            </div>
+            <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted">
+              <div className="text-xl md:text-3xl font-bold text-trust-blue">80%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Breakdown Prevention</div>
+            </div>
+            <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted">
+              <div className="text-xl md:text-3xl font-bold text-accent-orange">25%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">FCU Efficiency Gain</div>
+            </div>
+            <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted">
+              <div className="text-xl md:text-3xl font-bold text-primary">50%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">Longer Equipment Life</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Strip */}
+      <TrustStrip />
 
       {/* Services Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
