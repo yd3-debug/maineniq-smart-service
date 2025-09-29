@@ -27,7 +27,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Maintenance Contracts", href: "/maintenance-contracts" },
-    { name: "Services", href: "/services" },
     { 
       name: "Maintenance", 
       href: "/hvac-maintenance",
@@ -37,11 +36,17 @@ const Navigation = () => {
         { name: "FCU Maintenance", href: "/fcu-maintenance" },
         { name: "HIU & CIU Service & Repair", href: "/hiu-maintenance" },
         { name: "CIU Maintenance", href: "/ciu-maintenance" },
-        { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
+        { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
+      ]
+    },
+    { 
+      name: "Case Studies", 
+      href: "/case-studies",
+      submenu: [
+        { name: "Services", href: "/services" },
         { name: "Renovation & Refurbishment", href: "/renovation-composer" }
       ]
     },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 
