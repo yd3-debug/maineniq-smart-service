@@ -101,9 +101,9 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="🏆 #1 Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Save 30%"
-        description="⭐ 4.9/5 Rating | Premier property services UK ⭐ Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman, end-of-tenancy cleaning. Save 30% energy costs, prevent 80% breakdowns, extend equipment life 10+ years. Gas Safe & NICEIC certified. 24/7 emergency response. Free quotes, transparent pricing, quality guaranteed. Trusted by 1000+ customers across London, Manchester, Birmingham. Transform your property today!"
-        keywords="HVAC maintenance UK, smart home installation, professional property services, emergency plumber electrician London, FCU HIU MVHR maintenance, BMS building management systems, Gas Safe NICEIC certified, preventive maintenance contracts, energy efficient HVAC, 24/7 emergency response, property maintenance specialists, commercial residential services, handyman services UK, end of tenancy cleaning, property renovation refurbishment, certified engineers, transparent pricing, energy savings, breakdown prevention, equipment servicing, building services, facility management, smart building technology, home automation, security systems"
+        title="Expert HVAC Maintenance UK | Gas Safe & NICEIC Certified"
+        description="Professional HVAC maintenance for FCU, HIU, MVHR & CIU systems. Gas Safe & NICEIC certified engineers. Save 30% energy costs, 24/7 emergency response across London & UK."
+        keywords="HVAC maintenance UK, FCU maintenance, HIU service, MVHR maintenance, Gas Safe certified, NICEIC engineers, preventive maintenance contracts, London HVAC service, property maintenance UK"
         canonicalUrl="https://www.mainteniq.co.uk/"
         structuredData={generateOrganizationSchema()}
         faqData={faqData}
@@ -286,7 +286,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={plumbingImage}
-                    alt="Plumbing and electrical maintenance services"
+                    alt="Professional plumbing and electrical maintenance services in London and UK by certified Gas Safe and NICEIC engineers"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -305,7 +305,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={handymanImage}
-                    alt="Handyman maintenance and repairs"
+                    alt="Expert handyman maintenance and repair services for properties in London and across the UK"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -324,7 +324,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={endOfTenancyImage}
-                    alt="End of tenancy cleaning experts"
+                    alt="Professional end of tenancy cleaning service for landlords and property managers in London and UK"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -343,7 +343,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={smartHomeImage}
-                    alt="Smart home automation services"
+                    alt="Smart home automation installation and control systems for modern UK properties"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -362,7 +362,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={renovationImage}
-                    alt="Renovation and refurbishment services"
+                    alt="Property renovation and refurbishment services for residential and commercial buildings in London and UK"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
@@ -381,7 +381,7 @@ const Index = () => {
                 <CardContent className="p-0 relative">
                   <img
                     src={bmsControlPanel}
-                    alt="Building Management System (BMS) control panel"
+                    alt="Building Management System (BMS) installation and control panel for commercial properties in London and UK"
                     loading="lazy"
                     className="w-full h-48 md:h-56 object-cover"
                   />
