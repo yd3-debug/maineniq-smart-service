@@ -39,11 +39,11 @@ const Navigation = () => {
         { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
       ]
     },
+    { name: "Services", href: "/services" },
     { 
       name: "Case Studies", 
       href: "/case-studies",
       submenu: [
-        { name: "Services", href: "/services" },
         { name: "Renovation & Refurbishment", href: "/renovation-composer" }
       ]
     },
