@@ -21,8 +21,8 @@ import {
   X
 } from "lucide-react";
 import { CardHeader, CardTitle } from "@/components/ui/card";
-import TrustStrip from "@/components/TrustStrip";
 import systemInspection from "@/assets/system-inspection.jpg";
+import { handleQuoteRequest } from "@/utils/quote";
 import energyTech from "@/assets/energy-tech.jpg";
 import plumbingImage from "@/assets/plumber-electrician-work.jpg";
 import handymanImage from "@/assets/handyman-maintenance.jpg";
@@ -148,12 +148,15 @@ const Index = () => {
                     Speak to a Specialist
                   </a>
                 </Button>
-                <Link to="/maintenance-contracts">
-                  <Button size="lg" variant="outline" className="border-2 border-purple-400/50 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm">
-                    Book Free Site Survey
-                    <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2 text-purple-300" />
-                  </Button>
-                </Link>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-purple-400/50 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm"
+                  onClick={() => handleQuoteRequest("property assessment")}
+                >
+                  Get Your Free Assessment
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2 text-purple-300" />
+                </Button>
               </div>
 
               {/* Professional Trust Indicators */}
@@ -176,6 +179,28 @@ const Index = () => {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-blue-400" />
                   <span>1000+ Satisfied Customers</span>
+                </div>
+              </div>
+
+              {/* Certification Badges */}
+              <div className="pt-6 border-t border-white/10">
+                <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+                  {[
+                    { name: "Gas Safe", icon: Shield },
+                    { name: "NICEIC", icon: Award },
+                    { name: "TrustMark", icon: CheckCircle },
+                    { name: "FMB", icon: CheckCircle },
+                    { name: "RIBA Partner", icon: Award },
+                    { name: "NHBC", icon: Shield }
+                  ].map((cert, idx) => (
+                    <div 
+                      key={idx}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-purple-400/30 bg-white/5 backdrop-blur-sm shadow-sm shadow-purple-500/20"
+                    >
+                      <cert.icon className="w-3 h-3 text-purple-300" />
+                      <span className="text-xs text-white/80 font-medium">{cert.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -207,8 +232,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       {/* Services Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
