@@ -20,14 +20,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // SEO Optimization: Minification and tree-shaking
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-      },
-    },
+    // SEO Optimization: Minification and tree-shaking (using esbuild - faster than terser)
+    minify: mode === 'production' ? 'esbuild' : false,
     // Code splitting for better performance
     rollupOptions: {
       output: {
