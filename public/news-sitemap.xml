@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- News Sitemap for Blog Posts and Case Studies -->
+  <!-- Add new entries here when publishing blog posts or news articles -->
+  
+  <url>
+    <loc>https://www.mainteniq.co.uk/case-studies</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Mainteniq Property Services</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-02</news:publication_date>
+      <news:title>Professional Property Maintenance Case Studies - London</news:title>
+      <news:keywords>HVAC maintenance, property maintenance, case studies, London</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.mainteniq.co.uk/why-professional-hvac</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Mainteniq Property Services</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-02</news:publication_date>
+      <news:title>Why Professional HVAC Maintenance Matters - Expert Guide</news:title>
+      <news:keywords>HVAC maintenance, professional services, energy efficiency, property value</news:keywords>
+    </news:news>
+  </url>
+
+  <!-- Template for new blog posts:
+  <url>
+    <loc>https://www.mainteniq.co.uk/blog/[post-slug]</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Mainteniq Property Services</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>YYYY-MM-DD</news:publication_date>
+      <news:title>[Post Title]</news:title>
+      <news:keywords>[keywords, separated, by, commas]</news:keywords>
+    </news:news>
+  </url>
+  -->
+
+</urlset>

@@ -38,6 +38,7 @@ const Handyman = lazy(() => import("./pages/Handyman"));
 const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
 
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
+const Blog = lazy(() => import("./pages/Blog"));
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
@@ -228,6 +229,13 @@ const App = () => {
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <RenovationComposer />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/blog" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Blog />
               </Suspense>
             </Layout>
           } />

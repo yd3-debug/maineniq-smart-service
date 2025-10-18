@@ -19,4 +19,31 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // SEO Optimization: Minification and tree-shaking
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+    // Code splitting for better performance
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-dialog'],
+        },
+      },
+    },
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+    // Enable source maps for production debugging (optional)
+    sourcemap: mode === 'production' ? 'hidden' : true,
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
 }));

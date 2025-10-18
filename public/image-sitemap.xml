@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Hero Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-maineniq.png</image:loc>
+      <image:title>Professional HVAC Maintenance Services London</image:title>
+      <image:caption>Expert property maintenance and HVAC services across London</image:caption>
+    </image:image>
+  </url>
+
+  <!-- HVAC Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/hvac-maintenance</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/hero-hvac.jpg</image:loc>
+      <image:title>HVAC Maintenance Services</image:title>
+      <image:caption>Professional HVAC system maintenance and repair</image:caption>
+    </image:image>
+  </url>
+
+  <!-- FCU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/fcu-maintenance</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/FCUclean.png</image:loc>
+      <image:title>Clean FCU Unit - Professional Maintenance</image:title>
+      <image:caption>Professional FCU cleaning and maintenance service</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/FCUdirty.png</image:loc>
+      <image:title>Dirty FCU Unit Before Maintenance</image:title>
+      <image:caption>FCU unit requiring professional cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <!-- HIU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/hiu-maintenance</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>HIU System Installation</image:title>
+      <image:caption>Professional HIU installation and maintenance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- MVHR Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/mvhr-maintenance</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/MVHRclean.webp</image:loc>
+      <image:title>Clean MVHR Filter</image:title>
+      <image:caption>Professional MVHR filter maintenance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/MVPR0dirty.webp</image:loc>
+      <image:title>Dirty MVHR Filter Before Service</image:title>
+      <image:caption>MVHR filter requiring professional cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <!-- BMS Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/bms</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
+      <image:title>Building Management Systems</image:title>
+      <image:caption>Advanced BMS solutions for modern buildings</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Renovation Before/After Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/renovation-composer</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/New_Flat.jpg</image:loc>
+      <image:title>Renovated Property - After</image:title>
+      <image:caption>Professional property renovation results</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Old_Flat.jpeg</image:loc>
+      <image:title>Property Before Renovation</image:title>
+      <image:caption>Property condition before professional renovation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/new_kitchen.png</image:loc>
+      <image:title>Modern Kitchen Renovation</image:title>
+      <image:caption>Professional kitchen renovation and installation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/old_kitchen.jpg</image:loc>
+      <image:title>Kitchen Before Renovation</image:title>
+      <image:caption>Kitchen condition before professional upgrade</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bedroom_NEW.png</image:loc>
+      <image:title>Renovated Bedroom</image:title>
+      <image:caption>Professional bedroom renovation and design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bedroom_OLD2.jpg</image:loc>
+      <image:title>Bedroom Before Renovation</image:title>
+      <image:caption>Bedroom condition before professional renovation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bathroom_NEW.png</image:loc>
+      <image:title>Modern Bathroom Renovation</image:title>
+      <image:caption>Professional bathroom renovation and installation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bathroom_OLD.jpg</image:loc>
+      <image:title>Bathroom Before Renovation</image:title>
+      <image:caption>Bathroom condition before professional upgrade</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/NEW_OFFICE.png</image:loc>
+      <image:title>Renovated Office Space</image:title>
+      <image:caption>Professional office renovation and fit-out</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/OLD_OFFICE.jpg</image:loc>
+      <image:title>Office Before Renovation</image:title>
+      <image:caption>Office space before professional renovation</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
