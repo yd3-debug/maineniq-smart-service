@@ -39,7 +39,23 @@ const Navigation = () => {
         { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
       ]
     },
-    { name: "Services", href: "/services" },
+    { 
+      name: "Services", 
+      href: "/services",
+      submenu: [
+        { name: "HVAC Maintenance", href: "/hvac-maintenance" },
+        { name: "FCU Maintenance", href: "/fcu-maintenance" },
+        { name: "HIU & CIU Service", href: "/hiu-maintenance" },
+        { name: "CIU Maintenance", href: "/ciu-maintenance" },
+        { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
+        { name: "BMS (Building Management)", href: "/bms" },
+        { name: "Smart Home Automation", href: "/smart-home" },
+        { name: "Plumber & Electrician", href: "/plumber-electrician" },
+        { name: "Handyman Services", href: "/handyman" },
+        { name: "Renovation & Refurbishment", href: "/renovation-composer" },
+        { name: "End of Tenancy Cleaning", href: "/end-of-tenancy-cleaning" }
+      ]
+    },
     { 
       name: "Case Studies", 
       href: "/case-studies",
