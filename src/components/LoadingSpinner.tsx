@@ -34,7 +34,7 @@ export const LoadingSpinner = ({
       )}>
         <img 
           src="/LOGOPETRU2.png" 
-          alt="Mainteniq Logo" 
+          alt="Mainteniq" 
           className="w-full h-full object-contain filter drop-shadow-lg"
         />
       </div>

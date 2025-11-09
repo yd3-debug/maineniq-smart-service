@@ -120,7 +120,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2">
             <img 
               src="/LOGOPETRU2.png" 
-              alt="Mainteniq Logo" 
+              alt="Mainteniq - Professional HVAC & Property Services" 
               className="h-16 w-auto transition-all duration-300"
             />
           </Link>
