@@ -5,6 +5,15 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Set proper 404 status code for SEO
+    document.title = "404 - Page Not Found | Mainteniq";
+    
+    // Set HTTP 404 status for search engines
+    const metaRobots = document.querySelector('meta[name="robots"]') || document.createElement('meta');
+    metaRobots.setAttribute('name', 'robots');
+    metaRobots.setAttribute('content', 'noindex, nofollow');
+    if (!metaRobots.parentNode) document.head.appendChild(metaRobots);
+    
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
