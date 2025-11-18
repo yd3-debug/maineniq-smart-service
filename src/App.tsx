@@ -39,6 +39,13 @@ const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
 
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
 const Blog = lazy(() => import("./pages/Blog"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Disclaimer = lazy(() => import("./pages/Disclaimer"));
+const AccessibilityStatement = lazy(() => import("./pages/AccessibilityStatement"));
+const ComplaintsProcedure = lazy(() => import("./pages/ComplaintsProcedure"));
+const EnvironmentalPolicy = lazy(() => import("./pages/EnvironmentalPolicy"));
+const HealthSafetyPolicy = lazy(() => import("./pages/HealthSafetyPolicy"));
+const AntiSlaveryStatement = lazy(() => import("./pages/AntiSlaveryStatement"));
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
@@ -236,6 +243,55 @@ const App = () => {
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <Blog />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/faq" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <FAQ />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/disclaimer" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <Disclaimer />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/accessibility-statement" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <AccessibilityStatement />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/complaints-procedure" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <ComplaintsProcedure />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/environmental-policy" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <EnvironmentalPolicy />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/health-safety-policy" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <HealthSafetyPolicy />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/anti-slavery-statement" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <AntiSlaveryStatement />
               </Suspense>
             </Layout>
           } />

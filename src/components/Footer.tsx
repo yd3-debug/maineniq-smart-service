@@ -63,10 +63,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Legal & Policies</h3>
             <ul className="space-y-2">
+              <li><Link to="/faq" className="text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link to="/privacy-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service" className="text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link to="/cookie-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
               <li><Link to="/gdpr-compliance" className="text-sm text-gray-300 hover:text-primary transition-colors">GDPR Compliance</Link></li>
+              <li><Link to="/disclaimer" className="text-sm text-gray-300 hover:text-primary transition-colors">Disclaimer</Link></li>
             </ul>
           </div>
         </div>

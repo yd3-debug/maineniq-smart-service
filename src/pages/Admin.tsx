@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,6 +24,14 @@ const Admin = () => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingCase, setEditingCase] = useState<number | null>(null);
+  
+  // Prevent indexing of admin page
+  useEffect(() => {
+    const metaRobots = document.querySelector('meta[name="robots"]') || document.createElement('meta');
+    metaRobots.setAttribute('name', 'robots');
+    metaRobots.setAttribute('content', 'noindex, nofollow');
+    if (!metaRobots.parentNode) document.head.appendChild(metaRobots);
+  }, []);
   
   const [caseStudyForm, setCaseStudyForm] = useState({
     title: "",
