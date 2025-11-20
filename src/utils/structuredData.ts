@@ -41,48 +41,55 @@ export const generateOrganizationSchema = () => ({
   },
   "areaServed": [
     {
-      "@type": "Country",
-      "name": "United Kingdom"
-    },
-    {
       "@type": "City",
       "name": "London",
+      "addressCountry": "GB",
+      "description": "Primary service area - all London boroughs"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Greater London",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Birmingham",
+      "@type": "Place",
+      "name": "City of London",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Manchester",
+      "@type": "Place",
+      "name": "Westminster",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Leeds",
+      "@type": "Place",
+      "name": "Camden",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Liverpool",
+      "@type": "Place",
+      "name": "Islington",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Bristol",
+      "@type": "Place",
+      "name": "Tower Hamlets",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Newcastle",
+      "@type": "Place",
+      "name": "Southwark",
       "addressCountry": "GB"
     },
     {
-      "@type": "City",
-      "name": "Sheffield",
-      "addressCountry": "GB"
+      "@type": "GeoCircle",
+      "description": "Extended service area within 120 miles of Central London including Home Counties",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.5074",
+        "longitude": "-0.1278"
+      },
+      "geoRadius": "193121"
     }
   ],
   "serviceType": [

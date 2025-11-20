@@ -132,11 +132,11 @@ const Index = () => {
                 </h1>
                 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 font-medium tracking-wide">
-                  Gas Safe & NICEIC Certified Engineers | Serving London & The UK
+                  Gas Safe & NICEIC Certified | London-Based Engineers Serving 120-Mile Radius
                 </p>
                 
                 <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                  Preventative maintenance contracts for FCU, HIU, MVHR & CIU systems. Trusted by property managers, landlords, and facilities teams.
+                  Planned maintenance contracts for FCU, HIU, MVHR & CIU systems. Trusted by London landlords, Airbnb hosts, buy-to-let property managers, and facilities teams across residential and commercial properties.
                 </p>
               </div>
 
