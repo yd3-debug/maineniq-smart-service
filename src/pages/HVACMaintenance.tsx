@@ -34,7 +34,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
-import customerServiceImage from "@/assets/customer-service-hvac.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 
@@ -227,8 +226,8 @@ export default function HVACMaintenance() {
             
             <div className="relative">
               <img 
-                src={customerServiceImage} 
-                alt="HVAC engineer consulting with property manager" 
+                src="/HVAC_SYSTEM.png" 
+                alt="Professional HVAC system installation and maintenance" 
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
               />
             </div>
