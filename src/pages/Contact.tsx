@@ -284,8 +284,8 @@ const Contact = () => {
                 </div>
                 <div className="relative lg:order-2">
                   <img 
-                    src={modernEquipment} 
-                    alt="Modern HVAC equipment"
+                    src="/Boiler.png" 
+                    alt="Professional boiler maintenance equipment"
                     className="rounded-lg shadow-elegant w-full h-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tl from-accent/10 to-transparent rounded-lg"></div>
