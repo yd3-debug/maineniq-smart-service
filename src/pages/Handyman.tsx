@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FullBleedHero from "@/components/FullBleedHero";
@@ -7,11 +7,10 @@ import SEOHead from "@/components/SEOHead";
 import TrustStrip from "@/components/TrustStrip";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
-import { HandymanBeforeAfter } from "@/components/HandymanBeforeAfter";
 import HandymanImage from "@/assets/handyman-repair.jpg";
-import MaintenanceImage from "@/assets/handyman-maintenance.jpg";
-import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
+import { handleQuoteRequest } from "@/utils/quote";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { 
   CheckCircle, 
   Phone, 
@@ -24,10 +23,26 @@ import {
   Clock, 
   Award,
   TrendingUp,
-  Users
+  Users,
+  Home,
+  Building2,
+  ChevronDown,
+  AlertCircle,
+  ArrowRight
 } from "lucide-react";
 
-const services = [
+// Compact service icons for initial view
+const serviceCategories = [
+  { icon: Zap, title: "Electrical", color: "text-yellow-500" },
+  { icon: Droplets, title: "Plumbing", color: "text-blue-500" },
+  { icon: Hammer, title: "Carpentry", color: "text-amber-700" },
+  { icon: PaintBucket, title: "Decorating", color: "text-purple-500" },
+  { icon: Wrench, title: "Maintenance", color: "text-slate-600" },
+  { icon: Shield, title: "Emergency", color: "text-red-500" }
+];
+
+// Full service details for collapsible section
+const fullServices = [
   {
     icon: Zap,
     title: "Electrical Repairs",
@@ -66,30 +81,39 @@ const services = [
   }
 ];
 
-const processSteps = [
+// Symptom-based content
+const symptoms = [
   {
-    step: "01",
-    title: "Professional Assessment",
-    description: "Detailed inspection and transparent, itemized quotation with no hidden costs"
+    symptom: "DIY repairs keep failing?",
+    description: "Patches that don't hold, recurring leaks, or fixes that look unprofessional",
+    solution: "We provide lasting professional solutions with proper materials and techniques",
+    icon: Wrench
   },
   {
-    step: "02", 
-    title: "Quality Planning",
-    description: "Material sourcing, timeline planning, and coordination with your schedule"
+    symptom: "Can't find reliable tradespeople?",
+    description: "No-shows, delays, poor communication, or inconsistent quality",
+    solution: "Same-day response, qualified team, and clear communication throughout",
+    icon: Users
   },
   {
-    step: "03",
-    title: "Expert Execution", 
-    description: "Clean, efficient work by qualified tradespeople with proper insurance"
-  },
-  {
-    step: "04",
-    title: "Guaranteed Results",
-    description: "Quality inspection, cleanup, and comprehensive warranty on all work"
+    symptom: "Small issues becoming expensive?",
+    description: "Minor maintenance ignored until it becomes a major structural problem",
+    solution: "Preventive maintenance plans that catch problems early and save money",
+    icon: TrendingUp
   }
 ];
 
+const processSteps = [
+  { step: "01", title: "Assessment", description: "Detailed inspection with transparent quote" },
+  { step: "02", title: "Planning", description: "Materials sourced, timeline confirmed" },
+  { step: "03", title: "Execution", description: "Clean, efficient work by qualified pros" },
+  { step: "04", title: "Guarantee", description: "Quality check and warranty provided" }
+];
+
 const Handyman: React.FC = () => {
+  const [servicesOpen, setServicesOpen] = React.useState(false);
+  const [processOpen, setProcessOpen] = React.useState(false);
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -105,7 +129,7 @@ const Handyman: React.FC = () => {
         subtitle="Expert property maintenance by qualified tradespeople. From minor repairs to major improvements, we deliver quality workmanship with full insurance and guarantees."
         image={HandymanImage}
         alt="Professional handyman performing quality maintenance and repairs"
-        primaryLabel="Get Professional Quote"
+        primaryLabel="Get Your Free Quote"
         primaryHref="/contact"
         secondaryLabel="Emergency Call"
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
@@ -114,13 +138,128 @@ const Handyman: React.FC = () => {
       <TrustStrip />
 
       <main className="container mx-auto px-4 py-12 space-y-16">
-        {/* Success Metrics */}
-        <section className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        {/* WHO WE HELP - Educational Intro */}
+        <section className="text-center max-w-4xl mx-auto">
+          <h2 className="font-heading text-3xl font-bold mb-6">Who We Help</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Stop wasting time chasing unreliable tradespeople. We provide qualified, insured handymen who show up on time, complete work to standard, and give you documentation for compliance.
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+              <Home className="w-8 h-8 text-primary mb-2" />
+              <span className="text-sm font-medium text-center">Landlords</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+              <Building2 className="w-8 h-8 text-primary mb-2" />
+              <span className="text-sm font-medium text-center">Airbnb Hosts</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+              <Users className="w-8 h-8 text-primary mb-2" />
+              <span className="text-sm font-medium text-center">Property Managers</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+              <Shield className="w-8 h-8 text-primary mb-2" />
+              <span className="text-sm font-medium text-center">Homeowners</span>
+            </div>
+          </div>
+        </section>
+
+        {/* SIGNS YOU NEED US - Symptom-based approach */}
+        <section className="rounded-xl border bg-gradient-to-br from-primary/5 to-primary/10 p-8">
+          <div className="text-center mb-8">
+            <h2 className="font-heading text-3xl font-bold mb-4">Signs You Need a Professional</h2>
+            <p className="text-muted-foreground">Recognise any of these? We can help.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {symptoms.map((item, index) => (
+              <Card key={index} className="border-primary/20 hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <AlertCircle className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-lg">{item.symptom}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+                  <div className="flex items-start gap-2 p-3 bg-success/10 rounded-lg">
+                    <ArrowRight className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-success-foreground font-medium">{item.solution}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button size="lg" onClick={() => handleQuoteRequest("Handyman Services")}>
+              Get Help Today
+            </Button>
+          </div>
+        </section>
+
+        {/* WHAT WE FIX - Compact with collapsible details */}
+        <section>
+          <div className="text-center mb-8">
+            <h2 className="font-heading text-3xl font-bold mb-4">What We Fix</h2>
+            <p className="text-muted-foreground">Comprehensive property maintenance services</p>
+          </div>
+          
+          {/* Compact Icon Grid */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
+            {serviceCategories.map((service, index) => (
+              <div key={index} className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all hover:scale-105 cursor-pointer" onClick={() => setServicesOpen(true)}>
+                <service.icon className={`w-10 h-10 mb-2 ${service.color}`} />
+                <span className="text-sm font-medium text-center">{service.title}</span>
+              </div>
+            ))}
+          </div>
+          
+          {/* Collapsible Full Details */}
+          <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
+            <CollapsibleTrigger asChild>
+              <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                <span>{servicesOpen ? "Hide" : "View"} All Service Details</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {fullServices.map((service, index) => (
+                  <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <service.icon className="w-8 h-8 text-primary flex-shrink-0" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
+                          <p className="text-muted-foreground mb-4">{service.description}</p>
+                          <ul className="space-y-1">
+                            {service.highlights.map((highlight, i) => (
+                              <li key={i} className="flex items-center gap-2 text-sm">
+                                <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </section>
+
+        {/* TRUST METRICS - Moved after services */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <ProgressMetric
             icon={Clock}
             value={98}
-            label="Same-day response rate"
-            description="Emergency and urgent repairs"
+            label="Same-day response"
+            description="Emergency repairs"
             percentage={98}
             variant="success"
             delay={0}
@@ -129,7 +268,7 @@ const Handyman: React.FC = () => {
             icon={Users}
             value={850}
             label="Properties maintained"
-            description="Residential and commercial"
+            description="Residential & commercial"
             percentage={85}
             variant="default"
             delay={200}
@@ -138,7 +277,7 @@ const Handyman: React.FC = () => {
             icon={Award}
             value={99}
             label="Customer satisfaction"
-            description="Quality guaranteed work"
+            description="Quality guaranteed"
             percentage={99}
             variant="success"
             delay={400}
@@ -147,222 +286,118 @@ const Handyman: React.FC = () => {
             icon={TrendingUp}
             value={24}
             label="Months warranty"
-            description="On all completed work"
+            description="On all work"
             percentage={100}
             variant="default"
             delay={600}
           />
         </section>
 
-        {/* Comprehensive Services */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl font-bold mb-4">Comprehensive Handyman Services</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our qualified tradespeople handle everything from emergency repairs to planned maintenance. 
-              All work comes with full insurance coverage and comprehensive warranties.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <service.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <ul className="space-y-1">
-                        {service.highlights.map((highlight, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm">
-                            <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Before/After Comparison */}
-        <section>
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">Why Professional Handyman Services Matter</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The difference between DIY attempts and professional workmanship extends beyond appearance—it's about safety, durability, and compliance.
-            </p>
-          </div>
-          <HandymanBeforeAfter />
-        </section>
-
-        {/* Problems We Prevent */}
-        <section className="rounded-xl border bg-primary/5 p-8">
-          <h2 className="font-heading text-3xl font-bold mb-6 text-primary text-center">Critical Issues We Prevent</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border-primary/20 bg-white">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <Shield className="w-6 h-6 text-danger flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Safety Hazards & Compliance</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Electrical hazards, gas leaks, structural weaknesses, and building regulation violations 
-                      that could result in accidents, insurance claims, or legal issues.
-                    </p>
-                  </div>
-                </div>
-                <ul className="text-sm space-y-1">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Electrical safety testing</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Building regulations compliance</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Insurance-approved work</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20 bg-white">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <TrendingUp className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Escalating Repair Costs</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Small maintenance issues that become major structural problems, water damage, 
-                      or system failures requiring expensive emergency interventions.
-                    </p>
-                  </div>
-                </div>
-                <ul className="text-sm space-y-1">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Preventive maintenance schedules</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Early problem detection</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Cost-effective solutions</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20 bg-white">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <Users className="w-6 h-6 text-info flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Property Value & Tenant Issues</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Poor maintenance affecting property values, tenant satisfaction, rental income, 
-                      and creating ongoing management headaches for property owners.
-                    </p>
-                  </div>
-                </div>
-                <ul className="text-sm space-y-1">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Professional quality standards</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Rapid response times</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3 h-3 text-success" />
-                    <span>Tenant communication support</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Enhanced Process */}
+        {/* OUR PROCESS - Simplified with collapsible */}
         <section className="bg-muted/40 border rounded-xl p-8">
           <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">Our Professional Process</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              From initial assessment to final guarantee, every step is designed to deliver exceptional results with complete transparency.
-            </p>
+            <h2 className="font-heading text-3xl font-bold mb-4">How It Works</h2>
+            <p className="text-muted-foreground">Simple process, professional results</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {/* Compact Process Steps */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6">
             {processSteps.map((step, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+                  {step.step}
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">{step.title}</p>
+                  <p className="text-xs text-muted-foreground hidden md:block">{step.description}</p>
+                </div>
+                {index < processSteps.length - 1 && (
+                  <ArrowRight className="w-4 h-4 text-muted-foreground hidden md:block" />
+                )}
+              </div>
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link to="/contact">Get Professional Assessment</Link>
+          <Collapsible open={processOpen} onOpenChange={setProcessOpen}>
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm" className="w-full flex items-center justify-center gap-2 text-muted-foreground">
+                <span>{processOpen ? "Hide" : "Show"} Details</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${processOpen ? "rotate-180" : ""}`} />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {processSteps.map((step, index) => (
+                  <Card key={index} className="text-center">
+                    <CardContent className="p-4">
+                      <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-3">
+                        {step.step}
+                      </div>
+                      <h3 className="font-semibold mb-1">{step.title}</h3>
+                      <p className="text-xs text-muted-foreground">{step.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <Button size="lg" onClick={() => handleQuoteRequest("Handyman Services")}>
+              Get Professional Assessment
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Emergency handyman call ${CONTACT.phones.emergency}`}>
+            <Button variant="outline" size="lg" asChild>
+              <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                 <Phone className="w-5 h-5 mr-2"/>
-                Emergency Call: {CONTACT.phones.emergency}
+                Emergency: {CONTACT.phones.emergency}
               </a>
             </Button>
           </div>
         </section>
 
-        {/* Trust and Credentials */}
+        {/* CREDENTIALS - Simplified */}
         <section className="text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-heading text-3xl font-bold mb-6">Qualified, Insured, Guaranteed</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Award className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">Qualified Tradespeople</h3>
-                <p className="text-sm text-muted-foreground">All work carried out by certified professionals with relevant trade qualifications and ongoing training.</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">Fully Insured</h3>
-                <p className="text-sm text-muted-foreground">Comprehensive public liability and professional indemnity insurance for complete peace of mind.</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <CheckCircle className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">Work Guaranteed</h3>
-                <p className="text-sm text-muted-foreground">Up to 24-month warranties on all work with free callback service if you're not completely satisfied.</p>
-              </div>
+          <h2 className="font-heading text-3xl font-bold mb-8">Qualified, Insured, Guaranteed</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center p-6 rounded-lg border bg-card">
+              <Award className="w-10 h-10 text-primary mb-3" />
+              <h3 className="font-semibold mb-2">Qualified</h3>
+              <p className="text-sm text-muted-foreground">Certified professionals with trade qualifications</p>
+            </div>
+            <div className="flex flex-col items-center p-6 rounded-lg border bg-card">
+              <Shield className="w-10 h-10 text-primary mb-3" />
+              <h3 className="font-semibold mb-2">Insured</h3>
+              <p className="text-sm text-muted-foreground">Full public liability and professional indemnity</p>
+            </div>
+            <div className="flex flex-col items-center p-6 rounded-lg border bg-card">
+              <CheckCircle className="w-10 h-10 text-primary mb-3" />
+              <h3 className="font-semibold mb-2">Guaranteed</h3>
+              <p className="text-sm text-muted-foreground">Up to 24-month warranty with free callback</p>
             </div>
           </div>
         </section>
 
-        {/* Customer Testimonials */}
+        {/* TESTIMONIALS */}
         <TestimonialCards />
+
+        {/* FINAL CTA */}
+        <section className="text-center rounded-xl bg-primary/5 border border-primary/20 p-8">
+          <h2 className="font-heading text-2xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Tell us about your property maintenance needs and get a free, no-obligation quote within 24 hours.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" onClick={() => handleQuoteRequest("Handyman Services")}>
+              Get Your Free Quote
+            </Button>
+            <Button variant="secondary" size="lg" asChild>
+              <a href={`tel:${CONTACT.phones.emergencyTel}`}>
+                <Phone className="w-5 h-5 mr-2"/>
+                Call Now
+              </a>
+            </Button>
+          </div>
+        </section>
       </main>
     </div>
   );
