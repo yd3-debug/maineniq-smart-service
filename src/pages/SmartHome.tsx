@@ -11,6 +11,7 @@ import ResearchBadge from "@/components/ResearchBadge";
 import { SmartHomeGallery } from "@/components/SmartHomeGallery";
 import { BeforeAfterComparison } from "@/components/BeforeAfterComparison";
 import { handleQuoteRequest } from "@/utils/quote";
+import { generateSmartHomeSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 
 const SmartHome: React.FC = () => {
   const serviceOutcomes = [
@@ -74,10 +75,16 @@ const SmartHome: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Professional Smart Home Automation Services | Mainteniq"
-        description="Expert smart home installation and integration. Control lighting, entertainment, security and appliances from one app. Professional installation with ongoing support."
-        keywords="smart home automation, home integration, smart lighting, home security, entertainment systems, smart locks, energy monitoring, UK smart meters, SMETS2"
+        title="Smart Home Automation Installation London | Professional Setup | Mainteniq"
+        description="Expert smart home installation in London. Control lighting, entertainment, security & energy from one app. SMETS2 smart meter integration. Professional installation & ongoing support."
+        keywords="smart home London, smart home automation, home automation installation, smart lighting London, home security systems, entertainment systems, smart locks, energy monitoring UK, SMETS2 integration, smart home installer"
         canonicalUrl="/smart-home"
+        structuredData={generateSmartHomeSchema()}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "Smart Home", url: "https://www.mainteniq.co.uk/smart-home" }
+        ])}
       />
       
       <FullBleedHero

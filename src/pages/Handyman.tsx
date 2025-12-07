@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +10,7 @@ import HandymanImage from "@/assets/handyman-repair.jpg";
 import { CONTACT } from "@/config/contact";
 import { handleQuoteRequest } from "@/utils/quote";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { generateHandymanSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Phone, 
@@ -117,11 +117,17 @@ const Handyman: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Professional Handyman Services | Expert Property Maintenance | Mainteniq"
-        description="Professional handyman services for homes and businesses. Qualified tradespeople for electrical, plumbing, carpentry, decorating, and property maintenance. Same-day emergency repairs available."
-        keywords="handyman services, property maintenance, electrical repairs, plumbing fixes, carpentry, decorating, emergency repairs, qualified tradespeople"
+        title="Professional Handyman Services London | Property Maintenance | Mainteniq"
+        description="Professional handyman services for landlords, Airbnb hosts & property managers in London. Electrical, plumbing, carpentry, decorating. Same-day emergency repairs. Fully insured."
+        keywords="handyman London, property maintenance London, handyman services, electrical repairs London, plumbing fixes, carpentry London, decorating services, emergency handyman, landlord handyman, Airbnb property maintenance"
         ogImage="/og-image-mainteniq.png"
-        canonicalUrl={window.location.href}
+        canonicalUrl="/handyman"
+        structuredData={generateHandymanSchema()}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "Handyman Services", url: "https://www.mainteniq.co.uk/handyman" }
+        ])}
       />
 
       <FullBleedHero

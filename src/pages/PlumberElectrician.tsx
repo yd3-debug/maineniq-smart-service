@@ -13,6 +13,7 @@ import plumbingCustomerService from "@/assets/plumbing-customer-service.jpg";
 import teamWorking from "@/assets/team-working.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import { handleQuoteRequest } from "@/utils/quote";
+import { generatePlumberElectricianSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, Shield, Clock, Award, Zap, Wrench, AlertTriangle, 
   FileCheck, Users, Flame, ThermometerSun, Droplets, Phone, 
@@ -97,10 +98,16 @@ const PlumberElectrician: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Professional Plumber & Electrician Services | Mainteniq"
-        description="Certified Gas Safe & NICEIC plumbing and electrical services. Emergency repairs, installations, rewiring, boiler service. Fully insured with guarantees."
-        keywords="plumber electrician, Gas Safe, NICEIC, boiler repair, rewiring, emergency plumber, electrical installation, certified trades"
-        canonicalUrl={`${window.location.origin}/plumber-electrician`}
+        title="Professional Plumber & Electrician Services London | Gas Safe & NICEIC | Mainteniq"
+        description="Certified Gas Safe plumbers & NICEIC electricians in London. Emergency repairs, boiler installation, rewiring, CP12 & EICR certificates. 24/7 response. Free quotes."
+        keywords="plumber London, electrician London, Gas Safe registered plumber, NICEIC electrician, boiler repair London, rewiring London, emergency plumber London, CP12 certificate, EICR London, electrical installation London, boiler service London, emergency electrician"
+        canonicalUrl="/plumber-electrician"
+        structuredData={generatePlumberElectricianSchema()}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "Plumber & Electrician", url: "https://www.mainteniq.co.uk/plumber-electrician" }
+        ])}
       />
       
       <FullBleedHero

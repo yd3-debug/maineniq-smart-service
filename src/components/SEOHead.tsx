@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface SEOHeadProps {
   title?: string;
@@ -13,9 +14,11 @@ interface SEOHeadProps {
   serviceData?: any;
 }
 
+const BASE_URL = 'https://www.mainteniq.co.uk';
+
 const SEOHead = ({ 
-  title = "🏆 #1 Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Save 30%",
-  description = "⭐ 4.9/5 Rating | Premier property services UK ⭐ Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman, end-of-tenancy cleaning. Save 30% energy costs, prevent 80% breakdowns, extend equipment life 10+ years. Gas Safe & NICEIC certified. 24/7 emergency response. Free quotes, transparent pricing, quality guaranteed. Trusted by 1000+ customers across London, Manchester, Birmingham. Transform your property today!",
+  title = "Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Mainteniq",
+  description = "4.9/5 Rating | Premier property services UK. Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman, end-of-tenancy cleaning. Save 30% energy costs, prevent 80% breakdowns. Gas Safe & NICEIC certified. 24/7 emergency response. London + 120 miles.",
   ogImage = "/og-image-mainteniq.png",
   ogType = "website",
   keywords = "HVAC maintenance London, London landlord HVAC, Airbnb property maintenance London, buy-to-let property services, BTL maintenance London, rental property maintenance London, property manager maintenance contracts, heating engineer London, Gas Safe registered engineer London, NICEIC electrician London, planned maintenance contracts London, PPM maintenance London, FCU HIU MVHR maintenance London, landlord gas safety certificate London, CP12 certificate London, EICR London, emergency plumber electrician London, facilities management London, end of tenancy cleaning London, property renovation London, 24/7 emergency response London, certified engineers London, smart home London, BMS London, commercial property maintenance London, residential property maintenance London",
@@ -25,6 +28,16 @@ const SEOHead = ({
   faqData,
   serviceData
 }: SEOHeadProps) => {
+  const location = useLocation();
+  
+  // Generate absolute URLs
+  const absoluteCanonicalUrl = canonicalUrl 
+    ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${BASE_URL}${canonicalUrl.startsWith('/') ? canonicalUrl : `/${canonicalUrl}`}`)
+    : `${BASE_URL}${location.pathname}`;
+  
+  const absoluteOgImage = ogImage.startsWith('http') 
+    ? ogImage 
+    : `${BASE_URL}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`;
   
   useEffect(() => {
     // Update document title
@@ -55,12 +68,23 @@ const SEOHead = ({
     
     const ogImageMeta = document.querySelector('meta[property="og:image"]');
     if (ogImageMeta) {
-      ogImageMeta.setAttribute('content', `${window.location.origin}${ogImage}`);
+      ogImageMeta.setAttribute('content', absoluteOgImage);
+    }
+    
+    const ogImageSecure = document.querySelector('meta[property="og:image:secure_url"]');
+    if (ogImageSecure) {
+      ogImageSecure.setAttribute('content', absoluteOgImage);
     }
     
     const ogTypeMeta = document.querySelector('meta[property="og:type"]');
     if (ogTypeMeta) {
       ogTypeMeta.setAttribute('content', ogType);
+    }
+    
+    // Update OG URL with absolute URL
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', absoluteCanonicalUrl);
     }
     
     // Update Twitter tags
@@ -76,25 +100,32 @@ const SEOHead = ({
     
     const twitterImage = document.querySelector('meta[name="twitter:image"]');
     if (twitterImage) {
-      twitterImage.setAttribute('content', `${window.location.origin}${ogImage}`);
+      twitterImage.setAttribute('content', absoluteOgImage);
     }
     
-    // Update canonical URL if provided
-    if (canonicalUrl) {
-      let canonical = document.querySelector('link[rel="canonical"]');
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonical);
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', absoluteCanonicalUrl);
+    
+    // Update hreflang tags dynamically
+    const updateHreflang = (hreflang: string, href: string) => {
+      let link = document.querySelector(`link[hreflang="${hreflang}"]`);
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('hreflang', hreflang);
+        document.head.appendChild(link);
       }
-      canonical.setAttribute('href', canonicalUrl);
-    }
+      link.setAttribute('href', href);
+    };
     
-    // Update OG URL
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute('content', canonicalUrl || window.location.href);
-    }
+    updateHreflang('en-GB', absoluteCanonicalUrl);
+    updateHreflang('x-default', absoluteCanonicalUrl);
     
     // Add structured data
     const addStructuredData = (data: any, id: string) => {
@@ -138,25 +169,25 @@ const SEOHead = ({
         { name: 'business:contact_data:locality', content: 'London' },
         { name: 'business:contact_data:region', content: 'England' },
         { name: 'business:contact_data:country_name', content: 'United Kingdom' },
-        { name: 'business:contact_data:phone_number', content: '+44 (0) 189 55 28 226' },
+        { name: 'business:contact_data:phone_number', content: '+44 783 456 2366' },
         { name: 'business:contact_data:email', content: 'info@mainteniq.co.uk' },
-        { name: 'geo.region', content: 'GB' },
-        { name: 'geo.placename', content: 'United Kingdom' },
+        { name: 'geo.region', content: 'GB-LND' },
+        { name: 'geo.placename', content: 'London, United Kingdom' },
         { name: 'geo.position', content: '51.5074;-0.1278' },
         { name: 'ICBM', content: '51.5074, -0.1278' },
-        { name: 'ai:service_areas', content: 'London, Manchester, Birmingham, Leeds, Liverpool, Bristol, Newcastle, Sheffield, Nottingham, Bradford, Edinburgh, Glasgow, Cardiff' },
+        { name: 'ai:service_areas', content: 'London, Greater London, Essex, Kent, Surrey, Hertfordshire, Buckinghamshire, Berkshire' },
         { name: 'ai:primary_services', content: 'HVAC Maintenance, FCU Service, HIU Repair, MVHR Cleaning, BMS Installation, Smart Home Automation, Emergency Plumbing, Certified Electrical, Professional Handyman, End-of-Tenancy Cleaning' },
         { name: 'ai:specializations', content: 'Energy Efficiency, Preventive Maintenance, Smart Building Technology, 24/7 Emergency Response, Gas Safe & NICEIC Certified' },
-        { name: 'ai:emergency_service', content: '24/7 Emergency HVAC, Plumbing & Electrical Response Available Across UK' },
+        { name: 'ai:emergency_service', content: '24/7 Emergency HVAC, Plumbing & Electrical Response Available Across London' },
         { name: 'ai:certifications', content: 'Gas Safe Registered, NICEIC Approved Contractor, F-Gas Certified, City & Guilds Qualified, Fully Insured & Bonded' },
         { name: 'ai:response_time', content: 'Same day emergency response, 24-48h standard bookings, free quotes within 2 hours' },
         { name: 'ai:service_guarantee', content: 'Work guaranteed, transparent pricing, no hidden costs, customer satisfaction promise' },
-        { name: 'ai:coverage_area', content: 'UK-wide coverage with local engineers, specializing in London, Manchester, Birmingham metro areas' },
+        { name: 'ai:coverage_area', content: 'London and 120-mile radius including Home Counties' },
         { name: 'rating', content: '4.9' },
         { name: 'price_range', content: '££' },
         { name: 'availability', content: '24/7' },
-        { name: 'language', content: 'English' },
-        { name: 'audience', content: 'Homeowners, Landlords, Property Managers, Facility Managers, Commercial Property Owners' },
+        { name: 'language', content: 'en-GB' },
+        { name: 'audience', content: 'Landlords, Airbnb Hosts, Property Managers, Facility Managers, Buy-to-Let Investors, Commercial Property Owners' },
         { name: 'expertise', content: 'HVAC Systems, Smart Home Technology, Building Management, Emergency Repairs, Preventive Maintenance' }
       ];
       
@@ -177,7 +208,7 @@ const SEOHead = ({
     
     addAIMetaTags();
     
-  }, [title, description, ogImage, ogType, keywords, canonicalUrl, structuredData, breadcrumbData, faqData, serviceData]);
+  }, [title, description, absoluteOgImage, ogType, keywords, absoluteCanonicalUrl, structuredData, breadcrumbData, faqData, serviceData]);
   
   return null;
 };

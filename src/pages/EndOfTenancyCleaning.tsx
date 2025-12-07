@@ -6,12 +6,14 @@ import FullBleedHero from "@/components/FullBleedHero";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ServicePackageBuilder from "@/components/ServicePackageBuilder";
+import SEOHead from "@/components/SEOHead";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import professionalCleaning from "@/assets/professional-cleaning.jpg";
 import beforeAfter from "@/assets/before-after.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
 import { handleQuoteRequest } from "@/utils/quote";
+import { generateCleaningServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Phone, 
@@ -30,27 +32,27 @@ import {
 } from "lucide-react";
 
 const EndOfTenancyCleaning: React.FC = () => {
-  useEffect(() => {
-    document.title = "End of Tenancy Cleaning | Mainteniq";
-    const desc = "Professional end of tenancy cleaning for deposit-safe standards. Deep, detailed, guaranteed.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", window.location.href);
-  }, []);
+  const cleaningFAQs = [
+    { question: "Do you provide cleaning supplies and equipment?", answer: "Yes, our team brings all professional cleaning products and equipment." },
+    { question: "Are you available on short notice?", answer: "Often yes. Contact us and we'll do our best to fit your timescale." },
+    { question: "Do you guarantee deposit return?", answer: "We meet inventory standards and offer a 48h re-clean if anything is missed." }
+  ];
 
   return (
     <>
+      <SEOHead
+        title="End of Tenancy Cleaning London | Deposit-Safe Deep Clean | Mainteniq"
+        description="Professional end of tenancy cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability. From £140."
+        keywords="end of tenancy cleaning London, move out cleaning, deposit return cleaning, deep cleaning London, professional cleaning, inventory cleaning, landlord cleaning service, Airbnb cleaning London, rental property cleaning"
+        canonicalUrl="/end-of-tenancy-cleaning"
+        structuredData={generateCleaningServiceSchema()}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "End of Tenancy Cleaning", url: "https://www.mainteniq.co.uk/end-of-tenancy-cleaning" }
+        ])}
+        faqData={generateFAQSchema(cleaningFAQs)}
+      />
       <div className="min-h-screen">
         {/* Enhanced Hero Section */}
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">

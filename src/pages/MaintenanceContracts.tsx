@@ -7,7 +7,9 @@ import FullBleedHero from "@/components/FullBleedHero";
 import PropertyAssessmentForm from "@/components/PropertyAssessmentForm";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import WhoWeServe from "@/components/sections/WhoWeServe";
+import SEOHead from "@/components/SEOHead";
 import { CONTACT } from "@/config/contact";
+import { generateMaintenanceContractSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Shield, 
@@ -43,95 +45,7 @@ const MaintenanceContracts = () => {
   console.log('SystemsWeMaintain:', SystemsWeMaintain);
   
   useEffect(() => {
-    // Enhanced SEO for Google first page ranking and AI search optimization
-    document.title = "🎯 Custom Maintenance Contracts UK | Prevent 80% of Breakdowns | 24/7 Response | Save £1000s";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "★ #1 Maintenance Contracts UK ★ Tailored HVAC/plumbing/electrical contracts for landlords & property managers. Prevent 80% breakdowns, save £1000s annually. Fixed monthly costs, 24/7 response, 99.2% uptime guarantee. Expert engineers, transparent pricing. Get instant quote!");
-    }
-
-    // Add keywords meta tag for enhanced SEO
-    const metaKeywords = document.querySelector('meta[name="keywords"]') || document.createElement('meta');
-    metaKeywords.setAttribute('name', 'keywords');
-    metaKeywords.setAttribute('content', 'maintenance contracts UK, property maintenance agreements, HVAC maintenance contracts, landlord maintenance services, preventive maintenance contracts, building maintenance agreements, commercial property maintenance, residential maintenance contracts, planned maintenance services, property management contracts, maintenance service level agreements, facility management contracts, emergency response contracts, fixed cost maintenance, predictable maintenance costs');
-    if (!metaKeywords.parentNode) document.head.appendChild(metaKeywords);
-
-    // Enhanced structured data for AI search engines
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Custom Maintenance Contracts",
-      "description": "Tailored maintenance contracts for property owners, landlords, and facility managers across the UK. Prevent breakdowns, reduce costs, ensure compliance with 24/7 emergency response guarantee.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Mainteniq",
-        "url": "https://www.mainteniq.co.uk",
-        "telephone": "+44 (0) 189 55 28 226",
-        "email": "info@mainteniq.co.uk",
-        "areaServed": "United Kingdom",
-        "hasCredential": ["Gas Safe Registered", "NICEIC Approved", "F-Gas Certified"]
-      },
-      "serviceType": "Property Maintenance Contracts",
-      "offers": {
-        "@type": "Offer",
-        "name": "Custom Maintenance Contract",
-        "description": "Tailored maintenance contracts with 24/7 emergency response, fixed monthly costs, and 99.2% uptime guarantee",
-        "priceRange": "££",
-        "availability": "InStock",
-        "validFrom": "2024-01-01",
-        "areaServed": {
-          "@type": "Country",
-          "name": "United Kingdom"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating", 
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Maintenance Contract Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "HVAC Maintenance Contracts"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Plumbing & Electrical Maintenance Contracts"
-            }
-          }
-        ]
-      }
-    };
-
-    // Add structured data to page
-    let script = document.getElementById('maintenance-contracts-structured-data') as HTMLScriptElement;
-    if (!script) {
-      script = document.createElement('script');
-      script.id = 'maintenance-contracts-structured-data';
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify(structuredData);
-
-    // Canonical URL
-    const canonicalUrl = 'https://www.mainteniq.co.uk/maintenance-contracts';
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', canonicalUrl);
+    console.log('MaintenanceContracts: useEffect running');
   }, []);
 
   const contractBenefits = [
@@ -209,6 +123,18 @@ const MaintenanceContracts = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Custom Maintenance Contracts UK | Prevent 80% Breakdowns | 24/7 Response | Mainteniq"
+        description="Tailored HVAC, plumbing & electrical maintenance contracts for landlords & property managers. Prevent 80% breakdowns, fixed monthly costs, 24/7 response, 99.2% uptime guarantee."
+        keywords="maintenance contracts UK, property maintenance agreements, HVAC maintenance contracts, landlord maintenance services, preventive maintenance contracts, building maintenance, commercial property maintenance, planned maintenance, PPM contracts, facility management"
+        canonicalUrl="/maintenance-contracts"
+        structuredData={generateMaintenanceContractSchema()}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "Maintenance Contracts", url: "https://www.mainteniq.co.uk/maintenance-contracts" }
+        ])}
+      />
       <FullBleedHero
         title="Custom Maintenance Contracts for Your Property Portfolio"
         subtitle="Why choose reactive maintenance when you can prevent problems? Our tailored contracts provide 24/7 guaranteed response, preventive maintenance, and all systems coverage under one provider."

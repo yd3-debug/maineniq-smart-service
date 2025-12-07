@@ -3,11 +3,11 @@ export const generateOrganizationSchema = () => ({
   "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
   "name": "Mainteniq",
   "alternateName": "Mainteniq UK Property Services",
-  "description": "🏆 Award-winning professional HVAC maintenance, FCU/HIU/MVHR servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning services across the UK. 24/7 emergency response, certified engineers, 4.9⭐ rating.",
+  "description": "Award-winning professional HVAC maintenance, FCU/HIU/MVHR servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning services across London and the UK. 24/7 emergency response, certified engineers, 4.9 star rating.",
   "url": "https://www.mainteniq.co.uk",
   "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
   "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
-  "telephone": "+44 (0) 189 55 28 226",
+  "telephone": "+44 783 456 2366",
   "email": "info@mainteniq.co.uk",
   "foundingDate": "2020",
   "slogan": "Preventing Breakdowns, Protecting Your Investment",
@@ -216,22 +216,47 @@ export const generateServiceSchema = (service: {
   url: string;
   serviceType: string;
   areaServed?: string[];
+  image?: string;
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": service.name,
   "description": service.description,
   "url": service.url,
+  "image": service.image || "https://www.mainteniq.co.uk/og-image-mainteniq.png",
   "serviceType": service.serviceType,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
-    "url": "https://www.mainteniq.co.uk"
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366",
+    "email": "info@mainteniq.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressRegion": "Greater London",
+      "addressCountry": "GB"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "247"
+    }
   },
   "areaServed": service.areaServed || [
     {
-      "@type": "Country",
-      "name": "United Kingdom"
+      "@type": "City",
+      "name": "London",
+      "addressCountry": "GB"
+    },
+    {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.5074",
+        "longitude": "-0.1278"
+      },
+      "geoRadius": "193121"
     }
   ],
   "hasOfferCatalog": {
@@ -246,6 +271,173 @@ export const generateServiceSchema = (service: {
         }
       }
     ]
+  }
+});
+
+export const generatePlumberElectricianSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": ["Plumber", "Electrician", "LocalBusiness"],
+  "name": "Mainteniq - Professional Plumber & Electrician Services",
+  "description": "Gas Safe registered plumbers and NICEIC certified electricians in London. Emergency repairs, boiler installation, rewiring, CP12 & EICR certificates. 24/7 emergency response.",
+  "url": "https://www.mainteniq.co.uk/plumber-electrician",
+  "image": "https://www.mainteniq.co.uk/Boiler.png",
+  "telephone": "+44 783 456 2366",
+  "email": "info@mainteniq.co.uk",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "addressCountry": "GB"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5074",
+      "longitude": "-0.1278"
+    },
+    "geoRadius": "193121"
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Gas Safe Registered"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "NICEIC Approved Contractor"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
+  }
+});
+
+export const generateHandymanSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
+  "name": "Mainteniq - Professional Handyman Services",
+  "description": "Professional handyman services for landlords, Airbnb hosts & property managers in London. Electrical repairs, plumbing fixes, carpentry, decorating. Same-day emergency repairs available.",
+  "url": "https://www.mainteniq.co.uk/handyman",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+  "telephone": "+44 783 456 2366",
+  "email": "info@mainteniq.co.uk",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "addressCountry": "GB"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5074",
+      "longitude": "-0.1278"
+    },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
+  }
+});
+
+export const generateSmartHomeSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Smart Home Automation Installation",
+  "description": "Professional smart home installation and integration in London. Control lighting, entertainment, security and energy monitoring from one app. SMETS2 smart meter integration.",
+  "url": "https://www.mainteniq.co.uk/smart-home",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+  "serviceType": "Smart Home Installation",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5074",
+      "longitude": "-0.1278"
+    },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
+  }
+});
+
+export const generateCleaningServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "Mainteniq - End of Tenancy Cleaning",
+  "description": "Professional end of tenancy cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
+  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+  "telephone": "+44 783 456 2366",
+  "email": "info@mainteniq.co.uk",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "addressCountry": "GB"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.5074",
+      "longitude": "-0.1278"
+    },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
+  }
+});
+
+export const generateMaintenanceContractSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Custom Maintenance Contracts",
+  "description": "Tailored maintenance contracts for landlords, property managers & commercial properties in the UK. Prevent 80% of breakdowns, 24/7 emergency response, fixed monthly costs.",
+  "url": "https://www.mainteniq.co.uk/maintenance-contracts",
+  "image": "https://www.mainteniq.co.uk/BOILER.png",
+  "serviceType": "Property Maintenance Contracts",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "offers": {
+    "@type": "Offer",
+    "name": "Custom Maintenance Contract",
+    "priceRange": "££",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
   }
 });
 
