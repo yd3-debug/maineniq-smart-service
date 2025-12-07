@@ -2,8 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ProgressMetric } from "@/components/ProgressMetric";
-import { AnimatedStatCard } from "@/components/AnimatedChart";
+import { AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 import { 
@@ -30,7 +29,10 @@ import {
   Users,
   Home,
   Award,
-  ArrowRight
+  ArrowRight,
+  Search,
+  Settings,
+  FileCheck
 } from "lucide-react";
 import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
@@ -84,12 +86,12 @@ const signsYouNeedService = [
   }
 ];
 
-// Service process
+// Service process with icons
 const serviceProcess = [
-  { step: "01", title: "Assessment", description: "Full system inspection and diagnostics", duration: "30 mins" },
-  { step: "02", title: "Service", description: "Filter replacement, coil cleaning, testing", duration: "60 mins" },
-  { step: "03", title: "Calibration", description: "Controls optimization and efficiency check", duration: "20 mins" },
-  { step: "04", title: "Certification", description: "Compliance documentation and report", duration: "10 mins" }
+  { step: "01", title: "Assessment", description: "Full system inspection and diagnostics", duration: "30 mins", icon: Search },
+  { step: "02", title: "Service", description: "Filter replacement, coil cleaning, testing", duration: "60 mins", icon: Wrench },
+  { step: "03", title: "Calibration", description: "Controls optimization and efficiency check", duration: "20 mins", icon: Settings },
+  { step: "04", title: "Certification", description: "Compliance documentation and report", duration: "10 mins", icon: FileCheck }
 ];
 
 // Full system details for collapsible
@@ -343,96 +345,74 @@ export default function HVACMaintenance() {
       <section className="py-12 sm:py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <ProgressMetric
-              icon={Clock}
-              value={24}
-              label="Hour response"
-              description="Emergency callouts"
-              percentage={100}
-              variant="success"
-              delay={0}
-            />
-            <ProgressMetric
-              icon={Building2}
-              value={500}
-              label="Systems maintained"
-              description="Commercial & residential"
-              percentage={85}
-              variant="default"
-              delay={200}
-            />
-            <ProgressMetric
-              icon={Award}
-              value={98}
-              label="Customer satisfaction"
-              description="First-visit resolution"
-              percentage={98}
-              variant="success"
-              delay={400}
-            />
-            <ProgressMetric
-              icon={Shield}
-              value={10}
-              label="Years experience"
-              description="F-Gas certified"
-              percentage={100}
-              variant="default"
-              delay={600}
-            />
+            {[
+              { icon: Clock, value: 24, suffix: "h", label: "Response Time", sublabel: "Emergency callouts" },
+              { icon: Building2, value: 500, suffix: "+", label: "Systems Maintained", sublabel: "Commercial & residential" },
+              { icon: Award, value: 98, suffix: "%", label: "Satisfaction Rate", sublabel: "First-visit resolution" },
+              { icon: Shield, value: 10, suffix: "+", label: "Years Experience", sublabel: "F-Gas certified" }
+            ].map((stat, index) => (
+              <AnimatedStatCard key={index} delay={index * 150}>
+                <div className="flex flex-col items-center text-center p-6 rounded-xl bg-card border hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <stat.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="flex items-baseline gap-0.5 mb-1">
+                    <span className="text-3xl sm:text-4xl font-bold text-foreground">
+                      <AnimatedCounter value={stat.value} duration={2000} />
+                    </span>
+                    <span className="text-xl sm:text-2xl font-bold text-primary">{stat.suffix}</span>
+                  </div>
+                  <p className="font-semibold text-sm text-foreground">{stat.label}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{stat.sublabel}</p>
+                </div>
+              </AnimatedStatCard>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Our Service Process - Simplified with Collapsible */}
+      {/* Our Service Process - Card Grid with Icons */}
       <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Service Process
             </h2>
             <p className="text-muted-foreground">Comprehensive HVAC service typically takes 2 hours</p>
           </div>
           
-          {/* Compact Process Steps */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6">
+          {/* Process Step Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
             {serviceProcess.map((step, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
-                  {step.step}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">{step.title}</p>
-                  <p className="text-xs text-muted-foreground hidden md:block">{step.description}</p>
-                </div>
-                {index < serviceProcess.length - 1 && (
-                  <ArrowRight className="w-4 h-4 text-muted-foreground hidden md:block" />
-                )}
-              </div>
+              <AnimatedStatCard key={index} delay={index * 100}>
+                <Card className="h-full hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+                  <CardContent className="p-6 text-center">
+                    <div className="absolute top-3 right-3">
+                      <Badge variant="secondary" className="text-xs font-medium">
+                        <Clock className="w-3 h-3 mr-1" />
+                        {step.duration}
+                      </Badge>
+                    </div>
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <step.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div className="text-xs text-muted-foreground mb-1">Step {step.step}</div>
+                    <h3 className="font-bold text-lg mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
             ))}
           </div>
           
           <Collapsible open={processOpen} onOpenChange={setProcessOpen}>
             <CollapsibleTrigger asChild>
-              <Button variant="ghost" size="sm" className="w-full flex items-center justify-center gap-2 text-muted-foreground">
-                <span>{processOpen ? "Hide" : "Show"} Full Service Details</span>
+              <Button variant="outline" size="sm" className="w-full flex items-center justify-center gap-2">
+                <span>{processOpen ? "Hide" : "View"} Full Service Checklist</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${processOpen ? "rotate-180" : ""}`} />
               </Button>
             </CollapsibleTrigger>
             <CollapsibleContent className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {serviceProcess.map((step, index) => (
-                  <Card key={index} className="text-center">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-3">
-                        {step.step}
-                      </div>
-                      <h3 className="font-semibold mb-1">{step.title}</h3>
-                      <p className="text-xs text-muted-foreground mb-2">{step.description}</p>
-                      <Badge variant="outline" className="text-xs">{step.duration}</Badge>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
               
               <div className="mt-6 bg-muted/50 p-6 rounded-lg">
                 <h4 className="font-semibold mb-4">What's Included in Every Service:</h4>
