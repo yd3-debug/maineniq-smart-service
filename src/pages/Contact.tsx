@@ -17,7 +17,7 @@ import {
 
 // Import professional images
 import heroImage from "@/assets/team-working.jpg";
-import customerConsultation from "@/assets/plumbing-customer-service.jpg";
+const customerConsultation = "/Customer_Service.png";
 import professionalTeam from "@/assets/team-collaboration.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
