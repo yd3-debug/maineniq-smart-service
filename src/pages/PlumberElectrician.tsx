@@ -142,7 +142,7 @@ const PlumberElectrician: React.FC = () => {
           </div>
           <div className="relative h-80 lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
             <img 
-              src={plumbingCustomerService} 
+              src="/Customer_Service.png" 
               alt="Professional consultation with customer about plumbing and electrical services"
               className="w-full h-full object-cover"
             />
