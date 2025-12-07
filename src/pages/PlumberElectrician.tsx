@@ -8,6 +8,8 @@ import { ProgressMetric } from "@/components/ProgressMetric";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import electricalInstallation from "@/assets/electrical-installation.jpg";
+import plumbingWork from "@/assets/plumbing-work.jpg";
+import plumbingCustomerService from "@/assets/plumbing-customer-service.jpg";
 import teamWorking from "@/assets/team-working.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import { handleQuoteRequest } from "@/utils/quote";
@@ -115,31 +117,49 @@ const PlumberElectrician: React.FC = () => {
       <TrustStrip />
 
       <main className="container mx-auto px-4 py-12 space-y-16">
-        {/* Who We Help */}
-        <section className="text-center max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl font-bold mb-4">Who We Help</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Licensed Gas Safe plumbers and NICEIC electricians for all your compliance needs. 
-            We provide certificates, documentation, and peace of mind for your properties.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: Home, label: "Landlords", desc: "CP12 & EICR compliance" },
-              { icon: Building2, label: "Airbnb Hosts", desc: "Fast turnarounds" },
-              { icon: Briefcase, label: "Property Managers", desc: "Portfolio coverage" },
-              { icon: Users, label: "Facilities Teams", desc: "Commercial contracts" }
-            ].map((item) => (
-              <div key={item.label} className="p-4 rounded-lg bg-secondary/30 text-center">
-                <item.icon className="w-8 h-8 text-primary mx-auto mb-2" />
-                <div className="font-semibold">{item.label}</div>
-                <div className="text-sm text-muted-foreground">{item.desc}</div>
+        {/* Who We Help - Split Layout with Image */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="font-heading text-3xl font-bold mb-4">Who We Help</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Licensed Gas Safe plumbers and NICEIC electricians for all your compliance needs. 
+              We provide certificates, documentation, and peace of mind for your properties.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: Home, label: "Landlords", desc: "CP12 & EICR compliance" },
+                { icon: Building2, label: "Airbnb Hosts", desc: "Fast turnarounds" },
+                { icon: Briefcase, label: "Property Managers", desc: "Portfolio coverage" },
+                { icon: Users, label: "Facilities Teams", desc: "Commercial contracts" }
+              ].map((item) => (
+                <div key={item.label} className="p-4 rounded-lg bg-primary/5 border border-primary/20 text-center hover:bg-primary/10 transition-colors">
+                  <item.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <div className="font-semibold">{item.label}</div>
+                  <div className="text-sm text-muted-foreground">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative h-80 lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
+            <img 
+              src={plumbingCustomerService} 
+              alt="Professional consultation with customer about plumbing and electrical services"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+              <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                Gas Safe Registered
               </div>
-            ))}
+              <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                NICEIC Certified
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Signs You Need a Professional */}
-        <section className="bg-secondary/20 rounded-xl p-8">
+        <section className="bg-gradient-to-br from-blue-50 to-primary/5 dark:from-blue-950/30 dark:to-primary/10 rounded-xl p-8 border border-primary/10">
           <h2 className="font-heading text-2xl font-bold text-center mb-8">Signs You Need a Professional</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {[
@@ -150,12 +170,14 @@ const PlumberElectrician: React.FC = () => {
               { symptom: "Low water pressure throughout?", solution: "Full system pressure assessment" },
               { symptom: "Flickering lights or burning smell?", solution: "Urgent electrical safety check" }
             ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-background border">
-                <HelpCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+              <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-background border border-primary/20 hover:border-primary/40 hover:shadow-md transition-all">
+                <div className="p-2 rounded-full bg-primary/10">
+                  <HelpCircle className="w-4 h-4 text-primary" />
+                </div>
                 <div>
                   <div className="font-medium">{item.symptom}</div>
                   <div className="text-sm text-muted-foreground flex items-center gap-1">
-                    <ArrowRight className="w-3 h-3" /> {item.solution}
+                    <ArrowRight className="w-3 h-3 text-primary" /> {item.solution}
                   </div>
                 </div>
               </div>
@@ -163,13 +185,41 @@ const PlumberElectrician: React.FC = () => {
           </div>
         </section>
 
-        {/* Our Services */}
+        {/* Work Examples Photo Strip */}
         <section>
-          <h2 className="font-heading text-3xl font-bold text-center mb-8">Our Services</h2>
+          <h2 className="font-heading text-2xl font-bold text-center mb-6">Our Work in Action</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { img: electricalInstallation, label: "Electrical Installation" },
+              { img: plumbingWork, label: "Plumbing Work" },
+              { img: teamCollaboration, label: "Team Collaboration" },
+              { img: teamWorking, label: "Emergency Response" }
+            ].map((item, index) => (
+              <div key={index} className="relative group overflow-hidden rounded-xl aspect-square">
+                <img 
+                  src={item.img} 
+                  alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3">
+                  <span className="text-sm font-medium text-foreground">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Our Services */}
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
+          <h2 className="font-heading text-3xl font-bold text-center mb-2">Our Services</h2>
+          <p className="text-muted-foreground text-center mb-8">Certified plumbing and electrical solutions for every need</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
             {services.map((service) => (
-              <div key={service.title} className="p-4 rounded-lg border bg-background text-center hover:border-primary transition-colors">
-                <service.icon className="w-8 h-8 text-primary mx-auto mb-2" />
+              <div key={service.title} className="p-4 rounded-lg border-2 border-primary/20 bg-background text-center hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <service.icon className="w-6 h-6 text-primary" />
+                </div>
                 <div className="font-semibold">{service.title}</div>
               </div>
             ))}
@@ -177,7 +227,7 @@ const PlumberElectrician: React.FC = () => {
           
           <Collapsible open={showAllServices} onOpenChange={setShowAllServices}>
             <CollapsibleTrigger asChild>
-              <Button variant="outline" className="w-full max-w-md mx-auto flex items-center gap-2">
+              <Button variant="outline" className="w-full max-w-md mx-auto flex items-center gap-2 border-primary/30 hover:bg-primary/5">
                 <span>{showAllServices ? "Hide Details" : "View All Services"}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${showAllServices ? "rotate-180" : ""}`} />
               </Button>
@@ -185,9 +235,11 @@ const PlumberElectrician: React.FC = () => {
             <CollapsibleContent className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service) => (
-                  <div key={service.title} className="p-6 rounded-lg border bg-background">
+                  <div key={service.title} className="p-6 rounded-lg border bg-background hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-3 mb-4">
-                      <service.icon className="w-6 h-6 text-primary" />
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <service.icon className="w-5 h-5 text-primary" />
+                      </div>
                       <h3 className="font-semibold text-lg">{service.title}</h3>
                     </div>
                     <ul className="space-y-2">
@@ -206,30 +258,47 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Is Your Boiler Ready? */}
-        <section className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 rounded-xl p-8 border border-amber-200 dark:border-amber-800">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <ThermometerSun className="w-4 h-4" />
-              Winter Readiness Check
+        <section className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 rounded-xl overflow-hidden border border-amber-200 dark:border-amber-800">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {/* Boiler Image */}
+            <div className="relative h-64 lg:h-auto lg:col-span-1">
+              <img 
+                src="/Boiler.png" 
+                alt="Professional boiler maintenance and servicing"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-amber-50/80 dark:to-amber-950/80 lg:block hidden" />
             </div>
-            <h2 className="font-heading text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              UK boilers work hardest during winter months. Spot these warning signs early to avoid cold showers, 
-              expensive emergency callouts, or worse - a complete breakdown when you need heating most.
-            </p>
-          </div>
-
-          {/* Warning Signs Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {boilerWarnings.map((warning, index) => (
-              <div key={index} className="p-4 rounded-lg bg-background border flex items-start gap-3">
-                <warning.icon className="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
-                <div>
-                  <div className="font-medium">{warning.sign}</div>
-                  <div className="text-sm text-muted-foreground">{warning.meaning}</div>
+            
+            {/* Content */}
+            <div className="lg:col-span-2 p-8">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                  <ThermometerSun className="w-4 h-4" />
+                  Winter Readiness Check
                 </div>
+                <h2 className="font-heading text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
+                <p className="text-muted-foreground">
+                  UK boilers work hardest during winter months. Spot these warning signs early to avoid cold showers, 
+                  expensive emergency callouts, or worse - a complete breakdown when you need heating most.
+                </p>
               </div>
-            ))}
+
+              {/* Warning Signs Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                {boilerWarnings.map((warning, index) => (
+                  <div key={index} className="p-3 rounded-lg bg-background/80 border border-amber-200 dark:border-amber-700 flex items-start gap-3 hover:bg-background transition-colors">
+                    <div className="p-1.5 rounded-full bg-amber-100 dark:bg-amber-900/50">
+                      <warning.icon className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-sm">{warning.sign}</div>
+                      <div className="text-xs text-muted-foreground">{warning.meaning}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <Collapsible open={showBoilerDetails} onOpenChange={setShowBoilerDetails}>
@@ -350,59 +419,76 @@ const PlumberElectrician: React.FC = () => {
           </div>
         </section>
 
-        {/* How It Works */}
-        <section>
-          <h2 className="font-heading text-3xl font-bold text-center mb-8">How It Works</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            {processSteps.map((step, index) => (
-              <div key={step.step} className="text-center p-4">
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg flex items-center justify-center mx-auto mb-3">
-                  {step.step}
-                </div>
-                <div className="font-semibold">{step.title}</div>
-                <div className="text-sm text-muted-foreground">{step.desc}</div>
-              </div>
-            ))}
-          </div>
-
-          <Collapsible open={showProcessDetails} onOpenChange={setShowProcessDetails}>
-            <CollapsibleTrigger asChild>
-              <Button variant="outline" className="w-full max-w-md mx-auto flex items-center gap-2">
-                <span>{showProcessDetails ? "Hide Details" : "Learn More About Our Process"}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${showProcessDetails ? "rotate-180" : ""}`} />
-              </Button>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                {processSteps.map((step) => (
-                  <div key={step.step} className="p-4 rounded-lg border bg-background">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center">
-                        {step.step}
-                      </span>
-                      <h3 className="font-semibold">{step.title}</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{step.details}</p>
+        {/* How It Works - Split Layout with Image */}
+        <section className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+          <div className="lg:col-span-3">
+            <h2 className="font-heading text-3xl font-bold mb-8">How It Works</h2>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {processSteps.map((step, index) => (
+                <div key={step.step} className="p-4 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center mb-3">
+                    {step.step}
                   </div>
-                ))}
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
+                  <div className="font-semibold">{step.title}</div>
+                  <div className="text-sm text-muted-foreground">{step.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <Collapsible open={showProcessDetails} onOpenChange={setShowProcessDetails}>
+              <CollapsibleTrigger asChild>
+                <Button variant="outline" className="w-full max-w-md flex items-center gap-2 border-primary/30">
+                  <span>{showProcessDetails ? "Hide Details" : "Learn More About Our Process"}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${showProcessDetails ? "rotate-180" : ""}`} />
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {processSteps.map((step) => (
+                    <div key={step.step} className="p-4 rounded-lg border bg-background">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center">
+                          {step.step}
+                        </span>
+                        <h3 className="font-semibold">{step.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{step.details}</p>
+                    </div>
+                  ))}
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+          
+          <div className="lg:col-span-2 relative h-80 lg:h-[400px] rounded-xl overflow-hidden shadow-xl">
+            <img 
+              src={teamCollaboration} 
+              alt="Our team of certified plumbers and electricians collaborating on projects"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 text-center">
+              <div className="text-lg font-semibold text-foreground">Trusted by 500+ Properties</div>
+              <div className="text-sm text-muted-foreground">Across London and surrounding areas</div>
+            </div>
+          </div>
         </section>
 
-        {/* Certifications */}
-        <section className="bg-secondary/20 rounded-xl p-8">
+        {/* Certifications - Colored backgrounds */}
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
           <h2 className="font-heading text-2xl font-bold text-center mb-8">Our Credentials</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
-              { icon: BadgeCheck, title: "Gas Safe", desc: "Registered engineers" },
-              { icon: Zap, title: "NICEIC", desc: "Certified electricians" },
-              { icon: Shield, title: "£2M Insured", desc: "Full liability cover" },
-              { icon: ClipboardCheck, title: "24-Month", desc: "Work guarantee" }
+              { icon: BadgeCheck, title: "Gas Safe", desc: "Registered engineers", color: "bg-blue-500" },
+              { icon: Zap, title: "NICEIC", desc: "Certified electricians", color: "bg-amber-500" },
+              { icon: Shield, title: "£2M Insured", desc: "Full liability cover", color: "bg-green-500" },
+              { icon: ClipboardCheck, title: "24-Month", desc: "Work guarantee", color: "bg-purple-500" }
             ].map((cred) => (
-              <div key={cred.title} className="text-center p-4 rounded-lg bg-background border">
-                <cred.icon className="w-8 h-8 text-primary mx-auto mb-2" />
-                <div className="font-semibold">{cred.title}</div>
+              <div key={cred.title} className="text-center p-6 rounded-xl bg-background border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all">
+                <div className={`w-14 h-14 rounded-full ${cred.color} flex items-center justify-center mx-auto mb-3`}>
+                  <cred.icon className="w-7 h-7 text-white" />
+                </div>
+                <div className="font-bold text-lg">{cred.title}</div>
                 <div className="text-sm text-muted-foreground">{cred.desc}</div>
               </div>
             ))}
