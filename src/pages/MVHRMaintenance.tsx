@@ -544,13 +544,10 @@ const MVHRMaintenance = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
+            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest("MVHR Filter Maintenance")}>
               Get Filter Maintenance Quote
             </Button>
-            <Button size="lg" variant="hero">
-              Free Filter Assessment
-            </Button>
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" onClick={() => handleQuoteRequest("MVHR Filter Subscription Service")}>
               Filter Subscription Service
             </Button>
           </div>
