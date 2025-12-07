@@ -24,6 +24,16 @@ import heroImage from "@/assets/fcu-commercial.jpg";
 import beforeAfterImage from "@/assets/before-after.jpg";
 import maintenanceImage from "@/assets/hvac-maintenance.jpg";
 import professionalImage from "@/assets/hvac-professional.jpg";
+import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+
+const fcuFaqs = [
+  { question: "What is an FCU (Fan Coil Unit)?", answer: "A Fan Coil Unit is a heating/cooling device consisting of a fan and heating/cooling coils. It circulates air through the coils to maintain room temperature in commercial and residential buildings." },
+  { question: "How often should FCU filters be changed?", answer: "FCU filters should be checked monthly and replaced every 1-3 months depending on usage and air quality. Commercial environments with high foot traffic may need more frequent changes." },
+  { question: "What are signs my FCU needs maintenance?", answer: "Common signs include poor airflow, unusual noises, water leaks or drips, inconsistent temperatures, higher energy bills, and musty odours indicating mold or bacteria growth." },
+  { question: "How much does FCU maintenance cost in the UK?", answer: "FCU maintenance typically costs £150-300 per unit annually for preventive service. Emergency repairs can cost £500-3,000+ depending on the damage and parts needed." },
+  { question: "Can dirty FCU coils affect indoor air quality?", answer: "Yes, dirty coils harbour bacteria, mold, and allergens that circulate through your space. Regular cleaning improves air quality and prevents health issues for building occupants." },
+  { question: "What is included in professional FCU servicing?", answer: "Professional FCU service includes filter replacement, coil cleaning, condensate drain clearance, fan motor inspection, electrical checks, control calibration, and safety testing." }
+];
 
 const FCUMaintenance = () => {
   const neglectScenarios = [
@@ -58,6 +68,7 @@ const FCUMaintenance = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-blue/5">
+      <EnhancedFAQSchema faqs={fcuFaqs} pageTitle="FCU Maintenance" />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div 
