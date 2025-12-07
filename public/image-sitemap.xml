@@ -6,7 +6,7 @@
   <url>
     <loc>https://www.mainteniq.co.uk/</loc>
     <image:image>
-      <image:loc>https://www.mainteniq.co.uk/og-image-maineniq.png</image:loc>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
       <image:title>Professional HVAC Maintenance Services London</image:title>
       <image:caption>Expert property maintenance and HVAC services across London</image:caption>
     </image:image>
@@ -69,6 +69,61 @@
       <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
       <image:title>Building Management Systems</image:title>
       <image:caption>Advanced BMS solutions for modern buildings</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Plumber & Electrician Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/plumber-electrician</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
+      <image:title>Professional Boiler Installation and Repair</image:title>
+      <image:caption>Gas Safe registered boiler services in London</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Professional Plumbing and Electrical Consultation</image:title>
+      <image:caption>Expert consultation for plumbing and electrical services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Handyman Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/handyman</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Professional Handyman Services London</image:title>
+      <image:caption>Expert property maintenance and repair services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Smart Home Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/smart-home</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>Smart Home Automation Services</image:title>
+      <image:caption>Professional smart home installation and integration</image:caption>
+    </image:image>
+  </url>
+
+  <!-- End of Tenancy Cleaning Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/end-of-tenancy-cleaning</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>End of Tenancy Cleaning Services</image:title>
+      <image:caption>Professional deep cleaning for rental properties</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Maintenance Contracts Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/maintenance-contracts</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>Maintenance Contracts for Property Managers</image:title>
+      <image:caption>Custom maintenance contracts for HVAC and building systems</image:caption>
     </image:image>
   </url>
 
