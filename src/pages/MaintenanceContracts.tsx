@@ -65,7 +65,7 @@ const MaintenanceContracts = () => {
       "description": "Tailored maintenance contracts for property owners, landlords, and facility managers across the UK. Prevent breakdowns, reduce costs, ensure compliance with 24/7 emergency response guarantee.",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Maineniq",
+        "name": "Mainteniq",
         "url": "https://www.mainteniq.co.uk",
         "telephone": "+44 (0) 189 55 28 226",
         "email": "info@mainteniq.co.uk",

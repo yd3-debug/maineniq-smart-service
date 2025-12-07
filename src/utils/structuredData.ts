@@ -1,21 +1,21 @@
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
-  "name": "Maineniq",
+  "name": "Mainteniq",
   "alternateName": "Mainteniq UK Property Services",
   "description": "🏆 Award-winning professional HVAC maintenance, FCU/HIU/MVHR servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning services across the UK. 24/7 emergency response, certified engineers, 4.9⭐ rating.",
   "url": "https://www.mainteniq.co.uk",
   "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
-  "image": "https://www.mainteniq.co.uk/og-image-maineniq.png",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
   "telephone": "+44 (0) 189 55 28 226",
   "email": "info@mainteniq.co.uk",
   "foundingDate": "2020",
   "slogan": "Preventing Breakdowns, Protecting Your Investment",
   "sameAs": [
-    "https://www.linkedin.com/company/maineniq",
-    "https://www.facebook.com/maineniq",
-    "https://www.instagram.com/maineniq",
-    "https://twitter.com/maineniq"
+    "https://www.linkedin.com/company/mainteniq",
+    "https://www.facebook.com/mainteniq",
+    "https://www.instagram.com/mainteniq",
+    "https://twitter.com/mainteniq"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -201,7 +201,7 @@ export const generateOrganizationSchema = () => ({
           "description": "Round-the-clock emergency heating, ventilation, and air conditioning repairs across London and 120-mile radius",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "Maineniq"
+            "name": "Mainteniq"
           },
           "availability": "https://schema.org/InStock"
         }
@@ -225,7 +225,7 @@ export const generateServiceSchema = (service: {
   "serviceType": service.serviceType,
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Maineniq",
+    "name": "Mainteniq",
     "url": "https://www.mainteniq.co.uk"
   },
   "areaServed": service.areaServed || [
@@ -276,7 +276,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
 export const generateWebSiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Maineniq",
+  "name": "Mainteniq",
   "url": "https://www.mainteniq.co.uk",
   "potentialAction": {
     "@type": "SearchAction",
@@ -298,7 +298,7 @@ export const generateReviewSchema = (reviews: Array<{
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "Maineniq"
+    "name": "Mainteniq"
   },
   "author": reviews.map(review => ({
     "@type": "Person",

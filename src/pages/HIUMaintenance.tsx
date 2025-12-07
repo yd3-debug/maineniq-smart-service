@@ -62,7 +62,7 @@ const HIUMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-orange/5">
       <SEOHead 
-        title="HIU & CIU Maintenance | Maineniq"
+        title="HIU & CIU Maintenance | Mainteniq"
         description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."
         keywords="HIU maintenance, CIU maintenance, HIU repair, CIU service, district heating interface unit"
         canonicalUrl={`${window.location.origin}/hiu-maintenance`}

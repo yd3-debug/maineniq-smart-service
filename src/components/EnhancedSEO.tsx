@@ -52,8 +52,8 @@ const EnhancedSEO = ({
       { property: 'og:description', content: description },
       { property: 'og:url', content: canonicalUrl },
       { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'https://www.mainteniq.co.uk/og-image-maineniq.png' },
-      { property: 'og:site_name', content: 'Maineniq - UK Premier Property Services' },
+      { property: 'og:image', content: 'https://www.mainteniq.co.uk/og-image-mainteniq.png' },
+      { property: 'og:site_name', content: 'Mainteniq - UK Premier Property Services' },
       { property: 'og:locale', content: 'en_GB' }
     ];
 
@@ -69,9 +69,9 @@ const EnhancedSEO = ({
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
-      { name: 'twitter:image', content: 'https://www.mainteniq.co.uk/og-image-maineniq.png' },
-      { name: 'twitter:site', content: '@maineniq' },
-      { name: 'twitter:creator', content: '@maineniq' }
+      { name: 'twitter:image', content: 'https://www.mainteniq.co.uk/og-image-mainteniq.png' },
+      { name: 'twitter:site', content: '@mainteniq' },
+      { name: 'twitter:creator', content: '@mainteniq' }
     ];
 
     twitterTags.forEach(tag => {

@@ -19,7 +19,7 @@ const LocalBusinessSchema = ({
     const localBusinessSchema = {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
-      "name": "Maineniq",
+      "name": "Mainteniq",
       "description": `Premier UK ${businessType.toLowerCase()} services. ${serviceDescription || 'Professional property maintenance solutions across London and 120-mile radius.'}`,
       "url": `https://www.mainteniq.co.uk${location.pathname}`,
       "telephone": "+44 20 7946 0958",
@@ -58,7 +58,7 @@ const LocalBusinessSchema = ({
             "description": serviceDescription,
             "provider": {
               "@type": "LocalBusiness",
-              "name": "Maineniq"
+              "name": "Mainteniq"
             }
           }
         }] : []

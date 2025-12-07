@@ -20,7 +20,7 @@ const EnhancedFAQSchema = ({ faqs, pageTitle }: EnhancedFAQSchemaProps) => {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "name": pageTitle ? `${pageTitle} - Frequently Asked Questions` : "Maineniq FAQ",
+      "name": pageTitle ? `${pageTitle} - Frequently Asked Questions` : "Mainteniq FAQ",
       "description": `Common questions about ${pageTitle?.toLowerCase() || 'our services'} answered by UK property maintenance experts`,
       "url": `https://www.mainteniq.co.uk${location.pathname}`,
       "mainEntity": faqs.map((faq, index) => ({
@@ -31,7 +31,7 @@ const EnhancedFAQSchema = ({ faqs, pageTitle }: EnhancedFAQSchemaProps) => {
           "text": faq.answer,
           "author": {
             "@type": "Organization",
-            "name": "Maineniq",
+            "name": "Mainteniq",
             "url": "https://www.mainteniq.co.uk"
           }
         },
@@ -39,7 +39,7 @@ const EnhancedFAQSchema = ({ faqs, pageTitle }: EnhancedFAQSchemaProps) => {
       })),
       "publisher": {
         "@type": "Organization",
-        "name": "Maineniq",
+        "name": "Mainteniq",
         "url": "https://www.mainteniq.co.uk",
         "logo": {
           "@type": "ImageObject",

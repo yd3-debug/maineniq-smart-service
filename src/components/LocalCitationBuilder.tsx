@@ -4,7 +4,7 @@ const LocalCitationBuilder = () => {
   useEffect(() => {
     // Build comprehensive local business citations
     const businessData = {
-      name: "Maineniq",
+      name: "Mainteniq",
       address: "123 Business Street, London, SW1A 1AA, UK",
       phone: "+44 (0) 189 55 28 226",
       email: "info@mainteniq.co.uk",
