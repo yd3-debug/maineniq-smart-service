@@ -26,6 +26,16 @@ import {
 
 import heroImage from "@/assets/hiu-residential.jpg";
 import SEOHead from "@/components/SEOHead";
+import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+
+const hiuFaqs = [
+  { question: "What is an HIU (Heat Interface Unit)?", answer: "An HIU is a compact unit that connects your property to a communal or district heating system. It provides heating and hot water without needing an individual gas boiler, common in modern apartment blocks." },
+  { question: "How often should an HIU be serviced?", answer: "HIUs should be serviced annually to maintain efficiency and prevent breakdowns. In hard water areas like London, more frequent descaling may be needed every 6-12 months." },
+  { question: "Why is my hot water taking too long to heat?", answer: "Slow hot water is usually caused by scale buildup on the heat exchanger or blocked strainers. Professional descaling and strainer cleaning typically resolves this issue." },
+  { question: "What's the difference between an HIU and CIU?", answer: "HIU (Heat Interface Unit) provides both heating and hot water. CIU (Central Interface Unit) often refers to the central control unit. Both require similar maintenance and are serviced together." },
+  { question: "Do HIUs need Gas Safe registered engineers?", answer: "No, HIUs don't use gas so Gas Safe certification isn't required. However, engineers should be trained on HIU systems and hold relevant qualifications for heating work." },
+  { question: "How much does HIU servicing cost?", answer: "HIU annual service typically costs £150-250. Emergency repairs can cost £300-800 for common issues. Full HIU replacement costs £1,500-3,500 including installation." }
+];
 
 const HIUMaintenance = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
@@ -86,7 +96,8 @@ const HIUMaintenance = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      <EnhancedFAQSchema faqs={hiuFaqs} pageTitle="HIU & CIU Maintenance" />
+      <SEOHead
         title="HIU & CIU Maintenance | Mainteniq"
         description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."
         keywords="HIU maintenance, CIU maintenance, HIU repair, CIU service, district heating interface unit"
