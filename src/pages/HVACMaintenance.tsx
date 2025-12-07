@@ -1,10 +1,41 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { CheckCircle, AlertTriangle, Wrench, Calendar, Phone, Shield, Building2, Snowflake, Wind, Thermometer, ChevronDown, Filter, ClipboardCheck, Scale, FileText, Heart, XCircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ProgressMetric } from "@/components/ProgressMetric";
+import { AnimatedStatCard } from "@/components/AnimatedChart";
+import { handleQuoteRequest } from "@/utils/quote";
+import { CONTACT } from "@/config/contact";
+import { 
+  CheckCircle, 
+  AlertTriangle, 
+  Wrench, 
+  Calendar, 
+  Phone, 
+  Shield, 
+  Building2, 
+  Snowflake, 
+  Wind, 
+  Thermometer, 
+  ChevronDown, 
+  Filter, 
+  Scale, 
+  FileText, 
+  Heart, 
+  XCircle,
+  AlertCircle,
+  Clock,
+  Volume2,
+  TrendingUp,
+  Users,
+  Home,
+  Award,
+  ArrowRight
+} from "lucide-react";
+import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
+import customerServiceImage from "@/assets/customer-service-hvac.jpg";
+import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 
 const hvacFaqs = [
@@ -16,88 +47,144 @@ const hvacFaqs = [
   { question: "What types of HVAC systems do you maintain?", answer: "We maintain FCUs, MVHR, HIU/CIU, VRF systems, central plant, commercial refrigeration including cold rooms, display cabinets, and chillers across London and the South East." }
 ];
 
+// Compact system icons for initial view
+const systemCategories = [
+  { icon: Wind, title: "FCU", color: "text-blue-500" },
+  { icon: Filter, title: "MVHR", color: "text-green-500" },
+  { icon: Thermometer, title: "HIU/CIU", color: "text-orange-500" },
+  { icon: Building2, title: "VRF", color: "text-purple-500" },
+  { icon: Snowflake, title: "Refrigeration", color: "text-cyan-500" },
+  { icon: Heart, title: "Central Plant", color: "text-red-500" }
+];
+
+// Symptom-based content
+const signsYouNeedService = [
+  {
+    symptom: "AC not cooling properly?",
+    description: "Warm air, uneven temperatures, or system running constantly without results",
+    solution: "Coil cleaning, refrigerant check, and system optimization",
+    icon: Thermometer
+  },
+  {
+    symptom: "Unusual noises from vents?",
+    description: "Rattling, buzzing, or grinding sounds from ducts or units",
+    solution: "Component inspection, bearing lubrication, and fan belt adjustment",
+    icon: Volume2
+  },
+  {
+    symptom: "Higher energy bills?",
+    description: "Electricity costs rising without increased usage",
+    solution: "Filter replacement, efficiency testing, and control calibration",
+    icon: TrendingUp
+  },
+  {
+    symptom: "System keeps breaking down?",
+    description: "Frequent repairs, error codes, or emergency callouts",
+    solution: "Preventive maintenance plan to catch issues before they fail",
+    icon: AlertCircle
+  }
+];
+
+// Service process
+const serviceProcess = [
+  { step: "01", title: "Assessment", description: "Full system inspection and diagnostics", duration: "30 mins" },
+  { step: "02", title: "Service", description: "Filter replacement, coil cleaning, testing", duration: "60 mins" },
+  { step: "03", title: "Calibration", description: "Controls optimization and efficiency check", duration: "20 mins" },
+  { step: "04", title: "Certification", description: "Compliance documentation and report", duration: "10 mins" }
+];
+
+// Full system details for collapsible
+const fullSystemDetails = [
+  {
+    icon: Wind,
+    title: "FCU (Fan Coil Units)",
+    description: "Commercial offices, hotels, shopping centers",
+    highlights: ["Quarterly filter replacement", "Coil deep cleaning", "Control calibration"]
+  },
+  {
+    icon: Filter,
+    title: "MVHR (Heat Recovery)",
+    description: "Residential and commercial buildings with fresh air",
+    highlights: ["Filter replacement", "Heat exchanger cleaning", "Airflow balancing"]
+  },
+  {
+    icon: Thermometer,
+    title: "HIU/CIU (Interface Units)",
+    description: "Apartment blocks, district heating networks",
+    highlights: ["Plate descaling", "Valve servicing", "Pressure testing"]
+  },
+  {
+    icon: Building2,
+    title: "VRF Systems",
+    description: "Large commercial buildings, multi-zone control",
+    highlights: ["Refrigerant checks", "Outdoor unit cleaning", "System diagnostics"]
+  },
+  {
+    icon: Snowflake,
+    title: "Commercial Refrigeration",
+    description: "Cold rooms, display cabinets, freezers",
+    highlights: ["F-Gas certified", "Temperature calibration", "Food safety compliance"]
+  },
+  {
+    icon: Heart,
+    title: "Central Plant",
+    description: "Hospitals, large facilities, data centers",
+    highlights: ["24/7 monitoring", "Critical systems support", "Legionella control"]
+  }
+];
+
 export default function HVACMaintenance() {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({});
+  const [systemsOpen, setSystemsOpen] = useState(false);
+  const [processOpen, setProcessOpen] = useState(false);
 
   const toggleSection = (section: string) => {
     setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
   };
 
-  useEffect(() => {
-    document.title = "HVAC & Commercial Refrigeration Maintenance UK | Professional Service";
-    const description = "Professional HVAC and commercial refrigeration maintenance for UK properties. FCU, MVHR, HIU, VRF systems, cold rooms, and display refrigeration. F-Gas certified engineers.";
-
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.appendChild(meta);
-    }
-    meta.content = description;
-
-    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
-    if (!ogTitle) {
-      ogTitle = document.createElement('meta');
-      ogTitle.setAttribute('property', 'og:title');
-      document.head.appendChild(ogTitle);
-    }
-    ogTitle.content = "HVAC & Commercial Refrigeration Maintenance UK";
-
-    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
-    if (!ogDescription) {
-      ogDescription = document.createElement('meta');
-      ogDescription.setAttribute('property', 'og:description');
-      document.head.appendChild(ogDescription);
-    }
-    ogDescription.content = description;
-
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'canonical';
-      document.head.appendChild(link);
-    }
-    link.href = `${window.location.origin}/hvac-maintenance`;
-  }, []);
-
-  const systemTypes = [
-    { name: "FCU (Fan Coil Units)", icon: <Wind className="w-5 h-5" />, use: "Commercial offices, hotels" },
-    { name: "MVHR (Heat Recovery)", icon: <Filter className="w-5 h-5" />, use: "Residential & commercial buildings" },
-    { name: "HIU/CIU (Interface Units)", icon: <Thermometer className="w-5 h-5" />, use: "Apartment blocks, district systems" },
-    { name: "VRF Systems", icon: <Building2 className="w-5 h-5" />, use: "Large commercial buildings" },
-    { name: "Commercial Refrigeration", icon: <Snowflake className="w-5 h-5" />, use: "Cold rooms, display cabinets, freezers" },
-    { name: "Central Plant", icon: <Building2 className="w-5 h-5" />, use: "Hospitals, large facilities" }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <EnhancedFAQSchema faqs={hvacFaqs} pageTitle="HVAC Maintenance" />
+      <SEOHead
+        title="HVAC & Commercial Refrigeration Maintenance UK | Professional Service"
+        description="Professional HVAC and commercial refrigeration maintenance for UK properties. FCU, MVHR, HIU, VRF systems, cold rooms, and display refrigeration. F-Gas certified engineers."
+        keywords="HVAC maintenance London, commercial refrigeration service, FCU maintenance, MVHR servicing, VRF systems, F-Gas certified, TM44 inspection"
+        canonicalUrl={`${window.location.origin}/hvac-maintenance`}
+      />
+
       {/* Hero Section */}
       <section 
-        className="relative py-20 md:py-32 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${heroImage})`
-        }}
+        className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white">
-            <Badge variant="outline" className="mb-6 border-white/30 text-white bg-white/10">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="max-w-4xl">
+            <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
               <Shield className="w-4 h-4 mr-2" />
               Professional HVAC & Refrigeration Service
             </Badge>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
-              HVAC & Commercial Refrigeration<br />
-              <span className="text-primary">Maintenance Specialists</span>
+            
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+              HVAC & Commercial Refrigeration
+              <span className="text-white/90"> Maintenance Specialists</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Professional maintenance for all heating, ventilation, air conditioning, and commercial refrigeration systems across the UK.
+            
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
+              Professional maintenance for all heating, ventilation, air conditioning, and commercial refrigeration systems. F-Gas certified, UK-wide coverage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="default">
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" variant="secondary" onClick={() => handleQuoteRequest("HVAC Maintenance")}>
                 <Phone className="w-5 h-5 mr-2" />
                 Get a Quote
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => handleQuoteRequest("HVAC Emergency Service")}>
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Service
               </Button>
@@ -106,433 +193,321 @@ export default function HVACMaintenance() {
         </div>
       </section>
 
+      {/* Who We Help - Educational Intro */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Who We Help
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground mb-8">
+                Stop dealing with unreliable contractors and compliance headaches. We provide certified engineers who maintain your systems properly, keep documentation up to date, and respond fast when things go wrong.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+                  <Home className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm font-medium text-center">Landlords</span>
+                </div>
+                <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+                  <Building2 className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm font-medium text-center">Facilities Managers</span>
+                </div>
+                <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+                  <Users className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm font-medium text-center">Property Managers</span>
+                </div>
+                <div className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-shadow">
+                  <Shield className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm font-medium text-center">Business Owners</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src={customerServiceImage} 
+                alt="HVAC engineer consulting with property manager" 
+                className="rounded-xl shadow-lg w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* What is HVAC Maintenance Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            What is HVAC Maintenance?
-          </h2>
-          
-          <p className="text-lg text-muted-foreground mb-8">
-            Professional service keeping your heating, ventilation, and air conditioning systems running efficiently and safely.
-          </p>
+      {/* Signs You Need Service - Symptom-Based */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <AlertCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Signs Your HVAC Needs Service
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Recognise any of these? They're usually easy to fix with professional maintenance.
+            </p>
+          </div>
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">Systems We Service:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {systemTypes.map((system, index) => (
-                <Card key={index}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="text-primary">{system.icon}</div>
-                      <div>
-                        <div className="font-semibold">{system.name}</div>
-                        <div className="text-sm text-muted-foreground">{system.use}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {signsYouNeedService.map((item, index) => (
+              <AnimatedStatCard key={index} delay={index * 100}>
+                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-primary" />
                       </div>
+                      <h3 className="font-semibold text-lg">{item.symptom}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+                    <div className="flex items-start gap-2 p-3 bg-success/10 rounded-lg">
+                      <ArrowRight className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-foreground font-medium">{item.solution}</p>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+              </AnimatedStatCard>
+            ))}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-lg">
-                  <XCircle className="w-5 h-5 mr-2 text-destructive" />
-                  Reactive
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Fix when broken (most expensive)</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-lg">
-                  <CheckCircle className="w-5 h-5 mr-2 text-primary" />
-                  Preventive (PPM)
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Scheduled service (cost-effective)</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-lg">
-                  <ClipboardCheck className="w-5 h-5 mr-2 text-success" />
-                  Predictive
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Condition monitoring (most advanced)</p>
-              </CardContent>
-            </Card>
+          
+          <div className="text-center mt-8">
+            <Button size="lg" onClick={() => handleQuoteRequest("HVAC Maintenance")}>
+              Get Professional Assessment
+            </Button>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-muted/50 p-6 rounded-lg">
-            <h3 className="text-lg font-semibold mb-3">Why UK Buildings Need Professional Service:</h3>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                <span>Hard water causes rapid scale buildup (London, South East)</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                <span>Strict F-Gas and TM44 compliance requirements</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                <span>Legionella risk in water-based systems</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                <span>Aging building infrastructure</span>
-              </li>
-            </ul>
+      {/* Systems We Maintain - Compact with Collapsible */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Systems We Maintain
+            </h2>
+            <p className="text-muted-foreground">HVAC and commercial refrigeration across London and the South East</p>
           </div>
-
-          <Collapsible open={openSections['hvac-details']} onOpenChange={() => toggleSection('hvac-details')}>
+          
+          {/* Compact Icon Grid */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-6">
+            {systemCategories.map((system, index) => (
+              <div 
+                key={index} 
+                className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all hover:scale-105 cursor-pointer" 
+                onClick={() => setSystemsOpen(true)}
+              >
+                <system.icon className={`w-10 h-10 mb-2 ${system.color}`} />
+                <span className="text-sm font-medium text-center">{system.title}</span>
+              </div>
+            ))}
+          </div>
+          
+          {/* Collapsible Full Details */}
+          <Collapsible open={systemsOpen} onOpenChange={setSystemsOpen}>
             <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-4 justify-between">
-                <span>Learn More About HVAC Systems</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['hvac-details'] ? 'rotate-180' : ''}`} />
+              <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+                <span>{systemsOpen ? "Hide" : "View"} All System Details</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${systemsOpen ? "rotate-180" : ""}`} />
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-4">
-              <p className="text-muted-foreground">
-                HVAC stands for Heating, Ventilation, and Air Conditioning. In the UK, these systems are critical for maintaining comfortable indoor environments across residential and commercial properties.
-              </p>
-              <div className="space-y-3">
-                <h4 className="font-semibold">UK Climate Challenges:</h4>
-                <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4">
-                  <li>Damp conditions promote mold growth in ductwork</li>
-                  <li>Temperature swings between seasons stress equipment</li>
-                  <li>Hard water in London and South East requires frequent descaling</li>
-                  <li>Older building stock often has aging, inefficient systems</li>
-                </ul>
-              </div>
-              <div className="space-y-3">
-                <h4 className="font-semibold">Maintenance Frequency Guidelines:</h4>
-                <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4">
-                  <li>Residential properties: Annual service minimum</li>
-                  <li>Commercial offices: Quarterly maintenance recommended</li>
-                  <li>High-use environments (restaurants, gyms): Monthly checks</li>
-                  <li>Critical systems (hospitals, data centers): Weekly monitoring</li>
-                </ul>
+            <CollapsibleContent className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {fullSystemDetails.map((system, index) => (
+                  <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <system.icon className="w-8 h-8 text-primary flex-shrink-0" />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg mb-2">{system.title}</h3>
+                          <p className="text-muted-foreground mb-4 text-sm">{system.description}</p>
+                          <ul className="space-y-1">
+                            {system.highlights.map((highlight, i) => (
+                              <li key={i} className="flex items-center gap-2 text-sm">
+                                <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </CollapsibleContent>
           </Collapsible>
         </div>
       </section>
 
-      {/* Commercial Property Specialists */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Commercial Property Specialists
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            We maintain HVAC and refrigeration systems for:
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <Building2 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Office Buildings & Business Parks</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Multi-zone climate control</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>VRF and central plant systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Air quality management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>After-hours service available</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Building2 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Retail & Shopping Centers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Customer comfort systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Display refrigeration maintenance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Energy efficiency optimization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Minimal disruption scheduling</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Building2 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Hospitality</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Guest comfort HVAC systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Commercial kitchen refrigeration</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Walk-in freezer/cold room maintenance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>24/7 emergency response</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Heart className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Healthcare & Care Homes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Critical temperature control</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Legionella prevention programs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Infection control air filtration</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Compliance documentation</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Building2 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Warehouses & Industrial</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Large-scale ventilation systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Cold storage refrigeration</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Process cooling systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Heavy-duty equipment service</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Building2 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle>Multi-Tenant Residential</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>HIU/CIU systems for apartments</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Communal heating and cooling</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Building Safety Act compliance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Landlord duty fulfillment</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+      {/* Trust Metrics Strip */}
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <ProgressMetric
+              icon={Clock}
+              value={24}
+              label="Hour response"
+              description="Emergency callouts"
+              percentage={100}
+              variant="success"
+              delay={0}
+            />
+            <ProgressMetric
+              icon={Building2}
+              value={500}
+              label="Systems maintained"
+              description="Commercial & residential"
+              percentage={85}
+              variant="default"
+              delay={200}
+            />
+            <ProgressMetric
+              icon={Award}
+              value={98}
+              label="Customer satisfaction"
+              description="First-visit resolution"
+              percentage={98}
+              variant="success"
+              delay={400}
+            />
+            <ProgressMetric
+              icon={Shield}
+              value={10}
+              label="Years experience"
+              description="F-Gas certified"
+              percentage={100}
+              variant="default"
+              delay={600}
+            />
           </div>
+        </div>
+      </section>
 
-          <Collapsible open={openSections['commercial-details']} onOpenChange={() => toggleSection('commercial-details')}>
-            <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-6 justify-between">
-                <span>Learn More About Commercial Services</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['commercial-details'] ? 'rotate-180' : ''}`} />
-              </Button>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-4">
-              <p className="text-muted-foreground">
-                Our commercial HVAC and refrigeration services are tailored to each property type's unique requirements. We understand that downtime costs businesses money, so we offer flexible scheduling including after-hours and weekend appointments.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-2">Service Scheduling Options:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                    <li>After-hours maintenance (evenings/weekends)</li>
-                    <li>Quarterly planned preventive maintenance (PPM)</li>
-                    <li>Monthly monitoring for high-use systems</li>
-                    <li>24/7 emergency callout service</li>
-                  </ul>
+      {/* Our Service Process - Simplified with Collapsible */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our Service Process
+            </h2>
+            <p className="text-muted-foreground">Comprehensive HVAC service typically takes 2 hours</p>
+          </div>
+          
+          {/* Compact Process Steps */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-6">
+            {serviceProcess.map((step, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+                  {step.step}
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">What's Included:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                    <li>Full system inspection and testing</li>
-                    <li>Filter replacement and coil cleaning</li>
-                    <li>Performance optimization and calibration</li>
-                    <li>Compliance certification documentation</li>
-                    <li>Energy efficiency recommendations</li>
+                  <p className="font-semibold text-sm">{step.title}</p>
+                  <p className="text-xs text-muted-foreground hidden md:block">{step.description}</p>
+                </div>
+                {index < serviceProcess.length - 1 && (
+                  <ArrowRight className="w-4 h-4 text-muted-foreground hidden md:block" />
+                )}
+              </div>
+            ))}
+          </div>
+          
+          <Collapsible open={processOpen} onOpenChange={setProcessOpen}>
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm" className="w-full flex items-center justify-center gap-2 text-muted-foreground">
+                <span>{processOpen ? "Hide" : "Show"} Full Service Details</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${processOpen ? "rotate-180" : ""}`} />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {serviceProcess.map((step, index) => (
+                  <Card key={index} className="text-center">
+                    <CardContent className="p-4">
+                      <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-3">
+                        {step.step}
+                      </div>
+                      <h3 className="font-semibold mb-1">{step.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-2">{step.description}</p>
+                      <Badge variant="outline" className="text-xs">{step.duration}</Badge>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="mt-6 bg-muted/50 p-6 rounded-lg">
+                <h4 className="font-semibold mb-4">What's Included in Every Service:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ul className="space-y-2">
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Filter replacement or cleaning</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Coil inspection and cleaning</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Refrigerant pressure check</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Electrical connections verification</span>
+                    </li>
+                  </ul>
+                  <ul className="space-y-2">
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Control system calibration</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Safety device testing</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Performance efficiency report</span>
+                    </li>
+                    <li className="flex items-start text-sm">
+                      <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Compliance certification</span>
+                    </li>
                   </ul>
                 </div>
               </div>
             </CollapsibleContent>
           </Collapsible>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <Button size="lg" onClick={() => handleQuoteRequest("HVAC Maintenance")}>
+              Schedule Your Service
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href={`tel:${CONTACT.phones.emergencyTel}`}>
+                <Phone className="w-5 h-5 mr-2"/>
+                Emergency: {CONTACT.phones.emergency}
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Commercial Refrigeration Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Commercial Refrigeration - Brief Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="flex items-center mb-6">
             <Snowflake className="w-10 h-10 text-primary mr-4" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Commercial Refrigeration Maintenance
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              Commercial Refrigeration
             </h2>
           </div>
           
-          <p className="text-lg text-muted-foreground mb-8">
-            Professional service for all commercial cooling systems
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-3xl">
+            F-Gas certified service for all commercial cooling systems. We keep your refrigeration compliant and your produce safe.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Systems We Service:</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Walk-in cold rooms & freezers</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Display refrigeration (shops, supermarkets)</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Back bar & under counter units</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Blast chillers & prep fridges</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Ice machines</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Bottle coolers</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Deli & butchery cabinets</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>What's Included in Service:</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Condenser & evaporator coil cleaning</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Refrigerant pressure checks (F-Gas certified)</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Door seal inspection & adjustment</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Temperature calibration & monitoring</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Defrost system testing</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Electrical component verification</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Wrench className="w-4 h-4 mr-2 text-primary flex-shrink-0" />
-                    <span>Food safety compliance documentation</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card className="border-destructive/20 bg-destructive/5">
               <CardHeader>
                 <AlertTriangle className="w-8 h-8 text-destructive mb-2" />
@@ -550,11 +525,7 @@ export default function HVACMaintenance() {
                   </li>
                   <li className="flex items-start">
                     <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Higher energy consumption</span>
-                  </li>
-                  <li className="flex items-start">
-                    <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Unexpected breakdowns during service</span>
+                    <span>Higher energy bills</span>
                   </li>
                   <li className="flex items-start">
                     <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
@@ -573,23 +544,19 @@ export default function HVACMaintenance() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Consistent food safety temperatures</span>
+                    <span>Consistent safe temperatures</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Lower energy bills</span>
+                    <span>Lower energy costs</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Extended equipment lifespan</span>
+                    <span>Extended equipment life</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>UK regulations compliance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Priority emergency response</span>
+                    <span>Full compliance documentation</span>
                   </li>
                 </ul>
               </CardContent>
@@ -598,195 +565,28 @@ export default function HVACMaintenance() {
 
           <Collapsible open={openSections['refrigeration-details']} onOpenChange={() => toggleSection('refrigeration-details')}>
             <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-6 justify-between">
-                <span>Learn More About Refrigeration Maintenance</span>
+              <Button variant="ghost" className="w-full justify-between">
+                <span>View Refrigeration Systems We Service</span>
                 <ChevronDown className={`w-5 h-5 transition-transform ${openSections['refrigeration-details'] ? 'rotate-180' : ''}`} />
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-4">
-              <h4 className="font-semibold">F-Gas Compliance for Refrigeration:</h4>
-              <p className="text-muted-foreground text-sm">
-                All our refrigeration engineers are F-Gas Category 1 certified, legally required for working on commercial refrigeration systems containing fluorinated gases. We maintain detailed service records for 5 years as required by UK law.
-              </p>
-              <h4 className="font-semibold mt-4">Food Safety Regulations:</h4>
-              <p className="text-muted-foreground text-sm">
-                Commercial refrigeration must maintain specific temperature ranges: Chilled food storage 0-5°C, Frozen food storage below -18°C. We provide temperature logging documentation that Environmental Health Officers require during inspections.
-              </p>
-              <h4 className="font-semibold mt-4">Maintenance Frequency:</h4>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                <li>Display cabinets & under-counter units: Quarterly service</li>
-                <li>Walk-in cold rooms: Bi-annual professional service</li>
-                <li>High-use kitchen equipment: Monthly checks</li>
-                <li>Temperature monitoring: Daily logs required</li>
-              </ul>
-            </CollapsibleContent>
-          </Collapsible>
-        </div>
-      </section>
-
-      {/* Maintenance Frequency Guide Table */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Maintenance Frequency Guide
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Quick reference for when your systems need service
-          </p>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-background rounded-lg overflow-hidden">
-              <thead className="bg-primary text-primary-foreground">
-                <tr>
-                  <th className="p-4 text-left">System Type</th>
-                  <th className="p-4 text-left">Monthly Check</th>
-                  <th className="p-4 text-left">Quarterly Service</th>
-                  <th className="p-4 text-left">Annual Service</th>
-                  <th className="p-4 text-left">Who Can Do It?</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                <tr className="hover:bg-muted/50">
-                  <td className="p-4 font-semibold">FCU</td>
-                  <td className="p-4 text-sm">Filter check</td>
-                  <td className="p-4 text-sm">Filter replace + clean</td>
-                  <td className="p-4 text-sm">Deep service + compliance</td>
-                  <td className="p-4 text-sm">Professional only</td>
-                </tr>
-                <tr className="hover:bg-muted/50">
-                  <td className="p-4 font-semibold">MVHR</td>
-                  <td className="p-4 text-sm">Filter check</td>
-                  <td className="p-4 text-sm">Filter replace</td>
-                  <td className="p-4 text-sm">Heat exchanger clean</td>
-                  <td className="p-4 text-sm">Basic DIY, service = pro</td>
-                </tr>
-                <tr className="hover:bg-muted/50">
-                  <td className="p-4 font-semibold">HIU/CIU</td>
-                  <td className="p-4 text-sm">Visual check</td>
-                  <td className="p-4 text-sm">-</td>
-                  <td className="p-4 text-sm">Descale + safety test</td>
-                  <td className="p-4 text-sm">Professional only</td>
-                </tr>
-                <tr className="hover:bg-muted/50">
-                  <td className="p-4 font-semibold">VRF</td>
-                  <td className="p-4 text-sm">Error monitoring</td>
-                  <td className="p-4 text-sm">Filter + refrigerant check</td>
-                  <td className="p-4 text-sm">Full system service</td>
-                  <td className="p-4 text-sm">Professional only</td>
-                </tr>
-                <tr className="hover:bg-muted/50">
-                  <td className="p-4 font-semibold">Commercial Refrigeration</td>
-                  <td className="p-4 text-sm">Temperature log</td>
-                  <td className="p-4 text-sm">Coil clean + calibration</td>
-                  <td className="p-4 text-sm">Full compliance service</td>
-                  <td className="p-4 text-sm">Professional only</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <CheckCircle className="w-5 h-5 mr-2 text-primary" />
-                  Building Managers Can Check:
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Visual inspections for leaks or damage</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Basic filter checks (non-refrigerant systems)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Thermostat operation tests</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Temperature monitoring logs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-4 h-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <span>Unusual noise detection</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-amber-500/30 bg-amber-50/50">
-              <CardHeader>
-                <CardTitle className="flex items-center text-amber-900">
-                  <AlertTriangle className="w-5 h-5 mr-2 text-amber-600" />
-                  REQUIRES Professional Service:
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <AlertTriangle className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Refrigerant systems (F-Gas certification required)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Gas heating systems (Gas Safe registration required)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Electrical work (NICEIC approved)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Deep cleaning and coil work</span>
-                  </li>
-                  <li className="flex items-start">
-                    <AlertTriangle className="w-4 h-4 mr-2 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <span>Safety and compliance testing</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Collapsible open={openSections['maintenance-details']} onOpenChange={() => toggleSection('maintenance-details')}>
-            <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-6 justify-between">
-                <span>Learn More About Maintenance Checklists</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['maintenance-details'] ? 'rotate-180' : ''}`} />
-              </Button>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-2">FCU Quarterly Service Includes:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                    <li>Filter replacement (MERV 8-13 grade)</li>
-                    <li>Coil deep cleaning (chemical treatment)</li>
-                    <li>Condensate pan cleaning and sanitization</li>
-                    <li>Fan motor lubrication and bearing inspection</li>
-                    <li>Control system calibration</li>
-                    <li>Refrigerant pressure check (F-Gas engineer)</li>
-                    <li>Electrical connections verification</li>
-                    <li>Water flow rate testing</li>
-                  </ul>
+            <CollapsibleContent className="mt-4 bg-background p-6 rounded-lg">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center p-4 border rounded-lg">
+                  <Snowflake className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium">Cold Rooms</p>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">MVHR Annual Service Includes:</h4>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                    <li>Heat exchanger removal and deep cleaning</li>
-                    <li>Full duct inspection</li>
-                    <li>Bypass damper operation testing</li>
-                    <li>Outdoor hood cleaning</li>
-                    <li>Airflow balancing across all rooms</li>
-                    <li>Heat recovery efficiency testing (85%+ target)</li>
-                    <li>Control logic verification</li>
-                    <li>Energy consumption analysis</li>
-                  </ul>
+                <div className="text-center p-4 border rounded-lg">
+                  <Snowflake className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium">Display Cabinets</p>
+                </div>
+                <div className="text-center p-4 border rounded-lg">
+                  <Snowflake className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium">Blast Chillers</p>
+                </div>
+                <div className="text-center p-4 border rounded-lg">
+                  <Snowflake className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium">Ice Machines</p>
                 </div>
               </div>
             </CollapsibleContent>
@@ -794,40 +594,28 @@ export default function HVACMaintenance() {
         </div>
       </section>
 
-      {/* UK Regulations - Quick Guide */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* UK Compliance Quick Reference */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="flex items-center mb-6">
             <Shield className="w-10 h-10 text-primary mr-4" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              UK Legal Compliance for HVAC & Refrigeration
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              UK Compliance
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <Card className="border-amber-500/30">
               <CardHeader>
                 <FileText className="w-8 h-8 text-amber-600 mb-2" />
-                <CardTitle>TM44 Air Conditioning Inspections</CardTitle>
+                <CardTitle>TM44 Inspection</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Who needs it:</span>
-                    <span className="text-muted-foreground">AC systems &gt;12kW</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Frequency:</span>
-                    <span className="text-muted-foreground">Every 5 years</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Penalty:</span>
-                    <span className="text-destructive font-medium">£300-£1,000</span>
-                  </div>
+                <div className="space-y-2 text-sm">
+                  <p><span className="font-semibold">Required:</span> AC systems &gt;12kW</p>
+                  <p><span className="font-semibold">Frequency:</span> Every 5 years</p>
+                  <p className="text-destructive font-medium">Penalty: £300-£1,000</p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Energy efficiency, system sizing, and controls assessment
-                </p>
               </CardContent>
             </Card>
 
@@ -837,165 +625,55 @@ export default function HVACMaintenance() {
                 <CardTitle>F-Gas Regulations</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Applies to:</span>
-                    <span className="text-muted-foreground">All AC & refrigeration</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Requirement:</span>
-                    <span className="text-muted-foreground">Annual leak checks</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Engineer must have:</span>
-                    <span className="text-primary font-medium">F-Gas certification</span>
-                  </div>
+                <div className="space-y-2 text-sm">
+                  <p><span className="font-semibold">Required:</span> All AC & refrigeration</p>
+                  <p><span className="font-semibold">Checks:</span> Annual leak testing</p>
+                  <p className="text-primary font-medium">We're F-Gas Category 1 certified</p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  £200 per violation, unlimited for illegal venting
-                </p>
               </CardContent>
             </Card>
 
             <Card className="border-amber-500/30">
               <CardHeader>
                 <Building2 className="w-8 h-8 text-amber-600 mb-2" />
-                <CardTitle>Landlord Legal Obligations</CardTitle>
+                <CardTitle>Landlord Obligations</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="text-sm">
-                    <span className="font-semibold">Residential:</span>
-                    <span className="text-muted-foreground ml-2">Must provide functional heating/hot water</span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">Commercial:</span>
-                    <span className="text-muted-foreground ml-2">FRI leases require maintenance</span>
-                  </div>
+                <div className="space-y-2 text-sm">
+                  <p><span className="font-semibold">Residential:</span> Functional heating required</p>
+                  <p><span className="font-semibold">Commercial:</span> FRI lease maintenance</p>
+                  <p className="text-muted-foreground">Building Safety Act 2022</p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Building Safety Act 2022: High-rise buildings need documented maintenance
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-amber-500/30">
-              <CardHeader>
-                <FileText className="w-8 h-8 text-amber-600 mb-2" />
-                <CardTitle>MEES (Energy Efficiency Standards)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Requirement:</span>
-                    <span className="text-muted-foreground">EPC rating E minimum</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">From 2025:</span>
-                    <span className="text-destructive font-medium">EPC rating C</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">HVAC impact:</span>
-                    <span className="text-muted-foreground">Drops EPC by 2 grades</span>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Cannot legally rent property, fines up to £150,000
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-amber-500/30">
-              <CardHeader>
-                <Heart className="w-8 h-8 text-amber-600 mb-2" />
-                <CardTitle>Health & Safety (HSE)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="text-sm">
-                    <span className="font-semibold">Legionella Control:</span>
-                    <span className="text-muted-foreground ml-2">Risk assessment required</span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">Workplace Ventilation:</span>
-                    <span className="text-muted-foreground ml-2">10 L/s per person minimum</span>
-                  </div>
-                </div>
-                <p className="text-sm text-destructive font-medium">
-                  Unlimited fines, prison sentences possible
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-amber-500/30">
-              <CardHeader>
-                <Snowflake className="w-8 h-8 text-amber-600 mb-2" />
-                <CardTitle>Food Safety Regulations</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Chilled storage:</span>
-                    <span className="text-muted-foreground">0-5°C</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-semibold">Frozen storage:</span>
-                    <span className="text-muted-foreground">Below -18°C</span>
-                  </div>
-                  <div className="text-sm">
-                    <span className="font-semibold">Monitoring:</span>
-                    <span className="text-muted-foreground ml-2">Daily temperature logs</span>
-                  </div>
-                </div>
-                <p className="text-sm text-destructive font-medium">
-                  Closure orders, unlimited fines, prosecution
-                </p>
               </CardContent>
             </Card>
           </div>
 
-          <Collapsible open={openSections['regulations-details']} onOpenChange={() => toggleSection('regulations-details')}>
+          <Collapsible open={openSections['compliance-details']} onOpenChange={() => toggleSection('compliance-details')}>
             <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-6 justify-between">
+              <Button variant="ghost" className="w-full justify-between">
                 <span>Learn More About UK Regulations</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['regulations-details'] ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['compliance-details'] ? 'rotate-180' : ''}`} />
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-6">
+            <CollapsibleContent className="mt-4 space-y-4 bg-muted/30 p-6 rounded-lg">
               <div>
                 <h4 className="font-semibold mb-2">TM44 Inspection Details:</h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  TM44 inspections assess energy efficiency and identify opportunities for improvement. Inspectors must be CIBSE Low Carbon Consultants or equivalent. First inspection within 12 months of installation, then every 5 years.
-                </p>
                 <p className="text-sm text-muted-foreground">
-                  <strong>What's checked:</strong> System efficiency vs design, cooling load vs capacity, control system effectiveness, maintenance records, alternative cooling options, and energy improvement recommendations.
+                  TM44 inspections assess energy efficiency and identify improvement opportunities. Required for systems over 12kW, with first inspection within 12 months of installation, then every 5 years.
                 </p>
               </div>
-
               <div>
                 <h4 className="font-semibold mb-2">F-Gas Certificate Categories:</h4>
                 <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                  <li><strong>Category 1:</strong> Full refrigeration and AC systems - Can do everything</li>
-                  <li><strong>Category 2:</strong> Small systems and recovery - Limited to systems &lt;3kg</li>
-                  <li><strong>Category 3:</strong> Leak checking only - Cannot handle refrigerant</li>
-                  <li><strong>Category 4:</strong> Recovery only - Decommissioning work</li>
+                  <li><strong>Category 1:</strong> Full refrigeration and AC systems</li>
+                  <li><strong>Category 2:</strong> Small systems under 3kg</li>
+                  <li><strong>Category 3:</strong> Leak checking only</li>
                 </ul>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Verify engineer credentials at realcert.org before work begins. All Mainteniq engineers are F-Gas Category 1 certified.
-                </p>
               </div>
-
-              <div>
-                <h4 className="font-semibold mb-2">Building Safety Act 2022:</h4>
-                <p className="text-sm text-muted-foreground">
-                  Buildings 7+ stories must have an "accountable person" responsible for building safety. HVAC systems must be included in building safety case documentation. Regular maintenance records must be kept and available for inspection. Criminal liability for accountable person if failures lead to safety incidents.
-                </p>
-              </div>
-
               <div>
                 <h4 className="font-semibold mb-2">MEES Compliance:</h4>
                 <p className="text-sm text-muted-foreground">
-                  From April 2025, all new commercial leases must meet EPC rating C. Old or poorly maintained HVAC systems can drop EPC ratings by 2 full grades. Regular professional maintenance can improve EPC by 1 grade. System upgrades may be required for compliance.
+                  From April 2025, all new commercial leases require EPC rating C. Poor HVAC maintenance can drop ratings by 2 grades.
                 </p>
               </div>
             </CollapsibleContent>
@@ -1003,55 +681,28 @@ export default function HVACMaintenance() {
         </div>
       </section>
 
-      {/* Why Choose Professional Maintenance */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Why Choose Professional HVAC Maintenance
+      {/* Credentials - Simplified */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8">
+            Why Choose Professional Service
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Shield className="w-6 h-6 mr-2 text-primary" />
-                  Essential Certifications We Hold:
+                  Our Certifications
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold">Gas Safe Registered</div>
-                      <div className="text-sm text-muted-foreground">Legal requirement for gas work</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold">F-Gas Certified (Category 1)</div>
-                      <div className="text-sm text-muted-foreground">All refrigerant systems</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold">NICEIC Approved</div>
-                      <div className="text-sm text-muted-foreground">Electrical safety compliance</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold">£10M Public Liability Insurance</div>
-                      <div className="text-sm text-muted-foreground">Full coverage protection</div>
-                    </div>
-                  </li>
-                </ul>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Verify our credentials anytime - we provide certificate numbers on request.
-                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <Badge variant="outline" className="justify-center py-2 bg-blue-50 text-blue-700 border-blue-200">Gas Safe</Badge>
+                  <Badge variant="outline" className="justify-center py-2 bg-green-50 text-green-700 border-green-200">F-Gas Cat 1</Badge>
+                  <Badge variant="outline" className="justify-center py-2 bg-amber-50 text-amber-700 border-amber-200">NICEIC</Badge>
+                  <Badge variant="outline" className="justify-center py-2 bg-purple-50 text-purple-700 border-purple-200">£10M Insured</Badge>
+                </div>
               </CardContent>
             </Card>
 
@@ -1059,148 +710,55 @@ export default function HVACMaintenance() {
               <CardHeader>
                 <CardTitle className="flex items-center text-destructive">
                   <AlertTriangle className="w-6 h-6 mr-2" />
-                  Red Flags to Avoid:
+                  Red Flags to Avoid
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
+                <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
-                    <XCircle className="w-5 h-5 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <strong>Cannot provide Gas Safe or F-Gas numbers</strong>
-                      <div className="text-muted-foreground">Illegal, voids insurance, you're liable</div>
-                    </div>
+                    <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
+                    <span>No Gas Safe or F-Gas numbers</span>
                   </li>
                   <li className="flex items-start">
-                    <XCircle className="w-5 h-5 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <strong>Suspiciously low prices</strong>
-                      <div className="text-muted-foreground">Often inspection only, no real work</div>
-                    </div>
+                    <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
+                    <span>Suspiciously low prices</span>
                   </li>
                   <li className="flex items-start">
-                    <XCircle className="w-5 h-5 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <strong>No written warranty</strong>
-                      <div className="text-muted-foreground">Professional companies provide 12-month warranty</div>
-                    </div>
+                    <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
+                    <span>No written warranty</span>
                   </li>
                   <li className="flex items-start">
-                    <XCircle className="w-5 h-5 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <strong>Pressure to sign immediately</strong>
-                      <div className="text-muted-foreground">Professional companies provide written quotes</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <XCircle className="w-5 h-5 mr-2 text-destructive flex-shrink-0 mt-0.5" />
-                    <div className="text-sm">
-                      <strong>Cannot provide proof of insurance</strong>
-                      <div className="text-muted-foreground">Minimum £5M public liability required</div>
-                    </div>
+                    <XCircle className="w-4 h-4 mr-2 text-destructive flex-shrink-0 mt-0.5" />
+                    <span>No proof of insurance</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
           </div>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Commercial Property Experience:</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <Building2 className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <div className="text-sm font-semibold">Office Buildings</div>
-                  <div className="text-xs text-muted-foreground">Business Parks</div>
-                </div>
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <Building2 className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <div className="text-sm font-semibold">Retail</div>
-                  <div className="text-xs text-muted-foreground">Hospitality</div>
-                </div>
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <Heart className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <div className="text-sm font-semibold">Healthcare</div>
-                  <div className="text-xs text-muted-foreground">Care Facilities</div>
-                </div>
-                <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <Building2 className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <div className="text-sm font-semibold">Industrial</div>
-                  <div className="text-xs text-muted-foreground">Warehouses</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Collapsible open={openSections['professional-details']} onOpenChange={() => toggleSection('professional-details')}>
-            <CollapsibleTrigger asChild>
-              <Button variant="ghost" className="w-full mt-6 justify-between">
-                <span>Learn More: How to Verify Engineer Credentials</span>
-                <ChevronDown className={`w-5 h-5 transition-transform ${openSections['professional-details'] ? 'rotate-180' : ''}`} />
-              </Button>
-            </CollapsibleTrigger>
-            <CollapsibleContent className="mt-4 space-y-4">
-              <div>
-                <h4 className="font-semibold mb-2">Verify Gas Safe Registration:</h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Visit register.gassaferegister.co.uk and enter the engineer's ID number (found on their ID card). This confirms they're legally allowed to work on gas systems.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold mb-2">Verify F-Gas Certification:</h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Visit realcert.org and search for the engineer's certificate number. Format should be UK/FGAS/XXXX. Check the category matches the work needed (Category 1 for full AC systems).
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold mb-2">Questions to Ask Before Hiring:</h4>
-                <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4 text-sm">
-                  <li>Can I see your Gas Safe and F-Gas certificate numbers?</li>
-                  <li>Do you have references from similar properties?</li>
-                  <li>What exactly is included in your service?</li>
-                  <li>Do you provide emergency cover? What's the response time?</li>
-                  <li>What warranty do you offer on parts and labor?</li>
-                  <li>Are parts and labor separate or included in the price?</li>
-                  <li>Do you have experience with my specific system type?</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold mb-2">What's Included in Professional Service:</h4>
-                <p className="text-sm text-muted-foreground">
-                  A comprehensive HVAC service should include: detailed system inspection, filter replacement, coil cleaning, component testing, performance optimization, safety checks, compliance certification, and a written service report with recommendations. Beware of "cheap services" that only do basic inspections.
-                </p>
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Ready to Schedule Your HVAC Maintenance?
           </h2>
-          <p className="text-lg mb-8 opacity-90">
+          <p className="text-base sm:text-lg mb-8 opacity-90">
             Professional service for all heating, ventilation, air conditioning, and commercial refrigeration systems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" onClick={() => handleQuoteRequest("HVAC Maintenance")}>
               <Phone className="w-5 h-5 mr-2" />
-              Call for Quote
+              Get Your Free Quote
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => handleQuoteRequest("HVAC Emergency Service")}>
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Service
             </Button>
           </div>
           <p className="text-sm mt-6 opacity-75">
-            24/7 Emergency Response | UK-Wide Coverage | F-Gas & Gas Safe Certified Engineers
+            24/7 Emergency Response | UK-Wide Coverage | F-Gas & Gas Safe Certified
           </p>
         </div>
       </section>
