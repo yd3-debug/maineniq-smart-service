@@ -38,8 +38,8 @@ const About = () => {
   ];
 
   useEffect(() => {
-    document.title = "About Maineniq | Expert HVAC & Property Maintenance Team";
-    const description = "Learn about Maineniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
+    document.title = "About Mainteniq | Expert HVAC & Property Maintenance Team";
+    const description = "Learn about Mainteniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
 
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (!meta) {
@@ -56,7 +56,7 @@ const About = () => {
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.content = "About Maineniq | Expert HVAC & Property Maintenance Team";
+    ogTitle.content = "About Mainteniq | Expert HVAC & Property Maintenance Team";
 
     let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
     if (!ogDescription) {

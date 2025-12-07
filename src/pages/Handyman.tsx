@@ -96,7 +96,7 @@ const Handyman: React.FC = () => {
         title="Professional Handyman Services | Expert Property Maintenance | Mainteniq"
         description="Professional handyman services for homes and businesses. Qualified tradespeople for electrical, plumbing, carpentry, decorating, and property maintenance. Same-day emergency repairs available."
         keywords="handyman services, property maintenance, electrical repairs, plumbing fixes, carpentry, decorating, emergency repairs, qualified tradespeople"
-        ogImage="/og-image-maineniq.png"
+        ogImage="/og-image-mainteniq.png"
         canonicalUrl={window.location.href}
       />
 

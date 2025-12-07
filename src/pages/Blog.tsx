@@ -32,7 +32,7 @@ const Blog = () => {
       date: '2025-09-25',
       readTime: '6 min read',
       category: 'Energy Efficiency',
-      image: '/og-image-maineniq.png'
+      image: '/og-image-mainteniq.png'
     },
     {
       slug: 'hiu-systems-guide',
@@ -59,7 +59,7 @@ const Blog = () => {
       date: '2025-09-10',
       readTime: '6 min read',
       category: 'Smart Home',
-      image: '/og-image-maineniq.png'
+      image: '/og-image-mainteniq.png'
     }
   ];
 
@@ -74,7 +74,7 @@ const Blog = () => {
         title="Property Maintenance Blog - Expert Tips & Guides | Mainteniq"
         description="Expert advice on HVAC maintenance, energy efficiency, and property management. Get professional insights from London's leading maintenance specialists."
         keywords="HVAC blog, maintenance tips, energy efficiency, property management, London heating advice"
-        ogImage="https://www.mainteniq.co.uk/og-image-maineniq.png"
+        ogImage="https://www.mainteniq.co.uk/og-image-mainteniq.png"
         breadcrumbData={generateBreadcrumbSchema(breadcrumbs)}
         structuredData={generateWebSiteSchema()}
       />

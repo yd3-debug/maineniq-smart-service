@@ -15,7 +15,7 @@ const CoreWebVitals = () => {
       // Preload above-the-fold images
       const heroImageLink = document.createElement('link');
       heroImageLink.rel = 'preload';
-      heroImageLink.href = '/og-image-maineniq.png';
+      heroImageLink.href = '/og-image-mainteniq.png';
       heroImageLink.as = 'image';
       document.head.appendChild(heroImageLink);
     };
