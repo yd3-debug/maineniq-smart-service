@@ -215,7 +215,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative">
                   <img 
-                    src={professionalTeam} 
+                    src="/Customer_Service.png"
                     alt="Professional HVAC team"
                     className="rounded-lg shadow-elegant w-full h-auto"
                   />
