@@ -9,8 +9,10 @@ interface FullBleedHeroProps {
   alt: string;
   primaryLabel?: string;
   primaryHref?: string;
+  primaryOnClick?: () => void;
   secondaryLabel?: string;
   secondaryHref?: string;
+  secondaryOnClick?: () => void;
   secondaryClass?: string;
   imageFit?: "cover" | "contain";
   id?: string;
@@ -26,8 +28,10 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
   alt,
   primaryLabel,
   primaryHref,
+  primaryOnClick,
   secondaryLabel,
   secondaryHref,
+  secondaryOnClick,
   secondaryClass,
   imageFit = "cover",
   id,
@@ -54,28 +58,35 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
               </p>
             )}
           <div className="flex flex-col sm:flex-row gap-3">
-            {primaryLabel && primaryHref && (
-              <Button asChild size="lg" variant="hero" className="px-8 py-3">
-                {isExternal(primaryHref) ? (
-                  <a href={primaryHref}>{primaryLabel}</a>
-                ) : (
-                  <Link to={primaryHref}>{primaryLabel}</Link>
-                )}
-              </Button>
+            {primaryLabel && (primaryHref || primaryOnClick) && (
+              primaryOnClick ? (
+                <Button size="lg" variant="hero" className="px-8 py-3" onClick={primaryOnClick}>
+                  {primaryLabel}
+                </Button>
+              ) : (
+                <Button asChild size="lg" variant="hero" className="px-8 py-3">
+                  {isExternal(primaryHref!) ? (
+                    <a href={primaryHref}>{primaryLabel}</a>
+                  ) : (
+                    <Link to={primaryHref!}>{primaryLabel}</Link>
+                  )}
+                </Button>
+              )
             )}
-            {secondaryLabel && secondaryHref && (
-              <Button
-                asChild
-                size="lg"
-                variant="accent"
-                className="px-8 py-3"
-              >
-                {isExternal(secondaryHref) ? (
-                  <a href={secondaryHref}>{secondaryLabel}</a>
-                ) : (
-                  <Link to={secondaryHref}>{secondaryLabel}</Link>
-                )}
-              </Button>
+            {secondaryLabel && (secondaryHref || secondaryOnClick) && (
+              secondaryOnClick ? (
+                <Button size="lg" variant="accent" className="px-8 py-3" onClick={secondaryOnClick}>
+                  {secondaryLabel}
+                </Button>
+              ) : (
+                <Button asChild size="lg" variant="accent" className="px-8 py-3">
+                  {isExternal(secondaryHref!) ? (
+                    <a href={secondaryHref}>{secondaryLabel}</a>
+                  ) : (
+                    <Link to={secondaryHref!}>{secondaryLabel}</Link>
+                  )}
+                </Button>
+              )
             )}
           </div>
           {children ? <div className="mt-4">{children}</div> : null}
