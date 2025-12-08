@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Sparkles, Zap, Shield, Star, MessageCircle } from "lucide-react";
+import { CheckCircle, Sparkles, Flame, Sofa, Droplets, MessageCircle } from "lucide-react";
 import { handleQuoteRequest } from "@/utils/quote";
 
 interface Service {
@@ -10,6 +10,9 @@ interface Service {
   icon: React.ComponentType<{ className?: string }>;
   popular: boolean;
   description: string;
+  iconColor: string;
+  bgColor: string;
+  selectedBorder: string;
 }
 
 const services: Service[] = [
@@ -17,25 +20,37 @@ const services: Service[] = [
     service: "Carpet Steam Clean", 
     icon: Sparkles, 
     popular: true,
-    description: "Deep steam cleaning for fresh, stain-free carpets"
+    description: "Deep steam cleaning for fresh, stain-free carpets",
+    iconColor: "text-trust-blue",
+    bgColor: "bg-trust-blue/10",
+    selectedBorder: "ring-trust-blue border-trust-blue"
   },
   { 
     service: "Oven Deep Clean", 
-    icon: Zap, 
+    icon: Flame, 
     popular: true,
-    description: "Interior & exterior oven cleaning to showroom condition"
+    description: "Interior & exterior oven cleaning to showroom condition",
+    iconColor: "text-accent-orange",
+    bgColor: "bg-accent-orange/10",
+    selectedBorder: "ring-accent-orange border-accent-orange"
   },
   { 
     service: "Upholstery Clean", 
-    icon: Shield, 
+    icon: Sofa, 
     popular: false,
-    description: "Professional fabric cleaning for sofas and chairs"
+    description: "Professional fabric cleaning for sofas and chairs",
+    iconColor: "text-teal-500",
+    bgColor: "bg-teal-500/10",
+    selectedBorder: "ring-teal-500 border-teal-500"
   },
   { 
     service: "Window Cleaning", 
-    icon: Star, 
+    icon: Droplets, 
     popular: false,
-    description: "Interior window cleaning for crystal clear finish"
+    description: "Interior window cleaning for crystal clear finish",
+    iconColor: "text-purple-500",
+    bgColor: "bg-purple-500/10",
+    selectedBorder: "ring-purple-500 border-purple-500"
   }
 ];
 
@@ -63,15 +78,19 @@ const ServicePackageBuilder: React.FC = () => {
 
   const isSelected = (serviceName: string) => selectedServices.has(serviceName);
 
+  const getSelectedService = (serviceName: string) => services.find(s => s.service === serviceName);
+
   return (
     <section className="space-y-8">
       <div className="text-center">
+        <Badge variant="outline" className="mb-4">Customize Your Package</Badge>
         <h2 className="text-3xl font-bold mb-4">Build Your Perfect Service Package</h2>
         <p className="text-lg text-muted-foreground">
           Select additional services to create your ideal cleaning package
         </p>
         {selectedServices.size > 0 && (
-          <Badge variant="secondary" className="mt-2">
+          <Badge variant="secondary" className="mt-3 bg-success/20 text-success border-success/30">
+            <CheckCircle className="w-3 h-3 mr-1" />
             {selectedServices.size} service{selectedServices.size !== 1 ? 's' : ''} selected
           </Badge>
         )}
@@ -83,29 +102,40 @@ const ServicePackageBuilder: React.FC = () => {
           return (
             <Card 
               key={index} 
-              className={`transition-all duration-300 cursor-pointer transform hover:scale-105 ${
-                addon.popular ? 'ring-2 ring-primary/20' : ''
-              } ${
+              className={`transition-all duration-300 cursor-pointer transform hover:scale-105 border-t-4 ${
                 selected 
-                  ? 'ring-2 ring-success border-success bg-success/5 shadow-lg' 
-                  : 'hover:shadow-md'
+                  ? `ring-2 ${addon.selectedBorder} bg-${addon.iconColor.replace('text-', '')}/5 shadow-lg` 
+                  : addon.popular 
+                    ? 'ring-1 ring-primary/20 hover:shadow-md' 
+                    : 'hover:shadow-md'
               }`}
+              style={{ 
+                borderTopColor: addon.iconColor.includes('trust-blue') 
+                  ? 'hsl(var(--trust-blue))' 
+                  : addon.iconColor.includes('accent-orange') 
+                    ? 'hsl(var(--accent-orange))' 
+                    : addon.iconColor.includes('teal') 
+                      ? '#14b8a6' 
+                      : '#a855f7' 
+              }}
               onClick={() => toggleService(addon.service)}
             >
               <CardContent className="p-6 text-center relative">
                 {addon.popular && !selected && (
-                  <Badge className="absolute -top-2 -right-2" variant="secondary">
+                  <Badge className="absolute -top-2 -right-2 bg-accent-orange/90 text-white" variant="secondary">
                     Popular
                   </Badge>
                 )}
                 {selected && (
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                  <div className={`absolute -top-2 -right-2 w-6 h-6 ${addon.bgColor.replace('/10', '')} rounded-full flex items-center justify-center`} style={{ backgroundColor: addon.iconColor.includes('trust-blue') ? 'hsl(var(--trust-blue))' : addon.iconColor.includes('accent-orange') ? 'hsl(var(--accent-orange))' : addon.iconColor.includes('teal') ? '#14b8a6' : '#a855f7' }}>
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
                 )}
                 
-                <addon.icon className={`w-8 h-8 mx-auto mb-3 ${selected ? 'text-success' : 'text-primary'}`} />
-                <h3 className="font-medium mb-2">{addon.service}</h3>
+                <div className={`w-14 h-14 ${addon.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <addon.icon className={`w-7 h-7 ${addon.iconColor}`} />
+                </div>
+                <h3 className="font-semibold mb-2">{addon.service}</h3>
                 <p className="text-xs text-muted-foreground mb-4">{addon.description}</p>
                 
                 <Button 
@@ -113,8 +143,8 @@ const ServicePackageBuilder: React.FC = () => {
                   variant={selected ? "default" : "outline"}
                   className={`w-full transition-all duration-200 ${
                     selected 
-                      ? 'bg-success hover:bg-success/90' 
-                      : 'hover:bg-primary hover:text-white'
+                      ? 'bg-success hover:bg-success/90 text-white' 
+                      : 'hover:bg-primary hover:text-primary-foreground'
                   }`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -138,21 +168,28 @@ const ServicePackageBuilder: React.FC = () => {
 
       {/* Dynamic Call-to-Action */}
       <div className="text-center">
-        <div className="bg-gradient-to-r from-primary/10 to-success/10 rounded-xl p-6 max-w-2xl mx-auto">
+        <div className="bg-gradient-to-r from-trust-blue/10 via-background to-success/10 rounded-xl p-8 max-w-2xl mx-auto border border-border/50">
           {selectedServices.size > 0 ? (
             <>
               <h3 className="text-xl font-semibold mb-2">
-                Perfect! You've selected {selectedServices.size} additional service{selectedServices.size !== 1 ? 's' : ''}
+                Great choice! You've selected {selectedServices.size} additional service{selectedServices.size !== 1 ? 's' : ''}
               </h3>
               <p className="text-muted-foreground mb-4">
-                Most customers who choose these services get excellent deposit returns
+                Customers who choose these services report higher deposit return rates
               </p>
-              <div className="flex flex-wrap gap-2 justify-center mb-4">
-                {Array.from(selectedServices).map((service) => (
-                  <Badge key={service} variant="secondary" className="bg-success/20 text-success border-success/30">
-                    {service}
-                  </Badge>
-                ))}
+              <div className="flex flex-wrap gap-2 justify-center mb-6">
+                {Array.from(selectedServices).map((serviceName) => {
+                  const service = getSelectedService(serviceName);
+                  return (
+                    <Badge 
+                      key={serviceName} 
+                      variant="secondary" 
+                      className={`${service?.bgColor} ${service?.iconColor} border-current/30`}
+                    >
+                      {serviceName}
+                    </Badge>
+                  );
+                })}
               </div>
             </>
           ) : (
@@ -160,7 +197,7 @@ const ServicePackageBuilder: React.FC = () => {
               <h3 className="text-xl font-semibold mb-2">
                 Start with our standard end-of-tenancy clean
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-6">
                 Or select additional services above for the ultimate package
               </p>
             </>
