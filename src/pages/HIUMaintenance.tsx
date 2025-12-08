@@ -21,12 +21,20 @@ import {
   Clock,
   Gauge,
   Volume2,
-  Building2
+  Building2,
+  Users,
+  Briefcase,
+  Star,
+  Quote
 } from "lucide-react";
 
 import heroImage from "@/assets/hiu-residential.jpg";
+import hiuInstallation from "@/assets/hiu-installation.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import TrustStrip from "@/components/TrustStrip";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { TrustMetrics } from "@/components/TrustMetrics";
 
 const hiuFaqs = [
   { question: "What is an HIU (Heat Interface Unit)?", answer: "An HIU is a compact unit that connects your property to a communal or district heating system. It provides heating and hot water without needing an individual gas boiler, common in modern apartment blocks." },
@@ -35,6 +43,61 @@ const hiuFaqs = [
   { question: "What's the difference between an HIU and CIU?", answer: "HIU (Heat Interface Unit) provides both heating and hot water. CIU (Central Interface Unit) often refers to the central control unit. Both require similar maintenance and are serviced together." },
   { question: "Do HIUs need Gas Safe registered engineers?", answer: "No, HIUs don't use gas so Gas Safe certification isn't required. However, engineers should be trained on HIU systems and hold relevant qualifications for heating work." },
   { question: "How much does HIU servicing cost?", answer: "HIU annual service typically costs £150-250. Emergency repairs can cost £300-800 for common issues. Full HIU replacement costs £1,500-3,500 including installation." }
+];
+
+const testimonials = [
+  {
+    quote: "Our residents used to complain about slow hot water every winter. After Mainteniq serviced all 48 HIUs in our block, the complaints stopped completely. Worth every penny.",
+    name: "Sarah Mitchell",
+    role: "Building Manager",
+    company: "Embassy Gardens",
+    rating: 5
+  },
+  {
+    quote: "I was quoted £2,800 for a replacement HIU. Mainteniq serviced it for £180 and it's been working perfectly for 18 months now. They saved my tenant from weeks without hot water.",
+    name: "David Chen",
+    role: "Landlord",
+    company: "BTL Portfolio",
+    rating: 5
+  },
+  {
+    quote: "Managing 200+ units across London, we needed a reliable HIU maintenance partner. Mainteniq's planned servicing has reduced our emergency callouts by 70%.",
+    name: "James Wilson",
+    role: "Operations Director",
+    company: "Foxtons Property Management",
+    rating: 5
+  }
+];
+
+const audienceCards = [
+  {
+    icon: Building2,
+    title: "Building Managers",
+    description: "Keep residents happy with reliable heating and fewer complaints",
+    color: "bg-trust-blue/10 border-trust-blue/20 hover:border-trust-blue/40",
+    iconColor: "text-trust-blue"
+  },
+  {
+    icon: Home,
+    title: "Landlords",
+    description: "Protect your investment and avoid costly emergency replacements",
+    color: "bg-accent-orange/10 border-accent-orange/20 hover:border-accent-orange/40",
+    iconColor: "text-accent-orange"
+  },
+  {
+    icon: Briefcase,
+    title: "Managing Agents",
+    description: "Streamline maintenance across your property portfolio",
+    color: "bg-teal-500/10 border-teal-500/20 hover:border-teal-500/40",
+    iconColor: "text-teal-500"
+  },
+  {
+    icon: Users,
+    title: "Housing Associations",
+    description: "Meet regulatory compliance and resident welfare requirements",
+    color: "bg-purple-500/10 border-purple-500/20 hover:border-purple-500/40",
+    iconColor: "text-purple-500"
+  }
 ];
 
 const HIUMaintenance = () => {
@@ -49,25 +112,33 @@ const HIUMaintenance = () => {
       symptom: "Hot water takes too long",
       icon: Clock,
       cause: "Strainer clog or scale buildup on heat exchanger",
-      solution: "Strainer cleaning and plate descaling"
+      solution: "Strainer cleaning and plate descaling",
+      color: "bg-orange-500/10 border-orange-500/30",
+      iconColor: "text-orange-500"
     },
     {
       symptom: "Temperature fluctuates",
       icon: Thermometer,
       cause: "Mixing valve needs calibration or actuator issue",
-      solution: "Valve calibration and actuator testing"
+      solution: "Valve calibration and actuator testing",
+      color: "bg-red-500/10 border-red-500/30",
+      iconColor: "text-red-500"
     },
     {
       symptom: "Strange noises from unit",
       icon: Volume2,
       cause: "Air in system or differential pressure imbalance",
-      solution: "Air bleeding and pressure valve adjustment"
+      solution: "Air bleeding and pressure valve adjustment",
+      color: "bg-purple-500/10 border-purple-500/30",
+      iconColor: "text-purple-500"
     },
     {
       symptom: "Heating not responding",
       icon: Gauge,
       cause: "Control failure or seized valve",
-      solution: "Control verification and valve servicing"
+      solution: "Control verification and valve servicing",
+      color: "bg-slate-500/10 border-slate-500/30",
+      iconColor: "text-slate-500"
     }
   ];
 
@@ -131,14 +202,68 @@ const HIUMaintenance = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest()}>
+              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("HIU/CIU Annual Service")}>
                 Schedule HIU/CIU Service
               </Button>
-              <Button size="lg" variant="hero">
+              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("Emergency HIU/CIU Repair - Urgent")}>
                 Emergency HIU/CIU Repair
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Trust Strip - Immediate Credibility */}
+      <TrustStrip />
+
+      {/* Who We Help Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <Badge variant="outline" className="mb-4">Who We Help</Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
+                HIU/CIU Specialists for London Properties
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground mb-8">
+                We service Heat Interface Units across residential blocks, build-to-rent developments, and housing association properties throughout London.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {audienceCards.map((card, index) => (
+                  <Card key={index} className={`${card.color} transition-all duration-300`}>
+                    <CardContent className="p-4">
+                      <card.icon className={`w-8 h-8 ${card.iconColor} mb-3`} />
+                      <h3 className="font-semibold text-foreground mb-1">{card.title}</h3>
+                      <p className="text-sm text-muted-foreground">{card.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src={hiuInstallation} 
+                alt="HIU installation and maintenance by Mainteniq technician" 
+                className="rounded-xl shadow-lg w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-success text-success-foreground px-4 py-2 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">500+ HIUs Serviced</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Metrics Strip */}
+      <section className="py-8 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <TrustMetrics />
         </div>
       </section>
 
@@ -270,8 +395,35 @@ const HIUMaintenance = () => {
         </div>
       </section>
 
-      {/* Signs You Need Service - Symptom-Based */}
+      {/* Before/After Visual Comparison */}
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              See the Difference Professional Servicing Makes
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Drag the slider to compare a scaled, inefficient heat exchanger with a professionally descaled and serviced unit.
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <BeforeAfterSlider
+              beforeSrc="/src/assets/hiu-before.svg"
+              afterSrc="/src/assets/hiu-after.svg"
+              beforeAlt="HIU heat exchanger before service - scaled and restricted flow"
+              afterAlt="HIU heat exchanger after service - clean and optimal flow"
+              beforeLabel="Before Service"
+              afterLabel="After Service"
+              ratio={16/9}
+              fit="contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Signs You Need Service - Symptom-Based with Psychological Colors */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <AlertCircle className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -286,18 +438,18 @@ const HIUMaintenance = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {signsYouNeedService.map((item, index) => (
               <AnimatedStatCard key={index} delay={index * 100}>
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                <Card className={`h-full hover:shadow-lg transition-all duration-300 border-2 ${item.color}`}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
-                        <item.icon className="w-6 h-6 text-primary" />
+                      <div className={`p-3 rounded-lg flex-shrink-0 ${item.color}`}>
+                        <item.icon className={`w-6 h-6 ${item.iconColor}`} />
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg mb-2">{item.symptom}</h3>
                         <p className="text-sm text-muted-foreground mb-2">
                           <span className="font-medium">Likely cause:</span> {item.cause}
                         </p>
-                        <p className="text-sm text-primary">
+                        <p className="text-sm text-success">
                           <span className="font-medium">Solution:</span> {item.solution}
                         </p>
                       </div>
@@ -311,7 +463,7 @@ const HIUMaintenance = () => {
       </section>
 
       {/* Our Service Process */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -406,7 +558,7 @@ const HIUMaintenance = () => {
       </section>
 
       {/* Service Outcomes */}
-      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -465,7 +617,7 @@ const HIUMaintenance = () => {
       </section>
 
       {/* Cost Comparison - Simplified */}
-      <section className="py-12 sm:py-16 md:py-20">
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -515,7 +667,7 @@ const HIUMaintenance = () => {
       </section>
 
       {/* UK Compliance Requirements */}
-      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
             <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -592,6 +744,43 @@ const HIUMaintenance = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <Quote className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Building managers and landlords trust us with their HIU maintenance
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedStatCard key={index} delay={index * 100}>
+                <Card className="h-full">
+                  <CardContent className="p-6">
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-energy-gold fill-energy-gold" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-6 italic">"{testimonial.quote}"</p>
+                    <div className="border-t pt-4">
+                      <p className="font-semibold text-foreground">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="text-sm text-primary">{testimonial.company}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-12 sm:py-16 md:py-20 bg-accent-orange">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center">
@@ -604,10 +793,10 @@ const HIUMaintenance = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
+            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest("HIU/CIU Annual Service Quote")}>
               Get HIU/CIU Service Quote
             </Button>
-            <Button size="lg" variant="hero">
+            <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("Emergency HIU/CIU Repair - Urgent")}>
               Emergency HIU/CIU Repair
             </Button>
           </div>
