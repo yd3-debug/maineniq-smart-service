@@ -29,11 +29,10 @@ import {
 } from "lucide-react";
 
 import heroImage from "@/assets/hiu-residential.jpg";
-import hiuInstallation from "@/assets/hiu-installation.jpg";
+import systemInspection from "@/assets/system-inspection.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 import TrustStrip from "@/components/TrustStrip";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { TrustMetrics } from "@/components/TrustMetrics";
 
 const hiuFaqs = [
@@ -244,8 +243,8 @@ const HIUMaintenance = () => {
             
             <div className="relative">
               <img 
-                src={hiuInstallation} 
-                alt="HIU installation and maintenance by Mainteniq technician" 
+                src={systemInspection} 
+                alt="Mainteniq technician inspecting HIU system" 
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
                 loading="lazy"
               />
@@ -395,29 +394,76 @@ const HIUMaintenance = () => {
         </div>
       </section>
 
-      {/* Before/After Visual Comparison */}
+      {/* What You Get From Professional Servicing */}
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
+            <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              See the Difference Professional Servicing Makes
+              What You Get From Professional Servicing
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-              Drag the slider to compare a scaled, inefficient heat exchanger with a professionally descaled and serviced unit.
+              Our comprehensive HIU/CIU service delivers measurable improvements you'll notice immediately.
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto">
-            <BeforeAfterSlider
-              beforeSrc="/src/assets/hiu-before.svg"
-              afterSrc="/src/assets/hiu-after.svg"
-              beforeAlt="HIU heat exchanger before service - scaled and restricted flow"
-              afterAlt="HIU heat exchanger after service - clean and optimal flow"
-              beforeLabel="Before Service"
-              afterLabel="After Service"
-              ratio={16/9}
-              fit="contain"
-            />
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="bg-orange-500/10 border-orange-500/30 hover:border-orange-500/50 transition-all">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-4">
+                    <Droplets className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">Faster Hot Water</h3>
+                  <p className="text-sm text-muted-foreground">Hot water in under 10 seconds instead of minutes of waiting</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-green-500/10 border-green-500/30 hover:border-green-500/50 transition-all">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-6 h-6 text-green-500" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">Lower Energy Bills</h3>
+                  <p className="text-sm text-muted-foreground">Up to 15% efficiency improvement from clean heat exchanger</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-purple-500/10 border-purple-500/30 hover:border-purple-500/50 transition-all">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
+                    <Volume2 className="w-6 h-6 text-purple-500" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">Quieter Operation</h3>
+                  <p className="text-sm text-muted-foreground">No more banging, gurgling or whistling sounds</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-blue-500/10 border-blue-500/30 hover:border-blue-500/50 transition-all">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-6 h-6 text-blue-500" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">Peace of Mind</h3>
+                  <p className="text-sm text-muted-foreground">12-month service guarantee and full documentation</p>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src={systemInspection} 
+                alt="Professional HIU servicing by Mainteniq engineer" 
+                className="rounded-xl shadow-lg w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">90-Minute Full Service</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
