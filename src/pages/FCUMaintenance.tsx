@@ -3,28 +3,39 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ResearchBadge } from "@/components/ResearchBadge";
 import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
-import { ProgressMetric } from "@/components/ProgressMetric";
-import { Separator } from "@/components/ui/separator";
 import { handleQuoteRequest } from "@/utils/quote";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import TrustStrip from "@/components/TrustStrip";
+import { TrustMetrics } from "@/components/TrustMetrics";
+import SEOHead from "@/components/SEOHead";
+import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 import { 
-  AlertTriangle, 
-  TrendingUp, 
-  Calendar, 
-  Thermometer,
   Wind,
-  Zap,
-  DollarSign,
   CheckCircle,
   XCircle,
+  Shield,
+  Building2,
+  Users,
+  Briefcase,
+  Home,
+  ChevronDown,
+  Thermometer,
+  Droplets,
+  Volume2,
   Clock,
-  Shield
+  Zap,
+  Star,
+  Quote,
+  MapPin,
+  Fan,
+  Settings,
+  AlertCircle
 } from "lucide-react";
+import { useState } from "react";
 
 import heroImage from "@/assets/fcu-commercial.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
-import maintenanceImage from "@/assets/hvac-maintenance.jpg";
-import professionalImage from "@/assets/hvac-professional.jpg";
-import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import fcuInstallationImage from "@/assets/fcu-installation.jpg";
+import systemInspectionImage from "@/assets/system-inspection.jpg";
 
 const fcuFaqs = [
   { question: "What is an FCU (Fan Coil Unit)?", answer: "A Fan Coil Unit is a heating/cooling device consisting of a fan and heating/cooling coils. It circulates air through the coils to maintain room temperature in commercial and residential buildings." },
@@ -36,24 +47,90 @@ const fcuFaqs = [
 ];
 
 const FCUMaintenance = () => {
-  const neglectScenarios = [
+  const [learnMoreOpen, setLearnMoreOpen] = useState(false);
+
+  const audienceCards = [
     {
-      stage: "3 Months",
-      issue: "Dirty Filters & Dust Buildup",
-      consequence: "15-25% efficiency loss, poor air quality",
-      cost: "£150-300 in extra energy costs"
+      icon: Building2,
+      title: "Facilities Managers",
+      description: "Keep tenants comfortable year-round with reliable climate control",
+      color: "bg-blue-500/10 border-blue-500/30 text-blue-600"
     },
     {
-      stage: "6 Months", 
-      issue: "Coil Fouling & Blocked Drainage",
-      consequence: "Water leaks, mold growth, tenant complaints",
-      cost: "£500-1,500 emergency repairs"
+      icon: Briefcase,
+      title: "Commercial Landlords",
+      description: "Protect property value and reduce tenant complaints",
+      color: "bg-orange-500/10 border-orange-500/30 text-orange-600"
     },
     {
-      stage: "12 Months",
-      issue: "Fan Motor Strain & System Failure",
-      consequence: "Complete breakdown, no heating/cooling",
-      cost: "£2,000-5,000 replacement costs"
+      icon: Users,
+      title: "Office Managers",
+      description: "Maintain productive work environments with optimal air quality",
+      color: "bg-teal-500/10 border-teal-500/30 text-teal-600"
+    },
+    {
+      icon: Home,
+      title: "Property Management",
+      description: "Streamline maintenance across your entire portfolio",
+      color: "bg-purple-500/10 border-purple-500/30 text-purple-600"
+    }
+  ];
+
+  const symptomCards = [
+    {
+      icon: Wind,
+      title: "Weak airflow or no cooling",
+      description: "Blocked filters or fan motor issues reducing performance",
+      color: "bg-orange-500/10 border-orange-500/30",
+      iconColor: "text-orange-500"
+    },
+    {
+      icon: Thermometer,
+      title: "Inconsistent temperatures",
+      description: "Control or thermostat problems causing hot/cold spots",
+      color: "bg-red-500/10 border-red-500/30",
+      iconColor: "text-red-500"
+    },
+    {
+      icon: Droplets,
+      title: "Water dripping from unit",
+      description: "Blocked condensate drain causing water damage risk",
+      color: "bg-purple-500/10 border-purple-500/30",
+      iconColor: "text-purple-500"
+    },
+    {
+      icon: Volume2,
+      title: "Musty smell or unusual noise",
+      description: "Mold growth on coils or worn bearings need attention",
+      color: "bg-slate-500/10 border-slate-500/30",
+      iconColor: "text-slate-500"
+    }
+  ];
+
+  const outcomeCards = [
+    {
+      icon: Wind,
+      title: "Better Air Quality",
+      description: "Cleaner, healthier indoor environment for everyone",
+      metric: "99% filter efficiency"
+    },
+    {
+      icon: Zap,
+      title: "Lower Energy Bills",
+      description: "Optimised performance reduces running costs",
+      metric: "Up to 25% savings"
+    },
+    {
+      icon: Volume2,
+      title: "Quieter Operation",
+      description: "No rattling fans or noisy bearings",
+      metric: "Whisper-quiet"
+    },
+    {
+      icon: Clock,
+      title: "Extended Lifespan",
+      description: "Proper care extends equipment life significantly",
+      metric: "15+ years vs 8-10"
     }
   ];
 
@@ -66,9 +143,39 @@ const FCUMaintenance = () => {
     { task: "Electrical connections check", frequency: "Annually", benefit: "Safety & reliable operation" }
   ];
 
+  const testimonials = [
+    {
+      quote: "Since switching to Mainteniq for our FCU maintenance, we've had zero complaints about temperature issues. The quarterly visits keep everything running perfectly.",
+      author: "James Wilson",
+      role: "Facilities Manager",
+      location: "Canary Wharf Office Complex",
+      rating: 5
+    },
+    {
+      quote: "The team identified a failing motor before it caused a breakdown. That saved us thousands in emergency repairs and kept our tenants happy.",
+      author: "Sarah Ahmed",
+      role: "Commercial Property Owner",
+      location: "City of London",
+      rating: 5
+    },
+    {
+      quote: "Managing 50+ FCUs across multiple buildings was a nightmare until we found Mainteniq. Their systematic approach and reporting makes my job so much easier.",
+      author: "Michael Chen",
+      role: "Property Portfolio Manager",
+      location: "West End, London",
+      rating: 5
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-blue/5">
+      <SEOHead 
+        title="FCU Maintenance London | Fan Coil Unit Servicing | Mainteniq"
+        description="Professional FCU maintenance and servicing across London. Keep your fan coil units running efficiently with our certified engineers. Preventive maintenance from £150/unit."
+        keywords="FCU maintenance London, fan coil unit servicing, FCU cleaning, commercial HVAC maintenance, air conditioning service UK"
+      />
       <EnhancedFAQSchema faqs={fcuFaqs} pageTitle="FCU Maintenance" />
+      
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div 
@@ -97,10 +204,10 @@ const FCUMaintenance = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest()}>
+              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("FCU Maintenance Service")}>
                 Schedule FCU Service
               </Button>
-              <Button size="lg" variant="hero">
+              <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("Emergency FCU Repair - Urgent")}>
                 Emergency FCU Repair
               </Button>
             </div>
@@ -108,74 +215,271 @@ const FCUMaintenance = () => {
         </div>
       </section>
 
-      {/* What Happens Without Maintenance - Warning Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-destructive/5">
+      {/* Trust Strip */}
+      <TrustStrip />
+
+      {/* Who We Help Section */}
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <Badge variant="outline" className="mb-4">Who We Help</Badge>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                FCU Maintenance for London Commercial Properties
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Whether you manage a single office or a portfolio of commercial buildings, we keep your fan coil units running at peak performance all year round.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
+                {audienceCards.map((card, index) => (
+                  <AnimatedStatCard key={index} delay={index * 100}>
+                    <Card className={`h-full border ${card.color.split(' ')[1]} hover:shadow-md transition-all`}>
+                      <CardContent className="p-4">
+                        <div className={`w-10 h-10 rounded-lg ${card.color.split(' ')[0]} flex items-center justify-center mb-3`}>
+                          <card.icon className={`w-5 h-5 ${card.color.split(' ')[2]}`} />
+                        </div>
+                        <h3 className="font-semibold mb-1">{card.title}</h3>
+                        <p className="text-sm text-muted-foreground">{card.description}</p>
+                      </CardContent>
+                    </Card>
+                  </AnimatedStatCard>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src={fcuInstallationImage} 
+                alt="Professional FCU maintenance technician servicing a fan coil unit in a London commercial building"
+                className="rounded-2xl shadow-2xl w-full"
+              />
+              <div className="absolute bottom-4 left-4 bg-primary/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="font-semibold">500+ FCUs Serviced</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Metrics */}
+      <TrustMetrics />
+
+      {/* What is an FCU? Educational Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-12">
-            <AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-4" />
+            <Badge variant="outline" className="mb-4">Understanding Your System</Badge>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              The Cost of FCU Neglect
+              What is an FCU?
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              See exactly what happens when FCU maintenance is ignored - and why prevention costs 90% less than emergency repairs.
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Fan Coil Units are essential climate control systems found in most commercial buildings. Understanding how they work helps you recognise when maintenance is needed.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {neglectScenarios.map((scenario, index) => (
-              <AnimatedStatCard key={index} delay={index * 200} className="h-full">
-                <Card className="h-full border-destructive/20 hover:border-destructive/40 transition-colors">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="destructive">{scenario.stage}</Badge>
-                      <XCircle className="w-6 h-6 text-destructive" />
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <AnimatedStatCard>
+              <Card className="h-full text-center">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+                    <MapPin className="w-7 h-7 text-blue-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Where They're Found</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Offices, hotels, hospitals, retail spaces, and apartment blocks use FCUs for individual room climate control.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedStatCard>
+
+            <AnimatedStatCard delay={100}>
+              <Card className="h-full text-center">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
+                    <Fan className="w-7 h-7 text-teal-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">How They Work</h3>
+                  <p className="text-muted-foreground text-sm">
+                    A fan circulates room air through heating or cooling coils connected to central hot/chilled water systems.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedStatCard>
+
+            <AnimatedStatCard delay={200}>
+              <Card className="h-full text-center">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
+                    <Settings className="w-7 h-7 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Why Maintenance Matters</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Filters clog, coils foul with dust, and drains block - causing inefficiency, water damage, and poor air quality.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedStatCard>
+          </div>
+
+          <Collapsible open={learnMoreOpen} onOpenChange={setLearnMoreOpen}>
+            <CollapsibleTrigger asChild>
+              <Button variant="outline" className="mx-auto flex items-center gap-2">
+                Learn More About FCU Systems
+                <ChevronDown className={`w-4 h-4 transition-transform ${learnMoreOpen ? 'rotate-180' : ''}`} />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-6">
+              <Card className="bg-card/80">
+                <CardContent className="p-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold mb-3">FCU Types We Service</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          2-pipe heating/cooling systems
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          4-pipe simultaneous heating/cooling
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Ceiling-mounted cassette units
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Floor-standing vertical units
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Ducted concealed units
+                        </li>
+                      </ul>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{scenario.issue}</h3>
-                    <p className="text-muted-foreground mb-4">{scenario.consequence}</p>
-                    <div className="text-destructive font-bold">{scenario.cost}</div>
+                    <div>
+                      <h4 className="font-semibold mb-3">Common FCU Brands</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Trane, Carrier, Daikin
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Johnson Controls, Honeywell
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Myson, Biddle, Dunham-Bush
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          Aermec, Ciat, Climaveneta
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-success" />
+                          All other major manufacturers
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
+      </section>
+
+      {/* Signs You Need Service - Symptom Based */}
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4 border-amber-500/50 text-amber-600">
+              <AlertCircle className="w-4 h-4 mr-2" />
+              Warning Signs
+            </Badge>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Signs Your FCU Needs Service
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Recognising these symptoms early prevents costly repairs and keeps your building comfortable.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {symptomCards.map((card, index) => (
+              <AnimatedStatCard key={index} delay={index * 100}>
+                <Card className={`h-full border ${card.color.split(' ')[1]} hover:shadow-lg transition-all`}>
+                  <CardContent className="p-6">
+                    <div className={`w-12 h-12 rounded-lg ${card.color.split(' ')[0]} flex items-center justify-center mb-4`}>
+                      <card.icon className={`w-6 h-6 ${card.iconColor}`} />
+                    </div>
+                    <h3 className="font-semibold mb-2">{card.title}</h3>
+                    <p className="text-sm text-muted-foreground">{card.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedStatCard>
             ))}
           </div>
 
-          {/* Before/After Comparison */}
-          <AnimatedChart delay={600}>
-            <Card className="bg-card/80 backdrop-blur">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <img 
-                      src={beforeAfterImage} 
-                      alt="FCU before and after maintenance comparison"
-                      className="rounded-lg shadow-lg w-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-6">Before vs After Regular FCU Maintenance</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Efficiency:</strong> 95% vs 60% (unmaintained)</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Energy Bills:</strong> £200/month vs £350/month</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Breakdowns:</strong> 0 vs 3-4 per year</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-success" />
-                        <span><strong>Lifespan:</strong> 15+ years vs 8-10 years</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </AnimatedChart>
+          <div className="text-center mt-8">
+            <Button size="lg" onClick={() => handleQuoteRequest("FCU Service - Symptoms Noticed")}>
+              Experiencing Any of These? Get Help Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Get From Professional Servicing */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent-blue/5">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <Badge variant="outline" className="mb-4 border-success/50 text-success">
+                <CheckCircle className="w-4 h-4 mr-2" />
+                Service Outcomes
+              </Badge>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                What You Get From Professional Servicing
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Regular FCU maintenance delivers measurable improvements in comfort, efficiency, and equipment lifespan.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
+                {outcomeCards.map((card, index) => (
+                  <AnimatedStatCard key={index} delay={index * 100}>
+                    <Card className="h-full bg-card/80 hover:bg-card transition-colors">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center flex-shrink-0">
+                            <card.icon className="w-5 h-5 text-success" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold mb-1">{card.title}</h3>
+                            <p className="text-sm text-muted-foreground mb-2">{card.description}</p>
+                            <Badge variant="secondary" className="text-xs">{card.metric}</Badge>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </AnimatedStatCard>
+                ))}
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <img 
+                src={systemInspectionImage} 
+                alt="Professional technician performing FCU maintenance inspection in London commercial building"
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -303,6 +607,41 @@ const FCUMaintenance = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">Client Feedback</Badge>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedStatCard key={index} delay={index * 100}>
+                <Card className="h-full">
+                  <CardContent className="p-6">
+                    <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                    <p className="text-muted-foreground mb-6 italic">"{testimonial.quote}"</p>
+                    <div className="flex items-center gap-1 mb-3">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <div>
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
@@ -315,10 +654,10 @@ const FCUMaintenance = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest()}>
+            <Button size="lg" variant="accent" onClick={() => handleQuoteRequest("FCU Maintenance Quote")}>
               Get FCU Maintenance Quote
             </Button>
-            <Button size="lg" variant="hero">
+            <Button size="lg" variant="hero" onClick={() => handleQuoteRequest("Emergency FCU Repair - Urgent")}>
               Schedule Emergency Repair
             </Button>
           </div>
