@@ -37,6 +37,7 @@ import systemInspectionImage from "@/assets/system-inspection.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 import SEOHead from "@/components/SEOHead";
+import { generateBreadcrumbSchema, generateFAQSchema, generateMVHRServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
 import {
@@ -215,8 +216,15 @@ const MVHRMaintenance = () => {
       <SEOHead
         title="MVHR Maintenance London | Filter Replacement & Heat Recovery Service"
         description="Professional MVHR maintenance services in London. Filter replacement, heat exchanger cleaning, ductwork inspection. Improve air quality & energy efficiency. Free quote."
-        keywords="MVHR maintenance London, mechanical ventilation heat recovery, MVHR filter replacement, heat recovery service, MVHR cleaning, ventilation maintenance"
+        keywords="MVHR maintenance London, mechanical ventilation heat recovery, MVHR filter replacement, heat recovery service, MVHR cleaning, ventilation maintenance, air quality service"
         canonicalUrl="https://www.mainteniq.co.uk/mvhr-maintenance"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "MVHR Maintenance", url: "https://www.mainteniq.co.uk/mvhr-maintenance" }
+        ])}
+        faqData={generateFAQSchema(mvhrFaqs)}
+        serviceData={generateMVHRServiceSchema()}
       />
       <EnhancedFAQSchema faqs={mvhrFaqs} pageTitle="MVHR Maintenance" />
       

@@ -290,7 +290,7 @@ const EndOfTenancyCleaning: React.FC = () => {
         title="End of Tenancy Cleaning London | Deposit-Safe Deep Clean | Mainteniq"
         description="Professional end of tenancy cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability. From £160."
         keywords="end of tenancy cleaning London, move out cleaning, deposit return cleaning, deep cleaning London, professional cleaning, inventory cleaning, landlord cleaning service, Airbnb cleaning London, rental property cleaning"
-        canonicalUrl="/end-of-tenancy-cleaning"
+        canonicalUrl="https://www.mainteniq.co.uk/end-of-tenancy-cleaning"
         structuredData={generateCleaningServiceSchema()}
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
