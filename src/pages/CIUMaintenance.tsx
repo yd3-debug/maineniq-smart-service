@@ -267,48 +267,69 @@ const CIUMaintenance = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <AnimatedStatCard>
-              <Card className="h-full bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-blue-500/20">
-                <CardContent className="p-6">
-                  <Settings className="w-12 h-12 text-blue-500 mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">What is a CIU?</h3>
-                  <p className="text-muted-foreground text-sm">
-                    A Central Interface Unit is the brain of your building's zone control system. 
-                    It manages temperature, airflow, and comfort across multiple zones, 
-                    integrating with your BMS for centralized control.
-                  </p>
-                </CardContent>
-              </Card>
-            </AnimatedStatCard>
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            {/* CIU Image */}
+            <div className="flex items-center justify-center">
+              <img 
+                src="/CIU.png" 
+                alt="Central Interface Unit (CIU) control panel for commercial HVAC zone management"
+                className="rounded-xl shadow-xl w-full max-w-md object-cover"
+              />
+            </div>
 
-            <AnimatedStatCard delay={100}>
-              <Card className="h-full bg-gradient-to-br from-teal-500/5 to-teal-500/10 border-teal-500/20">
-                <CardContent className="p-6">
-                  <Building className="w-12 h-12 text-teal-500 mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Where They're Found</h3>
-                  <p className="text-muted-foreground text-sm">
-                    CIUs are essential in commercial offices, hotels, hospitals, 
-                    shopping centres, and large residential developments—anywhere 
-                    that needs precise multi-zone climate control.
-                  </p>
-                </CardContent>
-              </Card>
-            </AnimatedStatCard>
+            {/* Info Cards */}
+            <div className="space-y-4">
+              <AnimatedStatCard>
+                <Card className="bg-gradient-to-br from-blue-500/5 to-blue-500/10 border-blue-500/20">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <Settings className="w-10 h-10 text-blue-500 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">What is a CIU?</h3>
+                        <p className="text-muted-foreground text-sm">
+                          A Central Interface Unit is the brain of your building's zone control system. 
+                          It manages temperature, airflow, and comfort across multiple zones.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
 
-            <AnimatedStatCard delay={200}>
-              <Card className="h-full bg-gradient-to-br from-purple-500/5 to-purple-500/10 border-purple-500/20">
-                <CardContent className="p-6">
-                  <AlertTriangle className="w-12 h-12 text-purple-500 mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Why Maintenance Matters</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Without regular calibration, CIUs drift out of specification—causing 
-                    hot/cold spots, energy waste, valve failures, and BMS communication 
-                    errors that affect your entire building.
-                  </p>
-                </CardContent>
-              </Card>
-            </AnimatedStatCard>
+              <AnimatedStatCard delay={100}>
+                <Card className="bg-gradient-to-br from-teal-500/5 to-teal-500/10 border-teal-500/20">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <Building className="w-10 h-10 text-teal-500 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Where They're Found</h3>
+                        <p className="text-muted-foreground text-sm">
+                          CIUs are essential in commercial offices, hotels, hospitals, 
+                          shopping centres, and large residential developments.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
+
+              <AnimatedStatCard delay={200}>
+                <Card className="bg-gradient-to-br from-purple-500/5 to-purple-500/10 border-purple-500/20">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <AlertTriangle className="w-10 h-10 text-purple-500 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Why Maintenance Matters</h3>
+                        <p className="text-muted-foreground text-sm">
+                          Without regular calibration, CIUs cause hot/cold spots, energy waste, 
+                          and BMS communication errors that affect your entire building.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedStatCard>
+            </div>
           </div>
 
           <Collapsible open={learnMoreOpen} onOpenChange={setLearnMoreOpen}>
