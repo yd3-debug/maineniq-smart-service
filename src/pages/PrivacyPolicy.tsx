@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const PrivacyPolicy = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Privacy Policy", url: "https://www.mainteniq.co.uk/privacy-policy" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Privacy Policy - MaintenIQ HVAC Services"
         description="Learn how MaintenIQ collects, uses, and protects your personal information. Comprehensive privacy policy for our HVAC maintenance and installation services."
-        keywords="privacy policy, data protection, MaintenIQ, HVAC services"
+        keywords="privacy policy, data protection, MaintenIQ, HVAC services, UK GDPR"
+        canonicalUrl="https://www.mainteniq.co.uk/privacy-policy"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

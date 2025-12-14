@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const HealthSafetyPolicy = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Health & Safety Policy", url: "https://www.mainteniq.co.uk/health-safety-policy" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Health & Safety Policy - MaintenIQ HVAC Services"
         description="MaintenIQ's comprehensive health and safety policy for HVAC work. Our commitment to safe working practices and regulatory compliance."
         keywords="health safety policy, HVAC safety, workplace safety, Gas Safe, MaintenIQ"
+        canonicalUrl="https://www.mainteniq.co.uk/health-safety-policy"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

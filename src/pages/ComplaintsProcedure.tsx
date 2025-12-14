@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const ComplaintsProcedure = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Complaints Procedure", url: "https://www.mainteniq.co.uk/complaints-procedure" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Complaints Procedure - MaintenIQ HVAC Services"
         description="How to make a complaint about MaintenIQ services. Our formal complaints handling process and resolution procedures."
         keywords="complaints procedure, customer service, complaint resolution, MaintenIQ, HVAC services"
+        canonicalUrl="https://www.mainteniq.co.uk/complaints-procedure"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

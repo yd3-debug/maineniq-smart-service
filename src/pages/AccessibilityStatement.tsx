@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const AccessibilityStatement = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Accessibility Statement", url: "https://www.mainteniq.co.uk/accessibility-statement" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Accessibility Statement - MaintenIQ HVAC Services"
         description="MaintenIQ's commitment to web accessibility. Learn about our WCAG compliance efforts and accessibility features for all users."
         keywords="accessibility statement, WCAG compliance, web accessibility, MaintenIQ"
+        canonicalUrl="https://www.mainteniq.co.uk/accessibility-statement"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">
