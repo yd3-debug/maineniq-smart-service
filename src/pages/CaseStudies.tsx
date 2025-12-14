@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { ComingSoon } from "@/components/ComingSoon";
+import SEOHead from "@/components/SEOHead";
+import { generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   Calendar,
   MapPin,
@@ -41,48 +43,41 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
     const [selectedFilter, setSelectedFilter] = useState("All");
     const [selectedProject, setSelectedProject] = useState(null);
     
+    const breadcrumbData = generateBreadcrumbSchema([
+      { name: "Home", url: "https://www.mainteniq.co.uk" },
+      { name: "Case Studies", url: "https://www.mainteniq.co.uk/case-studies" }
+    ]);
+    
     // Check if in development mode
     const isDevelopmentMode = new URLSearchParams(window.location.search).get('dev') === 'true' || 
                              localStorage.getItem('case-studies-dev-mode') === 'true';
 
     // If not in development mode, show coming soon page
     if (!isDevelopmentMode) {
-      return <ComingSoon 
-        title="Property Services Case Studies" 
-        subtitle="Comprehensive renovation and property services success stories showcasing professional results, transformations, and value improvements across London properties"
-        expectedDate="March 2025"
-        features={[
-          "Complete renovation project breakdowns with before/after visuals",
-          "HVAC, handyman, smart home, and cleaning service case studies", 
-          "Property value improvements and cost savings data",
-          "Before and after transformation metrics and testimonials",
-          "Professional service results across all property types"
-        ]}
-      />;
+      return (
+        <>
+          <SEOHead
+            title="Property Services Case Studies | Renovation & Maintenance Results | Mainteniq"
+            description="Real property transformation success stories: complete renovations, HVAC services, smart home installations, handyman work, and cleaning services. Professional results that add value."
+            keywords="case studies property services, renovation before after, HVAC case studies, property transformation London"
+            canonicalUrl="https://www.mainteniq.co.uk/case-studies"
+            breadcrumbData={breadcrumbData}
+          />
+          <ComingSoon 
+            title="Property Services Case Studies" 
+            subtitle="Comprehensive renovation and property services success stories showcasing professional results, transformations, and value improvements across London properties"
+            expectedDate="March 2025"
+            features={[
+              "Complete renovation project breakdowns with before/after visuals",
+              "HVAC, handyman, smart home, and cleaning service case studies", 
+              "Property value improvements and cost savings data",
+              "Before and after transformation metrics and testimonials",
+              "Professional service results across all property types"
+            ]}
+          />
+        </>
+      );
     }
-
-// SEO: title, meta description, canonical
-    useEffect(() => {
-      document.title = "Property Services Case Studies | Renovation & Maintenance Results | Mainteniq";
-      const description =
-        "Real property transformation success stories: complete renovations, HVAC services, smart home installations, handyman work, and cleaning services. Professional results that add value and improve living.";
-      const metaDesc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-      if (metaDesc) {
-        metaDesc.setAttribute("content", description);
-      } else {
-        const m = document.createElement("meta");
-        m.name = "description";
-        m.content = description;
-        document.head.appendChild(m);
-      }
-      let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-      if (!link) {
-        link = document.createElement("link");
-        link.rel = "canonical";
-        document.head.appendChild(link);
-      }
-      link.href = window.location.origin + "/case-studies";
-    }, []);
 
     const projectFilters = ["All", "Full Renovation", "Kitchen & Bathroom", "HVAC Services", "Smart Home", "Handyman", "Cleaning Services", "Commercial Fit-out"];
 
