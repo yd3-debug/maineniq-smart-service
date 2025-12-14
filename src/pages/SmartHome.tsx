@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import FullBleedHero from "@/components/FullBleedHero";
-import smartHomeSetup from "@/assets/smart-home-setup.jpg";
-import smartHomeDashboard from "@/assets/smart-home-dashboard.jpg";
-import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
+import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
+import smartLightingControl from "@/assets/smart-lighting-control.jpg";
+import smartSecuritySystem from "@/assets/smart-security-system.jpg";
 import { 
   Smartphone, Shield, Zap, Brain, Lightbulb, Phone, Lock, Tv, 
   Home, Building2, Key, Briefcase, Wifi, WifiOff, Eye, AppWindow,
@@ -220,8 +220,8 @@ const SmartHome: React.FC = () => {
       <FullBleedHero
         title="Smart Home Automation"
         subtitle="Transform your home with intelligent lighting, entertainment, security and energy monitoring. Professional installation with comprehensive automation."
-        image={smartHomeSetup}
-        alt="Smart home control panel for lighting, security and entertainment"
+        image={smartHomeAutomation}
+        alt="Smart home automation system with integrated lighting and security controls"
         primaryLabel="Request Smart Home Consultation"
         primaryOnClick={() => handleQuoteRequest("Smart Home Consultation")}
         secondaryLabel="Request Callback"
@@ -260,8 +260,8 @@ const SmartHome: React.FC = () => {
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src={smartHomeDashboard} 
-                alt="Smart home dashboard showing unified device control" 
+                src={smartLightingControl} 
+                alt="Smart lighting control panel with automated scenes"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -384,8 +384,8 @@ const SmartHome: React.FC = () => {
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src={satisfiedCustomer} 
-                alt="Satisfied customer using smart home controls" 
+                src={smartSecuritySystem} 
+                alt="Smart security system with cameras and access control"
                 className="w-full h-auto object-cover"
               />
             </div>
