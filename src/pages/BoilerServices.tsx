@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,6 +27,8 @@ import {
 } from "lucide-react";
 import { handleQuoteRequest } from "@/utils/quote";
 import { TrustMetrics } from "@/components/TrustMetrics";
+import SEOHead from "@/components/SEOHead";
+import { generateFAQSchema, generateBreadcrumbSchema, generateServiceSchema } from "@/utils/structuredData";
 
 const BoilerServices = () => {
   const audienceCards = [
@@ -163,17 +164,39 @@ const BoilerServices = () => {
     }
   ];
 
+  const boilerFAQs = [
+    { question: "How often should I service my boiler?", answer: "Boilers should be serviced annually to maintain efficiency, safety, and warranty validity. For landlords, an annual CP12 Gas Safety Certificate is a legal requirement." },
+    { question: "What is a CP12 Gas Safety Certificate?", answer: "A CP12 is a legal document that proves all gas appliances in a rental property have been checked and are safe. Landlords must have one issued annually by a Gas Safe registered engineer." },
+    { question: "How much does a boiler service cost in London?", answer: "A standard boiler service in London typically costs between £70-£120. We offer competitive rates with no hidden fees and same-day service available." },
+    { question: "Do you offer emergency boiler repairs?", answer: "Yes, we provide 24/7 emergency boiler repair services across London. Our Gas Safe engineers can usually attend within hours for urgent breakdowns." },
+    { question: "Which boiler brands do you service?", answer: "We service all major brands including Worcester Bosch, Vaillant, Baxi, Ideal, Viessmann, Glow-worm, Potterton, Alpha, Ferroli, and Main." }
+  ];
+
+  const breadcrumbItems = [
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+    { name: "Boiler Services", url: "https://www.mainteniq.co.uk/boiler-services" }
+  ];
+
+  const boilerServiceSchema = generateServiceSchema({
+    name: "Boiler Services London - Repair, Installation & CP12",
+    description: "Gas Safe registered boiler services in London. Expert boiler repair, installation, servicing and CP12 certificates for landlords. Same-day emergency response available.",
+    url: "https://www.mainteniq.co.uk/boiler-services",
+    serviceType: "Boiler Repair and Installation",
+    image: "https://www.mainteniq.co.uk/BOILER.png"
+  });
+
   return (
     <>
-      <Helmet>
-        <title>Boiler Services London | Repair, Installation & CP12 | Mainteniq</title>
-        <meta 
-          name="description" 
-          content="Gas Safe registered boiler services in London. Boiler repair, installation, servicing & CP12 certificates for landlords. Same-day emergency response. Call now!" 
-        />
-        <meta name="keywords" content="boiler repair london, boiler service, CP12 certificate, gas safe engineer, boiler installation, emergency boiler repair, landlord gas safety" />
-        <link rel="canonical" href="https://www.mainteniq.co.uk/boiler-services" />
-      </Helmet>
+      <SEOHead
+        title="Boiler Services London | Repair, Installation & CP12 | Mainteniq"
+        description="Gas Safe registered boiler services in London. Boiler repair, installation, servicing & CP12 certificates for landlords. Same-day emergency response. Call now!"
+        keywords="boiler repair london, boiler service london, CP12 certificate london, gas safe engineer london, boiler installation london, emergency boiler repair london, landlord gas safety certificate, boiler servicing near me, Worcester Bosch engineer london, combi boiler repair, boiler breakdown london"
+        canonicalUrl="/boiler-services"
+        structuredData={boilerServiceSchema}
+        breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
+        faqData={generateFAQSchema(boilerFAQs)}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">

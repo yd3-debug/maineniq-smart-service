@@ -87,14 +87,22 @@ const EnhancedSEO = ({
       { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'bingbot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { name: 'slurp', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { name: 'DuckDuckBot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { name: 'GPTBot', content: 'index, follow' },
+      { name: 'ClaudeBot', content: 'index, follow' },
+      { name: 'PerplexityBot', content: 'index, follow' },
       { name: 'rating', content: '4.9' },
       { name: 'price_range', content: '££' },
       { name: 'availability', content: '24/7' },
-      { name: 'coverage_area', content: 'United Kingdom' },
+      { name: 'coverage_area', content: 'London and 120-mile radius' },
       { name: 'emergency_service', content: 'Available 24/7' },
-      { name: 'certifications', content: 'Gas Safe, NICEIC, F-Gas Certified' },
+      { name: 'certifications', content: 'Gas Safe Registered, NICEIC Approved, F-Gas Certified' },
       { name: 'business_type', content: 'Property Maintenance Services' },
-      { name: 'service_areas', content: 'London, Manchester, Birmingham, Leeds, Liverpool, Bristol, Newcastle, Sheffield, Nottingham, Bradford, Edinburgh, Glasgow, Cardiff' }
+      { name: 'service_areas', content: 'London, Greater London, Essex, Kent, Surrey, Hertfordshire, Buckinghamshire, Berkshire' },
+      { name: 'ai:last_updated', content: '2025-12-14' },
+      { name: 'ai:business_hours', content: '24/7 Emergency, Mon-Fri 8am-6pm Standard' },
+      { name: 'ai:accepts_emergency_calls', content: 'true' },
+      { name: 'ai:response_time', content: 'Same day emergency, 24-48h standard bookings' }
     ];
 
     aiTags.forEach(tag => {

@@ -7,6 +7,7 @@ import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/A
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { handleQuoteRequest } from "@/utils/quote";
 import SEOHead from "@/components/SEOHead";
+import { generateFAQSchema, generateBreadcrumbSchema, generateServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
 import { 
@@ -159,12 +160,37 @@ const CIUMaintenance = () => {
     }
   ];
 
+  const ciuFAQs = [
+    { question: "What is a CIU and what does it do?", answer: "A Central Interface Unit (CIU) is the brain of your building's zone control system. It manages temperature, airflow, and comfort across multiple zones by controlling valve actuators, dampers, and fan speeds." },
+    { question: "How often should CIU systems be serviced?", answer: "We recommend quarterly inspections with bi-annual comprehensive servicing to maintain optimal performance. This prevents costly failures and keeps all zones operating efficiently." },
+    { question: "What are signs my CIU needs maintenance?", answer: "Common signs include hot and cold spots in different zones, energy bills climbing unexpectedly, zones not responding to thermostats, and BMS showing communication errors." },
+    { question: "Which CIU brands do you service?", answer: "We service all major brands including Trend Controls (IQ Series), Honeywell (Excel Series), Siemens (Desigo CC), Johnson Controls (Metasys), and Trane (Tracer)." }
+  ];
+
+  const breadcrumbItems = [
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+    { name: "CIU Maintenance", url: "https://www.mainteniq.co.uk/ciu-maintenance" }
+  ];
+
+  const ciuServiceSchema = generateServiceSchema({
+    name: "CIU Maintenance London - Zone Control & Central Interface Units",
+    description: "Expert CIU maintenance and central interface unit servicing in London. Precision zone control calibration, valve actuator servicing, and BMS integration for commercial buildings.",
+    url: "https://www.mainteniq.co.uk/ciu-maintenance",
+    serviceType: "HVAC Zone Control Maintenance",
+    image: "https://www.mainteniq.co.uk/CIU.png"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       <SEOHead
         title="CIU Maintenance London | Zone Control & Central Interface Units | Mainteniq"
         description="Expert CIU maintenance and central interface unit servicing in London. Precision zone control calibration, valve actuator servicing, and BMS integration for commercial buildings."
-        keywords="CIU maintenance London, central interface unit service, zone control maintenance, HVAC zone control, commercial building maintenance, BMS integration, valve actuator service"
+        keywords="CIU maintenance London, central interface unit service, zone control maintenance London, HVAC zone control commercial, commercial building HVAC maintenance, BMS integration London, valve actuator service, Trend Controls service, Honeywell CIU maintenance, Siemens Desigo service"
+        canonicalUrl="/ciu-maintenance"
+        structuredData={ciuServiceSchema}
+        breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
+        faqData={generateFAQSchema(ciuFAQs)}
       />
 
       {/* Hero Section */}

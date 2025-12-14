@@ -16,9 +16,24 @@
   <url>
     <loc>https://www.mainteniq.co.uk/hvac-maintenance</loc>
     <image:image>
-      <image:loc>https://www.mainteniq.co.uk/hero-hvac.jpg</image:loc>
-      <image:title>HVAC Maintenance Services</image:title>
-      <image:caption>Professional HVAC system maintenance and repair</image:caption>
+      <image:loc>https://www.mainteniq.co.uk/HVAC_SYSTEM.png</image:loc>
+      <image:title>HVAC Maintenance Services London</image:title>
+      <image:caption>Professional HVAC system maintenance and repair in London</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Boiler Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/boiler-services</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>Boiler Services London - Installation, Repair, CP12</image:title>
+      <image:caption>Gas Safe registered boiler installation, repair and servicing in London</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
+      <image:title>Professional Boiler Installation London</image:title>
+      <image:caption>Expert boiler installation and maintenance services</image:caption>
     </image:image>
   </url>
 
@@ -27,13 +42,13 @@
     <loc>https://www.mainteniq.co.uk/fcu-maintenance</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/FCUclean.png</image:loc>
-      <image:title>Clean FCU Unit - Professional Maintenance</image:title>
-      <image:caption>Professional FCU cleaning and maintenance service</image:caption>
+      <image:title>Clean FCU Unit - Professional Maintenance London</image:title>
+      <image:caption>Professional FCU cleaning and maintenance service in London</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/FCUdirty.png</image:loc>
       <image:title>Dirty FCU Unit Before Maintenance</image:title>
-      <image:caption>FCU unit requiring professional cleaning</image:caption>
+      <image:caption>FCU unit requiring professional cleaning and servicing</image:caption>
     </image:image>
   </url>
 
@@ -42,8 +57,18 @@
     <loc>https://www.mainteniq.co.uk/hiu-maintenance</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
-      <image:title>HIU System Installation</image:title>
-      <image:caption>Professional HIU installation and maintenance</image:caption>
+      <image:title>HIU System Maintenance London</image:title>
+      <image:caption>Professional HIU installation and maintenance in London</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CIU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/ciu-maintenance</loc>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/CIU.png</image:loc>
+      <image:title>CIU Zone Control Maintenance London</image:title>
+      <image:caption>Central Interface Unit servicing for commercial buildings in London</image:caption>
     </image:image>
   </url>
 
@@ -52,13 +77,23 @@
     <loc>https://www.mainteniq.co.uk/mvhr-maintenance</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/MVHRclean.webp</image:loc>
-      <image:title>Clean MVHR Filter</image:title>
-      <image:caption>Professional MVHR filter maintenance</image:caption>
+      <image:title>Clean MVHR Filter - Professional Maintenance</image:title>
+      <image:caption>Professional MVHR filter maintenance and cleaning</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/MVPR0dirty.webp</image:loc>
       <image:title>Dirty MVHR Filter Before Service</image:title>
       <image:caption>MVHR filter requiring professional cleaning</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/mvhr-filter-clean.png</image:loc>
+      <image:title>Clean MVHR Filter After Professional Service</image:title>
+      <image:caption>MVHR filter after professional cleaning service</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/mvhr-filter-dirty.png</image:loc>
+      <image:title>Dirty MVHR Filter Comparison</image:title>
+      <image:caption>MVHR filter before cleaning showing dust accumulation</image:caption>
     </image:image>
   </url>
 
@@ -66,9 +101,9 @@
   <url>
     <loc>https://www.mainteniq.co.uk/bms</loc>
     <image:image>
-      <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
-      <image:title>Building Management Systems</image:title>
-      <image:caption>Advanced BMS solutions for modern buildings</image:caption>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>Building Management Systems London</image:title>
+      <image:caption>Advanced BMS installation and configuration for modern buildings</image:caption>
     </image:image>
   </url>
 
@@ -77,7 +112,7 @@
     <loc>https://www.mainteniq.co.uk/plumber-electrician</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
-      <image:title>Professional Boiler Installation and Repair</image:title>
+      <image:title>Professional Boiler Installation and Repair London</image:title>
       <image:caption>Gas Safe registered boiler services in London</image:caption>
     </image:image>
     <image:image>
@@ -93,7 +128,7 @@
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
       <image:title>Professional Handyman Services London</image:title>
-      <image:caption>Expert property maintenance and repair services</image:caption>
+      <image:caption>Expert property maintenance and repair services for landlords</image:caption>
     </image:image>
   </url>
 
@@ -102,7 +137,7 @@
     <loc>https://www.mainteniq.co.uk/smart-home</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
-      <image:title>Smart Home Automation Services</image:title>
+      <image:title>Smart Home Automation Services London</image:title>
       <image:caption>Professional smart home installation and integration</image:caption>
     </image:image>
   </url>
@@ -112,8 +147,8 @@
     <loc>https://www.mainteniq.co.uk/end-of-tenancy-cleaning</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
-      <image:title>End of Tenancy Cleaning Services</image:title>
-      <image:caption>Professional deep cleaning for rental properties</image:caption>
+      <image:title>End of Tenancy Cleaning Services London</image:title>
+      <image:caption>Professional deep cleaning for rental properties in London</image:caption>
     </image:image>
   </url>
 
@@ -122,7 +157,7 @@
     <loc>https://www.mainteniq.co.uk/maintenance-contracts</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
-      <image:title>Maintenance Contracts for Property Managers</image:title>
+      <image:title>Maintenance Contracts for Property Managers London</image:title>
       <image:caption>Custom maintenance contracts for HVAC and building systems</image:caption>
     </image:image>
   </url>
@@ -132,8 +167,8 @@
     <loc>https://www.mainteniq.co.uk/renovation-composer</loc>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/New_Flat.jpg</image:loc>
-      <image:title>Renovated Property - After</image:title>
-      <image:caption>Professional property renovation results</image:caption>
+      <image:title>Renovated Property London - After</image:title>
+      <image:caption>Professional property renovation results in London</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Old_Flat.jpeg</image:loc>
@@ -142,7 +177,7 @@
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/new_kitchen.png</image:loc>
-      <image:title>Modern Kitchen Renovation</image:title>
+      <image:title>Modern Kitchen Renovation London</image:title>
       <image:caption>Professional kitchen renovation and installation</image:caption>
     </image:image>
     <image:image>
@@ -152,7 +187,7 @@
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Bedroom_NEW.png</image:loc>
-      <image:title>Renovated Bedroom</image:title>
+      <image:title>Renovated Bedroom London</image:title>
       <image:caption>Professional bedroom renovation and design</image:caption>
     </image:image>
     <image:image>
@@ -162,7 +197,7 @@
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Bathroom_NEW.png</image:loc>
-      <image:title>Modern Bathroom Renovation</image:title>
+      <image:title>Modern Bathroom Renovation London</image:title>
       <image:caption>Professional bathroom renovation and installation</image:caption>
     </image:image>
     <image:image>
@@ -172,7 +207,7 @@
     </image:image>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/NEW_OFFICE.png</image:loc>
-      <image:title>Renovated Office Space</image:title>
+      <image:title>Renovated Office Space London</image:title>
       <image:caption>Professional office renovation and fit-out</image:caption>
     </image:image>
     <image:image>
