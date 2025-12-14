@@ -101,9 +101,9 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Expert HVAC Maintenance UK | Gas Safe & NICEIC Certified"
-        description="Professional HVAC maintenance for FCU, HIU, MVHR & CIU systems. Gas Safe & NICEIC certified engineers. Save 30% energy costs, 24/7 emergency response across London & UK."
-        keywords="HVAC maintenance UK, FCU maintenance, HIU service, MVHR maintenance, Gas Safe certified, NICEIC engineers, preventive maintenance contracts, London HVAC service, property maintenance UK"
+        title="Expert HVAC Maintenance & Property Services UK | Gas Safe & NICEIC Certified"
+        description="Professional HVAC maintenance and property services for FCU, HIU, MVHR & CIU systems. Plumbing, electrical, handyman, cleaning. Gas Safe & NICEIC certified. 24/7 emergency response across London & UK."
+        keywords="HVAC maintenance UK, property services London, FCU maintenance, HIU service, MVHR maintenance, Gas Safe certified, NICEIC engineers, property maintenance UK, landlord services, Airbnb property maintenance"
         canonicalUrl="https://www.mainteniq.co.uk/"
         structuredData={generateOrganizationSchema()}
         faqData={faqData}
@@ -128,7 +128,7 @@ const Index = () => {
             <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-purple-500/30 p-6 sm:p-8 md:p-12 shadow-2xl shadow-purple-500/10 text-center">
               <div className="space-y-6">
                 <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                  Expert <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">HVAC Maintenance</span> & Building Services
+                  Expert <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">HVAC Maintenance</span> & Property Services
                 </h1>
                 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 font-medium tracking-wide">
@@ -270,12 +270,12 @@ const Index = () => {
           <div className="text-center mb-8 md:mb-12">
             <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
               <span className="w-8 h-[2px] bg-primary"></span>
-              <span>OTHER SERVICES</span>
+              <span>PROPERTY SERVICES</span>
               <span className="w-8 h-[2px] bg-primary"></span>
             </div>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">More Services We Offer</h2>
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">Complete Property Services</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Plumbing, electrical, handyman, BMS, smart home and renovation support.
+              Plumbing, electrical, handyman, BMS, smart home, renovation and cleaning services.
             </p>
           </div>
 

@@ -15,8 +15,8 @@ const Footer = () => {
               <span className="font-heading font-bold text-xl">Mainteniq</span>
             </div>
             <p className="text-sm text-gray-300">
-              Professional HVAC and smart property solutions. Modern maintenance 
-              company delivering reliable, efficient service for your comfort needs.
+              Professional HVAC maintenance and property services. Modern maintenance 
+              company delivering reliable, efficient service for landlords, property managers, and homeowners.
             </p>
             
             {/* Service Area */}
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-300 text-center md:text-left">
-              © 2025 Mainteniq. All rights reserved. Professional HVAC & Smart Property Solutions.
+              © 2025 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
