@@ -49,6 +49,7 @@ const Footer = () => {
           <div className="space-y-4 text-center md:text-left">
             <h3 className="font-semibold text-lg">Services</h3>
             <ul className="flex flex-col items-center md:items-start space-y-2">
+              <li><Link to="/boiler-services" className="text-sm text-gray-300 hover:text-primary transition-colors">Boiler Services</Link></li>
               <li><Link to="/mvhr-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">MVHR System Maintenance</Link></li>
               <li><Link to="/hiu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">HIU & CIU Maintenance & Repair</Link></li>
               <li><Link to="/fcu-maintenance" className="text-sm text-gray-300 hover:text-primary transition-colors">FCU Unit Maintenance</Link></li>

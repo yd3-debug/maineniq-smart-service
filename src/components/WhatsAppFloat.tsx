@@ -52,14 +52,15 @@ const WhatsAppFloat = () => {
   };
 
   if (isMobile) {
-    // Mobile: Simple WhatsApp button (works reliably)
+    // Mobile: Prominent WhatsApp button with pulse animation
     return (
       <Button
         onClick={handleWhatsAppClick}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-whatsapp hover:bg-whatsapp/90 shadow-elegant z-40 flex items-center justify-center p-0"
+        className="fixed bottom-6 right-6 w-18 h-18 rounded-full bg-whatsapp hover:bg-whatsapp/90 shadow-[0_4px_20px_rgba(37,211,102,0.5)] z-40 flex items-center justify-center p-0 animate-pulse-subtle border-2 border-white/30"
+        style={{ width: '72px', height: '72px' }}
         aria-label={`Contact us on WhatsApp at ${CONTACT.phones.emergency}`}
       >
-        <FaWhatsapp className="w-6 h-6 text-white" />
+        <FaWhatsapp className="w-9 h-9 text-white drop-shadow-lg" />
       </Button>
     );
   }
