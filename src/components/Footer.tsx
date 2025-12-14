@@ -80,15 +80,15 @@ const Footer = () => {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary" />
+                <Phone className="w-4 h-4 text-white" />
                 <span>+44 (0) 189 55 28 226</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary" />
+                <Mail className="w-4 h-4 text-white" />
                 <span>info@mainteniq.co.uk</span>
               </div>
               <div className="hidden sm:flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-primary" />
+                <Clock className="w-4 h-4 text-white" />
                 <span>24/7 Emergency Service</span>
               </div>
             </div>
