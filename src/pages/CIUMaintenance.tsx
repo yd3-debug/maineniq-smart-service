@@ -589,6 +589,151 @@ const CIUMaintenance = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Common questions about CIU maintenance and zone control systems.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {/* Zone Control Questions */}
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">What is zone control and why is it important?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      Zone control allows different areas of a building to be heated or cooled independently. 
+                      This is crucial for commercial buildings where different spaces have varying occupancy levels 
+                      and thermal requirements. Proper zone control reduces energy waste by only conditioning 
+                      occupied spaces and eliminates hot/cold spots that cause tenant complaints.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">How often should CIU systems be serviced?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      CIU systems should be serviced at least annually, with quarterly checks recommended for 
+                      high-traffic commercial buildings. Seasonal calibration before summer and winter ensures 
+                      optimal performance during peak demand periods. More frequent servicing may be needed 
+                      for older systems or buildings with complex zone requirements.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+
+            {/* BMS Integration Questions */}
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">How does CIU integrate with Building Management Systems (BMS)?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      CIUs communicate with your BMS via protocols like BACnet or Modbus, providing real-time 
+                      zone data and accepting control commands. This integration allows centralized monitoring, 
+                      automated scheduling, and coordinated responses to occupancy changes. Proper integration 
+                      ensures your BMS can optimize energy use across all zones while maintaining comfort levels.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">What causes BMS communication errors with CIUs?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      Common causes include incorrect addressing, damaged communication cables, protocol mismatches, 
+                      or faulty interface modules. Software updates to either system can also cause compatibility 
+                      issues. Our engineers diagnose these problems using specialized diagnostic tools and ensure 
+                      proper communication between your CIUs and BMS is restored.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+
+            {/* Maintenance & Performance Questions */}
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">What does CIU maintenance include?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      Comprehensive CIU maintenance includes sensor calibration, valve actuator testing, 
+                      thermostat verification, BMS communication checks, and control logic optimization. 
+                      We also inspect wiring connections, clean components, update firmware where needed, 
+                      and provide a detailed report on system performance and any recommended improvements.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+
+            <Collapsible>
+              <Card>
+                <CollapsibleTrigger className="w-full">
+                  <CardContent className="p-4 sm:p-6 flex items-center justify-between">
+                    <span className="font-semibold text-left text-foreground">Can you improve zone control accuracy in older buildings?</span>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200" />
+                  </CardContent>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+                    <p className="text-muted-foreground">
+                      Yes, older systems can often be upgraded with modern sensors, smart thermostats, and 
+                      improved valve actuators without full replacement. We can also retrofit BMS integration 
+                      to legacy CIU systems, enabling centralized control and monitoring. Our engineers assess 
+                      your existing infrastructure and recommend cost-effective upgrades to improve accuracy.
+                    </p>
+                  </CardContent>
+                </CollapsibleContent>
+              </Card>
+            </Collapsible>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
