@@ -40,8 +40,10 @@ import systemInspectionImage from "@/assets/system-inspection.jpg";
 const fcuFaqs = [
   { question: "What is an FCU (Fan Coil Unit)?", answer: "A Fan Coil Unit is a heating/cooling device consisting of a fan and heating/cooling coils. It circulates air through the coils to maintain room temperature in commercial and residential buildings." },
   { question: "How often should FCU filters be changed?", answer: "FCU filters should be checked monthly and replaced every 1-3 months depending on usage and air quality. Commercial environments with high foot traffic may need more frequent changes." },
+  { question: "What's the difference between 2-pipe and 4-pipe FCUs?", answer: "2-pipe FCUs have one coil for both heating and cooling (switching seasonally), while 4-pipe systems have separate heating and cooling coils allowing simultaneous operation. 4-pipe systems offer better comfort control but cost more to install and maintain." },
   { question: "What are signs my FCU needs maintenance?", answer: "Common signs include poor airflow, unusual noises, water leaks or drips, inconsistent temperatures, higher energy bills, and musty odours indicating mold or bacteria growth." },
   { question: "How much does FCU maintenance cost in the UK?", answer: "FCU maintenance typically costs £150-300 per unit annually for preventive service. Emergency repairs can cost £500-3,000+ depending on the damage and parts needed." },
+  { question: "Do FCUs require TM44 air conditioning inspections?", answer: "Yes, FCUs over 12kW (or combined systems over 70kW) require TM44 inspections every 5 years under the Energy Performance of Buildings Regulations. Non-compliance can result in fines up to £300 per unit." },
   { question: "Can dirty FCU coils affect indoor air quality?", answer: "Yes, dirty coils harbour bacteria, mold, and allergens that circulate through your space. Regular cleaning improves air quality and prevents health issues for building occupants." },
   { question: "What is included in professional FCU servicing?", answer: "Professional FCU service includes filter replacement, coil cleaning, condensate drain clearance, fan motor inspection, electrical checks, control calibration, and safety testing." }
 ];
@@ -638,6 +640,48 @@ const FCUMaintenance = () => {
                 </Card>
               </AnimatedStatCard>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">Common Questions</Badge>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              FCU Maintenance FAQs
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to know about fan coil unit maintenance, costs, and compliance
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {fcuFaqs.map((faq, index) => (
+              <Card key={index} className="overflow-hidden">
+                <Collapsible>
+                  <CollapsibleTrigger className="w-full">
+                    <div className="flex items-center justify-between p-4 sm:p-6 hover:bg-muted/50 transition-colors text-left">
+                      <h3 className="font-semibold text-foreground pr-4">{faq.question}</h3>
+                      <ChevronDown className="w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                    </div>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground mb-4">Still have questions about FCU maintenance?</p>
+            <Button variant="outline" onClick={() => handleQuoteRequest("FCU Maintenance Question")}>
+              Ask Our Experts
+            </Button>
           </div>
         </div>
       </section>
