@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { generateBreadcrumbSchema } from "@/utils/structuredData";
 
 import { 
   Award, 
@@ -15,7 +17,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedCounter } from "@/components/AnimatedChart";
-import { useEffect } from "react";
 
 // Import professional work images
 import electricalInstallation from "@/assets/electrical-installation.jpg";
@@ -37,43 +38,10 @@ const About = () => {
     { icon: Star, label: "Customer Rating", value: "4.9★" }
   ];
 
-  useEffect(() => {
-    document.title = "About Mainteniq | Expert HVAC & Property Maintenance Team";
-    const description = "Learn about Mainteniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response.";
-
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.appendChild(meta);
-    }
-    meta.content = description;
-
-    // Add Open Graph tags
-    let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
-    if (!ogTitle) {
-      ogTitle = document.createElement('meta');
-      ogTitle.setAttribute('property', 'og:title');
-      document.head.appendChild(ogTitle);
-    }
-    ogTitle.content = "About Mainteniq | Expert HVAC & Property Maintenance Team";
-
-    let ogDescription = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
-    if (!ogDescription) {
-      ogDescription = document.createElement('meta');
-      ogDescription.setAttribute('property', 'og:description');
-      document.head.appendChild(ogDescription);
-    }
-    ogDescription.content = description;
-
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'canonical';
-      document.head.appendChild(link);
-    }
-    link.href = `${window.location.origin}/about`;
-  }, []);
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk" },
+    { name: "About", url: "https://www.mainteniq.co.uk/about" }
+  ]);
 
   const serviceStandards = [
     {
@@ -127,6 +95,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="About Mainteniq | Expert HVAC & Property Maintenance Team"
+        description="Learn about Mainteniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response across London."
+        keywords="about Mainteniq, HVAC maintenance company, property services London, professional maintenance team, certified engineers, emergency HVAC response"
+        canonicalUrl="https://www.mainteniq.co.uk/about"
+        breadcrumbData={breadcrumbData}
+      />
+      
       {/* Hero Section with Background Image */}
       <section 
         className="relative -mt-2 md:-mt-4 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-cover bg-center text-white"

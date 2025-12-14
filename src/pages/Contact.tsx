@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
+import { generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   Phone, 
   Clock,
@@ -22,6 +24,11 @@ import professionalTeam from "@/assets/team-collaboration.jpg";
 import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
+
+const breadcrumbData = generateBreadcrumbSchema([
+  { name: "Home", url: "https://www.mainteniq.co.uk" },
+  { name: "Contact", url: "https://www.mainteniq.co.uk/contact" }
+]);
 
 const Contact = () => {
   const handleWhatsAppClick = (isEmergency = false) => {
@@ -75,6 +82,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contact Mainteniq | 24/7 HVAC & Property Services London"
+        description="Contact Mainteniq for professional HVAC maintenance, plumbing, electrical, and property services in London. 24/7 emergency response. WhatsApp, phone, and email support."
+        keywords="contact HVAC London, emergency plumber London, 24/7 HVAC service, property maintenance contact, WhatsApp HVAC support"
+        canonicalUrl="https://www.mainteniq.co.uk/contact"
+        breadcrumbData={breadcrumbData}
+      />
+      
       {/* Hero Section with Image */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-16">
         <div 

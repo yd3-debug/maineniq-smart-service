@@ -187,7 +187,7 @@ const CIUMaintenance = () => {
         title="CIU Maintenance London | Zone Control & Central Interface Units | Mainteniq"
         description="Expert CIU maintenance and central interface unit servicing in London. Precision zone control calibration, valve actuator servicing, and BMS integration for commercial buildings."
         keywords="CIU maintenance London, central interface unit service, zone control maintenance London, HVAC zone control commercial, commercial building HVAC maintenance, BMS integration London, valve actuator service, Trend Controls service, Honeywell CIU maintenance, Siemens Desigo service"
-        canonicalUrl="/ciu-maintenance"
+        canonicalUrl="https://www.mainteniq.co.uk/ciu-maintenance"
         structuredData={ciuServiceSchema}
         breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
         faqData={generateFAQSchema(ciuFAQs)}

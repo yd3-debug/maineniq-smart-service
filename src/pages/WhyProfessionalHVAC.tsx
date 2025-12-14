@@ -47,7 +47,8 @@ import hvacProfessional from "@/assets/hvac-professional.jpg";
 import modernSystem from "@/assets/modern-hvac-system.jpg";
 import energyEfficiency from "@/assets/energy-efficiency.jpg";
 import { CONTACT } from "@/config/contact";
-
+import SEOHead from "@/components/SEOHead";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 const WhyProfessionalHVAC = () => {
   // Multi-colored chart configuration for professional presentation
   const chartConfig = {
@@ -222,8 +223,29 @@ const WhyProfessionalHVAC = () => {
   const { ref: scoresRef, isVisible: isScoresVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
   const { ref: benefitsRef, isVisible: isBenefitsVisible } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
 
+  const hvacFaqs = [
+    { question: "Why is professional HVAC installation important?", answer: "Professional installation ensures optimal efficiency, proper sizing, correct refrigerant levels, and code compliance. Research shows professionally installed systems can achieve up to 30% better efficiency than DIY installations." },
+    { question: "How much can I save with an efficient HVAC system?", answer: "Modern, professionally maintained HVAC systems can reduce energy costs by 20-40%. Smart thermostats alone can add 10% additional savings through optimized scheduling." },
+    { question: "How often should HVAC systems be serviced?", answer: "Commercial systems should be serviced quarterly, while residential systems benefit from bi-annual maintenance. Regular service prevents 80% of common breakdowns and extends equipment life by 40-50%." },
+    { question: "What are the health benefits of professional HVAC maintenance?", answer: "Properly maintained HVAC systems filter 95%+ of airborne particles, reduce allergens, maintain optimal humidity, and prevent mold growth. This significantly improves indoor air quality and occupant health." }
+  ];
+
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk" },
+    { name: "Why Professional HVAC", url: "https://www.mainteniq.co.uk/why-professional-hvac" }
+  ]);
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Why Professional HVAC Maintenance is Essential | Research-Backed Benefits | Mainteniq"
+        description="Discover research-backed benefits of professional HVAC maintenance. Up to 30% energy savings, improved air quality, and extended equipment lifespan. Expert insights and data-driven recommendations."
+        keywords="professional HVAC benefits, HVAC maintenance importance, energy savings HVAC, air quality improvement, HVAC efficiency, property value HVAC"
+        canonicalUrl="https://www.mainteniq.co.uk/why-professional-hvac"
+        breadcrumbData={breadcrumbData}
+        faqData={generateFAQSchema(hvacFaqs)}
+      />
+      
       {/* Hero Section with Key Stats */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
