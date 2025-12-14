@@ -5,7 +5,7 @@ import { ResearchBadge } from "@/components/ResearchBadge";
 import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/AnimatedChart";
 import { handleQuoteRequest } from "@/utils/quote";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
@@ -217,8 +217,6 @@ const FCUMaintenance = () => {
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       {/* Who We Help Section */}
       <section className="py-12 sm:py-16 md:py-20">

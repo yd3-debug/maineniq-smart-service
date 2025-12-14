@@ -33,7 +33,7 @@ import { AlertTriangle } from "lucide-react";
 
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import FullBleedHero from "@/components/FullBleedHero";
-import TrustStrip from "@/components/TrustStrip";
+
 import { useEffect } from "react";
 import teamWorking from "@/assets/team-working.jpg";
 import SEOHead from "@/components/SEOHead";
@@ -364,7 +364,7 @@ const services = [
       >
         <a href="#services" className="underline-offset-4 hover:underline text-muted-foreground text-sm md:text-base">See services</a>
       </FullBleedHero>
-      <TrustStrip />
+      
 
 
        {/* Fast, clear assurances and scheduling */}

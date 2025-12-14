@@ -23,7 +23,7 @@ import teamCollaboration from "@/assets/team-collaboration.jpg";
 import customerConsultation from "@/assets/customer-consultation.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
-import TrustStrip from "@/components/TrustStrip";
+
 import WhyWorkWithUs from "@/components/sections/WhyWorkWithUs";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
@@ -157,7 +157,7 @@ const About = () => {
         </div>
       </section>
 
-      <TrustStrip />
+      
 
       {/* Stats Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
