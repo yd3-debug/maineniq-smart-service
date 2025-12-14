@@ -36,6 +36,7 @@ const SmartHome = lazy(() => import("./pages/SmartHome"));
 const PlumberElectrician = lazy(() => import("./pages/PlumberElectrician"));
 const Handyman = lazy(() => import("./pages/Handyman"));
 const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
+const BoilerServices = lazy(() => import("./pages/BoilerServices"));
 
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -168,6 +169,13 @@ const App = () => {
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <EndOfTenancyCleaning />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/boiler-services" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <BoilerServices />
               </Suspense>
             </Layout>
           } />
