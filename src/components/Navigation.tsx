@@ -28,42 +28,27 @@ const Navigation = () => {
   const navItems = [
     { name: "Maintenance Contracts", href: "/maintenance-contracts" },
     { 
-      name: "Maintenance", 
-      href: "/hvac-maintenance",
-      submenu: [
-        { name: "Why Maintenance Matters", href: "/hvac-maintenance" },
-        { name: "Why Professional HVAC", href: "/why-professional-hvac" },
-        { name: "FCU Maintenance", href: "/fcu-maintenance" },
-        { name: "HIU & CIU Service & Repair", href: "/hiu-maintenance" },
-        { name: "CIU Maintenance", href: "/ciu-maintenance" },
-        { name: "MVHR Maintenance", href: "/mvhr-maintenance" }
-      ]
-    },
-    { 
       name: "Services", 
       href: "/services",
       submenu: [
-        { name: "HVAC Maintenance", href: "/hvac-maintenance" },
-        { name: "Boiler Services", href: "/boiler-services" },
-        { name: "FCU Maintenance", href: "/fcu-maintenance" },
-        { name: "HIU & CIU Service", href: "/hiu-maintenance" },
-        { name: "CIU Maintenance", href: "/ciu-maintenance" },
-        { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
-        { name: "BMS (Building Management)", href: "/bms" },
-        { name: "Smart Home Automation", href: "/smart-home" },
-        { name: "Plumber & Electrician", href: "/plumber-electrician" },
-        { name: "Handyman Services", href: "/handyman" },
-        { name: "Renovation & Refurbishment", href: "/renovation-composer" },
-        { name: "End of Tenancy Cleaning", href: "/end-of-tenancy-cleaning" }
+        { category: "Climate Control", items: [
+          { name: "HVAC Maintenance", href: "/hvac-maintenance" },
+          { name: "Boiler Services", href: "/boiler-services" },
+          { name: "FCU Maintenance", href: "/fcu-maintenance" },
+          { name: "HIU/CIU Service", href: "/hiu-maintenance" },
+          { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
+          { name: "BMS", href: "/bms" },
+        ]},
+        { category: "Property Services", items: [
+          { name: "Smart Home", href: "/smart-home" },
+          { name: "Plumber & Electrician", href: "/plumber-electrician" },
+          { name: "Handyman", href: "/handyman" },
+          { name: "Renovation", href: "/renovation-composer" },
+          { name: "End of Tenancy", href: "/end-of-tenancy-cleaning" },
+        ]}
       ]
     },
-    { 
-      name: "Case Studies", 
-      href: "/case-studies",
-      submenu: [
-        { name: "Renovation & Refurbishment", href: "/renovation-composer" }
-      ]
-    },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -74,7 +59,13 @@ const Navigation = () => {
   };
 
   const isSubmenuActive = (submenu: any[]) => {
-    return submenu.some(item => isActive(item.href));
+    return submenu.some(group => 
+      group.items?.some((item: any) => isActive(item.href)) || isActive(group.href)
+    );
+  };
+
+  const getAllSubmenuItems = (submenu: any[]) => {
+    return submenu.flatMap(group => group.items || [group]);
   };
 
   // Close menu when clicking outside or on escape
@@ -110,35 +101,81 @@ const Navigation = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`sticky top-0 z-60 transition-all duration-300 ${
-      isScrolled || hasLightBackground
-        ? "bg-background/95 backdrop-blur-sm border-b border-border" 
-        : "bg-transparent border-b border-transparent"
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/LOGOPETRU2.png" 
-              alt="Mainteniq - Professional HVAC & Property Services" 
-              className="h-16 w-auto transition-all duration-300"
-            />
-          </Link>
+    <>
+      {/* Spacer to prevent content from going behind fixed header */}
+      <div className="h-20" />
+      
+      <nav className={`fixed top-0 left-0 right-0 w-full z-60 transition-all duration-300 ${
+        isScrolled || hasLightBackground
+          ? "bg-background/95 backdrop-blur-sm border-b border-border" 
+          : "bg-transparent border-b border-transparent"
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/LOGOPETRU2.png" 
+                alt="Mainteniq - Professional HVAC & Property Services" 
+                className="h-16 w-auto transition-all duration-300"
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              item.submenu ? (
-                <div 
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() => setOpenSubmenu(item.name)}
-                  onMouseLeave={() => setOpenSubmenu(null)}
-                >
-                  <button
-                    className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg flex items-center gap-1 ${
-                      isSubmenuActive(item.submenu)
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                item.submenu ? (
+                  <div 
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => setOpenSubmenu(item.name)}
+                    onMouseLeave={() => setOpenSubmenu(null)}
+                  >
+                    <button
+                      className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg flex items-center gap-1 ${
+                        isSubmenuActive(item.submenu)
+                          ? (isScrolled || hasLightBackground)
+                            ? "text-primary bg-primary/10" 
+                            : "text-primary bg-white/20 shadow-sm"
+                          : (isScrolled || hasLightBackground)
+                            ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                            : "text-white hover:text-white hover:bg-white/20 drop-shadow-sm"
+                      } ${(!isScrolled && !hasLightBackground) ? 'text-shadow-sm' : ''}`}
+                    >
+                      {item.name}
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                    
+                    {/* Dropdown Menu with Categories */}
+                    {openSubmenu === item.name && (
+                      <div className="absolute top-full left-0 w-72 bg-background border border-border rounded-lg shadow-lg z-50 p-2">
+                        {item.submenu.map((group, groupIndex) => (
+                          <div key={group.category} className={groupIndex > 0 ? "mt-2 pt-2 border-t border-border/50" : ""}>
+                            <div className="px-3 py-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                              {group.category}
+                            </div>
+                            {group.items.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                to={subItem.href}
+                                className={`block px-3 py-2 text-sm rounded-md hover:bg-primary/5 transition-colors ${
+                                  isActive(subItem.href) ? "text-primary font-medium bg-primary/10" : "text-muted-foreground hover:text-primary"
+                                }`}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
+                      isActive(item.href)
                         ? (isScrolled || hasLightBackground)
                           ? "text-primary bg-primary/10" 
                           : "text-primary bg-white/20 shadow-sm"
@@ -148,55 +185,20 @@ const Navigation = () => {
                     } ${(!isScrolled && !hasLightBackground) ? 'text-shadow-sm' : ''}`}
                   >
                     {item.name}
-                    <ChevronDown className="w-4 h-4" />
-                  </button>
-                  
-                  {/* Dropdown Menu */}
-                  {openSubmenu === item.name && (
-                    <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg z-50">
-                      {item.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.href}
-                          className={`block px-4 py-3 text-sm hover:bg-primary/5 transition-colors border-b border-border/30 last:border-b-0 first:rounded-t-lg last:rounded-b-lg ${
-                            isActive(subItem.href) ? "text-primary font-medium bg-primary/10" : "text-muted-foreground hover:text-primary"
-                          }`}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium transition-all duration-300 px-3 py-2 rounded-lg ${
-                    isActive(item.href)
-                      ? (isScrolled || hasLightBackground)
-                        ? "text-primary bg-primary/10" 
-                        : "text-primary bg-white/20 shadow-sm"
-                      : (isScrolled || hasLightBackground)
-                        ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                        : "text-white hover:text-white hover:bg-white/20 drop-shadow-sm"
-                  } ${(!isScrolled && !hasLightBackground) ? 'text-shadow-sm' : ''}`}
-                >
-                  {item.name}
-                </Link>
-              )
-            ))}
-            <Button 
-              size="sm" 
-              variant={(isScrolled || hasLightBackground) ? "destructive" : "hero"} 
-              className={`${(!isScrolled && !hasLightBackground) ? "bg-red-600/90 text-white border-red-400/40 hover:bg-red-500/90 shadow-sm backdrop-blur-sm animate-pulse-glow" : "animate-pulse-glow"} font-semibold`}
-              onClick={() => window.open(`tel:${CONTACT.phones.emergencyTel}`, "_self")}
-              aria-label="Call for emergency HVAC service"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Emergency Call-Out
-            </Button>
-          </div>
+                  </Link>
+                )
+              ))}
+              <Button 
+                size="sm" 
+                variant={(isScrolled || hasLightBackground) ? "destructive" : "hero"} 
+                className={`${(!isScrolled && !hasLightBackground) ? "bg-red-600/90 text-white border-red-400/40 hover:bg-red-500/90 shadow-sm backdrop-blur-sm animate-pulse-glow" : "animate-pulse-glow"} font-semibold`}
+                onClick={() => window.open(`tel:${CONTACT.phones.emergencyTel}`, "_self")}
+                aria-label="Call for emergency HVAC service"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Emergency Call-Out
+              </Button>
+            </div>
 
           {/* Mobile menu button with enhanced animation */}
           <div className="md:hidden">
@@ -269,20 +271,29 @@ const Navigation = () => {
                       </div>
                     </div>
                     {openSubmenu === item.name && (
-                      <div className="ml-4 mt-2 space-y-2">
-                        {item.submenu.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            to={subItem.href}
-                            className={`block text-sm transition-all duration-300 transform hover:translate-x-2 ${
-                              isActive(subItem.href)
-                                ? "text-primary font-medium"
-                                : "text-muted-foreground hover:text-primary"
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
+                      <div className="ml-4 mt-3 space-y-3">
+                        {item.submenu.map((group) => (
+                          <div key={group.category}>
+                            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">
+                              {group.category}
+                            </div>
+                            <div className="space-y-1">
+                              {group.items.map((subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  to={subItem.href}
+                                  className={`block text-sm transition-all duration-300 transform hover:translate-x-2 py-1 ${
+                                    isActive(subItem.href)
+                                      ? "text-primary font-medium"
+                                      : "text-muted-foreground hover:text-primary"
+                                  }`}
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     )}
@@ -334,7 +345,8 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
