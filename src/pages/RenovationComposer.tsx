@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import RenovationGallery from "@/components/RenovationGallery";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
+import { generateBreadcrumbSchema, generateFAQSchema, generateRenovationServiceSchema } from "@/utils/structuredData";
 
 const renovationServices = [
   {
@@ -64,13 +65,29 @@ export default function RenovationComposer() {
     window.location.href = mailtoUrl;
   };
 
+  const renovationFaqs = [
+    { question: "How long does a full property renovation take?", answer: "A full property renovation typically takes 8-16 weeks depending on the scope of work. Kitchen and bathroom renovations usually take 2-4 weeks each. We provide detailed timelines during consultation." },
+    { question: "Do you handle planning permissions and building regulations?", answer: "Yes, we can assist with planning applications and ensure all work meets building regulations. Our team coordinates with local authorities and provides all necessary certifications." },
+    { question: "What's included in a renovation quote?", answer: "Our quotes include all labor, materials, project management, and cleanup. We provide itemized breakdowns so you know exactly what you're paying for with no hidden costs." },
+    { question: "Can you work while tenants are in the property?", answer: "Yes, we can phase work to minimize disruption for occupied properties. We discuss logistics during consultation and create schedules that work for everyone involved." },
+    { question: "Do you offer warranties on renovation work?", answer: "Yes, we provide comprehensive warranties on all renovation work - typically 2-5 years depending on the work type. All materials used come with manufacturer warranties." },
+    { question: "How much does property renovation cost in London?", answer: "Renovation costs vary based on scope and specification. Kitchen renovations start from £10,000, bathrooms from £5,000, and full property renovations from £30,000. Contact us for an accurate quote." }
+  ];
+
   return (
     <>
       <SEOHead 
-        title="Professional Property Renovation & Refurbishment Services | Mainteniq"
+        title="Professional Property Renovation & Refurbishment Services London | Mainteniq"
         description="Transform your property with our expert renovation and refurbishment services. Kitchen, bathroom, and full property renovations across London. Professional project management and guaranteed quality."
-        keywords="property renovation, refurbishment services, kitchen renovation, bathroom renovation, property transformation, London renovation"
-        canonicalUrl="/renovation-composer"
+        keywords="property renovation London, refurbishment services, kitchen renovation, bathroom renovation, property transformation, London renovation, full property renovation, commercial renovation"
+        canonicalUrl="https://www.mainteniq.co.uk/renovation-composer"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "Renovation & Refurbishment", url: "https://www.mainteniq.co.uk/renovation-composer" }
+        ])}
+        faqData={generateFAQSchema(renovationFaqs)}
+        serviceData={generateRenovationServiceSchema()}
       />
 
       {/* Hero Section */}

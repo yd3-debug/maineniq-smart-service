@@ -13,7 +13,7 @@ import plumbingCustomerService from "@/assets/plumbing-customer-service.jpg";
 import teamWorking from "@/assets/team-working.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import { handleQuoteRequest } from "@/utils/quote";
-import { generatePlumberElectricianSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
+import { generatePlumberElectricianSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, Shield, Clock, Award, Zap, Wrench, AlertTriangle, 
   FileCheck, Users, Flame, ThermometerSun, Droplets, Phone, 
@@ -25,6 +25,15 @@ const PlumberElectrician: React.FC = () => {
   const [showAllServices, setShowAllServices] = useState(false);
   const [showProcessDetails, setShowProcessDetails] = useState(false);
   const [showBoilerDetails, setShowBoilerDetails] = useState(false);
+
+  const plumberElectricianFaqs = [
+    { question: "Are your plumbers Gas Safe registered?", answer: "Yes, all our gas engineers are Gas Safe registered, meaning they are qualified to work safely and legally on gas appliances including boilers, cookers, and fires. We provide certificates for all gas work." },
+    { question: "Do you provide CP12 gas safety certificates for landlords?", answer: "Yes, we provide CP12 Gas Safety Certificates required by law for all rental properties. We can schedule annual inspections and provide compliant documentation for your records." },
+    { question: "Are your electricians NICEIC certified?", answer: "Yes, all our electricians are NICEIC approved contractors, ensuring all electrical work meets British Standards and building regulations. We provide EICR certificates and Part P compliance." },
+    { question: "Do you offer 24/7 emergency plumber and electrician services?", answer: "Yes, we offer 24/7 emergency response for urgent plumbing and electrical issues including gas leaks, burst pipes, power failures, and safety hazards. Call our emergency line for immediate assistance." },
+    { question: "How much does an EICR electrical certificate cost in London?", answer: "EICR (Electrical Installation Condition Report) costs vary based on property size, typically £150-350 for residential properties. Contact us for an accurate quote based on your specific property." },
+    { question: "What's included in a boiler service?", answer: "A full boiler service includes safety checks, flue analysis, pressure testing, cleaning key components, and issuing a service certificate. We recommend annual servicing to maintain warranty and efficiency." }
+  ];
 
   const services = [
     { 
@@ -101,13 +110,14 @@ const PlumberElectrician: React.FC = () => {
         title="Professional Plumber & Electrician Services London | Gas Safe & NICEIC | Mainteniq"
         description="Certified Gas Safe plumbers & NICEIC electricians in London. Emergency repairs, boiler installation, rewiring, CP12 & EICR certificates. 24/7 response. Free quotes."
         keywords="plumber London, electrician London, Gas Safe registered plumber, NICEIC electrician, boiler repair London, rewiring London, emergency plumber London, CP12 certificate, EICR London, electrical installation London, boiler service London, emergency electrician"
-        canonicalUrl="/plumber-electrician"
+        canonicalUrl="https://www.mainteniq.co.uk/plumber-electrician"
         structuredData={generatePlumberElectricianSchema()}
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "Plumber & Electrician", url: "https://www.mainteniq.co.uk/plumber-electrician" }
         ])}
+        faqData={generateFAQSchema(plumberElectricianFaqs)}
       />
       
       <FullBleedHero
