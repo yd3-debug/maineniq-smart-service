@@ -274,7 +274,7 @@ const Navigation = () => {
                       <div className="ml-4 mt-3 space-y-3">
                         {item.submenu.map((group) => (
                           <div key={group.category}>
-                            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">
+                            <div className="text-sm font-bold text-primary uppercase tracking-wider pb-2 mb-3 border-b border-primary/30 first:mt-0 mt-4">
                               {group.category}
                             </div>
                             <div className="space-y-1">
