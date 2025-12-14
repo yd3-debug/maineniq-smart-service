@@ -32,7 +32,7 @@ import heroImage from "@/assets/hiu-residential.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TrustMetrics } from "@/components/TrustMetrics";
 
 const hiuFaqs = [
@@ -212,8 +212,6 @@ const HIUMaintenance = () => {
         </div>
       </section>
 
-      {/* Trust Strip - Immediate Credibility */}
-      <TrustStrip />
 
       {/* Who We Help Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-background">

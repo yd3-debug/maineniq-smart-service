@@ -37,7 +37,7 @@ import systemInspectionImage from "@/assets/system-inspection.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 import SEOHead from "@/components/SEOHead";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TrustMetrics } from "@/components/TrustMetrics";
 import {
   Collapsible,
@@ -260,8 +260,6 @@ const MVHRMaintenance = () => {
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       {/* Who We Help Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">

@@ -33,7 +33,7 @@ import {
 import heroImage from "@/assets/embassy-gardens-hero.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import TrustStrip from "@/components/TrustStrip";
+
 import { handleQuoteRequest } from "@/utils/quote";
 import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
 
@@ -386,8 +386,6 @@ const portfolioProjects = [
           </div>
         </section>
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       {/* Portfolio Filter - Elegant */}
       <section className="py-12 md:py-20 bg-background">

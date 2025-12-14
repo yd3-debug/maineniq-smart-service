@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
-import TrustStrip from "@/components/TrustStrip";
+
 import { BMSMetrics } from "@/components/BMSMetrics";
 import { BMSBeforeAfter } from "@/components/BMSBeforeAfter";
 import { BMSTechnology } from "@/components/BMSTechnology";
@@ -47,8 +47,6 @@ const BMS: React.FC = () => {
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       />
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       <main className="container mx-auto px-4 py-16 space-y-20">
         {/* Performance Results */}

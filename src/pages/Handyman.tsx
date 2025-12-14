@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FullBleedHero from "@/components/FullBleedHero";
 import SEOHead from "@/components/SEOHead";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import HandymanImage from "@/assets/handyman-repair.jpg";
@@ -141,7 +141,7 @@ const Handyman: React.FC = () => {
         secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       />
 
-      <TrustStrip />
+      
 
       <main className="container mx-auto px-4 py-12 space-y-16">
         

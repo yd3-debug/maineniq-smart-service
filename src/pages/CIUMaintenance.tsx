@@ -7,7 +7,7 @@ import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/A
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { handleQuoteRequest } from "@/utils/quote";
 import SEOHead from "@/components/SEOHead";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TrustMetrics } from "@/components/TrustMetrics";
 import { 
   AlertTriangle, 
@@ -206,8 +206,6 @@ const CIUMaintenance = () => {
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <TrustStrip />
 
       {/* Who We Help Section */}
       <section className="py-12 sm:py-16 md:py-20">

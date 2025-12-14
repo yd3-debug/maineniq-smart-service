@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
 import SEOHead from "@/components/SEOHead";
-import TrustStrip from "@/components/TrustStrip";
+
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -121,7 +121,7 @@ const PlumberElectrician: React.FC = () => {
         secondaryOnClick={() => handleQuoteRequest("Emergency Plumber/Electrician")}
       />
 
-      <TrustStrip />
+      
 
       <main className="container mx-auto px-4 py-12 space-y-16">
         {/* Who We Help - Split Layout with Image */}
