@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const EnvironmentalPolicy = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Environmental Policy", url: "https://www.mainteniq.co.uk/environmental-policy" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Environmental Policy - MaintenIQ HVAC Services"
         description="MaintenIQ's environmental policy and commitment to sustainable HVAC practices, energy efficiency, and environmental protection."
         keywords="environmental policy, sustainable HVAC, energy efficiency, F-Gas regulations, MaintenIQ"
+        canonicalUrl="https://www.mainteniq.co.uk/environmental-policy"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

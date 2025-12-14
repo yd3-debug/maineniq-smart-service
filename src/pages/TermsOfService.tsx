@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const TermsOfService = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Terms of Service", url: "https://www.mainteniq.co.uk/terms-of-service" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Terms of Service - MaintenIQ HVAC Services"
         description="Terms and conditions for MaintenIQ HVAC maintenance, installation, and repair services. Professional service agreements and customer responsibilities."
-        keywords="terms of service, HVAC services, service agreement, MaintenIQ"
+        keywords="terms of service, HVAC services, service agreement, MaintenIQ, UK law"
+        canonicalUrl="https://www.mainteniq.co.uk/terms-of-service"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

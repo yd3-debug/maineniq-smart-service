@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const Disclaimer = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Disclaimer", url: "https://www.mainteniq.co.uk/disclaimer" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Disclaimer - MaintenIQ HVAC Services"
         description="Important disclaimers and limitations regarding MaintenIQ HVAC services, website content, and service recommendations."
         keywords="disclaimer, liability, HVAC services, MaintenIQ, service limitations"
+        canonicalUrl="https://www.mainteniq.co.uk/disclaimer"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

@@ -1,13 +1,23 @@
 import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
 
 const AntiSlaveryStatement = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "Anti-Slavery Statement", url: "https://www.mainteniq.co.uk/anti-slavery-statement" }
+  ]);
+
   return (
     <>
       <SEOHead 
         title="Anti-Slavery Statement - MaintenIQ HVAC Services"
         description="MaintenIQ's Modern Slavery Act statement outlining our commitment to preventing slavery and human trafficking in our operations and supply chain."
         keywords="anti-slavery statement, modern slavery act, human trafficking, MaintenIQ, ethical business"
+        canonicalUrl="https://www.mainteniq.co.uk/anti-slavery-statement"
+        breadcrumbData={breadcrumbData}
       />
+      <LocalBusinessSchema businessType="Property Maintenance" />
       <div className="min-h-screen pt-16 py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <nav className="text-sm breadcrumbs mb-6">

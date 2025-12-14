@@ -1,8 +1,32 @@
+import SEOHead from "../components/SEOHead";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
+import { generateBreadcrumbSchema } from "../utils/structuredData";
+
 const GDPRCompliance = () => {
+  const breadcrumbData = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.mainteniq.co.uk/" },
+    { name: "GDPR Compliance", url: "https://www.mainteniq.co.uk/gdpr-compliance" }
+  ]);
+
   return (
-    <div className="min-h-screen pt-16 py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="font-heading text-4xl font-bold mb-8">GDPR Compliance</h1>
+    <>
+      <SEOHead 
+        title="GDPR Compliance - MaintenIQ HVAC Services"
+        description="MaintenIQ's GDPR compliance statement. Learn about your data protection rights, how we process personal data, and our legal basis for data handling."
+        keywords="GDPR compliance, data protection, UK GDPR, personal data rights, MaintenIQ"
+        canonicalUrl="https://www.mainteniq.co.uk/gdpr-compliance"
+        breadcrumbData={breadcrumbData}
+      />
+      <LocalBusinessSchema businessType="Property Maintenance" />
+      <div className="min-h-screen pt-16 py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <nav className="text-sm breadcrumbs mb-6">
+            <ol className="flex space-x-2 text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li className="before:content-['/'] before:mx-2">GDPR Compliance</li>
+            </ol>
+          </nav>
+          <h1 className="font-heading text-4xl font-bold mb-8">GDPR Compliance</h1>
         <div className="prose prose-lg max-w-none">
           <p className="text-muted-foreground mb-6">Last updated: January 2025</p>
           
@@ -40,6 +64,7 @@ const GDPRCompliance = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
