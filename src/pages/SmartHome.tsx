@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import FullBleedHero from "@/components/FullBleedHero";
 import smartHomeAutomation from "@/assets/smart-home-automation.jpg";
 import smartLightingControl from "@/assets/smart-lighting-control.jpg";
@@ -10,7 +11,7 @@ import smartSecuritySystem from "@/assets/smart-security-system.jpg";
 import { 
   Smartphone, Shield, Zap, Brain, Lightbulb, Phone, Lock, Tv, 
   Home, Building2, Key, Briefcase, Wifi, WifiOff, Eye, AppWindow,
-  ChevronDown, CheckCircle2, Star, Quote
+  ChevronDown, CheckCircle2, Star, Quote, HelpCircle
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { ProgressMetric } from "@/components/ProgressMetric";
@@ -542,6 +543,98 @@ const SmartHome: React.FC = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="space-y-8">
+          <div className="text-center space-y-4">
+            <Badge variant="outline" className="bg-blue-500/10 text-blue-600 border-blue-200">
+              <HelpCircle className="w-3 h-3 mr-1" />
+              Common Questions
+            </Badge>
+            <h2 className="font-heading text-2xl font-bold">
+              Smart Home FAQ
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to know about professional smart home installation
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              <AccordionItem value="item-1" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  How much does a smart home installation cost in London?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Smart home installation costs vary based on the scope of your project. A basic starter package 
+                  with smart lighting and a hub typically starts from £500-£1,000. A comprehensive whole-home 
+                  automation with lighting, security, entertainment, and climate control ranges from £3,000-£15,000+. 
+                  We offer free consultations to provide accurate quotes tailored to your needs.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  Do I need to rewire my home for smart technology?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Not necessarily. Many smart home devices are wireless and work with your existing wiring. 
+                  Smart bulbs, plugs, sensors, and cameras typically require no rewiring. For advanced features 
+                  like smart switches or integrated systems, minor electrical work may be needed. Our professional 
+                  assessment will determine the best approach for your property.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  Will smart home systems work if my internet goes down?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Modern smart home systems include local processing, so core functions continue working during 
+                  internet outages. Lights, locks, and sensors operate locally via the hub. Voice control and 
+                  remote access require internet, but physical switches and automations remain functional. 
+                  We design systems with reliability as a priority.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  What's the difference between DIY and professional installation?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  DIY smart devices are designed for simplicity but often result in compatibility issues, 
+                  security vulnerabilities, and fragmented control across multiple apps. Professional installation 
+                  provides unified control, proper network configuration, secure setup, and devices that work 
+                  together seamlessly. We also provide ongoing support and maintenance.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  How long does a smart home installation take?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Installation time depends on the project scope. A basic smart lighting setup can be completed 
+                  in a few hours. A comprehensive whole-home system typically takes 1-3 days. Complex installations 
+                  with custom integrations may require additional time. We provide a detailed timeline during 
+                  your consultation.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border rounded-lg px-4 bg-gradient-to-br from-background to-muted/20">
+                <AccordionTrigger className="text-left font-medium">
+                  Can smart home technology help reduce energy bills?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, smart home technology can significantly reduce energy consumption. Automated lighting 
+                  turns off when rooms are unoccupied. Smart thermostats learn your schedule and optimise heating. 
+                  Energy monitoring identifies wasteful appliances. Most customers see 15-25% reduction in energy 
+                  bills within the first year of installation.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
 
