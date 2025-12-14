@@ -64,18 +64,21 @@
       "@type": ["LocalBusiness", "HeatingContractor", "Plumber", "Electrician"],
       "name": "Mainteniq",
       "alternateName": ["MaintenIQ", "Mainten IQ"],
-      "description": "Professional HVAC maintenance, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning services across London and surrounding areas",
+      "description": "Professional HVAC maintenance, boiler services, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning services across London and surrounding areas. 24/7 emergency response, Gas Safe & NICEIC certified.",
       "url": "https://www.mainteniq.co.uk",
       "telephone": "+44 783 456 2366",
       "email": "info@mainteniq.co.uk",
       "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
       "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+      "foundingDate": "2020",
+      "slogan": "Preventing Breakdowns, Protecting Your Investment",
+      "dateModified": "2025-12-14",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "London",
         "addressRegion": "Greater London",
         "addressCountry": "GB",
-        "areaServed": ["London", "Greater London", "Essex", "Kent", "Surrey", "Hertfordshire"]
+        "areaServed": ["London", "Greater London", "Essex", "Kent", "Surrey", "Hertfordshire", "Buckinghamshire", "Berkshire"]
       },
       "geo": {
         "@type": "GeoCoordinates",
@@ -117,6 +120,14 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "name": "Boiler Services",
+              "description": "Gas Safe registered boiler installation, repair, servicing and CP12 certificates"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
               "name": "FCU Service",
               "description": "Fan Coil Unit cleaning, maintenance and repair services"
             }
@@ -127,6 +138,14 @@
               "@type": "Service",
               "name": "HIU Repair",
               "description": "Heat Interface Unit maintenance and repair services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CIU Maintenance",
+              "description": "Central Interface Unit zone control maintenance and calibration"
             }
           },
           {
@@ -150,7 +169,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Electrical Services",
-              "description": "Licensed electrical installation, repair and maintenance services"
+              "description": "NICEIC certified electrical installation, repair and maintenance services"
             }
           },
           {
@@ -221,6 +240,7 @@
       ],
       "knowsAbout": [
         "HVAC Systems",
+        "Boiler Services",
         "Heat Pumps", 
         "Air Conditioning",
         "Ventilation Systems",
@@ -228,12 +248,31 @@
         "Electrical Work",
         "Smart Home Technology",
         "Building Management Systems",
-        "Energy Efficiency"
+        "Energy Efficiency",
+        "Zone Control Systems"
       ],
-      "memberOf": {
-        "@type": "Organization",
-        "name": "Heating and Ventilating Contractors' Association"
-      },
+      "potentialAction": [
+        {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/447834562366",
+            "actionPlatform": ["http://schema.org/MobileWebPlatform", "http://schema.org/DesktopWebPlatform"]
+          },
+          "result": {
+            "@type": "Reservation",
+            "name": "Book Service"
+          }
+        },
+        {
+          "@type": "CommunicateAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "tel:+447834562366",
+            "actionPlatform": ["http://schema.org/MobileWebPlatform"]
+          }
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/mainteniq",
         "https://www.linkedin.com/company/mainteniq",

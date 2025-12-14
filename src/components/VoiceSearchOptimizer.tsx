@@ -53,7 +53,7 @@ const VoiceSearchOptimizer = ({ faqs, serviceName }: VoiceSearchOptimizerProps) 
             "name": query,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": `Mainteniq provides professional ${serviceName?.toLowerCase() || 'property maintenance'} services across London and 120-mile radius. We offer 24/7 emergency response, certified engineers, and 4.9-star rated service. Contact us on +44 (0) 189 55 28 226 for immediate assistance.`,
+              "text": `Mainteniq provides professional ${serviceName?.toLowerCase() || 'property maintenance'} services across London and 120-mile radius. We offer 24/7 emergency response, certified engineers, and 4.9-star rated service. Contact us on +44 783 456 2366 for immediate assistance.`,
               "speakable": {
                 "@type": "SpeakableSpecification",
                 "xpath": "//p[contains(@class, 'voice-answer')]"

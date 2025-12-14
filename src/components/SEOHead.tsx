@@ -150,45 +150,67 @@ const SEOHead = ({
     // Add AI-specific meta tags for better crawlability and search ranking
     const addAIMetaTags = () => {
       const aiTags = [
+        // Standard search engine directives
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'bingbot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'slurp', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'DuckDuckBot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        // AI crawler directives
+        { name: 'GPTBot', content: 'index, follow' },
+        { name: 'ClaudeBot', content: 'index, follow' },
+        { name: 'Anthropic-AI', content: 'index, follow' },
+        { name: 'PerplexityBot', content: 'index, follow' },
+        { name: 'Google-Extended', content: 'index, follow' },
+        { name: 'CCBot', content: 'index, follow' },
+        { name: 'cohere-ai', content: 'index, follow' },
+        { name: 'Meta-ExternalAgent', content: 'index, follow' },
+        { name: 'Amazonbot', content: 'index, follow' },
+        // Open Graph
         { property: 'og:site_name', content: 'Mainteniq - UK Premier Property Services' },
         { property: 'og:locale', content: 'en_GB' },
         { property: 'article:author', content: 'Mainteniq Expert Team' },
         { property: 'article:publisher', content: 'https://www.mainteniq.co.uk' },
+        // Twitter
         { name: 'twitter:site', content: '@mainteniq' },
         { name: 'twitter:creator', content: '@mainteniq' },
         { name: 'twitter:card', content: 'summary_large_image' },
+        // App names
         { name: 'apple-mobile-web-app-title', content: 'Mainteniq' },
         { name: 'application-name', content: 'Mainteniq Property Services' },
         { name: 'msapplication-TileColor', content: '#1e40af' },
         { name: 'theme-color', content: '#1e40af' },
+        // Business contact data
         { name: 'business:contact_data:locality', content: 'London' },
         { name: 'business:contact_data:region', content: 'England' },
         { name: 'business:contact_data:country_name', content: 'United Kingdom' },
         { name: 'business:contact_data:phone_number', content: '+44 783 456 2366' },
         { name: 'business:contact_data:email', content: 'info@mainteniq.co.uk' },
+        // Geo targeting
         { name: 'geo.region', content: 'GB-LND' },
         { name: 'geo.placename', content: 'London, United Kingdom' },
         { name: 'geo.position', content: '51.5074;-0.1278' },
         { name: 'ICBM', content: '51.5074, -0.1278' },
+        // AI-optimized structured metadata
         { name: 'ai:service_areas', content: 'London, Greater London, Essex, Kent, Surrey, Hertfordshire, Buckinghamshire, Berkshire' },
-        { name: 'ai:primary_services', content: 'HVAC Maintenance, FCU Service, HIU Repair, MVHR Cleaning, BMS Installation, Smart Home Automation, Emergency Plumbing, Certified Electrical, Professional Handyman, End-of-Tenancy Cleaning' },
+        { name: 'ai:primary_services', content: 'HVAC Maintenance, Boiler Services, FCU Service, HIU Repair, MVHR Cleaning, CIU Maintenance, BMS Installation, Smart Home Automation, Emergency Plumbing, Certified Electrical, Professional Handyman, End-of-Tenancy Cleaning' },
         { name: 'ai:specializations', content: 'Energy Efficiency, Preventive Maintenance, Smart Building Technology, 24/7 Emergency Response, Gas Safe & NICEIC Certified' },
         { name: 'ai:emergency_service', content: '24/7 Emergency HVAC, Plumbing & Electrical Response Available Across London' },
         { name: 'ai:certifications', content: 'Gas Safe Registered, NICEIC Approved Contractor, F-Gas Certified, City & Guilds Qualified, Fully Insured & Bonded' },
         { name: 'ai:response_time', content: 'Same day emergency response, 24-48h standard bookings, free quotes within 2 hours' },
         { name: 'ai:service_guarantee', content: 'Work guaranteed, transparent pricing, no hidden costs, customer satisfaction promise' },
         { name: 'ai:coverage_area', content: 'London and 120-mile radius including Home Counties' },
+        { name: 'ai:last_updated', content: '2025-12-14' },
+        { name: 'ai:business_hours', content: '24/7 Emergency Response, Standard: Mon-Fri 8am-6pm, Sat 9am-5pm, Sun 10am-4pm' },
+        { name: 'ai:accepts_emergency_calls', content: 'true' },
+        { name: 'ai:booking_methods', content: 'WhatsApp, Phone, Online Form' },
+        // Business metadata
         { name: 'rating', content: '4.9' },
         { name: 'price_range', content: '££' },
         { name: 'availability', content: '24/7' },
         { name: 'language', content: 'en-GB' },
         { name: 'audience', content: 'Landlords, Airbnb Hosts, Property Managers, Facility Managers, Buy-to-Let Investors, Commercial Property Owners' },
-        { name: 'expertise', content: 'HVAC Systems, Smart Home Technology, Building Management, Emergency Repairs, Preventive Maintenance' }
+        { name: 'expertise', content: 'HVAC Systems, Boiler Services, Smart Home Technology, Building Management, Emergency Repairs, Preventive Maintenance' }
       ];
       
       aiTags.forEach(tag => {
