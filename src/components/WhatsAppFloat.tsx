@@ -56,11 +56,11 @@ const WhatsAppFloat = () => {
     return (
       <Button
         onClick={handleWhatsAppClick}
-        className="fixed bottom-6 right-6 w-18 h-18 rounded-full bg-whatsapp hover:bg-whatsapp/90 shadow-[0_4px_20px_rgba(37,211,102,0.5)] z-40 flex items-center justify-center p-0 animate-pulse-subtle border-2 border-white/30"
+        className="fixed bottom-6 right-6 w-18 h-18 rounded-full bg-whatsapp hover:bg-whatsapp/90 shadow-[0_4px_20px_rgba(37,211,102,0.5)] z-40 flex items-center justify-center p-0 border-2 border-white/30"
         style={{ width: '72px', height: '72px' }}
         aria-label={`Contact us on WhatsApp at ${CONTACT.phones.emergency}`}
       >
-        <FaWhatsapp className="w-9 h-9 text-white drop-shadow-lg" />
+        <FaWhatsapp className="w-12 h-12 text-white drop-shadow-lg" />
       </Button>
     );
   }
