@@ -11,7 +11,7 @@ import ResearchBadge from "@/components/ResearchBadge";
 import { SmartHomeGallery } from "@/components/SmartHomeGallery";
 import { BeforeAfterComparison } from "@/components/BeforeAfterComparison";
 import { handleQuoteRequest } from "@/utils/quote";
-import { generateSmartHomeSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
+import { generateSmartHomeSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 
 const SmartHome: React.FC = () => {
   const serviceOutcomes = [
@@ -72,19 +72,29 @@ const SmartHome: React.FC = () => {
       }
   ];
 
+  const smartHomeFaqs = [
+    { question: "What smart home systems do you install?", answer: "We install smart lighting, entertainment systems, security cameras, smart locks, video doorbells, and energy monitoring including SMETS2 smart meter integration. We work with major platforms like Apple HomeKit, Google Home, and Amazon Alexa." },
+    { question: "How long does smart home installation take?", answer: "A typical smart home installation takes 1-3 days depending on complexity. Simple lighting automation can be done in a day, while whole-house systems with security integration may take 2-3 days." },
+    { question: "Do I need special wiring for smart home?", answer: "Most smart home devices work with existing wiring and WiFi. However, some advanced installations benefit from dedicated networking or smart switches. We assess your property and recommend the best approach." },
+    { question: "Can I control everything from one app?", answer: "Yes, we specialize in unified smart home control. We integrate multiple devices into a single control interface, whether through manufacturer apps or universal platforms like Apple Home or Google Home." },
+    { question: "What happens if my internet goes down?", answer: "Quality smart home installations include local control options. Many devices continue working locally even without internet, and critical systems like security remain operational." },
+    { question: "How much does smart home installation cost in London?", answer: "Smart home installation costs vary from £500 for basic lighting automation to £5,000+ for comprehensive whole-house systems. We provide free consultations and detailed quotes." }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEOHead
         title="Smart Home Automation Installation London | Professional Setup | Mainteniq"
         description="Expert smart home installation in London. Control lighting, entertainment, security & energy from one app. SMETS2 smart meter integration. Professional installation & ongoing support."
         keywords="smart home London, smart home automation, home automation installation, smart lighting London, home security systems, entertainment systems, smart locks, energy monitoring UK, SMETS2 integration, smart home installer"
-        canonicalUrl="/smart-home"
+        canonicalUrl="https://www.mainteniq.co.uk/smart-home"
         structuredData={generateSmartHomeSchema()}
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "Smart Home", url: "https://www.mainteniq.co.uk/smart-home" }
         ])}
+        faqData={generateFAQSchema(smartHomeFaqs)}
       />
       
       <FullBleedHero

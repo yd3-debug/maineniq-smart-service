@@ -32,6 +32,7 @@ import heroImage from "@/assets/hiu-residential.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import { generateBreadcrumbSchema, generateFAQSchema, generateHIUServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
 
@@ -168,10 +169,17 @@ const HIUMaintenance = () => {
     <div className="min-h-screen bg-background">
       <EnhancedFAQSchema faqs={hiuFaqs} pageTitle="HIU & CIU Maintenance" />
       <SEOHead
-        title="HIU & CIU Maintenance | Mainteniq"
+        title="HIU & CIU Maintenance London | Heat Interface Unit Service | Mainteniq"
         description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."
-        keywords="HIU maintenance, CIU maintenance, HIU repair, CIU service, district heating interface unit"
-        canonicalUrl={`${window.location.origin}/hiu-maintenance`}
+        keywords="HIU maintenance London, CIU maintenance, HIU repair, CIU service, district heating interface unit, heat interface unit service, communal heating maintenance"
+        canonicalUrl="https://www.mainteniq.co.uk/hiu-maintenance"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "HIU & CIU Maintenance", url: "https://www.mainteniq.co.uk/hiu-maintenance" }
+        ])}
+        faqData={generateFAQSchema(hiuFaqs)}
+        serviceData={generateHIUServiceSchema()}
       />
 
       {/* Hero Section */}

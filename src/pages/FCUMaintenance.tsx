@@ -36,6 +36,7 @@ import { useState } from "react";
 import heroImage from "@/assets/fcu-commercial.jpg";
 import fcuInstallationImage from "@/assets/fcu-installation.jpg";
 import systemInspectionImage from "@/assets/system-inspection.jpg";
+import { generateBreadcrumbSchema, generateFAQSchema, generateFCUServiceSchema } from "@/utils/structuredData";
 
 const fcuFaqs = [
   { question: "What is an FCU (Fan Coil Unit)?", answer: "A Fan Coil Unit is a heating/cooling device consisting of a fan and heating/cooling coils. It circulates air through the coils to maintain room temperature in commercial and residential buildings." },
@@ -174,7 +175,15 @@ const FCUMaintenance = () => {
       <SEOHead 
         title="FCU Maintenance London | Fan Coil Unit Servicing | Mainteniq"
         description="Professional FCU maintenance and servicing across London. Keep your fan coil units running efficiently with our certified engineers. Preventive maintenance from £150/unit."
-        keywords="FCU maintenance London, fan coil unit servicing, FCU cleaning, commercial HVAC maintenance, air conditioning service UK"
+        keywords="FCU maintenance London, fan coil unit servicing, FCU cleaning, commercial HVAC maintenance, air conditioning service UK, TM44 inspection, commercial building HVAC"
+        canonicalUrl="https://www.mainteniq.co.uk/fcu-maintenance"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "FCU Maintenance", url: "https://www.mainteniq.co.uk/fcu-maintenance" }
+        ])}
+        faqData={generateFAQSchema(fcuFaqs)}
+        serviceData={generateFCUServiceSchema()}
       />
       <EnhancedFAQSchema faqs={fcuFaqs} pageTitle="FCU Maintenance" />
       

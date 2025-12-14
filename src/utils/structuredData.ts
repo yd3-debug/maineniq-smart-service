@@ -506,3 +506,103 @@ export const generateReviewSchema = (reviews: Array<{
   },
   "reviewBody": reviews.map(r => r.text).join(" ")
 });
+
+// FCU Service Schema
+export const generateFCUServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "FCU Maintenance & Servicing London",
+  "description": "Professional Fan Coil Unit maintenance and servicing across London. Quarterly filter replacement, coil deep cleaning, control calibration. TM44 certified engineers. Preventive maintenance from £150/unit.",
+  "url": "https://www.mainteniq.co.uk/fcu-maintenance",
+  "image": "https://www.mainteniq.co.uk/FCUclean.png",
+  "serviceType": "FCU Maintenance",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// HIU Service Schema
+export const generateHIUServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "HIU & CIU Maintenance London",
+  "description": "Expert Heat Interface Unit and Central Interface Unit servicing for district heating systems. Plate descaling, valve servicing, strainer cleaning. Service apartments, build-to-rent, and housing associations across London.",
+  "url": "https://www.mainteniq.co.uk/hiu-maintenance",
+  "image": "https://www.mainteniq.co.uk/CIU.png",
+  "serviceType": "HIU/CIU Maintenance",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// MVHR Service Schema
+export const generateMVHRServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "MVHR Maintenance & Filter Replacement London",
+  "description": "Professional Mechanical Ventilation with Heat Recovery maintenance. Filter replacement, heat exchanger cleaning, ductwork inspection. Improve indoor air quality and energy efficiency in new-build homes and apartments.",
+  "url": "https://www.mainteniq.co.uk/mvhr-maintenance",
+  "image": "https://www.mainteniq.co.uk/MVHRclean.webp",
+  "serviceType": "MVHR Maintenance",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// HVAC Service Schema
+export const generateHVACServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "HVAC & Commercial Refrigeration Maintenance UK",
+  "description": "Professional HVAC and commercial refrigeration maintenance. FCU, MVHR, HIU, VRF systems, cold rooms, display refrigeration. F-Gas certified engineers, TM44 inspections. 24/7 emergency response across London and 120-mile radius.",
+  "url": "https://www.mainteniq.co.uk/hvac-maintenance",
+  "image": "https://www.mainteniq.co.uk/HVAC_SYSTEM.png",
+  "serviceType": "HVAC Maintenance",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "F-Gas Certified" },
+    { "@type": "EducationalOccupationalCredential", "name": "TM44 Accredited" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});

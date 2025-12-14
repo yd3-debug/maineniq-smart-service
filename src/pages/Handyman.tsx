@@ -10,7 +10,7 @@ import HandymanImage from "@/assets/handyman-repair.jpg";
 import { CONTACT } from "@/config/contact";
 import { handleQuoteRequest } from "@/utils/quote";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { generateHandymanSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
+import { generateHandymanSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Phone, 
@@ -114,6 +114,15 @@ const Handyman: React.FC = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [processOpen, setProcessOpen] = React.useState(false);
 
+  const handymanFaqs = [
+    { question: "What handyman services do you offer in London?", answer: "We offer comprehensive property maintenance including electrical repairs, plumbing fixes, carpentry, decorating, property maintenance, and emergency repairs. All work is carried out by qualified, insured professionals." },
+    { question: "Do you offer same-day emergency handyman services?", answer: "Yes, we offer 98% same-day response for emergency repairs. Contact us and we'll dispatch a qualified tradesperson as quickly as possible." },
+    { question: "Are your handymen insured and qualified?", answer: "Yes, all our tradespeople are fully insured with public liability cover and hold relevant trade qualifications. We provide documentation for all work completed." },
+    { question: "How much does a handyman cost in London?", answer: "Our rates are competitive for professional London handyman services. We provide transparent quotes before work begins with no hidden charges." },
+    { question: "Do you work with landlords and letting agents?", answer: "Yes, we specialize in property maintenance for landlords, Airbnb hosts, letting agents, and property managers. We understand tenant turnaround requirements and compliance documentation needs." },
+    { question: "What warranty do you offer on handyman work?", answer: "We provide up to 24 months warranty on all work with free callback if any issues arise within the warranty period." }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEOHead
@@ -121,13 +130,14 @@ const Handyman: React.FC = () => {
         description="Professional handyman services for landlords, Airbnb hosts & property managers in London. Electrical, plumbing, carpentry, decorating. Same-day emergency repairs. Fully insured."
         keywords="handyman London, property maintenance London, handyman services, electrical repairs London, plumbing fixes, carpentry London, decorating services, emergency handyman, landlord handyman, Airbnb property maintenance"
         ogImage="/og-image-mainteniq.png"
-        canonicalUrl="/handyman"
+        canonicalUrl="https://www.mainteniq.co.uk/handyman"
         structuredData={generateHandymanSchema()}
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "Handyman Services", url: "https://www.mainteniq.co.uk/handyman" }
         ])}
+        faqData={generateFAQSchema(handymanFaqs)}
       />
 
       <FullBleedHero

@@ -38,6 +38,7 @@ import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import { generateBreadcrumbSchema, generateFAQSchema, generateHVACServiceSchema } from "@/utils/structuredData";
 
 const hvacFaqs = [
   { question: "How often should HVAC systems be serviced in the UK?", answer: "Commercial HVAC systems should be serviced quarterly, while residential systems need annual maintenance minimum. High-use environments like restaurants require monthly checks." },
@@ -149,8 +150,15 @@ export default function HVACMaintenance() {
       <SEOHead
         title="HVAC & Commercial Refrigeration Maintenance UK | Professional Service"
         description="Professional HVAC and commercial refrigeration maintenance for UK properties. FCU, MVHR, HIU, VRF systems, cold rooms, and display refrigeration. F-Gas certified engineers."
-        keywords="HVAC maintenance London, commercial refrigeration service, FCU maintenance, MVHR servicing, VRF systems, F-Gas certified, TM44 inspection"
-        canonicalUrl={`${window.location.origin}/hvac-maintenance`}
+        keywords="HVAC maintenance London, commercial refrigeration service, FCU maintenance, MVHR servicing, VRF systems, F-Gas certified, TM44 inspection, commercial air conditioning"
+        canonicalUrl="https://www.mainteniq.co.uk/hvac-maintenance"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "HVAC Maintenance", url: "https://www.mainteniq.co.uk/hvac-maintenance" }
+        ])}
+        faqData={generateFAQSchema(hvacFaqs)}
+        serviceData={generateHVACServiceSchema()}
       />
 
       {/* Hero Section */}
