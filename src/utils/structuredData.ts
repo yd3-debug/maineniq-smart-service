@@ -606,3 +606,51 @@ export const generateHVACServiceSchema = () => ({
   ],
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
 });
+
+// BMS Service Schema
+export const generateBMSServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "BMS Maintenance & Optimization London",
+  "description": "Expert Building Management System maintenance and optimization. Multi-platform certified engineers for Trend, Siemens, Honeywell, Johnson Controls. Reduce energy costs 15-30% with professional BMS servicing.",
+  "url": "https://www.mainteniq.co.uk/bms",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+  "serviceType": "BMS Maintenance",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// Renovation Service Schema
+export const generateRenovationServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Property Renovation & Refurbishment London",
+  "description": "Professional property renovation and refurbishment services in London. Kitchen, bathroom, and full property renovations. Project management, quality materials, and guaranteed workmanship.",
+  "url": "https://www.mainteniq.co.uk/renovation-composer",
+  "image": "https://www.mainteniq.co.uk/New_Flat.jpg",
+  "serviceType": "Property Renovation",
+  "dateModified": "2025-12-14",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});

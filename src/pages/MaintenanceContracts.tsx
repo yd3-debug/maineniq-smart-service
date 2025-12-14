@@ -9,7 +9,7 @@ import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SEOHead from "@/components/SEOHead";
 import { CONTACT } from "@/config/contact";
-import { generateMaintenanceContractSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
+import { generateMaintenanceContractSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Shield, 
@@ -43,6 +43,15 @@ const MaintenanceContracts = () => {
   console.log('MaintenanceContracts: Component loaded');
   console.log('WhoWeServe:', WhoWeServe);
   console.log('SystemsWeMaintain:', SystemsWeMaintain);
+
+  const maintenanceContractFaqs = [
+    { question: "What's included in a maintenance contract?", answer: "Our contracts include scheduled preventive maintenance, 24/7 emergency response, parts and labor for covered systems, detailed reporting, and priority service. We tailor coverage to your specific property needs." },
+    { question: "How much can I save with a maintenance contract?", answer: "Properties on maintenance contracts typically save 30-50% compared to reactive maintenance costs. You also benefit from extended equipment lifespan and reduced emergency callouts." },
+    { question: "What's the typical response time for emergencies?", answer: "Contract customers receive guaranteed 4-hour response SLA for emergencies, with 24/7 direct access to our engineering team - no call centers or delays." },
+    { question: "Can I customize my maintenance contract?", answer: "Yes, all our contracts are tailored to your property's specific systems and needs. We conduct a free assessment and design a package that covers exactly what you need." },
+    { question: "What systems can be covered under a maintenance contract?", answer: "We cover HVAC systems, boilers, plumbing, electrical, FCU, HIU, MVHR, BMS, and general building maintenance. Single-provider coverage simplifies your property management." },
+    { question: "How do I get started with a maintenance contract?", answer: "Contact us for a free property assessment. We'll evaluate your systems, discuss your needs, and provide a custom proposal with clear pricing and service levels." }
+  ];
   
   useEffect(() => {
     console.log('MaintenanceContracts: useEffect running');
@@ -127,13 +136,14 @@ const MaintenanceContracts = () => {
         title="Custom Maintenance Contracts UK | Prevent 80% Breakdowns | 24/7 Response | Mainteniq"
         description="Tailored HVAC, plumbing & electrical maintenance contracts for landlords & property managers. Prevent 80% breakdowns, fixed monthly costs, 24/7 response, 99.2% uptime guarantee."
         keywords="maintenance contracts UK, property maintenance agreements, HVAC maintenance contracts, landlord maintenance services, preventive maintenance contracts, building maintenance, commercial property maintenance, planned maintenance, PPM contracts, facility management"
-        canonicalUrl="/maintenance-contracts"
+        canonicalUrl="https://www.mainteniq.co.uk/maintenance-contracts"
         structuredData={generateMaintenanceContractSchema()}
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "Maintenance Contracts", url: "https://www.mainteniq.co.uk/maintenance-contracts" }
         ])}
+        faqData={generateFAQSchema(maintenanceContractFaqs)}
       />
       <FullBleedHero
         title="Custom Maintenance Contracts for Your Property Portfolio"

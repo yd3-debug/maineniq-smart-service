@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
+import SEOHead from "@/components/SEOHead";
 
 import { BMSMetrics } from "@/components/BMSMetrics";
 import { BMSBeforeAfter } from "@/components/BMSBeforeAfter";
@@ -12,29 +13,33 @@ import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
 import { CheckCircle, Phone, ArrowRight } from "lucide-react";
+import { generateBreadcrumbSchema, generateFAQSchema, generateBMSServiceSchema } from "@/utils/structuredData";
+
+const bmsFaqs = [
+  { question: "What is a Building Management System (BMS)?", answer: "A BMS is a computer-based control system that manages and monitors a building's mechanical and electrical equipment such as HVAC, lighting, power systems, fire systems, and security systems." },
+  { question: "How often should BMS systems be maintained?", answer: "BMS systems should have quarterly preventive maintenance checks, with comprehensive annual reviews. Critical systems may require monthly monitoring and calibration." },
+  { question: "What are the benefits of BMS maintenance?", answer: "Regular BMS maintenance reduces energy costs by 15-30%, prevents system failures, extends equipment lifespan, ensures occupant comfort, and maintains regulatory compliance." },
+  { question: "Can you maintain any BMS brand?", answer: "Yes, we service all major BMS platforms including Trend, Siemens, Honeywell, Johnson Controls, Schneider Electric, and Tridium. Our engineers are multi-platform certified." },
+  { question: "What does BMS optimization include?", answer: "BMS optimization includes control strategy review, setpoint optimization, scheduling adjustments, sensor calibration, trending analysis, and energy performance improvements." },
+  { question: "How much can BMS optimization save on energy costs?", answer: "Proper BMS optimization typically saves 15-30% on energy costs. We provide detailed energy reports showing before and after performance metrics." }
+];
 
 const BMS: React.FC = () => {
-  useEffect(() => {
-    document.title = "BMS Maintenance & Optimization | Mainteniq";
-    const desc = "Expert BMS maintenance services to optimize your building management system performance, reduce energy costs, and ensure reliable operation.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", window.location.href);
-  }, []);
-
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="BMS Maintenance & Optimization London | Building Management Systems | Mainteniq"
+        description="Expert BMS maintenance services to optimize your building management system performance, reduce energy costs by 15-30%, and ensure reliable operation. Multi-platform certified engineers."
+        keywords="BMS maintenance London, building management system, BMS optimization, HVAC controls, building automation, Trend BMS, Siemens BMS, energy management, building controls maintenance"
+        canonicalUrl="https://www.mainteniq.co.uk/bms"
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk" },
+          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
+          { name: "BMS Maintenance", url: "https://www.mainteniq.co.uk/bms" }
+        ])}
+        faqData={generateFAQSchema(bmsFaqs)}
+        serviceData={generateBMSServiceSchema()}
+      />
       {/* Enhanced Hero Section */}
       <FullBleedHero
         title="BMS Maintenance & Optimization"
