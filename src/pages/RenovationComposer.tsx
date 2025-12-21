@@ -14,11 +14,9 @@ import { TrustMetrics } from "@/components/TrustMetrics";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import SEOHead from "@/components/SEOHead";
 import RenovationGallery from "@/components/RenovationGallery";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 import { generateBreadcrumbSchema, generateFAQSchema, generateRenovationServiceSchema } from "@/utils/structuredData";
-import renovationImage from "@/assets/renovation-comparison.jpg";
 
 const renovationServices = [
   {
@@ -271,8 +269,8 @@ export default function RenovationComposer() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src={renovationImage} 
-                alt="Professional property renovation showing modern transformation"
+                src="/2024_Kitchen.png" 
+                alt="Kitchen renovation before and after comparison showing dramatic transformation"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -382,15 +380,13 @@ export default function RenovationComposer() {
                 />
               ))}
             </div>
-            <BeforeAfterSlider
-              beforeSrc="/old_kitchen.jpg"
-              afterSrc="/2024_Kitchen.png"
-              beforeAlt="Kitchen before renovation - outdated appliances and fixtures"
-              afterAlt="Kitchen after renovation - modern finishes and appliances"
-              beforeLabel="Before"
-              afterLabel="After"
-              fit="cover"
-            />
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/2024_Kitchen.png" 
+                alt="Kitchen renovation before and after comparison showing transformation from outdated to modern"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </section>
 
