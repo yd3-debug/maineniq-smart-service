@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import { Star, TrendingUp, Home, Building } from "lucide-react";
+import { Star, TrendingUp, Home } from "lucide-react";
 
 interface RenovationProject {
   id: number;
@@ -171,7 +171,7 @@ const RenovationGallery: React.FC = () => {
                 </div>
 
                 {/* Project Stats */}
-                <div className="grid grid-cols-2 gap-4">
+                <div>
                   <Card className="border-success/25 bg-success/5">
                     <CardContent className="p-4 text-center">
                       <div className="flex items-center justify-center mb-2">
@@ -181,17 +181,6 @@ const RenovationGallery: React.FC = () => {
                         </span>
                       </div>
                       <p className="text-sm text-muted-foreground">Value Increase</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-primary/25 bg-primary/5">
-                    <CardContent className="p-4 text-center">
-                      <div className="flex items-center justify-center mb-2">
-                        <Building className="w-5 h-5 text-primary mr-2" />
-                        <span className="text-2xl font-bold text-primary">
-                          {project.stats.timeframe}
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">Completion Time</p>
                     </CardContent>
                   </Card>
                   {project.stats.energySavings && (
@@ -223,19 +212,29 @@ const RenovationGallery: React.FC = () => {
                 </div>
               </div>
 
-              {/* Before/After Slider */}
+              {/* Before/After Image */}
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <BeforeAfterSlider
-                  beforeSrc={project.beforeImage}
-                  afterSrc={project.afterImage}
-                  beforeAlt={project.beforeAlt}
-                  afterAlt={project.afterAlt}
-                  beforeLabel="Before"
-                  afterLabel="After"
-                  ratio={16 / 10}
-                  fit="cover"
-                  className="rounded-lg shadow-lg"
-                />
+                {project.id === 1 ? (
+                  <div className="rounded-lg shadow-lg overflow-hidden">
+                    <img
+                      src="/2024_Kitchen.png"
+                      alt="Kitchen renovation before and after comparison"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                ) : (
+                  <BeforeAfterSlider
+                    beforeSrc={project.beforeImage}
+                    afterSrc={project.afterImage}
+                    beforeAlt={project.beforeAlt}
+                    afterAlt={project.afterAlt}
+                    beforeLabel="Before"
+                    afterLabel="After"
+                    ratio={16 / 10}
+                    fit="cover"
+                    className="rounded-lg shadow-lg"
+                  />
+                )}
               </div>
             </div>
           ))}

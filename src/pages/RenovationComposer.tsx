@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import FullBleedHero from "@/components/FullBleedHero";
 import { TrustMetrics } from "@/components/TrustMetrics";
-import { ProgressMetric } from "@/components/ProgressMetric";
+
 import SEOHead from "@/components/SEOHead";
 import RenovationGallery from "@/components/RenovationGallery";
 import { handleQuoteRequest } from "@/utils/quote";
@@ -367,17 +367,18 @@ export default function RenovationComposer() {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {serviceOutcomes.map((metric, index) => (
-                <ProgressMetric
-                  key={metric.label}
-                  icon={metric.icon}
-                  value={metric.value}
-                  label={metric.label}
-                  description={metric.description}
-                  percentage={metric.percentage}
-                  delay={index * 200}
-                />
+            <div className="grid grid-cols-2 gap-4">
+              {serviceOutcomes.map((metric) => (
+                <Card key={metric.label} className="border-primary/20 bg-background">
+                  <CardContent className="p-4 text-center">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <metric.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-2xl font-bold text-primary mb-1">{metric.value}</div>
+                    <div className="text-sm font-medium mb-1">{metric.label}</div>
+                    <p className="text-xs text-muted-foreground">{metric.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
