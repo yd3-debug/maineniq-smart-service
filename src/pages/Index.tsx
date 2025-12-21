@@ -28,7 +28,7 @@ import plumbingImage from "@/assets/plumber-electrician-work.jpg";
 import handymanImage from "@/assets/handyman-maintenance.jpg";
 import endOfTenancyImage from "@/assets/end-of-tenancy-cleaning.jpg";
 import smartHomeImage from "@/assets/smart-home-automation.jpg";
-import renovationImage from "@/assets/renovation-comparison.jpg";
+const renovationImage = "/2024_Kitchen.png";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import ResearchBadge from "@/components/ResearchBadge";
