@@ -24,15 +24,36 @@ interface RenovationProject {
 const renovationProjects: RenovationProject[] = [
   {
     id: 1,
-    title: "Complete London Flat Transformation",
-    category: "Full Property Renovation",
-    beforeImage: "/New_Flat.jpg",
-    afterImage: "/Old_Flat.jpeg",
-    beforeAlt: "After renovation - modern London flat with contemporary design",
-    afterAlt: "Before renovation - outdated London flat with worn fixtures",
-    description: "Complete transformation of a tired London flat into a modern, contemporary home with updated kitchen, bathroom, flooring, and electrical systems.",
+    title: "Complete Kitchen Transformation",
+    category: "Kitchen Renovation",
+    beforeImage: "/old_kitchen.jpg",
+    afterImage: "/2024_Kitchen.png",
+    beforeAlt: "Before renovation - outdated kitchen with old appliances and fixtures",
+    afterAlt: "After renovation - modern 2024 kitchen with contemporary design",
+    description: "Complete kitchen transformation featuring modern cabinets, premium appliances, and contemporary design elements that turned this space into the heart of the home.",
     stats: {
       valueIncrease: "32%",
+      timeframe: "4 weeks"
+    },
+    highlights: [
+      "Complete kitchen renovation with modern appliances",
+      "Custom-designed cabinets and countertops",
+      "Premium stainless steel appliances",
+      "Under-cabinet LED lighting",
+      "Modern tile backsplash"
+    ]
+  },
+  {
+    id: 2,
+    title: "Complete London Flat Transformation",
+    category: "Full Property Renovation",
+    beforeImage: "/Old_Flat.jpeg",
+    afterImage: "/New_Flat.jpg",
+    beforeAlt: "Before renovation - outdated London flat with worn fixtures",
+    afterAlt: "After renovation - modern London flat with contemporary design",
+    description: "Complete transformation of a tired London flat into a modern, contemporary home with updated kitchen, bathroom, flooring, and electrical systems.",
+    stats: {
+      valueIncrease: "25%",
       timeframe: "8 weeks"
     },
     highlights: [
@@ -44,34 +65,13 @@ const renovationProjects: RenovationProject[] = [
     ]
   },
   {
-    id: 2,
-    title: "Modern Kitchen Transformation",
-    category: "Kitchen Renovation",
-    beforeImage: "/new_kitchen.png",
-    afterImage: "/old_kitchen.jpg",
-    beforeAlt: "After renovation - modern kitchen with sleek design and premium appliances",
-    afterAlt: "Before renovation - outdated kitchen with old cabinets and appliances",
-    description: "Complete kitchen renovation featuring custom cabinets, premium appliances, and contemporary design elements that transformed this space into the heart of the home.",
-    stats: {
-      valueIncrease: "25%",
-      timeframe: "3 weeks"
-    },
-    highlights: [
-      "Custom-designed kitchen cabinets",
-      "Premium stainless steel appliances",
-      "Quartz countertops installation",
-      "Under-cabinet LED lighting",
-      "Modern tile backsplash"
-    ]
-  },
-  {
     id: 3,
     title: "Luxury Bathroom Refurbishment",
     category: "Bathroom Renovation",
-      beforeImage: "/Bathroom_NEW.png",
-      afterImage: "/Bathroom_OLD.jpg",
-    beforeAlt: "After renovation - luxury bathroom with modern fixtures and elegant design",
-    afterAlt: "Before renovation - outdated bathroom with old fixtures",
+    beforeImage: "/Bathroom_OLD.jpg",
+    afterImage: "/Bathroom_NEW.png",
+    beforeAlt: "Before renovation - outdated bathroom with old fixtures",
+    afterAlt: "After renovation - luxury bathroom with modern fixtures and elegant design",
     description: "High-end bathroom renovation featuring premium fixtures, modern tiling, and luxury finishes that created a spa-like retreat.",
     stats: {
       valueIncrease: "22%",
@@ -89,10 +89,10 @@ const renovationProjects: RenovationProject[] = [
     id: 4,
     title: "Master Bedroom Transformation",
     category: "Bedroom Renovation",
-    beforeImage: "/Bedroom_NEW.png",
-    afterImage: "/Bedroom_OLD2.jpg",
-    beforeAlt: "After renovation - modern bedroom with contemporary design",
-    afterAlt: "Before renovation - outdated bedroom with worn fixtures",
+    beforeImage: "/Bedroom_OLD2.jpg",
+    afterImage: "/Bedroom_NEW.png",
+    beforeAlt: "Before renovation - outdated bedroom with worn fixtures",
+    afterAlt: "After renovation - modern bedroom with contemporary design",
     description: "Complete bedroom renovation featuring built-in wardrobes, luxury flooring, and contemporary design that maximized space and comfort.",
     stats: {
       valueIncrease: "18%",
@@ -110,10 +110,10 @@ const renovationProjects: RenovationProject[] = [
     id: 5,
     title: "Commercial Office Fit-out",
     category: "Commercial Renovation",
-    beforeImage: "/NEW_OFFICE.png",
-    afterImage: "/OLD_OFFICE.jpg",
-    beforeAlt: "After renovation - modern office with professional design and contemporary finishes",
-    afterAlt: "Before renovation - outdated office space with old fixtures",
+    beforeImage: "/OLD_OFFICE.jpg",
+    afterImage: "/NEW_OFFICE.png",
+    beforeAlt: "Before renovation - outdated office space with old fixtures",
+    afterAlt: "After renovation - modern office with professional design and contemporary finishes",
     description: "Professional office renovation creating a modern workspace with meeting rooms, open-plan areas, and premium finishes for enhanced productivity.",
     stats: {
       valueIncrease: "35%",
