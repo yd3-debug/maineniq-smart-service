@@ -14,6 +14,7 @@ import { TrustMetrics } from "@/components/TrustMetrics";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import SEOHead from "@/components/SEOHead";
 import RenovationGallery from "@/components/RenovationGallery";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 import { generateBreadcrumbSchema, generateFAQSchema, generateRenovationServiceSchema } from "@/utils/structuredData";
@@ -381,13 +382,15 @@ export default function RenovationComposer() {
                 />
               ))}
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="/2024_Kitchen.png" 
-                alt="Modern kitchen renovation showing quality finishes"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+            <BeforeAfterSlider
+              beforeSrc="/old_kitchen.jpg"
+              afterSrc="/2024_Kitchen.png"
+              beforeAlt="Kitchen before renovation - outdated appliances and fixtures"
+              afterAlt="Kitchen after renovation - modern finishes and appliances"
+              beforeLabel="Before"
+              afterLabel="After"
+              fit="cover"
+            />
           </div>
         </section>
 
