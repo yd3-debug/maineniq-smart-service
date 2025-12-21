@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { 
   CheckCircle, Home, Palette, Shield, Star, Clock, Zap, ArrowRight, Phone, 
   Building2, Key, Briefcase, AlertTriangle, Thermometer, TrendingDown, PaintBucket,
-  ChevronDown, CheckCircle2, Quote, HelpCircle, Award, Users, Calendar
+  ChevronDown, CheckCircle2, Quote, HelpCircle, Users, TrendingUp, Heart, Leaf
 } from "lucide-react";
 import FullBleedHero from "@/components/FullBleedHero";
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -116,36 +116,44 @@ export default function RenovationComposer() {
 
   const serviceOutcomes = [
     {
-      icon: Star,
+      icon: TrendingUp,
       value: 32,
       label: "Value Increase",
       description: "Average property value increase after renovation",
-      percentage: 85,
-      suffix: "%"
+      suffix: "%",
+      bgColor: "bg-amber-500/10",
+      textColor: "text-amber-600",
+      borderColor: "border-amber-200"
     },
     {
-      icon: Award,
+      icon: Heart,
       value: 98,
       label: "Customer Satisfaction",
       description: "Clients satisfied with their renovation results",
-      percentage: 98,
-      suffix: "%"
+      suffix: "%",
+      bgColor: "bg-emerald-500/10",
+      textColor: "text-emerald-600",
+      borderColor: "border-emerald-200"
     },
     {
-      icon: Calendar,
+      icon: Clock,
       value: 95,
       label: "On-Time Completion",
       description: "Projects completed within scheduled timeline",
-      percentage: 95,
-      suffix: "%"
+      suffix: "%",
+      bgColor: "bg-blue-500/10",
+      textColor: "text-blue-600",
+      borderColor: "border-blue-200"
     },
     {
-      icon: Zap,
+      icon: Leaf,
       value: 40,
       label: "Energy Efficiency",
       description: "Average improvement in energy efficiency ratings",
-      percentage: 88,
-      suffix: "%"
+      suffix: "%",
+      bgColor: "bg-teal-500/10",
+      textColor: "text-teal-600",
+      borderColor: "border-teal-200"
     }
   ];
 
@@ -369,12 +377,12 @@ export default function RenovationComposer() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="grid grid-cols-2 gap-4">
               {serviceOutcomes.map((metric) => (
-                <Card key={metric.label} className="border-primary/20 bg-background">
+                <Card key={metric.label} className={`border ${metric.borderColor} bg-background hover:shadow-md transition-shadow`}>
                   <CardContent className="p-4 text-center">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <metric.icon className="w-5 h-5 text-primary" />
+                    <div className={`w-10 h-10 ${metric.bgColor} rounded-full flex items-center justify-center mx-auto mb-3`}>
+                      <metric.icon className={`w-5 h-5 ${metric.textColor}`} />
                     </div>
-                    <div className="text-2xl font-bold text-primary mb-1">{metric.value}</div>
+                    <div className={`text-2xl font-bold ${metric.textColor} mb-1`}>{metric.value}{metric.suffix}</div>
                     <div className="text-sm font-medium mb-1">{metric.label}</div>
                     <p className="text-xs text-muted-foreground">{metric.description}</p>
                   </CardContent>
