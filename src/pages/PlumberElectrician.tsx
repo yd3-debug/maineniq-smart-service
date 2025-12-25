@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
 import SEOHead from "@/components/SEOHead";
-
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -118,6 +119,15 @@ const PlumberElectrician: React.FC = () => {
           { name: "Plumber & Electrician", url: "https://www.mainteniq.co.uk/plumber-electrician" }
         ])}
         faqData={generateFAQSchema(plumberElectricianFaqs)}
+      />
+      <LocalBusinessSchema 
+        businessType="Plumbing and Electrical Services" 
+        serviceName="Professional Plumber & Electrician Services"
+        serviceDescription="Gas Safe registered plumbers and NICEIC certified electricians in London. Emergency repairs, boiler installation, rewiring, and compliance certificates"
+      />
+      <VoiceSearchOptimizer 
+        faqs={plumberElectricianFaqs} 
+        serviceName="Plumber & Electrician Services" 
       />
       
       <FullBleedHero
