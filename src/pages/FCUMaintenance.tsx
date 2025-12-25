@@ -9,6 +9,8 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { 
   Wind,
   CheckCircle,
@@ -186,6 +188,12 @@ const FCUMaintenance = () => {
         serviceData={generateFCUServiceSchema()}
       />
       <EnhancedFAQSchema faqs={fcuFaqs} pageTitle="FCU Maintenance" />
+      <LocalBusinessSchema 
+        businessType="FCU Maintenance" 
+        serviceName="Fan Coil Unit Servicing"
+        serviceDescription="Professional FCU maintenance and servicing across London to keep your fan coil units running efficiently"
+      />
+      <VoiceSearchOptimizer faqs={fcuFaqs} serviceName="FCU Maintenance" />
       
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">

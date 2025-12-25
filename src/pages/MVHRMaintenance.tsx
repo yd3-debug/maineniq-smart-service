@@ -37,6 +37,8 @@ import systemInspectionImage from "@/assets/system-inspection.jpg";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { generateBreadcrumbSchema, generateFAQSchema, generateMVHRServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -227,6 +229,12 @@ const MVHRMaintenance = () => {
         serviceData={generateMVHRServiceSchema()}
       />
       <EnhancedFAQSchema faqs={mvhrFaqs} pageTitle="MVHR Maintenance" />
+      <LocalBusinessSchema 
+        businessType="MVHR Maintenance" 
+        serviceName="MVHR Filter Replacement & Heat Recovery Service"
+        serviceDescription="Professional MVHR maintenance services in London including filter replacement, heat exchanger cleaning, and ductwork inspection"
+      />
+      <VoiceSearchOptimizer faqs={mvhrFaqs} serviceName="MVHR Maintenance" />
       
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">

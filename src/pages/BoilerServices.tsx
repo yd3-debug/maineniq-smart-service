@@ -28,6 +28,8 @@ import {
 import { handleQuoteRequest } from "@/utils/quote";
 import { TrustMetrics } from "@/components/TrustMetrics";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { generateFAQSchema, generateBreadcrumbSchema, generateServiceSchema } from "@/utils/structuredData";
 
 const BoilerServices = () => {
@@ -197,6 +199,12 @@ const BoilerServices = () => {
         breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
         faqData={generateFAQSchema(boilerFAQs)}
       />
+      <LocalBusinessSchema 
+        businessType="Boiler Services" 
+        serviceName="Boiler Repair, Installation & CP12"
+        serviceDescription="Gas Safe registered boiler services in London including repair, installation, servicing and CP12 certificates for landlords"
+      />
+      <VoiceSearchOptimizer faqs={boilerFAQs} serviceName="Boiler Services" />
 
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">

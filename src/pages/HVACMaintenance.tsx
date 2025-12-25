@@ -38,6 +38,8 @@ import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { generateBreadcrumbSchema, generateFAQSchema, generateHVACServiceSchema } from "@/utils/structuredData";
 
 const hvacFaqs = [
@@ -160,6 +162,12 @@ export default function HVACMaintenance() {
         faqData={generateFAQSchema(hvacFaqs)}
         serviceData={generateHVACServiceSchema()}
       />
+      <LocalBusinessSchema 
+        businessType="HVAC Maintenance" 
+        serviceName="HVAC & Commercial Refrigeration Maintenance"
+        serviceDescription="Professional HVAC and commercial refrigeration maintenance for UK properties including FCU, MVHR, HIU, VRF systems"
+      />
+      <VoiceSearchOptimizer faqs={hvacFaqs} serviceName="HVAC Maintenance" />
 
       {/* Hero Section */}
       <section 
