@@ -12,6 +12,8 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ServicePackageBuilder from "@/components/ServicePackageBuilder";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 import { Link } from "react-router-dom";
 import { CONTACT } from "@/config/contact";
@@ -298,6 +300,15 @@ const EndOfTenancyCleaning: React.FC = () => {
           { name: "End of Tenancy Cleaning", url: "https://www.mainteniq.co.uk/end-of-tenancy-cleaning" }
         ])}
         faqData={generateFAQSchema(cleaningFAQs)}
+      />
+      <LocalBusinessSchema 
+        businessType="End of Tenancy Cleaning" 
+        serviceName="Professional End of Tenancy Cleaning"
+        serviceDescription="Deposit-safe end of tenancy cleaning services in London with 48-hour re-clean guarantee. Inventory-ready deep cleaning for tenants and landlords"
+      />
+      <VoiceSearchOptimizer 
+        faqs={cleaningFAQs} 
+        serviceName="End of Tenancy Cleaning" 
       />
       <div className="min-h-screen">
         {/* Hero Section */}

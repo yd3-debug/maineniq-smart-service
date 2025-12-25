@@ -7,6 +7,8 @@ import { AnimatedChart, AnimatedStatCard, AnimatedCounter } from "@/components/A
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { handleQuoteRequest } from "@/utils/quote";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { generateFAQSchema, generateBreadcrumbSchema, generateServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -191,6 +193,15 @@ const CIUMaintenance = () => {
         structuredData={ciuServiceSchema}
         breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
         faqData={generateFAQSchema(ciuFAQs)}
+      />
+      <LocalBusinessSchema 
+        businessType="CIU Maintenance" 
+        serviceName="Central Interface Unit Maintenance"
+        serviceDescription="Expert CIU maintenance and zone control servicing in London. Precision calibration, valve actuator servicing, and BMS integration for commercial buildings"
+      />
+      <VoiceSearchOptimizer 
+        faqs={ciuFAQs} 
+        serviceName="CIU Maintenance" 
       />
 
       {/* Hero Section */}

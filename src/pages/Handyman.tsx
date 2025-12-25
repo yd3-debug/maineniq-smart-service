@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FullBleedHero from "@/components/FullBleedHero";
 import SEOHead from "@/components/SEOHead";
-
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { TestimonialCards } from "@/components/TestimonialCards";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import HandymanImage from "@/assets/handyman-repair.jpg";
@@ -138,6 +139,15 @@ const Handyman: React.FC = () => {
           { name: "Handyman Services", url: "https://www.mainteniq.co.uk/handyman" }
         ])}
         faqData={generateFAQSchema(handymanFaqs)}
+      />
+      <LocalBusinessSchema 
+        businessType="Handyman Services" 
+        serviceName="Professional Handyman Services"
+        serviceDescription="Comprehensive handyman and property maintenance services in London including electrical repairs, plumbing fixes, carpentry, and emergency repairs"
+      />
+      <VoiceSearchOptimizer 
+        faqs={handymanFaqs} 
+        serviceName="Handyman Services" 
       />
 
       <FullBleedHero
