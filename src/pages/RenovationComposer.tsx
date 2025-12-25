@@ -14,6 +14,9 @@ import { TrustMetrics } from "@/components/TrustMetrics";
 
 import SEOHead from "@/components/SEOHead";
 import RenovationGallery from "@/components/RenovationGallery";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
+import ReviewSchema from "@/components/ReviewSchema";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 import { generateBreadcrumbSchema, generateFAQSchema, generateRenovationServiceSchema } from "@/utils/structuredData";
@@ -224,6 +227,7 @@ export default function RenovationComposer() {
         description="Transform your property with our expert renovation and refurbishment services. Kitchen, bathroom, and full property renovations across London. Professional project management and guaranteed quality."
         keywords="property renovation London, refurbishment services, kitchen renovation, bathroom renovation, property transformation, London renovation, full property renovation, commercial renovation"
         canonicalUrl="https://www.mainteniq.co.uk/renovation-composer"
+        ogImage="/2024_Kitchen.png"
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
@@ -231,6 +235,27 @@ export default function RenovationComposer() {
         ])}
         faqData={generateFAQSchema(renovationFaqs)}
         serviceData={generateRenovationServiceSchema()}
+      />
+
+      <LocalBusinessSchema 
+        businessType="Property Renovation" 
+        serviceName="Property Renovation & Refurbishment"
+        serviceDescription="Professional property renovation and refurbishment services in London including kitchen, bathroom, and full property transformations"
+      />
+
+      <VoiceSearchOptimizer 
+        faqs={renovationFaqs} 
+        serviceName="Property Renovation" 
+      />
+
+      <ReviewSchema 
+        reviews={testimonials.map(t => ({
+          author: t.name,
+          rating: t.rating,
+          text: t.quote,
+          date: "2025-11-15"
+        }))}
+        aggregateRating={{ ratingValue: 5, reviewCount: 3 }}
       />
 
       {/* Hero Section with WhatsApp CTAs */}
