@@ -32,6 +32,8 @@ import heroImage from "@/assets/hiu-residential.jpg";
 import systemInspection from "@/assets/system-inspection.jpg";
 import SEOHead from "@/components/SEOHead";
 import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { generateBreadcrumbSchema, generateFAQSchema, generateHIUServiceSchema } from "@/utils/structuredData";
 
 import { TrustMetrics } from "@/components/TrustMetrics";
@@ -181,6 +183,12 @@ const HIUMaintenance = () => {
         faqData={generateFAQSchema(hiuFaqs)}
         serviceData={generateHIUServiceSchema()}
       />
+      <LocalBusinessSchema 
+        businessType="HIU Maintenance" 
+        serviceName="Heat Interface Unit Service"
+        serviceDescription="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns"
+      />
+      <VoiceSearchOptimizer faqs={hiuFaqs} serviceName="HIU & CIU Maintenance" />
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">

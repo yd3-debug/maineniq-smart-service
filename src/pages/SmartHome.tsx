@@ -14,6 +14,8 @@ import {
   ChevronDown, CheckCircle2, Star, Quote, HelpCircle
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 import { ProgressMetric } from "@/components/ProgressMetric";
 import { TrustMetrics } from "@/components/TrustMetrics";
 import ResearchBadge from "@/components/ResearchBadge";
@@ -217,6 +219,12 @@ const SmartHome: React.FC = () => {
         ])}
         faqData={generateFAQSchema(smartHomeFaqs)}
       />
+      <LocalBusinessSchema 
+        businessType="Smart Home Installation" 
+        serviceName="Smart Home Automation"
+        serviceDescription="Expert smart home installation in London including lighting, entertainment, security and energy monitoring systems"
+      />
+      <VoiceSearchOptimizer faqs={smartHomeFaqs} serviceName="Smart Home Automation" />
       
       <FullBleedHero
         title="Smart Home Automation"

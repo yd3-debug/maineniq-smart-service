@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import FullBleedHero from "@/components/FullBleedHero";
 import SEOHead from "@/components/SEOHead";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
 
 import { BMSMetrics } from "@/components/BMSMetrics";
 import { BMSBeforeAfter } from "@/components/BMSBeforeAfter";
@@ -40,6 +42,12 @@ const BMS: React.FC = () => {
         faqData={generateFAQSchema(bmsFaqs)}
         serviceData={generateBMSServiceSchema()}
       />
+      <LocalBusinessSchema 
+        businessType="BMS Maintenance" 
+        serviceName="Building Management System Maintenance & Optimization"
+        serviceDescription="Expert BMS maintenance services to optimize building management system performance and reduce energy costs"
+      />
+      <VoiceSearchOptimizer faqs={bmsFaqs} serviceName="BMS Maintenance" />
       {/* Enhanced Hero Section */}
       <FullBleedHero
         title="BMS Maintenance & Optimization"
