@@ -86,7 +86,7 @@ const Footer = () => {
                   href="https://www.yektad.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-primary hover:underline"
+                  className="text-sky-400 hover:text-sky-300 hover:underline font-medium"
                 >
                   YD
                 </a>
