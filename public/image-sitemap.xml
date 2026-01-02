@@ -5,6 +5,7 @@
   <!-- Homepage Hero Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
       <image:title>Professional HVAC Maintenance Services London</image:title>
@@ -15,6 +16,7 @@
   <!-- HVAC Maintenance Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/hvac-maintenance</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/HVAC_SYSTEM.png</image:loc>
       <image:title>HVAC Maintenance Services London</image:title>
@@ -25,6 +27,7 @@
   <!-- Boiler Services Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/boiler-services</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
       <image:title>Boiler Services London - Installation, Repair, CP12</image:title>
@@ -40,6 +43,7 @@
   <!-- FCU Maintenance Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/fcu-maintenance</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/FCUclean.png</image:loc>
       <image:title>Clean FCU Unit - Professional Maintenance London</image:title>
@@ -55,6 +59,7 @@
   <!-- HIU Maintenance Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/hiu-maintenance</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
       <image:title>HIU System Maintenance London</image:title>
@@ -65,6 +70,7 @@
   <!-- CIU Maintenance Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/ciu-maintenance</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/CIU.png</image:loc>
       <image:title>CIU Zone Control Maintenance London</image:title>
@@ -75,6 +81,7 @@
   <!-- MVHR Maintenance Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/mvhr-maintenance</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/MVHRclean.webp</image:loc>
       <image:title>Clean MVHR Filter - Professional Maintenance</image:title>
@@ -100,6 +107,7 @@
   <!-- BMS Services Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/bms</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
       <image:title>Building Management Systems London</image:title>
@@ -110,6 +118,7 @@
   <!-- Plumber & Electrician Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/plumber-electrician</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
       <image:title>Professional Boiler Installation and Repair London</image:title>
@@ -125,6 +134,7 @@
   <!-- Handyman Services Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/handyman</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
       <image:title>Professional Handyman Services London</image:title>
@@ -135,6 +145,7 @@
   <!-- Smart Home Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/smart-home</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
       <image:title>Smart Home Automation Services London</image:title>
@@ -145,6 +156,7 @@
   <!-- End of Tenancy Cleaning Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/end-of-tenancy-cleaning</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
       <image:title>End of Tenancy Cleaning Services London</image:title>
@@ -155,6 +167,7 @@
   <!-- Maintenance Contracts Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/maintenance-contracts</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
       <image:title>Maintenance Contracts for Property Managers London</image:title>
@@ -165,6 +178,7 @@
   <!-- Renovation Before/After Images -->
   <url>
     <loc>https://www.mainteniq.co.uk/renovation-composer</loc>
+    <lastmod>2025-01-02</lastmod>
     <image:image>
       <image:loc>https://www.mainteniq.co.uk/New_Flat.jpg</image:loc>
       <image:title>Renovated Property London - After</image:title>
@@ -219,6 +233,28 @@
       <image:loc>https://www.mainteniq.co.uk/2024_Kitchen.png</image:loc>
       <image:title>Kitchen Renovation Before and After London 2024</image:title>
       <image:caption>Professional kitchen renovation showing dramatic transformation - before and after comparison in London property</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/about</loc>
+    <lastmod>2025-01-02</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
+      <image:title>Mainteniq Logo - Professional Property Services</image:title>
+      <image:caption>Mainteniq - Expert HVAC and property maintenance company</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/contact</loc>
+    <lastmod>2025-01-02</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Contact Mainteniq - Customer Service</image:title>
+      <image:caption>Get in touch with our expert property maintenance team</image:caption>
     </image:image>
   </url>
 

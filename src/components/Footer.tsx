@@ -76,9 +76,22 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-300 text-center md:text-left">
-              © 2025 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
-            </p>
+            <div>
+              <p className="text-sm text-gray-300 text-center md:text-left">
+                © 2025 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
+              </p>
+              <p className="text-xs text-gray-400 text-center md:text-left mt-1">
+                Built by{" "}
+                <a 
+                  href="https://www.yektad.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-primary hover:underline"
+                >
+                  YD
+                </a>
+              </p>
+            </div>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-white" />
