@@ -80,13 +80,13 @@ const Footer = () => {
               <p className="text-sm text-gray-300 text-center md:text-left">
                 © 2025 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
               </p>
-              <p className="text-xs text-gray-400 text-center md:text-left mt-1">
+              <p className="text-sm text-gray-300 text-center md:text-left mt-1">
                 Built by{" "}
                 <a 
                   href="https://www.yektad.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-sky-400 hover:text-sky-300 hover:underline font-medium"
+                  className="text-gray-300 hover:text-primary hover:underline transition-colors"
                 >
                   YD
                 </a>
