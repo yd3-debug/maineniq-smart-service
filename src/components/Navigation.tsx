@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Wrench, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, MessageSquare } from "lucide-react";
+import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 
 const Navigation = () => {
@@ -190,13 +191,23 @@ const Navigation = () => {
               ))}
               <Button 
                 size="sm" 
+                variant="accent"
+                className="font-semibold shadow-md"
+                onClick={() => handleQuoteRequest("property services")}
+                aria-label="Get a quote for property services"
+              >
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Get a Quote
+              </Button>
+              <Button 
+                size="sm" 
                 variant={(isScrolled || hasLightBackground) ? "destructive" : "hero"} 
                 className={`${(!isScrolled && !hasLightBackground) ? "bg-red-600/90 text-white border-red-400/40 hover:bg-red-500/90 shadow-sm backdrop-blur-sm animate-pulse-glow" : "animate-pulse-glow"} font-semibold`}
                 onClick={() => window.open(`tel:${CONTACT.phones.emergencyTel}`, "_self")}
                 aria-label="Call for emergency HVAC service"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Emergency Call-Out
+                Emergency
               </Button>
             </div>
 
