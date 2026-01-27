@@ -1,16 +1,25 @@
+// Current date for all schema dateModified fields
+const CURRENT_DATE = '2026-01-27';
+
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
+  "@id": "https://www.mainteniq.co.uk/#organization",
   "name": "Mainteniq",
   "alternateName": "Mainteniq UK HVAC & Property Services",
   "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified, 4.9 star rating.",
   "url": "https://www.mainteniq.co.uk",
-  "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
+    "width": 512,
+    "height": 512
+  },
   "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
   "telephone": "+44 783 456 2366",
   "email": "info@mainteniq.co.uk",
   "foundingDate": "2020",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "slogan": "Preventing Breakdowns, Protecting Your Investment",
   "sameAs": [
     "https://www.linkedin.com/company/mainteniq",
@@ -471,13 +480,21 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
 export const generateWebSiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://www.mainteniq.co.uk/#website",
   "name": "Mainteniq",
+  "alternateName": "Mainteniq Property Services",
   "url": "https://www.mainteniq.co.uk",
+  "description": "Professional HVAC maintenance and property services in London",
+  "publisher": {
+    "@id": "https://www.mainteniq.co.uk/#organization"
+  },
+  "inLanguage": "en-GB",
+  "dateModified": CURRENT_DATE,
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://www.mainteniq.co.uk/search?q={search_term_string}"
+      "urlTemplate": "https://www.mainteniq.co.uk/services?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -516,7 +533,7 @@ export const generateFCUServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/fcu-maintenance",
   "image": "https://www.mainteniq.co.uk/FCUclean.png",
   "serviceType": "FCU Maintenance",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
@@ -540,7 +557,7 @@ export const generateHIUServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/hiu-maintenance",
   "image": "https://www.mainteniq.co.uk/CIU.png",
   "serviceType": "HIU/CIU Maintenance",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
@@ -564,7 +581,7 @@ export const generateMVHRServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/mvhr-maintenance",
   "image": "https://www.mainteniq.co.uk/MVHRclean.webp",
   "serviceType": "MVHR Maintenance",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
@@ -588,7 +605,7 @@ export const generateHVACServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/hvac-maintenance",
   "image": "https://www.mainteniq.co.uk/HVAC_SYSTEM.png",
   "serviceType": "HVAC Maintenance",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
@@ -616,7 +633,7 @@ export const generateBMSServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/bms",
   "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
   "serviceType": "BMS Maintenance",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
@@ -640,12 +657,93 @@ export const generateRenovationServiceSchema = () => ({
   "url": "https://www.mainteniq.co.uk/renovation-composer",
   "image": "https://www.mainteniq.co.uk/New_Flat.jpg",
   "serviceType": "Property Renovation",
-  "dateModified": "2025-12-14",
+  "dateModified": CURRENT_DATE,
   "provider": {
     "@type": "LocalBusiness",
     "name": "Mainteniq",
     "url": "https://www.mainteniq.co.uk",
     "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// HowTo Schema for process sections
+export const generateHowToSchema = (howTo: {
+  name: string;
+  description: string;
+  totalTime?: string;
+  steps: Array<{
+    name: string;
+    text: string;
+    image?: string;
+  }>;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": howTo.name,
+  "description": howTo.description,
+  "totalTime": howTo.totalTime || "PT2H",
+  "dateModified": CURRENT_DATE,
+  "step": howTo.steps.map((step, index) => ({
+    "@type": "HowToStep",
+    "position": index + 1,
+    "name": step.name,
+    "text": step.text,
+    ...(step.image && { "image": step.image })
+  })),
+  "tool": [],
+  "supply": []
+});
+
+// Boiler Service Schema
+export const generateBoilerServiceSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Boiler Installation & Repair London",
+  "description": "Gas Safe registered boiler installation, repair and servicing in London. CP12 gas safety certificates, emergency boiler repair 24/7. Worcester Bosch, Vaillant, Baxi specialists.",
+  "url": "https://www.mainteniq.co.uk/boiler-services",
+  "image": "https://www.mainteniq.co.uk/BOILER.png",
+  "serviceType": "Boiler Services",
+  "dateModified": CURRENT_DATE,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mainteniq",
+    "url": "https://www.mainteniq.co.uk",
+    "telephone": "+44 783 456 2366"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
+    "geoRadius": "193121"
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "Gas Safe Registered" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+});
+
+// End of Tenancy Cleaning Schema
+export const generateEndOfTenancyCleaningSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "End of Tenancy Cleaning London",
+  "description": "Professional end of tenancy deep cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
+  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
+  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
+  "dateModified": CURRENT_DATE,
+  "telephone": "+44 783 456 2366",
+  "email": "info@mainteniq.co.uk",
+  "priceRange": "££",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "addressCountry": "GB"
   },
   "areaServed": {
     "@type": "GeoCircle",

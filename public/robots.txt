@@ -1,6 +1,6 @@
 # Enhanced robots.txt for optimal SEO performance
 # Allow all major search engines and AI crawlers
-# Last updated: 2025-12-14
+# Last updated: 2026-01-27
 
 User-agent: Googlebot
 Allow: /
@@ -98,6 +98,16 @@ User-agent: AppleBot
 Allow: /
 Crawl-delay: 1
 
+# Gemini / Google Bard
+User-agent: Google-InspectionTool
+Allow: /
+Crawl-delay: 1
+
+# Microsoft Copilot
+User-agent: bingpreview
+Allow: /
+Crawl-delay: 1
+
 # Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
@@ -115,6 +125,9 @@ User-agent: Pinterest
 Allow: /
 
 User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
 Allow: /
 
 # Local Search Crawlers
@@ -140,6 +153,7 @@ Disallow: /*?*utm_*
 Disallow: /*?*ref=*
 Disallow: /*?*fbclid=*
 Disallow: /*?*gclid=*
+Disallow: /*?*msclkid=*
 
 # Allow important file types
 Allow: /*.css$
@@ -152,6 +166,7 @@ Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.pdf$
 Allow: /*.woff2$
+Allow: /*.woff$
 
 # Sitemap locations
 Sitemap: https://www.mainteniq.co.uk/sitemap.xml

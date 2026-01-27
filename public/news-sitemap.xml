@@ -3,7 +3,7 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   
   <!-- News Sitemap for Blog Posts and Case Studies -->
-  <!-- Add new entries here when publishing blog posts or news articles -->
+  <!-- Last updated: 2026-01-27 -->
   
   <url>
     <loc>https://www.mainteniq.co.uk/case-studies</loc>
@@ -12,9 +12,9 @@
         <news:name>Mainteniq Property Services</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-01-02</news:publication_date>
+      <news:publication_date>2026-01-27</news:publication_date>
       <news:title>Professional Property Maintenance Case Studies - London</news:title>
-      <news:keywords>HVAC maintenance, property maintenance, case studies, London</news:keywords>
+      <news:keywords>HVAC maintenance, property maintenance, case studies, London, landlord services</news:keywords>
     </news:news>
   </url>
 
@@ -25,9 +25,22 @@
         <news:name>Mainteniq Property Services</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2025-01-02</news:publication_date>
+      <news:publication_date>2026-01-27</news:publication_date>
       <news:title>Why Professional HVAC Maintenance Matters - Expert Guide</news:title>
-      <news:keywords>HVAC maintenance, professional services, energy efficiency, property value</news:keywords>
+      <news:keywords>HVAC maintenance, professional services, energy efficiency, property value, London</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.mainteniq.co.uk/blog</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Mainteniq Property Services</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-27</news:publication_date>
+      <news:title>Property Maintenance Blog - Expert Tips & Advice</news:title>
+      <news:keywords>property maintenance tips, HVAC advice, landlord guides, London property services</news:keywords>
     </news:news>
   </url>
 

@@ -9,14 +9,21 @@
     <meta name="keywords" content="HVAC maintenance London, FCU service London, HIU repair London, MVHR cleaning London, CIU maintenance London, London landlord HVAC maintenance, Airbnb property maintenance London, buy-to-let property services London, BTL maintenance London, rental property maintenance London, property manager maintenance London, heating engineer London, Gas Safe engineer London, plumbing London, electrical London, landlord gas safety certificate London, CP12 London, EICR London, facilities management London, end of tenancy cleaning London, emergency HVAC London, boiler service London" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="google-site-verification" content="google54ac49b0b2bec5b2" />
+    
+    <!-- Performance: Preconnect to required origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    
+    <!-- Fonts with display swap for performance -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/web-app-manifest.json">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -29,7 +36,7 @@
     <meta property="og:image:alt" content="Mainteniq - Expert HVAC Maintenance & Property Services in London" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="https://www.mainteniq.co.uk" />
-    <meta property="og:site_name" content="Mainteniq" />
+    <meta property="og:site_name" content="Mainteniq - UK Property Services" />
     <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->
@@ -41,38 +48,57 @@
     <meta name="twitter:image" content="https://www.mainteniq.co.uk/og-image-mainteniq.png" />
     <meta name="twitter:image:alt" content="Mainteniq - Expert HVAC Maintenance & Property Services in London" />
     
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#1e40af" />
-    <meta name="msapplication-TileColor" content="#1e40af" />
+    <!-- Mobile App / PWA -->
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="msapplication-TileColor" content="#1a1a2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Mainteniq" />
+    <meta name="application-name" content="Mainteniq Property Services" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mainteniq.co.uk/" />
 
     <!-- Geographic Targeting -->
-    <meta name="geo.region" content="GB-LND" />
-    <meta name="geo.placename" content="London, United Kingdom" />
+    <meta name="geo.region" content="GB-ENG" />
+    <meta name="geo.placename" content="London" />
     <meta name="geo.position" content="51.5074;-0.1278" />
     <meta name="ICBM" content="51.5074, -0.1278" />
     <meta name="DC.title" content="Mainteniq - HVAC & Property Maintenance London" />
+    
+    <!-- Content Freshness Signals -->
+    <meta name="revised" content="2026-01-27" />
+    <meta name="date" content="2026-01-27" />
+    <meta name="last-modified" content="2026-01-27" />
     
     <!-- Hreflang for UK Geographic Targeting -->
     <link rel="alternate" hreflang="en-GB" href="https://www.mainteniq.co.uk/" />
     <link rel="alternate" hreflang="x-default" href="https://www.mainteniq.co.uk/" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "HeatingContractor", "Plumber", "Electrician"],
+      "@id": "https://www.mainteniq.co.uk/#organization",
       "name": "Mainteniq",
       "alternateName": ["MaintenIQ", "Mainten IQ"],
       "description": "Professional HVAC maintenance, boiler services, plumbing, electrical, handyman, BMS, smart home & end-of-tenancy cleaning services across London and surrounding areas. 24/7 emergency response, Gas Safe & NICEIC certified.",
       "url": "https://www.mainteniq.co.uk",
       "telephone": "+44 783 456 2366",
       "email": "info@mainteniq.co.uk",
-      "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
+        "width": 512,
+        "height": 512
+      },
       "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
       "foundingDate": "2020",
       "slogan": "Preventing Breakdowns, Protecting Your Investment",
-      "dateModified": "2025-01-02",
+      "dateModified": "2026-01-27",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "London",
@@ -102,6 +128,27 @@
         {
           "@type": "AdministrativeArea", 
           "name": "Greater London"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-783-456-2366",
+          "contactType": "customer service",
+          "availableLanguage": "English",
+          "areaServed": "GB"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-783-456-2366",
+          "contactType": "emergency",
+          "availableLanguage": "English",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
         }
       ],
       "hasOfferCatalog": {
@@ -311,17 +358,41 @@
     }
     </script>
 
-    <!-- Additional Service-Specific Schema -->
+    <!-- JSON-LD Structured Data - WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.mainteniq.co.uk/#website",
+      "name": "Mainteniq",
+      "alternateName": "Mainteniq Property Services",
+      "url": "https://www.mainteniq.co.uk",
+      "description": "Professional HVAC maintenance and property services in London",
+      "publisher": {
+        "@id": "https://www.mainteniq.co.uk/#organization"
+      },
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.mainteniq.co.uk/services?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - Emergency Service -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Emergency HVAC Repair London",
-      "description": "24/7 emergency HVAC repair and maintenance services in London",
+      "description": "24/7 emergency HVAC repair and maintenance services in London. Same-day response for heating, cooling and ventilation emergencies.",
       "serviceType": "HVAC Emergency Repair",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Mainteniq"
+        "@id": "https://www.mainteniq.co.uk/#organization"
       },
       "areaServed": {
         "@type": "City",
@@ -335,6 +406,12 @@
         "@type": "ServiceChannel",
         "servicePhone": "+44 783 456 2366",
         "availableLanguage": "English"
+      },
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     }
     </script>
