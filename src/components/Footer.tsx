@@ -164,7 +164,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div>
               <p className="text-sm text-gray-300 text-center md:text-left">
-                © 2025 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
+                © 2026 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
               </p>
               <p className="text-sm text-gray-300 text-center md:text-left mt-1">
                 Built by{" "}
