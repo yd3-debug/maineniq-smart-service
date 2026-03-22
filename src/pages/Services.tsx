@@ -633,14 +633,14 @@ const services = [
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-20 bg-accent">
+      <section className="py-10 sm:py-14 md:py-20 bg-accent">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="font-heading text-4xl font-bold mb-6">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
                 Why Choose Our Professional Services
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 With years of experience and industry-leading expertise, we deliver exceptional 
                 results across all our service areas. From complex MVHR installations to simple handyman tasks.
               </p>
