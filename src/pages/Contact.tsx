@@ -339,7 +339,7 @@ const Contact = () => {
                     <div className="text-center lg:text-right space-y-6">
                       <div className="space-y-2">
                         <p className="text-sm opacity-75">Emergency Hotline</p>
-                        <p className="text-4xl font-bold text-accent">+44 783 456 2366</p>
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent">+44 783 456 2366</p>
                       </div>
                       <Button 
                         onClick={() => handleWhatsAppClick(true)}
