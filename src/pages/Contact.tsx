@@ -343,7 +343,7 @@ const Contact = () => {
                       </div>
                       <Button 
                         onClick={() => handleWhatsAppClick(true)}
-                        className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-elegant hover-scale"
+                        className="bg-white text-primary hover:bg-white/90 font-semibold px-4 sm:px-6 md:px-8 py-3 md:py-4 text-sm sm:text-base md:text-lg shadow-elegant hover-scale"
                       >
                         <MessageCircle className="w-5 h-5 mr-2" />
                         Emergency WhatsApp
