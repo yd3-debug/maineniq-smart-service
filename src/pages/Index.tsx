@@ -617,7 +617,7 @@ const Index = () => {
                 asChild 
                 size="lg" 
                 variant="accent" 
-                className="text-lg px-8 py-4"
+                className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 md:py-4"
               >
                 <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                   <Phone className="w-5 h-5 mr-2" />
