@@ -217,7 +217,7 @@ const Index = () => {
         </section>
 
         {/* Key Results Strip - Animated */}
-        <section className="bg-secondary/40 border-b border-muted/60 py-6">
+        <section className="bg-secondary/40 border-b border-muted/60 py-4 md:py-6">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted hover:shadow-lg transition-all">
