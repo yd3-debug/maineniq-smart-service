@@ -147,8 +147,8 @@ const PlumberElectrician: React.FC = () => {
         {/* Who We Help - Split Layout with Image */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="font-heading text-3xl font-bold mb-4">Who We Help</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Who We Help</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
               Licensed Gas Safe plumbers and NICEIC electricians for all your compliance needs. 
               We provide certificates, documentation, and peace of mind for your properties.
             </p>
