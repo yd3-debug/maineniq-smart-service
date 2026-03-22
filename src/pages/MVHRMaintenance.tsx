@@ -630,8 +630,8 @@ const MVHRMaintenance = () => {
           <div className="max-w-4xl mx-auto">
             <AnimatedChart delay={200}>
               <Card className="mb-8 border-success/20">
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-4 gap-6 text-center">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                     <div>
                       <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span className="text-2xl font-bold text-success">3</span>
