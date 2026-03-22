@@ -207,7 +207,7 @@ const BoilerServices = () => {
       <VoiceSearchOptimizer faqs={boilerFAQs} serviceName="Boiler Services" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/BOILER.png')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
         
