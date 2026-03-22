@@ -615,7 +615,7 @@ const MaintenanceContracts = () => {
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-primary" />
