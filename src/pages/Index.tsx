@@ -325,7 +325,7 @@ const Index = () => {
                         src={service.image}
                         alt={`${service.title} service`}
                         loading="lazy"
-                        className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-36 md:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4">

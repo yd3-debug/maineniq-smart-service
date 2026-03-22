@@ -47,7 +47,7 @@ const FullBleedHero: React.FC<FullBleedHeroProps> = ({
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
 
-      <div className="container mx-auto px-4 flex items-end min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] lg:min-h-[75vh] py-16 sm:py-20 md:py-24 lg:py-28">
+      <div className="container mx-auto px-4 flex items-end min-h-[40vh] sm:min-h-[55vh] md:min-h-[65vh] lg:min-h-[75vh] py-10 sm:py-16 md:py-24 lg:py-28">
         <div className="max-w-3xl">
             <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight">
               {title}
