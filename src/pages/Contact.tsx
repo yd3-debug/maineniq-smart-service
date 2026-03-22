@@ -91,7 +91,7 @@ const Contact = () => {
       />
       
       {/* Hero Section with Image */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-16">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-16">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -100,7 +100,7 @@ const Contact = () => {
         </div>
         
         <div className="container mx-auto px-6 sm:px-8 md:px-4 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left side - Text content */}
             <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
@@ -215,7 +215,7 @@ const Contact = () => {
           </div>
 
           {/* Why Choose Us Section with Images */}
-          <div className="mb-10 md:mb-20">
+          <div className="mb-8 md:mb-20">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Why Choose Our Experts?</h2>
               <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -225,9 +225,9 @@ const Contact = () => {
             </div>
             
             {/* Features with alternating layout */}
-            <div className="space-y-10 md:space-y-20">
+            <div className="space-y-8 md:space-y-20">
               {/* First row - Image left, content right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div className="relative">
                   <img 
                     src="/Customer_Service.png"
@@ -255,7 +255,7 @@ const Contact = () => {
               </div>
 
               {/* Second row - Content left, image right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div className="space-y-8 lg:order-1">
                   <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Advanced Equipment & Fast Response</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -61,15 +61,15 @@ const BMS: React.FC = () => {
       />
 
 
-      <main className="container mx-auto px-4 py-16 space-y-20">
+      <main className="container mx-auto px-4 py-8 sm:py-12 md:py-16 space-y-10 sm:space-y-14 md:space-y-20">
         {/* Performance Results */}
         <BMSMetrics />
 
         {/* Key Maintenance Benefits */}
-        <section className="text-center space-y-8">
+        <section className="text-center space-y-6 md:space-y-8">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
               Professional maintenance services that maximize your existing BMS investment
             </p>
           </div>
@@ -93,10 +93,10 @@ const BMS: React.FC = () => {
               }
             ].map((item) => (
               <div key={item.title} className="group">
-                <div className="rounded-xl border bg-card p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                <div className="rounded-xl border bg-card p-4 sm:p-6 md:p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">{item.icon}</div>
+                  <h3 className="font-semibold text-base sm:text-lg mb-2 md:mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -116,10 +116,10 @@ const BMS: React.FC = () => {
         <BMSProcess />
 
         {/* Problems We Prevent */}
-        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-8">
-          <div className="text-center space-y-6 mb-8">
-            <h2 className="font-heading text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-4 sm:p-6 md:p-8">
+          <div className="text-center space-y-4 md:space-y-6 mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
               Without proper BMS maintenance, buildings face significant operational and financial risks
             </p>
           </div>
@@ -155,10 +155,10 @@ const BMS: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="text-center space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-12">
+        <section className="text-center space-y-6 md:space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-6 sm:p-8 md:p-12">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Ready to Optimize Your BMS?</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Ready to Optimize Your BMS?</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
               Join hundreds of property managers who've maximized their BMS performance with our expert maintenance services. 
               Get a comprehensive system assessment and maintenance quote today.
             </p>

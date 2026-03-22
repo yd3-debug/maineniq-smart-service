@@ -163,12 +163,12 @@ const Handyman: React.FC = () => {
 
       
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         
         {/* WHO WE HELP - Educational Intro */}
         <section className="text-center max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl font-bold mb-6">Who We Help</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4 md:mb-6">Who We Help</h2>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Stop wasting time chasing unreliable tradespeople. We provide qualified, insured handymen who show up on time, complete work to standard, and give you documentation for compliance.
           </p>
           
@@ -193,9 +193,9 @@ const Handyman: React.FC = () => {
         </section>
 
         {/* SIGNS YOU NEED US - Symptom-based approach */}
-        <section className="rounded-xl border bg-gradient-to-br from-primary/5 to-primary/10 p-8">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">Signs You Need a Professional</h2>
+        <section className="rounded-xl border bg-gradient-to-br from-primary/5 to-primary/10 p-4 sm:p-6 md:p-8">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Signs You Need a Professional</h2>
             <p className="text-muted-foreground">Recognise any of these? We can help.</p>
           </div>
           
@@ -228,8 +228,8 @@ const Handyman: React.FC = () => {
 
         {/* WHAT WE FIX - Compact with collapsible details */}
         <section>
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">What We Fix</h2>
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">What We Fix</h2>
             <p className="text-muted-foreground">Comprehensive property maintenance services</p>
           </div>
           
@@ -320,9 +320,9 @@ const Handyman: React.FC = () => {
         </section>
 
         {/* OUR PROCESS - Simplified with collapsible */}
-        <section className="bg-muted/40 border rounded-xl p-8">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">How It Works</h2>
+        <section className="bg-muted/40 border rounded-xl p-4 sm:p-6 md:p-8">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">How It Works</h2>
             <p className="text-muted-foreground">Simple process, professional results</p>
           </div>
           
@@ -383,7 +383,7 @@ const Handyman: React.FC = () => {
 
         {/* CREDENTIALS - Simplified */}
         <section className="text-center">
-          <h2 className="font-heading text-3xl font-bold mb-8">Qualified, Insured, Guaranteed</h2>
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-6 md:mb-8">Qualified, Insured, Guaranteed</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="flex flex-col items-center p-6 rounded-lg border bg-card">
               <Award className="w-10 h-10 text-primary mb-3" />
@@ -407,7 +407,7 @@ const Handyman: React.FC = () => {
         <TestimonialCards />
 
         {/* FINAL CTA */}
-        <section className="text-center rounded-xl bg-primary/5 border border-primary/20 p-8">
+        <section className="text-center rounded-xl bg-primary/5 border border-primary/20 p-4 sm:p-6 md:p-8">
           <h2 className="font-heading text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Tell us about your property maintenance needs and get a free, no-obligation quote within 24 hours.

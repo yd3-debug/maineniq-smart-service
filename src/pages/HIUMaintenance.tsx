@@ -631,7 +631,7 @@ const HIUMaintenance = () => {
 
           <AnimatedChart>
             <Card className="bg-card/80 backdrop-blur max-w-4xl mx-auto">
-              <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <ProgressMetric
                     icon={Droplets}
@@ -689,9 +689,9 @@ const HIUMaintenance = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <AnimatedStatCard>
               <Card className="text-center border-success/20 hover:border-success/40 transition-colors">
-                <CardContent className="p-8">
-                  <CheckCircle className="w-12 h-12 text-success mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-2">Annual Service</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-success mx-auto mb-4" />
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">Annual Service</h3>
                   <div className="text-4xl font-bold text-success mb-4">
                     <AnimatedCounter value={180} prefix="£" suffix="/year" />
                   </div>
@@ -707,9 +707,9 @@ const HIUMaintenance = () => {
 
             <AnimatedStatCard delay={200}>
               <Card className="text-center border-destructive/20 hover:border-destructive/40 transition-colors">
-                <CardContent className="p-8">
-                  <XCircle className="w-12 h-12 text-destructive mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-2">Emergency Replacement</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <XCircle className="w-10 h-10 sm:w-12 sm:h-12 text-destructive mx-auto mb-4" />
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">Emergency Replacement</h3>
                   <div className="text-4xl font-bold text-destructive mb-4">
                     <AnimatedCounter value={3500} prefix="£" suffix="/unit" />
                   </div>

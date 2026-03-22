@@ -207,7 +207,7 @@ const BoilerServices = () => {
       <VoiceSearchOptimizer faqs={boilerFAQs} serviceName="Boiler Services" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/BOILER.png')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
         
@@ -419,7 +419,7 @@ const BoilerServices = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Benefits</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               What You Get From Professional Servicing
             </h2>
           </div>
@@ -428,8 +428,8 @@ const BoilerServices = () => {
             {outcomes.map((outcome) => (
               <Card key={outcome.title} className="text-center border-border/50 hover:shadow-lg transition-all">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-                    <outcome.icon className="w-8 h-8 text-green-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                    <outcome.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-600" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{outcome.title}</h3>
                   <p className="text-sm text-muted-foreground">{outcome.description}</p>
@@ -449,7 +449,7 @@ const BoilerServices = () => {
                 <FileCheck className="w-4 h-4 mr-2" />
                 Legal Requirement for Landlords
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
                 CP12 Gas Safety Certificates
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -459,8 +459,8 @@ const BoilerServices = () => {
             </div>
 
             <Card className="border-red-200 bg-white">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                   <div>
                     <h3 className="font-semibold text-lg mb-4">What's Included:</h3>
                     <ul className="space-y-3">

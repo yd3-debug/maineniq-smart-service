@@ -453,8 +453,8 @@ const MVHRMaintenance = () => {
       {/* Key Benefits Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-success/5">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-12">
-            <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
+          <div className="text-center mb-8 md:mb-12">
+            <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-success mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               5 Key Benefits of Professional MVHR Maintenance
             </h2>
@@ -463,13 +463,13 @@ const MVHRMaintenance = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16">
             {keyBenefits.map((benefit, index) => (
               <AnimatedStatCard key={index} delay={index * 100} className="h-full">
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300 border-success/20 hover:border-success/40">
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-success/10 rounded-full flex items-center justify-center">
-                      <benefit.icon className="w-8 h-8 text-success" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 bg-success/10 rounded-full flex items-center justify-center">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-success" />
                     </div>
                     <h3 className="text-lg font-bold mb-2 text-success">{benefit.title}</h3>
                     <p className="text-sm font-medium mb-2">{benefit.description}</p>
@@ -487,10 +487,10 @@ const MVHRMaintenance = () => {
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <AnimatedChart delay={200}>
             <Card className="bg-card/80 backdrop-blur border-2 border-success/20">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-4">See The Difference Maintenance Makes</h3>
-                  <p className="text-lg text-muted-foreground">Real MVHR filters showing the dramatic impact of regular replacement</p>
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="text-center mb-6 md:mb-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4">See The Difference Maintenance Makes</h3>
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Real MVHR filters showing the dramatic impact of regular replacement</p>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -532,7 +532,7 @@ const MVHRMaintenance = () => {
       {/* Signs You Need Service Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <Badge variant="outline" className="mb-4">Symptom Checker</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Signs Your MVHR Needs Service
@@ -617,8 +617,8 @@ const MVHRMaintenance = () => {
       {/* Filter Maintenance Schedule */}
       <section className="py-12 sm:py-16 md:py-20 bg-success/5">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-12">
-            <Calendar className="w-16 h-16 text-success mx-auto mb-4" />
+          <div className="text-center mb-8 md:mb-12">
+            <Calendar className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-success mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Professional MVHR Maintenance Schedule
             </h2>
@@ -630,10 +630,10 @@ const MVHRMaintenance = () => {
           <div className="max-w-4xl mx-auto">
             <AnimatedChart delay={200}>
               <Card className="mb-8 border-success/20">
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-4 gap-6 text-center">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                     <div>
-                      <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                         <span className="text-2xl font-bold text-success">3</span>
                       </div>
                       <h3 className="font-bold mb-2">Every 3 Months</h3>
@@ -735,8 +735,8 @@ const MVHRMaintenance = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <AnimatedStatCard>
               <Card className="text-center bg-success/5 border-success/20">
-                <CardContent className="p-8">
-                  <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-success mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-success mb-2">Annual MVHR Service</h3>
                   <div className="text-4xl font-bold text-success mb-4">
                     <AnimatedCounter value={250} prefix="£" suffix="/year" />
@@ -753,8 +753,8 @@ const MVHRMaintenance = () => {
 
             <AnimatedStatCard delay={200}>
               <Card className="text-center bg-destructive/5 border-destructive/20">
-                <CardContent className="p-8">
-                  <XCircle className="w-16 h-16 text-destructive mx-auto mb-4" />
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <XCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-destructive mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-destructive mb-2">System Replacement</h3>
                   <div className="text-4xl font-bold text-destructive mb-4">
                     <AnimatedCounter value={4000} prefix="£" suffix="/system" />

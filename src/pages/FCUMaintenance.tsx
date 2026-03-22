@@ -544,9 +544,9 @@ const FCUMaintenance = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <AnimatedStatCard>
               <Card className="text-center bg-success/5 border-success/20">
-                <CardContent className="p-8">
-                  <CheckCircle className="w-16 h-16 text-success mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-success mb-2">Preventive Maintenance</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-success mx-auto mb-4" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-success mb-2">Preventive Maintenance</h3>
                   <div className="text-4xl font-bold text-success mb-4">
                     <AnimatedCounter value={300} prefix="£" suffix="/year" />
                   </div>
@@ -562,9 +562,9 @@ const FCUMaintenance = () => {
 
             <AnimatedStatCard delay={200}>
               <Card className="text-center bg-destructive/5 border-destructive/20">
-                <CardContent className="p-8">
-                  <XCircle className="w-16 h-16 text-destructive mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-destructive mb-2">Emergency Repairs</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <XCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-destructive mx-auto mb-4" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-destructive mb-2">Emergency Repairs</h3>
                   <div className="text-4xl font-bold text-destructive mb-4">
                     <AnimatedCounter value={3000} prefix="£" suffix="/incident" />
                   </div>
@@ -582,10 +582,10 @@ const FCUMaintenance = () => {
       </section>
 
       {/* UK Compliance Requirements */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
+          <div className="text-center mb-8 md:mb-12">
+            <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               UK Compliance & Legal Requirements
             </h2>

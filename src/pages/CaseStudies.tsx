@@ -351,7 +351,7 @@ const portfolioProjects = [
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-16 max-w-4xl mx-auto">
                 {companyStats.slice(0, 3).map((stat, index) => (
                   <div key={index} className="group text-center">
-                    <div className="bg-white/8 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 md:p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
+                    <div className="bg-white/8 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 border border-white/15 hover:bg-white/12 hover:border-luxury-gold/40 transition-all duration-500 hover:scale-105">
                       <stat.icon className="w-8 md:w-12 h-8 md:h-12 text-luxury-gold mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300" />
                       <div className="text-2xl md:text-4xl font-light text-white mb-2 md:mb-3 drop-shadow-sm">
                         <AnimatedCounter 

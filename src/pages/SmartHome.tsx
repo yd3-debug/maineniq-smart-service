@@ -237,7 +237,7 @@ const SmartHome: React.FC = () => {
         secondaryOnClick={() => handleQuoteRequest("Smart Home Callback Request")}
       />
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Trust Metrics Strip */}
         <TrustMetrics />
 
@@ -278,7 +278,7 @@ const SmartHome: React.FC = () => {
         </section>
 
         {/* Signs You Need Professional Installation */}
-        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-8 space-y-8">
+        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200">
               Signs You Need Professional Installation
@@ -402,7 +402,7 @@ const SmartHome: React.FC = () => {
         </section>
 
         {/* Smart Home Benefits Section */}
-        <section className="rounded-xl border bg-primary/5 p-8 space-y-6">
+        <section className="rounded-xl border bg-primary/5 p-4 sm:p-6 md:p-8 space-y-6">
           <div className="text-center space-y-4">
             <h2 className="font-heading text-2xl font-bold text-primary">Smart Home Benefits & ROI</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -447,7 +447,7 @@ const SmartHome: React.FC = () => {
         </section>
 
         {/* Installation Process */}
-        <section className="bg-muted/40 border rounded-xl p-8 space-y-8">
+        <section className="bg-muted/40 border rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Process
@@ -647,7 +647,7 @@ const SmartHome: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 text-center space-y-6">
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 text-center space-y-6">
           <h2 className="font-heading text-2xl font-bold">Ready for a Smarter Home?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Join hundreds of satisfied customers who've transformed their homes with our professional 

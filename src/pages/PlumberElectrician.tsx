@@ -143,12 +143,12 @@ const PlumberElectrician: React.FC = () => {
 
       
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Who We Help - Split Layout with Image */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="font-heading text-3xl font-bold mb-4">Who We Help</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Who We Help</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
               Licensed Gas Safe plumbers and NICEIC electricians for all your compliance needs. 
               We provide certificates, documentation, and peace of mind for your properties.
             </p>
@@ -186,8 +186,8 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Signs You Need a Professional */}
-        <section className="bg-gradient-to-br from-blue-50 to-primary/5 dark:from-blue-950/30 dark:to-primary/10 rounded-xl p-8 border border-primary/10">
-          <h2 className="font-heading text-2xl font-bold text-center mb-8">Signs You Need a Professional</h2>
+        <section className="bg-gradient-to-br from-blue-50 to-primary/5 dark:from-blue-950/30 dark:to-primary/10 rounded-xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h2 className="font-heading text-2xl font-bold text-center mb-6 md:mb-8">Signs You Need a Professional</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {[
               { symptom: "Boiler keeps cutting out?", solution: "Qualified Gas Safe engineer diagnosis" },
@@ -238,9 +238,9 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Our Services */}
-        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
-          <h2 className="font-heading text-3xl font-bold text-center mb-2">Our Services</h2>
-          <p className="text-muted-foreground text-center mb-8">Certified plumbing and electrical solutions for every need</p>
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center mb-2">Our Services</h2>
+          <p className="text-muted-foreground text-center mb-6 md:mb-8">Certified plumbing and electrical solutions for every need</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
             {services.map((service) => (
               <div key={service.title} className="p-4 rounded-lg border-2 border-primary/20 bg-background text-center hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all">
@@ -298,13 +298,13 @@ const PlumberElectrician: React.FC = () => {
             </div>
             
             {/* Content */}
-            <div className="lg:col-span-2 p-8">
+            <div className="lg:col-span-2 p-4 sm:p-6 md:p-8">
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
                   <ThermometerSun className="w-4 h-4" />
                   Winter Readiness Check
                 </div>
-                <h2 className="font-heading text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
                 <p className="text-muted-foreground">
                   UK boilers work hardest during winter months. Spot these warning signs early to avoid cold showers, 
                   expensive emergency callouts, or worse - a complete breakdown when you need heating most.
@@ -449,7 +449,7 @@ const PlumberElectrician: React.FC = () => {
         {/* How It Works - Split Layout with Image */}
         <section className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
           <div className="lg:col-span-3">
-            <h2 className="font-heading text-3xl font-bold mb-8">How It Works</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-6 md:mb-8">How It Works</h2>
             <div className="grid grid-cols-2 gap-4 mb-6">
               {processSteps.map((step, index) => (
                 <div key={step.step} className="p-4 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-colors">
@@ -502,8 +502,8 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Certifications - Colored backgrounds */}
-        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
-          <h2 className="font-heading text-2xl font-bold text-center mb-8">Our Credentials</h2>
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h2 className="font-heading text-2xl font-bold text-center mb-6 md:mb-8">Our Credentials</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
               { icon: BadgeCheck, title: "Gas Safe", desc: "Registered engineers", color: "bg-blue-500" },
@@ -571,7 +571,7 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center">
+        <section className="bg-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
           <h2 className="font-heading text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Gas Safe registered plumbers and NICEIC certified electricians delivering safe, compliant work 

@@ -273,14 +273,14 @@ export default function RenovationComposer() {
       {/* Trust Metrics */}
       <TrustMetrics />
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Who We Help Section */}
         <section className="space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Who We Help
             </Badge>
-            <h2 className="font-heading text-3xl font-bold">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">
               Renovation Solutions for Every Property Owner
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -311,7 +311,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Signs You Need Professional Renovation */}
-        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-8 space-y-8">
+        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200">
               Signs You Need Professional Renovation
@@ -352,15 +352,15 @@ export default function RenovationComposer() {
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Services
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Complete Renovation Solutions
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Our expert team delivers end-to-end renovation services, transforming properties with precision, quality, and attention to detail.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {renovationServices.map((service, index) => (
               <Card key={index} className="border-2 hover:border-primary/20 transition-colors">
                 <CardHeader>
@@ -425,7 +425,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Benefits Section */}
-        <section className="rounded-xl border bg-primary/5 p-8 space-y-6">
+        <section className="rounded-xl border bg-primary/5 p-4 sm:p-6 md:p-8 space-y-6">
           <div className="text-center space-y-4">
             <h2 className="font-heading text-2xl font-bold text-primary">Why Choose Professional Renovation?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -433,13 +433,13 @@ export default function RenovationComposer() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {renovationBenefits.map((benefit, index) => (
-              <div key={index} className="rounded-lg border border-primary/20 bg-background p-6 space-y-3 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <benefit.icon className="w-8 h-8 text-primary" />
+              <div key={index} className="rounded-lg border border-primary/20 bg-background p-4 sm:p-6 space-y-3 text-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                  <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
@@ -447,20 +447,20 @@ export default function RenovationComposer() {
         </section>
 
         {/* Process Section - Collapsible */}
-        <section className="bg-muted/40 border rounded-xl p-8 space-y-8">
+        <section className="bg-muted/40 border rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Process
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Our Renovation Process
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               From initial consultation to final handover, we ensure a smooth and professional renovation experience.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {processSteps.map((process, index) => (
               <div key={index} className="rounded-lg border bg-background p-5 space-y-3">
                 <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold">
@@ -587,7 +587,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 text-center space-y-6">
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 text-center space-y-6">
           <h2 className="font-heading text-2xl font-bold">Ready to Transform Your Property?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Join hundreds of satisfied customers who've transformed their properties with our professional 
