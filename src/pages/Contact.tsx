@@ -161,14 +161,14 @@ const Contact = () => {
       </section>
 
       {/* Professional Consultation Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-20">
             <div className="space-y-6">
-              <h2 className="font-heading text-4xl font-bold">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold">
                 Expert HVAC Consultation & Support
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
                 Get specialist advice from our certified HVAC maintenance experts. With over 15 years of experience 
                 in MVHR, HIU & CIU, FCU & BMS systems, we provide professional solutions you can rely on.
               </p>
