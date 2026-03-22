@@ -134,12 +134,12 @@ const Contact = () => {
             {/* Right side - Quick contact card */}
             <div className="lg:flex lg:justify-end">
               <Card className="bg-white/95 backdrop-blur-sm shadow-elegant max-w-md">
-                <CardContent className="p-8">
-                  <h3 className="font-bold text-2xl text-center mb-6">Get Instant Help</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <h3 className="font-bold text-xl sm:text-2xl text-center mb-4 sm:mb-6">Get Instant Help</h3>
                   <div className="space-y-4">
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-2">Mobile WhatsApp</p>
-                      <p className="text-2xl font-bold text-primary">+44 783 456 2366</p>
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 783 456 2366</p>
                     </div>
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-2">Landline</p>
