@@ -645,10 +645,10 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Final CTA Section */}
-          <section className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-8 text-center text-primary-foreground">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl font-bold">Ready to Secure Your Deposit?</h2>
-              <p className="text-lg opacity-90">
+          <section className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-4 sm:p-6 md:p-8 text-center text-primary-foreground">
+            <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
+              <h2 className="text-2xl sm:text-3xl font-bold">Ready to Secure Your Deposit?</h2>
+              <p className="text-sm sm:text-base md:text-lg opacity-90">
                 Don't risk losing hundreds in deposit deductions. Book our professional 
                 end-of-tenancy cleaning service today and move out with confidence.
               </p>

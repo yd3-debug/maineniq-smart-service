@@ -703,7 +703,7 @@ const services = [
                 <span className="hidden sm:block">Get Professional Quote</span>
               </Button>
             </Link>
-<Button asChild variant="hero" size="lg" className="text-lg px-8">
+<Button asChild variant="hero" size="lg" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8">
   <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
     <Phone className="w-5 h-5 mr-2" />
     Call Now

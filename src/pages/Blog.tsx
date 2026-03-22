@@ -152,11 +152,11 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-muted/50">
+        <section className="py-8 sm:py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Stay Updated</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 Get expert maintenance tips, energy saving advice, and exclusive offers delivered to your inbox
               </p>
               <div className="flex gap-3 max-w-md mx-auto">

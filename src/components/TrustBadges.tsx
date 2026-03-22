@@ -45,7 +45,7 @@ const TrustBadges = () => {
   ];
 
   return (
-    <div className="py-12 bg-muted/50">
+    <div className="py-8 md:py-12 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {badges.map((badge, index) => (

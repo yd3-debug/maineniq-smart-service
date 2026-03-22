@@ -663,7 +663,7 @@ const MaintenanceContracts = () => {
       */}
 
       {/* Final CTA */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-8 sm:py-12 md:py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">

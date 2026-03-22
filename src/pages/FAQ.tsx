@@ -100,9 +100,9 @@ const FAQ = () => {
             ))}
           </Accordion>
 
-          <div className="mt-12 text-center">
-            <h2 className="text-2xl font-semibold mb-4">Still have questions?</h2>
-            <p className="text-muted-foreground mb-6">
+          <div className="mt-8 md:mt-12 text-center">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Still have questions?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-6">
               Can't find the answer you're looking for? Our friendly team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

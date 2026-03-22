@@ -1082,7 +1082,7 @@ const WhyProfessionalHVAC = () => {
       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
     </Button>
   </Link>
-  <Button asChild variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+  <Button asChild variant="outline" size="lg" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
     <a href={`tel:${CONTACT.phones.landlineTel}`} aria-label={`Call Now at ${CONTACT.phones.landline}`}>
       Call Now
     </a>
