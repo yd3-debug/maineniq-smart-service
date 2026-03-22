@@ -175,13 +175,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t border-gray-700 mt-6 pt-4 md:mt-8 md:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div>
-              <p className="text-sm text-gray-300 text-center md:text-left">
-                © 2026 Mainteniq. All rights reserved. Professional HVAC Maintenance & Property Services.
+              <p className="text-xs sm:text-sm text-gray-300 text-center md:text-left">
+                © 2026 Mainteniq. All rights reserved.
               </p>
-              <p className="text-sm text-gray-300 text-center md:text-left mt-1">
+              <p className="text-xs sm:text-sm text-gray-300 text-center md:text-left mt-1">
                 Built by{" "}
                 <a 
                   href="https://www.yektad.com" 
@@ -193,19 +193,15 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-300">
-              <a href={`tel:${CONTACT.phones.landlineTel}`} className="flex items-center space-x-2 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-white" />
+            <div className="flex flex-row items-center justify-center md:justify-end gap-3 sm:gap-6 text-xs sm:text-sm text-gray-300">
+              <a href={`tel:${CONTACT.phones.landlineTel}`} className="flex items-center space-x-1 sm:space-x-2 hover:text-primary transition-colors">
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span>{CONTACT.phones.landline}</span>
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="flex items-center space-x-2 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 text-white" />
+              <a href={`mailto:${CONTACT.email}`} className="flex items-center space-x-1 sm:space-x-2 hover:text-primary transition-colors">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span>{CONTACT.email}</span>
               </a>
-              <div className="hidden sm:flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-white" />
-                <span>24/7 Emergency Service</span>
-              </div>
             </div>
           </div>
         </div>
