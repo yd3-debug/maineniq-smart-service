@@ -66,10 +66,10 @@ const BMS: React.FC = () => {
         <BMSMetrics />
 
         {/* Key Maintenance Benefits */}
-        <section className="text-center space-y-8">
+        <section className="text-center space-y-6 md:space-y-8">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
               Professional maintenance services that maximize your existing BMS investment
             </p>
           </div>
