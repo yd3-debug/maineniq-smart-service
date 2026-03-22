@@ -463,7 +463,7 @@ const MVHRMaintenance = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16">
             {keyBenefits.map((benefit, index) => (
               <AnimatedStatCard key={index} delay={index * 100} className="h-full">
                 <Card className="h-full text-center hover:shadow-lg transition-all duration-300 border-success/20 hover:border-success/40">
