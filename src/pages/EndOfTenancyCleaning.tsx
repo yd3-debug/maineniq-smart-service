@@ -496,11 +496,11 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Our Process - With Color Progression */}
-          <section className="bg-gradient-to-br from-background to-muted/30 rounded-2xl p-8">
-            <div className="text-center mb-8">
+          <section className="bg-gradient-to-br from-background to-muted/30 rounded-2xl p-4 sm:p-6 md:p-8">
+            <div className="text-center mb-6 md:mb-8">
               <Badge variant="outline" className="mb-4">Our Method</Badge>
-              <h2 className="text-3xl font-bold mb-4">Our Professional Process</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Professional Process</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Systematic approach ensuring inventory-ready results every time
               </p>
             </div>
