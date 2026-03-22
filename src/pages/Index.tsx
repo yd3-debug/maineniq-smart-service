@@ -140,7 +140,7 @@ const Index = () => {
           <div className="relative container mx-auto px-4 pt-8 md:pt-16">
             <div className="max-w-5xl mx-auto">
               {/* Professional Container */}
-              <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/20 p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+              <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/20 p-4 sm:p-6 md:p-10 shadow-2xl text-center">
                 
                 {/* Urgency Badge */}
                 <div className="inline-flex items-center gap-2 bg-success/20 text-success-foreground border border-success/30 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
