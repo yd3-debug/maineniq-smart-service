@@ -312,7 +312,7 @@ const BoilerServices = () => {
               <AlertTriangle className="w-4 h-4 mr-2" />
               Warning Signs
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Signs Your Boiler Needs Attention
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
