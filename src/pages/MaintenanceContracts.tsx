@@ -398,11 +398,11 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Stakeholder-Specific Messaging */}
-      <section className="py-16 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Tailored Solutions for Different Property Stakeholders</h2>
-            <p className="text-lg text-muted-foreground">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Tailored Solutions for Different Property Stakeholders</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Whether you're managing one property or hundreds, we have the right maintenance solution for you.
             </p>
           </div>
