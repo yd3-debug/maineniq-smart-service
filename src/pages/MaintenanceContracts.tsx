@@ -269,7 +269,7 @@ const MaintenanceContracts = () => {
             </p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-16">
             <Card className="border-l-4 border-l-primary">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3 mb-4">
