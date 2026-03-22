@@ -633,7 +633,7 @@ const MVHRMaintenance = () => {
                 <CardContent className="p-4 sm:p-6 md:p-8">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                     <div>
-                      <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                         <span className="text-2xl font-bold text-success">3</span>
                       </div>
                       <h3 className="font-bold mb-2">Every 3 Months</h3>
