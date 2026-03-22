@@ -329,7 +329,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 </Badge>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
                 Get Your Full Deposit Back
               </h1>
               
