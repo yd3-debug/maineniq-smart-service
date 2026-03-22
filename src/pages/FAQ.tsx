@@ -72,13 +72,13 @@ const FAQ = () => {
         breadcrumbData={breadcrumbData}
       />
       
-      <div className="min-h-screen pt-16 py-20">
+      <div className="min-h-screen pt-16 py-10 sm:py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h1 className="font-heading text-4xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground">
               Get answers to common questions about our professional property maintenance services
             </p>
           </div>
