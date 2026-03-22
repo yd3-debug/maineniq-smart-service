@@ -357,7 +357,7 @@ const Contact = () => {
             {/* Business Hours Card */}
             <Card className="shadow-elegant border-primary/20">
               <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5">
-                <CardTitle className="flex items-center space-x-3 text-3xl">
+                <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl md:text-3xl">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
