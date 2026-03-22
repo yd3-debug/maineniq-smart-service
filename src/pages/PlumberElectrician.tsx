@@ -143,7 +143,7 @@ const PlumberElectrician: React.FC = () => {
 
       
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Who We Help - Split Layout with Image */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
