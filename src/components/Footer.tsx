@@ -63,24 +63,24 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="container mx-auto px-4 py-6 md:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2 space-y-4 text-center md:text-left">
+          <div className="col-span-2 lg:col-span-2 space-y-3 md:space-y-4 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <img 
                 src="/LOGOPETRU2.png" 
                 alt="Mainteniq Logo" 
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
               />
             </div>
-            <p className="text-sm text-gray-300">
+            <p className="text-xs sm:text-sm text-gray-300">
               Professional HVAC maintenance and property services. Your single point of contact 
-              for all property maintenance needs — HVAC, plumbing, electrical, and more.
+              for all property maintenance needs.
             </p>
             
-            {/* Testimonial Snippet */}
-            <div className="bg-primary/20 border border-primary/30 rounded-lg p-4">
+            {/* Testimonial Snippet - hidden on mobile */}
+            <div className="hidden sm:block bg-primary/20 border border-primary/30 rounded-lg p-4">
               <div className="flex items-center gap-1 mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-energy-gold text-energy-gold" />
@@ -93,9 +93,17 @@ const Footer = () => {
               </p>
               <p className="text-xs text-gray-400 mt-2">— Property Manager, London</p>
             </div>
+
+            {/* Compact mobile rating */}
+            <div className="sm:hidden flex items-center justify-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3 h-3 fill-energy-gold text-energy-gold" />
+              ))}
+              <span className="text-xs text-gray-300 ml-1">4.9/5 — 200+ reviews</span>
+            </div>
             
-            {/* Service Area */}
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
+            {/* Service Area - hidden on mobile */}
+            <div className="hidden sm:block bg-primary/10 border border-primary/20 rounded-lg p-3">
               <div className="flex items-center justify-center md:justify-start space-x-2 mb-2">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-semibold text-gray-200">Service Coverage</span>
@@ -109,13 +117,13 @@ const Footer = () => {
           </div>
 
           {/* Top Services */}
-          <div className="space-y-4 text-center md:text-left">
-            <h3 className="font-semibold text-lg">Top Services</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-2">
+          <div className="space-y-2 md:space-y-4 text-center md:text-left">
+            <h3 className="font-semibold text-sm sm:text-lg">Top Services</h3>
+            <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2">
               {topServices.map((service) => (
                 <li key={service.href}>
-                  <Link to={service.href} className="text-sm text-gray-300 hover:text-primary transition-colors flex items-center gap-1">
-                    <ArrowRight className="w-3 h-3" />
+                  <Link to={service.href} className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors flex items-center gap-1">
+                    <ArrowRight className="w-3 h-3 hidden sm:block" />
                     {service.name}
                   </Link>
                 </li>
@@ -124,41 +132,46 @@ const Footer = () => {
           </div>
 
           {/* More Services */}
-          <div className="space-y-4 text-center md:text-left">
-            <h3 className="font-semibold text-lg">More Services</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-2">
+          <div className="space-y-2 md:space-y-4 text-center md:text-left">
+            <h3 className="font-semibold text-sm sm:text-lg">More Services</h3>
+            <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2">
               {allServices.map((service) => (
                 <li key={service.href}>
-                  <Link to={service.href} className="text-sm text-gray-300 hover:text-primary transition-colors">
+                  <Link to={service.href} className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">
                     {service.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/services" className="text-sm text-primary hover:text-primary/80 transition-colors font-medium">
-                  View All Services →
+                <Link to="/services" className="text-xs sm:text-sm text-primary hover:text-primary/80 transition-colors font-medium">
+                  View All →
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Quick Links & Legal */}
-          <div className="space-y-4 text-center md:text-left">
-            <h3 className="font-semibold text-lg">Company</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-2">
-              <li><Link to="/maintenance-contracts" className="text-sm text-gray-300 hover:text-primary transition-colors">Maintenance Contracts</Link></li>
-              <li><Link to="/case-studies" className="text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
-              <li><Link to="/about" className="text-sm text-gray-300 hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-sm text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link to="/faq" className="text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>
-            </ul>
-            
-            <h3 className="font-semibold text-lg pt-4">Legal</h3>
-            <ul className="flex flex-col items-center md:items-start space-y-2">
-              <li><Link to="/privacy-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-service" className="text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link to="/cookie-policy" className="text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
-            </ul>
+          <div className="col-span-2 sm:col-span-1 space-y-2 md:space-y-4 text-center md:text-left">
+            <div className="flex flex-row sm:flex-col gap-4 sm:gap-0 justify-center md:justify-start">
+              <div>
+                <h3 className="font-semibold text-sm sm:text-lg">Company</h3>
+                <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2 mt-1 sm:mt-4">
+                  <li><Link to="/maintenance-contracts" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contracts</Link></li>
+                  <li><Link to="/case-studies" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
+                  <li><Link to="/about" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">About</Link></li>
+                  <li><Link to="/contact" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
+                  <li><Link to="/faq" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm sm:text-lg sm:pt-4">Legal</h3>
+                <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2 mt-1 sm:mt-4">
+                  <li><Link to="/privacy-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
+                  <li><Link to="/terms-of-service" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
+                  <li><Link to="/cookie-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
