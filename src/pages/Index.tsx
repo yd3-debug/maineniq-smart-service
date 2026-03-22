@@ -157,7 +157,7 @@ const Index = () => {
                     </span>
                   </h1>
                   
-                  <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
                     Professional maintenance for HVAC, plumbing, electrical, and property services. 
                     Trusted by landlords, property managers, and facilities teams across London.
                   </p>
