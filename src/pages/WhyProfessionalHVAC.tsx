@@ -468,7 +468,7 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* Professional HVAC Benefits */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
@@ -940,7 +940,7 @@ const WhyProfessionalHVAC = () => {
                   <h4 className="font-heading text-2xl font-bold mb-4 text-green-700">
                     Your Annual Savings
                   </h4>
-                  <div className="text-5xl font-bold text-green-600 mb-2">£2,180</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-2">£2,180</div>
                   <p className="text-green-700 font-medium">
                     Professional HVAC pays for itself in 3-4 years through energy savings alone
                   </p>
@@ -952,7 +952,7 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* Why Choose Mainteniq */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-3 sm:mb-4">
@@ -974,21 +974,21 @@ const WhyProfessionalHVAC = () => {
             
             <div>
               {/* Trust Metrics */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 md:mb-8">
                 <div className="text-center">
-                  <Award className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Successful Installations</div>
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">500+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Successful Installations</div>
                 </div>
                 <div className="text-center">
-                  <Star className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">4.9★</div>
-                  <div className="text-sm text-muted-foreground">Customer Rating</div>
+                  <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">4.9★</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Customer Rating</div>
                 </div>
                 <div className="text-center">
-                  <Timer className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">20+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <Timer className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">20+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
                 </div>
               </div>
 
@@ -1029,13 +1029,13 @@ const WhyProfessionalHVAC = () => {
 
           {/* Customer Testimonial */}
           <Card className="max-w-4xl mx-auto border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-4 sm:p-6 md:p-8 text-center">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <blockquote className="text-xl font-medium mb-4">
+              <blockquote className="text-sm sm:text-base md:text-xl font-medium mb-4">
                 "Mainteniq transformed our property's HVAC system. We're saving £150 per month on energy bills, 
                 and the air quality is noticeably better. The smart controls are a game-changer!"
               </blockquote>
@@ -1082,7 +1082,7 @@ const WhyProfessionalHVAC = () => {
       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
     </Button>
   </Link>
-  <Button asChild variant="outline" size="lg" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+  <Button asChild variant="outline" size="lg" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
     <a href={`tel:${CONTACT.phones.landlineTel}`} aria-label={`Call Now at ${CONTACT.phones.landline}`}>
       Call Now
     </a>

@@ -160,7 +160,7 @@ const MaintenanceContracts = () => {
       <section className="py-12 bg-background" aria-labelledby="track-record-title">
         <div className="container mx-auto px-4">
           <header className="max-w-3xl mx-auto mb-8 text-center">
-            <h2 id="track-record-title" className="font-heading text-3xl font-bold mb-4">
+            <h2 id="track-record-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Our Track Record
             </h2>
             <p className="text-muted-foreground">
@@ -168,38 +168,38 @@ const MaintenanceContracts = () => {
             </p>
           </header>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-sm text-muted-foreground">Properties Maintained</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Properties Maintained</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-success mb-2">99.2%</div>
-              <div className="text-sm text-muted-foreground">System Uptime</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-success mb-2">99.2%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">System Uptime</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-trust-blue mb-2">4hrs</div>
-              <div className="text-sm text-muted-foreground">Response SLA</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-trust-blue mb-2">4hrs</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Response SLA</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-accent-orange mb-2">8:1</div>
-              <div className="text-sm text-muted-foreground">ROI Ratio</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-orange mb-2">8:1</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">ROI Ratio</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contract vs Reactive Maintenance */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Maintenance Contracts vs Reactive Maintenance?</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Why Maintenance Contracts vs Reactive Maintenance?</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               Smart property owners choose contracts over reactive maintenance. Here's why:
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             <Card className="border-destructive/20">
               <CardHeader>
                 <CardTitle className="text-destructive">Reactive Maintenance</CardTitle>
@@ -258,18 +258,18 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* What Makes Us Different */}
-      <section id="what-makes-us-different" className="py-16 bg-background" aria-labelledby="different-title">
+      <section id="what-makes-us-different" className="py-8 sm:py-12 md:py-16 bg-background" aria-labelledby="different-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 id="different-title" className="font-heading text-3xl font-bold mb-4">
+          <header className="max-w-3xl mx-auto mb-8 md:mb-12 text-center">
+            <h2 id="different-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               What Makes Us Different
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
               While others react to problems, we prevent them. Here's how we keep your systems running and your reputation intact.
             </p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-16">
             <Card className="border-l-4 border-l-primary">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3 mb-4">
@@ -370,11 +370,11 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Contract Benefits */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Mainteniq Maintenance Contracts?</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Why Choose Mainteniq Maintenance Contracts?</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               With 20+ years experience, we understand that every property is unique. Our contracts are tailored to your specific needs.
             </p>
           </div>
@@ -398,16 +398,16 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Stakeholder-Specific Messaging */}
-      <section className="py-16 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Tailored Solutions for Different Property Stakeholders</h2>
-            <p className="text-lg text-muted-foreground">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Tailored Solutions for Different Property Stakeholders</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Whether you're managing one property or hundreds, we have the right maintenance solution for you.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {stakeholders.map((stakeholder, index) => (
               <Card key={index}>
                 <CardHeader>
@@ -436,11 +436,11 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Assessment Process */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Custom Assessment Process</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Custom Assessment Process</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               No two buildings are the same - neither are our maintenance contracts. Here's how we create your custom solution:
             </p>
           </div>
@@ -462,10 +462,10 @@ const MaintenanceContracts = () => {
       <WhoWeServe />
 
       {/* Case Study Snippets */}
-      <section id="proof-points" className="py-16 bg-muted/20" aria-labelledby="proof-title">
+      <section id="proof-points" className="py-8 sm:py-12 md:py-16 bg-muted/20" aria-labelledby="proof-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 id="proof-title" className="font-heading text-3xl font-bold mb-4">
+          <header className="max-w-3xl mx-auto mb-8 md:mb-12 text-center">
+            <h2 id="proof-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Real Results for Real Clients
             </h2>
             <p className="text-muted-foreground">
@@ -473,7 +473,7 @@ const MaintenanceContracts = () => {
             </p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
@@ -565,11 +565,11 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Service Coverage */}
-      <section className="py-16 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Complete System Coverage Under One Contract</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Complete System Coverage Under One Contract</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               From HVAC to plumbing, electrical to handyman services - we handle everything so you don't have to manage multiple contractors.
             </p>
           </div>
@@ -608,33 +608,33 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Service Commitments */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Service Commitments</h2>
-            <p className="text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Service Commitments</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Response Time Guarantee</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Response Time Guarantee</h3>
               <p className="text-muted-foreground">Emergency: 2-4 hours | Urgent: Same day | Routine: Within 48 hours</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShieldCheck className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Quality Assurance</h3>
               <p className="text-muted-foreground">First-time fix commitment with follow-up if needed. All work guaranteed.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Complete Transparency</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Complete Transparency</h3>
               <p className="text-muted-foreground">Detailed reports after every visit. Real-time updates via our portal.</p>
             </div>
           </div>
@@ -663,7 +663,7 @@ const MaintenanceContracts = () => {
       */}
 
       {/* Final CTA */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-8 sm:py-12 md:py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">

@@ -81,13 +81,13 @@ const Blog = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-primary via-primary-glow to-accent-orange">
+        <section className="relative py-10 sm:py-14 md:py-20 bg-gradient-to-br from-primary via-primary-glow to-accent-orange">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
                 Property Maintenance Insights
               </h1>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-sm sm:text-base md:text-xl text-white/90 mb-6 md:mb-8">
                 Expert advice, maintenance tips, and industry insights from London's leading property services specialists
               </p>
             </div>
@@ -95,9 +95,9 @@ const Blog = () => {
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="py-16">
+        <section className="py-8 sm:py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {posts.map((post, index) => (
                 <Link 
                   key={index}
@@ -152,11 +152,11 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-muted/50">
+        <section className="py-8 sm:py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Stay Updated</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 Get expert maintenance tips, energy saving advice, and exclusive offers delivered to your inbox
               </p>
               <div className="flex gap-3 max-w-md mx-auto">

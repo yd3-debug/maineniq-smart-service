@@ -378,7 +378,7 @@ const services = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             <Card className="lg:col-span-1 overflow-hidden border-0 shadow-glow bg-success text-primary-foreground">
               <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center">
-                <div className="text-5xl font-extrabold tracking-tight">90%</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">90%</div>
                 <div className="text-sm font-medium mt-1">Same‑day attendance</div>
                 <div className="text-xs opacity-80 mt-1">Weekdays before 12pm*</div>
               </CardContent>
@@ -399,7 +399,7 @@ const services = [
 
           {/* How scheduling works */}
           <div className="bg-background/70 backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-card">
-            <h3 className="font-heading text-2xl font-bold mb-6 text-center">How scheduling works</h3>
+            <h3 className="font-heading text-xl sm:text-2xl font-bold mb-6 text-center">How scheduling works</h3>
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 rounded-full bg-trust-blue text-primary-foreground flex items-center justify-center font-semibold">1</div>
@@ -545,18 +545,18 @@ const services = [
       </section>
 
       {/* Why HVAC Maintenance Matters */}
-      <section className="py-20 bg-gradient-to-br from-muted/50 to-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-muted/50 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-primary">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-primary">
               Why Proactive Maintenance Matters
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6 md:mb-12">
               Proactive care protects assets, ensures comfort and reliability, and keeps energy spend under control—across ventilation, heating, controls and more.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-16">
             <Card className="border-primary/25 bg-white hover:shadow-xl transition-all duration-300 group text-center">
               <CardContent className="p-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -606,8 +606,8 @@ const services = [
             </Card>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/20 text-center">
-            <h3 className="font-heading text-2xl font-bold mb-4">
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/20 text-center">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4">
               Schedule Your Maintenance Today
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -633,18 +633,18 @@ const services = [
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-20 bg-accent">
+      <section className="py-10 sm:py-14 md:py-20 bg-accent">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="font-heading text-4xl font-bold mb-6">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
                 Why Choose Our Professional Services
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 With years of experience and industry-leading expertise, we deliver exceptional 
                 results across all our service areas. From complex MVHR installations to simple handyman tasks.
               </p>
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 md:mb-8">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Fully certified and insured technicians</span>
@@ -677,8 +677,8 @@ const services = [
                 alt="Professional HVAC technician" 
                 className="rounded-lg shadow-elegant w-full"
               />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-lg p-6 shadow-lg">
-                <h3 className="font-bold text-2xl mb-1">15+</h3>
+              <div className="static sm:absolute sm:-bottom-4 sm:-right-4 bg-primary text-primary-foreground rounded-lg p-4 sm:p-6 shadow-lg mt-4 sm:mt-0">
+                <h3 className="font-bold text-xl sm:text-2xl mb-1">15+</h3>
                 <p className="text-sm opacity-90">Years Experience</p>
               </div>
             </div>
@@ -687,12 +687,12 @@ const services = [
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-10 sm:py-14 md:py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p className="text-sm sm:text-base md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto opacity-90">
             Whether you need MVHR installation, BMS setup, smart home integration, or any of our professional services, 
             our expert team is ready to deliver exceptional results.
           </p>
@@ -703,7 +703,7 @@ const services = [
                 <span className="hidden sm:block">Get Professional Quote</span>
               </Button>
             </Link>
-<Button asChild variant="hero" size="lg" className="text-lg px-8">
+<Button asChild variant="hero" size="lg" className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8">
   <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call Now at ${CONTACT.phones.emergency}`}>
     <Phone className="w-5 h-5 mr-2" />
     Call Now

@@ -329,7 +329,7 @@ const EndOfTenancyCleaning: React.FC = () => {
                 </Badge>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
                 Get Your Full Deposit Back
               </h1>
               
@@ -377,14 +377,14 @@ const EndOfTenancyCleaning: React.FC = () => {
           </div>
         </section>
 
-        <main className="container mx-auto px-4 py-12 space-y-16">
+        <main className="container mx-auto px-4 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-12 md:space-y-16">
           
           {/* Who We Help Section */}
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Who We Serve</Badge>
-              <h2 className="text-3xl font-bold mb-4">Professional Cleaning for Every Move</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Professional Cleaning for Every Move</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Whether you're a tenant protecting your deposit or a landlord preparing for new tenants, we deliver inventory-ready results.
               </p>
             </div>
@@ -405,11 +405,11 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Why You Need Professional Cleaning */}
-          <section className="bg-gradient-to-br from-amber-50/50 via-transparent to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10 rounded-2xl p-8">
-            <div className="text-center mb-8">
+          <section className="bg-gradient-to-br from-amber-50/50 via-transparent to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10 rounded-2xl p-4 sm:p-6 md:p-8">
+            <div className="text-center mb-6 md:mb-8">
               <Badge variant="outline" className="mb-4 border-amber-500/30 text-amber-600 dark:text-amber-400">Common Challenges</Badge>
-              <h2 className="text-3xl font-bold mb-4">Sound Familiar?</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Sound Familiar?</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 These are the most common reasons tenants choose professional cleaning
               </p>
             </div>
@@ -433,7 +433,7 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Trust Metrics Strip */}
-          <section className="bg-gradient-to-r from-trust-blue/5 via-background to-success/5 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-trust-blue/5 via-background to-success/5 rounded-2xl p-4 sm:p-6 md:p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {trustMetrics.map((metric, index) => (
                 <TrustMetricCard key={index} {...metric} />
@@ -445,8 +445,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Comprehensive Coverage</Badge>
-              <h2 className="text-3xl font-bold mb-4">What We Clean</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">What We Clean</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Every detail covered to meet strict inventory standards
               </p>
             </div>
@@ -496,11 +496,11 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Our Process - With Color Progression */}
-          <section className="bg-gradient-to-br from-background to-muted/30 rounded-2xl p-8">
-            <div className="text-center mb-8">
+          <section className="bg-gradient-to-br from-background to-muted/30 rounded-2xl p-4 sm:p-6 md:p-8">
+            <div className="text-center mb-6 md:mb-8">
               <Badge variant="outline" className="mb-4">Our Method</Badge>
-              <h2 className="text-3xl font-bold mb-4">Our Professional Process</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Professional Process</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Systematic approach ensuring inventory-ready results every time
               </p>
             </div>
@@ -529,8 +529,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Transparent Pricing</Badge>
-              <h2 className="text-3xl font-bold mb-4">Fixed London Rates</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Fixed London Rates</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Competitive pricing with no hidden costs. Professional results guaranteed.
               </p>
             </div>
@@ -595,7 +595,7 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Service Guarantees */}
-          <section className="bg-gradient-to-r from-success/10 to-trust-blue/10 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-success/10 to-trust-blue/10 rounded-2xl p-4 sm:p-6 md:p-8">
             <div className="text-center mb-8">
               <Badge variant="outline" className="mb-4 border-success/30 text-success">Peace of Mind</Badge>
               <h2 className="text-2xl font-bold mb-4">Our Guarantees</h2>
@@ -622,8 +622,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Common Questions</Badge>
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Everything you need to know about our cleaning service
               </p>
             </div>
@@ -645,10 +645,10 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Final CTA Section */}
-          <section className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-8 text-center text-primary-foreground">
-            <div className="max-w-2xl mx-auto space-y-6">
-              <h2 className="text-3xl font-bold">Ready to Secure Your Deposit?</h2>
-              <p className="text-lg opacity-90">
+          <section className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-4 sm:p-6 md:p-8 text-center text-primary-foreground">
+            <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
+              <h2 className="text-2xl sm:text-3xl font-bold">Ready to Secure Your Deposit?</h2>
+              <p className="text-sm sm:text-base md:text-lg opacity-90">
                 Don't risk losing hundreds in deposit deductions. Book our professional 
                 end-of-tenancy cleaning service today and move out with confidence.
               </p>
