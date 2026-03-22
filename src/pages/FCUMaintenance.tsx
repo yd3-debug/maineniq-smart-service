@@ -582,10 +582,10 @@ const FCUMaintenance = () => {
       </section>
 
       {/* UK Compliance Requirements */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
+          <div className="text-center mb-8 md:mb-12">
+            <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               UK Compliance & Legal Requirements
             </h2>

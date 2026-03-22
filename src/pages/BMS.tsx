@@ -155,10 +155,10 @@ const BMS: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="text-center space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-12">
+        <section className="text-center space-y-6 md:space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-6 sm:p-8 md:p-12">
           <div className="space-y-4">
-            <h2 className="font-heading text-3xl font-bold">Ready to Optimize Your BMS?</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Ready to Optimize Your BMS?</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
               Join hundreds of property managers who've maximized their BMS performance with our expert maintenance services. 
               Get a comprehensive system assessment and maintenance quote today.
             </p>

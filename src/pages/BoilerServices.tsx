@@ -459,8 +459,8 @@ const BoilerServices = () => {
             </div>
 
             <Card className="border-red-200 bg-white">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                   <div>
                     <h3 className="font-semibold text-lg mb-4">What's Included:</h3>
                     <ul className="space-y-3">

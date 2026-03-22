@@ -571,7 +571,7 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center">
+        <section className="bg-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
           <h2 className="font-heading text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Gas Safe registered plumbers and NICEIC certified electricians delivering safe, compliant work 

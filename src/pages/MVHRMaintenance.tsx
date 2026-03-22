@@ -753,8 +753,8 @@ const MVHRMaintenance = () => {
 
             <AnimatedStatCard delay={200}>
               <Card className="text-center bg-destructive/5 border-destructive/20">
-                <CardContent className="p-8">
-                  <XCircle className="w-16 h-16 text-destructive mx-auto mb-4" />
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <XCircle className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-destructive mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-destructive mb-2">System Replacement</h3>
                   <div className="text-4xl font-bold text-destructive mb-4">
                     <AnimatedCounter value={4000} prefix="£" suffix="/system" />

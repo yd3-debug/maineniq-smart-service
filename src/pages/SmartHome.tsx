@@ -647,7 +647,7 @@ const SmartHome: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 text-center space-y-6">
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 text-center space-y-6">
           <h2 className="font-heading text-2xl font-bold">Ready for a Smarter Home?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Join hundreds of satisfied customers who've transformed their homes with our professional 

@@ -627,7 +627,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="hero" 
-                className="text-lg px-8 py-4"
+                className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 md:py-4"
                 onClick={() => handleQuoteRequest("property services")}
               >
                 <MessageSquare className="w-5 h-5 mr-2" />

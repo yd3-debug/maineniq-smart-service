@@ -407,7 +407,7 @@ const Handyman: React.FC = () => {
         <TestimonialCards />
 
         {/* FINAL CTA */}
-        <section className="text-center rounded-xl bg-primary/5 border border-primary/20 p-8">
+        <section className="text-center rounded-xl bg-primary/5 border border-primary/20 p-4 sm:p-6 md:p-8">
           <h2 className="font-heading text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Tell us about your property maintenance needs and get a free, no-obligation quote within 24 hours.

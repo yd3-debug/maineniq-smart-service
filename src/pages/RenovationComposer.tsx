@@ -587,7 +587,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 text-center space-y-6">
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 text-center space-y-6">
           <h2 className="font-heading text-2xl font-bold">Ready to Transform Your Property?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Join hundreds of satisfied customers who've transformed their properties with our professional 
