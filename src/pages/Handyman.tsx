@@ -228,8 +228,8 @@ const Handyman: React.FC = () => {
 
         {/* WHAT WE FIX - Compact with collapsible details */}
         <section>
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">What We Fix</h2>
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">What We Fix</h2>
             <p className="text-muted-foreground">Comprehensive property maintenance services</p>
           </div>
           
