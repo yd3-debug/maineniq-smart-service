@@ -940,7 +940,7 @@ const WhyProfessionalHVAC = () => {
                   <h4 className="font-heading text-2xl font-bold mb-4 text-green-700">
                     Your Annual Savings
                   </h4>
-                  <div className="text-5xl font-bold text-green-600 mb-2">£2,180</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-2">£2,180</div>
                   <p className="text-green-700 font-medium">
                     Professional HVAC pays for itself in 3-4 years through energy savings alone
                   </p>
