@@ -532,7 +532,7 @@ const MVHRMaintenance = () => {
       {/* Signs You Need Service Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <Badge variant="outline" className="mb-4">Symptom Checker</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               Signs Your MVHR Needs Service
