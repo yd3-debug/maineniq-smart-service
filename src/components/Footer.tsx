@@ -25,35 +25,37 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       {/* Emergency Contact Banner */}
-      <div className="bg-destructive/90 py-4">
+      <div className="bg-destructive/90 py-2 sm:py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-white">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center animate-pulse">
-                <Phone className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 text-white">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center animate-pulse">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="font-semibold">24/7 Emergency Service</p>
-                <p className="text-sm text-white/80">Response within 4 hours</p>
+                <p className="font-semibold text-sm sm:text-base">24/7 Emergency Service</p>
+                <p className="text-xs sm:text-sm text-white/80">Response within 4 hours</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button
                 asChild
+                size="sm"
                 variant="ghost"
-                className="text-white hover:bg-white/20 border border-white/30"
+                className="text-white hover:bg-white/20 border border-white/30 text-xs sm:text-sm"
               >
                 <a href={`tel:${CONTACT.phones.emergencyTel}`}>
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   {CONTACT.phones.emergency}
                 </a>
               </Button>
               <Button
+                size="sm"
                 variant="ghost"
-                className="text-white hover:bg-white/20 border border-white/30"
+                className="text-white hover:bg-white/20 border border-white/30 text-xs sm:text-sm"
                 onClick={() => handleQuoteRequest("Emergency - Urgent assistance needed")}
               >
-                <MessageSquare className="w-4 h-4 mr-2" />
+                <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                 WhatsApp
               </Button>
             </div>
