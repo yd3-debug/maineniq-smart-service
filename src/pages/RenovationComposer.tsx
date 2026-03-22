@@ -280,7 +280,7 @@ export default function RenovationComposer() {
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Who We Help
             </Badge>
-            <h2 className="font-heading text-3xl font-bold">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">
               Renovation Solutions for Every Property Owner
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
