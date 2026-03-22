@@ -225,7 +225,7 @@ const Contact = () => {
             </div>
             
             {/* Features with alternating layout */}
-            <div className="space-y-10 md:space-y-20">
+            <div className="space-y-8 md:space-y-20">
               {/* First row - Image left, content right */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative">
