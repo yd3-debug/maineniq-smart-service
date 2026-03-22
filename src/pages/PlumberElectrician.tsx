@@ -238,9 +238,9 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Our Services */}
-        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
-          <h2 className="font-heading text-3xl font-bold text-center mb-2">Our Services</h2>
-          <p className="text-muted-foreground text-center mb-8">Certified plumbing and electrical solutions for every need</p>
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center mb-2">Our Services</h2>
+          <p className="text-muted-foreground text-center mb-6 md:mb-8">Certified plumbing and electrical solutions for every need</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
             {services.map((service) => (
               <div key={service.title} className="p-4 rounded-lg border-2 border-primary/20 bg-background text-center hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all">
