@@ -272,7 +272,7 @@ const BoilerServices = () => {
       </section>
 
       {/* Who We Help */}
-      <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Who We Help</Badge>
