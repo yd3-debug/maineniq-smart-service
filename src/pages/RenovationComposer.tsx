@@ -439,7 +439,7 @@ export default function RenovationComposer() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
