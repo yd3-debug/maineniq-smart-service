@@ -620,7 +620,7 @@ const MaintenanceContracts = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Response Time Guarantee</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Response Time Guarantee</h3>
               <p className="text-muted-foreground">Emergency: 2-4 hours | Urgent: Same day | Routine: Within 48 hours</p>
             </div>
             <div className="text-center">
