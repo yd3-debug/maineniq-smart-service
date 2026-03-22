@@ -399,7 +399,7 @@ const services = [
 
           {/* How scheduling works */}
           <div className="bg-background/70 backdrop-blur-sm border rounded-2xl p-6 md:p-8 shadow-card">
-            <h3 className="font-heading text-2xl font-bold mb-6 text-center">How scheduling works</h3>
+            <h3 className="font-heading text-xl sm:text-2xl font-bold mb-6 text-center">How scheduling works</h3>
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <li className="flex items-start gap-3">
                 <div className="h-8 w-8 rounded-full bg-trust-blue text-primary-foreground flex items-center justify-center font-semibold">1</div>
