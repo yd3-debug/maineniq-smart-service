@@ -433,7 +433,7 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Trust Metrics Strip */}
-          <section className="bg-gradient-to-r from-trust-blue/5 via-background to-success/5 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-trust-blue/5 via-background to-success/5 rounded-2xl p-4 sm:p-6 md:p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {trustMetrics.map((metric, index) => (
                 <TrustMetricCard key={index} {...metric} />
