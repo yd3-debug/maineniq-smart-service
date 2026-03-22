@@ -425,7 +425,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Benefits Section */}
-        <section className="rounded-xl border bg-primary/5 p-8 space-y-6">
+        <section className="rounded-xl border bg-primary/5 p-4 sm:p-6 md:p-8 space-y-6">
           <div className="text-center space-y-4">
             <h2 className="font-heading text-2xl font-bold text-primary">Why Choose Professional Renovation?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
