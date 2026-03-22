@@ -317,16 +317,16 @@ const Contact = () => {
                 className="bg-cover bg-center rounded-2xl overflow-hidden"
                 style={{ backgroundImage: `url(${hvacProfessional})` }}
               >
-                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-12 lg:p-16">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-white">
-                    <div className="space-y-6">
+                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-6 sm:p-8 md:p-12 lg:p-16">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center text-white">
+                    <div className="space-y-4 md:space-y-6">
                       <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
                         </div>
-                        <h3 className="font-bold text-3xl">24/7 Emergency Service</h3>
+                        <h3 className="font-bold text-xl sm:text-2xl md:text-3xl">24/7 Emergency Service</h3>
                       </div>
-                      <p className="text-xl opacity-95 leading-relaxed">
+                      <p className="text-base md:text-xl opacity-95 leading-relaxed">
                         HVAC emergency? Don't suffer in discomfort! Our emergency response team 
                         is available 24/7 to get your system back up and running quickly.
                       </p>
