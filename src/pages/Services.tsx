@@ -677,8 +677,8 @@ const services = [
                 alt="Professional HVAC technician" 
                 className="rounded-lg shadow-elegant w-full"
               />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-lg p-6 shadow-lg">
-                <h3 className="font-bold text-2xl mb-1">15+</h3>
+              <div className="static sm:absolute sm:-bottom-4 sm:-right-4 bg-primary text-primary-foreground rounded-lg p-4 sm:p-6 shadow-lg mt-4 sm:mt-0">
+                <h3 className="font-bold text-xl sm:text-2xl mb-1">15+</h3>
                 <p className="text-sm opacity-90">Years Experience</p>
               </div>
             </div>
