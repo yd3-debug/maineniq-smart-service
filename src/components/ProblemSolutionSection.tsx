@@ -51,7 +51,7 @@ const ProblemSolutionSection = () => {
           <h2 className="font-heading text-2xl md:text-4xl font-bold mb-4">
             Sound Familiar?
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             These issues affect thousands of London properties. Here's how we fix them.
           </p>
         </div>
