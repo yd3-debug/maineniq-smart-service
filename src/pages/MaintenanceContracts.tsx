@@ -168,22 +168,22 @@ const MaintenanceContracts = () => {
             </p>
           </header>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-sm text-muted-foreground">Properties Maintained</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">500+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Properties Maintained</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-success mb-2">99.2%</div>
-              <div className="text-sm text-muted-foreground">System Uptime</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-success mb-2">99.2%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">System Uptime</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-trust-blue mb-2">4hrs</div>
-              <div className="text-sm text-muted-foreground">Response SLA</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-trust-blue mb-2">4hrs</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Response SLA</div>
             </div>
-            <div className="text-center p-6 border border-muted rounded-lg">
-              <div className="text-3xl font-bold text-accent-orange mb-2">8:1</div>
-              <div className="text-sm text-muted-foreground">ROI Ratio</div>
+            <div className="text-center p-3 sm:p-4 md:p-6 border border-muted rounded-lg">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-orange mb-2">8:1</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">ROI Ratio</div>
             </div>
           </div>
         </div>
