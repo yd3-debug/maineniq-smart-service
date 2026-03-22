@@ -383,8 +383,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Who We Serve</Badge>
-              <h2 className="text-3xl font-bold mb-4">Professional Cleaning for Every Move</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Professional Cleaning for Every Move</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Whether you're a tenant protecting your deposit or a landlord preparing for new tenants, we deliver inventory-ready results.
               </p>
             </div>
