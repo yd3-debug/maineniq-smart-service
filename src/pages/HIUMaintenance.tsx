@@ -631,7 +631,7 @@ const HIUMaintenance = () => {
 
           <AnimatedChart>
             <Card className="bg-card/80 backdrop-blur max-w-4xl mx-auto">
-              <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <ProgressMetric
                     icon={Droplets}
