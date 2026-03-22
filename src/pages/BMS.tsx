@@ -93,10 +93,10 @@ const BMS: React.FC = () => {
               }
             ].map((item) => (
               <div key={item.title} className="group">
-                <div className="rounded-xl border bg-card p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                <div className="rounded-xl border bg-card p-4 sm:p-6 md:p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">{item.icon}</div>
+                  <h3 className="font-semibold text-base sm:text-lg mb-2 md:mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{item.description}</p>
                 </div>
               </div>
             ))}
