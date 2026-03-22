@@ -163,7 +163,7 @@ const Handyman: React.FC = () => {
 
       
 
-      <main className="container mx-auto px-4 py-12 space-y-16">
+      <main className="container mx-auto px-4 py-8 sm:py-12 space-y-8 sm:space-y-12 md:space-y-16">
         
         {/* WHO WE HELP - Educational Intro */}
         <section className="text-center max-w-4xl mx-auto">
