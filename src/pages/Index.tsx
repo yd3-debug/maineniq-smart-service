@@ -137,7 +137,7 @@ const Index = () => {
             style={{ backgroundImage: `url(/hero-minimal.jpg)` }}
           />
           
-          <div className="relative container mx-auto px-4 pt-12 md:pt-20">
+          <div className="relative container mx-auto px-4 pt-8 md:pt-16">
             <div className="max-w-5xl mx-auto">
               {/* Professional Container */}
               <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/20 p-6 sm:p-8 md:p-12 shadow-2xl text-center">
