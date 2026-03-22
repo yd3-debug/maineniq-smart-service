@@ -257,7 +257,7 @@ const Contact = () => {
               {/* Second row - Content left, image right */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8 lg:order-1">
-                  <h3 className="font-heading text-3xl font-bold">Advanced Equipment & Fast Response</h3>
+                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Advanced Equipment & Fast Response</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {whyChooseUs.slice(4, 6).map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
