@@ -1035,7 +1035,7 @@ const WhyProfessionalHVAC = () => {
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <blockquote className="text-xl font-medium mb-4">
+              <blockquote className="text-sm sm:text-base md:text-xl font-medium mb-4">
                 "Mainteniq transformed our property's HVAC system. We're saving £150 per month on energy bills, 
                 and the air quality is noticeably better. The smart controls are a game-changer!"
               </blockquote>
