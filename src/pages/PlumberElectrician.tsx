@@ -298,7 +298,7 @@ const PlumberElectrician: React.FC = () => {
             </div>
             
             {/* Content */}
-            <div className="lg:col-span-2 p-8">
+            <div className="lg:col-span-2 p-4 sm:p-6 md:p-8">
               <div className="mb-6">
                 <div className="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
                   <ThermometerSun className="w-4 h-4" />
