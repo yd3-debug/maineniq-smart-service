@@ -509,7 +509,7 @@ const Index = () => {
             </div>
 
             {/* CTA */}
-            <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/20">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/20">
               <h3 className="font-heading text-2xl font-bold mb-2">
                 Ready to Protect Your Property?
               </h3>
