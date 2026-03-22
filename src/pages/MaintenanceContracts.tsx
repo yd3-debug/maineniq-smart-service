@@ -473,7 +473,7 @@ const MaintenanceContracts = () => {
             </p>
           </header>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
