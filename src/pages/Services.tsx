@@ -606,8 +606,8 @@ const services = [
             </Card>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/20 text-center">
-            <h3 className="font-heading text-2xl font-bold mb-4">
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/20 text-center">
+            <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4">
               Schedule Your Maintenance Today
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
