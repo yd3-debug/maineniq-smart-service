@@ -188,7 +188,7 @@ const Index = () => {
                 </div>
 
                 {/* Social Proof Strip */}
-                <div className="pt-8 border-t border-white/10 mt-8">
+                <div className="pt-5 mt-5 sm:pt-8 sm:mt-8 border-t border-white/10">
                   <p className="text-white/60 text-sm mb-4">Trusted by property professionals across London</p>
                   <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                     <div className="flex items-center gap-2">
