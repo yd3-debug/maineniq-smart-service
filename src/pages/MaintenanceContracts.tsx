@@ -634,7 +634,7 @@ const MaintenanceContracts = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Complete Transparency</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Complete Transparency</h3>
               <p className="text-muted-foreground">Detailed reports after every visit. Real-time updates via our portal.</p>
             </div>
           </div>
