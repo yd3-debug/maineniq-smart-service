@@ -627,7 +627,7 @@ const MaintenanceContracts = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShieldCheck className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Quality Assurance</h3>
               <p className="text-muted-foreground">First-time fix commitment with follow-up if needed. All work guaranteed.</p>
             </div>
             <div className="text-center">
