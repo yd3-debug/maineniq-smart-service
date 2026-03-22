@@ -143,7 +143,7 @@ const Contact = () => {
                     </div>
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-2">Landline</p>
-                      <p className="text-2xl font-bold text-primary">+44 (0) 189 55 28 226</p>
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 (0) 189 55 28 226</p>
                     </div>
                     <Button 
                       onClick={() => handleWhatsAppClick()}
