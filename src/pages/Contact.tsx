@@ -100,7 +100,7 @@ const Contact = () => {
         </div>
         
         <div className="container mx-auto px-6 sm:px-8 md:px-4 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left side - Text content */}
             <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
