@@ -258,13 +258,13 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* What Makes Us Different */}
-      <section id="what-makes-us-different" className="py-16 bg-background" aria-labelledby="different-title">
+      <section id="what-makes-us-different" className="py-8 sm:py-12 md:py-16 bg-background" aria-labelledby="different-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 id="different-title" className="font-heading text-3xl font-bold mb-4">
+          <header className="max-w-3xl mx-auto mb-8 md:mb-12 text-center">
+            <h2 id="different-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               What Makes Us Different
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
               While others react to problems, we prevent them. Here's how we keep your systems running and your reputation intact.
             </p>
           </header>
