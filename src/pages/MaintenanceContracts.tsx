@@ -160,7 +160,7 @@ const MaintenanceContracts = () => {
       <section className="py-12 bg-background" aria-labelledby="track-record-title">
         <div className="container mx-auto px-4">
           <header className="max-w-3xl mx-auto mb-8 text-center">
-            <h2 id="track-record-title" className="font-heading text-3xl font-bold mb-4">
+            <h2 id="track-record-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Our Track Record
             </h2>
             <p className="text-muted-foreground">
