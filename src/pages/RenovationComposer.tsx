@@ -447,7 +447,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Process Section - Collapsible */}
-        <section className="bg-muted/40 border rounded-xl p-8 space-y-8">
+        <section className="bg-muted/40 border rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Process
