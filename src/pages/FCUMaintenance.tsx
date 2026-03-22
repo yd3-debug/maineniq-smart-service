@@ -702,7 +702,7 @@ const FCUMaintenance = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-primary">
+      <section className="py-8 sm:py-12 md:py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Don't Wait for FCU Failure

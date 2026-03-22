@@ -504,12 +504,12 @@ const BoilerServices = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
             Need Boiler Help?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
             From routine servicing to emergency repairs, our Gas Safe engineers are ready to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

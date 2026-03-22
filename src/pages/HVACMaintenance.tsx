@@ -734,7 +734,7 @@ export default function HVACMaintenance() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-8 sm:py-12 md:py-16 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Ready to Schedule Your HVAC Maintenance?
