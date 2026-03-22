@@ -617,8 +617,8 @@ const MVHRMaintenance = () => {
       {/* Filter Maintenance Schedule */}
       <section className="py-12 sm:py-16 md:py-20 bg-success/5">
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
-          <div className="text-center mb-12">
-            <Calendar className="w-16 h-16 text-success mx-auto mb-4" />
+          <div className="text-center mb-8 md:mb-12">
+            <Calendar className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-success mx-auto mb-4" />
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Professional MVHR Maintenance Schedule
             </h2>
