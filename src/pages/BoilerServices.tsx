@@ -441,7 +441,7 @@ const BoilerServices = () => {
       </section>
 
       {/* CP12 Section for Landlords */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 to-orange-500/5">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-primary/5 to-orange-500/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
