@@ -460,7 +460,7 @@ export default function RenovationComposer() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {processSteps.map((process, index) => (
               <div key={index} className="rounded-lg border bg-background p-5 space-y-3">
                 <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold">
