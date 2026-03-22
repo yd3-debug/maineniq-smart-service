@@ -644,7 +644,7 @@ const services = [
                 With years of experience and industry-leading expertise, we deliver exceptional 
                 results across all our service areas. From complex MVHR installations to simple handyman tasks.
               </p>
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 sm:space-y-4 mb-6 md:mb-8">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-success" />
                   <span className="font-medium">Fully certified and insured technicians</span>
