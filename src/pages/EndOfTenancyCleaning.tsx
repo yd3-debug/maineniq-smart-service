@@ -405,11 +405,11 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Why You Need Professional Cleaning */}
-          <section className="bg-gradient-to-br from-amber-50/50 via-transparent to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10 rounded-2xl p-8">
-            <div className="text-center mb-8">
+          <section className="bg-gradient-to-br from-amber-50/50 via-transparent to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10 rounded-2xl p-4 sm:p-6 md:p-8">
+            <div className="text-center mb-6 md:mb-8">
               <Badge variant="outline" className="mb-4 border-amber-500/30 text-amber-600 dark:text-amber-400">Common Challenges</Badge>
-              <h2 className="text-3xl font-bold mb-4">Sound Familiar?</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Sound Familiar?</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 These are the most common reasons tenants choose professional cleaning
               </p>
             </div>
