@@ -545,13 +545,13 @@ const services = [
       </section>
 
       {/* Why HVAC Maintenance Matters */}
-      <section className="py-20 bg-gradient-to-br from-muted/50 to-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-muted/50 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-primary">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-primary">
               Why Proactive Maintenance Matters
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6 md:mb-12">
               Proactive care protects assets, ensures comfort and reliability, and keeps energy spend under control—across ventilation, heating, controls and more.
             </p>
           </div>
