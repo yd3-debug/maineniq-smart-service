@@ -428,8 +428,8 @@ const BoilerServices = () => {
             {outcomes.map((outcome) => (
               <Card key={outcome.title} className="text-center border-border/50 hover:shadow-lg transition-all">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-                    <outcome.icon className="w-8 h-8 text-green-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                    <outcome.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-600" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{outcome.title}</h3>
                   <p className="text-sm text-muted-foreground">{outcome.description}</p>
