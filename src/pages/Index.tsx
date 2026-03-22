@@ -436,7 +436,7 @@ const Index = () => {
         {/* Why Maintenance Matters Section */}
         <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-muted to-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                 <Leaf className="w-4 h-4" />
                 Why Maintenance Matters
