@@ -218,12 +218,12 @@ const BoilerServices = () => {
               Gas Safe Registered Engineers
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Boiler Services</span>
               <br />for London Homes
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
               From emergency repairs to annual servicing and CP12 certificates. 
               Keep your home warm and safe with our Gas Safe registered engineers.
             </p>
@@ -272,11 +272,11 @@ const BoilerServices = () => {
       </section>
 
       {/* Who We Help */}
-      <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Who We Help</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Boiler Services for Every Property
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -305,14 +305,14 @@ const BoilerServices = () => {
       <TrustMetrics />
 
       {/* Warning Signs */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4 border-amber-300 text-amber-700 bg-amber-50">
               <AlertTriangle className="w-4 h-4 mr-2" />
               Warning Signs
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Signs Your Boiler Needs Attention
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -352,11 +352,11 @@ const BoilerServices = () => {
       </section>
 
       {/* Our Services */}
-      <section className="py-16 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Our Services</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Complete Boiler Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -415,7 +415,7 @@ const BoilerServices = () => {
       </section>
 
       {/* Outcomes */}
-      <section className="py-16 bg-background">
+      <section className="py-8 sm:py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Benefits</Badge>
@@ -441,7 +441,7 @@ const BoilerServices = () => {
       </section>
 
       {/* CP12 Section for Landlords */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 to-orange-500/5">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-primary/5 to-orange-500/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
@@ -504,12 +504,12 @@ const BoilerServices = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
             Need Boiler Help?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
             From routine servicing to emergency repairs, our Gas Safe engineers are ready to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

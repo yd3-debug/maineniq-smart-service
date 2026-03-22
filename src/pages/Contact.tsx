@@ -134,16 +134,16 @@ const Contact = () => {
             {/* Right side - Quick contact card */}
             <div className="lg:flex lg:justify-end">
               <Card className="bg-white/95 backdrop-blur-sm shadow-elegant max-w-md">
-                <CardContent className="p-8">
-                  <h3 className="font-bold text-2xl text-center mb-6">Get Instant Help</h3>
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <h3 className="font-bold text-xl sm:text-2xl text-center mb-4 sm:mb-6">Get Instant Help</h3>
                   <div className="space-y-4">
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-2">Mobile WhatsApp</p>
-                      <p className="text-2xl font-bold text-primary">+44 783 456 2366</p>
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 783 456 2366</p>
                     </div>
                     <div className="text-center">
                       <p className="text-sm text-muted-foreground mb-2">Landline</p>
-                      <p className="text-2xl font-bold text-primary">+44 (0) 189 55 28 226</p>
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 (0) 189 55 28 226</p>
                     </div>
                     <Button 
                       onClick={() => handleWhatsAppClick()}
@@ -161,14 +161,14 @@ const Contact = () => {
       </section>
 
       {/* Professional Consultation Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-20">
             <div className="space-y-6">
-              <h2 className="font-heading text-4xl font-bold">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold">
                 Expert HVAC Consultation & Support
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
                 Get specialist advice from our certified HVAC maintenance experts. With over 15 years of experience 
                 in MVHR, HIU & CIU, FCU & BMS systems, we provide professional solutions you can rely on.
               </p>
@@ -215,17 +215,17 @@ const Contact = () => {
           </div>
 
           {/* Why Choose Us Section with Images */}
-          <div className="mb-20">
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Our Experts?</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="mb-10 md:mb-20">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Why Choose Our Experts?</h2>
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Leading HVAC maintenance specialists with proven expertise in complex systems. 
                 Our technical knowledge and commitment to quality make us the trusted choice.
               </p>
             </div>
             
             {/* Features with alternating layout */}
-            <div className="space-y-20">
+            <div className="space-y-10 md:space-y-20">
               {/* First row - Image left, content right */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="relative">
@@ -237,7 +237,7 @@ const Contact = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg"></div>
                 </div>
                 <div className="space-y-8">
-                  <h3 className="font-heading text-3xl font-bold">Certified Experts & Proven Results</h3>
+                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Certified Experts & Proven Results</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {whyChooseUs.slice(0, 4).map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
@@ -257,7 +257,7 @@ const Contact = () => {
               {/* Second row - Content left, image right */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8 lg:order-1">
-                  <h3 className="font-heading text-3xl font-bold">Advanced Equipment & Fast Response</h3>
+                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Advanced Equipment & Fast Response</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {whyChooseUs.slice(4, 6).map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
@@ -317,16 +317,16 @@ const Contact = () => {
                 className="bg-cover bg-center rounded-2xl overflow-hidden"
                 style={{ backgroundImage: `url(${hvacProfessional})` }}
               >
-                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-12 lg:p-16">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-white">
-                    <div className="space-y-6">
+                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-6 sm:p-8 md:p-12 lg:p-16">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center text-white">
+                    <div className="space-y-4 md:space-y-6">
                       <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
                         </div>
-                        <h3 className="font-bold text-3xl">24/7 Emergency Service</h3>
+                        <h3 className="font-bold text-xl sm:text-2xl md:text-3xl">24/7 Emergency Service</h3>
                       </div>
-                      <p className="text-xl opacity-95 leading-relaxed">
+                      <p className="text-base md:text-xl opacity-95 leading-relaxed">
                         HVAC emergency? Don't suffer in discomfort! Our emergency response team 
                         is available 24/7 to get your system back up and running quickly.
                       </p>
@@ -339,11 +339,11 @@ const Contact = () => {
                     <div className="text-center lg:text-right space-y-6">
                       <div className="space-y-2">
                         <p className="text-sm opacity-75">Emergency Hotline</p>
-                        <p className="text-4xl font-bold text-accent">+44 783 456 2366</p>
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent">+44 783 456 2366</p>
                       </div>
                       <Button 
                         onClick={() => handleWhatsAppClick(true)}
-                        className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-elegant hover-scale"
+                        className="bg-white text-primary hover:bg-white/90 font-semibold px-4 sm:px-6 md:px-8 py-3 md:py-4 text-sm sm:text-base md:text-lg shadow-elegant hover-scale"
                       >
                         <MessageCircle className="w-5 h-5 mr-2" />
                         Emergency WhatsApp
@@ -357,30 +357,30 @@ const Contact = () => {
             {/* Business Hours Card */}
             <Card className="shadow-elegant border-primary/20">
               <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5">
-                <CardTitle className="flex items-center space-x-3 text-3xl">
+                <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl md:text-3xl">
                   <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
                   <span>Business Hours</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   {businessHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
-                      <span className="font-semibold text-lg">{schedule.day}</span>
-                      <span className="text-muted-foreground text-lg font-medium">{schedule.hours}</span>
+                    <div key={index} className="flex justify-between items-center p-3 md:p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
+                      <span className="font-semibold text-sm sm:text-base md:text-lg">{schedule.day}</span>
+                      <span className="text-muted-foreground text-sm sm:text-base md:text-lg font-medium">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="mt-8 p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
-                  <div className="flex items-center justify-between">
+                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-6 h-6 text-whatsapp" />
+                      <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-whatsapp flex-shrink-0" />
                       <div>
-                        <p className="font-semibold text-lg">Need help outside business hours?</p>
-                        <p className="text-muted-foreground">WhatsApp us anytime for quick responses</p>
+                        <p className="font-semibold text-sm sm:text-base md:text-lg">Need help outside business hours?</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm">WhatsApp us anytime for quick responses</p>
                       </div>
                     </div>
                     <Button 

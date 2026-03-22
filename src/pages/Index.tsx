@@ -346,23 +346,23 @@ const Index = () => {
         </section>
 
         {/* Why Choose Contracts Section */}
-        <section className="py-16 bg-background">
+        <section className="py-8 sm:py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 md:mb-12">
               <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
                 <span className="w-8 h-[2px] bg-primary"></span>
                 <span>MAINTENANCE CONTRACTS</span>
                 <span className="w-8 h-[2px] bg-primary"></span>
               </div>
-              <h2 className="font-heading text-3xl font-bold mb-4">
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4">
                 Stop Paying for Breakdowns
               </h2>
-              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
                 Our maintenance contracts save money, reduce stress, and protect your reputation.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-12 max-w-4xl mx-auto">
               <Card className="border-l-4 border-l-destructive">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-destructive">
@@ -436,7 +436,7 @@ const Index = () => {
         {/* Why Maintenance Matters Section */}
         <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-muted to-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-16">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                 <Leaf className="w-4 h-4" />
                 Why Maintenance Matters
@@ -450,7 +450,7 @@ const Index = () => {
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-16">
               <Card className="border-success/25 bg-white/80 hover:bg-white hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-6 text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-success to-success rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -509,7 +509,7 @@ const Index = () => {
             </div>
 
             {/* CTA */}
-            <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/20">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/20">
               <h3 className="font-heading text-2xl font-bold mb-2">
                 Ready to Protect Your Property?
               </h3>
@@ -536,12 +536,12 @@ const Index = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-10 sm:py-14 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
-                <h2 className="font-heading text-4xl font-bold mb-6">Why Choose Mainteniq?</h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Why Choose Mainteniq?</h2>
+                <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                   We combine traditional HVAC expertise with modern smart property solutions, 
                   delivering comprehensive services that prioritize your comfort and efficiency.
                 </p>
@@ -572,26 +572,26 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-6">
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Award className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">500+</h3>
-                  <p className="text-muted-foreground">Projects Completed</p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Award className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">500+</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Projects Completed</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Star className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">4.9★</h3>
-                  <p className="text-muted-foreground">Customer Rating</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Star className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">4.9★</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Customer Rating</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">4hr</h3>
-                  <p className="text-muted-foreground">Response Time</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">4hr</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Response Time</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">10yr</h3>
-                  <p className="text-muted-foreground">Warranty</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">10yr</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Warranty</p>
                 </Card>
               </div>
             </div>
@@ -599,16 +599,16 @@ const Index = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-professional-gradient text-white">
+        <section className="py-10 sm:py-14 md:py-20 bg-professional-gradient text-white">
           <div className="container mx-auto px-4 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Clock className="w-4 h-4" />
               Book This Week, Get Priority Scheduling
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
               Ready to protect your property?
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl mb-6 md:mb-8 opacity-90 max-w-3xl mx-auto">
               Get professional maintenance for HVAC, plumbing, electrical, BMS and more — comfort, efficiency and peace of mind.
             </p>
             

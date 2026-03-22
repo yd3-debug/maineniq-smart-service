@@ -329,11 +329,11 @@ const EndOfTenancyCleaning: React.FC = () => {
                 </Badge>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-accent-orange bg-clip-text text-transparent">
                 Get Your Full Deposit Back
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8 max-w-2xl">
                 Professional end-of-tenancy cleaning that meets strict inventory standards. 
                 Thorough, reliable, and deposit-safe cleaning for London tenants and landlords.
               </p>

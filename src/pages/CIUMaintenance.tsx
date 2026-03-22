@@ -566,7 +566,7 @@ const CIUMaintenance = () => {
       </section>
 
       {/* UK Compliance Requirements */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
