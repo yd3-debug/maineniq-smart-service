@@ -487,10 +487,10 @@ const MVHRMaintenance = () => {
         <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <AnimatedChart delay={200}>
             <Card className="bg-card/80 backdrop-blur border-2 border-success/20">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-4">See The Difference Maintenance Makes</h3>
-                  <p className="text-lg text-muted-foreground">Real MVHR filters showing the dramatic impact of regular replacement</p>
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="text-center mb-6 md:mb-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4">See The Difference Maintenance Makes</h3>
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Real MVHR filters showing the dramatic impact of regular replacement</p>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
