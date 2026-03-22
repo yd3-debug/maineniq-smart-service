@@ -608,11 +608,11 @@ const MaintenanceContracts = () => {
       </section>
 
       {/* Service Commitments */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Service Commitments</h2>
-            <p className="text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Service Commitments</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">When you choose our maintenance contracts, you get these guarantees:</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
