@@ -237,7 +237,7 @@ const Contact = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg"></div>
                 </div>
                 <div className="space-y-8">
-                  <h3 className="font-heading text-3xl font-bold">Certified Experts & Proven Results</h3>
+                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Certified Experts & Proven Results</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {whyChooseUs.slice(0, 4).map((feature, index) => (
                       <div key={index} className="flex items-start space-x-3">
