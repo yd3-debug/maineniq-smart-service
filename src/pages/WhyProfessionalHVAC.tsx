@@ -974,21 +974,21 @@ const WhyProfessionalHVAC = () => {
             
             <div>
               {/* Trust Metrics */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 md:mb-8">
                 <div className="text-center">
-                  <Award className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Successful Installations</div>
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">500+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Successful Installations</div>
                 </div>
                 <div className="text-center">
-                  <Star className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">4.9★</div>
-                  <div className="text-sm text-muted-foreground">Customer Rating</div>
+                  <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">4.9★</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Customer Rating</div>
                 </div>
                 <div className="text-center">
-                  <Timer className="w-10 h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-3xl text-primary">20+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <Timer className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">20+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
                 </div>
               </div>
 
