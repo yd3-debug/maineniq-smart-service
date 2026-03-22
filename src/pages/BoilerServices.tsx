@@ -276,7 +276,7 @@ const BoilerServices = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Who We Help</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Boiler Services for Every Property
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
