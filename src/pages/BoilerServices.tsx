@@ -218,12 +218,12 @@ const BoilerServices = () => {
               Gas Safe Registered Engineers
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
               Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Boiler Services</span>
               <br />for London Homes
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
               From emergency repairs to annual servicing and CP12 certificates. 
               Keep your home warm and safe with our Gas Safe registered engineers.
             </p>
