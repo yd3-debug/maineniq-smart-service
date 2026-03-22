@@ -61,7 +61,7 @@ const BMS: React.FC = () => {
       />
 
 
-      <main className="container mx-auto px-4 py-16 space-y-20">
+      <main className="container mx-auto px-4 py-8 sm:py-12 md:py-16 space-y-10 sm:space-y-14 md:space-y-20">
         {/* Performance Results */}
         <BMSMetrics />
 
