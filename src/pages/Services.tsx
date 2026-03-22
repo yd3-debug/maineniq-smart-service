@@ -378,7 +378,7 @@ const services = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             <Card className="lg:col-span-1 overflow-hidden border-0 shadow-glow bg-success text-primary-foreground">
               <CardContent className="p-6 h-full flex flex-col items-center justify-center text-center">
-                <div className="text-5xl font-extrabold tracking-tight">90%</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">90%</div>
                 <div className="text-sm font-medium mt-1">Same‑day attendance</div>
                 <div className="text-xs opacity-80 mt-1">Weekdays before 12pm*</div>
               </CardContent>
