@@ -433,11 +433,11 @@ export default function RenovationComposer() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {renovationBenefits.map((benefit, index) => (
-              <div key={index} className="rounded-lg border border-primary/20 bg-background p-6 space-y-3 text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <benefit.icon className="w-8 h-8 text-primary" />
+              <div key={index} className="rounded-lg border border-primary/20 bg-background p-4 sm:p-6 space-y-3 text-center">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                  <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
