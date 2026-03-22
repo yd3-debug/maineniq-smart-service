@@ -362,7 +362,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-12 max-w-4xl mx-auto">
               <Card className="border-l-4 border-l-destructive">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-destructive">
