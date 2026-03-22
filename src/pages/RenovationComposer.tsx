@@ -311,7 +311,7 @@ export default function RenovationComposer() {
         </section>
 
         {/* Signs You Need Professional Renovation */}
-        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-8 space-y-8">
+        <section className="bg-gradient-to-br from-muted/50 to-muted/30 rounded-xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8">
           <div className="text-center space-y-4">
             <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-amber-200">
               Signs You Need Professional Renovation
