@@ -449,7 +449,7 @@ const PlumberElectrician: React.FC = () => {
         {/* How It Works - Split Layout with Image */}
         <section className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
           <div className="lg:col-span-3">
-            <h2 className="font-heading text-3xl font-bold mb-8">How It Works</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-6 md:mb-8">How It Works</h2>
             <div className="grid grid-cols-2 gap-4 mb-6">
               {processSteps.map((step, index) => (
                 <div key={step.step} className="p-4 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-colors">
