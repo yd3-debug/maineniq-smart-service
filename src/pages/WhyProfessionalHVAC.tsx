@@ -468,7 +468,7 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* Professional HVAC Benefits */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
+      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
