@@ -687,12 +687,12 @@ const services = [
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-10 sm:py-14 md:py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-4xl font-bold mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p className="text-sm sm:text-base md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto opacity-90">
             Whether you need MVHR installation, BMS setup, smart home integration, or any of our professional services, 
             our expert team is ready to deliver exceptional results.
           </p>
