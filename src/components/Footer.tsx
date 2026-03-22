@@ -64,7 +64,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 py-6 md:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2 space-y-3 md:space-y-4 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2">
@@ -150,28 +150,26 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links & Legal */}
-          <div className="col-span-2 sm:col-span-1 space-y-2 md:space-y-4 text-center md:text-left">
-            <div className="flex flex-row sm:flex-col gap-4 sm:gap-0 justify-center md:justify-start">
-              <div>
-                <h3 className="font-semibold text-sm sm:text-lg">Company</h3>
-                <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2 mt-1 sm:mt-4">
-                  <li><Link to="/maintenance-contracts" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contracts</Link></li>
-                  <li><Link to="/case-studies" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
-                  <li><Link to="/about" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">About</Link></li>
-                  <li><Link to="/contact" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
-                  <li><Link to="/faq" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm sm:text-lg sm:pt-4">Legal</h3>
-                <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2 mt-1 sm:mt-4">
-                  <li><Link to="/privacy-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
-                  <li><Link to="/terms-of-service" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
-                  <li><Link to="/cookie-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
-                </ul>
-              </div>
-            </div>
+          {/* Company */}
+          <div className="space-y-2 md:space-y-4 text-center md:text-left">
+            <h3 className="font-semibold text-sm sm:text-lg">Company</h3>
+            <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2">
+              <li><Link to="/maintenance-contracts" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contracts</Link></li>
+              <li><Link to="/case-studies" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
+              <li><Link to="/about" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">About</Link></li>
+              <li><Link to="/contact" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link to="/faq" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="space-y-2 md:space-y-4 text-center md:text-left">
+            <h3 className="font-semibold text-sm sm:text-lg">Legal</h3>
+            <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2">
+              <li><Link to="/privacy-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Cookie Policy</Link></li>
+            </ul>
           </div>
         </div>
 
