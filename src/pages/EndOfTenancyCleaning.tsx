@@ -622,8 +622,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Common Questions</Badge>
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Everything you need to know about our cleaning service
               </p>
             </div>
