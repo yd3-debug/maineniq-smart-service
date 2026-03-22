@@ -304,7 +304,7 @@ const PlumberElectrician: React.FC = () => {
                   <ThermometerSun className="w-4 h-4" />
                   Winter Readiness Check
                 </div>
-                <h2 className="font-heading text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
+                <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Is Your Boiler Ready for Winter?</h2>
                 <p className="text-muted-foreground">
                   UK boilers work hardest during winter months. Spot these warning signs early to avoid cold showers, 
                   expensive emergency callouts, or worse - a complete breakdown when you need heating most.
