@@ -116,10 +116,10 @@ const BMS: React.FC = () => {
         <BMSProcess />
 
         {/* Problems We Prevent */}
-        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-8">
-          <div className="text-center space-y-6 mb-8">
-            <h2 className="font-heading text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-4 sm:p-6 md:p-8">
+          <div className="text-center space-y-4 md:space-y-6 mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
               Without proper BMS maintenance, buildings face significant operational and financial risks
             </p>
           </div>
