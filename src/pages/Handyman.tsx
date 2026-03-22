@@ -193,9 +193,9 @@ const Handyman: React.FC = () => {
         </section>
 
         {/* SIGNS YOU NEED US - Symptom-based approach */}
-        <section className="rounded-xl border bg-gradient-to-br from-primary/5 to-primary/10 p-8">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">Signs You Need a Professional</h2>
+        <section className="rounded-xl border bg-gradient-to-br from-primary/5 to-primary/10 p-4 sm:p-6 md:p-8">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">Signs You Need a Professional</h2>
             <p className="text-muted-foreground">Recognise any of these? We can help.</p>
           </div>
           
