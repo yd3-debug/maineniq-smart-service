@@ -137,19 +137,19 @@ const Index = () => {
             style={{ backgroundImage: `url(/hero-minimal.jpg)` }}
           />
           
-          <div className="relative container mx-auto px-4 pt-12 md:pt-20">
+          <div className="relative container mx-auto px-4 pt-8 md:pt-16">
             <div className="max-w-5xl mx-auto">
               {/* Professional Container */}
-              <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/20 p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+              <div className="backdrop-blur-sm bg-white/5 rounded-2xl border border-white/20 p-4 sm:p-6 md:p-10 shadow-2xl text-center">
                 
                 {/* Urgency Badge */}
-                <div className="inline-flex items-center gap-2 bg-success/20 text-success-foreground border border-success/30 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+                <div className="inline-flex items-center gap-2 bg-success/20 text-success-foreground border border-success/30 px-4 py-2 rounded-full text-sm font-medium mb-4 animate-fade-in">
                   <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
                   <span className="text-white">Response within 4 hours</span>
                 </div>
 
                 <div className="space-y-6">
-                  <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+                  <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                     Keep Your Building Running.
                     <br />
                     <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
@@ -157,7 +157,7 @@ const Index = () => {
                     </span>
                   </h1>
                   
-                  <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
                     Professional maintenance for HVAC, plumbing, electrical, and property services. 
                     Trusted by landlords, property managers, and facilities teams across London.
                   </p>
@@ -168,7 +168,7 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     variant="accent"
-                    className="text-white font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg shadow-xl"
+                    className="text-white font-semibold px-8 md:px-10 py-4 md:py-6 text-base md:text-lg shadow-xl"
                     onClick={() => handleQuoteRequest("property assessment")}
                   >
                     <MessageSquare className="w-4 md:w-5 h-4 md:h-5 mr-2" />
@@ -178,7 +178,7 @@ const Index = () => {
                     asChild
                     size="lg" 
                     variant="hero" 
-                    className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm"
+                    className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-4 md:py-6 text-base md:text-lg backdrop-blur-sm"
                   >
                     <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                       <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
@@ -188,7 +188,7 @@ const Index = () => {
                 </div>
 
                 {/* Social Proof Strip */}
-                <div className="pt-8 border-t border-white/10 mt-8">
+                <div className="pt-5 mt-5 sm:pt-8 sm:mt-8 border-t border-white/10">
                   <p className="text-white/60 text-sm mb-4">Trusted by property professionals across London</p>
                   <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                     <div className="flex items-center gap-2">
@@ -217,7 +217,7 @@ const Index = () => {
         </section>
 
         {/* Key Results Strip - Animated */}
-        <section className="bg-secondary/40 border-b border-muted/60 py-6">
+        <section className="bg-secondary/40 border-b border-muted/60 py-4 md:py-6">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
               <div className="text-center bg-card/60 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-muted hover:shadow-lg transition-all">
@@ -251,7 +251,7 @@ const Index = () => {
         {/* Core Services Section - Climate Control */}
         <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-8 md:mb-16">
+            <div className="text-center mb-6 md:mb-12">
               <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
                 <span className="w-8 h-[2px] bg-primary"></span>
                 <span>CLIMATE CONTROL</span>
@@ -325,7 +325,7 @@ const Index = () => {
                         src={service.image}
                         alt={`${service.title} service`}
                         loading="lazy"
-                        className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-36 md:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4">
