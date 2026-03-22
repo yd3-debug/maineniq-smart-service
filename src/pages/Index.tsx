@@ -178,7 +178,7 @@ const Index = () => {
                     asChild
                     size="lg" 
                     variant="hero" 
-                    className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg backdrop-blur-sm"
+                    className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 md:px-10 py-4 md:py-6 text-base md:text-lg backdrop-blur-sm"
                   >
                     <a href={`tel:${CONTACT.phones.emergencyTel}`}>
                       <Phone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
