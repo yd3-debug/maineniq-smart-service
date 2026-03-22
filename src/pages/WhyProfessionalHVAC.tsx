@@ -952,7 +952,7 @@ const WhyProfessionalHVAC = () => {
       </section>
 
       {/* Why Choose Mainteniq */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-14 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-bold mb-3 sm:mb-4">
