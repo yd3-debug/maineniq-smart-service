@@ -502,8 +502,8 @@ const PlumberElectrician: React.FC = () => {
         </section>
 
         {/* Certifications - Colored backgrounds */}
-        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-8 border border-primary/10">
-          <h2 className="font-heading text-2xl font-bold text-center mb-8">Our Credentials</h2>
+        <section className="bg-gradient-to-r from-primary/5 via-background to-primary/5 rounded-xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h2 className="font-heading text-2xl font-bold text-center mb-6 md:mb-8">Our Credentials</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
               { icon: BadgeCheck, title: "Gas Safe", desc: "Registered engineers", color: "bg-blue-500" },
