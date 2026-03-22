@@ -56,20 +56,20 @@ const ProblemSolutionSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-10">
           {problems.map((item, index) => (
             <Card 
               key={index} 
               className={`${item.bgColor} ${item.borderColor} border-l-4 hover:shadow-lg transition-all duration-300 group`}
             >
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 rounded-xl ${item.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl ${item.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
+                    <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ${item.color}`} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">{item.problem}</h3>
-                    <p className="text-muted-foreground">{item.solution}</p>
+                    <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">{item.problem}</h3>
+                    <p className="text-muted-foreground text-sm sm:text-base">{item.solution}</p>
                   </div>
                 </div>
               </CardContent>
