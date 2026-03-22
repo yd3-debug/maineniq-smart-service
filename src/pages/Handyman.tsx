@@ -320,9 +320,9 @@ const Handyman: React.FC = () => {
         </section>
 
         {/* OUR PROCESS - Simplified with collapsible */}
-        <section className="bg-muted/40 border rounded-xl p-8">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-4">How It Works</h2>
+        <section className="bg-muted/40 border rounded-xl p-4 sm:p-6 md:p-8">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4">How It Works</h2>
             <p className="text-muted-foreground">Simple process, professional results</p>
           </div>
           
