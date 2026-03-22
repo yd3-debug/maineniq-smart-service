@@ -572,26 +572,26 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-6">
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Award className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">500+</h3>
-                  <p className="text-muted-foreground">Projects Completed</p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Award className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">500+</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Projects Completed</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Star className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">4.9★</h3>
-                  <p className="text-muted-foreground">Customer Rating</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Star className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">4.9★</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Customer Rating</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">4hr</h3>
-                  <p className="text-muted-foreground">Response Time</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">4hr</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Response Time</p>
                 </Card>
-                <Card className="text-center p-6 bg-card hover:shadow-lg transition-all">
-                  <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-2">10yr</h3>
-                  <p className="text-muted-foreground">Warranty</p>
+                <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
+                  <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">10yr</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Warranty</p>
                 </Card>
               </div>
             </div>
