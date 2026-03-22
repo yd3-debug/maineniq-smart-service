@@ -529,8 +529,8 @@ const EndOfTenancyCleaning: React.FC = () => {
           <section className="space-y-8">
             <div className="text-center">
               <Badge variant="outline" className="mb-4">Transparent Pricing</Badge>
-              <h2 className="text-3xl font-bold mb-4">Fixed London Rates</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Fixed London Rates</h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Competitive pricing with no hidden costs. Professional results guaranteed.
               </p>
             </div>
