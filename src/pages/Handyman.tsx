@@ -167,8 +167,8 @@ const Handyman: React.FC = () => {
         
         {/* WHO WE HELP - Educational Intro */}
         <section className="text-center max-w-4xl mx-auto">
-          <h2 className="font-heading text-3xl font-bold mb-6">Who We Help</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-4 md:mb-6">Who We Help</h2>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
             Stop wasting time chasing unreliable tradespeople. We provide qualified, insured handymen who show up on time, complete work to standard, and give you documentation for compliance.
           </p>
           
