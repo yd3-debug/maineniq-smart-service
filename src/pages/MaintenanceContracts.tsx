@@ -462,10 +462,10 @@ const MaintenanceContracts = () => {
       <WhoWeServe />
 
       {/* Case Study Snippets */}
-      <section id="proof-points" className="py-16 bg-muted/20" aria-labelledby="proof-title">
+      <section id="proof-points" className="py-8 sm:py-12 md:py-16 bg-muted/20" aria-labelledby="proof-title">
         <div className="container mx-auto px-4">
-          <header className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 id="proof-title" className="font-heading text-3xl font-bold mb-4">
+          <header className="max-w-3xl mx-auto mb-8 md:mb-12 text-center">
+            <h2 id="proof-title" className="font-heading text-2xl sm:text-3xl font-bold mb-4">
               Real Results for Real Clients
             </h2>
             <p className="text-muted-foreground">
