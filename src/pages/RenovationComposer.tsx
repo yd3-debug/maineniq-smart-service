@@ -352,10 +352,10 @@ export default function RenovationComposer() {
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Services
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Complete Renovation Solutions
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Our expert team delivers end-to-end renovation services, transforming properties with precision, quality, and attention to detail.
             </p>
           </div>
