@@ -255,7 +255,7 @@ const Contact = () => {
               </div>
 
               {/* Second row - Content left, image right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div className="space-y-8 lg:order-1">
                   <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Advanced Equipment & Fast Response</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
