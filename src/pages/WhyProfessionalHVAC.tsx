@@ -1029,7 +1029,7 @@ const WhyProfessionalHVAC = () => {
 
           {/* Customer Testimonial */}
           <Card className="max-w-4xl mx-auto border-primary/20 bg-gradient-to-r from-primary/5 to-primary/10">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-4 sm:p-6 md:p-8 text-center">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
