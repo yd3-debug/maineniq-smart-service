@@ -215,10 +215,10 @@ const Contact = () => {
           </div>
 
           {/* Why Choose Us Section with Images */}
-          <div className="mb-20">
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">Why Choose Our Experts?</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="mb-10 md:mb-20">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Why Choose Our Experts?</h2>
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Leading HVAC maintenance specialists with proven expertise in complex systems. 
                 Our technical knowledge and commitment to quality make us the trusted choice.
               </p>
