@@ -346,18 +346,18 @@ const Index = () => {
         </section>
 
         {/* Why Choose Contracts Section */}
-        <section className="py-16 bg-background">
+        <section className="py-8 sm:py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 md:mb-12">
               <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
                 <span className="w-8 h-[2px] bg-primary"></span>
                 <span>MAINTENANCE CONTRACTS</span>
                 <span className="w-8 h-[2px] bg-primary"></span>
               </div>
-              <h2 className="font-heading text-3xl font-bold mb-4">
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4">
                 Stop Paying for Breakdowns
               </h2>
-              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
                 Our maintenance contracts save money, reduce stress, and protect your reputation.
               </p>
             </div>
