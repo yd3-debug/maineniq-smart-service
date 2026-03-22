@@ -599,16 +599,16 @@ const Index = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-professional-gradient text-white">
+        <section className="py-10 sm:py-14 md:py-20 bg-professional-gradient text-white">
           <div className="container mx-auto px-4 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Clock className="w-4 h-4" />
               Book This Week, Get Priority Scheduling
             </div>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
               Ready to protect your property?
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl mb-6 md:mb-8 opacity-90 max-w-3xl mx-auto">
               Get professional maintenance for HVAC, plumbing, electrical, BMS and more — comfort, efficiency and peace of mind.
             </p>
             

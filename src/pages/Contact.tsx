@@ -374,13 +374,13 @@ const Contact = () => {
                   ))}
                 </div>
                 
-                <div className="mt-8 p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
-                  <div className="flex items-center justify-between">
+                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-6 h-6 text-whatsapp" />
+                      <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-whatsapp flex-shrink-0" />
                       <div>
-                        <p className="font-semibold text-lg">Need help outside business hours?</p>
-                        <p className="text-muted-foreground">WhatsApp us anytime for quick responses</p>
+                        <p className="font-semibold text-sm sm:text-base md:text-lg">Need help outside business hours?</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm">WhatsApp us anytime for quick responses</p>
                       </div>
                     </div>
                     <Button 

@@ -77,11 +77,11 @@ const ProblemSolutionSection = () => {
           ))}
         </div>
 
-        <div className="text-center bg-primary/5 rounded-2xl p-8 border border-primary/10">
-          <h3 className="font-heading text-xl md:text-2xl font-bold mb-3">
+        <div className="text-center bg-primary/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/10">
+          <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold mb-3">
             One call handles it all
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-6 max-w-xl mx-auto">
             Stop juggling multiple contractors. Get a single point of contact for all your property maintenance needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
