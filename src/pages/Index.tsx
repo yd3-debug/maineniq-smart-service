@@ -251,7 +251,7 @@ const Index = () => {
         {/* Core Services Section - Climate Control */}
         <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-8 md:mb-16">
+            <div className="text-center mb-6 md:mb-12">
               <div className="flex items-center justify-center space-x-2 text-primary font-medium mb-4">
                 <span className="w-8 h-[2px] bg-primary"></span>
                 <span>CLIMATE CONTROL</span>
