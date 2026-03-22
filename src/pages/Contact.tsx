@@ -364,12 +364,12 @@ const Contact = () => {
                   <span>Business Hours</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <CardContent className="p-4 sm:p-6 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   {businessHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
-                      <span className="font-semibold text-lg">{schedule.day}</span>
-                      <span className="text-muted-foreground text-lg font-medium">{schedule.hours}</span>
+                    <div key={index} className="flex justify-between items-center p-3 md:p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
+                      <span className="font-semibold text-sm sm:text-base md:text-lg">{schedule.day}</span>
+                      <span className="text-muted-foreground text-sm sm:text-base md:text-lg font-medium">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
