@@ -595,7 +595,7 @@ const EndOfTenancyCleaning: React.FC = () => {
           </section>
 
           {/* Service Guarantees */}
-          <section className="bg-gradient-to-r from-success/10 to-trust-blue/10 rounded-2xl p-8">
+          <section className="bg-gradient-to-r from-success/10 to-trust-blue/10 rounded-2xl p-4 sm:p-6 md:p-8">
             <div className="text-center mb-8">
               <Badge variant="outline" className="mb-4 border-success/30 text-success">Peace of Mind</Badge>
               <h2 className="text-2xl font-bold mb-4">Our Guarantees</h2>
