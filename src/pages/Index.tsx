@@ -168,7 +168,7 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     variant="accent"
-                    className="text-white font-semibold px-8 md:px-10 py-6 md:py-7 text-base md:text-lg shadow-xl"
+                    className="text-white font-semibold px-8 md:px-10 py-4 md:py-6 text-base md:text-lg shadow-xl"
                     onClick={() => handleQuoteRequest("property assessment")}
                   >
                     <MessageSquare className="w-4 md:w-5 h-4 md:h-5 mr-2" />
