@@ -452,10 +452,10 @@ export default function RenovationComposer() {
             <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
               Our Process
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               Our Renovation Process
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
               From initial consultation to final handover, we ensure a smooth and professional renovation experience.
             </p>
           </div>
