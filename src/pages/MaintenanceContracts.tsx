@@ -199,7 +199,7 @@ const MaintenanceContracts = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             <Card className="border-destructive/20">
               <CardHeader>
                 <CardTitle className="text-destructive">Reactive Maintenance</CardTitle>
