@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Hero Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>Professional HVAC Maintenance Services London - Mainteniq</image:title>
+      <image:caption>Expert property maintenance and HVAC services for landlords, Airbnb hosts and property managers across London and 120-mile radius</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
+      <image:title>Mainteniq Logo - UK Property Services Company</image:title>
+      <image:caption>Mainteniq - Professional HVAC and property maintenance services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- HVAC Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/hvac-maintenance</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/HVAC_SYSTEM.png</image:loc>
+      <image:title>HVAC System Maintenance London - Professional Service</image:title>
+      <image:caption>Professional HVAC system maintenance and repair services for commercial and residential properties in London</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Boiler Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/boiler-services</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>Gas Safe Boiler Services London - Installation and Repair</image:title>
+      <image:caption>Gas Safe registered boiler installation, repair, servicing and CP12 certificates in London</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
+      <image:title>Professional Boiler Installation London</image:title>
+      <image:caption>Expert boiler installation and maintenance services for landlords and property managers</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- FCU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/fcu-maintenance</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/FCUclean.png</image:loc>
+      <image:title>Clean FCU Unit After Professional Maintenance London</image:title>
+      <image:caption>Fan Coil Unit after professional cleaning and maintenance service - improved air quality and efficiency</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/FCUdirty.png</image:loc>
+      <image:title>Dirty FCU Unit Before Maintenance - Signs You Need Service</image:title>
+      <image:caption>FCU unit requiring professional cleaning - dust buildup affecting performance and air quality</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- HIU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/hiu-maintenance</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>HIU Heat Interface Unit Maintenance London</image:title>
+      <image:caption>Professional HIU installation, repair and maintenance for district heating systems in London</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- CIU Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/ciu-maintenance</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/CIU.png</image:loc>
+      <image:title>CIU Central Interface Unit Maintenance London</image:title>
+      <image:caption>Zone control system servicing and calibration for commercial buildings in London</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- MVHR Maintenance Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/mvhr-maintenance</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/MVHRclean.webp</image:loc>
+      <image:title>Clean MVHR Filter After Professional Service London</image:title>
+      <image:caption>MVHR filter after professional cleaning - restored airflow and heat recovery efficiency</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/MVPR0dirty.webp</image:loc>
+      <image:title>Dirty MVHR Filter Before Service - When to Clean</image:title>
+      <image:caption>MVHR filter requiring cleaning - blocked filter reduces ventilation and increases energy costs</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/mvhr-filter-clean.png</image:loc>
+      <image:title>Professional MVHR Filter Cleaning Result</image:title>
+      <image:caption>MVHR filter after professional cleaning service - optimal performance restored</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/mvhr-filter-dirty.png</image:loc>
+      <image:title>MVHR Filter Before Cleaning Comparison</image:title>
+      <image:caption>Dirty MVHR filter showing dust accumulation - professional cleaning recommended</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- BMS Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/bms</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>Building Management Systems London - BMS Installation</image:title>
+      <image:caption>Advanced BMS installation and configuration for smart building automation in London</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Plumber & Electrician Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/plumber-electrician</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Boiler.png</image:loc>
+      <image:title>Gas Safe Plumber London - Boiler Installation and Repair</image:title>
+      <image:caption>Gas Safe registered plumbing services including boiler installation, repair and CP12 certificates</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Professional Plumber and Electrician Consultation London</image:title>
+      <image:caption>Expert consultation for plumbing and electrical services - NICEIC approved contractors</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Handyman Services Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/handyman</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Professional Handyman Services London for Landlords</image:title>
+      <image:caption>Expert property maintenance and repair services for landlords, Airbnb hosts and property managers</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Smart Home Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/smart-home</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>Smart Home Automation Installation London</image:title>
+      <image:caption>Professional smart home installation - lighting, security, entertainment and energy monitoring systems</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- End of Tenancy Cleaning Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/end-of-tenancy-cleaning</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/og-image-mainteniq.png</image:loc>
+      <image:title>End of Tenancy Cleaning London - Deposit Safe Standards</image:title>
+      <image:caption>Professional deep cleaning for rental properties - inventory ready, deposit safe guaranteed</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Maintenance Contracts Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/maintenance-contracts</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/BOILER.png</image:loc>
+      <image:title>Planned Maintenance Contracts London - Property Managers</image:title>
+      <image:caption>Custom PPM maintenance contracts for HVAC, plumbing and electrical systems - prevent 80% of breakdowns</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Renovation Before/After Images -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/renovation-composer</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/New_Flat.jpg</image:loc>
+      <image:title>Property Renovation London - After Transformation</image:title>
+      <image:caption>Complete flat renovation in London - modern finish, increased rental value</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Old_Flat.jpeg</image:loc>
+      <image:title>Property Before Renovation - London Flat</image:title>
+      <image:caption>London flat before professional renovation - typical condition requiring update</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/new_kitchen.png</image:loc>
+      <image:title>Kitchen Renovation London - Modern Design</image:title>
+      <image:caption>Professional kitchen renovation in London - contemporary design, quality installation</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/old_kitchen.jpg</image:loc>
+      <image:title>Kitchen Before Renovation London</image:title>
+      <image:caption>Dated kitchen before professional renovation - common in London rental properties</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bedroom_NEW.png</image:loc>
+      <image:title>Bedroom Renovation London - Modern Design</image:title>
+      <image:caption>Professionally renovated bedroom in London property - fresh, modern finish</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bedroom_OLD2.jpg</image:loc>
+      <image:title>Bedroom Before Renovation London</image:title>
+      <image:caption>Bedroom condition before professional renovation in London property</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bathroom_NEW.png</image:loc>
+      <image:title>Bathroom Renovation London - Contemporary Design</image:title>
+      <image:caption>Professional bathroom renovation in London - modern fixtures, quality tiling</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Bathroom_OLD.jpg</image:loc>
+      <image:title>Bathroom Before Renovation London</image:title>
+      <image:caption>Dated bathroom before professional renovation - typical London rental property</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/NEW_OFFICE.png</image:loc>
+      <image:title>Office Renovation London - Commercial Fit Out</image:title>
+      <image:caption>Professional office renovation and fit-out in London - modern workspace design</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/OLD_OFFICE.jpg</image:loc>
+      <image:title>Office Before Renovation London</image:title>
+      <image:caption>Office space before professional renovation - ready for modern upgrade</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/2024_Kitchen.png</image:loc>
+      <image:title>Kitchen Renovation Before and After London 2024</image:title>
+      <image:caption>Dramatic kitchen transformation in London property - before and after professional renovation</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/about</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/LOGOPETRU2.png</image:loc>
+      <image:title>Mainteniq - Professional Property Services London</image:title>
+      <image:caption>Mainteniq - Expert HVAC and property maintenance company serving London and 120-mile radius</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.mainteniq.co.uk/contact</loc>
+    <lastmod>2026-01-27</lastmod>
+    <image:image>
+      <image:loc>https://www.mainteniq.co.uk/Customer_Service.png</image:loc>
+      <image:title>Contact Mainteniq - 24/7 Customer Service London</image:title>
+      <image:caption>Get in touch with our expert property maintenance team - 24/7 emergency response available</image:caption>
+      <image:geo_location>London, United Kingdom</image:geo_location>
+    </image:image>
+  </url>
+
+</urlset>

@@ -1,0 +1,179 @@
+# Enhanced robots.txt for optimal SEO performance
+# Allow all major search engines and AI crawlers
+# Last updated: 2026-04-13
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# AI Search Engine Crawlers - OpenAI
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 1
+
+# AI Search Engine Crawlers - Anthropic
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Anthropic-AI
+Allow: /
+Crawl-delay: 1
+
+# AI Search Engine Crawlers - Google AI
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+# AI Search Engine Crawlers - Other AI Providers
+User-agent: AI2Bot
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BraveBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 1
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Crawl-delay: 1
+
+User-agent: FacebookBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: AppleBot
+Allow: /
+Crawl-delay: 1
+
+# Gemini / Google Bard
+User-agent: Google-InspectionTool
+Allow: /
+Crawl-delay: 1
+
+# Microsoft Copilot
+User-agent: bingpreview
+Allow: /
+Crawl-delay: 1
+
+# Social Media Crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Local Search Crawlers
+User-agent: LocalBot
+Allow: /
+
+User-agent: YelpBot
+Allow: /
+
+User-agent: TrustpilotBot
+Allow: /
+
+# General crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 2
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*fbclid=*
+Disallow: /*?*gclid=*
+Disallow: /*?*msclkid=*
+
+# Allow important file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.pdf$
+Allow: /*.woff2$
+Allow: /*.woff$
+
+# Sitemap locations
+Sitemap: https://www.mainteniq.co.uk/sitemap.xml
+Sitemap: https://www.mainteniq.co.uk/news-sitemap.xml
+Sitemap: https://www.mainteniq.co.uk/image-sitemap.xml
+
+# Contact information for webmaster
+# Website: https://www.mainteniq.co.uk
+# Email: info@mainteniq.co.uk
+# Phone: +44 783 456 2366
