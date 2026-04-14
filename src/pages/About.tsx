@@ -40,7 +40,7 @@ const About = () => {
   return (
     <>
       <SEOHead
-        title="About Mainteniq | HVAC & Property Maintenance London"
+        title="About Mainteniq | Gas Safe, NICEIC & F-Gas Engineers London"
         description="Mainteniq — Gas Safe, NICEIC and F-Gas certified engineers providing HVAC maintenance, plumbing, electrical and property services across London. 15+ years experience, 4.9★ rating."
         keywords="about Mainteniq, HVAC maintenance company London, property maintenance team London, Gas Safe plumber London, NICEIC electrician London, F-Gas engineers London"
         canonicalUrl="https://www.mainteniq.co.uk/about"

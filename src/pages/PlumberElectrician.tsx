@@ -53,11 +53,11 @@ const PlumberElectrician = () => {
             Burst pipe? No power? Gas leak?
             <br />
             <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
-              Gas Safe and NICEIC. There in 4 hours.
+              Gas Safe and NICEIC. Landlord specialists. There in 4 hours.
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            Gas Safe registered plumbers and NICEIC approved electricians across London. Emergency cover 24/7. CP12, EICR and full compliance documentation.
+            Gas Safe registered plumbers and NICEIC approved electricians for landlords and property managers across London. Emergency cover 24/7. CP12, EICR and full compliance documentation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>

@@ -33,7 +33,7 @@ const SmartHome = () => {
   return (
     <>
       <SEOHead
-        title="Smart Home Installation London | Lighting, Security & Automation | Mainteniq"
+        title="Smart Home Installation London | For Landlords & Airbnb Hosts | Mainteniq"
         description="Professional smart home installation across London for homeowners, landlords and Airbnb hosts. Smart lighting, security cameras, access control and whole-home automation. One app, everything connected."
         keywords="smart home London, smart home installation London, home automation London, smart lighting London, smart locks London, Airbnb smart home London, home security systems London"
         canonicalUrl="https://www.mainteniq.co.uk/smart-home"

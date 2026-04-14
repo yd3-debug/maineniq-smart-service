@@ -24,9 +24,9 @@ const MVHRMaintenance = () => {
   return (
     <>
       <SEOHead
-        title="MVHR Maintenance London | Mechanical Ventilation Heat Recovery Service | Mainteniq"
-        description="Professional MVHR filter replacement, cleaning and servicing across London. All brands. Restore heat recovery efficiency and improve indoor air quality. 24/7 response."
-        keywords="MVHR maintenance London, MVHR filter replacement, MVHR cleaning London, mechanical ventilation heat recovery service, MVHR service London, ventilation maintenance London"
+        title="MVHR Maintenance London | Filter Replacement for Landlords & Property Managers | Mainteniq"
+        description="Professional MVHR filter replacement, heat exchanger cleaning and system servicing for landlords and property managers across London. All brands. Fixes condensation, stale air and high energy bills."
+        keywords="MVHR maintenance London, MVHR filter replacement London, landlord MVHR maintenance London, MVHR cleaning London, mechanical ventilation heat recovery service London, MVHR service London, ventilation maintenance London, property manager MVHR London, Zehnder MVHR London, PAUL MVHR London"
         canonicalUrl="https://www.mainteniq.co.uk/mvhr-maintenance"
         structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([

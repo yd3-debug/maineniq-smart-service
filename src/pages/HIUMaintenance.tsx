@@ -26,9 +26,9 @@ const HIUMaintenance = () => {
   return (
     <>
       <SEOHead
-        title="HIU Maintenance London | Heat Interface Unit Service & Repair | Mainteniq"
-        description="Professional HIU servicing, descaling and repair for residential blocks and district heating systems across London. Annual contracts available. 24/7 emergency response."
-        keywords="HIU maintenance London, heat interface unit service, HIU repair London, district heating maintenance London, HIU descaling, HIU annual service, heat interface unit London"
+        title="HIU Maintenance London | Heat Interface Unit Service for Landlords | Mainteniq"
+        description="Professional HIU servicing, descaling and repair for landlords, block managers and property managers across London. Annual contracts, 24/7 emergency response. Tenant complaints resolved fast."
+        keywords="HIU maintenance London, heat interface unit service, landlord HIU maintenance London, HIU repair London, district heating maintenance London, HIU descaling London, HIU annual service, heat interface unit London, block management HIU London, property manager HIU London"
         canonicalUrl="https://www.mainteniq.co.uk/hiu-maintenance"
         structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([
@@ -50,7 +50,7 @@ const HIUMaintenance = () => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            HIU servicing, descaling and repair for residential blocks and district heating systems across London. All major brands. Annual contracts available.
+            HIU servicing, descaling and repair for landlords, block managers and property managers across London. All major brands. Annual contracts available — tenant complaints resolved fast.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>

@@ -19,9 +19,12 @@ import handymanRepair from "@/assets/handyman-repair.jpg";
 import hvacProfessional from "@/assets/hvac-professional.jpg";
 
 const faqData = generateFAQSchema([
-  { question: "What property maintenance services does Mainteniq offer?", answer: "We offer HVAC maintenance (FCU, HIU, MVHR, CIU), air conditioning installation, boiler services, plumbing, electrical, handyman, BMS, smart home and property renovation across London and 120-mile radius." },
-  { question: "Do you provide emergency property maintenance in London?", answer: "Yes. We provide 24/7 emergency cover with response within 4 hours across London. Our engineers are directly employed and carry common parts on every visit." },
-  { question: "Are you Gas Safe and NICEIC certified?", answer: "Yes. All gas work is carried out by Gas Safe registered engineers. All electrical work is carried out by NICEIC approved contractors. We are also F-Gas certified for air conditioning refrigerant work." },
+  { question: "What property maintenance services does Mainteniq offer?", answer: "We cover HVAC maintenance (FCU, HIU, MVHR, CIU, boilers, air conditioning), plumbing, electrical, Gas Safe and NICEIC certified work, handyman services, BMS, smart home installation and full property renovation — across London and within 120 miles." },
+  { question: "Do you provide emergency property maintenance in London?", answer: "Yes. We provide 24/7 emergency cover with response within 4 hours across London. Our engineers are directly employed and carry common parts on every visit — most issues resolved in a single call-out." },
+  { question: "Can you manage maintenance across multiple properties?", answer: "Yes. Many of our clients are landlords and letting agents with portfolios of 5–50+ properties. We offer maintenance contracts covering multiple properties under one agreement, with a single point of contact and consolidated reporting." },
+  { question: "Are your engineers Gas Safe and NICEIC certified?", answer: "Yes. All gas work is carried out by Gas Safe registered engineers — verifiable at gassaferegister.co.uk. All electrical work is by NICEIC approved contractors. We are also F-Gas certified and TM44 approved for commercial air conditioning inspections." },
+  { question: "Do you issue CP12 and EICR certificates?", answer: "Yes. We issue CP12 Gas Safety Certificates (required annually for all rental properties) and EICR Electrical Installation Condition Reports (required every 5 years). Certificates are issued on the day. We can also manage renewal scheduling across a portfolio." },
+  { question: "What areas do you cover for property maintenance?", answer: "All London boroughs and within 120 miles of the M25 — including Kent, Surrey, Essex, Hertfordshire, Buckinghamshire, Berkshire, Oxford, Cambridge and Birmingham. Contact us to confirm coverage for your specific location." },
 ]);
 
 const breadcrumbData = generateBreadcrumbSchema([
@@ -68,10 +71,10 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary to-slate-900" />
         <div className="relative container mx-auto px-4 max-w-4xl text-center">
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Every service your property needs.
+            Landlords, agents and property managers.
             <br />
             <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
-              One team. One call.
+              One team handles everything.
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
@@ -174,9 +177,12 @@ const Services = () => {
           <h2 className="font-heading text-2xl font-bold text-center mb-8">Common questions</h2>
           <div className="space-y-4">
             {[
-              { q: "Do you cover my area?", a: "We cover all of London and within 120 miles — including Essex, Kent, Surrey, Hertfordshire, Buckinghamshire, Birmingham, Oxford, Cambridge, Brighton and Reading. Contact us to confirm." },
-              { q: "Can you handle multiple properties?", a: "Yes. Many of our clients are landlords and property managers with portfolios. We offer maintenance contracts that cover multiple properties under one agreement, with a single point of contact." },
-              { q: "Do your engineers carry ID and credentials?", a: "Yes. All engineers carry their Gas Safe registration card, NICEIC ID, and F-Gas certificate on every job. You can verify their credentials independently before they start work." },
+              { q: "What property maintenance services do you offer?", a: "We cover HVAC maintenance (FCU, HIU, MVHR, CIU, boilers, air conditioning), plumbing, electrical, Gas Safe and NICEIC certified work, handyman services, BMS, smart home installation and full property renovation — across London and within 120 miles." },
+              { q: "Do you offer emergency property maintenance?", a: "Yes. We provide 24/7 emergency cover with response within 4 hours. Our engineers are directly employed and carry common parts on every visit — most issues resolved in a single call-out." },
+              { q: "Can you manage maintenance across multiple properties?", a: "Yes. Many of our clients are landlords and letting agents with portfolios of 5–50+ properties. We offer maintenance contracts covering multiple properties under one agreement, with a single point of contact and consolidated reporting." },
+              { q: "Are your engineers Gas Safe and NICEIC certified?", a: "Yes. All gas work is carried out by Gas Safe registered engineers — verifiable at gassaferegister.co.uk. All electrical work is by NICEIC approved contractors. We are also F-Gas certified for AC and refrigeration work, and TM44 approved for commercial air conditioning inspections." },
+              { q: "Do you issue CP12 and EICR certificates?", a: "Yes. We issue CP12 Gas Safety Certificates (required annually for all rental properties) and EICR Electrical Installation Condition Reports (required every 5 years). Certificates are issued on the day. We can also manage renewal scheduling across a portfolio." },
+              { q: "What areas do you cover?", a: "All London boroughs and within 120 miles of the M25 — including Kent, Surrey, Essex, Hertfordshire, Buckinghamshire, Berkshire, Oxford, Cambridge and Birmingham. Contact us to confirm coverage for your specific location." },
             ].map(({ q, a }) => (
               <div key={q} className="bg-slate-50 rounded-xl border px-6 py-5">
                 <h3 className="font-semibold text-sm mb-2">{q}</h3>

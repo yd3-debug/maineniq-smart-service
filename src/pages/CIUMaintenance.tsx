@@ -24,9 +24,9 @@ const CIUMaintenance = () => {
   return (
     <>
       <SEOHead
-        title="CIU Maintenance London | Chilled Interface Unit Service & Repair | Mainteniq"
-        description="Professional CIU servicing and repair for commercial buildings and mixed-use developments across London. Zone control maintenance, annual contracts and 24/7 emergency response."
-        keywords="CIU maintenance London, chilled interface unit service, CIU repair London, chilled water system maintenance, zone control maintenance London, district cooling maintenance London"
+        title="CIU Maintenance London | Chilled Interface Unit Service for Facilities Managers | Mainteniq"
+        description="Professional CIU servicing, zone control calibration and repair for facilities managers and building owners across London. All makes. Annual contracts and 24/7 emergency response."
+        keywords="CIU maintenance London, chilled interface unit service London, facilities manager CIU London, CIU repair London, chilled water system maintenance London, zone control maintenance London, district cooling maintenance London, building manager CIU London, commercial building cooling London"
         canonicalUrl="https://www.mainteniq.co.uk/ciu-maintenance"
         structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([
@@ -48,7 +48,7 @@ const CIUMaintenance = () => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            Chilled Interface Unit servicing, calibration and repair for commercial buildings and mixed-use developments across London. All makes, 24/7 emergency response.
+            Chilled Interface Unit servicing, zone control calibration and repair for facilities managers, building owners and property managers across London. All makes, 24/7 emergency response.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>

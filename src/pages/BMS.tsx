@@ -37,9 +37,9 @@ const BMS = () => {
   return (
     <>
       <SEOHead
-        title="BMS Maintenance London | Building Management System Service | Mainteniq"
-        description="Expert BMS maintenance and optimisation for commercial buildings across London. Trend, Siemens, Honeywell and all major platforms. Reduce energy costs by 15–30%. 24/7 emergency support."
-        keywords="BMS maintenance London, building management system London, BMS optimisation, Trend BMS service London, Siemens BMS London, building controls maintenance London, HVAC controls London"
+        title="BMS Maintenance London | Building Management System for Facilities Managers | Mainteniq"
+        description="Expert BMS maintenance and optimisation for facilities managers and building owners across London. Trend, Siemens, Honeywell and all major platforms. Reduce energy costs by 15–30%. 24/7 support."
+        keywords="BMS maintenance London, building management system London, facilities manager BMS London, BMS optimisation London, Trend BMS service London, Siemens BMS London, Honeywell BMS London, building controls maintenance London, HVAC controls London, building manager BMS London, commercial building BMS London"
         canonicalUrl="https://www.mainteniq.co.uk/bms"
         structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([
@@ -61,7 +61,7 @@ const BMS = () => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            BMS maintenance and optimisation for commercial buildings across London. All platforms. Calibration, control sequence review, energy trending and 24/7 emergency support.
+            BMS maintenance and optimisation for facilities managers, building owners and commercial property managers across London. All platforms. Calibration, control sequence review, energy trending and 24/7 emergency support.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>

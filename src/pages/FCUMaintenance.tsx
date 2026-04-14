@@ -26,9 +26,9 @@ const FCUMaintenance = () => {
   return (
     <>
       <SEOHead
-        title="FCU Maintenance London | Fan Coil Unit Service & Repair | Mainteniq"
-        description="Professional Fan Coil Unit servicing, cleaning and repair across London. TM44 certified. Residential blocks, hotels and commercial buildings. 24/7 emergency response."
-        keywords="FCU maintenance London, fan coil unit service London, FCU cleaning London, FCU repair London, TM44 FCU inspection, fan coil unit maintenance, FCU servicing commercial, FCU residential London"
+        title="FCU Maintenance London | Fan Coil Unit Service for Landlords | Mainteniq"
+        description="Professional Fan Coil Unit servicing, cleaning and repair for landlords, property managers and facilities teams across London. TM44 certified. 24/7 emergency response."
+        keywords="FCU maintenance London, fan coil unit service London, landlord FCU maintenance London, FCU cleaning London, FCU repair London, TM44 FCU inspection, fan coil unit maintenance, FCU servicing commercial, FCU residential London, property manager FCU London"
         canonicalUrl="https://www.mainteniq.co.uk/fcu-maintenance"
         structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([
@@ -50,7 +50,7 @@ const FCUMaintenance = () => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            Fan Coil Unit servicing, cleaning and repair for residential blocks, hotels and commercial buildings across London. TM44 certified, 24/7 emergency response.
+            Fan Coil Unit servicing, cleaning and repair for landlords, property managers and facilities teams across London. Residential blocks, hotels and offices. TM44 certified, 24/7 emergency response.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>

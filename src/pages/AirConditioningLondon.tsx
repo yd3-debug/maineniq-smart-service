@@ -136,9 +136,9 @@ const AirConditioningLondon = () => {
   return (
     <>
       <SEOHead
-        title="Air Conditioning Installation London | F-Gas Certified | Mainteniq"
-        description="F-Gas certified air conditioning installation, servicing & TM44 inspections across London and within 120 miles. Split systems, VRF, multi-split for homes & offices. Call or WhatsApp for a free quote."
-        keywords="air conditioning London, AC installation London, air conditioning installation London, split system London, VRF installation London, F-Gas certified London, TM44 inspection London, air conditioning service London, AC repair London, multi-split AC London, commercial air conditioning London, residential air conditioning London"
+        title="Air Conditioning London | F-Gas Certified Install & Service for Landlords | Mainteniq"
+        description="F-Gas certified air conditioning installation, servicing and TM44 inspections for landlords, Airbnb hosts and offices across London. Split systems, VRF, multi-split. WhatsApp for a tailored quote."
+        keywords="air conditioning London, AC installation London, air conditioning installation London, landlord air conditioning London, Airbnb air conditioning London, split system London, VRF installation London, F-Gas certified London, TM44 inspection London, air conditioning service London, AC repair London, multi-split AC London, commercial air conditioning London, residential air conditioning London, property air conditioning London"
         canonicalUrl="https://www.mainteniq.co.uk/air-conditioning-london"
         structuredData={faqData}
         breadcrumbData={breadcrumbData}
@@ -157,12 +157,15 @@ const AirConditioningLondon = () => {
               Summer 2026 — Booking Now
             </Badge>
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
-              Air Conditioning Installation & Service in London
+              Hot summers. Uncomfortable properties.
+              <br />
+              <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
+                AC installed in a day. F-Gas certified.
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-              F-Gas certified engineers. Split systems, VRF, multi-split and TM44 inspections for homes,
-              offices, and commercial properties across London and within 120 miles.
-              WhatsApp or call us for a tailored quote — no call centres, no generic prices.
+              Air conditioning installation and servicing for landlords, Airbnb hosts and offices across London.
+              Split systems, VRF, multi-split and TM44 inspections — no call centres, no generic prices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <Button
