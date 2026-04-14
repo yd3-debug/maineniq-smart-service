@@ -1,436 +1,184 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+import { Shield, Phone, CheckCircle, Award, Clock, Users, Wrench, Star, Zap, Building2 } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
 import { generateBreadcrumbSchema } from "@/utils/structuredData";
-
-import { 
-  Award, 
-  Users, 
-  Clock, 
-  Shield,
-  CheckCircle,
-  Star,
-  Wrench,
-  Zap,
-  Settings,
-  Home
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import { AnimatedCounter } from "@/components/AnimatedChart";
-
-// Import professional work images
-import electricalInstallation from "@/assets/electrical-installation.jpg";
-import teamCollaboration from "@/assets/team-collaboration.jpg";
-import customerConsultation from "@/assets/customer-consultation.jpg";
 import heroHvac from "@/assets/hero-hvac.jpg";
 import modernEquipment from "@/assets/modern-equipment.jpg";
+import electricalInstallation from "@/assets/electrical-installation.jpg";
 
-import WhyWorkWithUs from "@/components/sections/WhyWorkWithUs";
-import WhoWeServe from "@/components/sections/WhoWeServe";
-import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
+const stats = [
+  { icon: Users, label: "Properties served", value: "1,000+" },
+  { icon: Award, label: "Years in maintenance", value: "15+" },
+  { icon: Wrench, label: "Assets maintained", value: "2,500+" },
+  { icon: Star, label: "Customer rating", value: "4.9★" },
+];
 
+const certifications = [
+  { icon: Shield, title: "Gas Safe registered", body: "Every gas engineer holds a valid Gas Safe registration — verifiable at gassaferegister.co.uk before they start work." },
+  { icon: Award, title: "NICEIC approved", body: "All electrical work meets British Standards. We issue EICR, Part P and compliance documentation on completion." },
+  { icon: Zap, title: "F-Gas certified", body: "Our refrigeration and air conditioning engineers are F-Gas certified to handle all refrigerant work legally and safely." },
+  { icon: CheckCircle, title: "Fully insured", body: "Public liability insurance and professional indemnity on every job. We also carry employers' liability insurance." },
+];
+
+const faqs = [
+  { q: "Are Mainteniq engineers directly employed?", a: "Yes. All engineers are directly employed, background-checked and fully insured. We don't use unvetted subcontractors — the same team services your property each time." },
+  { q: "What certifications do your engineers hold?", a: "Gas Safe registration, NICEIC electrical certification, F-Gas certification, TM44 and manufacturer-specific training for MVHR, FCU, HIU and CIU systems." },
+  { q: "What areas do you cover?", a: "London and up to 120 miles from the M25. We service residential blocks, commercial buildings and portfolio landlords across the South East." },
+  { q: "Do you offer emergency cover?", a: "Yes. We respond to emergencies within 4 hours, 24/7. Contract clients get priority access directly to our engineering team — no call centres." },
+];
 
 const About = () => {
-  const stats = [
-    { icon: Users, label: "Happy Customers", value: "1,000+" },
-    { icon: Award, label: "Years in Maintenance", value: "15+" },
-    { icon: Wrench, label: "Assets Maintained", value: "2,500+" },
-    { icon: Star, label: "Customer Rating", value: "4.9★" }
-  ];
-
-  const breadcrumbData = generateBreadcrumbSchema([
-    { name: "Home", url: "https://www.mainteniq.co.uk" },
-    { name: "About", url: "https://www.mainteniq.co.uk/about" }
-  ]);
-
-  const serviceStandards = [
-    {
-      icon: Clock,
-      title: "Response Time Guarantee",
-      description: "Emergency calls answered within 30 minutes, service within 4 hours"
-    },
-    {
-      icon: Shield,
-      title: "Quality Assurance",
-      description: "Multi-point inspection on every job with 100% satisfaction guarantee"
-    },
-    {
-      icon: Award,
-      title: "Professional Standards",
-      description: "All technicians certified, background checked, and continuously trained"
-    },
-    {
-      icon: Star,
-      title: "Customer Service Excellence",
-      description: "4.9/5 customer rating with dedicated support team available 24/7"
-    }
-  ];
-
-  const processSteps = [
-    {
-      icon: Home,
-      title: "Site Assessment",
-      description: "Asset survey and condition review to prioritise maintenance needs",
-      image: customerConsultation
-    },
-    {
-      icon: Settings,
-      title: "Planned Maintenance",
-      description: "PPM schedule aligned to manufacturer guidance and building usage",
-      image: electricalInstallation
-    },
-    {
-      icon: Wrench,
-      title: "Rapid Response",
-      description: "24/7 call‑outs with first‑time fix approach for breakdowns",
-      image: modernEquipment
-    },
-    {
-      icon: Star,
-      title: "Reporting & Review",
-      description: "Clear digital reports, recommendations and ongoing optimisation",
-      image: teamCollaboration
-    }
-  ];
+  const handleWhatsApp = () => {
+    const msg = "Hi, I'd like to learn more about Mainteniq's services.";
+    window.open(`https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
 
   return (
-    <div className="min-h-screen">
+    <>
       <SEOHead
-        title="About Mainteniq | Expert HVAC & Property Maintenance Team"
-        description="Learn about Mainteniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response across London."
-        keywords="about Mainteniq, HVAC maintenance company, property services London, professional maintenance team, certified engineers, emergency HVAC response"
+        title="About Mainteniq | HVAC & Property Maintenance London"
+        description="Mainteniq — Gas Safe, NICEIC and F-Gas certified engineers providing HVAC maintenance, plumbing, electrical and property services across London. 15+ years experience, 4.9★ rating."
+        keywords="about Mainteniq, HVAC maintenance company London, property maintenance team London, Gas Safe plumber London, NICEIC electrician London, F-Gas engineers London"
         canonicalUrl="https://www.mainteniq.co.uk/about"
-        breadcrumbData={breadcrumbData}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk/" },
+          { name: "About", url: "https://www.mainteniq.co.uk/about" },
+        ])}
       />
-      
-      {/* Hero Section with Background Image */}
-      <section 
-        className="relative -mt-2 md:-mt-4 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-cover bg-center text-white"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroHvac})`
-        }}
-      >
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
-          <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 animate-fade-in leading-tight">
-            Maintenance‑First HVAC Partner Since 2009
+
+      {/* Hero */}
+      <section className="relative pt-24 pb-14 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary to-slate-900" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: `url(${heroHvac})` }} />
+        <div className="relative container mx-auto px-4 max-w-4xl text-center">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Engineers who turn up, do the job properly
+            <br />
+            <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
+              and come back when you need them.
+            </span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto opacity-90 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
-            We specialise in service and maintenance for HVAC, MVHR, HIU & CIU, fan coil units and building systems—
-            keeping residential, commercial and multi‑unit properties running efficiently long‑term.
+          <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
+            Mainteniq is a London-based property maintenance company specialising in HVAC, plumbing, electrical and building services. Gas Safe, NICEIC and F-Gas certified. 15 years in the trade.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto">
-            <Link to="/contact" className="w-full sm:w-auto">
-              <Button size="sm" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-4 sm:px-6 py-2.5">
-                Request Maintenance
-              </Button>
-            </Link>
-            <Link to="/services" className="w-full sm:w-auto">
-              <Button size="sm" variant="hero" className="w-full sm:w-auto px-4 sm:px-6 py-2.5">
-                View Services
-              </Button>
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
           </div>
         </div>
       </section>
 
-      
-
-      {/* Stats Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-3 sm:p-4 md:p-6 hover:shadow-card transition-shadow">
-                <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary mx-auto mb-2 sm:mb-3 md:mb-4" />
-                <h3 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-1 sm:mb-2">
-                  <AnimatedCounter 
-                    value={parseFloat(stat.value.replace(/[,+★]/g, ''))} 
-                    suffix={stat.value.includes('★') ? '★' : stat.value.includes('+') ? '+' : ''}
-                    precision={stat.value.includes('★') ? 1 : 0}
-                    duration={1400}
-                    delay={index * 120}
-                  />
-                </h3>
-                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{stat.label}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      <WhyWorkWithUs />
-      <WhoWeServe />
-      <SystemsWeMaintain />
-      
-
-      {/* Our Process Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">How a Maintenance Partnership Works</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              From initial assessment to ongoing care and transparent reporting, here’s how we keep your systems performing.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="group">
-                <div className="relative overflow-hidden rounded-lg mb-4 sm:mb-6">
-                  <span className="absolute top-2 left-2 z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-background/90 text-foreground text-xs sm:text-sm font-semibold shadow">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <img 
-                    src={step.image} 
-                    alt={step.title}
-                    loading="lazy"
-                    className="w-full h-36 sm:h-40 md:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <step.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" />
-                  </div>
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3 text-center">{step.title}</h3>
-                <p className="text-muted-foreground text-sm sm:text-base text-center">{step.description}</p>
+      {/* Stats */}
+      <section className="py-10 bg-background border-b">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map(({ icon: Icon, label, value }) => (
+              <div key={label} className="text-center">
+                <Icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="font-bold text-2xl mb-1">{value}</div>
+                <p className="text-muted-foreground text-xs">{label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Results & Impact Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-accent">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Maintenance Results & Impact</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real outcomes from proactive maintenance across residential, commercial and multi‑unit buildings.
-            </p>
-          </div>
-          
-          {/* Results Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
-            <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-bold text-2xl sm:text-3xl mb-1.5 text-primary">Up to 30%</h3>
-              <h4 className="font-semibold mb-2 text-sm sm:text-base flex items-center justify-center gap-2">Energy Savings <span className="hidden sm:inline"><span className="sr-only">source:</span></span><span><a href="#" aria-hidden className="hidden"></a></span></h4>
-              <div className="flex items-center justify-center"><span className="sr-only">Source:</span></div>
-            </Card>
-            <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">4.9★</h3>
-              <h4 className="font-semibold mb-2 text-sm sm:text-base">Customer Rating</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Consistently high satisfaction across all our services</p>
-            </Card>
-            <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">99%</h3>
-              <h4 className="font-semibold mb-2 text-sm sm:text-base">First-Time Fix</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Problems resolved on the first visit by our expert technicians</p>
-            </Card>
-          </div>
-
-
-          {/* Benefits List */}
-          <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="space-y-3 sm:space-y-4">
-              <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Customer Benefits</h3>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Enhanced Comfort</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Consistent temperature control throughout your space</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Improved Air Quality</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Advanced filtration for healthier indoor environments</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Reduced Maintenance</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Modern systems require less frequent repairs</p>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-3 sm:space-y-4">
-              <h3 className="font-heading text-xl sm:text-2xl font-bold mb-4 sm:mb-6">System Improvements</h3>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Energy Efficiency</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Significant reduction in utility costs</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Smart Controls</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Advanced automation and remote monitoring</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 sm:gap-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-success mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Extended Lifespan</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Premium equipment lasts longer with proper installation</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Service Excellence Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Service Excellence Standards</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our commitment to exceptional customer service is backed by measurable standards and guarantees.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {serviceStandards.map((standard, index) => (
-              <Card key={index} className="text-center group hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-primary transition-colors">
-                    <standard.icon className="w-6 h-6 sm:w-8 sm:h-8 text-accent-foreground group-hover:text-primary-foreground" />
-                  </div>
-                  <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3">{standard.title}</h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{standard.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Equipment Showcase Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Maintenance Technology & Reporting</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Modern diagnostics, digital service reports and asset tracking to keep everything compliant and efficient.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+      {/* Who we are */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <img 
-                src={modernEquipment} 
-                alt="Modern HVAC equipment showcase"
-                loading="lazy"
-                className="rounded-lg shadow-elegant w-full h-48 sm:h-64 md:h-80 object-cover"
-              />
+              <h2 className="font-heading text-2xl font-bold mb-4">Property maintenance done right</h2>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">We started Mainteniq because too many landlords were being let down by unreliable contractors. Engineers who didn't show up, work that needed redoing, certificates that arrived weeks late — or not at all.</p>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">We do things differently. All our engineers are directly employed, background checked and hold the relevant certifications for every type of work they carry out. We issue compliance certificates on the day. And we're reachable when something goes wrong.</p>
+              <ul className="space-y-3 mb-6">
+                {["Directly employed, vetted engineers", "Gas Safe, NICEIC, F-Gas and TM44 certified", "Compliance certificates issued same day", "One point of contact for everything", "London and up to 120 miles"].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /><span>{item}</span></li>
+                ))}
+              </ul>
             </div>
-            <div className="space-y-4 sm:space-y-6">
-              <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Insightful, Transparent Maintenance</h3>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
-                Our maintenance programs leverage smart tools, detailed service logs and condition reports—
-                so you always know asset status, risks and next actions.
-              </p>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <Card className="p-3 sm:p-4 text-center">
-                  <Star className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-                  <h4 className="font-semibold text-sm sm:text-base">Digital Reports</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Photographic evidence, checklists and recommendations</p>
-                </Card>
-                <Card className="p-3 sm:p-4 text-center">
-                  <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary mx-auto mb-2" />
-                  <h4 className="font-semibold text-sm sm:text-base">Remote Monitoring</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Smart alerts and insights where supported</p>
-                </Card>
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <img src={modernEquipment} alt="Mainteniq engineer carrying out HVAC maintenance" className="w-full h-72 object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl font-bold mb-3">Certifications & accreditations</h2>
+            <p className="text-muted-foreground text-sm max-w-lg mx-auto">Every certification we hold means you're covered — legally, practically and professionally.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {certifications.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-white rounded-xl border p-5 flex gap-4">
+                <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><Icon className="w-4 h-4 text-primary" /></div>
+                <div><h3 className="font-semibold text-sm mb-1">{title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{body}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who we serve */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <img src={electricalInstallation} alt="Property maintenance work in a London building" className="w-full h-64 object-cover" />
+            </div>
+            <div>
+              <h2 className="font-heading text-2xl font-bold mb-4">Who we work with</h2>
+              <div className="space-y-4">
+                {[
+                  { icon: Building2, title: "Portfolio landlords", desc: "Multiple properties, single point of contact. We manage the schedule, track compliance and issue all certificates across your portfolio." },
+                  { icon: Users, title: "Letting agents", desc: "We work as an extension of your team — fast turnarounds between tenancies, proactive maintenance and reliable communication." },
+                  { icon: Clock, title: "Facilities managers", desc: "PPM contracts, reactive response and full reporting for commercial blocks and mixed-use buildings." },
+                ].map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex gap-3">
+                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><Icon className="w-4 h-4 text-primary" /></div>
+                    <div><h3 className="font-semibold text-sm mb-1">{title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{desc}</p></div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Insurance & Protection Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-accent">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">Accreditations & Insurance</h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive insurance coverage and licensing for your complete peace of mind.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <Card className="text-center p-4 sm:p-6 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+      {/* FAQ */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold text-center mb-8">Common questions</h2>
+          <div className="space-y-4">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="bg-white rounded-xl border px-6 py-5">
+                <h3 className="font-semibold text-sm mb-2">{q}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{a}</p>
               </div>
-              <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3">General Liability</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Comprehensive coverage protecting your property during all work</p>
-            </Card>
-            <Card className="text-center p-4 sm:p-6 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3">Workers' Compensation</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Full coverage for all technicians working on your premises</p>
-            </Card>
-            <Card className="text-center p-4 sm:p-6 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Award className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3">Professional Indemnity</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Protection against professional service liability</p>
-            </Card>
-            <Card className="text-center p-4 sm:p-6 hover:shadow-elegant transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3">Public Liability</h3>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Coverage for any public interaction during service calls</p>
-            </Card>
-          </div>
-          <div className="mt-8 sm:mt-12 text-center">
-            <Card className="inline-block p-4 sm:p-6 bg-primary text-primary-foreground">
-              <h3 className="font-bold text-lg sm:text-xl mb-2">Fully Licensed HVAC Professionals</h3>
-              <p className="opacity-90 text-sm sm:text-base">All work guaranteed and protected • Comprehensive coverage for your peace of mind</p>
-            </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-            Experience the Mainteniq Difference
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90">
-            Join thousands of satisfied customers who trust us for their HVAC needs. 
-            Let's discuss how we can serve you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md mx-auto">
-            <Link to="/contact" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8">
-                Contact Us Today
-              </Button>
-            </Link>
-            <Link to="/services" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                View Our Services
-              </Button>
-            </Link>
+      {/* CTA */}
+      <section className="py-14 bg-primary text-primary-foreground text-center">
+        <div className="container mx-auto px-4 max-w-xl">
+          <h2 className="font-heading text-2xl font-bold mb-3">Work with a maintenance team you can trust</h2>
+          <p className="text-primary-foreground/75 text-sm mb-8">WhatsApp us or call — tell us about your property and we'll explain exactly how we can help.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

@@ -1,535 +1,176 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { 
-  Flame, 
-  ThermometerSun, 
-  Wrench, 
-  ShieldCheck, 
-  Clock, 
-  Phone, 
-  AlertTriangle,
-  Home,
-  Building2,
-  Users,
-  FileCheck,
-  Droplets,
-  Zap,
-  ChevronDown,
-  CheckCircle2,
-  Star,
-  Timer,
-  Gauge,
-  Settings,
-  Award
-} from "lucide-react";
-import { handleQuoteRequest } from "@/utils/quote";
-import { TrustMetrics } from "@/components/TrustMetrics";
+import { Button } from "@/components/ui/button";
+import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { Flame, Phone, CheckCircle, ArrowRight, AlertCircle, Clock, Award, Wrench, ThermometerSun, Droplets, Gauge, Zap } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
-import LocalBusinessSchema from "@/components/LocalBusinessSchema";
-import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
-import { generateFAQSchema, generateBreadcrumbSchema, generateServiceSchema } from "@/utils/structuredData";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
+
+const faqs = [
+  { q: "How often should a boiler be serviced?", a: "Annually — ideally before winter. For landlords, an annual Gas Safe service is a legal requirement to maintain a valid CP12 Gas Safety Certificate." },
+  { q: "What is a CP12 Gas Safety Certificate?", a: "A CP12 (also called a Gas Safety Record) is the landlord's annual gas safety check certificate, legally required for all rental properties. Our Gas Safe engineers issue this after every landlord boiler service." },
+  { q: "Are your boiler engineers Gas Safe registered?", a: "Yes. Every engineer carrying out boiler or gas work at Mainteniq holds a valid Gas Safe registration card, which you can verify independently at gassaferegister.co.uk." },
+  { q: "What boiler brands do you service?", a: "We service all major brands — Vaillant, Worcester Bosch, Baxi, Ideal, Viessmann, Potterton, Glow-worm, Combi, system and heat-only boilers." },
+  { q: "Do you offer emergency boiler repair?", a: "Yes. We provide 24/7 emergency boiler repair with response within 4 hours across London. If your tenants have no heating or hot water, call us now." },
+];
+
+const warningsigns = [
+  { icon: ThermometerSun, title: "Radiators not heating evenly", desc: "Cold spots or some radiators not working — often a system flush or bleed issue." },
+  { icon: Droplets, title: "Water leaking from the boiler", desc: "Any visible water around your boiler needs immediate attention to avoid further damage." },
+  { icon: Gauge, title: "Pressure keeps dropping", desc: "Low pressure (below 1 bar) usually means a leak or faulty pressure relief valve." },
+  { icon: AlertCircle, title: "Unusual noises", desc: "Banging, kettling or clunking sounds — often lime scale or pump issues caught early." },
+  { icon: Zap, title: "Pilot light keeps going out", desc: "An intermittent pilot light suggests a thermocouple or gas supply issue." },
+  { icon: Clock, title: "Boiler hasn't been serviced", desc: "An unserviced boiler runs less efficiently, fails sooner and can void your manufacturer warranty." },
+];
 
 const BoilerServices = () => {
-  const audienceCards = [
-    {
-      icon: Home,
-      title: "Homeowners",
-      description: "Keep your family warm and safe with reliable boiler maintenance",
-      color: "bg-blue-500/10 text-blue-600 border-blue-200"
-    },
-    {
-      icon: Building2,
-      title: "Landlords",
-      description: "Stay compliant with CP12 certificates and keep tenants happy",
-      color: "bg-orange-500/10 text-orange-600 border-orange-200"
-    },
-    {
-      icon: Users,
-      title: "Property Managers",
-      description: "Manage multiple properties with scheduled maintenance contracts",
-      color: "bg-teal-500/10 text-teal-600 border-teal-200"
-    },
-    {
-      icon: FileCheck,
-      title: "Letting Agents",
-      description: "Ensure properties meet safety standards before tenant move-in",
-      color: "bg-purple-500/10 text-purple-600 border-purple-200"
-    }
-  ];
-
-  const warningSignCards = [
-    {
-      icon: ThermometerSun,
-      title: "Radiators Not Heating Evenly",
-      description: "Cold spots or some radiators not working at all",
-      color: "bg-orange-500/10 border-orange-200"
-    },
-    {
-      icon: Droplets,
-      title: "Water Leaking From Boiler",
-      description: "Any visible water around your boiler needs immediate attention",
-      color: "bg-red-500/10 border-red-200"
-    },
-    {
-      icon: Gauge,
-      title: "Low Pressure Warning",
-      description: "Pressure gauge showing below 1 bar when cold",
-      color: "bg-amber-500/10 border-amber-200"
-    },
-    {
-      icon: AlertTriangle,
-      title: "Strange Noises",
-      description: "Banging, gurgling, or kettling sounds from your boiler",
-      color: "bg-purple-500/10 border-purple-200"
-    },
-    {
-      icon: Timer,
-      title: "Takes Ages to Heat Up",
-      description: "Hot water or heating taking much longer than usual",
-      color: "bg-blue-500/10 border-blue-200"
-    },
-    {
-      icon: Flame,
-      title: "Pilot Light Keeps Going Out",
-      description: "Frequent pilot light issues indicate a bigger problem",
-      color: "bg-red-500/10 border-red-200"
-    }
-  ];
-
-  const services = [
-    {
-      icon: Wrench,
-      title: "Boiler Servicing",
-      description: "Annual service to keep your boiler running efficiently and safely",
-      details: ["Full safety inspection", "Efficiency check", "Clean key components", "Pressure test"]
-    },
-    {
-      icon: AlertTriangle,
-      title: "Boiler Repairs",
-      description: "Fast diagnosis and repair for all boiler brands and models",
-      details: ["Same-day response", "All major brands", "Genuine parts", "12-month warranty"]
-    },
-    {
-      icon: Flame,
-      title: "Boiler Installation",
-      description: "New boiler installation with options to suit every budget",
-      details: ["Combi, system & conventional", "Energy-efficient models", "Finance available", "10-year warranty options"]
-    },
-    {
-      icon: FileCheck,
-      title: "CP12 Gas Safety Certificate",
-      description: "Legal requirement for landlords - annual gas safety check",
-      details: ["Full property inspection", "Certificate for tenants", "Digital record keeping", "Reminder service"]
-    },
-    {
-      icon: Droplets,
-      title: "Power Flush",
-      description: "Remove sludge and debris to restore heating efficiency",
-      details: ["Improves heat output", "Reduces noise", "Extends boiler life", "Chemical treatment"]
-    },
-    {
-      icon: Settings,
-      title: "Smart Thermostat Installation",
-      description: "Control your heating from anywhere with smart technology",
-      details: ["Nest, Hive & more", "App control", "Scheduling", "Energy savings"]
-    }
-  ];
-
-  const brands = [
-    "Worcester Bosch", "Vaillant", "Baxi", "Ideal", "Viessmann", 
-    "Glow-worm", "Potterton", "Alpha", "Ferroli", "Main"
-  ];
-
-  const outcomes = [
-    {
-      icon: ThermometerSun,
-      title: "Reliable Heat",
-      description: "Consistent warmth when you need it most"
-    },
-    {
-      icon: Zap,
-      title: "Lower Bills",
-      description: "Efficient boiler means lower energy costs"
-    },
-    {
-      icon: ShieldCheck,
-      title: "Safety Assured",
-      description: "Peace of mind with Gas Safe certified work"
-    },
-    {
-      icon: Clock,
-      title: "Extended Life",
-      description: "Regular maintenance adds years to your boiler"
-    }
-  ];
-
-  const boilerFAQs = [
-    { question: "How often should I service my boiler?", answer: "Boilers should be serviced annually to maintain efficiency, safety, and warranty validity. For landlords, an annual CP12 Gas Safety Certificate is a legal requirement." },
-    { question: "What is a CP12 Gas Safety Certificate?", answer: "A CP12 is a legal document that proves all gas appliances in a rental property have been checked and are safe. Landlords must have one issued annually by a Gas Safe registered engineer." },
-    { question: "How much does a boiler service cost in London?", answer: "We offer competitive rates with no hidden fees. Get in touch via WhatsApp or give us a call and we'll give you a quick, accurate quote for your property." },
-    { question: "Do you offer emergency boiler repairs?", answer: "Yes, we provide 24/7 emergency boiler repair services across London. Our Gas Safe engineers can usually attend within hours for urgent breakdowns." },
-    { question: "Which boiler brands do you service?", answer: "We service all major brands including Worcester Bosch, Vaillant, Baxi, Ideal, Viessmann, Glow-worm, Potterton, Alpha, Ferroli, and Main." }
-  ];
-
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.mainteniq.co.uk/" },
-    { name: "Services", url: "https://www.mainteniq.co.uk/services" },
-    { name: "Boiler Services", url: "https://www.mainteniq.co.uk/boiler-services" }
-  ];
-
-  const boilerServiceSchema = generateServiceSchema({
-    name: "Boiler Services London - Repair, Installation & CP12",
-    description: "Gas Safe registered boiler services in London. Expert boiler repair, installation, servicing and CP12 certificates for landlords. Same-day emergency response available.",
-    url: "https://www.mainteniq.co.uk/boiler-services",
-    serviceType: "Boiler Repair and Installation",
-    image: "https://www.mainteniq.co.uk/BOILER.png"
-  });
+  const handleWhatsApp = () => {
+    const msg = "Hi, I need a boiler service or repair. Can you help?";
+    window.open(`https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
 
   return (
     <>
       <SEOHead
-        title="Boiler Services London | Repair, Installation & CP12 | Mainteniq"
-        description="Gas Safe registered boiler services in London. Boiler repair, installation, servicing & CP12 certificates for landlords. Same-day emergency response. Call now!"
-        keywords="boiler repair london, boiler service london, CP12 certificate london, gas safe engineer london, boiler installation london, emergency boiler repair london, landlord gas safety certificate, boiler servicing near me, Worcester Bosch engineer london, combi boiler repair, boiler breakdown london"
-        canonicalUrl="/boiler-services"
-        structuredData={boilerServiceSchema}
-        breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
-        faqData={generateFAQSchema(boilerFAQs)}
+        title="Boiler Services London | Gas Safe Servicing, Repair & CP12 | Mainteniq"
+        description="Gas Safe boiler servicing, repair and installation across London. CP12 landlord gas safety certificates. 24/7 emergency boiler repair. All major brands. Response within 4 hours."
+        keywords="boiler service London, gas safe boiler London, CP12 gas safety certificate London, boiler repair London, emergency boiler repair London, landlord boiler service London, boiler installation London"
+        canonicalUrl="https://www.mainteniq.co.uk/boiler-services"
+        structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk/" },
+          { name: "Boiler Services", url: "https://www.mainteniq.co.uk/boiler-services" },
+        ])}
       />
-      <LocalBusinessSchema 
-        businessType="Boiler Services" 
-        serviceName="Boiler Repair, Installation & CP12"
-        serviceDescription="Gas Safe registered boiler services in London including repair, installation, servicing and CP12 certificates for landlords"
-      />
-      <VoiceSearchOptimizer faqs={boilerFAQs} serviceName="Boiler Services" />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-orange-950 to-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/BOILER.png')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
-        
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-orange-500/20 text-orange-300 border-orange-400/30 text-sm px-4 py-2">
-              <Flame className="w-4 h-4 mr-2" />
-              Gas Safe Registered Engineers
-            </Badge>
-            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
-              Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Boiler Services</span>
-              <br />for London Homes
-            </h1>
-            
-            <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
-              From emergency repairs to annual servicing and CP12 certificates. 
-              Keep your home warm and safe with our Gas Safe registered engineers.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6"
-                onClick={() => handleQuoteRequest("Boiler Services Enquiry")}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Get a Quote
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
-                onClick={() => handleQuoteRequest("Emergency Boiler Repair - Urgent")}
-              >
-                <AlertTriangle className="w-5 h-5 mr-2" />
-                Emergency Repair
-              </Button>
-            </div>
-
-            {/* Trust Strip */}
-            <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-orange-400" />
-                <span>Gas Safe Registered</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-orange-400" />
-                <span>Same-Day Response</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-orange-400" />
-                <span>5-Star Rated</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-orange-400" />
-                <span>12-Month Warranty</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Help */}
-      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-background to-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Who We Help</Badge>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Boiler Services for Every Property
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you're a homeowner, landlord, or managing multiple properties, 
-              we provide reliable boiler services tailored to your needs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {audienceCards.map((card) => (
-              <Card key={card.title} className={`border ${card.color} hover:shadow-lg transition-all`}>
-                <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 rounded-full bg-current/10 flex items-center justify-center mx-auto mb-4">
-                    <card.icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground">{card.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Metrics */}
-      <TrustMetrics />
-
-      {/* Warning Signs */}
-      <section className="py-8 sm:py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 border-amber-300 text-amber-700 bg-amber-50">
-              <AlertTriangle className="w-4 h-4 mr-2" />
-              Warning Signs
-            </Badge>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Signs Your Boiler Needs Attention
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Don't wait for a complete breakdown. These signs indicate your boiler needs professional attention.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {warningSignCards.map((card) => (
-              <Card key={card.title} className={`border ${card.color} hover:shadow-md transition-all`}>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-current/10 flex items-center justify-center flex-shrink-0">
-                      <card.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{card.title}</h3>
-                      <p className="text-sm text-muted-foreground">{card.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Button 
-              size="lg"
-              className="bg-amber-500 hover:bg-amber-600"
-              onClick={() => handleQuoteRequest("Boiler Inspection Request")}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Book a Boiler Inspection
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Services */}
-      <section className="py-8 sm:py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Our Services</Badge>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Complete Boiler Services
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              From routine maintenance to emergency repairs and new installations. 
-              All work carried out by Gas Safe registered engineers.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <Card key={service.title} className="hover:shadow-lg transition-all border-border/50">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
-                    <service.icon className="w-7 h-7 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-                  
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center text-sm text-primary hover:text-primary/80 font-medium">
-                      View Details
-                      <ChevronDown className="w-4 h-4 ml-1" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-3 pt-3 border-t">
-                      <ul className="space-y-2">
-                        {service.details.map((detail) => (
-                          <li key={detail} className="flex items-center text-sm text-muted-foreground">
-                            <CheckCircle2 className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Brands We Service */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">Boiler Brands We Service</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              {brands.map((brand) => (
-                <Badge key={brand} variant="secondary" className="text-sm px-4 py-2">
-                  {brand}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Outcomes */}
-      <section className="py-8 sm:py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Benefits</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              What You Get From Professional Servicing
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {outcomes.map((outcome) => (
-              <Card key={outcome.title} className="text-center border-border/50 hover:shadow-lg transition-all">
-                <CardContent className="p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3 md:mb-4">
-                    <outcome.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{outcome.title}</h3>
-                  <p className="text-sm text-muted-foreground">{outcome.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CP12 Section for Landlords */}
-      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-primary/5 to-orange-500/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <Badge className="mb-4 bg-red-500/10 text-red-600 border-red-200">
-                <FileCheck className="w-4 h-4 mr-2" />
-                Legal Requirement for Landlords
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-                CP12 Gas Safety Certificates
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                All landlords in the UK must have a valid Gas Safety Certificate (CP12) for their rental properties. 
-                Failure to comply can result in fines up to £6,000 or even imprisonment.
-              </p>
-            </div>
-
-            <Card className="border-red-200 bg-white">
-              <CardContent className="p-4 sm:p-6 md:p-8">
-                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-4">What's Included:</h3>
-                    <ul className="space-y-3">
-                      {[
-                        "Full inspection of all gas appliances",
-                        "Boiler safety and efficiency check",
-                        "Flue and ventilation inspection",
-                        "Gas pipework examination",
-                        "Official CP12 certificate issued",
-                        "Digital record for your files"
-                      ].map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm">
-                          <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-col justify-center">
-                    <div className="bg-muted/50 rounded-lg p-6 text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Annual Requirement</p>
-                      <p className="text-3xl font-bold text-primary mb-4">CP12 Certificate</p>
-                      <Button 
-                        size="lg" 
-                        className="w-full bg-orange-500 hover:bg-orange-600"
-                        onClick={() => handleQuoteRequest("CP12 Gas Safety Certificate Request")}
-                      >
-                        <Phone className="w-5 h-5 mr-2" />
-                        Book CP12 Inspection
-                      </Button>
-                      <p className="text-xs text-muted-foreground mt-3">
-                        Same-day certificates available
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-10 sm:py-14 md:py-20 bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
-            Need Boiler Help?
-          </h2>
-          <p className="text-sm sm:text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
-            From routine servicing to emergency repairs, our Gas Safe engineers are ready to help.
+      {/* Hero */}
+      <section className="relative pt-24 pb-14 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-800 to-orange-900" />
+        <div className="relative container mx-auto px-4 max-w-4xl text-center">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+            No heating. No hot water.
+            <br />
+            <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
+              We're there within 4 hours.
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
+            Gas Safe boiler servicing, repair and CP12 certificates across London. Landlords, homeowners and property managers — same-day emergency response available.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white text-lg px-8 py-6"
-              onClick={() => handleQuoteRequest("Boiler Services Enquiry")}
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Get a Free Quote
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
-              onClick={() => handleQuoteRequest("Emergency Boiler Repair - URGENT")}
-            >
-              <AlertTriangle className="w-5 h-5 mr-2" />
-              24/7 Emergency Line
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {["Gas Safe Registered", "CP12 Certificates", "All Major Brands", "24/7 Emergency", "Landlord Specialists"].map(c => (
+              <div key={c} className="flex items-center gap-1.5 text-white/70 text-xs"><CheckCircle className="w-3.5 h-3.5 text-green-400" />{c}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services we offer */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-3">Boiler services we provide</h2>
+            <p className="text-muted-foreground text-sm max-w-lg mx-auto">From annual landlord certificates to emergency breakdown repair — everything under one Gas Safe team.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: Award, title: "Annual Boiler Service", desc: "Full safety check, efficiency test and service certificate. Keeps warranties valid and detects issues before they become breakdowns." },
+              { icon: Flame, title: "CP12 Landlord Certificate", desc: "Annual Gas Safety Record legally required for all rental properties. Issued by Gas Safe registered engineers." },
+              { icon: Wrench, title: "Boiler Repair", desc: "Fault diagnosis and repair for all major brands. Engineers carry common parts — most repairs completed same visit." },
+              { icon: Zap, title: "Boiler Installation", desc: "Supply and install of new boilers with full system flush, controls upgrade and compliance documentation." },
+              { icon: Clock, title: "Emergency Call-Out", desc: "24/7 emergency response for heating and hot water failures. Response within 4 hours across London." },
+              { icon: ThermometerSun, title: "Power Flush", desc: "Remove sludge and debris from heating circuits to restore performance and protect system components." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <Card key={title} className="border">
+                <CardContent className="p-5">
+                  <div className="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center mb-3"><Icon className="w-4 h-4 text-orange-500" /></div>
+                  <h3 className="font-semibold text-sm mb-1">{title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Warning signs */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl font-bold mb-3">Warning signs your boiler needs attention</h2>
+            <p className="text-muted-foreground text-sm max-w-lg mx-auto">Catch problems early — before a breakdown leaves your tenants without heating in winter.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {warningsigns.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white rounded-xl border p-4">
+                <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center mb-3"><Icon className="w-4 h-4 text-orange-500" /></div>
+                <h3 className="font-semibold text-sm mb-1">{title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8 bg-white rounded-xl border p-6">
+            <p className="font-semibold text-sm mb-4">Spotted any of these? Don't wait for a full breakdown.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold" onClick={handleWhatsApp}><FaWhatsapp className="w-4 h-4" />WhatsApp Us</Button>
+              <Button variant="outline" asChild><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-4 h-4 mr-2" />{CONTACT.phones.emergency}</a></Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Landlord section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="font-heading text-2xl font-bold mb-4">For landlords — compliance sorted</h2>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">As a landlord you're legally required to have gas appliances checked annually by a Gas Safe engineer and provide tenants with a valid CP12 certificate within 28 days of tenancy start — and annually thereafter. Failure can result in fines, prosecution and invalidated insurance.</p>
+              <ul className="space-y-2.5 mb-6">
+                {["Annual CP12 certificate issued", "Reminder service — we contact you when it's due", "Multi-property scheduling available", "Digital certificates sent same day", "Portfolio-wide maintenance contracts"].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /><span>{item}</span></li>
+                ))}
+              </ul>
+              <Button className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold" onClick={handleWhatsApp}><FaWhatsapp className="w-4 h-4" />Book a CP12</Button>
+            </div>
+            <div className="bg-slate-50 rounded-xl border p-6">
+              <Flame className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-semibold text-base mb-2">CP12 Gas Safety Certificate</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">A Gas Safety Record (CP12) must be carried out annually on all gas appliances in rented properties. A copy must be given to existing tenants within 28 days and to new tenants before they move in.</p>
+              <p className="text-xs text-muted-foreground">Issued by Gas Safe Registered Engineer · Registration verifiable at gassaferegister.co.uk</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
+          <div className="space-y-4">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="bg-white rounded-xl border px-6 py-5">
+                <h3 className="font-semibold text-sm mb-2">{q}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14 bg-primary text-primary-foreground text-center">
+        <div className="container mx-auto px-4 max-w-xl">
+          <h2 className="font-heading text-2xl font-bold mb-3">Book a boiler service or CP12</h2>
+          <p className="text-primary-foreground/75 text-sm mb-8">WhatsApp or call us — we'll confirm availability and book your engineer, usually within 24–48 hours.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
           </div>
         </div>
       </section>

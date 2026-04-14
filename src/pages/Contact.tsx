@@ -1,402 +1,169 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FaWhatsapp } from "react-icons/fa";
+import { Phone, Clock, MessageCircle, Shield, Award, CheckCircle, MapPin } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
 import { generateBreadcrumbSchema } from "@/utils/structuredData";
-import { 
-  Phone, 
-  Clock,
-  MessageCircle,
-  Shield,
-  Award,
-  Star,
-  Users,
-  Zap,
-  CheckCircle,
-  PhoneCall,
-  MapPin,
-  ThumbsUp
-} from "lucide-react";
-
-// Import professional images
-import heroImage from "@/assets/team-working.jpg";
-const customerConsultation = "/HVAC_SYSTEM.png";
-import professionalTeam from "@/assets/team-collaboration.jpg";
-import satisfiedCustomer from "@/assets/satisfied-customer.jpg";
-import modernEquipment from "@/assets/modern-equipment.jpg";
-import hvacProfessional from "@/assets/hvac-professional.jpg";
-
-const breadcrumbData = generateBreadcrumbSchema([
-  { name: "Home", url: "https://www.mainteniq.co.uk" },
-  { name: "Contact", url: "https://www.mainteniq.co.uk/contact" }
-]);
 
 const Contact = () => {
-  const handleWhatsAppClick = (isEmergency = false) => {
-    const phoneNumber = "447834562366";
-    const message = isEmergency 
-      ? "🚨 EMERGENCY: I need urgent HVAC assistance. Please call me back immediately!"
-      : "Hi! I'm interested in your HVAC services. Can you help me?";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+  const handleWhatsApp = (isEmergency = false) => {
+    const msg = isEmergency
+      ? "EMERGENCY: I need urgent help with my property. Please call me back immediately."
+      : CONTACT.whatsapp.defaultMessage;
+    window.open(`https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
-  const whyChooseUs = [
-    {
-      icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully certified professionals with comprehensive insurance coverage"
-    },
-    {
-      icon: Award,
-      title: "10-Year Warranty",
-      description: "Quality workmanship guarantee on all installations and major repairs"
-    },
-    {
-      icon: Clock,
-      title: "24/7 Emergency Service",
-      description: "Available round the clock for urgent HVAC emergencies"
-    },
-    {
-      icon: Star,
-      title: "5-Star Rated",
-      description: "Consistently rated 5 stars by our satisfied customers"
-    },
-    {
-      icon: Users,
-      title: "Expert Team",
-      description: "Experienced technicians with over 15 years in the industry"
-    },
-    {
-      icon: Zap,
-      title: "Fast Response",
-      description: "Quick service within 2 hours for emergency calls"
-    }
-  ];
-
-  const businessHours = [
-    { day: "Monday - Friday", hours: "7:00 AM - 7:00 PM" },
-    { day: "Saturday", hours: "8:00 AM - 5:00 PM" },
-    { day: "Sunday", hours: "9:00 AM - 3:00 PM" },
-    { day: "Emergency Service", hours: "24/7 Available" }
-  ];
-
   return (
-    <div className="min-h-screen">
+    <>
       <SEOHead
-        title="Contact Mainteniq | 24/7 HVAC & Property Services London"
-        description="Contact Mainteniq for professional HVAC maintenance, plumbing, electrical, and property services in London. 24/7 emergency response. WhatsApp, phone, and email support."
-        keywords="contact HVAC London, emergency plumber London, 24/7 HVAC service, property maintenance contact, WhatsApp HVAC support"
+        title="Contact Mainteniq | 24/7 HVAC & Property Maintenance London"
+        description="Contact Mainteniq for HVAC maintenance, plumbing, electrical and property services in London. 24/7 emergency response within 4 hours. WhatsApp or call us now."
+        keywords="contact Mainteniq, property maintenance London contact, HVAC emergency London, 24/7 plumber London, emergency property maintenance London"
         canonicalUrl="https://www.mainteniq.co.uk/contact"
-        breadcrumbData={breadcrumbData}
+        breadcrumbData={generateBreadcrumbSchema([
+          { name: "Home", url: "https://www.mainteniq.co.uk/" },
+          { name: "Contact", url: "https://www.mainteniq.co.uk/contact" },
+        ])}
       />
-      
-      {/* Hero Section with Image */}
-      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-16">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
+
+      {/* Hero */}
+      <section className="relative pt-24 pb-14 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-primary to-slate-900" />
+        <div className="relative container mx-auto px-4 max-w-4xl text-center">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Something needs fixing.
+            <br />
+            <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
+              Tell us about it.
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
+            WhatsApp us the details or call. We'll tell you what we can do and when we can be there. Emergency jobs within 4 hours, 24/7.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={() => handleWhatsApp()}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
+          </div>
         </div>
-        
-        <div className="container mx-auto px-6 sm:px-8 md:px-4 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            {/* Left side - Text content */}
-            <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
-              <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-                UK's Leading HVAC
-                <span className="block text-accent"> Maintenance Experts</span>
-              </h1>
-              <p className="text-sm sm:text-base md:text-xl lg:text-2xl opacity-95 leading-relaxed">
-                Specialists in MVHR, HIU & CIU, FCU & BMS systems. Professional maintenance 
-                and emergency repairs you can trust from certified experts.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button 
-                  onClick={() => handleWhatsAppClick()}
-                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold shadow-elegant hover-scale"
-                >
-                  <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
-                  Chat on WhatsApp
-                </Button>
-                <Button 
-                  onClick={() => handleWhatsAppClick(true)}
-                  variant="hero" 
-                  className="px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-semibold"
-                >
-                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
-                  Emergency Call
-                </Button>
+      </section>
+
+      {/* Contact options */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            {[
+              {
+                icon: FaWhatsapp,
+                title: "WhatsApp",
+                primary: CONTACT.phones.emergency,
+                secondary: "Fastest way to reach us — send a message anytime",
+                action: () => handleWhatsApp(),
+                label: "Start chat",
+                color: "text-[#25D366]",
+                bg: "bg-[#25D366]",
+              },
+              {
+                icon: Phone,
+                title: "Phone",
+                primary: CONTACT.phones.emergency,
+                secondary: "Mobile — for calls and WhatsApp",
+                href: `tel:${CONTACT.phones.emergencyTel}`,
+                label: "Call now",
+                color: "text-primary",
+                bg: "bg-primary",
+              },
+              {
+                icon: Phone,
+                title: "Landline",
+                primary: CONTACT.phones.landline,
+                secondary: "Office line for quotes and contracts",
+                href: `tel:${CONTACT.phones.landlineTel}`,
+                label: "Call office",
+                color: "text-primary",
+                bg: "bg-primary",
+              },
+            ].map(({ icon: Icon, title, primary, secondary, action, href, label, color, bg }) => (
+              <div key={title} className="bg-slate-50 rounded-xl border p-6 text-center">
+                <div className={`w-10 h-10 ${bg}/10 rounded-lg flex items-center justify-center mx-auto mb-3`}>
+                  <Icon className={`w-5 h-5 ${color}`} />
+                </div>
+                <h3 className="font-semibold mb-1">{title}</h3>
+                <p className="font-bold text-lg mb-1">{primary}</p>
+                <p className="text-xs text-muted-foreground mb-4">{secondary}</p>
+                {action ? (
+                  <Button className={`${bg} hover:opacity-90 text-white gap-2 w-full`} onClick={action}>{label}</Button>
+                ) : (
+                  <Button asChild className={`${bg} hover:opacity-90 text-white gap-2 w-full`}><a href={href}>{label}</a></Button>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Emergency callout */}
+          <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center mb-12">
+            <h2 className="font-heading text-xl font-bold text-red-700 mb-2">Emergency? We respond within 4 hours.</h2>
+            <p className="text-sm text-red-600 mb-4">Burst pipe, boiler failure, gas leak, no power — call us directly. No automated system, no waiting.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold" onClick={() => handleWhatsApp(true)}><FaWhatsapp className="w-4 h-4" />Emergency WhatsApp</Button>
+              <Button asChild className="bg-red-600 hover:bg-red-700 text-white gap-2 font-semibold"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-4 h-4" />Call Now</a></Button>
+            </div>
+          </div>
+
+          {/* Hours and coverage */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-50 rounded-xl border p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <Clock className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Hours</h3>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { day: "Monday – Friday", hours: "7:00 AM – 7:00 PM" },
+                  { day: "Saturday", hours: "8:00 AM – 5:00 PM" },
+                  { day: "Sunday", hours: "9:00 AM – 3:00 PM" },
+                  { day: "Emergency cover", hours: "24/7 — call anytime" },
+                ].map(({ day, hours }) => (
+                  <div key={day} className="flex justify-between text-sm">
+                    <span className="font-medium">{day}</span>
+                    <span className="text-muted-foreground">{hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
-
-            {/* Right side - Quick contact card */}
-            <div className="lg:flex lg:justify-end">
-              <Card className="bg-white/95 backdrop-blur-sm shadow-elegant max-w-md">
-                <CardContent className="p-4 sm:p-6 md:p-8">
-                  <h3 className="font-bold text-xl sm:text-2xl text-center mb-4 sm:mb-6">Get Instant Help</h3>
-                  <div className="space-y-4">
-                    <div className="text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Mobile WhatsApp</p>
-                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 783 456 2366</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-sm text-muted-foreground mb-2">Landline</p>
-                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">+44 (0) 189 55 28 226</p>
-                    </div>
-                    <Button 
-                      onClick={() => handleWhatsAppClick()}
-                      className="w-full bg-whatsapp hover:bg-whatsapp/90 text-white py-3"
-                    >
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Start WhatsApp Chat
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="bg-slate-50 rounded-xl border p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold">Coverage</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">We cover London and up to 120 miles from the M25 — including Kent, Surrey, Essex, Hertfordshire and Berkshire.</p>
+              <ul className="space-y-2">
+                {["All London boroughs", "Home Counties", "South East England", "Portfolio-wide coverage available"].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-sm"><CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />{item}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Professional Consultation Section */}
-      <section className="py-10 sm:py-14 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-20">
-            <div className="space-y-6">
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold">
-                Expert HVAC Consultation & Support
-              </h2>
-              <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
-                Get specialist advice from our certified HVAC maintenance experts. With over 15 years of experience 
-                in MVHR, HIU & CIU, FCU & BMS systems, we provide professional solutions you can rely on.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Card 
-                  className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50 hover-scale"
-                  onClick={() => handleWhatsAppClick()}
-                >
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <MessageCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">WhatsApp</h3>
-                    <p className="text-lg font-semibold text-primary mb-1">+44 783 456 2366</p>
-                    <p className="text-sm text-muted-foreground">Instant chat & calls</p>
-                  </CardContent>
-                </Card>
-
-                <Card 
-                  className="group hover:shadow-elegant transition-all duration-300 cursor-pointer border-2 hover:border-primary/50 hover-scale"
-                  onClick={() => handleWhatsAppClick()}
-                >
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                      <PhoneCall className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">Landline</h3>
-                    <p className="text-lg font-semibold text-primary mb-1">+44 (0) 189 55 28 226</p>
-                    <p className="text-sm text-muted-foreground">Office support</p>
-                  </CardContent>
-                </Card>
+      {/* Trust signals */}
+      <section className="py-12 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              { icon: Shield, title: "Gas Safe Registered", body: "All gas work carried out by Gas Safe registered engineers, verifiable at gassaferegister.co.uk." },
+              { icon: Award, title: "NICEIC Approved", body: "All electrical work meets British Standards. EICR and Part P documentation issued on completion." },
+              { icon: MessageCircle, title: "No call centres", body: "You talk to the engineering team directly. No automated queue, no third-party call handling." },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-white rounded-xl border p-5 flex gap-4">
+                <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"><Icon className="w-4 h-4 text-primary" /></div>
+                <div><h3 className="font-semibold text-sm mb-1">{title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{body}</p></div>
               </div>
-            </div>
-
-            <div className="relative">
-              <img 
-                src={customerConsultation} 
-                alt="Professional HVAC consultation"
-                className="rounded-lg shadow-elegant w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
-            </div>
-          </div>
-
-          {/* Why Choose Us Section with Images */}
-          <div className="mb-8 md:mb-20">
-            <div className="text-center mb-8 md:mb-16">
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Why Choose Our Experts?</h2>
-              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                Leading HVAC maintenance specialists with proven expertise in complex systems. 
-                Our technical knowledge and commitment to quality make us the trusted choice.
-              </p>
-            </div>
-            
-            {/* Features with alternating layout */}
-            <div className="space-y-8 md:space-y-20">
-              {/* First row - Image left, content right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
-                <div className="relative">
-                  <img 
-                    src="/Customer_Service.png"
-                    alt="Professional HVAC team"
-                    className="rounded-lg shadow-elegant w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg"></div>
-                </div>
-                <div className="space-y-8">
-                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Certified Experts & Proven Results</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {whyChooseUs.slice(0, 4).map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <feature.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
-                          <p className="text-muted-foreground text-sm">{feature.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Second row - Content left, image right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
-                <div className="space-y-8 lg:order-1">
-                  <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold">Advanced Equipment & Fast Response</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {whyChooseUs.slice(4, 6).map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <feature.icon className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg mb-1">{feature.title}</h4>
-                          <p className="text-muted-foreground text-sm">{feature.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Customer testimonial */}
-                  <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-4 mb-4">
-                        <img 
-                          src={satisfiedCustomer} 
-                          alt="Satisfied customer"
-                          className="w-12 h-12 rounded-full object-cover"
-                        />
-                        <div>
-                          <div className="flex items-center space-x-1 mb-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
-                            ))}
-                          </div>
-                          <p className="font-semibold">Sarah Johnson</p>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground italic">
-                        "Exceptional service! The team was professional, quick, and solved our heating issue in no time. 
-                        Highly recommend Mainteniq for anyone needing HVAC services."
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="relative lg:order-2">
-                  <img 
-                    src="/Boiler.png" 
-                    alt="Professional boiler maintenance equipment"
-                    className="rounded-lg shadow-elegant w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tl from-accent/10 to-transparent rounded-lg"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Business Hours & Emergency Section with Enhanced Design */}
-          <div className="space-y-12">
-            {/* Emergency Section - Featured prominently */}
-            <div className="relative">
-              <div 
-                className="bg-cover bg-center rounded-2xl overflow-hidden"
-                style={{ backgroundImage: `url(${hvacProfessional})` }}
-              >
-                <div className="bg-gradient-to-r from-primary/95 to-primary-glow/90 p-6 sm:p-8 md:p-12 lg:p-16">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center text-white">
-                    <div className="space-y-4 md:space-y-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                        </div>
-                        <h3 className="font-bold text-xl sm:text-2xl md:text-3xl">24/7 Emergency Service</h3>
-                      </div>
-                      <p className="text-base md:text-xl opacity-95 leading-relaxed">
-                        HVAC emergency? Don't suffer in discomfort! Our emergency response team 
-                        is available 24/7 to get your system back up and running quickly.
-                      </p>
-                      <div className="flex items-center space-x-2 text-accent">
-                        <CheckCircle className="w-5 h-5" />
-                        <span className="font-semibold">Average response time: Under 2 hours</span>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center lg:text-right space-y-6">
-                      <div className="space-y-2">
-                        <p className="text-sm opacity-75">Emergency Hotline</p>
-                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent">+44 783 456 2366</p>
-                      </div>
-                      <Button 
-                        onClick={() => handleWhatsAppClick(true)}
-                        className="bg-white text-primary hover:bg-white/90 font-semibold px-4 sm:px-6 md:px-8 py-3 md:py-4 text-sm sm:text-base md:text-lg shadow-elegant hover-scale"
-                      >
-                        <MessageCircle className="w-5 h-5 mr-2" />
-                        Emergency WhatsApp
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Business Hours Card */}
-            <Card className="shadow-elegant border-primary/20">
-              <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5">
-                <CardTitle className="flex items-center space-x-3 text-xl sm:text-2xl md:text-3xl">
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-white" />
-                  </div>
-                  <span>Business Hours</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 sm:p-6 md:p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  {businessHours.map((schedule, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 md:p-4 rounded-lg bg-background border hover:border-primary/30 transition-colors">
-                      <span className="font-semibold text-sm sm:text-base md:text-lg">{schedule.day}</span>
-                      <span className="text-muted-foreground text-sm sm:text-base md:text-lg font-medium">{schedule.hours}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-gradient-to-r from-whatsapp/10 to-whatsapp/5 rounded-lg border border-whatsapp/20">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-whatsapp flex-shrink-0" />
-                      <div>
-                        <p className="font-semibold text-sm sm:text-base md:text-lg">Need help outside business hours?</p>
-                        <p className="text-muted-foreground text-xs sm:text-sm">WhatsApp us anytime for quick responses</p>
-                      </div>
-                    </div>
-                    <Button 
-                      onClick={() => handleWhatsAppClick()}
-                      className="bg-whatsapp hover:bg-whatsapp/90 text-white"
-                    >
-                      Chat Now
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

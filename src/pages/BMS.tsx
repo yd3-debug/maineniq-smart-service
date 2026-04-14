@@ -1,192 +1,180 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
-import FullBleedHero from "@/components/FullBleedHero";
+import { Card, CardContent } from "@/components/ui/card";
+import { FaWhatsapp } from "react-icons/fa";
+import { Cpu, BarChart3, Settings, Shield, Phone, CheckCircle, Zap, Clock, Building2 } from "lucide-react";
+import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
-import LocalBusinessSchema from "@/components/LocalBusinessSchema";
-import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
-
-import { BMSMetrics } from "@/components/BMSMetrics";
-import { BMSBeforeAfter } from "@/components/BMSBeforeAfter";
-import { BMSTechnology } from "@/components/BMSTechnology";
-import { BMSProcess } from "@/components/BMSProcess";
-import { BMSSpecs } from "@/components/BMSSpecs";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
 import bmsControlRoom from "@/assets/bms-control-room.jpg";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
-import { Link } from "react-router-dom";
-import { CONTACT } from "@/config/contact";
-import { CheckCircle, Phone, ArrowRight } from "lucide-react";
-import { generateBreadcrumbSchema, generateFAQSchema, generateBMSServiceSchema } from "@/utils/structuredData";
 
-const bmsFaqs = [
-  { question: "What is a Building Management System (BMS)?", answer: "A BMS is a computer-based control system that manages and monitors a building's mechanical and electrical equipment such as HVAC, lighting, power systems, fire systems, and security systems." },
-  { question: "How often should BMS systems be maintained?", answer: "BMS systems should have quarterly preventive maintenance checks, with comprehensive annual reviews. Critical systems may require monthly monitoring and calibration." },
-  { question: "What are the benefits of BMS maintenance?", answer: "Regular BMS maintenance reduces energy costs by 15-30%, prevents system failures, extends equipment lifespan, ensures occupant comfort, and maintains regulatory compliance." },
-  { question: "Can you maintain any BMS brand?", answer: "Yes, we service all major BMS platforms including Trend, Siemens, Honeywell, Johnson Controls, Schneider Electric, and Tridium. Our engineers are multi-platform certified." },
-  { question: "What does BMS optimization include?", answer: "BMS optimization includes control strategy review, setpoint optimization, scheduling adjustments, sensor calibration, trending analysis, and energy performance improvements." },
-  { question: "How much can BMS optimization save on energy costs?", answer: "Proper BMS optimization typically saves 15-30% on energy costs. We provide detailed energy reports showing before and after performance metrics." }
+const faqs = [
+  { q: "What is a Building Management System (BMS)?", a: "A BMS is a computer-based control system that monitors and manages a building's mechanical and electrical equipment — HVAC, lighting, power systems, fire systems and security. It's the central nervous system of a modern building." },
+  { q: "How often should a BMS be serviced?", a: "BMS systems benefit from quarterly preventive checks and a comprehensive annual review. Critical commercial systems may require monthly calibration to maintain accuracy and performance." },
+  { q: "What BMS brands do you service?", a: "We service all major platforms — Trend, Siemens, Honeywell, Johnson Controls, Schneider Electric and Tridium. Our engineers are multi-platform trained and work across makes and generations." },
+  { q: "Can BMS optimisation save money on energy?", a: "Yes. Proper BMS optimisation typically reduces energy costs by 15–30%. We identify inefficient control strategies, recalibrate sensors and refine scheduling to deliver measurable savings." },
+  { q: "What does BMS maintenance include?", a: "Control strategy review, setpoint optimisation, scheduling adjustments, sensor calibration, trending analysis, fault diagnosis and a written performance report. We document everything so you have a clear record." },
+  { q: "Do you offer emergency BMS support?", a: "Yes. BMS failures can affect heating, cooling, lighting and access across an entire building. We offer 24/7 emergency response within 4 hours for contract clients." },
 ];
 
-const BMS: React.FC = () => {
+const whatWeDoItems = [
+  "Controller and panel inspection",
+  "Sensor calibration and accuracy check",
+  "Control sequence and setpoint review",
+  "Scheduling optimisation",
+  "Alarm and fault log review",
+  "Network and comms health check",
+  "Energy performance trending",
+  "Written service report",
+];
+
+const BMS = () => {
+  const handleWhatsApp = () => {
+    const msg = "Hi, I need BMS maintenance or optimisation. Can you help?";
+    window.open(`https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
+
   return (
-    <div className="min-h-screen">
+    <>
       <SEOHead
-        title="BMS Maintenance & Optimization London | Building Management Systems | Mainteniq"
-        description="Expert BMS maintenance services to optimize your building management system performance, reduce energy costs by 15-30%, and ensure reliable operation. Multi-platform certified engineers."
-        keywords="BMS maintenance London, building management system, BMS optimization, HVAC controls, building automation, Trend BMS, Siemens BMS, energy management, building controls maintenance"
+        title="BMS Maintenance London | Building Management System Service | Mainteniq"
+        description="Expert BMS maintenance and optimisation for commercial buildings across London. Trend, Siemens, Honeywell and all major platforms. Reduce energy costs by 15–30%. 24/7 emergency support."
+        keywords="BMS maintenance London, building management system London, BMS optimisation, Trend BMS service London, Siemens BMS London, building controls maintenance London, HVAC controls London"
         canonicalUrl="https://www.mainteniq.co.uk/bms"
+        structuredData={generateFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))}
         breadcrumbData={generateBreadcrumbSchema([
-          { name: "Home", url: "https://www.mainteniq.co.uk" },
-          { name: "Services", url: "https://www.mainteniq.co.uk/services" },
-          { name: "BMS Maintenance", url: "https://www.mainteniq.co.uk/bms" }
+          { name: "Home", url: "https://www.mainteniq.co.uk/" },
+          { name: "BMS Maintenance", url: "https://www.mainteniq.co.uk/bms" },
         ])}
-        faqData={generateFAQSchema(bmsFaqs)}
-        serviceData={generateBMSServiceSchema()}
-      />
-      <LocalBusinessSchema 
-        businessType="BMS Maintenance" 
-        serviceName="Building Management System Maintenance & Optimization"
-        serviceDescription="Expert BMS maintenance services to optimize building management system performance and reduce energy costs"
-      />
-      <VoiceSearchOptimizer faqs={bmsFaqs} serviceName="BMS Maintenance" />
-      {/* Enhanced Hero Section */}
-      <FullBleedHero
-        title="BMS Maintenance & Optimization"
-        subtitle="Expert servicing and optimization of your existing building management systems. Maximize efficiency, reduce costs, and ensure reliable operation."
-        image={bmsControlRoom}
-        alt="BMS control room with dashboards for building automation"
-        primaryLabel="Get BMS Maintenance Quote"
-        primaryHref="/contact"
-        secondaryLabel="Call us"
-        secondaryHref={`tel:${CONTACT.phones.emergencyTel}`}
       />
 
-
-      <main className="container mx-auto px-4 py-8 sm:py-12 md:py-16 space-y-10 sm:space-y-14 md:space-y-20">
-        {/* Performance Results */}
-        <BMSMetrics />
-
-        {/* Key Maintenance Benefits */}
-        <section className="text-center space-y-6 md:space-y-8">
-          <div className="space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-              Professional maintenance services that maximize your existing BMS investment
-            </p>
+      {/* Hero */}
+      <section className="relative pt-24 pb-14 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-800 to-slate-700" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: `url(${bmsControlRoom})` }} />
+        <div className="relative container mx-auto px-4 max-w-4xl text-center">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Your BMS controls everything in the building.
+            <br />
+            <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
+              We keep it accurate, efficient and reliable.
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
+            BMS maintenance and optimisation for commercial buildings across London. All platforms. Calibration, control sequence review, energy trending and 24/7 emergency support.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "System Health Monitoring",
-                description: "Continuous monitoring and diagnostics to prevent issues before they impact performance",
-                icon: "🔧"
-              },
-              {
-                title: "Performance Optimization",
-                description: "Fine-tuning existing systems for maximum efficiency and reduced energy costs",
-                icon: "⚡"
-              },
-              {
-                title: "Preventive Maintenance",
-                description: "Scheduled maintenance programs to extend system lifespan and prevent costly failures",
-                icon: "🛡️"
-              }
-            ].map((item) => (
-              <div key={item.title} className="group">
-                <div className="rounded-xl border bg-card p-4 sm:p-6 md:p-8 hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                  <div className="text-2xl sm:text-3xl md:text-4xl mb-3 md:mb-4">{item.icon}</div>
-                  <h3 className="font-semibold text-base sm:text-lg mb-2 md:mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm">{item.description}</p>
-                </div>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+            {["All Major Platforms", "Sensor Calibration", "Energy Optimisation", "Annual Contracts", "24/7 Emergency"].map(c => (
+              <div key={c} className="flex items-center gap-1.5 text-white/70 text-xs"><CheckCircle className="w-3.5 h-3.5 text-green-400" />{c}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl font-bold mb-3">What our BMS service includes</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {whatWeDoItems.map(item => (
+              <div key={item} className="flex items-start gap-2.5 bg-slate-50 rounded-lg border px-4 py-3">
+                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                <span className="text-sm">{item}</span>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* BMS Technology Suite */}
-        <BMSTechnology />
-
-        {/* Before/After Comparison */}
-        <BMSBeforeAfter />
-
-        {/* Technical Specifications */}
-        <BMSSpecs />
-
-        {/* Professional Process */}
-        <BMSProcess />
-
-        {/* Problems We Prevent */}
-        <section className="bg-gradient-to-br from-destructive/5 to-destructive/10 rounded-2xl border border-destructive/20 p-4 sm:p-6 md:p-8">
-          <div className="text-center space-y-4 md:space-y-6 mb-6 md:mb-8">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-destructive">Critical Issues We Prevent</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-              Without proper BMS maintenance, buildings face significant operational and financial risks
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              {
-                title: "System Degradation & Inefficiency",
-                description: "Regular maintenance and optimization prevent gradual performance decline and energy waste",
-                impact: "£10k+ annual savings"
-              },
-              {
-                title: "Unexpected System Failures", 
-                description: "Preventive maintenance identifies issues early, avoiding costly emergency repairs",
-                impact: "85% fewer breakdowns"
-              },
-              {
-                title: "Compliance & Safety Issues",
-                description: "Regular inspections and updates ensure systems meet safety standards and regulations",
-                impact: "100% compliance"
-              }
-            ].map((problem) => (
-              <div key={problem.title} className="bg-background rounded-lg border border-destructive/30 p-6">
-                <h3 className="font-semibold text-lg mb-3 text-destructive">{problem.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{problem.description}</p>
-                <div className="inline-flex items-center gap-2 bg-success/10 text-success text-xs font-medium px-3 py-1 rounded-full">
-                  <CheckCircle className="w-3 h-3" />
-                  {problem.impact}
-                </div>
+              { icon: BarChart3, title: "Energy trending", desc: "Identify consumption patterns and flag inefficiencies before they become costly." },
+              { icon: Settings, title: "Control optimisation", desc: "Refine setpoints, sequences and schedules to match actual building usage." },
+              { icon: Building2, title: "Multi-site management", desc: "Coordinated maintenance across multiple buildings under one contract." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-slate-50 rounded-xl border p-5">
+                <div className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center mb-3"><Icon className="w-4 h-4 text-slate-600" /></div>
+                <h3 className="font-semibold text-sm mb-1">{title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Final CTA Section */}
-        <section className="text-center space-y-6 md:space-y-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border p-6 sm:p-8 md:p-12">
+      {/* Platforms + benefits */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="font-heading text-2xl font-bold mb-4">Multi-platform expertise</h2>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">We service BMS across all major manufacturers without being tied to a single brand. Our engineers carry multi-platform certification and understand the nuances of each system — from legacy Trend controllers to modern Tridium JACE platforms.</p>
+              <ul className="space-y-3 mb-6">
+                {["Trend Controls", "Siemens Desigo", "Honeywell EBI", "Johnson Controls Metasys", "Schneider Electric EcoStruxure", "Tridium JACE / Niagara"].map(item => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /><span>{item}</span></li>
+                ))}
+              </ul>
+              <Button className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold" onClick={handleWhatsApp}><FaWhatsapp className="w-4 h-4" />Book a BMS Service</Button>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <img src={bmsControlPanel} alt="BMS control panel in a commercial building" className="w-full h-64 object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why it matters */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl font-bold mb-3">What happens when BMS is neglected</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: Zap, title: "Energy waste", desc: "Miscalibrated sensors and outdated schedules cause systems to run when they shouldn't — wasting thousands annually." },
+              { icon: Clock, title: "Unexpected failures", desc: "Unserviced controllers develop faults that cascade into full system outages, affecting tenants and operations." },
+              { icon: Shield, title: "Compliance gaps", desc: "Poorly documented BMS maintenance can expose you to compliance failures during audits and inspections." },
+              { icon: Cpu, title: "Shortened equipment life", desc: "Incorrect control sequences force plant to work harder than necessary, reducing lifespan significantly." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white rounded-xl border p-5 flex gap-4">
+                <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0"><Icon className="w-4 h-4 text-orange-500" /></div>
+                <div><h3 className="font-semibold text-sm mb-1">{title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{desc}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
           <div className="space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Ready to Optimize Your BMS?</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base md:text-lg">
-              Join hundreds of property managers who've maximized their BMS performance with our expert maintenance services. 
-              Get a comprehensive system assessment and maintenance quote today.
-            </p>
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="bg-white rounded-xl border px-6 py-5">
+                <h3 className="font-semibold text-sm mb-2">{q}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{a}</p>
+              </div>
+            ))}
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="px-8">
-              <Link to="/contact" className="flex items-center gap-2">
-                Get BMS Maintenance Quote
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="px-8">
-              <a href={`tel:${CONTACT.phones.emergencyTel}`} aria-label={`Call us now at ${CONTACT.phones.emergency}`}>
-                <Phone className="w-5 h-5 mr-2"/>
-                {CONTACT.phones.emergency}
-              </a>
-            </Button>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14 bg-primary text-primary-foreground text-center">
+        <div className="container mx-auto px-4 max-w-xl">
+          <h2 className="font-heading text-2xl font-bold mb-3">Book a BMS assessment</h2>
+          <p className="text-primary-foreground/75 text-sm mb-8">Tell us your platform and building type — we'll arrange a site visit and service proposal.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button size="lg" className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold px-8" onClick={handleWhatsApp}><FaWhatsapp className="w-5 h-5" />WhatsApp Us</Button>
+            <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white hover:text-primary font-semibold px-8 backdrop-blur-sm gap-2"><a href={`tel:${CONTACT.phones.emergencyTel}`}><Phone className="w-5 h-5" />{CONTACT.phones.emergency}</a></Button>
           </div>
-          
-          <div className="pt-6 border-t">
-            <p className="text-sm text-muted-foreground">
-              ✓ Free system assessment ✓ Preventive maintenance ✓ Performance optimization ✓ 24/7 support
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </>
   );
 };
 
