@@ -148,16 +148,16 @@ const Index = () => {
 
                 <div className="space-y-6">
                   <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                    Keep Your Building Running.
+                    We look after London properties.
                     <br />
                     <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
-                      Every System. One Team.
+                      So you don't have to worry.
                     </span>
                   </h1>
-                  
+
                   <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    Professional maintenance for HVAC, plumbing, electrical, and property services. 
-                    Trusted by landlords, property managers, and facilities teams across London.
+                    HVAC, boilers, plumbing, electrical — one team handles it all. No call centres, no chasing contractors.
+                    Real engineers, real responses, trusted by landlords and property managers across London.
                   </p>
                 </div>
 
@@ -372,7 +372,7 @@ const Index = () => {
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
                       <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span>Unexpected costs (£2,000-£15,000+ per incident)</span>
+                      <span>Large unexpected bills with no budget or warning</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
@@ -380,7 +380,7 @@ const Index = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />
-                      <span>Emergency call-out premiums (£200-£500)</span>
+                      <span>Emergency call-out premiums on top of repair costs</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <X className="w-4 h-4 text-destructive mt-0.5 flex-shrink-0" />

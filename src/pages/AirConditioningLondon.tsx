@@ -22,6 +22,10 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import SEOHead from "@/components/SEOHead";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
+import hvacInstallationImg from "@/assets/hvac-installation.jpg";
+import commercialHvacImg from "@/assets/commercial-hvac.jpg";
+import hvacProfessionalImg from "@/assets/hvac-professional.jpg";
+import hvacMaintenanceImg from "@/assets/hvac-maintenance.jpg";
 
 const acFaqs = [
   {
@@ -142,8 +146,13 @@ const AirConditioningLondon = () => {
       />
 
       {/* Hero */}
-      <section className="pt-20 pb-12 md:pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="relative pt-20 pb-12 md:pb-16 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(/HVAC_SYSTEM.png)` }}
+        />
+        <div className="relative container mx-auto px-4 max-w-5xl">
           <div className="flex flex-col items-center text-center gap-6">
             <Badge className="bg-orange-500 text-white border-0 text-sm px-4 py-1.5 font-semibold">
               Summer 2026 — Booking Now
@@ -178,6 +187,40 @@ const AirConditioningLondon = () => {
             <p className="text-slate-400 text-sm">
               Emergency response within 4 hours · Available 24/7 · No obligation quote
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Work Gallery */}
+      <section className="py-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 h-48 md:h-64">
+          <div className="overflow-hidden">
+            <img
+              src={hvacInstallationImg}
+              alt="HVAC installation in London property"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="overflow-hidden">
+            <img
+              src={hvacMaintenanceImg}
+              alt="Air conditioning maintenance and servicing"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="overflow-hidden">
+            <img
+              src={commercialHvacImg}
+              alt="Commercial air conditioning installation London"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="overflow-hidden">
+            <img
+              src={hvacProfessionalImg}
+              alt="Professional Mainteniq engineer at work"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </div>
       </section>
@@ -279,36 +322,47 @@ const AirConditioningLondon = () => {
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-xl border p-6 md:p-8 shadow-sm">
-              <h3 className="font-semibold text-lg mb-2">Get a Free Quote</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                Tell us about your property and we'll get back to you with a clear, itemised quote.
-                No automated estimates — a real engineer will assess your needs.
-              </p>
-              <div className="flex flex-col gap-3">
-                <Button
-                  onClick={handleWhatsApp}
-                  size="lg"
-                  className="w-full bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold"
-                >
-                  <FaWhatsapp className="w-5 h-5" />
-                  Message on WhatsApp
-                </Button>
-                <Button
-                  onClick={handleCall}
-                  size="lg"
-                  variant="outline"
-                  className="w-full gap-2 font-semibold"
-                >
-                  <Phone className="w-5 h-5" />
-                  Call {CONTACT.phones.emergency}
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground text-center mt-4">
-                Available 24/7 · Emergency response within 4 hours
-              </p>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={hvacProfessionalImg}
+                alt="Mainteniq HVAC engineer servicing air conditioning in London"
+                className="w-full h-72 md:h-full object-cover"
+              />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Get a Quote CTA */}
+      <section className="py-10 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h3 className="font-semibold text-xl mb-2">Get a Free Quote</h3>
+          <p className="text-sm text-muted-foreground mb-6 max-w-lg mx-auto">
+            Tell us about your property and we'll get back to you with a clear, itemised quote.
+            No automated estimates — a real engineer will assess your needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button
+              onClick={handleWhatsApp}
+              size="lg"
+              className="bg-[#25D366] hover:bg-[#20b657] text-white gap-2 font-semibold"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              Message on WhatsApp
+            </Button>
+            <Button
+              onClick={handleCall}
+              size="lg"
+              variant="outline"
+              className="gap-2 font-semibold"
+            >
+              <Phone className="w-5 h-5" />
+              Call {CONTACT.phones.emergency}
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Available 24/7 · Emergency response within 4 hours
+          </p>
         </div>
       </section>
 
