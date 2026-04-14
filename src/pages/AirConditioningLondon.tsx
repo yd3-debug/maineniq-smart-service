@@ -227,7 +227,7 @@ const AirConditioningLondon = () => {
       {/* Trust bar */}
       <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {whyUs.map(({ icon: Icon, label, sub }) => (
               <div key={label} className="flex flex-col items-center text-center gap-1">
                 <Icon className="w-6 h-6 text-primary mb-1" />
