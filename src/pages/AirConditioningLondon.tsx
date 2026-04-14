@@ -109,7 +109,6 @@ const acServices = [
 
 const whyUs = [
   { icon: Award, label: "F-Gas Certified", sub: "All refrigerant work legally compliant" },
-  { icon: Shield, label: "Gas Safe & NICEIC", sub: "Fully qualified & insured engineers" },
   { icon: Clock, label: "4-Hour Emergency Response", sub: "24/7 across London" },
   { icon: MapPin, label: "120-Mile Coverage", sub: "London & surrounding regions" },
   { icon: ThumbsUp, label: "1,000+ Properties Served", sub: "Trusted by landlords & managers" },
