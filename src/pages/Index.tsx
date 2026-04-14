@@ -148,16 +148,18 @@ const Index = () => {
 
                 <div className="space-y-6">
                   <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                    We look after London properties.
+                    Your heating fails at midnight.
+                    <br />
+                    Your AC breaks the day before a viewing.
                     <br />
                     <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
-                      So you don't have to worry.
+                      We're the team that picks up.
                     </span>
                   </h1>
 
                   <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    HVAC, boilers, plumbing, electrical — one team handles it all. No call centres, no chasing contractors.
-                    Real engineers, real responses, trusted by landlords and property managers across London.
+                    HVAC, boilers, plumbing, electrical — one team, real engineers, no call centres.
+                    Trusted by landlords and property managers across London. Response within 4 hours.
                   </p>
                 </div>
 
