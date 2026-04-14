@@ -7,7 +7,7 @@ export const generateOrganizationSchema = () => ({
   "@id": "https://www.mainteniq.co.uk/#organization",
   "name": "Mainteniq",
   "alternateName": "Mainteniq UK HVAC & Property Services",
-  "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified, 4.9 star rating.",
+  "description": "Professional HVAC maintenance and property services including air conditioning installation, boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical and handyman across London and 120-mile radius. 24/7 emergency response, F-Gas, Gas Safe & NICEIC certified, 4.9 star rating.",
   "url": "https://www.mainteniq.co.uk",
   "logo": {
     "@type": "ImageObject",
@@ -390,38 +390,6 @@ export const generateSmartHomeSchema = () => ({
   }
 });
 
-export const generateCleaningServiceSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  "name": "Mainteniq - End of Tenancy Cleaning",
-  "description": "Professional end of tenancy cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
-  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
-  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
-  "telephone": "+44 783 456 2366",
-  "email": "info@mainteniq.co.uk",
-  "priceRange": "££",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "Greater London",
-    "addressCountry": "GB"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.5074",
-      "longitude": "-0.1278"
-    },
-    "geoRadius": "193121"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247"
-  }
-});
-
 export const generateMaintenanceContractSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -727,28 +695,3 @@ export const generateBoilerServiceSchema = () => ({
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
 });
 
-// End of Tenancy Cleaning Schema
-export const generateEndOfTenancyCleaningSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  "name": "End of Tenancy Cleaning London",
-  "description": "Professional end of tenancy deep cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
-  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
-  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
-  "dateModified": CURRENT_DATE,
-  "telephone": "+44 783 456 2366",
-  "email": "info@mainteniq.co.uk",
-  "priceRange": "££",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "Greater London",
-    "addressCountry": "GB"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
-    "geoRadius": "193121"
-  },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
-});

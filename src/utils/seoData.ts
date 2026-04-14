@@ -114,19 +114,6 @@ export const SEO_CONFIG = {
     }
   },
 
-  endOfTenancyCleaning: {
-    title: "✨ End of Tenancy Cleaning UK | Deposit Back Guarantee | Professional Deep Clean | Check-Out Ready",
-    description: "★ #1 End of tenancy cleaning UK ★ Deposit back guarantee! Professional deep clean service. Inventory checklist compliant, check-out ready properties. Experienced cleaners, eco-friendly products, competitive rates. Landlords & tenants trust us. Book deep clean!",
-    keywords: "end of tenancy cleaning UK, deposit back guarantee, professional deep clean, checkout cleaning, tenancy cleaning service, move out cleaning, rental property cleaning, deep cleaning service",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "End of Tenancy Cleaning",
-      "description": "Professional end of tenancy cleaning service with deposit back guarantee for landlords and tenants.",
-      "serviceType": "End of Tenancy Cleaning"
-    }
-  },
-
   bms: {
     title: "🖥️ BMS Installation & Support UK | Building Management Systems | Smart Building Technology",
     description: "⭐ Expert BMS installation UK ⭐ Building Management Systems for energy optimization, automation, monitoring. Smart building technology, HVAC integration, energy savings up to 30%. Professional installation, training, ongoing support. Transform your building!",

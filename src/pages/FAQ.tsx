@@ -61,7 +61,7 @@ const FAQ = () => {
     <>
       <SEOHead 
         title="Frequently Asked Questions | HVAC, Plumbing & Property Services FAQ"
-        description="Get answers to common questions about our HVAC maintenance, plumbing, electrical, handyman, BMS, smart home and end-of-tenancy cleaning services across the UK."
+        description="Get answers to common questions about our air conditioning installation, HVAC maintenance, plumbing, electrical, handyman, BMS, smart home and property renovation services across the UK."
         keywords="HVAC FAQ, property maintenance questions, FCU HIU MVHR service questions, emergency repair services, UK property maintenance, smart home installation FAQ"
         canonicalUrl="https://www.mainteniq.co.uk/faq"
         structuredData={faqData}

@@ -26,7 +26,6 @@ import plumberElectricianWork from "@/assets/plumber-electrician-work.jpg";
 import handymanRepair from "@/assets/handyman-repair.jpg";
 // Using genuine before/after renovation image
 import hvacProfessional from "@/assets/hvac-professional.jpg";
-import endOfTenancyCleaning from "@/assets/end-of-tenancy-cleaning.jpg";
 
 import { CONTACT } from "@/config/contact";
 import { AlertTriangle } from "lucide-react";
@@ -42,7 +41,7 @@ const Services = () => {
   const faqData = generateFAQSchema([
     {
       question: "What services do you offer for property maintenance?",
-      answer: "We offer comprehensive HVAC maintenance (FCU, HIU, MVHR, CIU), plumbing, electrical, handyman services, BMS installation, smart home automation, and end-of-tenancy cleaning."
+      answer: "We offer comprehensive HVAC maintenance (FCU, HIU, MVHR, CIU), air conditioning installation, plumbing, electrical, handyman services, BMS installation, smart home automation and property renovation."
     },
     {
       question: "Do you provide emergency repair services?",
@@ -186,20 +185,6 @@ const services = [
         "Before/after visualization tools"
       ]
     },
-    {
-      icon: Sparkles,
-      title: "End of Tenancy Cleaning",
-      subtitle: "Professional Deep Cleaning",
-      description: "Comprehensive end of tenancy cleaning services ensuring properties meet the highest standards for deposit return and new occupancy.",
-      image: endOfTenancyCleaning,
-      features: [
-        "Deep cleaning all areas",
-        "Professional equipment and products",
-        "Inventory condition reports",
-        "Deposit protection guarantee",
-        "Available at short notice"
-      ]
-    }
   ];
 
   // Quick helpers for deep pages and metrics
@@ -213,7 +198,6 @@ const services = [
     if (title.includes("Plumber") || title.includes("Electrician")) return "/plumber-electrician";
     if (title.includes("Handyman")) return "/handyman";
     if (title.includes("Renovation") || title.includes("Refurbishment")) return "/renovation-composer";
-    if (title.includes("End of Tenancy")) return "/end-of-tenancy-cleaning";
     return "/contact";
   };
 
@@ -294,17 +278,12 @@ const services = [
       "Substandard finishes affecting property value",
       "Project delays and coordination issues",
     ];
-    if (title.includes("End of Tenancy")) return [
-      "Deposit deductions after checkout",
-      "Lingering odours and stains",
-      "Re-clean delays slowing new move-ins",
-    ];
     return [];
   };
 
   useEffect(() => {
     document.title = "Property Services & Maintenance | Expert HVAC, Plumbing, Electrical";
-    const desc = "Professional HVAC, FCU, HIU, MVHR, CIU maintenance, BMS, smart home, plumbing, electrical, handyman & end-of-tenancy cleaning services.";
+    const desc = "Professional HVAC, FCU, HIU, MVHR, CIU maintenance, air conditioning installation, BMS, smart home, plumbing, electrical and handyman services.";
     
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -344,8 +323,8 @@ const services = [
     <>
       <SEOHead 
         title="Professional Property Services | HVAC, Plumbing, Electrical & Smart Home"
-        description="Comprehensive property maintenance services: HVAC systems (FCU, HIU, MVHR), plumbing, electrical, handyman, BMS installation, smart home automation & end-of-tenancy cleaning."
-        keywords="property services, HVAC maintenance, FCU service, HIU repair, MVHR installation, plumbing services, electrical work, handyman services, BMS installation, smart home automation, end of tenancy cleaning"
+        description="Comprehensive property maintenance services: HVAC systems (FCU, HIU, MVHR), air conditioning installation, plumbing, electrical, handyman, BMS installation, smart home automation & property renovation."
+        keywords="property services, HVAC maintenance, air conditioning London, FCU service, HIU repair, MVHR installation, plumbing services, electrical work, handyman services, BMS installation, smart home automation, property renovation London"
         canonicalUrl="https://www.mainteniq.co.uk/services"
         faqData={faqData}
         breadcrumbData={breadcrumbData}
@@ -354,7 +333,7 @@ const services = [
       <div className="min-h-screen">
       <FullBleedHero
         title="Property Services & Maintenance"
-        subtitle="One reliable team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning."
+        subtitle="One reliable team for AC installation, ventilation, heating, controls, electrics and handyman services."
         image={teamWorking}
         alt="Maintenance and property services team working together"
         primaryLabel="Contact us"
@@ -445,7 +424,7 @@ const services = [
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">Explore Our Services</h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              One team for ventilation, heating, controls, electrics, handyman and end-of-tenancy cleaning—delivered to a professional standard.
+              One team for AC installation, ventilation, heating, controls, electrics and handyman — delivered to a professional standard.
             </p>
           </div>
 

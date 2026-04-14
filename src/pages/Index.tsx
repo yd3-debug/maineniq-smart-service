@@ -27,7 +27,6 @@ import { CardHeader, CardTitle } from "@/components/ui/card";
 import { handleQuoteRequest } from "@/utils/quote";
 import plumbingImage from "@/assets/plumber-electrician-work.jpg";
 import handymanImage from "@/assets/handyman-maintenance.jpg";
-import endOfTenancyImage from "@/assets/end-of-tenancy-cleaning.jpg";
 import smartHomeImage from "@/assets/smart-home-automation.jpg";
 const renovationImage = "/2024_Kitchen.png";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
@@ -96,7 +95,6 @@ const Index = () => {
   const propertyServices = [
     { title: "Plumbing & Electrical", description: "Repairs and safety checks", image: plumbingImage, href: "/plumber-electrician", stat: "500+ jobs completed" },
     { title: "Handyman", description: "General repairs and maintenance", image: handymanImage, href: "/handyman", stat: "Same-day service" },
-    { title: "End of Tenancy", description: "Deep cleaning for check-out", image: endOfTenancyImage, href: "/end-of-tenancy-cleaning", stat: "100% deposit return rate" },
     { title: "Smart Home", description: "Automation and controls", image: smartHomeImage, href: "/smart-home" },
     { title: "Renovation", description: "Refurbishment and fit-outs", image: renovationImage, href: "/renovation-composer" },
     { title: "BMS", description: "Building management systems", image: bmsControlPanel, href: "/bms" },
