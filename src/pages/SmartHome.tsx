@@ -196,7 +196,7 @@ const SmartHome: React.FC = () => {
   ];
 
   const smartHomeFaqs = [
-    { question: "How much does a smart home installation cost in London?", answer: "Smart home installation costs vary based on scope. A basic starter package with smart lighting and hub starts from £500-£1,000. Comprehensive whole-home automation with lighting, security, entertainment, and climate control ranges from £3,000-£15,000+. We offer free consultations to provide accurate quotes." },
+    { question: "How much does a smart home installation cost in London?", answer: "Smart home installation costs vary greatly depending on the scope, number of rooms, and systems involved. We always assess your property and requirements before giving a quote — contact us via WhatsApp or phone for a free consultation and accurate pricing." },
     { question: "Do I need to rewire my home for smart technology?", answer: "Not necessarily. Many smart home devices are wireless and work with existing wiring. Smart bulbs, plugs, sensors, and cameras typically require no rewiring. For advanced features like smart switches or integrated systems, minor electrical work may be needed." },
     { question: "Will smart home systems work if my internet goes down?", answer: "Modern smart home systems include local processing, so core functions continue working during internet outages. Lights, locks, and sensors operate locally via the hub. Voice control and remote access require internet, but physical switches and automations remain functional." },
     { question: "What's the difference between DIY and professional installation?", answer: "DIY smart devices often result in compatibility issues, security vulnerabilities, and fragmented control across multiple apps. Professional installation provides unified control, proper network configuration, secure setup, and devices that work together seamlessly with ongoing support." },
@@ -576,10 +576,9 @@ const SmartHome: React.FC = () => {
                   How much does a smart home installation cost in London?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Smart home installation costs vary based on the scope of your project. A basic starter package 
-                  with smart lighting and a hub typically starts from £500-£1,000. A comprehensive whole-home 
-                  automation with lighting, security, entertainment, and climate control ranges from £3,000-£15,000+. 
-                  We offer free consultations to provide accurate quotes tailored to your needs.
+                  Smart home installation costs depend on the scope of your project, number of rooms, and systems
+                  involved. We assess your property first and provide a tailored quote — no generic figures.
+                  Reach out via WhatsApp or give us a call for a free consultation.
                 </AccordionContent>
               </AccordionItem>
               

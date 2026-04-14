@@ -169,7 +169,7 @@ const BoilerServices = () => {
   const boilerFAQs = [
     { question: "How often should I service my boiler?", answer: "Boilers should be serviced annually to maintain efficiency, safety, and warranty validity. For landlords, an annual CP12 Gas Safety Certificate is a legal requirement." },
     { question: "What is a CP12 Gas Safety Certificate?", answer: "A CP12 is a legal document that proves all gas appliances in a rental property have been checked and are safe. Landlords must have one issued annually by a Gas Safe registered engineer." },
-    { question: "How much does a boiler service cost in London?", answer: "A standard boiler service in London typically costs between £70-£120. We offer competitive rates with no hidden fees and same-day service available." },
+    { question: "How much does a boiler service cost in London?", answer: "We offer competitive rates with no hidden fees. Get in touch via WhatsApp or give us a call and we'll give you a quick, accurate quote for your property." },
     { question: "Do you offer emergency boiler repairs?", answer: "Yes, we provide 24/7 emergency boiler repair services across London. Our Gas Safe engineers can usually attend within hours for urgent breakdowns." },
     { question: "Which boiler brands do you service?", answer: "We service all major brands including Worcester Bosch, Vaillant, Baxi, Ideal, Viessmann, Glow-worm, Potterton, Alpha, Ferroli, and Main." }
   ];

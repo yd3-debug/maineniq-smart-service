@@ -6,11 +6,11 @@ import { handleQuoteRequest } from "@/utils/quote";
 
 const Footer = () => {
   const topServices = [
+    { name: "Air Conditioning London", href: "/air-conditioning-london" },
     { name: "HVAC Maintenance", href: "/hvac-maintenance" },
     { name: "FCU Maintenance", href: "/fcu-maintenance" },
     { name: "HIU & CIU Service", href: "/hiu-maintenance" },
     { name: "Boiler Services", href: "/boiler-services" },
-    { name: "End of Tenancy", href: "/end-of-tenancy-cleaning" },
   ];
 
   const allServices = [
@@ -155,7 +155,6 @@ const Footer = () => {
             <h3 className="font-semibold text-sm sm:text-lg">Company</h3>
             <ul className="flex flex-col items-center md:items-start space-y-1 sm:space-y-2">
               <li><Link to="/maintenance-contracts" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contracts</Link></li>
-              <li><Link to="/case-studies" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Case Studies</Link></li>
               <li><Link to="/about" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">About</Link></li>
               <li><Link to="/contact" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">Contact</Link></li>
               <li><Link to="/faq" className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors">FAQ</Link></li>

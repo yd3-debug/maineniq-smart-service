@@ -32,7 +32,7 @@ const PlumberElectrician: React.FC = () => {
     { question: "Do you provide CP12 gas safety certificates for landlords?", answer: "Yes, we provide CP12 Gas Safety Certificates required by law for all rental properties. We can schedule annual inspections and provide compliant documentation for your records." },
     { question: "Are your electricians NICEIC certified?", answer: "Yes, all our electricians are NICEIC approved contractors, ensuring all electrical work meets British Standards and building regulations. We provide EICR certificates and Part P compliance." },
     { question: "Do you offer 24/7 emergency plumber and electrician services?", answer: "Yes, we offer 24/7 emergency response for urgent plumbing and electrical issues including gas leaks, burst pipes, power failures, and safety hazards. Call our emergency line for immediate assistance." },
-    { question: "How much does an EICR electrical certificate cost in London?", answer: "EICR (Electrical Installation Condition Report) costs vary based on property size, typically £150-350 for residential properties. Contact us for an accurate quote based on your specific property." },
+    { question: "How much does an EICR electrical certificate cost in London?", answer: "EICR (Electrical Installation Condition Report) costs vary based on property size and circuit count. Message us on WhatsApp or call us for an accurate quote based on your specific property." },
     { question: "What's included in a boiler service?", answer: "A full boiler service includes safety checks, flue analysis, pressure testing, cleaning key components, and issuing a service certificate. We recommend annual servicing to maintain warranty and efficiency." }
   ];
 

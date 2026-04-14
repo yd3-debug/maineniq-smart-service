@@ -53,9 +53,9 @@ const mvhrFaqs = [
   { question: "How often should MVHR filters be replaced?", answer: "MVHR filters should be checked every 3 months and replaced when visibly dirty, typically every 3-6 months. In urban areas with higher pollution, more frequent replacement may be needed." },
   { question: "What are signs my MVHR system needs servicing?", answer: "Signs include reduced airflow, increased noise, condensation on windows, musty odours, higher energy bills, and visible dust around vents. These indicate filter or system issues." },
   { question: "Can I clean MVHR filters myself?", answer: "Basic filter checks are DIY-friendly, but professional service is recommended annually for heat exchanger cleaning, fan motor inspection, ductwork checks, and system calibration." },
-  { question: "How much does MVHR maintenance cost?", answer: "Filter replacement costs £40-100 per set. Annual professional service costs £150-300. System neglect can lead to £1,500-3,500 motor replacements and higher energy bills." },
+  { question: "How much does MVHR maintenance cost?", answer: "Costs depend on your system make, size, and service frequency. We'll assess your unit and provide a clear quote with no hidden fees. Contact us via WhatsApp or phone for details." },
   { question: "What happens if I don't change MVHR filters?", answer: "Dirty filters reduce airflow by up to 55%, decrease heat recovery efficiency, strain fan motors leading to premature failure, and allow allergens and pollutants to bypass filtration." },
-  { question: "Does MVHR maintenance affect energy bills?", answer: "Yes, clean MVHR systems recover up to 92% of heat from extracted air. Dirty systems can lose 60%+ of this efficiency, adding £50-100 monthly to heating costs." }
+  { question: "Does MVHR maintenance affect energy bills?", answer: "Yes, clean MVHR systems recover up to 92% of heat from extracted air. Dirty systems can lose 60%+ of this efficiency, significantly increasing your heating costs over time." }
 ];
 
 const MVHRMaintenance = () => {

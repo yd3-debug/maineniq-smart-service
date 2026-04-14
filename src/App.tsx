@@ -22,7 +22,7 @@ const FCUMaintenance = lazy(() => import("./pages/FCUMaintenance"));
 const HIUMaintenance = lazy(() => import("./pages/HIUMaintenance"));
 const CIUMaintenance = lazy(() => import("./pages/CIUMaintenance"));
 const MVHRMaintenance = lazy(() => import("./pages/MVHRMaintenance"));
-const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const AirConditioningLondon = lazy(() => import("./pages/AirConditioningLondon"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -36,7 +36,6 @@ const BMS = lazy(() => import("./pages/BMS"));
 const SmartHome = lazy(() => import("./pages/SmartHome"));
 const PlumberElectrician = lazy(() => import("./pages/PlumberElectrician"));
 const Handyman = lazy(() => import("./pages/Handyman"));
-const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
 const BoilerServices = lazy(() => import("./pages/BoilerServices"));
 
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
@@ -111,6 +110,13 @@ const App = () => {
               </Suspense>
             </Layout>
           } />
+          <Route path="/air-conditioning-london" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <AirConditioningLondon />
+              </Suspense>
+            </Layout>
+          } />
           <Route path="/fcu-maintenance" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
@@ -167,24 +173,10 @@ const App = () => {
               </Suspense>
             </Layout>
           } />
-          <Route path="/end-of-tenancy-cleaning" element={
-            <Layout>
-              <Suspense fallback={<LoadingPage />}>
-                <EndOfTenancyCleaning />
-              </Suspense>
-            </Layout>
-          } />
           <Route path="/boiler-services" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <BoilerServices />
-              </Suspense>
-            </Layout>
-          } />
-          <Route path="/case-studies" element={
-            <Layout>
-              <Suspense fallback={<LoadingPage />}>
-                <CaseStudies />
               </Suspense>
             </Layout>
           } />

@@ -14,7 +14,7 @@ const Navigation = () => {
   console.log('Navigation.tsx: Current location:', location.pathname);
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts', '/boiler-services'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/hvac-maintenance', '/air-conditioning-london', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts', '/boiler-services'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -33,6 +33,7 @@ const Navigation = () => {
       href: "/services",
       submenu: [
         { category: "Climate Control", items: [
+          { name: "Air Conditioning London", href: "/air-conditioning-london" },
           { name: "HVAC Maintenance", href: "/hvac-maintenance" },
           { name: "Boiler Services", href: "/boiler-services" },
           { name: "FCU Maintenance", href: "/fcu-maintenance" },
@@ -45,11 +46,9 @@ const Navigation = () => {
           { name: "Plumber & Electrician", href: "/plumber-electrician" },
           { name: "Handyman", href: "/handyman" },
           { name: "Renovation", href: "/renovation-composer" },
-          { name: "End of Tenancy", href: "/end-of-tenancy-cleaning" },
         ]}
       ]
     },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 

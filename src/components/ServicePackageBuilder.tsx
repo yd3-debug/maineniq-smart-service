@@ -65,7 +65,7 @@ const ServicePackageBuilder: React.FC = () => {
         <Badge variant="outline" className="mb-4">Popular Add-Ons</Badge>
         <h2 className="text-3xl font-bold mb-4">Enhance Your Cleaning Package</h2>
         <p className="text-lg text-muted-foreground">
-          Add these extras to your end-of-tenancy clean for the best results
+          Add these extras to your service package for the best results
         </p>
       </div>
       
@@ -122,7 +122,7 @@ const ServicePackageBuilder: React.FC = () => {
             Want the complete package?
           </h3>
           <p className="text-muted-foreground mb-6">
-            Get a quote for end-of-tenancy cleaning with all add-ons included
+            Get a quote for your full service package with all add-ons included
           </p>
           
           <Button 

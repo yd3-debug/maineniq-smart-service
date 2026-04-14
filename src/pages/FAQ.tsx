@@ -33,10 +33,6 @@ const FAQ = () => {
       answer: "Yes, we provide comprehensive smart home installation including smart thermostats, lighting control systems, security systems, entertainment centers, voice assistant integration, and home automation platforms for modern connected living."
     },
     {
-      question: "What does your end-of-tenancy cleaning service include?",
-      answer: "Our end-of-tenancy cleaning includes deep cleaning of all rooms, kitchen appliances, bathrooms, windows, carpets, and common areas. We ensure properties meet landlord and letting agent standards for deposit return."
-    },
-    {
       question: "Do you provide Building Management System (BMS) installation?",
       answer: "Yes, we install and maintain Building Management Systems for commercial properties. This includes HVAC control systems, energy monitoring, lighting control, security integration, and automated building operations for improved efficiency and management."
     },
