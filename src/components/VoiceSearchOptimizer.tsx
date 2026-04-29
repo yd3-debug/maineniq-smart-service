@@ -30,7 +30,7 @@ const VoiceSearchOptimizer = ({ faqs, serviceName }: VoiceSearchOptimizerProps) 
         ]
       };
 
-      // Add voice search optimized questions
+      // Add conversational keywords meta tag for voice search
       const voiceQueries = [
         `Who provides ${serviceName || 'HVAC maintenance'} near me?`,
         `Best ${serviceName || 'property maintenance'} company London`,
@@ -42,58 +42,12 @@ const VoiceSearchOptimizer = ({ faqs, serviceName }: VoiceSearchOptimizerProps) 
         "Gas Safe registered engineers London"
       ];
 
-      // Create question and answer pairs for voice search
-      const voiceFAQSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "name": `${serviceName || 'Property Maintenance'} Voice Search FAQ`,
-        "mainEntity": [
-          ...voiceQueries.map(query => ({
-            "@type": "Question",
-            "name": query,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Mainteniq provides professional ${serviceName?.toLowerCase() || 'property maintenance'} services across London and 120-mile radius. We offer 24/7 emergency response, certified engineers, and 4.9-star rated service. Contact us on +44 783 456 2366 for immediate assistance.`,
-              "speakable": {
-                "@type": "SpeakableSpecification",
-                "xpath": "//p[contains(@class, 'voice-answer')]"
-              }
-            }
-          })),
-          ...(faqs || []).map(faq => ({
-            "@type": "Question", 
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer,
-              "speakable": {
-                "@type": "SpeakableSpecification",
-                "cssSelector": ".faq-answer"
-              }
-            }
-          }))
-        ]
-      };
-
-      // Add the schema
-      let script = document.getElementById(`voice-search-schema-${location.pathname.replace(/\//g, '-')}`) as HTMLScriptElement;
-      if (!script) {
-        script = document.createElement('script');
-        script.id = `voice-search-schema-${location.pathname.replace(/\//g, '-')}`;
-        script.type = 'application/ld+json';
-        document.head.appendChild(script);
-      }
-      script.textContent = JSON.stringify(voiceFAQSchema);
-
-      // Add conversational keywords meta tag
       const conversationalMeta = document.createElement('meta');
       conversationalMeta.name = 'voice-search-keywords';
       conversationalMeta.content = voiceQueries.join(', ');
       document.head.appendChild(conversationalMeta);
 
       return () => {
-        const existingScript = document.getElementById(`voice-search-schema-${location.pathname.replace(/\//g, '-')}`);
-        if (existingScript) document.head.removeChild(existingScript);
         if (conversationalMeta.parentNode) document.head.removeChild(conversationalMeta);
       };
     };

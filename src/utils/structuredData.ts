@@ -251,7 +251,9 @@ export const generateServiceSchema = (service: {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "247"
+      "reviewCount": "247",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   },
   "areaServed": service.areaServed || [
@@ -323,7 +325,9 @@ export const generatePlumberElectricianSchema = () => ({
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "247"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 });
 
@@ -355,7 +359,9 @@ export const generateHandymanSchema = () => ({
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "247"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 });
 
@@ -385,7 +391,9 @@ export const generateSmartHomeSchema = () => ({
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "247"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 });
 
@@ -417,7 +425,9 @@ export const generateMaintenanceContractSchema = () => ({
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "247"
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 });
 
@@ -516,7 +526,7 @@ export const generateFCUServiceSchema = () => ({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
     "geoRadius": "193121"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // HIU Service Schema
@@ -540,7 +550,7 @@ export const generateHIUServiceSchema = () => ({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
     "geoRadius": "193121"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // MVHR Service Schema
@@ -564,7 +574,7 @@ export const generateMVHRServiceSchema = () => ({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
     "geoRadius": "193121"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // HVAC Service Schema
@@ -592,7 +602,7 @@ export const generateHVACServiceSchema = () => ({
     { "@type": "EducationalOccupationalCredential", "name": "F-Gas Certified" },
     { "@type": "EducationalOccupationalCredential", "name": "TM44 Accredited" }
   ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // BMS Service Schema
@@ -616,7 +626,7 @@ export const generateBMSServiceSchema = () => ({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
     "geoRadius": "193121"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // Renovation Service Schema
@@ -640,7 +650,7 @@ export const generateRenovationServiceSchema = () => ({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
     "geoRadius": "193121"
   },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
 // HowTo Schema for process sections
@@ -695,6 +705,6 @@ export const generateBoilerServiceSchema = () => ({
   "hasCredential": [
     { "@type": "EducationalOccupationalCredential", "name": "Gas Safe Registered" }
   ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247", "bestRating": "5", "worstRating": "1" }
 });
 
