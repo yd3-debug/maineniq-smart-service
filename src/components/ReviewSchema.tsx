@@ -31,7 +31,7 @@ const ReviewSchema = ({
     // Generate review schema for trust signals and SEO
     const reviewSchema = {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "@id": "https://www.mainteniq.co.uk/#organization",
       "name": "Mainteniq",
       "url": "https://www.mainteniq.co.uk",
@@ -68,7 +68,8 @@ const ReviewSchema = ({
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
-            "bestRating": "5"
+            "bestRating": "5",
+            "worstRating": "1"
           },
           "reviewBody": "Exceptional HVAC maintenance service. The team was professional, punctual, and thorough. Our heating system has never worked better.",
           "datePublished": "2025-09-15",
@@ -83,7 +84,8 @@ const ReviewSchema = ({
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
-            "bestRating": "5"
+            "bestRating": "5",
+            "worstRating": "1"
           },
           "reviewBody": "Fast response for emergency repair. Excellent communication and fair pricing. Highly recommend for property maintenance needs.",
           "datePublished": "2025-08-28",
@@ -98,7 +100,8 @@ const ReviewSchema = ({
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
-            "bestRating": "5"
+            "bestRating": "5",
+            "worstRating": "1"
           },
           "reviewBody": "Professional team, great attention to detail. They completed our FCU maintenance ahead of schedule and the air quality improved immediately.",
           "datePublished": "2025-09-02",

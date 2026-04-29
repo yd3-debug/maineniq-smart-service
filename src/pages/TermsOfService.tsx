@@ -11,9 +11,9 @@ const TermsOfService = () => {
   return (
     <>
       <SEOHead 
-        title="Terms of Service - MaintenIQ HVAC Services"
-        description="Terms and conditions for MaintenIQ HVAC maintenance, installation, and repair services. Professional service agreements and customer responsibilities."
-        keywords="terms of service, HVAC services, service agreement, MaintenIQ, UK law"
+        title="Terms of Service - Mainteniq HVAC Services"
+        description="Terms and conditions for Mainteniq HVAC maintenance, installation, and repair services. Professional service agreements and customer responsibilities."
+        keywords="terms of service, HVAC services, service agreement, Mainteniq, UK law"
         canonicalUrl="https://www.mainteniq.co.uk/terms-of-service"
         breadcrumbData={breadcrumbData}
       />
@@ -36,7 +36,7 @@ const TermsOfService = () => {
               
               <h3 className="text-xl font-semibold mb-3">1.1 Acceptance of Terms</h3>
               <p className="mb-4">
-                By engaging MaintenIQ for HVAC services, you agree to these terms and conditions. 
+                By engaging Mainteniq for HVAC services, you agree to these terms and conditions. 
                 Our services are provided according to British Standards, Gas Safe regulations, and all applicable UK law.
               </p>
 
@@ -201,7 +201,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-semibold mb-4">10. Contact Information</h2>
               
               <div className="bg-muted p-4 rounded-lg">
-                <p><strong>MaintenIQ Ltd</strong></p>
+                <p><strong>Mainteniq Ltd</strong></p>
                 <p>Email: info@mainteniq.co.uk</p>
                 <p>Phone: +44 (0) 189 55 28 226</p>
                 <p>Emergency: Available 24/7</p>

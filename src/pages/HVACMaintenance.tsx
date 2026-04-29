@@ -150,7 +150,7 @@ export default function HVACMaintenance() {
     <div className="min-h-screen bg-background">
       <EnhancedFAQSchema faqs={hvacFaqs} pageTitle="HVAC Maintenance" />
       <SEOHead
-        title="HVAC & Commercial Refrigeration Maintenance UK | Professional Service"
+        title="Air Conditioning & Heating Maintenance London | Mainteniq"
         description="Professional HVAC and commercial refrigeration maintenance for UK properties. FCU, MVHR, HIU, VRF systems, cold rooms, and display refrigeration. F-Gas certified engineers."
         keywords="HVAC maintenance London, commercial refrigeration service, FCU maintenance, MVHR servicing, VRF systems, F-Gas certified, TM44 inspection, commercial air conditioning"
         canonicalUrl="https://www.mainteniq.co.uk/hvac-maintenance"

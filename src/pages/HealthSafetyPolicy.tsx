@@ -11,9 +11,9 @@ const HealthSafetyPolicy = () => {
   return (
     <>
       <SEOHead 
-        title="Health & Safety Policy - MaintenIQ HVAC Services"
-        description="MaintenIQ's comprehensive health and safety policy for HVAC work. Our commitment to safe working practices and regulatory compliance."
-        keywords="health safety policy, HVAC safety, workplace safety, Gas Safe, MaintenIQ"
+        title="Health & Safety Policy - Mainteniq HVAC Services"
+        description="Mainteniq's comprehensive health and safety policy for HVAC work. Our commitment to safe working practices and regulatory compliance."
+        keywords="health safety policy, HVAC safety, workplace safety, Gas Safe, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/health-safety-policy"
         breadcrumbData={breadcrumbData}
       />
@@ -34,7 +34,7 @@ const HealthSafetyPolicy = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">1. Our Commitment</h2>
               <p className="mb-4">
-                MaintenIQ is committed to maintaining the highest standards of health and safety for our 
+                Mainteniq is committed to maintaining the highest standards of health and safety for our 
                 employees, customers, and the public. We believe that all workplace accidents and 
                 occupational ill health are preventable.
               </p>

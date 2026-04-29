@@ -133,9 +133,9 @@ const MaintenanceContracts = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Custom Maintenance Contracts UK | Prevent 80% Breakdowns | 24/7 Response | Mainteniq"
-        description="Tailored HVAC, plumbing & electrical maintenance contracts for landlords & property managers. Prevent 80% breakdowns, fixed monthly costs, 24/7 response, 99.2% uptime guarantee."
-        keywords="maintenance contracts UK, property maintenance agreements, HVAC maintenance contracts, landlord maintenance services, preventive maintenance contracts, building maintenance, commercial property maintenance, planned maintenance, PPM contracts, facility management"
+        title="Planned Maintenance Contracts London | Landlord & Property Manager Plans | Mainteniq"
+        description="Planned preventive maintenance contracts for London landlords and property managers. HVAC, boiler, plumbing and electrical coverage. Fixed monthly costs, 4-hour emergency response, no call centres."
+        keywords="planned maintenance contracts London, PPM contracts London, landlord maintenance contracts, property maintenance London, HVAC maintenance contract, preventive maintenance, building maintenance contract"
         canonicalUrl="https://www.mainteniq.co.uk/maintenance-contracts"
         structuredData={generateMaintenanceContractSchema()}
         breadcrumbData={generateBreadcrumbSchema([
@@ -146,8 +146,8 @@ const MaintenanceContracts = () => {
         faqData={generateFAQSchema(maintenanceContractFaqs)}
       />
       <FullBleedHero
-        title="Custom Maintenance Contracts for Your Property Portfolio"
-        subtitle="Why choose reactive maintenance when you can prevent problems? Our tailored contracts provide 24/7 guaranteed response, preventive maintenance, and all systems coverage under one provider."
+        title="Planned Maintenance Contracts for London Landlords & Property Managers"
+        subtitle="Stop reacting to breakdowns. Our planned maintenance contracts give you 4-hour emergency response, fixed monthly costs, and one provider for all systems."
         image="/BOILER.png"
         alt="Modern building maintenance systems"
         primaryLabel="Schedule Assessment"

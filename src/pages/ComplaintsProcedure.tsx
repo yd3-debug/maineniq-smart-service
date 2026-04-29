@@ -11,9 +11,9 @@ const ComplaintsProcedure = () => {
   return (
     <>
       <SEOHead 
-        title="Complaints Procedure - MaintenIQ HVAC Services"
-        description="How to make a complaint about MaintenIQ services. Our formal complaints handling process and resolution procedures."
-        keywords="complaints procedure, customer service, complaint resolution, MaintenIQ, HVAC services"
+        title="Complaints Procedure - Mainteniq HVAC Services"
+        description="How to make a complaint about Mainteniq services. Our formal complaints handling process and resolution procedures."
+        keywords="complaints procedure, customer service, complaint resolution, Mainteniq, HVAC services"
         canonicalUrl="https://www.mainteniq.co.uk/complaints-procedure"
         breadcrumbData={breadcrumbData}
       />
@@ -34,7 +34,7 @@ const ComplaintsProcedure = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">1. Our Commitment to Customer Service</h2>
               <p className="mb-4">
-                At MaintenIQ, we are committed to providing exceptional HVAC services and customer care. 
+                At Mainteniq, we are committed to providing exceptional HVAC services and customer care. 
                 We welcome feedback and take all complaints seriously as an opportunity to improve our services.
               </p>
               
@@ -88,7 +88,7 @@ const ComplaintsProcedure = () => {
                   <li><strong>Email:</strong> complaints@mainteniq.co.uk</li>
                   <li><strong>Phone:</strong> +44 (0) 189 55 28 226</li>
                   <li><strong>Online Form:</strong> Available on our website</li>
-                  <li><strong>Post:</strong> MaintenIQ Ltd, Complaints Department, [Address]</li>
+                  <li><strong>Post:</strong> Mainteniq Ltd, Complaints Department, [Address]</li>
                   <li><strong>In Person:</strong> Speak to any engineer or office staff</li>
                 </ul>
               </div>
@@ -276,7 +276,7 @@ const ComplaintsProcedure = () => {
                 <p><strong>Phone:</strong> +44 (0) 189 55 28 226</p>
                 <p><strong>Hours:</strong> Monday-Friday, 8:00 AM - 6:00 PM</p>
                 <p><strong>Emergency:</strong> 24/7 for urgent safety concerns</p>
-                <p><strong>Post:</strong> MaintenIQ Ltd, Complaints Department, [Address]</p>
+                <p><strong>Post:</strong> Mainteniq Ltd, Complaints Department, [Address]</p>
               </div>
               
               <p className="mt-4">

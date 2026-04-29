@@ -11,9 +11,9 @@ const EnvironmentalPolicy = () => {
   return (
     <>
       <SEOHead 
-        title="Environmental Policy - MaintenIQ HVAC Services"
-        description="MaintenIQ's environmental policy and commitment to sustainable HVAC practices, energy efficiency, and environmental protection."
-        keywords="environmental policy, sustainable HVAC, energy efficiency, F-Gas regulations, MaintenIQ"
+        title="Environmental Policy - Mainteniq HVAC Services"
+        description="Mainteniq's environmental policy and commitment to sustainable HVAC practices, energy efficiency, and environmental protection."
+        keywords="environmental policy, sustainable HVAC, energy efficiency, F-Gas regulations, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/environmental-policy"
         breadcrumbData={breadcrumbData}
       />
@@ -34,7 +34,7 @@ const EnvironmentalPolicy = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">1. Our Environmental Commitment</h2>
               <p className="mb-4">
-                MaintenIQ is committed to minimizing our environmental impact while delivering 
+                Mainteniq is committed to minimizing our environmental impact while delivering 
                 exceptional HVAC services. We recognize our responsibility to protect the environment 
                 for future generations and integrate environmental considerations into all our operations.
               </p>

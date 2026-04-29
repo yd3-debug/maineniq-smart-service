@@ -83,8 +83,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Contact Mainteniq | 24/7 HVAC & Property Services London"
-        description="Contact Mainteniq for professional HVAC maintenance, plumbing, electrical, and property services in London. 24/7 emergency response. WhatsApp, phone, and email support."
+        title="Contact Mainteniq | 24/7 Property Emergency Line London"
+        description="24/7 emergency line for landlords and property managers in London. Call, WhatsApp or email for HVAC, plumbing, electrical and property maintenance. 4-hour emergency response."
         keywords="contact HVAC London, emergency plumber London, 24/7 HVAC service, property maintenance contact, WhatsApp HVAC support"
         canonicalUrl="https://www.mainteniq.co.uk/contact"
         breadcrumbData={breadcrumbData}

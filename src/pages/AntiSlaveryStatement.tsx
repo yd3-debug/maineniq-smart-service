@@ -11,9 +11,9 @@ const AntiSlaveryStatement = () => {
   return (
     <>
       <SEOHead 
-        title="Anti-Slavery Statement - MaintenIQ HVAC Services"
-        description="MaintenIQ's Modern Slavery Act statement outlining our commitment to preventing slavery and human trafficking in our operations and supply chain."
-        keywords="anti-slavery statement, modern slavery act, human trafficking, MaintenIQ, ethical business"
+        title="Anti-Slavery Statement - Mainteniq HVAC Services"
+        description="Mainteniq's Modern Slavery Act statement outlining our commitment to preventing slavery and human trafficking in our operations and supply chain."
+        keywords="anti-slavery statement, modern slavery act, human trafficking, Mainteniq, ethical business"
         canonicalUrl="https://www.mainteniq.co.uk/anti-slavery-statement"
         breadcrumbData={breadcrumbData}
       />
@@ -35,22 +35,22 @@ const AntiSlaveryStatement = () => {
               <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
               <p className="mb-4">
                 This statement is made pursuant to Section 54 of the Modern Slavery Act 2015 and sets out 
-                the steps that MaintenIQ has taken and is continuing to take to ensure that modern slavery 
+                the steps that Mainteniq has taken and is continuing to take to ensure that modern slavery 
                 or human trafficking is not taking place within our business or supply chain.
               </p>
               
               <p className="mb-4">
                 Modern slavery encompasses slavery, servitude, human trafficking, and forced labor. 
-                MaintenIQ has a zero-tolerance approach to any form of modern slavery.
+                Mainteniq has a zero-tolerance approach to any form of modern slavery.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">2. About MaintenIQ</h2>
+              <h2 className="text-2xl font-semibold mb-4">2. About Mainteniq</h2>
               
               <h3 className="text-xl font-semibold mb-3">2.1 Our Business</h3>
               <p className="mb-4">
-                MaintenIQ is a UK-based HVAC services company providing maintenance, installation, 
+                Mainteniq is a UK-based HVAC services company providing maintenance, installation, 
                 and repair services for heating, ventilation, and air conditioning systems across 
                 residential and commercial properties.
               </p>
@@ -234,7 +234,7 @@ const AntiSlaveryStatement = () => {
               <h2 className="text-2xl font-semibold mb-4">10. Approval and Review</h2>
               
               <p className="mb-4">
-                This statement has been approved by the MaintenIQ board of directors and will be 
+                This statement has been approved by the Mainteniq board of directors and will be 
                 reviewed annually. Any significant changes to our business or supply chain will 
                 trigger an immediate review of this statement.
               </p>

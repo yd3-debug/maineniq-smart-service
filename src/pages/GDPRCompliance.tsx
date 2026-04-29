@@ -11,9 +11,9 @@ const GDPRCompliance = () => {
   return (
     <>
       <SEOHead 
-        title="GDPR Compliance - MaintenIQ HVAC Services"
-        description="MaintenIQ's GDPR compliance statement. Learn about your data protection rights, how we process personal data, and our legal basis for data handling."
-        keywords="GDPR compliance, data protection, UK GDPR, personal data rights, MaintenIQ"
+        title="GDPR Compliance - Mainteniq HVAC Services"
+        description="Mainteniq's GDPR compliance statement. Learn about your data protection rights, how we process personal data, and our legal basis for data handling."
+        keywords="GDPR compliance, data protection, UK GDPR, personal data rights, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/gdpr-compliance"
         breadcrumbData={breadcrumbData}
       />

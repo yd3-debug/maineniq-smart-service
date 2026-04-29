@@ -207,8 +207,8 @@ const SmartHome: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Smart Home Automation Installation London | Professional Setup | Mainteniq"
-        description="Expert smart home installation in London. Control lighting, entertainment, security & energy from one app. SMETS2 smart meter integration. Professional installation & ongoing support."
+        title="Smart Home Installation London | Airbnb, Landlords & Private | Mainteniq"
+        description="Smart home installation in London for landlords, Airbnb hosts and homeowners. Nest, Hive, Tado, Hue, keyless entry, noise sensors. Professional setup with ongoing support."
         keywords="smart home London, smart home automation, home automation installation, smart lighting London, home security systems, entertainment systems, smart locks, energy monitoring UK, SMETS2 integration, smart home installer"
         canonicalUrl="https://www.mainteniq.co.uk/smart-home"
         structuredData={generateSmartHomeSchema()}
@@ -227,8 +227,8 @@ const SmartHome: React.FC = () => {
       <VoiceSearchOptimizer faqs={smartHomeFaqs} serviceName="Smart Home Automation" />
       
       <FullBleedHero
-        title="Smart Home Automation"
-        subtitle="Transform your home with intelligent lighting, entertainment, security and energy monitoring. Professional installation with comprehensive automation."
+        title="Smart Home Automation for London Properties"
+        subtitle="Keyless entry, smart heating, noise sensors and full automation for landlords, Airbnb hosts and homeowners. Professional installation across London."
         image={smartHomeAutomation}
         alt="Smart home automation system with integrated lighting and security controls"
         primaryLabel="Request Smart Home Consultation"

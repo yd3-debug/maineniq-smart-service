@@ -108,8 +108,8 @@ const PlumberElectrician: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Professional Plumber & Electrician Services London | Gas Safe & NICEIC | Mainteniq"
-        description="Certified Gas Safe plumbers & NICEIC electricians in London. Emergency repairs, boiler installation, rewiring, CP12 & EICR certificates. 24/7 response. Free quotes."
+        title="Plumber & Electrician Services London | Gas Safe & NICEIC | Mainteniq"
+        description="Gas Safe plumbers and NICEIC electricians in London. EICR, gas safety certificates (CP12), emergency boiler repair, rewiring. 24/7 response for landlords and property managers."
         keywords="plumber London, electrician London, Gas Safe registered plumber, NICEIC electrician, boiler repair London, rewiring London, emergency plumber London, CP12 certificate, EICR London, electrical installation London, boiler service London, emergency electrician"
         canonicalUrl="https://www.mainteniq.co.uk/plumber-electrician"
         structuredData={generatePlumberElectricianSchema()}
@@ -131,8 +131,8 @@ const PlumberElectrician: React.FC = () => {
       />
       
       <FullBleedHero
-        title="Professional Plumber & Electrician Services"
-        subtitle="Gas Safe registered plumbers and NICEIC certified electricians delivering safe, compliant installations and emergency repairs across London."
+        title="Plumbing & Electrical Services for London Landlords"
+        subtitle="Gas Safe registered plumbers and NICEIC certified electricians. CP12, EICR, emergency repairs and compliance certificates across London."
         image={plumberElectricianWork}
         alt="Professional plumber and electrician performing certified installation work"
         primaryLabel="Get Professional Quote"

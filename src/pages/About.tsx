@@ -96,8 +96,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="About Mainteniq | Expert HVAC & Property Maintenance Team"
-        description="Learn about Mainteniq's professional HVAC, FCU, HIU & CIU, MVHR maintenance services. 15+ years experience, 4.9★ rating, certified engineers, emergency response across London."
+        title="About Mainteniq | London Property Maintenance Team"
+        description="Mainteniq is a London-based property maintenance company (Companies House 14774362). Gas Safe & NICEIC certified engineers. 4.9★ rating from 247+ landlords and property managers."
         keywords="about Mainteniq, HVAC maintenance company, property services London, professional maintenance team, certified engineers, emergency HVAC response"
         canonicalUrl="https://www.mainteniq.co.uk/about"
         breadcrumbData={breadcrumbData}

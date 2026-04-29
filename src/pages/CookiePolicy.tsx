@@ -11,9 +11,9 @@ const CookiePolicy = () => {
   return (
     <>
       <SEOHead 
-        title="Cookie Policy - MaintenIQ HVAC Services"
-        description="Learn how MaintenIQ uses cookies on our website. Information about cookie types, purposes, and how to manage your cookie preferences."
-        keywords="cookie policy, website cookies, data privacy, MaintenIQ"
+        title="Cookie Policy - Mainteniq HVAC Services"
+        description="Learn how Mainteniq uses cookies on our website. Information about cookie types, purposes, and how to manage your cookie preferences."
+        keywords="cookie policy, website cookies, data privacy, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/cookie-policy"
         breadcrumbData={breadcrumbData}
       />

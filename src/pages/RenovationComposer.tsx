@@ -223,15 +223,15 @@ export default function RenovationComposer() {
   return (
     <>
       <SEOHead 
-        title="Professional Property Renovation & Refurbishment Services London | Mainteniq"
-        description="Transform your property with our expert renovation and refurbishment services. Kitchen, bathroom, and full property renovations across London. Professional project management and guaranteed quality."
-        keywords="property renovation London, refurbishment services, kitchen renovation, bathroom renovation, property transformation, London renovation, full property renovation, commercial renovation"
-        canonicalUrl="https://www.mainteniq.co.uk/renovation-composer"
+        title="Property Renovation & Refurbishment London | Mainteniq"
+        description="Full-service property renovation and refurbishment in London. Kitchen, bathroom and full property transformations for landlords and homeowners. Project-managed, guaranteed quality."
+        keywords="property renovation London, refurbishment London, kitchen renovation London, bathroom renovation London, landlord refurbishment, full property renovation London"
+        canonicalUrl="https://www.mainteniq.co.uk/property-renovation-london"
         ogImage="/2024_Kitchen.png"
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
-          { name: "Renovation & Refurbishment", url: "https://www.mainteniq.co.uk/renovation-composer" }
+          { name: "Renovation & Refurbishment", url: "https://www.mainteniq.co.uk/property-renovation-london" }
         ])}
         faqData={generateFAQSchema(renovationFaqs)}
         serviceData={generateRenovationServiceSchema()}
@@ -260,8 +260,8 @@ export default function RenovationComposer() {
 
       {/* Hero Section with WhatsApp CTAs */}
       <FullBleedHero
-        title="Transform Your Property with Professional Renovation Services"
-        subtitle="From outdated spaces to modern masterpieces - we deliver comprehensive renovation and refurbishment solutions that enhance both value and livability."
+        title="Full-Service Property Renovation for Landlords & Homeowners"
+        subtitle="Kitchen, bathroom and full property refurbishment across London. Project-managed from start to finish with a guaranteed timeline and quality warranty."
         image="/New_Flat.jpg"
         alt="Genuine UK property renovation showing dramatic before and after transformation of London flat"
         primaryLabel="Get Free Consultation"

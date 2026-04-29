@@ -22,22 +22,22 @@ const bmsFaqs = [
   { question: "How often should BMS systems be maintained?", answer: "BMS systems should have quarterly preventive maintenance checks, with comprehensive annual reviews. Critical systems may require monthly monitoring and calibration." },
   { question: "What are the benefits of BMS maintenance?", answer: "Regular BMS maintenance reduces energy costs by 15-30%, prevents system failures, extends equipment lifespan, ensures occupant comfort, and maintains regulatory compliance." },
   { question: "Can you maintain any BMS brand?", answer: "Yes, we service all major BMS platforms including Trend, Siemens, Honeywell, Johnson Controls, Schneider Electric, and Tridium. Our engineers are multi-platform certified." },
-  { question: "What does BMS optimization include?", answer: "BMS optimization includes control strategy review, setpoint optimization, scheduling adjustments, sensor calibration, trending analysis, and energy performance improvements." },
-  { question: "How much can BMS optimization save on energy costs?", answer: "Proper BMS optimization typically saves 15-30% on energy costs. We provide detailed energy reports showing before and after performance metrics." }
+  { question: "What does BMS optimisation include?", answer: "BMS optimisation includes control strategy review, setpoint optimisation, scheduling adjustments, sensor calibration, trending analysis, and energy performance improvements." },
+  { question: "How much can BMS optimisation save on energy costs?", answer: "Proper BMS optimisation typically saves 15-30% on energy costs. We provide detailed energy reports showing before and after performance metrics." }
 ];
 
 const BMS: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="BMS Maintenance & Optimization London | Building Management Systems | Mainteniq"
-        description="Expert BMS maintenance services to optimize your building management system performance, reduce energy costs by 15-30%, and ensure reliable operation. Multi-platform certified engineers."
-        keywords="BMS maintenance London, building management system, BMS optimization, HVAC controls, building automation, Trend BMS, Siemens BMS, energy management, building controls maintenance"
-        canonicalUrl="https://www.mainteniq.co.uk/bms"
+        title="Building Management Systems (BMS) London | Installation & Service | Mainteniq"
+        description="Expert BMS installation, commissioning and servicing for commercial buildings in London. Trend, Siemens, Honeywell, Johnson Controls. Reduce energy costs 15-30%. Multi-platform certified engineers."
+        keywords="BMS London, building management system London, BMS maintenance, BMS installation, building automation, Trend BMS, Siemens BMS, energy management, building controls London"
+        canonicalUrl="https://www.mainteniq.co.uk/building-management-systems-london"
         breadcrumbData={generateBreadcrumbSchema([
           { name: "Home", url: "https://www.mainteniq.co.uk" },
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
-          { name: "BMS Maintenance", url: "https://www.mainteniq.co.uk/bms" }
+          { name: "Building Management Systems", url: "https://www.mainteniq.co.uk/building-management-systems-london" }
         ])}
         faqData={generateFAQSchema(bmsFaqs)}
         serviceData={generateBMSServiceSchema()}
@@ -50,8 +50,8 @@ const BMS: React.FC = () => {
       <VoiceSearchOptimizer faqs={bmsFaqs} serviceName="BMS Maintenance" />
       {/* Enhanced Hero Section */}
       <FullBleedHero
-        title="BMS Maintenance & Optimization"
-        subtitle="Expert servicing and optimization of your existing building management systems. Maximize efficiency, reduce costs, and ensure reliable operation."
+        title="Building Management System Installation & Service in London"
+        subtitle="Expert BMS installation, commissioning and servicing for commercial buildings. Reduce energy costs 15–30% with multi-platform certified engineers."
         image={bmsControlRoom}
         alt="BMS control room with dashboards for building automation"
         primaryLabel="Get BMS Maintenance Quote"
@@ -68,7 +68,7 @@ const BMS: React.FC = () => {
         {/* Key Maintenance Benefits */}
         <section className="text-center space-y-6 md:space-y-8">
           <div className="space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Expert BMS Maintenance & Optimization</h2>
+            <h2 className="font-heading text-2xl sm:text-3xl font-bold">Expert BMS Maintenance & Optimisation</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
               Professional maintenance services that maximize your existing BMS investment
             </p>
@@ -82,7 +82,7 @@ const BMS: React.FC = () => {
                 icon: "🔧"
               },
               {
-                title: "Performance Optimization",
+                title: "Performance Optimisation",
                 description: "Fine-tuning existing systems for maximum efficiency and reduced energy costs",
                 icon: "⚡"
               },
@@ -128,7 +128,7 @@ const BMS: React.FC = () => {
             {[
               {
                 title: "System Degradation & Inefficiency",
-                description: "Regular maintenance and optimization prevent gradual performance decline and energy waste",
+                description: "Regular maintenance and optimisation prevent gradual performance decline and energy waste",
                 impact: "£10k+ annual savings"
               },
               {

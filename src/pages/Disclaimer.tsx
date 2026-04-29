@@ -11,9 +11,9 @@ const Disclaimer = () => {
   return (
     <>
       <SEOHead 
-        title="Disclaimer - MaintenIQ HVAC Services"
-        description="Important disclaimers and limitations regarding MaintenIQ HVAC services, website content, and service recommendations."
-        keywords="disclaimer, liability, HVAC services, MaintenIQ, service limitations"
+        title="Disclaimer - Mainteniq HVAC Services"
+        description="Important disclaimers and limitations regarding Mainteniq HVAC services, website content, and service recommendations."
+        keywords="disclaimer, liability, HVAC services, Mainteniq, service limitations"
         canonicalUrl="https://www.mainteniq.co.uk/disclaimer"
         breadcrumbData={breadcrumbData}
       />
@@ -108,7 +108,7 @@ const Disclaimer = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">8. Limitation of Liability</h2>
               <p className="mb-4">
-                To the fullest extent permitted by law, MaintenIQ shall not be liable for any indirect, 
+                To the fullest extent permitted by law, Mainteniq shall not be liable for any indirect, 
                 incidental, special, or consequential damages arising from the use of this website or our services.
               </p>
             </section>
