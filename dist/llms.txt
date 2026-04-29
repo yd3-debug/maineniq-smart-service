@@ -1,0 +1,34 @@
+# Mainteniq
+
+> Mainteniq is a London-based property maintenance company serving landlords, Airbnb hosts, property managers, and block management companies across London and a 120-mile radius covering most of the Home Counties. Gas Safe and NICEIC certified. Specialises in planned maintenance contracts for residential blocks with fan coil units (FCU), heat interface units (HIU), mechanical ventilation with heat recovery (MVHR), and communal heating systems (CIU).
+
+## Services
+
+- [Planned Maintenance Contracts](https://www.mainteniq.co.uk/maintenance-contracts): Planned preventative maintenance for HVAC, plumbing, electrical and compliance.
+- [Air Conditioning and Heating](https://www.mainteniq.co.uk/hvac-maintenance): F-Gas certified AC servicing, boiler servicing, FCU, HIU and MVHR.
+- [Boiler Services](https://www.mainteniq.co.uk/boiler-services): Gas Safe registered boiler repair, installation, servicing and CP12 certificates.
+- [Plumbing and Electrical](https://www.mainteniq.co.uk/plumber-electrician): Gas Safe plumbers and NICEIC electricians. EICR and CP12 certificates.
+- [Building Management Systems](https://www.mainteniq.co.uk/building-management-systems-london): BMS installation, commissioning and servicing. Trend, Siemens, Honeywell.
+- [Smart Home](https://www.mainteniq.co.uk/smart-home): Smart home automation for Airbnb hosts and private clients.
+- [Property Renovation](https://www.mainteniq.co.uk/property-renovation-london): Full-service refurbishment in London.
+- [FCU Maintenance](https://www.mainteniq.co.uk/fcu-maintenance): Fan coil unit servicing and repair.
+- [HIU Maintenance](https://www.mainteniq.co.uk/hiu-maintenance): Heat interface unit servicing for district heating systems.
+- [MVHR Maintenance](https://www.mainteniq.co.uk/mvhr-maintenance): Mechanical ventilation with heat recovery servicing.
+- [Handyman Services](https://www.mainteniq.co.uk/handyman): General property repairs and maintenance.
+- [End of Tenancy Cleaning](https://www.mainteniq.co.uk/end-of-tenancy-cleaning): Professional deep cleaning for rental properties.
+
+## Company
+
+- Legal name: MAINTENIQ LTD
+- Companies House: 14774362
+- Registered in England and Wales
+- Service area: London plus 120 miles (all 32 boroughs + Home Counties)
+- Certifications: Gas Safe registered, NICEIC Approved Contractor, F-Gas certified
+- Emergency line: 24/7 for contracted clients
+
+## Contact
+
+- Website: https://www.mainteniq.co.uk
+- Contact page: https://www.mainteniq.co.uk/contact
+- Phone: +44 783 456 2366
+- Email: info@mainteniq.co.uk
