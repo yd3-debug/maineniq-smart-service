@@ -187,7 +187,6 @@ const FCUMaintenance = () => {
         faqData={generateFAQSchema(fcuFaqs)}
         serviceData={generateFCUServiceSchema()}
       />
-      <EnhancedFAQSchema faqs={fcuFaqs} pageTitle="FCU Maintenance" />
       <LocalBusinessSchema 
         businessType="FCU Maintenance" 
         serviceName="Fan Coil Unit Servicing"

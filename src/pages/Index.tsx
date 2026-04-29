@@ -122,7 +122,6 @@ const Index = () => {
         keywords="HVAC maintenance London, property services, FCU maintenance, HIU service, MVHR maintenance, landlord services, Airbnb property maintenance, building maintenance London"
         canonicalUrl="https://www.mainteniq.co.uk/"
         structuredData={generateOrganizationSchema()}
-        faqData={faqData}
         breadcrumbData={breadcrumbData}
       />
       

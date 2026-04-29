@@ -20,34 +20,14 @@ const EnhancedFAQSchema = ({ faqs, pageTitle }: EnhancedFAQSchemaProps) => {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "name": pageTitle ? `${pageTitle} - Frequently Asked Questions` : "Mainteniq FAQ",
-      "description": `Common questions about ${pageTitle?.toLowerCase() || 'our services'} answered by UK property maintenance experts`,
-      "url": `https://www.mainteniq.co.uk${location.pathname}`,
-      "mainEntity": faqs.map((faq, index) => ({
+      "mainEntity": faqs.map((faq) => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.answer,
-          "author": {
-            "@type": "Organization",
-            "name": "Mainteniq",
-            "url": "https://www.mainteniq.co.uk"
-          }
-        },
-        "position": index + 1
-      })),
-      "publisher": {
-        "@type": "Organization",
-        "name": "Mainteniq",
-        "url": "https://www.mainteniq.co.uk",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.mainteniq.co.uk/LOGOPETRU2.png"
+          "text": faq.answer
         }
-      },
-      "dateCreated": new Date().toISOString(),
-      "dateModified": new Date().toISOString()
+      }))
     };
 
     // Add the FAQ schema

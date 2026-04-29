@@ -169,7 +169,6 @@ const HIUMaintenance = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <EnhancedFAQSchema faqs={hiuFaqs} pageTitle="HIU & CIU Maintenance" />
       <SEOHead
         title="HIU & CIU Maintenance London | Heat Interface Unit Service | Mainteniq"
         description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."

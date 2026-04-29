@@ -228,7 +228,6 @@ const MVHRMaintenance = () => {
         faqData={generateFAQSchema(mvhrFaqs)}
         serviceData={generateMVHRServiceSchema()}
       />
-      <EnhancedFAQSchema faqs={mvhrFaqs} pageTitle="MVHR Maintenance" />
       <LocalBusinessSchema 
         businessType="MVHR Maintenance" 
         serviceName="MVHR Filter Replacement & Heat Recovery Service"
