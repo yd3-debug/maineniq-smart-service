@@ -26,15 +26,11 @@ const FAQ = () => {
     },
     {
       question: "What is included in your MVHR maintenance service?",
-      answer: "Our MVHR maintenance includes filter replacement, heat exchanger cleaning and inspection, ductwork cleaning and leak testing, airflow balancing and optimization, performance testing and reporting, and recommendations for efficiency improvements."
+      answer: "Our MVHR maintenance includes filter replacement, heat exchanger cleaning and inspection, ductwork cleaning and leak testing, airflow balancing and optimisation, performance testing and reporting, and recommendations for efficiency improvements."
     },
     {
       question: "Do you offer smart home installation and automation services?",
       answer: "Yes, we provide comprehensive smart home installation including smart thermostats, lighting control systems, security systems, entertainment centers, voice assistant integration, and home automation platforms for modern connected living."
-    },
-    {
-      question: "What does your end-of-tenancy cleaning service include?",
-      answer: "Our end-of-tenancy cleaning includes deep cleaning of all rooms, kitchen appliances, bathrooms, windows, carpets, and common areas. We ensure properties meet landlord and letting agent standards for deposit return."
     },
     {
       question: "Do you provide Building Management System (BMS) installation?",
@@ -65,7 +61,7 @@ const FAQ = () => {
     <>
       <SEOHead 
         title="Frequently Asked Questions | HVAC, Plumbing & Property Services FAQ"
-        description="Get answers to common questions about our HVAC maintenance, plumbing, electrical, handyman, BMS, smart home and end-of-tenancy cleaning services across the UK."
+        description="Get answers to common questions about our HVAC maintenance, plumbing, electrical, handyman, BMS, smart home and air conditioning services across the UK."
         keywords="HVAC FAQ, property maintenance questions, FCU HIU MVHR service questions, emergency repair services, UK property maintenance, smart home installation FAQ"
         canonicalUrl="https://www.mainteniq.co.uk/faq"
         structuredData={faqData}

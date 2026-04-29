@@ -1,5 +1,5 @@
 // Current date for all schema dateModified fields
-const CURRENT_DATE = '2026-01-27';
+const CURRENT_DATE = '2026-04-29';
 
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
@@ -7,7 +7,7 @@ export const generateOrganizationSchema = () => ({
   "@id": "https://www.mainteniq.co.uk/#organization",
   "name": "Mainteniq",
   "alternateName": "Mainteniq UK HVAC & Property Services",
-  "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical, handyman & end-of-tenancy cleaning across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified, 4.9 star rating.",
+  "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical & handyman services across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified, 4.9 star rating.",
   "url": "https://www.mainteniq.co.uk",
   "logo": {
     "@type": "ImageObject",
@@ -29,10 +29,10 @@ export const generateOrganizationSchema = () => ({
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Business Street",
-    "addressLocality": "London",
+    "streetAddress": "11a Woodville Gardens",
+    "addressLocality": "Ruislip",
     "addressRegion": "Greater London",
-    "postalCode": "SW1A 1AA",
+    "postalCode": "HA4 7NB",
     "addressCountry": "GB"
   },
   "geo": {
@@ -115,7 +115,6 @@ export const generateOrganizationSchema = () => ({
     "Certified Electrical Services - Wiring, Testing, Emergency Repairs", 
     "Handyman Services - Property Maintenance and Repairs",
     "Smart Home Installation - Automation, Security, Entertainment Systems",
-    "End of Tenancy Cleaning - Deep Clean, Check-out Ready",
     "Emergency 24/7 HVAC Response",
     "Energy Efficiency Consulting",
     "Preventive Maintenance Programs",
@@ -390,37 +389,6 @@ export const generateSmartHomeSchema = () => ({
   }
 });
 
-export const generateCleaningServiceSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  "name": "Mainteniq - End of Tenancy Cleaning",
-  "description": "Professional end of tenancy cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
-  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
-  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
-  "telephone": "+44 783 456 2366",
-  "email": "info@mainteniq.co.uk",
-  "priceRange": "££",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "Greater London",
-    "addressCountry": "GB"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.5074",
-      "longitude": "-0.1278"
-    },
-    "geoRadius": "193121"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247"
-  }
-});
 
 export const generateMaintenanceContractSchema = () => ({
   "@context": "https://schema.org",
@@ -507,21 +475,24 @@ export const generateReviewSchema = (reviews: Array<{
   date: string;
 }>) => ({
   "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "LocalBusiness",
-    "name": "Mainteniq"
-  },
-  "author": reviews.map(review => ({
-    "@type": "Person",
-    "name": review.author
-  })),
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length,
-    "bestRating": "5"
-  },
-  "reviewBody": reviews.map(r => r.text).join(" ")
+  "@type": "LocalBusiness",
+  "@id": "https://www.mainteniq.co.uk/#organization",
+  "name": "Mainteniq",
+  "review": reviews.map(review => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": review.author
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.rating.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": review.text,
+    "datePublished": review.date
+  }))
 });
 
 // FCU Service Schema
@@ -727,28 +698,3 @@ export const generateBoilerServiceSchema = () => ({
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
 });
 
-// End of Tenancy Cleaning Schema
-export const generateEndOfTenancyCleaningSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  "name": "End of Tenancy Cleaning London",
-  "description": "Professional end of tenancy deep cleaning in London. Deposit-safe standards, inventory-ready results. 48h re-clean guarantee. Same-day availability for urgent move-outs.",
-  "url": "https://www.mainteniq.co.uk/end-of-tenancy-cleaning",
-  "image": "https://www.mainteniq.co.uk/og-image-mainteniq.png",
-  "dateModified": CURRENT_DATE,
-  "telephone": "+44 783 456 2366",
-  "email": "info@mainteniq.co.uk",
-  "priceRange": "££",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "London",
-    "addressRegion": "Greater London",
-    "addressCountry": "GB"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.5074", "longitude": "-0.1278" },
-    "geoRadius": "193121"
-  },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "247" }
-});

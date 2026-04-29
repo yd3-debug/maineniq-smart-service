@@ -24,7 +24,7 @@ const routeLabels: Record<string, string> = {
   "smart-home": "Smart Home",
   "plumber-electrician": "Plumber & Electrician",
   "handyman": "Handyman",
-  "end-of-tenancy-cleaning": "End of Tenancy Cleaning",
+  "air-conditioning-london": "Air Conditioning London",
   "renovation-composer": "Renovation",
   "maintenance-contracts": "Maintenance Contracts",
   "case-studies": "Case Studies",

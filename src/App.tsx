@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { LoadingPage } from "@/components/LoadingSpinner";
 import Navigation from "./components/Navigation";
@@ -36,8 +36,8 @@ const BMS = lazy(() => import("./pages/BMS"));
 const SmartHome = lazy(() => import("./pages/SmartHome"));
 const PlumberElectrician = lazy(() => import("./pages/PlumberElectrician"));
 const Handyman = lazy(() => import("./pages/Handyman"));
-const EndOfTenancyCleaning = lazy(() => import("./pages/EndOfTenancyCleaning"));
 const BoilerServices = lazy(() => import("./pages/BoilerServices"));
+const AirConditioningLondon = lazy(() => import("./pages/AirConditioningLondon"));
 
 const MaintenanceContracts = lazy(() => import("./pages/MaintenanceContracts"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -139,13 +139,14 @@ const App = () => {
               </Suspense>
             </Layout>
           } />
-          <Route path="/bms" element={
+          <Route path="/building-management-systems-london" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <BMS />
               </Suspense>
             </Layout>
           } />
+          <Route path="/bms" element={<Navigate to="/building-management-systems-london" replace />} />
           <Route path="/smart-home" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
@@ -167,17 +168,17 @@ const App = () => {
               </Suspense>
             </Layout>
           } />
-          <Route path="/end-of-tenancy-cleaning" element={
-            <Layout>
-              <Suspense fallback={<LoadingPage />}>
-                <EndOfTenancyCleaning />
-              </Suspense>
-            </Layout>
-          } />
           <Route path="/boiler-services" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <BoilerServices />
+              </Suspense>
+            </Layout>
+          } />
+          <Route path="/air-conditioning-london" element={
+            <Layout>
+              <Suspense fallback={<LoadingPage />}>
+                <AirConditioningLondon />
               </Suspense>
             </Layout>
           } />
@@ -242,13 +243,14 @@ const App = () => {
               <Admin />
             </Suspense>
           } />
-          <Route path="/renovation-composer" element={
+          <Route path="/property-renovation-london" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>
                 <RenovationComposer />
               </Suspense>
             </Layout>
           } />
+          <Route path="/renovation-composer" element={<Navigate to="/property-renovation-london" replace />} />
           <Route path="/blog" element={
             <Layout>
               <Suspense fallback={<LoadingPage />}>

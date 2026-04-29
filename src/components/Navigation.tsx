@@ -14,7 +14,7 @@ const Navigation = () => {
   console.log('Navigation.tsx: Current location:', location.pathname);
 
   // Routes that have light backgrounds and need dark header styling
-  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/end-of-tenancy-cleaning', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts', '/boiler-services'];
+  const lightBackgroundRoutes = ['/why-professional-hvac', '/services', '/about', '/contact', '/case-studies', '/hvac-maintenance', '/fcu-maintenance', '/hiu-maintenance', '/ciu-maintenance', '/mvhr-maintenance', '/air-conditioning-london', '/handyman', '/plumber-electrician', '/smart-home', '/bms', '/renovation-composer', '/privacy-policy', '/terms-of-service', '/cookie-policy', '/gdpr-compliance', '/maintenance-contracts', '/boiler-services'];
   const hasLightBackground = lightBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
@@ -38,14 +38,14 @@ const Navigation = () => {
           { name: "FCU Maintenance", href: "/fcu-maintenance" },
           { name: "HIU/CIU Service", href: "/hiu-maintenance" },
           { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
-          { name: "BMS", href: "/bms" },
+          { name: "BMS", href: "/building-management-systems-london" },
         ]},
         { category: "Property Services", items: [
           { name: "Smart Home", href: "/smart-home" },
           { name: "Plumber & Electrician", href: "/plumber-electrician" },
           { name: "Handyman", href: "/handyman" },
-          { name: "Renovation", href: "/renovation-composer" },
-          { name: "End of Tenancy", href: "/end-of-tenancy-cleaning" },
+          { name: "Renovation", href: "/property-renovation-london" },
+          { name: "Air Conditioning", href: "/air-conditioning-london" },
         ]}
       ]
     },

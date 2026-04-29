@@ -22,7 +22,7 @@ const ReviewSchema = ({
   reviews = [],
   aggregateRating = {
     ratingValue: 4.9,
-    reviewCount: 847,
+    reviewCount: 247,
     bestRating: 5,
     worstRating: 1
   }

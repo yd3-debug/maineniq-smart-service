@@ -27,13 +27,13 @@ import { CardHeader, CardTitle } from "@/components/ui/card";
 import { handleQuoteRequest } from "@/utils/quote";
 import plumbingImage from "@/assets/plumber-electrician-work.jpg";
 import handymanImage from "@/assets/handyman-maintenance.jpg";
-import endOfTenancyImage from "@/assets/end-of-tenancy-cleaning.jpg";
 import smartHomeImage from "@/assets/smart-home-automation.jpg";
 const renovationImage = "/2024_Kitchen.png";
 import bmsControlPanel from "@/assets/bms-control-panel.jpg";
 import { AnimatedCounter } from "@/components/AnimatedChart";
 import { CONTACT } from "@/config/contact";
 import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/FAQSection";
 import ProblemSolutionSection from "@/components/ProblemSolutionSection";
 import { generateOrganizationSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 
@@ -96,10 +96,9 @@ const Index = () => {
   const propertyServices = [
     { title: "Plumbing & Electrical", description: "Repairs and safety checks", image: plumbingImage, href: "/plumber-electrician", stat: "500+ jobs completed" },
     { title: "Handyman", description: "General repairs and maintenance", image: handymanImage, href: "/handyman", stat: "Same-day service" },
-    { title: "End of Tenancy", description: "Deep cleaning for check-out", image: endOfTenancyImage, href: "/end-of-tenancy-cleaning", stat: "100% deposit return rate" },
     { title: "Smart Home", description: "Automation and controls", image: smartHomeImage, href: "/smart-home" },
-    { title: "Renovation", description: "Refurbishment and fit-outs", image: renovationImage, href: "/renovation-composer" },
-    { title: "BMS", description: "Building management systems", image: bmsControlPanel, href: "/bms" },
+    { title: "Renovation", description: "Refurbishment and fit-outs", image: renovationImage, href: "/property-renovation-london" },
+    { title: "BMS", description: "Building management systems", image: bmsControlPanel, href: "/building-management-systems-london" },
   ];
 
   const features = [
@@ -117,9 +116,9 @@ const Index = () => {
 
   return (
     <>
-      <SEOHead 
-        title="Keep Your Building Running | HVAC & Property Services London"
-        description="Professional HVAC maintenance and property services for FCU, HIU, MVHR & CIU systems. Response within 4 hours. Trusted by 1,000+ property managers across London."
+      <SEOHead
+        title="Property Maintenance London for Landlords & Airbnb Hosts | Mainteniq"
+        description="Planned maintenance contracts, emergency call-outs, Gas Safe & NICEIC certified. Protecting rental investments across London & the Home Counties. Get a quote."
         keywords="HVAC maintenance London, property services, FCU maintenance, HIU service, MVHR maintenance, landlord services, Airbnb property maintenance, building maintenance London"
         canonicalUrl="https://www.mainteniq.co.uk/"
         structuredData={generateOrganizationSchema()}
@@ -150,10 +149,10 @@ const Index = () => {
 
                 <div className="space-y-6">
                   <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
-                    Keep Your Building Running.
+                    London Property Maintenance
                     <br />
                     <span className="bg-gradient-to-r from-accent-orange to-energy-gold bg-clip-text text-transparent">
-                      Every System. One Team.
+                      for Landlords, Airbnb Hosts & Property Managers
                     </span>
                   </h1>
                   
@@ -542,8 +541,8 @@ const Index = () => {
               <div>
                 <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Why Choose Mainteniq?</h2>
                 <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
-                  We combine traditional HVAC expertise with modern smart property solutions, 
-                  delivering comprehensive services that prioritize your comfort and efficiency.
+                  We combine air conditioning and heating expertise with modern property maintenance services,
+                  delivering comprehensive solutions that protect your rental investment and keep tenants happy.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -636,6 +635,28 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection
+          heading="Frequently Asked Questions"
+          faqs={[
+            {
+              question: "What areas does Mainteniq cover?",
+              answer: "Mainteniq covers all 32 London boroughs plus a 120-mile radius extending across the Home Counties — Surrey, Kent, Essex, Hertfordshire, Buckinghamshire, Berkshire, Oxfordshire, Sussex and Bedfordshire."
+            },
+            {
+              question: "Do you work with Airbnb hosts and short-let operators?",
+              answer: "Yes. We support Airbnb hosts, serviced accommodation operators and short-let property managers with planned maintenance, emergency cover, and 24/7 response — essential for short-let guests who expect hotel-grade reliability."
+            },
+            {
+              question: "Are you Gas Safe and NICEIC certified?",
+              answer: "Yes. Mainteniq is Gas Safe registered (for gas work) and NICEIC Approved Contractor (for electrical work). Certificates and registration numbers are available on request."
+            },
+            {
+              question: "Do you offer emergency call-outs?",
+              answer: "Yes, we operate a 24/7 emergency line for contracted clients and arrange same-day response across London for urgent issues like no heating, no hot water, or water leaks."
+            }
+          ]}
+        />
       </div>
     </>
   );

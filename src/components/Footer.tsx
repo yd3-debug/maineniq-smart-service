@@ -10,16 +10,16 @@ const Footer = () => {
     { name: "FCU Maintenance", href: "/fcu-maintenance" },
     { name: "HIU & CIU Service", href: "/hiu-maintenance" },
     { name: "Boiler Services", href: "/boiler-services" },
-    { name: "End of Tenancy", href: "/end-of-tenancy-cleaning" },
+    { name: "Air Conditioning", href: "/air-conditioning-london" },
   ];
 
   const allServices = [
     { name: "MVHR Maintenance", href: "/mvhr-maintenance" },
-    { name: "BMS", href: "/bms" },
+    { name: "BMS", href: "/building-management-systems-london" },
     { name: "Smart Home", href: "/smart-home" },
     { name: "Plumber & Electrician", href: "/plumber-electrician" },
     { name: "Handyman", href: "/handyman" },
-    { name: "Renovation", href: "/renovation-composer" },
+    { name: "Renovation", href: "/property-renovation-london" },
   ];
 
   return (
@@ -173,7 +173,36 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-6 pt-4 md:mt-8 md:pt-8">
+        {/* Certifications & Credentials */}
+        <div className="border-t border-gray-700 mt-6 pt-4 md:mt-8 md:pt-6">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-gray-400 mb-4">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
+              <span>Gas Safe Registered: <strong className="text-gray-300">PLACEHOLDER_GAS_SAFE</strong></span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
+              <span>NICEIC Approved: <strong className="text-gray-300">PLACEHOLDER_NICEIC</strong></span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-purple-500 inline-block" />
+              <span>
+                Companies House:{" "}
+                <a
+                  href="https://find-and-update.company-information.service.gov.uk/company/14774362"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-primary transition-colors"
+                >
+                  14774362
+                </a>
+              </span>
+            </span>
+            <span className="text-gray-500">Registered in England and Wales</span>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <div>
               <p className="text-xs sm:text-sm text-gray-300 text-center md:text-left">

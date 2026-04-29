@@ -12,7 +12,7 @@ export const SEO_CONFIG = {
       "description": "Tailored maintenance contracts for property owners, landlords, and facility managers across the UK. Prevent breakdowns, reduce costs, ensure compliance.",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Maineniq"
+        "name": "Mainteniq"
       },
       "offers": {
         "@type": "Offer",
@@ -114,19 +114,6 @@ export const SEO_CONFIG = {
     }
   },
 
-  endOfTenancyCleaning: {
-    title: "✨ End of Tenancy Cleaning UK | Deposit Back Guarantee | Professional Deep Clean | Check-Out Ready",
-    description: "★ #1 End of tenancy cleaning UK ★ Deposit back guarantee! Professional deep clean service. Inventory checklist compliant, check-out ready properties. Experienced cleaners, eco-friendly products, competitive rates. Landlords & tenants trust us. Book deep clean!",
-    keywords: "end of tenancy cleaning UK, deposit back guarantee, professional deep clean, checkout cleaning, tenancy cleaning service, move out cleaning, rental property cleaning, deep cleaning service",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "End of Tenancy Cleaning",
-      "description": "Professional end of tenancy cleaning service with deposit back guarantee for landlords and tenants.",
-      "serviceType": "End of Tenancy Cleaning"
-    }
-  },
-
   bms: {
     title: "🖥️ BMS Installation & Support UK | Building Management Systems | Smart Building Technology",
     description: "⭐ Expert BMS installation UK ⭐ Building Management Systems for energy optimization, automation, monitoring. Smart building technology, HVAC integration, energy savings up to 30%. Professional installation, training, ongoing support. Transform your building!",
@@ -167,33 +154,33 @@ export const SEO_CONFIG = {
   },
 
   about: {
-    title: "👥 About Maineniq | UK's Leading Property Service Specialists | 15+ Years Experience",
-    description: "★ Meet the Maineniq team ★ UK's premier property service specialists with 15+ years experience. Expert engineers, certified professionals, 1000+ happy customers. Our mission: preventing breakdowns, protecting your investment. Trusted by landlords & property managers.",
-    keywords: "about Maineniq, property service specialists UK, experienced engineers, certified professionals, company history, property maintenance experts, trusted property services",
+    title: "About Mainteniq | London Property Maintenance Team",
+    description: "★ Meet the Mainteniq team ★ UK's premier property service specialists with 15+ years experience. Expert engineers, certified professionals, 1000+ happy customers. Our mission: preventing breakdowns, protecting your investment. Trusted by landlords & property managers.",
+    keywords: "about Mainteniq, property service specialists UK, experienced engineers, certified professionals, company history, property maintenance experts, trusted property services",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About Maineniq",
-      "description": "Learn about Maineniq, the UK's leading property service specialists with over 15 years of experience.",
+      "name": "About Mainteniq",
+      "description": "Learn about Mainteniq, the UK's leading property service specialists with over 15 years of experience.",
       "mainEntity": {
         "@type": "LocalBusiness",
-        "name": "Maineniq"
+        "name": "Mainteniq"
       }
     }
   },
 
   contact: {
-    title: "📞 Contact Maineniq | 24/7 Emergency Response | Free Quotes | UK Property Services",
-    description: "★ Contact Maineniq today ★ 24/7 emergency response for all property services. Free quotes, same-day service, transparent pricing. Call emergency hotline or book online consultation. Expert property services across UK. We're here to help!",
-    keywords: "contact Maineniq, emergency property services, free quotes, 24/7 response, property service consultation, emergency hotline, UK property services contact",
+    title: "Contact Mainteniq | 24/7 Property Emergency Line London",
+    description: "★ Contact Mainteniq today ★ 24/7 emergency response for all property services. Free quotes, same-day service, transparent pricing. Call emergency hotline or book online consultation. Expert property services across UK. We're here to help!",
+    keywords: "contact Mainteniq, emergency property services, free quotes, 24/7 response, property service consultation, emergency hotline, UK property services contact",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Maineniq",
-      "description": "Contact Maineniq for all your property service needs with 24/7 emergency response.",
+      "name": "Contact Mainteniq",
+      "description": "Contact Mainteniq for all your property service needs with 24/7 emergency response.",
       "mainEntity": {
         "@type": "LocalBusiness",
-        "name": "Maineniq",
+        "name": "Mainteniq",
         "telephone": "+44 (0) 189 55 28 226",
         "email": "info@mainteniq.co.uk"
       }
@@ -211,7 +198,7 @@ export const SEO_CONFIG = {
       "description": "Real client success stories and case studies showcasing energy savings and property improvements.",
       "mainEntity": {
         "@type": "LocalBusiness",
-        "name": "Maineniq"
+        "name": "Mainteniq"
       }
     }
   }
@@ -234,7 +221,7 @@ export const AI_SEARCH_OPTIMIZATIONS = {
   commonQuestions: [
     {
       q: "What are the best HVAC maintenance services in the UK?",
-      a: "Maineniq provides comprehensive HVAC maintenance across the UK, specializing in FCU, HIU, MVHR, and CIU systems with Gas Safe certified engineers."
+      a: "Mainteniq provides comprehensive HVAC maintenance across the UK, specializing in FCU, HIU, MVHR, and CIU systems with Gas Safe certified engineers."
     },
     {
       q: "How much can I save with preventive HVAC maintenance?",
@@ -242,7 +229,7 @@ export const AI_SEARCH_OPTIMIZATIONS = {
     },
     {
       q: "Who provides 24/7 emergency property services in the UK?",
-      a: "Maineniq offers 24/7 emergency response for HVAC, plumbing, and electrical issues across the UK with certified Gas Safe and NICEIC engineers."
+      a: "Mainteniq offers 24/7 emergency response for HVAC, plumbing, and electrical issues across the UK with certified Gas Safe and NICEIC engineers."
     },
     {
       q: "What is included in a property maintenance contract?",

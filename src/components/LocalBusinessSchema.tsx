@@ -26,10 +26,10 @@ const LocalBusinessSchema = ({
       "email": "info@mainteniq.co.uk",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Business Street",
-        "addressLocality": "London",
-        "addressRegion": "Greater London", 
-        "postalCode": "SW1A 1AA",
+        "streetAddress": "11a Woodville Gardens",
+        "addressLocality": "Ruislip",
+        "addressRegion": "Greater London",
+        "postalCode": "HA4 7NB",
         "addressCountry": "GB"
       },
       "geo": {

@@ -220,8 +220,8 @@ const portfolioProjects = [
       completedDate: "Q3 2023",
       confidential: false,
       tags: ["HVAC Maintenance", "System Optimization", "Energy Efficiency"],
-      description: "Complete HVAC system maintenance and optimization for commercial office building",
-      technicalScope: "FCU maintenance, HIU servicing, MVHR optimization, and BMS calibration across multiple systems",
+      description: "Complete HVAC system maintenance and optimisation for commercial office building",
+      technicalScope: "FCU maintenance, HIU servicing, MVHR optimisation, and BMS calibration across multiple systems",
       achievements: [
         "25% improvement in energy efficiency",
         "Zero unexpected system failures",
@@ -270,26 +270,6 @@ const portfolioProjects = [
       ],
       image: "/src/assets/team-working.jpg",
       height: "h-76"
-    },
-    {
-      id: 7,
-      title: "End of Tenancy Deep Clean ETC-008",
-      projectType: "Cleaning Services",
-      propertyType: "Residential",
-      location: "Kensington",
-      completedDate: "Q3 2024",
-      confidential: false,
-      tags: ["Deep Cleaning", "End of Tenancy", "Professional Service"],
-      description: "Comprehensive end of tenancy cleaning ensuring deposit return and property presentation",
-      technicalScope: "Deep cleaning of all rooms, kitchen appliances, bathroom sanitization, carpet cleaning, and window washing",
-      achievements: [
-        "100% deposit return achieved",
-        "Property ready for immediate viewing",
-        "Professional cleaning standards met",
-        "Satisfied landlord and tenant"
-      ],
-      image: "/src/assets/end-of-tenancy-cleaning.jpg",
-      height: "h-72"
     }
   ];
 

@@ -1,6 +1,6 @@
 # Enhanced robots.txt for optimal SEO performance
 # Allow all major search engines and AI crawlers
-# Last updated: 2026-01-27
+# Last updated: 2026-04-24
 
 User-agent: Googlebot
 Allow: /
@@ -168,10 +168,11 @@ Allow: /*.pdf$
 Allow: /*.woff2$
 Allow: /*.woff$
 
+# AI-friendly plain text summary
+# llms.txt: https://www.mainteniq.co.uk/llms.txt
+
 # Sitemap locations
 Sitemap: https://www.mainteniq.co.uk/sitemap.xml
-Sitemap: https://www.mainteniq.co.uk/news-sitemap.xml
-Sitemap: https://www.mainteniq.co.uk/image-sitemap.xml
 
 # Contact information for webmaster
 # Website: https://www.mainteniq.co.uk
