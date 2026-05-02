@@ -193,7 +193,7 @@ const BoilerServices = () => {
         title="Boiler Service & Repair London | CP12 for Landlords | Mainteniq"
         description="Gas Safe boiler servicing, repair and installation across London. Annual landlord Gas Safety Certificates (CP12). Worcester, Vaillant, Baxi, Ideal serviced."
         keywords="boiler repair london, boiler service london, CP12 certificate london, gas safe engineer london, boiler installation london, emergency boiler repair london, landlord gas safety certificate, boiler servicing near me, Worcester Bosch engineer london, combi boiler repair, boiler breakdown london"
-        canonicalUrl="/boiler-services"
+        canonicalUrl="https://www.mainteniq.co.uk/boiler-services"
         structuredData={boilerServiceSchema}
         breadcrumbData={generateBreadcrumbSchema(breadcrumbItems)}
         faqData={generateFAQSchema(boilerFAQs)}
