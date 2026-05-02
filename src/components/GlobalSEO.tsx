@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const BASE_URL = 'https://www.mainteniq.co.uk';
-const CURRENT_DATE = '2026-01-27';
+const CURRENT_DATE = new Date().toISOString().split('T')[0];
 
 interface GlobalSEOProps {
   /** Override the default page title */
