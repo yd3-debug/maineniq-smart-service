@@ -37,18 +37,16 @@ import {
 import { useState } from "react";
 import heroImage from "@/assets/hero-hvac.jpg";
 import SEOHead from "@/components/SEOHead";
-import EnhancedFAQSchema from "@/components/EnhancedFAQSchema";
+import FAQSection from "@/components/FAQSection";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
-import { generateBreadcrumbSchema, generateFAQSchema, generateHVACServiceSchema } from "@/utils/structuredData";
+import { generateBreadcrumbSchema, generateHVACServiceSchema } from "@/utils/structuredData";
 
 const hvacFaqs = [
-  { question: "How often should HVAC systems be serviced in the UK?", answer: "Commercial HVAC systems should be serviced quarterly, while residential systems need annual maintenance minimum. High-use environments like restaurants require monthly checks." },
-  { question: "What does professional HVAC maintenance include?", answer: "HVAC maintenance includes filter replacement, coil cleaning, refrigerant checks, electrical inspections, control calibration, and safety testing to ensure optimal efficiency and compliance." },
-  { question: "Is HVAC maintenance a legal requirement for UK businesses?", answer: "Yes, commercial buildings must comply with TM44 air conditioning inspections, F-Gas regulations for refrigerants, and health and safety requirements including Legionella risk assessments." },
-  { question: "How much does HVAC maintenance cost in London?", answer: "HVAC maintenance costs vary from £200-500 for residential systems to £500-2,000+ for commercial systems annually, depending on size and complexity. Preventive maintenance saves 5-10x emergency repair costs." },
-  { question: "What is TM44 compliance and do I need it?", answer: "TM44 is a mandatory air conditioning inspection for systems over 12kW in England and Wales. Non-compliance can result in penalties of £300+. Our engineers are TM44 certified." },
-  { question: "What types of HVAC systems do you maintain?", answer: "We maintain FCUs, MVHR, HIU/CIU, VRF systems, central plant, commercial refrigeration including cold rooms, display cabinets, and chillers across London and the South East." }
+  { question: "How often should I service my HVAC system?", answer: "Residential air conditioning should be serviced annually. Commercial AC systems with an output above 12kW legally require an energy inspection every 5 years under the Energy Performance of Buildings Regulations. Heat interface units (HIUs) and mechanical ventilation with heat recovery (MVHR) should also be serviced annually." },
+  { question: "What is an HIU and does it need servicing?", answer: "An HIU (Heat Interface Unit) is the device in each flat in a communal heating system that controls heating and hot water for that individual flat. HIUs should be serviced annually. Common issues include intermittent hot water, loud noises and reduced flow — all fixable with proper maintenance." },
+  { question: "What is MVHR and why does it need servicing?", answer: "MVHR (Mechanical Ventilation with Heat Recovery) is a ventilation system common in new-build flats and airtight modern homes. It recovers heat from outgoing air to warm incoming fresh air. Filters should be changed and the unit checked annually to maintain efficiency and indoor air quality." },
+  { question: "Are you F-Gas certified for air conditioning work?", answer: "Yes. All our air conditioning engineers are F-Gas certified under UK Fluorinated Greenhouse Gas Regulations — a legal requirement for any engineer handling refrigerants." }
 ];
 
 // Compact system icons for initial view
@@ -158,7 +156,6 @@ export default function HVACMaintenance() {
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "HVAC Maintenance", url: "https://www.mainteniq.co.uk/hvac-maintenance" }
         ])}
-        faqData={generateFAQSchema(hvacFaqs)}
         serviceData={generateHVACServiceSchema()}
       />
       <LocalBusinessSchema 
@@ -731,6 +728,8 @@ export default function HVACMaintenance() {
           </div>
         </div>
       </section>
+
+      <FAQSection faqs={hvacFaqs} />
 
       {/* Final CTA */}
       <section className="py-8 sm:py-12 md:py-16 bg-primary text-primary-foreground">

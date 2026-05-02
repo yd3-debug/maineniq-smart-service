@@ -8,8 +8,9 @@ import PropertyAssessmentForm from "@/components/PropertyAssessmentForm";
 import SystemsWeMaintain from "@/components/sections/SystemsWeMaintain";
 import WhoWeServe from "@/components/sections/WhoWeServe";
 import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/FAQSection";
 import { CONTACT } from "@/config/contact";
-import { generateMaintenanceContractSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/utils/structuredData";
+import { generateMaintenanceContractSchema, generateBreadcrumbSchema } from "@/utils/structuredData";
 import { 
   CheckCircle, 
   Shield, 
@@ -45,12 +46,10 @@ const MaintenanceContracts = () => {
   console.log('SystemsWeMaintain:', SystemsWeMaintain);
 
   const maintenanceContractFaqs = [
-    { question: "What's included in a maintenance contract?", answer: "Our contracts include scheduled preventive maintenance, 24/7 emergency response, parts and labor for covered systems, detailed reporting, and priority service. We tailor coverage to your specific property needs." },
-    { question: "How much can I save with a maintenance contract?", answer: "Properties on maintenance contracts typically save 30-50% compared to reactive maintenance costs. You also benefit from extended equipment lifespan and reduced emergency callouts." },
-    { question: "What's the typical response time for emergencies?", answer: "Contract customers receive guaranteed 4-hour response SLA for emergencies, with 24/7 direct access to our engineering team - no call centers or delays." },
-    { question: "Can I customize my maintenance contract?", answer: "Yes, all our contracts are tailored to your property's specific systems and needs. We conduct a free assessment and design a package that covers exactly what you need." },
-    { question: "What systems can be covered under a maintenance contract?", answer: "We cover HVAC systems, boilers, plumbing, electrical, FCU, HIU, MVHR, BMS, and general building maintenance. Single-provider coverage simplifies your property management." },
-    { question: "How do I get started with a maintenance contract?", answer: "Contact us for a free property assessment. We'll evaluate your systems, discuss your needs, and provide a custom proposal with clear pricing and service levels." }
+    { question: "What does a planned maintenance contract include?", answer: "A typical contract includes scheduled servicing of HVAC (AC, boilers, HIUs, MVHR), annual Gas Safety Certificate (CP12), EICR scheduling, routine plumbing and electrical checks, and priority response for emergencies. We tailor scope and frequency to each property." },
+    { question: "How much does a planned maintenance contract cost?", answer: "Contract cost depends on property type, number of units and services included. A single flat with basic HVAC and compliance typically starts from a low monthly fee; multi-unit blocks are priced per unit. Request a quote for a tailored price." },
+    { question: "Can I get a contract for multiple properties?", answer: "Yes. We work with portfolio landlords, Build-to-Rent operators, block management companies and property managers covering dozens or hundreds of units under a single contract." },
+    { question: "What compliance certificates do you provide under a contract?", answer: "Annual Gas Safety Certificate (CP12), 5-yearly Electrical Installation Condition Report (EICR), PAT testing, legionella risk assessment, and EPC renewal scheduling — all under one contract." }
   ];
   
   useEffect(() => {
@@ -143,7 +142,6 @@ const MaintenanceContracts = () => {
           { name: "Services", url: "https://www.mainteniq.co.uk/services" },
           { name: "Maintenance Contracts", url: "https://www.mainteniq.co.uk/maintenance-contracts" }
         ])}
-        faqData={generateFAQSchema(maintenanceContractFaqs)}
       />
       <FullBleedHero
         title="Planned Maintenance Contracts for London Landlords & Property Managers"
@@ -661,6 +659,8 @@ const MaintenanceContracts = () => {
         </div>
       </section>
       */}
+
+      <FAQSection faqs={maintenanceContractFaqs} />
 
       {/* Final CTA */}
       <section className="py-8 sm:py-12 md:py-16 bg-primary text-primary-foreground">
