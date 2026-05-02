@@ -10,13 +10,7 @@ declare global {
 
 const GoogleAnalytics = () => {
   const location = useLocation();
-  
-  // 🚨 SETUP REQUIRED: Replace with your actual Google Analytics 4 ID
-  // Get your GA4 ID from: https://analytics.google.com/
-  // 1. Go to Admin → Data Streams → Choose your stream
-  // 2. Copy the "Measurement ID" (starts with G-)
-  // 3. Replace 'G-XXXXXXXXXX' below with your actual ID
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  const GA_MEASUREMENT_ID = 'G-F5YGBB2QBB';
 
   useEffect(() => {
     // Initialize Google Analytics
