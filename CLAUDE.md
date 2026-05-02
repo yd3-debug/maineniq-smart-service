@@ -11,6 +11,7 @@
 - **Legal entity:** MAINTENIQ LTD
 - **Companies House number:** 14774362
 - **Registered in:** England and Wales
+- **Owns two domains:** mainteniq.co.uk (primary) and mainteniq.com (redirect target — see Section 12)
 - **Market:** United Kingdom only (London + 120 miles radius covering most of the Home Counties)
 - **Target customers:** Landlords, Airbnb hosts, serviced accommodation operators, property managers, block management companies, Build-to-Rent operators
 - **Certifications:** Gas Safe registered, NICEIC Approved Contractor, F-Gas certified
@@ -600,6 +601,20 @@ When writing copy:
 - Consider including a disambiguation note in the footer or about page: "Mainteniq (pronounced main-ten-iq) is a UK-only property maintenance company based in London. Not affiliated with any US software company of similar name."
 - Lead with "London" and UK signals heavily on every page.
 - In alt text and image descriptions, use "Mainteniq London" rather than just "Mainteniq".
+
+---
+
+## 12. Domain canonicalisation
+
+The business owns two domains:
+- https://www.mainteniq.co.uk (primary, canonical)
+- https://mainteniq.com (alias, must 301 redirect to the .co.uk equivalent path)
+
+All canonical tags must point to mainteniq.co.uk. All marketing material, schemas, llms.txt, and copy use mainteniq.co.uk. The .com domain exists only as a defensive registration and must always 301 redirect everything to the matching .co.uk URL preserving the path (e.g. mainteniq.com/hvac-maintenance → mainteniq.co.uk/hvac-maintenance, and mainteniq.com/ → mainteniq.co.uk/).
+
+The redirect must be enforced at hosting/DNS level. Lovable's hosting (Cloudflare-fronted) does not currently honour the public/_redirects file, so the redirect is unimplemented as of this commit. In Phase 5 (Next.js + Vercel), the redirect is configured via Vercel domains: both domains added to the project, mainteniq.co.uk set as primary, all .com traffic auto-301'd to the matching .co.uk path by Vercel.
+
+Until Phase 5 lands, both domains serve identical content with no redirect. This is a known interim issue accepted by the user.
 
 ---
 
