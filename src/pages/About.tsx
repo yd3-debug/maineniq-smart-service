@@ -34,8 +34,7 @@ const About = () => {
   const stats = [
     { icon: Users, label: "Happy Customers", value: "1,000+" },
     { icon: Award, label: "Years in Maintenance", value: "15+" },
-    { icon: Wrench, label: "Assets Maintained", value: "2,500+" },
-    { icon: Star, label: "Customer Rating", value: "4.9★" }
+    { icon: Wrench, label: "Assets Maintained", value: "2,500+" }
   ];
 
   const breadcrumbData = generateBreadcrumbSchema([
@@ -62,7 +61,7 @@ const About = () => {
     {
       icon: Star,
       title: "Customer Service Excellence",
-      description: "4.9/5 customer rating with dedicated support team available 24/7"
+      description: "Dedicated support team and transparent digital reporting available 24/7"
     }
   ];
 
@@ -97,7 +96,7 @@ const About = () => {
     <div className="min-h-screen">
       <SEOHead
         title="About Mainteniq | London Property Maintenance Team"
-        description="Mainteniq is a London-based property maintenance company (Companies House 14774362). Gas Safe & NICEIC certified engineers. 4.9★ rating from 247+ landlords and property managers."
+        description="Mainteniq is a London-based property maintenance company (Companies House 14774362) serving landlords, Airbnb hosts and property managers across London &amp; the Home Counties."
         keywords="about Mainteniq, HVAC maintenance company, property services London, professional maintenance team, certified engineers, emergency HVAC response"
         canonicalUrl="https://www.mainteniq.co.uk/about"
         breadcrumbData={breadcrumbData}
@@ -138,7 +137,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <Card key={index} className="text-center p-3 sm:p-4 md:p-6 hover:shadow-card transition-shadow">
                 <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary mx-auto mb-2 sm:mb-3 md:mb-4" />
@@ -220,11 +219,11 @@ const About = () => {
             </Card>
             <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
               </div>
-              <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">4.9★</h3>
-              <h4 className="font-semibold mb-2 text-sm sm:text-base">Customer Rating</h4>
-              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Consistently high satisfaction across all our services</p>
+              <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">Gas Safe</h3>
+              <h4 className="font-semibold mb-2 text-sm sm:text-base">&amp; NICEIC Certified</h4>
+              <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Gas Safe registered and NICEIC Approved Contractor for all gas and electrical work</p>
             </Card>
             <Card className="text-center p-6 sm:p-8 hover:shadow-elegant transition-all duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">

@@ -57,9 +57,9 @@ const Contact = () => {
       description: "Available round the clock for urgent HVAC emergencies"
     },
     {
-      icon: Star,
-      title: "5-Star Rated",
-      description: "Consistently rated 5 stars by our satisfied customers"
+      icon: Shield,
+      title: "Gas Safe & NICEIC",
+      description: "Gas Safe registered for gas work, NICEIC Approved Contractor for electrical work"
     },
     {
       icon: Users,

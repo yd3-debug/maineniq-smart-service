@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, MessageSquare, Star, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/config/contact";
 import { handleQuoteRequest } from "@/utils/quote";
@@ -78,29 +78,6 @@ const Footer = () => {
               Professional HVAC maintenance and property services. Your single point of contact 
               for all property maintenance needs.
             </p>
-            
-            {/* Testimonial Snippet - hidden on mobile */}
-            <div className="hidden sm:block bg-primary/20 border border-primary/30 rounded-lg p-4">
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-energy-gold text-energy-gold" />
-                ))}
-                <span className="text-sm text-gray-300 ml-2">4.9/5</span>
-              </div>
-              <p className="text-sm text-gray-300 italic">
-                "Excellent service from start to finish. Professional team, fair pricing, 
-                and great communication throughout."
-              </p>
-              <p className="text-xs text-gray-400 mt-2">— Property Manager, London</p>
-            </div>
-
-            {/* Compact mobile rating */}
-            <div className="sm:hidden flex items-center justify-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-energy-gold text-energy-gold" />
-              ))}
-              <span className="text-xs text-gray-300 ml-1">4.9/5 — 200+ reviews</span>
-            </div>
             
             {/* Service Area - hidden on mobile */}
             <div className="hidden sm:block bg-primary/10 border border-primary/20 rounded-lg p-3">

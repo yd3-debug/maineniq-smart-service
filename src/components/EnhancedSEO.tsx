@@ -91,7 +91,6 @@ const EnhancedSEO = ({
       { name: 'GPTBot', content: 'index, follow' },
       { name: 'ClaudeBot', content: 'index, follow' },
       { name: 'PerplexityBot', content: 'index, follow' },
-      { name: 'rating', content: '4.9' },
       { name: 'price_range', content: '££' },
       { name: 'availability', content: '24/7' },
       { name: 'coverage_area', content: 'London and 120-mile radius' },

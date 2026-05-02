@@ -981,9 +981,9 @@ const WhyProfessionalHVAC = () => {
                   <div className="text-xs sm:text-sm text-muted-foreground">Successful Installations</div>
                 </div>
                 <div className="text-center">
-                  <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
-                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">4.9★</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Customer Rating</div>
+                  <Award className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />
+                  <div className="font-bold text-xl sm:text-2xl md:text-3xl text-primary">Gas Safe</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">&amp; NICEIC Certified</div>
                 </div>
                 <div className="text-center">
                   <Timer className="w-8 h-8 sm:w-10 sm:h-10 text-primary mx-auto mb-2" />

@@ -19,7 +19,6 @@ import {
   Zap,
   ChevronDown,
   CheckCircle2,
-  Star,
   Timer,
   Gauge,
   Settings,
@@ -259,8 +258,8 @@ const BoilerServices = () => {
                 <span>Same-Day Response</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-orange-400" />
-                <span>5-Star Rated</span>
+                <Award className="w-5 h-5 text-orange-400" />
+                <span>NICEIC Certified</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-orange-400" />

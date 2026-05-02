@@ -11,7 +11,7 @@ import smartSecuritySystem from "@/assets/smart-security-system.jpg";
 import { 
   Smartphone, Shield, Zap, Brain, Lightbulb, Phone, Lock, Tv, 
   Home, Building2, Key, Briefcase, Wifi, WifiOff, Eye, AppWindow,
-  ChevronDown, CheckCircle2, Star, Quote, HelpCircle
+  ChevronDown, CheckCircle2, HelpCircle
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
@@ -93,11 +93,11 @@ const SmartHome: React.FC = () => {
     },
     {
       icon: Shield,
-      value: 4.9,
-      label: "Security Rating",
-      description: "Customer satisfaction with security integration",
+      value: 98,
+      label: "Security Integration",
+      description: "Properties with full security automation enabled",
       percentage: 98,
-      suffix: "/5"
+      suffix: "%"
     },
     {
       icon: Brain,
@@ -171,29 +171,7 @@ const SmartHome: React.FC = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "The installation was seamless and our whole family loves controlling everything from one app. The automated lighting scenes have transformed how we use our home.",
-      name: "Sarah M.",
-      role: "Homeowner",
-      location: "Kensington",
-      rating: 5
-    },
-    {
-      quote: "Since installing smart locks and automated lighting, my Airbnb reviews have improved significantly. Guests love the keyless entry and the 'welcome home' scene.",
-      name: "James T.",
-      role: "Airbnb Host",
-      location: "Shoreditch",
-      rating: 5
-    },
-    {
-      quote: "Managing access across 12 properties is now effortless. The remote monitoring and smart lock integration has saved us countless hours.",
-      name: "Property Solutions Ltd",
-      role: "Property Management",
-      location: "Central London",
-      rating: 5
-    }
-  ];
+  // TESTIMONIALS DISABLED PENDING REAL CUSTOMER REVIEWS — see CLAUDE.md §9 quality standards
 
   const smartHomeFaqs = [
     { question: "How much does a smart home installation cost in London?", answer: "Smart home installation costs vary based on scope. A basic starter package with smart lighting and hub starts from £500-£1,000. Comprehensive whole-home automation with lighting, security, entertainment, and climate control ranges from £3,000-£15,000+. We offer free consultations to provide accurate quotes." },
@@ -518,41 +496,7 @@ const SmartHome: React.FC = () => {
         
         <SmartHomeGallery />
 
-        {/* Testimonials Section */}
-        <section className="space-y-8">
-          <div className="text-center space-y-4">
-            <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600 border-yellow-200">
-              Customer Reviews
-            </Badge>
-            <h2 className="font-heading text-2xl font-bold">
-              What Our Customers Say
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border bg-gradient-to-br from-background to-muted/30">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-primary/30" />
-                  <p className="text-sm text-muted-foreground italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="pt-2 border-t">
-                    <p className="font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role} • {testimonial.location}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+        {/* TESTIMONIALS DISABLED PENDING REAL CUSTOMER REVIEWS — see CLAUDE.md §9 quality standards */}
 
         {/* FAQ Section */}
         <section className="space-y-8">

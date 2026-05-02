@@ -63,13 +63,6 @@ const LocalBusinessSchema = ({
           }
         }] : []
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "247",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "priceRange": "££",
       "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
       "hasCredential": [

@@ -200,13 +200,6 @@ const Index = () => {
                       <span className="text-white font-semibold">500+</span>
                       <span className="text-white/70 text-sm">Properties Managed</span>
                     </div>
-                    <div className="hidden sm:block w-px h-6 bg-white/20" />
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-energy-gold text-energy-gold" />
-                      ))}
-                      <span className="text-white font-semibold ml-1">4.9</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -577,9 +570,9 @@ const Index = () => {
                   <p className="text-muted-foreground text-xs sm:text-sm">Projects Completed</p>
                 </Card>
                 <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
-                  <Star className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
-                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">4.9★</h3>
-                  <p className="text-muted-foreground text-xs sm:text-sm">Customer Rating</p>
+                  <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                  <h3 className="font-bold text-xl md:text-2xl mb-1 md:mb-2">Gas Safe</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">& NICEIC Certified</p>
                 </Card>
                 <Card className="text-center p-4 md:p-6 bg-card hover:shadow-lg transition-all">
                   <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />

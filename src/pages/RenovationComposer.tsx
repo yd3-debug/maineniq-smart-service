@@ -16,7 +16,6 @@ import SEOHead from "@/components/SEOHead";
 import RenovationGallery from "@/components/RenovationGallery";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
-import ReviewSchema from "@/components/ReviewSchema";
 import { handleQuoteRequest } from "@/utils/quote";
 import { CONTACT } from "@/config/contact";
 import { generateBreadcrumbSchema, generateFAQSchema, generateRenovationServiceSchema } from "@/utils/structuredData";
@@ -187,7 +186,8 @@ export default function RenovationComposer() {
     }
   ];
 
-  const testimonials = [
+  // TESTIMONIALS DISABLED PENDING REAL CUSTOMER REVIEWS — see CLAUDE.md §9 quality standards
+  /* const testimonials = [
     {
       quote: "Our Victorian terrace was completely transformed. The attention to detail and project management was exceptional - they delivered on time and on budget.",
       name: "Emma & David H.",
@@ -209,7 +209,7 @@ export default function RenovationComposer() {
       location: "South London",
       rating: 5
     }
-  ];
+  ]; */
 
   const renovationFaqs = [
     { question: "How long does a full property renovation take?", answer: "A full property renovation typically takes 8-16 weeks depending on the scope of work. Kitchen and bathroom renovations usually take 2-4 weeks each. We provide detailed timelines during consultation." },
@@ -248,15 +248,6 @@ export default function RenovationComposer() {
         serviceName="Property Renovation" 
       />
 
-      <ReviewSchema 
-        reviews={testimonials.map(t => ({
-          author: t.name,
-          rating: t.rating,
-          text: t.quote,
-          date: "2025-11-15"
-        }))}
-        aggregateRating={{ ratingValue: 5, reviewCount: 3 }}
-      />
 
       {/* Hero Section with WhatsApp CTAs */}
       <FullBleedHero
@@ -519,41 +510,7 @@ export default function RenovationComposer() {
         {/* Renovation Gallery with Interactive Before/After */}
         <RenovationGallery />
 
-        {/* Testimonials Section */}
-        <section className="space-y-8">
-          <div className="text-center space-y-4">
-            <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600 border-yellow-200">
-              Customer Reviews
-            </Badge>
-            <h2 className="font-heading text-2xl font-bold">
-              What Our Customers Say
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border bg-gradient-to-br from-background to-muted/30">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-primary/30" />
-                  <p className="text-sm text-muted-foreground italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="pt-2 border-t">
-                    <p className="font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role} • {testimonial.location}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+        {/* TESTIMONIALS DISABLED PENDING REAL CUSTOMER REVIEWS — see CLAUDE.md §9 quality standards */}
 
         {/* FAQ Accordion Section */}
         <section className="space-y-8">

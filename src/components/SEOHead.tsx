@@ -18,7 +18,7 @@ const BASE_URL = 'https://www.mainteniq.co.uk';
 
 const SEOHead = ({ 
   title = "Professional Property Services UK | HVAC, Smart Home, Maintenance | 24/7 Emergency | Mainteniq",
-  description = "4.9/5 Rating | Premier property services UK. Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman & air conditioning. Save 30% energy costs, prevent 80% breakdowns. Gas Safe & NICEIC certified. 24/7 emergency response. London + 120 miles.",
+  description = "Premier property services UK. Expert HVAC maintenance (FCU, HIU, MVHR, CIU), smart home automation, BMS installation, certified plumbing/electrical, handyman & air conditioning. Save 30% energy costs, prevent 80% breakdowns. Gas Safe & NICEIC certified. 24/7 emergency response. London + 120 miles.",
   ogImage = "/og-image-mainteniq.png",
   ogType = "website",
   keywords = "HVAC maintenance London, London landlord HVAC, Airbnb property maintenance London, buy-to-let property services, BTL maintenance London, rental property maintenance London, property manager maintenance contracts, heating engineer London, Gas Safe registered engineer London, NICEIC electrician London, planned maintenance contracts London, PPM maintenance London, FCU HIU MVHR maintenance London, landlord gas safety certificate London, CP12 certificate London, EICR London, emergency plumber electrician London, facilities management London, end of tenancy cleaning London, property renovation London, 24/7 emergency response London, certified engineers London, smart home London, BMS London, commercial property maintenance London, residential property maintenance London",
@@ -207,7 +207,6 @@ const SEOHead = ({
         { name: 'ai:accepts_emergency_calls', content: 'true' },
         { name: 'ai:booking_methods', content: 'WhatsApp, Phone, Online Form' },
         // Business metadata
-        { name: 'rating', content: '4.9' },
         { name: 'price_range', content: '££' },
         { name: 'availability', content: '24/7' },
         { name: 'language', content: 'en-GB' },

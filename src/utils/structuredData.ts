@@ -7,7 +7,7 @@ export const generateOrganizationSchema = () => ({
   "@id": "https://www.mainteniq.co.uk/#organization",
   "name": "Mainteniq",
   "alternateName": "Mainteniq UK HVAC & Property Services",
-  "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical & handyman services across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified, 4.9 star rating.",
+  "description": "Professional HVAC maintenance and property services including boiler services, FCU/HIU/MVHR/CIU servicing, BMS installation, smart home automation, plumbing, electrical & handyman services across London and 120-mile radius. 24/7 emergency response, Gas Safe & NICEIC certified.",
   "url": "https://www.mainteniq.co.uk",
   "logo": {
     "@type": "ImageObject",
@@ -183,13 +183,6 @@ export const generateOrganizationSchema = () => ({
       "closes": "16:00"
     }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "knowsAbout": [
     "HVAC Maintenance",
     "Emergency Plumbing", 
@@ -314,14 +307,7 @@ export const generatePlumberElectricianSchema = () => ({
       "@type": "EducationalOccupationalCredential",
       "name": "NICEIC Approved Contractor"
     }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
+  ]
 });
 
 export const generateHandymanSchema = () => ({
@@ -348,13 +334,6 @@ export const generateHandymanSchema = () => ({
       "longitude": "-0.1278"
     },
     "geoRadius": "193121"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "247",
-    "bestRating": "5",
-    "worstRating": "1"
   }
 });
 

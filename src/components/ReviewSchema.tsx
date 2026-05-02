@@ -18,17 +18,13 @@ interface ReviewSchemaProps {
   };
 }
 
-const ReviewSchema = ({ 
+const ReviewSchema = ({
   reviews = [],
-  aggregateRating = {
-    ratingValue: 4.9,
-    reviewCount: 247,
-    bestRating: 5,
-    worstRating: 1
-  }
+  aggregateRating
 }: ReviewSchemaProps) => {
   useEffect(() => {
-    // Generate review schema for trust signals and SEO
+    if (reviews.length === 0 && !aggregateRating) return;
+
     const reviewSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -36,13 +32,15 @@ const ReviewSchema = ({
       "name": "Mainteniq",
       "url": "https://www.mainteniq.co.uk",
       "logo": "https://www.mainteniq.co.uk/LOGOPETRU2.png",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": aggregateRating.ratingValue.toString(),
-        "reviewCount": aggregateRating.reviewCount.toString(),
-        "bestRating": (aggregateRating.bestRating || 5).toString(),
-        "worstRating": (aggregateRating.worstRating || 1).toString()
-      },
+      ...(aggregateRating && {
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": aggregateRating.ratingValue.toString(),
+          "reviewCount": aggregateRating.reviewCount.toString(),
+          "bestRating": (aggregateRating.bestRating || 5).toString(),
+          "worstRating": (aggregateRating.worstRating || 1).toString()
+        }
+      }),
       "review": reviews.map(review => ({
         "@type": "Review",
         "author": {

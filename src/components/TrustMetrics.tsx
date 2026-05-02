@@ -1,5 +1,5 @@
 import { useScrollAnimation, useCounterAnimation } from "@/hooks/useScrollAnimation";
-import { Shield, Clock, Star, Wrench } from "lucide-react";
+import { Shield, Clock, Star, Award } from "lucide-react";
 import { useEffect } from "react";
 
 export function TrustMetrics() {
@@ -7,16 +7,16 @@ export function TrustMetrics() {
   const { count: properties, startAnimation: startProperties } = useCounterAnimation(500, 2000);
   const { count: uptime, startAnimation: startUptime } = useCounterAnimation(99.2, 2000);
   const { count: response, startAnimation: startResponse } = useCounterAnimation(4, 1500);
-  const { count: satisfaction, startAnimation: startSatisfaction } = useCounterAnimation(4.9, 2000);
+  const { count: years, startAnimation: startYears } = useCounterAnimation(15, 2000);
 
   useEffect(() => {
     if (isVisible) {
       startProperties();
       setTimeout(() => startUptime(), 300);
       setTimeout(() => startResponse(), 600);
-      setTimeout(() => startSatisfaction(), 900);
+      setTimeout(() => startYears(), 900);
     }
-  }, [isVisible, startProperties, startUptime, startResponse, startSatisfaction]);
+  }, [isVisible, startProperties, startUptime, startResponse, startYears]);
 
   return (
     <div ref={ref as any} className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
@@ -36,9 +36,9 @@ export function TrustMetrics() {
         <div className="text-xs text-muted-foreground">Avg response time</div>
       </div>
       <div className="text-center p-4 bg-card border rounded-lg hover:shadow-card transition-all">
-        <Wrench className="w-6 h-6 text-accent-orange mx-auto mb-2" />
-        <div className="text-2xl font-bold text-foreground">{satisfaction.toFixed(1)}/5</div>
-        <div className="text-xs text-muted-foreground">Client satisfaction</div>
+        <Award className="w-6 h-6 text-accent-orange mx-auto mb-2" />
+        <div className="text-2xl font-bold text-foreground">{years}+</div>
+        <div className="text-xs text-muted-foreground">Years experience</div>
       </div>
     </div>
   );
