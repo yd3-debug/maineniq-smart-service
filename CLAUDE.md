@@ -563,6 +563,17 @@ Planned pages in priority order:
 14. Borough pages: Westminster, Kensington & Chelsea, Camden, Islington, Hackney, Tower Hamlets, Southwark, Lambeth, Wandsworth, City of London
 15. Blog posts (20+ planned)
 
+### Phase 6 — Image audit (after Phase 5 lands)
+
+Once Next.js + Vercel migration is live, conduct a full image audit across every page. Check that all hero images, inline images, and decorative imagery are:
+
+1. **Topically relevant** — the image must match the page subject (e.g. the BMS page must show HVAC plant rooms, BMS control panels, or energy dashboards — not trading desks or stock chart monitors)
+2. **UK-relevant where possible** — prefer London buildings, British tradespeople, and UK-context photography over generic US stock images
+3. **Properly named** — descriptive filenames using lowercase hyphenated slugs (e.g. `bms-control-panel-london.jpg`, not `BOILER.png` or `image1.jpg`)
+4. **Alt text is SEO-friendly** — alt text must describe the actual image content, not be blank or generic
+
+**Known issue logged 2026-05-02:** `/building-management-systems-london` hero image shows a trading desk with multiple stock chart monitors. This is completely wrong for a BMS page. Replace with actual BMS imagery (plant room, control panel, or energy management dashboard) before or during Phase 5 deployment.
+
 ---
 
 ## 9. Quality standards
