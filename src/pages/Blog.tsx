@@ -11,7 +11,7 @@ const Blog = () => {
     <>
       <SEOHead
         title="Property Maintenance Blog - Expert Tips & Guides | Mainteniq"
-        description="Expert advice on HVAC maintenance, energy efficiency, and property management. Get professional insights from London's leading maintenance specialists."
+        description="Maintenance, compliance and energy advice for London landlords, Airbnb hosts and property managers. CP12, EICR, MEES, HIU, MVHR — practical guides."
         keywords="HVAC blog, maintenance tips, energy efficiency, property management, London heating advice"
         ogImage="https://www.mainteniq.co.uk/og-image-mainteniq.png"
         breadcrumbData={generateBreadcrumbSchema(breadcrumbs)}
@@ -25,7 +25,7 @@ const Blog = () => {
                 Property Maintenance Insights
               </h1>
               <p className="text-sm sm:text-base md:text-xl text-white/90">
-                Expert advice, maintenance tips, and industry insights from London's leading property services specialists
+                Expert advice, maintenance tips, and industry insights from the Mainteniq team in London
               </p>
             </div>
           </div>

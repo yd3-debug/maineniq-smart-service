@@ -108,8 +108,8 @@ const PlumberElectrician: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Plumber & Electrician Services London | Gas Safe & NICEIC | Mainteniq"
-        description="Gas Safe plumbers and NICEIC electricians in London. EICR, gas safety certificates (CP12), emergency boiler repair, rewiring. 24/7 response for landlords and property managers."
+        title="Plumber & Electrician Services London | Mainteniq"
+        description="Gas Safe plumbers and NICEIC electricians. EICR, gas safety certificates, emergency call-outs. For London landlords, Airbnb hosts and property managers."
         keywords="plumber London, electrician London, Gas Safe registered plumber, NICEIC electrician, boiler repair London, rewiring London, emergency plumber London, CP12 certificate, EICR London, electrical installation London, boiler service London, emergency electrician"
         canonicalUrl="https://www.mainteniq.co.uk/plumber-electrician"
         structuredData={generatePlumberElectricianSchema()}

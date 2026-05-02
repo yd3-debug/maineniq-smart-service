@@ -133,8 +133,8 @@ const MaintenanceContracts = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Planned Maintenance Contracts London | Landlord & Property Manager Plans | Mainteniq"
-        description="Planned preventive maintenance contracts for London landlords and property managers. HVAC, boiler, plumbing and electrical coverage. Fixed monthly costs, 4-hour emergency response, no call centres."
+        title="Planned Maintenance Contracts London | Mainteniq"
+        description="Planned preventative maintenance covering HVAC, plumbing, electrical and compliance certificates. Cut reactive costs and protect your rental investment."
         keywords="planned maintenance contracts London, PPM contracts London, landlord maintenance contracts, property maintenance London, HVAC maintenance contract, preventive maintenance, building maintenance contract"
         canonicalUrl="https://www.mainteniq.co.uk/maintenance-contracts"
         structuredData={generateMaintenanceContractSchema()}

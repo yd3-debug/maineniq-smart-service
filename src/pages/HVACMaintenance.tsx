@@ -150,7 +150,7 @@ export default function HVACMaintenance() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Air Conditioning & Heating Maintenance London | Mainteniq"
-        description="Professional HVAC and commercial refrigeration maintenance for UK properties. FCU, MVHR, HIU, VRF systems, cold rooms, and display refrigeration. F-Gas certified engineers."
+        description="Planned HVAC maintenance contracts for landlords & property managers. FCU, HIU, MVHR, CIU, VRV/VRF. F-Gas certified. London + 120 miles. Book a site survey."
         keywords="HVAC maintenance London, commercial refrigeration service, FCU maintenance, MVHR servicing, VRF systems, F-Gas certified, TM44 inspection, commercial air conditioning"
         canonicalUrl="https://www.mainteniq.co.uk/hvac-maintenance"
         breadcrumbData={generateBreadcrumbSchema([
@@ -187,8 +187,8 @@ export default function HVACMaintenance() {
             </Badge>
             
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
-              HVAC & Commercial Refrigeration
-              <span className="text-white/90"> Maintenance Specialists</span>
+              London Air Conditioning & Heating
+              <span className="text-white/90"> Maintenance Contracts</span>
             </h1>
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">

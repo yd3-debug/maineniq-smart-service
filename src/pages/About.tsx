@@ -111,7 +111,7 @@ const About = () => {
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center relative z-10">
           <h1 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 animate-fade-in leading-tight">
-            Maintenance‑First HVAC Partner Since 2009
+            The London property maintenance team landlords actually trust
           </h1>
           <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto opacity-90 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
             We specialise in service and maintenance for HVAC, MVHR, HIU & CIU, fan coil units and building systems—

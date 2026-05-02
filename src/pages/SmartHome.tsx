@@ -185,8 +185,8 @@ const SmartHome: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Smart Home Installation London | Airbnb, Landlords & Private | Mainteniq"
-        description="Smart home installation in London for landlords, Airbnb hosts and homeowners. Nest, Hive, Tado, Hue, keyless entry, noise sensors. Professional setup with ongoing support."
+        title="Smart Home Installation London | Airbnb & Landlord | Mainteniq"
+        description="Nest, Hive, Tado, Hue, keyless entry, noise sensors. Full smart home installations for Airbnb hosts, serviced accommodation operators and London homeowners."
         keywords="smart home London, smart home automation, home automation installation, smart lighting London, home security systems, entertainment systems, smart locks, energy monitoring UK, SMETS2 integration, smart home installer"
         canonicalUrl="https://www.mainteniq.co.uk/smart-home"
         structuredData={generateSmartHomeSchema()}

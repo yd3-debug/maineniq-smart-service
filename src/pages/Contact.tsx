@@ -84,7 +84,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Contact Mainteniq | 24/7 Property Emergency Line London"
-        description="24/7 emergency line for landlords and property managers in London. Call, WhatsApp or email for HVAC, plumbing, electrical and property maintenance. 4-hour emergency response."
+        description="24/7 emergency line for landlords & property managers. London & 120-mile radius. Gas Safe & NICEIC certified. Call us or request a quote online."
         keywords="contact HVAC London, emergency plumber London, 24/7 HVAC service, property maintenance contact, WhatsApp HVAC support"
         canonicalUrl="https://www.mainteniq.co.uk/contact"
         breadcrumbData={breadcrumbData}
@@ -104,8 +104,8 @@ const Contact = () => {
             {/* Left side - Text content */}
             <div className="text-white space-y-6 sm:space-y-6 md:space-y-8">
               <h1 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-                UK's Leading HVAC
-                <span className="block text-accent"> Maintenance Experts</span>
+                Get hold of us —
+                <span className="block text-accent"> 24/7 for emergencies</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl opacity-95 leading-relaxed">
                 Specialists in MVHR, HIU & CIU, FCU & BMS systems. Professional maintenance 
@@ -219,8 +219,7 @@ const Contact = () => {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Why Choose Our Experts?</h2>
               <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                Leading HVAC maintenance specialists with proven expertise in complex systems. 
-                Our technical knowledge and commitment to quality make us the trusted choice.
+                Gas Safe registered and NICEIC Approved Contractor, serving landlords and property managers across London and the Home Counties.
               </p>
             </div>
             

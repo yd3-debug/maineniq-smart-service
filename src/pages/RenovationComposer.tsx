@@ -224,7 +224,7 @@ export default function RenovationComposer() {
     <>
       <SEOHead 
         title="Property Renovation & Refurbishment London | Mainteniq"
-        description="Full-service property renovation and refurbishment in London. Kitchen, bathroom and full property transformations for landlords and homeowners. Project-managed, guaranteed quality."
+        description="Full-service property renovation and refurbishment in London. Design, project management and trades under one roof. For landlords, investors and homeowners."
         keywords="property renovation London, refurbishment London, kitchen renovation London, bathroom renovation London, landlord refurbishment, full property renovation London"
         canonicalUrl="https://www.mainteniq.co.uk/property-renovation-london"
         ogImage="/2024_Kitchen.png"

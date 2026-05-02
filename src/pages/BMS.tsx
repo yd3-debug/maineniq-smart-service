@@ -30,8 +30,8 @@ const BMS: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Building Management Systems (BMS) London | Installation & Service | Mainteniq"
-        description="Expert BMS installation, commissioning and servicing for commercial buildings in London. Trend, Siemens, Honeywell, Johnson Controls. Reduce energy costs 15-30%. Multi-platform certified engineers."
+        title="Building Management Systems (BMS) London | Mainteniq"
+        description="BMS installation, commissioning and servicing for commercial buildings and residential blocks. Trend, Siemens, Honeywell. Integration with smart home systems."
         keywords="BMS London, building management system London, BMS maintenance, BMS installation, building automation, Trend BMS, Siemens BMS, energy management, building controls London"
         canonicalUrl="https://www.mainteniq.co.uk/building-management-systems-london"
         breadcrumbData={generateBreadcrumbSchema([
