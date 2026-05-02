@@ -216,8 +216,8 @@ const MVHRMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-success/5">
       <SEOHead
-        title="MVHR Maintenance London | Filter Replacement & Heat Recovery Service"
-        description="Professional MVHR maintenance services in London. Filter replacement, heat exchanger cleaning, ductwork inspection. Improve air quality & energy efficiency. Free quote."
+        title="MVHR Servicing London | Heat Recovery Ventilation | Mainteniq"
+        description="MVHR servicing and filter replacement for new-build flats and airtight homes. Maintain air quality and energy efficiency. London-wide, annual contracts available."
         keywords="MVHR maintenance London, mechanical ventilation heat recovery, MVHR filter replacement, heat recovery service, MVHR cleaning, ventilation maintenance, air quality service"
         canonicalUrl="https://www.mainteniq.co.uk/mvhr-maintenance"
         breadcrumbData={generateBreadcrumbSchema([

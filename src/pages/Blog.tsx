@@ -10,7 +10,7 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Property Maintenance Blog - Expert Tips & Guides | Mainteniq"
+        title="Mainteniq Blog | London Landlord Maintenance Insights"
         description="Maintenance, compliance and energy advice for London landlords, Airbnb hosts and property managers. CP12, EICR, MEES, HIU, MVHR — practical guides."
         keywords="HVAC blog, maintenance tips, energy efficiency, property management, London heating advice"
         ogImage="https://www.mainteniq.co.uk/og-image-mainteniq.png"

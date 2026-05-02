@@ -57,8 +57,8 @@ import { CommercialBenefitsChart } from "@/components/CommercialBenefitsChart";
       return (
         <>
           <SEOHead
-            title="Property Services Case Studies | Renovation & Maintenance Results | Mainteniq"
-            description="Real property transformation success stories: complete renovations, HVAC services, smart home installations, handyman work, and cleaning services. Professional results that add value."
+            title="Case Studies | London Property Maintenance Projects | Mainteniq"
+            description="Real London property maintenance projects: HVAC overhauls, full refurbishments, smart home installations, BMS integration. Results from landlords and managers."
             keywords="case studies property services, renovation before after, HVAC case studies, property transformation London"
             canonicalUrl="https://www.mainteniq.co.uk/case-studies"
             breadcrumbData={breadcrumbData}

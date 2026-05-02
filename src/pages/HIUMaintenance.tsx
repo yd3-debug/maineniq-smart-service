@@ -170,8 +170,8 @@ const HIUMaintenance = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="HIU & CIU Maintenance London | Heat Interface Unit Service | Mainteniq"
-        description="Expert HIU & CIU servicing to keep hot water flowing, boost efficiency and prevent breakdowns. Schedule maintenance or emergency repair today."
+        title="HIU Servicing London | Heat Interface Units | Mainteniq"
+        description="Heat interface unit servicing for residential blocks on communal heating networks. Fix cold flats, low pressure and noise issues. London + 120 miles."
         keywords="HIU maintenance London, CIU maintenance, HIU repair, CIU service, district heating interface unit, heat interface unit service, communal heating maintenance"
         canonicalUrl="https://www.mainteniq.co.uk/hiu-maintenance"
         breadcrumbData={generateBreadcrumbSchema([

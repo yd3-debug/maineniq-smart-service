@@ -175,8 +175,8 @@ const FCUMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent-blue/5">
       <SEOHead 
-        title="FCU Maintenance London | Fan Coil Unit Servicing | Mainteniq"
-        description="Professional FCU maintenance and servicing across London. Keep your fan coil units running efficiently with our certified engineers. Preventive maintenance from £150/unit."
+        title="FCU Maintenance & Servicing London | Mainteniq"
+        description="Fan coil unit servicing for new-build flats, BTR blocks and commercial properties in London. Annual maintenance plans, F-Gas certified engineers, all major brands."
         keywords="FCU maintenance London, fan coil unit servicing, FCU cleaning, commercial HVAC maintenance, air conditioning service UK, TM44 inspection, commercial building HVAC"
         canonicalUrl="https://www.mainteniq.co.uk/fcu-maintenance"
         breadcrumbData={generateBreadcrumbSchema([

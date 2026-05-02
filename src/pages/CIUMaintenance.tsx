@@ -186,8 +186,8 @@ const CIUMaintenance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       <SEOHead
-        title="CIU Maintenance London | Zone Control & Central Interface Units | Mainteniq"
-        description="Expert CIU maintenance and central interface unit servicing in London. Precision zone control calibration, valve actuator servicing, and BMS integration for commercial buildings."
+        title="CIU Maintenance London | Communal Interface Units | Mainteniq"
+        description="Communal interface unit servicing and zone control calibration for London residential blocks and commercial buildings. Multi-platform certified engineers."
         keywords="CIU maintenance London, central interface unit service, zone control maintenance London, HVAC zone control commercial, commercial building HVAC maintenance, BMS integration London, valve actuator service, Trend Controls service, Honeywell CIU maintenance, Siemens Desigo service"
         canonicalUrl="https://www.mainteniq.co.uk/ciu-maintenance"
         structuredData={ciuServiceSchema}

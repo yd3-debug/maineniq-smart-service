@@ -238,8 +238,8 @@ const WhyProfessionalHVAC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Why Professional HVAC Maintenance is Essential | Research-Backed Benefits | Mainteniq"
-        description="Discover research-backed benefits of professional HVAC maintenance. Up to 30% energy savings, improved air quality, and extended equipment lifespan. Expert insights and data-driven recommendations."
+        title="Why Professional HVAC Maintenance Matters | Mainteniq"
+        description="Why professional HVAC maintenance saves landlords money. Energy efficiency gains, equipment lifespan, void-period reduction. Expert insights for UK property owners."
         keywords="professional HVAC benefits, HVAC maintenance importance, energy savings HVAC, air quality improvement, HVAC efficiency, property value HVAC"
         canonicalUrl="https://www.mainteniq.co.uk/why-professional-hvac"
         breadcrumbData={breadcrumbData}

@@ -133,8 +133,8 @@ const AirConditioningLondon = () => {
   return (
     <>
       <SEOHead
-        title="Air Conditioning Installation London | F-Gas Certified | Mainteniq"
-        description="F-Gas certified air conditioning installation, servicing & TM44 inspections across London and within 120 miles. Split systems, VRF, multi-split for homes & offices. Call or WhatsApp for a free quote."
+        title="Air Conditioning London | Installation, Service, TM44 | Mainteniq"
+        description="F-Gas certified air conditioning installation and servicing in London. Split, multi-split and VRF systems for homes, offices and lettings. TM44 inspections."
         keywords="air conditioning London, AC installation London, air conditioning installation London, split system London, VRF installation London, F-Gas certified London, TM44 inspection London, air conditioning service London, AC repair London, multi-split AC London, commercial air conditioning London, residential air conditioning London"
         canonicalUrl="https://www.mainteniq.co.uk/air-conditioning-london"
         structuredData={faqData}

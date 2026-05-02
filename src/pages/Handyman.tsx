@@ -127,8 +127,8 @@ const Handyman: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Professional Handyman Services London | Property Maintenance | Mainteniq"
-        description="Professional handyman services for landlords, Airbnb hosts & property managers in London. Electrical, plumbing, carpentry, decorating. Same-day emergency repairs. Fully insured."
+        title="Handyman Services London | Landlord & Airbnb Property | Mainteniq"
+        description="Insured handyman services for London landlords, Airbnb hosts and property managers. Plumbing, electrical, carpentry, decorating. Same-day response available."
         keywords="handyman London, property maintenance London, handyman services, electrical repairs London, plumbing fixes, carpentry London, decorating services, emergency handyman, landlord handyman, Airbnb property maintenance"
         ogImage="/og-image-mainteniq.png"
         canonicalUrl="https://www.mainteniq.co.uk/handyman"
