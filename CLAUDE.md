@@ -618,6 +618,25 @@ Until Phase 5 lands, both domains serve identical content with no redirect. This
 
 ---
 
+## 13. Legacy URL redirects
+
+These are URLs from the previous Wix-era version of the site that Google still has cached. All must be configured as 301 permanent redirects in `next.config.js` during Phase 5 (Next.js + Vercel). Do not implement them on the current Lovable/Cloudflare stack — Lovable's hosting does not reliably honour `public/_redirects`.
+
+| Old URL | Redirects to | Notes |
+|---|---|---|
+| `/heatingventilationairconditioning` | `/hvac-maintenance` | Wix-era slug |
+| `/allservices` | `/services` | Wix-era slug |
+| `/plumber-and-electrician` | `/plumber-electrician` | Wix-era slug |
+| `/copy-of-plumber-and-electrician` | `/plumber-electrician` | Wix duplicate page |
+| `/heatinterfaceunit` | `/hiu-maintenance` | Wix-era slug — target page is a Phase 6 page; redirect to `/services` until it exists |
+| `/end-of-tenancy-cleaning` | `/services` | Phase 6 page not yet created; update to `/end-of-tenancy-cleaning-london` once live |
+| `/buildingmanagementsystem` | `/building-management-systems-london` | Already in §6.2 — confirmed here |
+| `/renovation-composer` | `/property-renovation-london` | Already in §6.2 — confirmed here |
+
+When Phase 6 creates `/hiu-maintenance` and `/end-of-tenancy-cleaning-london`, update the two interim redirects in `next.config.js` to point to the final destination.
+
+---
+
 ## 11. How to read this file
 
 - **User:** "Begin Phase 1" → Claude Code reads Section 8 Phase 1, uses content from Section 6.1, reports back.

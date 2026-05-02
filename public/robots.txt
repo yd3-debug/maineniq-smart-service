@@ -148,6 +148,7 @@ Crawl-delay: 2
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
+Disallow: /_api/
 Disallow: /*.json$
 Disallow: /*?*utm_*
 Disallow: /*?*ref=*
