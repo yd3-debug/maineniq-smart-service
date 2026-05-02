@@ -22,7 +22,7 @@ const LocalBusinessSchema = ({
       "name": "Mainteniq",
       "description": `Premier UK ${businessType.toLowerCase()} services. ${serviceDescription || 'Professional property maintenance solutions across London and 120-mile radius.'}`,
       "url": `https://www.mainteniq.co.uk${location.pathname}`,
-      "telephone": "+44 20 7946 0958",
+      "telephone": "+44 783 456 2366",
       "email": "info@mainteniq.co.uk",
       "address": {
         "@type": "PostalAddress",
