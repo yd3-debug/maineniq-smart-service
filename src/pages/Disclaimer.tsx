@@ -11,8 +11,8 @@ const Disclaimer = () => {
   return (
     <>
       <SEOHead 
-        title="Disclaimer - Mainteniq HVAC Services"
-        description="Important disclaimers and limitations regarding Mainteniq HVAC services, website content, and service recommendations."
+        title="Disclaimer | Mainteniq"
+        description="Disclaimer regarding website content and information provided by Mainteniq for property maintenance services in London."
         keywords="disclaimer, liability, HVAC services, Mainteniq, service limitations"
         canonicalUrl="https://www.mainteniq.co.uk/disclaimer"
         breadcrumbData={breadcrumbData}

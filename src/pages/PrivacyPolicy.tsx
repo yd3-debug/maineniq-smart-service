@@ -11,8 +11,8 @@ const PrivacyPolicy = () => {
   return (
     <>
       <SEOHead 
-        title="Privacy Policy - Mainteniq HVAC Services"
-        description="Learn how Mainteniq collects, uses, and protects your personal information. Comprehensive privacy policy for our HVAC maintenance and installation services."
+        title="Privacy Policy | Mainteniq"
+        description="How Mainteniq collects, uses and protects personal data. UK GDPR compliant. Read our full privacy policy."
         keywords="privacy policy, data protection, Mainteniq, HVAC services, UK GDPR"
         canonicalUrl="https://www.mainteniq.co.uk/privacy-policy"
         breadcrumbData={breadcrumbData}

@@ -11,8 +11,8 @@ const TermsOfService = () => {
   return (
     <>
       <SEOHead 
-        title="Terms of Service - Mainteniq HVAC Services"
-        description="Terms and conditions for Mainteniq HVAC maintenance, installation, and repair services. Professional service agreements and customer responsibilities."
+        title="Terms of Service | Mainteniq"
+        description="Terms governing use of Mainteniq's website and services for landlords, property managers and homeowners across London."
         keywords="terms of service, HVAC services, service agreement, Mainteniq, UK law"
         canonicalUrl="https://www.mainteniq.co.uk/terms-of-service"
         breadcrumbData={breadcrumbData}

@@ -11,8 +11,8 @@ const AccessibilityStatement = () => {
   return (
     <>
       <SEOHead 
-        title="Accessibility Statement - Mainteniq HVAC Services"
-        description="Mainteniq's commitment to web accessibility. Learn about our WCAG compliance efforts and accessibility features for all users."
+        title="Accessibility Statement | Mainteniq"
+        description="Mainteniq's commitment to website accessibility and how we work to meet WCAG standards."
         keywords="accessibility statement, WCAG compliance, web accessibility, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/accessibility-statement"
         breadcrumbData={breadcrumbData}

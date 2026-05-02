@@ -11,8 +11,8 @@ const AntiSlaveryStatement = () => {
   return (
     <>
       <SEOHead 
-        title="Anti-Slavery Statement - Mainteniq HVAC Services"
-        description="Mainteniq's Modern Slavery Act statement outlining our commitment to preventing slavery and human trafficking in our operations and supply chain."
+        title="Anti-Slavery Statement | Mainteniq"
+        description="Mainteniq's commitment under the Modern Slavery Act 2015 to prevent modern slavery in our operations and supply chain."
         keywords="anti-slavery statement, modern slavery act, human trafficking, Mainteniq, ethical business"
         canonicalUrl="https://www.mainteniq.co.uk/anti-slavery-statement"
         breadcrumbData={breadcrumbData}

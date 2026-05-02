@@ -11,8 +11,8 @@ const ComplaintsProcedure = () => {
   return (
     <>
       <SEOHead 
-        title="Complaints Procedure - Mainteniq HVAC Services"
-        description="How to make a complaint about Mainteniq services. Our formal complaints handling process and resolution procedures."
+        title="Complaints Procedure | Mainteniq"
+        description="How to raise a complaint with Mainteniq about our property maintenance services. Our complaints handling process and timeframes."
         keywords="complaints procedure, customer service, complaint resolution, Mainteniq, HVAC services"
         canonicalUrl="https://www.mainteniq.co.uk/complaints-procedure"
         breadcrumbData={breadcrumbData}

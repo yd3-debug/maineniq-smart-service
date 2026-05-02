@@ -11,8 +11,8 @@ const HealthSafetyPolicy = () => {
   return (
     <>
       <SEOHead 
-        title="Health & Safety Policy - Mainteniq HVAC Services"
-        description="Mainteniq's comprehensive health and safety policy for HVAC work. Our commitment to safe working practices and regulatory compliance."
+        title="Health & Safety Policy | Mainteniq"
+        description="Health and safety commitments and procedures for Mainteniq engineers operating across London property maintenance contracts."
         keywords="health safety policy, HVAC safety, workplace safety, Gas Safe, Mainteniq"
         canonicalUrl="https://www.mainteniq.co.uk/health-safety-policy"
         breadcrumbData={breadcrumbData}
