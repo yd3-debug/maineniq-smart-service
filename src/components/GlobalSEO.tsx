@@ -4,24 +4,7 @@ import { useLocation } from 'react-router-dom';
 const BASE_URL = 'https://www.mainteniq.co.uk';
 const CURRENT_DATE = new Date().toISOString().split('T')[0];
 
-interface GlobalSEOProps {
-  /** Override the default page title */
-  title?: string;
-  /** Override the default description */
-  description?: string;
-}
-
-/**
- * GlobalSEO Component
- * 
- * Handles global SEO optimizations that should be applied across all pages:
- * - Dynamic canonical URLs
- * - Hreflang tags
- * - AI crawler meta tags with current dates
- * - Content freshness signals
- * - Preload hints for critical resources
- */
-const GlobalSEO = ({ title, description }: GlobalSEOProps = {}) => {
+const GlobalSEO = () => {
   const location = useLocation();
 
   useEffect(() => {
@@ -161,7 +144,7 @@ const GlobalSEO = ({ title, description }: GlobalSEOProps = {}) => {
     // Preload critical fonts
     addPreloadHint('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap', 'style');
 
-  }, [location.pathname, title, description]);
+  }, [location.pathname]);
 
   return null;
 };
