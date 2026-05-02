@@ -43,7 +43,7 @@ const ReviewSchema = ({
         "bestRating": (aggregateRating.bestRating || 5).toString(),
         "worstRating": (aggregateRating.worstRating || 1).toString()
       },
-      "review": reviews.length > 0 ? reviews.map(review => ({
+      "review": reviews.map(review => ({
         "@type": "Review",
         "author": {
           "@type": "Person",
@@ -58,56 +58,7 @@ const ReviewSchema = ({
         "reviewBody": review.text,
         "datePublished": review.date,
         "name": review.title || `Review by ${review.author}`
-      })) : [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sarah M."
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "reviewBody": "Exceptional HVAC maintenance service. The team was professional, punctual, and thorough. Our heating system has never worked better.",
-          "datePublished": "2025-09-15",
-          "name": "Outstanding HVAC Service"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "James T."
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "reviewBody": "Fast response for emergency repair. Excellent communication and fair pricing. Highly recommend for property maintenance needs.",
-          "datePublished": "2025-08-28",
-          "name": "Fast Emergency Response"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Emma W."
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "reviewBody": "Professional team, great attention to detail. They completed our FCU maintenance ahead of schedule and the air quality improved immediately.",
-          "datePublished": "2025-09-02",
-          "name": "Professional FCU Service"
-        }
-      ]
+      }))
     };
 
     // Add or update the review schema
