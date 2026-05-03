@@ -137,7 +137,8 @@
 - Meta: `Gas Safe plumbers and NICEIC electricians. EICR, gas safety certificates, emergency call-outs. For London landlords, Airbnb hosts and property managers.`
 
 **`/maintenance-contracts`**
-- Title: `Planned Maintenance Contracts London | Landlord & Property Manager Plans`
+- Title: `Planned Maintenance Contracts London` (renders as "Planned Maintenance Contracts London | Mainteniq" — 48 chars, within Google limit)
+  - *Decision made Phase 2B Task 2 — shorter title to avoid Google truncation (84-char version rejected), audience qualifier moved to H1.*
 - H1: `Planned Maintenance Contracts for London Landlords & Property Managers`
 - Meta: `Planned preventative maintenance covering HVAC, plumbing, electrical and compliance certificates. Cut reactive costs and protect your rental investment.`
 
@@ -659,3 +660,66 @@ If a user request is ambiguous, ask which phase and which section applies. Never
 ---
 
 *This file was generated on 2026-04-24. Update it as the project evolves. Treat it as the project's living constitution.*
+
+---
+
+## 14. Session log — 2026-05-02
+
+### Completed today
+
+- **Phase 2A (16 commits):** canonical bug fix in Lovable repo, fake review removal, brand typo fix, GA4 wiring, dual-domain canonicalisation strategy logged
+- **Phase 2B:** per-page metadata rewrite across 32 pages, legal page standardisation, EnhancedSEO deprecated, FAQ accordions added to /hvac-maintenance and /maintenance-contracts
+- **Phase 3 (full):** migrated from Vite SPA to Next.js 14 App Router. New repo at github.com/yd3-debug/Petru-Mainteniq. All 32 routes ported, building cleanly, server-rendered, schemas inline. NICEIC certification claim removed sitewide.
+- **Vercel project created and deployed** to petru-mainteniq.vercel.app — preview confirmed working, SSR verified via PerplexityBot user agent test
+- **Search Console:** 10 URLs requested for indexing, 22-URL coverage validation submitted
+- **GA4:** ID G-F5YGBB2QBB live and verified via real-time
+
+### Outstanding for tomorrow morning (resume here)
+
+- **Image audit fix:** 8 pages LOST imagery during port (fcu-maintenance, hiu-maintenance, ciu-maintenance, mvhr-maintenance, boiler-services, handyman, case-studies, why-professional-hvac). 6 pages DIFFERENT (smart-home, plumber-electrician, maintenance-contracts, property-renovation-london, contact, services). All required image files already exist in public/ — fix is mechanical, just adding `<img>` and `backgroundImage` references back into the page components. Diagnostic table from 2026-05-02 evening session is the spec.
+- **BOILER.png case-sensitivity bug:** code references `/BOILER.png` (all-caps), file on disk is `/Boiler.png`. Vercel/Linux is case-sensitive so this 404s in production. Fix: rename the file or update all code references — apply consistently.
+- **Add noindex header for `*.vercel.app` preview deployments** so Google doesn't index the staging URL once live on the production domain. Use `vercel.json` with `X-Robots-Tag: noindex` on preview environment.
+- **Vercel domain setup:** add www.mainteniq.co.uk (primary) and mainteniq.com (redirect to .co.uk) in Vercel dashboard. Vercel will provide DNS records needed.
+- **DNS swap at registrar:** point mainteniq.co.uk and mainteniq.com to Vercel per the records Vercel provides.
+- **Production verification:** curl tests on every page via the production domain after DNS propagates.
+- **Petru email + portal entry:** send only after live domain is verified working on Vercel.
+
+### Open questions for Petru (chase before sending email)
+
+- **Founding date** — site previously claimed "Since 2009" which has been removed. Need real founding date before re-adding any company-history copy.
+- **Renovation page testimonials** (Emma & David H., Marcus T., Apex Property Group) — currently disabled. Confirm if real customers before reinstating.
+- **Real customer reviews** in any form — for future review-collection campaign and aggregateRating schema reinstatement.
+
+### Active codebase state as of end of day
+
+- **Primary working repo:** /Users/yekta/Projects/Petru-Mainteniq (Next.js 14)
+- **Old Lovable/Vite repo:** /Users/yekta/Projects/maineniq-smart-service (do not deploy; SEO work only)
+- **Petru-Mainteniq last commit:** `d126143` — fix(seo): remove broken hiu-maintenance redirect, add 5 legacy redirects, refresh sitemap
+- **Build status:** ✓ clean, 32 static routes, 0 errors
+- **NICEIC:** removed from all copy and schema — do not re-add without credential confirmation
+
+---
+
+## 15. Session log — 2026-05-03
+
+### Completed today
+
+- **Gas Safe subcontractor reframe (commit 9835116):** Swept all 20 affected files. Removed every false first-person "Mainteniq is Gas Safe registered" claim. All replaced with accurate subcontractor framing: "All gas work by Gas Safe registered engineers" / "via Gas Safe registered engineers". CP12 and boiler service offerings fully preserved. Files touched: app/layout.tsx, app/page.tsx, app/contact/page.tsx, app/faq/page.tsx, app/health-safety-policy/page.tsx, app/maintenance-contracts/page.tsx, app/plumber-electrician/page.tsx, app/boiler-services/page.tsx, components/AboutContent.tsx, components/AirConditioningContent.tsx, components/BoilerServicesContent.tsx, components/ContactContent.tsx, components/Footer.tsx, components/HVACMaintenanceContent.tsx, components/MaintenanceContractsContent.tsx, components/PlumberElectricianContent.tsx, components/ServicesContent.tsx, components/WhyProfessionalHVACContent.tsx, utils/structuredData.ts, public/llms.txt.
+
+- **5 verified certifications added sitewide (commit 3495a2e):** F-Gas REF1024168 (Refcom/BESA Group, valid to March 2029), NICEIC Domestic Ventilation DV-02 (24/DV-2/288/2936, valid to March 2029), SAV Advanced HIU Service Engineer PERS-30839 (valid to March 2028), Herts Energy Academy HIU training (Jan 2022), Innotech/Uxbridge College BMS training (Apr 2022). Organisation JSON-LD `hasCredential` array fully replaced. Footer certifications grid added (6-cell, all green dots). About page new "Certifications & Credentials" section added with subcontractor disclosure paragraph. AirConditioning, HVAC, HIU, CIU, MVHR, and BMS pages updated with cert references. llms.txt Company section updated.
+
+### Active codebase state as of end of day
+
+- **Primary working repo:** /Users/yekta/Projects/Petru-Mainteniq (Next.js 14)
+- **Old Lovable/Vite repo:** /Users/yekta/Projects/maineniq-smart-service (do not deploy; CLAUDE.md updates only)
+- **Petru-Mainteniq last commit:** `3495a2e` — feat(seo): add 5 verified certifications to footer, schema, About and service pages
+- **Build status:** ✓ clean, 32 static routes, 0 errors
+- **NICEIC:** DV-02 ventilation cert (24/DV-2/288/2936) confirmed real — added back to HVAC, MVHR, and footer. Do not re-add "NICEIC Approved Contractor" (electrical) — that credential is unconfirmed.
+
+### Still outstanding
+
+- **Domain setup:** Vercel domain configuration for www.mainteniq.co.uk and mainteniq.com not yet done.
+- **DNS swap:** Point mainteniq.co.uk and mainteniq.com to Vercel once Vercel provides DNS records.
+- **noindex on preview deployments:** `vercel.json` X-Robots-Tag: noindex for *.vercel.app environment.
+- **Image audit:** 8 pages still missing imagery from port (fcu-maintenance, hiu-maintenance, ciu-maintenance, mvhr-maintenance, boiler-services, handyman, case-studies, why-professional-hvac). Not yet fixed.
+- **Production verification:** curl tests on every page via production domain after DNS propagates.
